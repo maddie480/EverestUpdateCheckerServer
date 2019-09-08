@@ -1,0 +1,56 @@
+# Everest Update Checker Server
+
+This small Java server generates a file named `uploads/everestupdate.yaml` containing information on all Celeste mods published on GameBanana including an `everest.yaml`. For example:
+```yaml
+SuperHotMod:
+  SHA256: [7025599b27cb4c2502025cbae448dfa22dc645746e99ebe6b378d7cf4707d4cf]
+  Version: 2.0.0
+  LastUpdate: 1567660611
+  URL: https://gamebanana.com/mmdl/430983
+```
+
+This YAML file can then be hosted, and used by Everest or code mods to check if an update is available on a mod (by comparing the SHA256 hash).
+
+## Building the project
+
+Get Maven, then run the following command at the project root:
+
+```
+mvn clean package
+```
+
+This will build the project to `target/update-checker-0.0.1.jar`.
+
+## Running the project
+
+To run the project, browse to where the JAR is, then run
+
+```
+java -jar update-checker-0.0.1.jar [minutes]
+```
+
+[minutes] is the wait delay in minutes between two GameBanana checks (defaults to 30). Be aware that the program makes ~13 API calls per check, and that the GameBanana API has a cap at 250 requests/hour.
+
+## Handling special cases
+
+Some mods may need editing the database manually. From what I know so far, 2 mods need that:
+
+### DJ Map Helper
+
+Should be defined with two SHA256 hashes in `everestupdate.yaml`, because it has both a Windows and a Linux version
+
+```yaml
+DJMapHelper:
+  SHA256: [ac4629178e57aec2daecd2faf8021cbedad18c5c633416a60bb9079bbe108395, 4a036681fdd191ee47196e1f364beebf687f8dfc57b4ab30d37b44f7ba28daaa]
+  Version: 1.6.4
+  LastUpdate: 1552491224
+  URL: https://gamebanana.com/mmdl/413533
+```
+
+### Gauntlet
+
+A line should be added to `everestupdateexcluded.yaml` for Gauntlet, since Gauntlet Revamped shares the same mod ID: 
+
+```yaml
+'https://gamebanana.com/mmdl/398096': 'That''s Gauntlet, and Gauntlet Revamped (https://gamebanana.com/mmdl/413583) has the same id but is more recent'
+```
