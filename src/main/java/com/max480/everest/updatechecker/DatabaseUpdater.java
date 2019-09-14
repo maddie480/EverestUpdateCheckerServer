@@ -277,9 +277,14 @@ class DatabaseUpdater {
                 }
 
                 Mod mod = new Mod(modName, modVersion, fileUrl, fileTimestamp, Collections.singletonList(sha256));
-                database.put(modName, mod);
 
-                log.info("=> Saved new information to database: " + mod.toString());
+                if (database.containsKey(modName) && database.get(modName).getLastUpdate() > fileTimestamp) {
+                    log.warn("=> database already contains more recent file {}. Adding to the excluded files list.", database.get(modName));
+                    databaseExcludedFiles.put(fileUrl, "File " + database.get(modName).getUrl() + " has same mod ID and is more recent");
+                } else {
+                    database.put(modName, mod);
+                    log.info("=> Saved new information to database: " + mod.toString());
+                }
             }
         } catch (Exception e) {
             log.warn("=> error while reading the YAML file from {}. Adding to the excluded files list.", fileUrl, e);

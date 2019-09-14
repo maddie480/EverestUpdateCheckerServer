@@ -59,4 +59,8 @@ public class Mod {
     String getUrl() {
         return url;
     }
+
+    int getLastUpdate() {
+        return lastUpdate;
+    }
 }

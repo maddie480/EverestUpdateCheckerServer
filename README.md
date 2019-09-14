@@ -33,11 +33,11 @@ java -jar update-checker-0.0.1.jar [minutes]
 
 ## Handling special cases
 
-Some mods may need editing the database manually. From what I know so far, 2 mods need that:
+Some mods may need editing the database manually: that is, all cases where a mod offers multiple downloads. These cases need manual editing of the database.
 
-### DJ Map Helper
+### Multiple downloads with the same ID (f.e. DJMapHelper)
 
-Should be defined with two SHA256 hashes in `everestupdate.yaml`, because it has both a Windows and a Linux version
+Those mods be defined with two SHA256 hashes in `everestupdate.yaml`, so that the updater can tell if the version the user has is _one of_ the up-to-date ones.
 
 ```yaml
 DJMapHelper:
@@ -47,10 +47,13 @@ DJMapHelper:
   URL: https://gamebanana.com/mmdl/413533
 ```
 
-### Gauntlet
+### Multiple downloads with different IDs (f.e. Simpleste)
 
-A line should be added to `everestupdateexcluded.yaml` for Gauntlet, since Gauntlet Revamped shares the same mod ID: 
+All the versions of the download should be added to the database with their respective everest.yaml IDs, so that the update checker can check against the version the user has downloaded.
 
-```yaml
-'https://gamebanana.com/mmdl/398096': 'That''s Gauntlet, and Gauntlet Revamped (https://gamebanana.com/mmdl/413583) has the same id but is more recent'
-```
+### List of mods to handle manually
+
+* Ruby's Entities: Remove it from the database. Ships with D-sides.
+* GhostMod: Remove it from the database. Ships with GhostNet.
+* DJ Map Helper: Add the two sha256 hashes, for the Windows and Linux version.
+* Simpleste: Get the 3 versions of it, and add them all to the database.
