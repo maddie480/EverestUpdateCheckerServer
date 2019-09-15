@@ -134,10 +134,10 @@ Prideline:
   LastUpdate: 1567557185
   URL: https://gamebanana.com/mmdl/430886
 SpeedrunTool:
-  SHA256: [3bd9f6ece38f6aa5a02c92177d66733ab264d2c2a624529bf41978d3096723e9]
-  Version: 1.6.5
-  LastUpdate: 1568392339
-  URL: https://gamebanana.com/mmdl/431803
+  SHA256: [9432953203c947cd79768e3fd6310b86ea0a8f66767caf6219750e9d7ab20359]
+  Version: 1.6.7
+  LastUpdate: 1568539525
+  URL: https://gamebanana.com/mmdl/432010
 C+:
   SHA256: [58c5b2d16379bb332c02a15e0f369a901875b08c2fc236abc319e16221524d93]
   Version: '2.0'
@@ -228,11 +228,6 @@ FrostHelper:
   Version: 1.4.1
   LastUpdate: 1568382627
   URL: https://gamebanana.com/mmdl/431792
-Nameguy's D-Sides v2.05:
-  SHA256: [3d1cc0fba0a6fa0e6ffedeaba8e997b575aeca8dcca98a04540ca8d07898ee6b]
-  Version: '2.05'
-  LastUpdate: 1568300613
-  URL: https://gamebanana.com/mmdl/431716
 CelesteEmojis:
   SHA256: [85b3a634fbf805a20aac044efee828c6bb82c6384463c4db04101eb365d42201]
   Version: 1.0.0
@@ -253,6 +248,11 @@ DJMapHelper:
   Version: 1.6.4
   LastUpdate: 1552491224
   URL: https://gamebanana.com/mmdl/413533
+Nameguy's D-Sides v2.07:
+  SHA256: [15fe8ab2f5d9f07c681c0dbbbb20092b2c4b499033dbf349d5cc6ffcaa07564a]
+  Version: '2.07'
+  LastUpdate: 1568509216
+  URL: https://gamebanana.com/mmdl/431967
 Dadbod:
   SHA256: [27963f634c700c265dbd1967581ab05d6fd72f74f4eb8216019afce73bfb47f5]
   Version: 1.0.0

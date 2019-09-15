@@ -26,10 +26,29 @@ This will build the project to `target/update-checker-0.0.1.jar`.
 To run the project, browse to where the JAR is, then run
 
 ```
-java -jar update-checker-0.0.1.jar [minutes]
+java -jar update-checker-0.0.1.jar [port] [minutes]
 ```
 
+[port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
+
 [minutes] is the wait delay in minutes between two GameBanana checks (defaults to 30). Be aware that the program makes ~13 API calls per check, and that the GameBanana API has a cap at 250 requests/hour.
+
+## HTTP server usage
+
+The server uses [NanoHttpd](https://github.com/NanoHttpd/nanohttpd) to provide the database over HTTP.
+
+It supports two methods:
+```
+GET /everestupdate.yaml 
+```
+provides the up-to-date everestupdate.yaml.
+
+```
+POST /everestupdate.yaml 
+```
+allows to overwrite the current database. This aims to give control over the database to people that do not host the server, to handle the special cases.
+
+To be able to use this method, you have to pass the content of the `code.txt` file in the Authorization header.
 
 ## Handling special cases
 
