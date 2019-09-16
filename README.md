@@ -23,7 +23,13 @@ This will build the project to `target/update-checker-0.0.1.jar`.
 
 ## Running the project
 
-To run the project, browse to where the JAR is, then run
+First, follow these steps to set it up:
+* Get the JAR that was produced by Maven.
+* Download the `uploads` directory on this repository, and put it next to the JAR: that will prevent the server from rebuilding the database, which implies _downloading the entirety of GameBanana_.
+* If you want to give control over the database to other people, in order for them to handle the few specific cases where automatic update doesn't work, create a `code.txt` file next to the JAR. Put a code in it, then share it with the people you want to be allowed to edit the database.
+  * If you don't create a `code.txt` file, the "edit database remotely" feature will be disabled.
+
+Then, to run the project, browse to where the JAR is, then run
 
 ```
 java -jar update-checker-0.0.1.jar [port] [minutes]
@@ -48,6 +54,8 @@ POST /everestupdate.yaml
 ```
 allows to overwrite the current database. This aims to give control over the database to people that do not host the server, to handle the special cases.
 
+You can also use these two methods with `/everestupdateexcluded.yaml`. This file lists all downloads that should be skipped on GameBanana for any reason. Corrupted zips or duplicates (f.e. Gauntlet is an older duplicate of Gauntlet Revamped) are automatically added to this.
+
 To be able to use this method, you have to pass the content of the `code.txt` file in the Authorization header.
 
 ## Handling special cases
@@ -71,6 +79,8 @@ DJMapHelper:
 All the versions of the download should be added to the database with their respective everest.yaml IDs, so that the update checker can check against the version the user has downloaded.
 
 ### List of mods to handle manually
+
+_Please note that the `everestupdate.yaml` file uploaded to this repository already takes these cases into account. You don't need to edit it._
 
 * Ruby's Entities: Remove it from the database. Ships with D-sides.
 * GhostMod: Remove it from the database. Ships with GhostNet.

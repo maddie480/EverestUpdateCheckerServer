@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class HttpServer extends NanoHTTPD {
     private static final Logger log = LoggerFactory.getLogger(HttpServer.class);
@@ -21,36 +22,46 @@ public class HttpServer extends NanoHTTPD {
     public Response serve(IHTTPSession session) {
         log.debug(session.getMethod() + " " + session.getUri());
 
-        if (!session.getUri().equals("/everestupdate.yaml")) {
+        if (!Arrays.asList("/everestupdate.yaml", "/everestupdateexcluded.yaml").contains(session.getUri())) {
             return newFixedLengthResponse(Response.Status.NOT_FOUND, "text/plain; charset=UTF-8", "Not Found");
         }
 
+        return handleFileRequest(session);
+    }
+
+    private Response handleFileRequest(IHTTPSession session) {
         if (session.getMethod() == Method.GET) {
             try {
-                return newChunkedResponse(Response.Status.OK, "text/yaml", new FileInputStream("uploads/everestupdate.yaml"));
+                return newChunkedResponse(Response.Status.OK, "text/yaml", new FileInputStream("uploads" + session.getUri()));
             } catch (IOException e) {
-                log.error("Error while reading everestupdate.yaml", e);
+                log.error("Error while reading {}", session.getUri(), e);
                 return newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "Unexpected error.");
             }
         } else if (session.getMethod() == Method.POST) {
             try {
-                if (!session.getHeaders().containsKey("authorization")) {
-                    return newFixedLengthResponse(Response.Status.UNAUTHORIZED, "text/plain", "Authentication required.");
-                } else if (!session.getHeaders().get("authorization").equals(IOUtils.toString(new FileInputStream("code.txt"), "UTF-8").trim())) {
-                    return newFixedLengthResponse(Response.Status.FORBIDDEN, "text/plain", "Access denied.");
+                if (!new File("code.txt").exists()) {
+                    return newFixedLengthResponse(Response.Status.FORBIDDEN, "text/plain", "Updating database via HTTP is disabled.");
                 } else {
-                    int contentLength = Integer.parseInt(session.getHeaders().get("content-length"));
-                    byte[] buffer = new byte[contentLength];
-                    int readBytes = session.getInputStream().read(buffer, 0, contentLength);
-                    if (readBytes != contentLength) {
-                        throw new IOException("Could not read whole request body: " + readBytes + "/" + contentLength);
-                    }
+                    try(FileInputStream codeFile = new FileInputStream("code.txt")) {
+                        if (!session.getHeaders().containsKey("authorization")) {
+                            return newFixedLengthResponse(Response.Status.UNAUTHORIZED, "text/plain", "Authentication required.");
+                        } else if (!session.getHeaders().get("authorization").equals(IOUtils.toString(codeFile, "UTF-8").trim())) {
+                            return newFixedLengthResponse(Response.Status.FORBIDDEN, "text/plain", "Access denied.");
+                        } else {
+                            int contentLength = Integer.parseInt(session.getHeaders().get("content-length"));
+                            byte[] buffer = new byte[contentLength];
+                            int readBytes = session.getInputStream().read(buffer, 0, contentLength);
+                            if (readBytes != contentLength) {
+                                throw new IOException("Could not read whole request body: " + readBytes + "/" + contentLength);
+                            }
 
-                    FileUtils.writeByteArrayToFile(new File("uploads/everestupdate.yaml"), buffer);
-                    return newFixedLengthResponse(Response.Status.OK, "text/plain", "OK");
+                            FileUtils.writeByteArrayToFile(new File("uploads" + session.getUri()), buffer);
+                            return newFixedLengthResponse(Response.Status.OK, "text/plain", "OK");
+                        }
+                    }
                 }
             } catch (IOException e) {
-                log.error("Error while updating everestupdate.yaml", e);
+                log.error("Error while updating {}", session.getUri(), e);
                 return newFixedLengthResponse(Response.Status.INTERNAL_ERROR, "text/plain", "Unexpected error.");
             }
         } else {

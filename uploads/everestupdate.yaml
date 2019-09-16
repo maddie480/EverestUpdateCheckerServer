@@ -9,10 +9,10 @@ WobbleDecals:
   LastUpdate: 1567521581
   URL: https://gamebanana.com/mmdl/430826
 Synchronized Jumping:
-  SHA256: [5ce3b203de24b4930321d1dd581bb6d1eb8831c34205d9e841eb67169d2155ba]
-  Version: 1.0.1
-  LastUpdate: 1567757505
-  URL: https://gamebanana.com/mmdl/431118
+  SHA256: [cf91524e28c4e70a9c0c1d303c6b42ab5d342d8c17b66111eb51cee1e0ae21d1]
+  Version: 1.0.2
+  LastUpdate: 1568583266
+  URL: https://gamebanana.com/mmdl/432097
 forsakencity_remix:
   SHA256: [457509e57fbdf0fc0715c01b39b7dbd513e8a29f75b87ca404c253172c91fffd]
   Version: '1.1'
@@ -188,6 +188,11 @@ DialogCutscene:
   Version: 1.0.0
   LastUpdate: 1542725525
   URL: https://gamebanana.com/mmdl/402388
+Nameguy's D-Sides:
+  SHA256: [a4e490957d0b73e12bd39f6e9a39118d660d9b2cf574dc4fef70037a240fa53f]
+  Version: '2.071'
+  LastUpdate: 1568559522
+  URL: https://gamebanana.com/mmdl/432040
 CavernHelper:
   SHA256: [661e76aec5d05f73b8cc2c0515e15442c58672a51b5dc8384df5da64a1424fc1]
   Version: 1.0.0
@@ -248,11 +253,6 @@ DJMapHelper:
   Version: 1.6.4
   LastUpdate: 1552491224
   URL: https://gamebanana.com/mmdl/413533
-Nameguy's D-Sides v2.07:
-  SHA256: [15fe8ab2f5d9f07c681c0dbbbb20092b2c4b499033dbf349d5cc6ffcaa07564a]
-  Version: '2.07'
-  LastUpdate: 1568509216
-  URL: https://gamebanana.com/mmdl/431967
 Dadbod:
   SHA256: [27963f634c700c265dbd1967581ab05d6fd72f74f4eb8216019afce73bfb47f5]
   Version: 1.0.0

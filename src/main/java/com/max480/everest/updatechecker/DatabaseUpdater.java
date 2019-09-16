@@ -281,6 +281,8 @@ class DatabaseUpdater {
                 if (database.containsKey(modName) && database.get(modName).getLastUpdate() > fileTimestamp) {
                     log.warn("=> database already contains more recent file {}. Adding to the excluded files list.", database.get(modName));
                     databaseExcludedFiles.put(fileUrl, "File " + database.get(modName).getUrl() + " has same mod ID and is more recent");
+                } else if(databaseExcludedFiles.containsKey(modName)) {
+                    log.warn("=> Mod was skipped because it is in the exclude list: " + mod.toString());
                 } else {
                     database.put(modName, mod);
                     log.info("=> Saved new information to database: " + mod.toString());
