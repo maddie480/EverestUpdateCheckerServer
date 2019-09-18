@@ -3,13 +3,13 @@
 This small Java server generates a file named `uploads/everestupdate.yaml` containing information on all Celeste mods published on GameBanana including an `everest.yaml`. For example:
 ```yaml
 SuperHotMod:
-  SHA256: [7025599b27cb4c2502025cbae448dfa22dc645746e99ebe6b378d7cf4707d4cf]
   Version: 2.0.0
   LastUpdate: 1567660611
+  xxHash: [ab8e6117a0ef3cab]
   URL: https://gamebanana.com/mmdl/430983
 ```
 
-This YAML file can then be hosted, and used by Everest or code mods to check if an update is available on a mod (by comparing the SHA256 hash).
+This YAML file can then be hosted, and used by Everest or code mods to check if an update is available on a mod (by comparing the hash).
 
 ## Building the project
 
@@ -64,13 +64,13 @@ Some mods may need editing the database manually: that is, all cases where a mod
 
 ### Multiple downloads with the same ID (f.e. DJMapHelper)
 
-Those mods be defined with two SHA256 hashes in `everestupdate.yaml`, so that the updater can tell if the version the user has is _one of_ the up-to-date ones.
+Those mods be defined with two hashes in `everestupdate.yaml`, so that the updater can tell if the version the user has is _one of_ the up-to-date ones.
 
 ```yaml
 DJMapHelper:
-  SHA256: [ac4629178e57aec2daecd2faf8021cbedad18c5c633416a60bb9079bbe108395, 4a036681fdd191ee47196e1f364beebf687f8dfc57b4ab30d37b44f7ba28daaa]
   Version: 1.6.4
   LastUpdate: 1552491224
+  xxHash: [a7334bfe1b464ee6, e04c6c7d01fdfbe3]
   URL: https://gamebanana.com/mmdl/413533
 ```
 
@@ -84,5 +84,5 @@ _Please note that the `everestupdate.yaml` file uploaded to this repository alre
 
 * Ruby's Entities: Remove it from the database. Ships with D-sides.
 * GhostMod: Remove it from the database. Ships with GhostNet.
-* DJ Map Helper: Add the two sha256 hashes, for the Windows and Linux version.
+* DJ Map Helper: Add the two hashes, for the Windows and Linux version.
 * Simpleste: Get the 3 versions of it, and add them all to the database.

@@ -1,6 +1,7 @@
 package com.max480.everest.updatechecker;
 
-import org.apache.commons.codec.digest.DigestUtils;
+import net.jpountz.xxhash.StreamingXXHash64;
+import net.jpountz.xxhash.XXHashFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
@@ -21,6 +22,8 @@ class DatabaseUpdater {
     private Map<String, String> databaseExcludedFiles = new HashMap<>();
     private int numberOfModsDownloaded = 0;
     private Set<String> existingFiles = new HashSet<>();
+
+    private XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
 
     void updateDatabaseYaml() throws IOException {
         log.info("=== Started searching for updates");
@@ -220,10 +223,20 @@ class DatabaseUpdater {
                 IOUtils.copy(new BufferedInputStream(new URL(mostRecentFileUrl).openStream()), os);
             }
 
-            // compute its SHA256 checksum
-            String sha256;
+            // compute its xxHash checksum
+            String xxHash;
             try (InputStream is = new FileInputStream("mod.zip")) {
-                sha256 = DigestUtils.sha256Hex(is);
+                StreamingXXHash64 hash64 = xxHashFactory.newStreamingHash64(0);
+                byte[] buf = new byte[8192];
+                while (true) {
+                    int read = is.read(buf);
+                    if (read == -1) break;
+                    hash64.update(buf, 0, read);
+                }
+                xxHash = Long.toHexString(hash64.getValue());
+
+                // pad it with zeroes
+                while (xxHash.length() < 16) xxHash = "0" + xxHash;
             }
 
             try (ZipInputStream zip = new ZipInputStream(new FileInputStream("mod.zip"))) {
@@ -234,7 +247,7 @@ class DatabaseUpdater {
                     if (!entry.isDirectory() && (entry.getName().equals("everest.yaml")
                             || entry.getName().equals("everest.yml") || entry.getName().equals("multimetadata.yml"))) {
 
-                        parseEverestYamlFromZipFile(zip, sha256, mostRecentFileUrl, mostRecentFileTimestamp);
+                        parseEverestYamlFromZipFile(zip, xxHash, mostRecentFileUrl, mostRecentFileTimestamp);
                         everestYamlFound = true;
                         break;
                     }
@@ -257,11 +270,11 @@ class DatabaseUpdater {
      * Parses the everest.yaml from the mod zip, then builds a Mod object from it and adds it to the database.
      *
      * @param zip           The zip input stream, positioned on the everest.yaml file
-     * @param sha256        The zip's SHA256 checksum
+     * @param xxHash        The zip's xxHash checksum
      * @param fileUrl       The file URL on GameBanana
      * @param fileTimestamp The timestamp the file was uploaded at on GameBanana
      */
-    private void parseEverestYamlFromZipFile(ZipInputStream zip, String sha256, String fileUrl, int fileTimestamp) {
+    private void parseEverestYamlFromZipFile(ZipInputStream zip, String xxHash, String fileUrl, int fileTimestamp) {
         try {
             List<Map<String, Object>> info = new Yaml().load(zip);
 
@@ -276,12 +289,12 @@ class DatabaseUpdater {
                     modVersion = "NoVersion";
                 }
 
-                Mod mod = new Mod(modName, modVersion, fileUrl, fileTimestamp, Collections.singletonList(sha256));
+                Mod mod = new Mod(modName, modVersion, fileUrl, fileTimestamp, Collections.singletonList(xxHash));
 
                 if (database.containsKey(modName) && database.get(modName).getLastUpdate() > fileTimestamp) {
                     log.warn("=> database already contains more recent file {}. Adding to the excluded files list.", database.get(modName));
                     databaseExcludedFiles.put(fileUrl, "File " + database.get(modName).getUrl() + " has same mod ID and is more recent");
-                } else if(databaseExcludedFiles.containsKey(modName)) {
+                } else if (databaseExcludedFiles.containsKey(modName)) {
                     log.warn("=> Mod was skipped because it is in the exclude list: " + mod.toString());
                 } else {
                     database.put(modName, mod);

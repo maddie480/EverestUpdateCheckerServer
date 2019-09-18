@@ -9,17 +9,17 @@ public class Mod {
     private String version;
     private String url;
     private int lastUpdate;
-    private List<String> sha256;
+    private List<String> xxHash;
 
     /**
      * Builds a Mod object based on all its information.
      */
-    Mod(String name, String version, String url, int lastUpdate, List<String> sha256) {
+    Mod(String name, String version, String url, int lastUpdate, List<String> xxHash) {
         this.name = name;
         this.version = version;
         this.url = url;
         this.lastUpdate = lastUpdate;
-        this.sha256 = sha256;
+        this.xxHash = xxHash;
     }
 
     /**
@@ -30,7 +30,7 @@ public class Mod {
         version = (String) yamlDatabaseEntry.getValue().get("Version");
         url = (String) yamlDatabaseEntry.getValue().get("URL");
         lastUpdate = (int) yamlDatabaseEntry.getValue().get("LastUpdate");
-        sha256 = (List<String>) yamlDatabaseEntry.getValue().get("SHA256");
+        xxHash = (List<String>) yamlDatabaseEntry.getValue().get("xxHash");
     }
 
     /**
@@ -41,7 +41,7 @@ public class Mod {
         modMap.put("Version", version);
         modMap.put("URL", url);
         modMap.put("LastUpdate", lastUpdate);
-        modMap.put("SHA256", sha256);
+        modMap.put("xxHash", xxHash);
         return modMap;
     }
 
@@ -52,7 +52,7 @@ public class Mod {
                 ", version='" + version + '\'' +
                 ", url='" + url + '\'' +
                 ", lastUpdate=" + lastUpdate +
-                ", sha256=" + sha256 +
+                ", xxHash=" + xxHash +
                 '}';
     }
 
