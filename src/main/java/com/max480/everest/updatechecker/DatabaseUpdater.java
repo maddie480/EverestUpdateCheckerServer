@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 import java.util.zip.ZipEntry;
@@ -223,6 +224,13 @@ class DatabaseUpdater {
                 IOUtils.copy(new BufferedInputStream(new URL(mostRecentFileUrl).openStream()), os);
             }
 
+            long expectedSize = getFileSize(new URL(mostRecentFileUrl));
+            long actualSize = new File("mod.zip").length();
+            if (expectedSize != actualSize) {
+                FileUtils.forceDelete(new File("mod.zip"));
+                throw new IOException("The announced file size (" + expectedSize + ") does not match what we got (" + actualSize + ")");
+            }
+
             // compute its xxHash checksum
             String xxHash;
             try (InputStream is = new FileInputStream("mod.zip")) {
@@ -327,6 +335,26 @@ class DatabaseUpdater {
         for (String deletedMod : deletedMods) {
             Mod mod = database.remove(deletedMod);
             log.warn("Mod {} was deleted from the database", mod.toString());
+        }
+    }
+
+    /**
+     * Gets a file's size.
+     *
+     * @param url The file URL
+     * @return The file's size
+     */
+    private long getFileSize(URL url) {
+        HttpURLConnection conn = null;
+        try {
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("HEAD");
+            conn.getInputStream();
+            return conn.getContentLength();
+        } catch (IOException e) {
+            return -1;
+        } finally {
+            if (conn != null) conn.disconnect();
         }
     }
 }
