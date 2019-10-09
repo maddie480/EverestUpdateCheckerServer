@@ -1,4 +1,13 @@
-{'https://gamebanana.com/mmdl/398096': 'File https://gamebanana.com/mmdl/413583 has
-    same mod ID and is more recent', 'https://gamebanana.com/mmdl/420279': No everest.yaml
-    found, Ruby'sEntities: Ships with D-sides. D-sides should be updated instead.,
-  GhostMod: Ships with GhostNet. GhostNet should be updated instead.}
+https://gamebanana.com/mmdl/398096: File https://gamebanana.com/mmdl/413583 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/420279: No everest.yaml found
+Ruby'sEntities: Ships with D-sides. D-sides should be updated instead.
+GhostMod: Ships with GhostNet. GhostNet should be updated instead.
+https://gamebanana.com/mmdl/396979: "java.util.zip.ZipException: only DEFLATED entries\
+  \ can have EXT descriptor\r\n\tat java.util.zip.ZipInputStream.readLOC(ZipInputStream.java:310)\r\
+  \n\tat java.util.zip.ZipInputStream.getNextEntry(ZipInputStream.java:122)\r\n\t\
+  at com.max480.everest.updatechecker.DatabaseUpdater.updateDatabase(DatabaseUpdater.java:247)\r\
+  \n\tat com.max480.everest.updatechecker.DatabaseUpdater.loadPageModInfo(DatabaseUpdater.java:169)\r\
+  \n\tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:116)\r\
+  \n\tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:37)\r\
+  \n\tat com.max480.everest.updatechecker.Main.main(Main.java:49)\r\n"

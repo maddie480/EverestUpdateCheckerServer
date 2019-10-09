@@ -21,6 +21,7 @@ class DatabaseUpdater {
 
     private Map<String, Mod> database = new HashMap<>();
     private Map<String, String> databaseExcludedFiles = new HashMap<>();
+    private Set<String> databaseNoYamlFiles = new HashSet<>();
     private int numberOfModsDownloaded = 0;
     private Set<String> existingFiles = new HashSet<>();
 
@@ -67,6 +68,12 @@ class DatabaseUpdater {
                 databaseExcludedFiles = new Yaml().load(is);
             }
         }
+
+        if (new File("uploads/everestupdatenoyaml.yaml").exists()) {
+            try (InputStream is = new FileInputStream("uploads/everestupdatenoyaml.yaml")) {
+                databaseNoYamlFiles = new Yaml().load(is);
+            }
+        }
     }
 
     /**
@@ -85,6 +92,9 @@ class DatabaseUpdater {
         }
         try (FileWriter writer = new FileWriter("uploads/everestupdateexcluded.yaml")) {
             new Yaml().dump(databaseExcludedFiles, writer);
+        }
+        try (FileWriter writer = new FileWriter("uploads/everestupdatenoyaml.yaml")) {
+            new Yaml().dump(databaseNoYamlFiles, writer);
         }
     }
 
@@ -149,7 +159,7 @@ class DatabaseUpdater {
             for (List<Object> mod : mods) {
                 String name = (String) mod.get(0);
 
-                ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod);
+                ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod, databaseNoYamlFiles);
                 existingFiles.addAll(parsedModInfo.allFileUrls);
 
                 if (parsedModInfo.mostRecentFileTimestamp == 0) {
@@ -170,34 +180,17 @@ class DatabaseUpdater {
         String mostRecentFileUrl = null;
         Set<String> allFileUrls = new HashSet<>();
 
-        ModInfoParser invoke(List<Object> mod) {
+        ModInfoParser invoke(List<Object> mod, Set<String> databaseNoYamlFiles) {
             for (Map<String, Object> file : ((Map<String, Map<String, Object>>) mod.get(1)).values()) {
                 // get the obvious info about the file (URL and upload date)
                 int fileDate = (int) file.get("_tsDateAdded");
                 String fileUrl = ((String) file.get("_sDownloadUrl")).replace("dl", "mmdl");
                 allFileUrls.add(fileUrl);
 
-                if (mostRecentFileTimestamp < fileDate) {
-                    // before using this file, check if it has an everest.yaml in it (_aMetadata._aArchiveFileTree should contain everest.yaml)
-                    Map<String, Object> metadata = (Map<String, Object>) file.get("_aMetadata");
-                    if (metadata != null && metadata.containsKey("_aArchiveFileTree")) {
-                        Collection<Object> fileTree;
-
-                        // for some reason, _aArchiveFileTree is sometimes a map, sometimes a list
-                        if (metadata.get("_aArchiveFileTree") instanceof List) {
-                            fileTree = (List<Object>) metadata.get("_aArchiveFileTree");
-                        } else {
-                            fileTree = ((Map<String, Object>) metadata.get("_aArchiveFileTree")).values();
-                        }
-
-                        if (fileTree.stream().anyMatch(fileInZip -> fileInZip instanceof String
-                                && (fileInZip.equals("everest.yaml") || fileInZip.equals("everest.yml") || fileInZip.equals("multimetadata.yml")))) {
-
-                            // take this file, it has an everest.yaml in it
-                            mostRecentFileTimestamp = fileDate;
-                            mostRecentFileUrl = fileUrl;
-                        }
-                    }
+                // if this file is the most recent one, we will download it to check it
+                if (mostRecentFileTimestamp < fileDate && !databaseNoYamlFiles.contains(fileUrl)) {
+                    mostRecentFileTimestamp = fileDate;
+                    mostRecentFileUrl = fileUrl;
                 }
             }
             return this;
@@ -262,8 +255,8 @@ class DatabaseUpdater {
                 }
 
                 if (!everestYamlFound) {
-                    log.warn("=> no everest.yaml found in the file for {}. Adding to the excluded files list.", mostRecentFileUrl);
-                    databaseExcludedFiles.put(mostRecentFileUrl, "No everest.yaml found");
+                    log.warn("=> {} has no yaml file. Adding to the no yaml files list.", mostRecentFileUrl);
+                    databaseNoYamlFiles.add(mostRecentFileUrl);
                 }
             } catch (IOException e) {
                 log.warn("=> could not read zip file from {}. Adding to the excluded files list.", mostRecentFileUrl, e);

@@ -22,7 +22,7 @@ public class HttpServer extends NanoHTTPD {
     public Response serve(IHTTPSession session) {
         log.debug(session.getMethod() + " " + session.getUri());
 
-        if (!Arrays.asList("/everestupdate.yaml", "/everestupdateexcluded.yaml").contains(session.getUri())) {
+        if (!Arrays.asList("/everestupdate.yaml", "/everestupdateexcluded.yaml", "/everestupdatenoyaml.yaml").contains(session.getUri())) {
             return newFixedLengthResponse(Response.Status.NOT_FOUND, "text/plain; charset=UTF-8", "Not Found");
         }
 
