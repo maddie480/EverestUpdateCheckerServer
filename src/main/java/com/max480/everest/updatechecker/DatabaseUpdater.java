@@ -166,7 +166,7 @@ class DatabaseUpdater {
                     log.trace("{} => skipping, no everest.yml", name);
                 } else {
                     log.trace("{} => URL of most recent file (uploaded at {}) is {}", name, parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
-                    updateDatabase(parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
+                    updateDatabase(parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl, parsedModInfo.mostRecentFileSize);
                 }
             }
         }
@@ -178,12 +178,14 @@ class DatabaseUpdater {
     private static class ModInfoParser {
         int mostRecentFileTimestamp = 0;
         String mostRecentFileUrl = null;
+        int mostRecentFileSize = 0;
         Set<String> allFileUrls = new HashSet<>();
 
         ModInfoParser invoke(List<Object> mod, Set<String> databaseNoYamlFiles) {
             for (Map<String, Object> file : ((Map<String, Map<String, Object>>) mod.get(1)).values()) {
                 // get the obvious info about the file (URL and upload date)
                 int fileDate = (int) file.get("_tsDateAdded");
+                int filesize = (int) file.get("_nFilesize");
                 String fileUrl = ((String) file.get("_sDownloadUrl")).replace("dl", "mmdl");
                 allFileUrls.add(fileUrl);
 
@@ -191,6 +193,7 @@ class DatabaseUpdater {
                 if (mostRecentFileTimestamp < fileDate && !databaseNoYamlFiles.contains(fileUrl)) {
                     mostRecentFileTimestamp = fileDate;
                     mostRecentFileUrl = fileUrl;
+                    mostRecentFileSize = filesize;
                 }
             }
             return this;
@@ -205,7 +208,9 @@ class DatabaseUpdater {
      * @param mostRecentFileUrl       The file download URL
      * @throws IOException In case of connection or IO issues.
      */
-    private void updateDatabase(int mostRecentFileTimestamp, String mostRecentFileUrl) throws IOException {
+    private void updateDatabase(int mostRecentFileTimestamp, String mostRecentFileUrl, int expectedSize)
+            throws IOException {
+
         if (databaseExcludedFiles.containsKey(mostRecentFileUrl)) {
             log.trace("=> file was skipped because it is in the excluded list.");
         } else if (database.values().stream().anyMatch(mod -> mod.getUrl().equals(mostRecentFileUrl))) {
@@ -217,7 +222,6 @@ class DatabaseUpdater {
                 IOUtils.copy(new BufferedInputStream(new URL(mostRecentFileUrl).openStream()), os);
             }
 
-            long expectedSize = getFileSize(new URL(mostRecentFileUrl));
             long actualSize = new File("mod.zip").length();
             if (expectedSize != actualSize) {
                 FileUtils.forceDelete(new File("mod.zip"));
@@ -328,26 +332,6 @@ class DatabaseUpdater {
         for (String deletedMod : deletedMods) {
             Mod mod = database.remove(deletedMod);
             log.warn("Mod {} was deleted from the database", mod.toString());
-        }
-    }
-
-    /**
-     * Gets a file's size.
-     *
-     * @param url The file URL
-     * @return The file's size
-     */
-    private long getFileSize(URL url) {
-        HttpURLConnection conn = null;
-        try {
-            conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("HEAD");
-            conn.getInputStream();
-            return conn.getContentLength();
-        } catch (IOException e) {
-            return -1;
-        } finally {
-            if (conn != null) conn.disconnect();
         }
     }
 }
