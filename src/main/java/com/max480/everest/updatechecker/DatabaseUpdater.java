@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 import java.util.zip.ZipEntry;
@@ -107,16 +106,19 @@ class DatabaseUpdater {
      */
     private boolean loadPage(int page) throws IOException {
         log.debug("Loading page {} of the list of mods from GameBanana", page);
-        try (InputStream is = new URL("https://api.gamebanana.com/Core/List/New?page=" + page + "&gameid=6460&format=yaml").openStream()) {
-            List<List<Object>> mods = new Yaml().load(is);
 
-            if (mods.isEmpty()) return false;
+        List<List<Object>> mods = runWithRetry(() -> {
+            try (InputStream is = new URL("https://api.gamebanana.com/Core/List/New?page=" + page + "&gameid=6460&format=yaml").openStream()) {
+                return new Yaml().load(is);
+            }
+        });
 
-            String urlModInfoFinal = getModInfoCallUrl(mods);
-            loadPageModInfo(urlModInfoFinal);
+        if (mods.isEmpty()) return false;
 
-            return true;
-        }
+        String urlModInfoFinal = getModInfoCallUrl(mods);
+        loadPageModInfo(urlModInfoFinal);
+
+        return true;
     }
 
     /**
@@ -153,21 +155,23 @@ class DatabaseUpdater {
     private void loadPageModInfo(String modInfoUrl) throws IOException {
         log.debug("Loading mod details from GameBanana");
 
-        try (InputStream is = new URL(modInfoUrl).openStream()) {
-            List<List<Object>> mods = new Yaml().load(is);
+        List<List<Object>> mods = runWithRetry(() -> {
+            try (InputStream is = new URL(modInfoUrl).openStream()) {
+                return new Yaml().load(is);
+            }
+        });
 
-            for (List<Object> mod : mods) {
-                String name = (String) mod.get(0);
+        for (List<Object> mod : mods) {
+            String name = (String) mod.get(0);
 
-                ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod, databaseNoYamlFiles);
-                existingFiles.addAll(parsedModInfo.allFileUrls);
+            ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod, databaseNoYamlFiles);
+            existingFiles.addAll(parsedModInfo.allFileUrls);
 
-                if (parsedModInfo.mostRecentFileTimestamp == 0) {
-                    log.trace("{} => skipping, no everest.yml", name);
-                } else {
-                    log.trace("{} => URL of most recent file (uploaded at {}) is {}", name, parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
-                    updateDatabase(parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl, parsedModInfo.mostRecentFileSize);
-                }
+            if (parsedModInfo.mostRecentFileTimestamp == 0) {
+                log.trace("{} => skipping, no everest.yml", name);
+            } else {
+                log.trace("{} => URL of most recent file (uploaded at {}) is {}", name, parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
+                updateDatabase(parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl, parsedModInfo.mostRecentFileSize);
             }
         }
     }
@@ -218,9 +222,13 @@ class DatabaseUpdater {
         } else {
             // download the mod
             numberOfModsDownloaded++;
-            try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod.zip"))) {
-                IOUtils.copy(new BufferedInputStream(new URL(mostRecentFileUrl).openStream()), os);
-            }
+
+            runWithRetry(() -> {
+                try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod.zip"))) {
+                    IOUtils.copy(new BufferedInputStream(new URL(mostRecentFileUrl).openStream()), os);
+                    return null; // to fullfill this stupid method signature
+                }
+            });
 
             long actualSize = new File("mod.zip").length();
             if (expectedSize != actualSize) {
@@ -333,5 +341,34 @@ class DatabaseUpdater {
             Mod mod = database.remove(deletedMod);
             log.warn("Mod {} was deleted from the database", mod.toString());
         }
+    }
+
+    /**
+     * Runs a task (typically a network operation), retrying up to 3 times if it throws an IOException.
+     *
+     * @param task The task to run and retry
+     * @param <T>  The return type for the task
+     * @return What the task returned
+     * @throws IOException If the task failed 3 times
+     */
+    private <T> T runWithRetry(NetworkingOperation<T> task) throws IOException {
+        for (int i = 1; i < 3; i++) {
+            try {
+                return task.run();
+            } catch (IOException e) {
+                log.warn("I/O exception while doing networking operation (try {}/3).", i, e);
+
+                // wait a bit before retrying
+                try {
+                    log.debug("Waiting {} seconds before next try.", i * 5);
+                    Thread.sleep(i * 5000);
+                } catch (InterruptedException e2) {
+                    log.warn("Sleep interrupted", e2);
+                }
+            }
+        }
+
+        // 3rd try: this time, if it crashes, let it crash
+        return task.run();
     }
 }

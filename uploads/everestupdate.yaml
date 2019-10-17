@@ -34,10 +34,10 @@ DashPrologue:
   xxHash: [aa741977454a647e]
   URL: https://gamebanana.com/mmdl/419057
 DashCountMod:
-  Version: 0.2.0
-  LastUpdate: 1570735553
-  xxHash: [1c2cb24d1eb459e1]
-  URL: https://gamebanana.com/mmdl/434733
+  Version: 0.3.1
+  LastUpdate: 1571167207
+  xxHash: [7e672d9de06a5bac]
+  URL: https://gamebanana.com/mmdl/435282
 StaminaMeter:
   Version: 1.1.0
   LastUpdate: 1570406560
@@ -393,6 +393,11 @@ SmaerdNogylop:
   LastUpdate: 1570691144
   xxHash: [7c83b727779be4bc]
   URL: https://gamebanana.com/mmdl/434696
+Sib:
+  Version: 1.0.1
+  LastUpdate: 1571206243
+  xxHash: [c367c71a7e7235f8]
+  URL: https://gamebanana.com/mmdl/435324
 its space jam:
   Version: NoVersion
   LastUpdate: 1551527521
@@ -458,6 +463,11 @@ The Nightmare:
   LastUpdate: 1562480157
   xxHash: [ad359a762ffb9003]
   URL: https://gamebanana.com/mmdl/425231
+CelesteTAS:
+  Version: 2.0.0
+  LastUpdate: 1570916750
+  xxHash: [8c35a20120fc770f]
+  URL: https://gamebanana.com/mmdl/434975
 TempleMod:
   Version: 0.0.3
   LastUpdate: 1567935290
@@ -474,10 +484,10 @@ GetOut:
   xxHash: [6fc37b808228a4d6]
   URL: https://gamebanana.com/mmdl/412127
 SummitPrologue:
-  Version: '1.0'
-  LastUpdate: 1570099639
-  xxHash: [c5c8414fef61ad46]
-  URL: https://gamebanana.com/mmdl/434040
+  Version: '1.2'
+  LastUpdate: 1571209958
+  xxHash: [1a4a8e5cdb3718da]
+  URL: https://gamebanana.com/mmdl/435326
 The Crystal City:
   Version: 1.0.0
   LastUpdate: 1569425144
@@ -523,6 +533,11 @@ Mario-1-1:
   LastUpdate: 1527673754
   xxHash: [88285e08a29bd420]
   URL: https://gamebanana.com/mmdl/384223
+GoldenBirdInJournal:
+  Version: 1.1.0
+  LastUpdate: 1571171689
+  xxHash: [fdf29829aa7cba41]
+  URL: https://gamebanana.com/mmdl/435288
 MarathonOfBlades:
   Version: NoVersion
   LastUpdate: 1527474720
@@ -550,9 +565,9 @@ CelesteOfLevels:
   URL: https://gamebanana.com/mmdl/385360
 MoreDasheline:
   Version: 1.0.0
-  LastUpdate: 1570872176
-  xxHash: [7a7e16734d668c08]
-  URL: https://gamebanana.com/mmdl/434878
+  LastUpdate: 1571326899
+  xxHash: [9f12cad8e4636fb9]
+  URL: https://gamebanana.com/mmdl/435434
 Collab-2018-10:
   Version: 1.0.0
   LastUpdate: 1541012082
