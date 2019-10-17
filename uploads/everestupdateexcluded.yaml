@@ -1,6 +1,6 @@
-https://gamebanana.com/mmdl/398096: File https://gamebanana.com/mmdl/413583 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/420279: No everest.yaml found
+https://gamebanana.com/mmdl/398096: Gauntlet Revamped (https://gamebanana.com/mmdl/413583)
+  takes priority over this
+https://gamebanana.com/mmdl/420279: Not a zip, actually a rar
 Ruby'sEntities: Ships with D-sides. D-sides should be updated instead.
 GhostMod: Ships with GhostNet. GhostNet should be updated instead.
 https://gamebanana.com/mmdl/396979: "java.util.zip.ZipException: only DEFLATED entries\
