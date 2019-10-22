@@ -155,6 +155,7 @@ class DatabaseUpdater {
     private void loadPageModInfo(String modInfoUrl) throws IOException {
         log.debug("Loading mod details from GameBanana");
 
+        log.trace("Mod info URL: {}", modInfoUrl);
         List<List<Object>> mods = runWithRetry(() -> {
             try (InputStream is = new URL(modInfoUrl).openStream()) {
                 return new Yaml().load(is);
@@ -186,6 +187,10 @@ class DatabaseUpdater {
         Set<String> allFileUrls = new HashSet<>();
 
         ModInfoParser invoke(List<Object> mod, Set<String> databaseNoYamlFiles) {
+            // deal with mods with no file at all: in this case, GB sends out an empty list, not a map.
+            // We should pay attention to this and handle this specifically.
+            if(Collections.emptyList().equals(mod.get(1))) return this;
+
             for (Map<String, Object> file : ((Map<String, Map<String, Object>>) mod.get(1)).values()) {
                 // get the obvious info about the file (URL and upload date)
                 int fileDate = (int) file.get("_tsDateAdded");

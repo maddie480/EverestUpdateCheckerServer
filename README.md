@@ -1,6 +1,6 @@
 # Everest Update Checker Server
 
-This is the server powering [Everest](https://github.com/EverestAPI/Everest)'s "Check for Updates" feature.
+This is the server powering [Everest](https://github.com/EverestAPI/Everest)'s "Check for Mod Updates" feature.
 
 It basically generates a file named `uploads/everestupdate.yaml` containing information on all Celeste mods published on GameBanana including an `everest.yaml`. For example:
 ```yaml
@@ -29,7 +29,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.1.jar`.
+This will build the project to `target/update-checker-0.0.2.jar`.
 
 ## Running the project
 
@@ -42,7 +42,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.1.jar [port] [minutes]
+java -jar update-checker-0.0.2.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
