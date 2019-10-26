@@ -34,7 +34,7 @@ This will build the project to `target/update-checker-0.0.2.jar`.
 ## Running the project
 
 First, follow these steps to set it up:
-* Get the JAR that was produced by Maven.
+* Get the JAR that was produced by Maven, or download it in [the Releases tab](https://github.com/max4805/EverestUpdateCheckerServer/releases).
 * Download the `uploads` directory on this repository, and put it next to the JAR: that will prevent the server from rebuilding the database, which implies _downloading the entirety of GameBanana_.
 * If you want to give control over the database to other people, in order for them to handle the few specific cases where automatic update doesn't work (this is really rare though, see [Handling special cases](#handling-special-cases)), create a `code.txt` file next to the JAR. Put a code in it, then share it with the people you want to be allowed to edit the database.
   * If you don't create a `code.txt` file, the "edit database remotely" feature will be disabled.
@@ -74,7 +74,7 @@ You can also use these two methods with those two other files:
 
 Some mods may need editing the database manually: that is, all cases where a mod offers multiple downloads. These cases need manual editing of the database.
 
-### Multiple downloads with the same ID (f.e. DJMapHelper)
+### Multiple downloads with the same ID
 
 Those mods be defined with two hashes in `everestupdate.yaml`, so that the updater can tell if the version the user has is _one of_ the up-to-date ones.
 
@@ -86,17 +86,18 @@ DJMapHelper:
   URL: https://gamebanana.com/mmdl/413533
 ```
 
+_(Please note DJ Map Helper no longer has two separate downloads, this is just an example if this happens again.)_
+
 ### Multiple downloads with different IDs (f.e. Simpleste)
 
 All the versions of the download should be added to the database with their respective everest.yaml IDs, so that the update checker can check against the version the user has downloaded.
 
 ### List of mods to handle manually
 
-_Please note that the `everestupdate.yaml` file uploaded to this repository already takes these cases into account. You don't need to edit it, just get the directory and run the server._
+_Please note that the `everestupdate.yaml` file uploaded to this repository already takes these cases into account. You don't need to edit it, just get the `uploads` directory and run the server._
 
-* Ruby's Entities: Remove it from the database. Ships with D-sides.
-* GhostMod: Remove it from the database. Ships with GhostNet.
-* DJ Map Helper: Add the two hashes, for the Windows and Linux version.
+* Ruby's Entities: Remove it from the database and blacklist it. Ships with D-sides.
+* GhostMod: Remove it from the database and blacklist it. Ships with GhostNet.
 * Simpleste: Get the 3 versions of it, and add them all to the database.
 
 ## Libraries used
