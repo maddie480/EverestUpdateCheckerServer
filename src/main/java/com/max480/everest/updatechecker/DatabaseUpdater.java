@@ -12,6 +12,8 @@ import org.yaml.snakeyaml.Yaml;
 import java.io.*;
 import java.net.URL;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -25,6 +27,8 @@ class DatabaseUpdater {
     private Set<String> existingFiles = new HashSet<>();
 
     private XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
+
+    private Pattern gamebananaLinkRegex = Pattern.compile(".*(https://gamebanana.com/mmdl/[0-9]+).*");
 
     void updateDatabaseYaml() throws IOException {
         log.info("=== Started searching for updates");
@@ -331,6 +335,7 @@ class DatabaseUpdater {
      * If so, deletes it from the database.
      */
     private void checkForModDeletion() {
+        // === 1. Mod database
         Set<String> deletedMods = new HashSet<>();
 
         for (Map.Entry<String, Mod> databaseEntry : database.entrySet()) {
@@ -346,6 +351,52 @@ class DatabaseUpdater {
         for (String deletedMod : deletedMods) {
             Mod mod = database.remove(deletedMod);
             log.warn("Mod {} was deleted from the database", mod.toString());
+        }
+
+
+        // === 2. Excluded files list
+        deletedMods.clear();
+
+        for (Map.Entry<String, String> databaseEntry : databaseExcludedFiles.entrySet()) {
+            // if the entry is an URL, check if the file still exists
+            if (databaseEntry.getKey().startsWith("http://") || databaseEntry.getKey().startsWith("https://")) {
+                if (!existingFiles.contains(databaseEntry.getKey())) {
+                    deletedMods.add(databaseEntry.getKey());
+                }
+            }
+
+            // if the description contains a GB URL, check if it still exists
+            Matcher descriptionMatcher = gamebananaLinkRegex.matcher(databaseEntry.getValue());
+            if (descriptionMatcher.matches()) {
+                String gbLink = descriptionMatcher.group(1);
+                if (!existingFiles.contains(gbLink)) {
+                    deletedMods.add(databaseEntry.getKey());
+                }
+            }
+        }
+
+        // now, actually delete the mods from the excluded files list.
+        for (String deletedMod : deletedMods) {
+            databaseExcludedFiles.remove(deletedMod);
+            log.warn("File {} was deleted from the excluded files list", deletedMod);
+        }
+
+
+        // === 3. No yaml files list
+        deletedMods.clear();
+
+        for (String file : databaseNoYamlFiles) {
+            // check if the URL was encountered when checking all GB mods
+            if (!existingFiles.contains(file)) {
+                // it was not: save the mod for deletion
+                deletedMods.add(file);
+            }
+        }
+
+        // now, actually delete the mods from the no yaml files list.
+        if (!deletedMods.isEmpty()) {
+            databaseNoYamlFiles.removeAll(deletedMods);
+            log.warn("Files {} were deleted from the no yaml files list", deletedMods);
         }
     }
 
