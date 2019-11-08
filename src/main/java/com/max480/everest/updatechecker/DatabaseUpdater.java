@@ -75,7 +75,7 @@ class DatabaseUpdater {
         if (new File("uploads/everestupdatenoyaml.yaml").exists()) {
             try (InputStream is = new FileInputStream("uploads/everestupdatenoyaml.yaml")) {
                 List<String> noYamlFilesList = new Yaml().load(is);
-                databaseNoYamlFiles = new HashSet<>(noYamlFilesList);
+                databaseNoYamlFiles = new TreeSet<>(noYamlFilesList);
             }
         }
     }
