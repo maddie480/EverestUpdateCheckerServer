@@ -223,11 +223,6 @@ DecrepitLocale:
   LastUpdate: 1565799785
   xxHash: [67050ca7592143d9]
   URL: https://gamebanana.com/mmdl/428902
-BGswitch:
-  Version: 0.1.0
-  LastUpdate: 1548062966
-  xxHash: [c04d0390e0ca7685]
-  URL: https://gamebanana.com/mmdl/407828
 PathofHopeChapter:
   Version: 1.0.3
   LastUpdate: 1569946598
@@ -503,11 +498,6 @@ New Adventure:
   LastUpdate: 1570873376
   xxHash: [fb6e24ff442e5bf0]
   URL: https://gamebanana.com/mmdl/434889
-Elemental Chaos:
-  Version: 1.0.0
-  LastUpdate: 1549650721
-  xxHash: [ae2d78b56229451b]
-  URL: https://gamebanana.com/mmdl/409745
 Troll_City:
   Version: 1.0.0
   LastUpdate: 1546873269
@@ -568,11 +558,6 @@ InfiniteSaves:
   LastUpdate: 1568217515
   xxHash: [58d1d2edd6942ef4]
   URL: https://gamebanana.com/mmdl/431626
-testroom:
-  Version: 1.0.1
-  LastUpdate: 1542900207
-  xxHash: [90de3509a912634b]
-  URL: https://gamebanana.com/mmdl/402534
 AdventureHelper:
   Version: 1.3.0
   LastUpdate: 1572011129
