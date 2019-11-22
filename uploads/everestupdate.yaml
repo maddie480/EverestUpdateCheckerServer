@@ -19,10 +19,10 @@ KaydenFoxShroudedThoughts:
   xxHash: [b1620fc9f8fb4da7]
   URL: https://gamebanana.com/mmdl/437781
 FactoryHelper:
-  Version: 1.1.2
-  LastUpdate: 1573334119
-  xxHash: [dd950781d9042c74]
-  URL: https://gamebanana.com/mmdl/438073
+  Version: 1.1.3
+  LastUpdate: 1573982494
+  xxHash: [88248061c9ceffaf]
+  URL: https://gamebanana.com/mmdl/438875
 forsakencity_remix:
   Version: '1.1'
   LastUpdate: 1550075395
@@ -200,19 +200,19 @@ Prideline:
   URL: https://gamebanana.com/mmdl/430886
 SpeedrunTool:
   Version: 1.6.16
-  LastUpdate: 1573806178
-  xxHash: [ec067ebee43d9f6f]
-  URL: https://gamebanana.com/mmdl/438653
+  LastUpdate: 1573869063
+  xxHash: [8b7b35088f566ad7]
+  URL: https://gamebanana.com/mmdl/438726
 C+:
   Version: '2.0'
   LastUpdate: 1543852304
   xxHash: [3e0a51548d8f41fa]
   URL: https://gamebanana.com/mmdl/403556
 PolygonDreams:
-  Version: 4.3.1
-  LastUpdate: 1573730476
-  xxHash: [d16b06a0e6c26ffb]
-  URL: https://gamebanana.com/mmdl/438573
+  Version: 4.3.2
+  LastUpdate: 1573974207
+  xxHash: [2dfacdf340eae405]
+  URL: https://gamebanana.com/mmdl/438865
 DournMap:
   Version: 0.0.1
   LastUpdate: 1535752104
@@ -259,10 +259,10 @@ CavernHelper:
   xxHash: [6f613c64ad040d52]
   URL: https://gamebanana.com/mmdl/413265
 ExtendedVariantMode:
-  Version: 0.10.4
-  LastUpdate: 1573671306
-  xxHash: [19e8b90f7e5b0e0f]
-  URL: https://gamebanana.com/mmdl/438507
+  Version: 0.11.1
+  LastUpdate: 1574360982
+  xxHash: [6d8eaaf4744c8e63]
+  URL: https://gamebanana.com/mmdl/439340
 CrossoverMod:
   Version: 1.0.0
   LastUpdate: 1548114274
@@ -324,10 +324,10 @@ ForsakenMetropolis:
   xxHash: [d1e5cb01354ef468]
   URL: https://gamebanana.com/mmdl/434827
 DJMapHelper:
-  Version: 1.7.6
-  LastUpdate: 1573398529
-  xxHash: [6aec101f71e68c61]
-  URL: https://gamebanana.com/mmdl/438158
+  Version: 1.7.8
+  LastUpdate: 1574089055
+  xxHash: [d5f6f7e0bfbdc407]
+  URL: https://gamebanana.com/mmdl/439009
 Dadbod:
   Version: 1.0.0
   LastUpdate: 1569950143
@@ -439,10 +439,10 @@ VanillaTweaks:
   xxHash: [29c199ef36aca759]
   URL: https://gamebanana.com/mmdl/438144
 SmaerdNogylop:
-  Version: '4.1'
-  LastUpdate: 1573730340
-  xxHash: [dcaeebfa0e81d9fe]
-  URL: https://gamebanana.com/mmdl/438572
+  Version: 5.0.1
+  LastUpdate: 1574089346
+  xxHash: [7924905e481ae2cc]
+  URL: https://gamebanana.com/mmdl/439010
 Sib:
   Version: 2.1.0
   LastUpdate: 1573605061
@@ -529,10 +529,10 @@ GetOut:
   xxHash: [6fc37b808228a4d6]
   URL: https://gamebanana.com/mmdl/412127
 SummitPrologue:
-  Version: '1.2'
-  LastUpdate: 1571209958
-  xxHash: [1a4a8e5cdb3718da]
-  URL: https://gamebanana.com/mmdl/435326
+  Version: '1.3'
+  LastUpdate: 1574286793
+  xxHash: [41ef180d95860d99]
+  URL: https://gamebanana.com/mmdl/439266
 The Crystal City:
   Version: 1.0.0
   LastUpdate: 1569425144
@@ -553,6 +553,11 @@ SpeedCommands:
   LastUpdate: 1570927559
   xxHash: [68936982f9e8186e]
   URL: https://gamebanana.com/mmdl/434983
+AchingCavern:
+  Version: 1.0.0
+  LastUpdate: 1574240470
+  xxHash: [6ff21ac782b9870b]
+  URL: https://gamebanana.com/mmdl/439216
 InfiniteSaves:
   Version: 1.0.0
   LastUpdate: 1568217515
