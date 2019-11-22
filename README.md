@@ -29,7 +29,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.3.jar`.
+This will build the project to `target/update-checker-0.0.4.jar`.
 
 ## Running the project
 
@@ -42,7 +42,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.3.jar [port] [minutes]
+java -jar update-checker-0.0.4.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
@@ -88,17 +88,12 @@ DJMapHelper:
 
 _(Please note DJ Map Helper no longer has two separate downloads, this is just an example if this happens again.)_
 
-### Multiple downloads with different IDs (f.e. Simpleste)
-
-All the versions of the download should be added to the database with their respective everest.yaml IDs, so that the update checker can check against the version the user has downloaded.
-
 ### List of mods to handle manually
 
 _Please note that the `everestupdate.yaml` file uploaded to this repository already takes these cases into account. You don't need to edit it, just get the `uploads` directory and run the server._
 
 * Ruby's Entities: Remove it from the database and blacklist it. Ships with D-sides.
 * GhostMod: Remove it from the database and blacklist it. Ships with GhostNet.
-* Simpleste: Get the 3 versions of it, and add them all to the database.
 
 ## Libraries used
 

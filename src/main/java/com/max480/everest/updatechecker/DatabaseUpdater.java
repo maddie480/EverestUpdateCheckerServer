@@ -173,11 +173,15 @@ class DatabaseUpdater {
             ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod, databaseNoYamlFiles);
             existingFiles.addAll(parsedModInfo.allFileUrls);
 
-            if (parsedModInfo.mostRecentFileTimestamp == 0) {
-                log.trace("{} => skipping, no everest.yml", name);
+            if (parsedModInfo.mostRecentFileUrl == null) {
+                log.trace("{} => skipping, no suitable file found", name);
+            } else if (databaseExcludedFiles.containsKey(parsedModInfo.mostRecentFileUrl)) {
+                log.trace("=> mod was skipped because the most recent file is in the excluded list.");
             } else {
                 log.trace("{} => URL of most recent file (uploaded at {}) is {}", name, parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
-                updateDatabase(parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl, parsedModInfo.mostRecentFileSize);
+                for (int i = 0; i < parsedModInfo.allFileUrls.size(); i++) {
+                    updateDatabase(parsedModInfo.allFileTimestamps.get(i), parsedModInfo.allFileUrls.get(i), parsedModInfo.allFileSizes.get(i));
+                }
             }
         }
     }
@@ -188,8 +192,9 @@ class DatabaseUpdater {
     private static class ModInfoParser {
         int mostRecentFileTimestamp = 0;
         String mostRecentFileUrl = null;
-        int mostRecentFileSize = 0;
-        Set<String> allFileUrls = new HashSet<>();
+        List<String> allFileUrls = new ArrayList<>();
+        List<Integer> allFileSizes = new ArrayList<>();
+        List<Integer> allFileTimestamps = new ArrayList<>();
 
         ModInfoParser invoke(List<Object> mod, Set<String> databaseNoYamlFiles) {
             // deal with mods with no file at all: in this case, GB sends out an empty list, not a map.
@@ -202,12 +207,13 @@ class DatabaseUpdater {
                 int filesize = (int) file.get("_nFilesize");
                 String fileUrl = ((String) file.get("_sDownloadUrl")).replace("dl", "mmdl");
                 allFileUrls.add(fileUrl);
+                allFileSizes.add(filesize);
+                allFileTimestamps.add(fileDate);
 
                 // if this file is the most recent one, we will download it to check it
                 if (mostRecentFileTimestamp < fileDate && !databaseNoYamlFiles.contains(fileUrl)) {
                     mostRecentFileTimestamp = fileDate;
                     mostRecentFileUrl = fileUrl;
-                    mostRecentFileSize = filesize;
                 }
             }
             return this;
@@ -227,6 +233,8 @@ class DatabaseUpdater {
 
         if (databaseExcludedFiles.containsKey(mostRecentFileUrl)) {
             log.trace("=> file was skipped because it is in the excluded list.");
+        } else if (databaseNoYamlFiles.contains(mostRecentFileUrl)) {
+            log.trace("=> file was skipped because it is in the no yaml file list.");
         } else if (database.values().stream().anyMatch(mod -> mod.getUrl().equals(mostRecentFileUrl))) {
             log.trace("=> already up to date");
         } else {

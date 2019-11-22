@@ -298,11 +298,21 @@ FrostHelper:
   LastUpdate: 1572384550
   xxHash: [7462b20c02dd59cd]
   URL: https://gamebanana.com/mmdl/436934
+Nameguy's D-Sides v2.05:
+  Version: '2.05'
+  LastUpdate: 1553778743
+  xxHash: [a8d4ee44b633f09c]
+  URL: https://gamebanana.com/mmdl/414924
 CelesteEmojis:
   Version: 1.1.0
   LastUpdate: 1573671910
   xxHash: [8d253c79ad731ae0]
   URL: https://gamebanana.com/mmdl/438509
+Nameguy's D-Sides v2.04:
+  Version: '2.04'
+  LastUpdate: 1553649784
+  xxHash: [c778f689249da1f6]
+  URL: https://gamebanana.com/mmdl/414817
 DeathMarkers:
   Version: 1.0.0
   LastUpdate: 1562780390
@@ -328,6 +338,11 @@ DJMapHelper:
   LastUpdate: 1574089055
   xxHash: [d5f6f7e0bfbdc407]
   URL: https://gamebanana.com/mmdl/439009
+Nameguy's D-Sides v2.07:
+  Version: '2.07'
+  LastUpdate: 1568509216
+  xxHash: [b77499bd21c79d8d]
+  URL: https://gamebanana.com/mmdl/431967
 Dadbod:
   Version: 1.0.0
   LastUpdate: 1569950143
