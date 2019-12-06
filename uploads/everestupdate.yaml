@@ -9,20 +9,20 @@ WobbleDecals:
   xxHash: [49ec0c58414c99ea]
   URL: https://gamebanana.com/mmdl/430826
 Synchronized Jumping:
-  Version: 1.0.2
-  LastUpdate: 1568583266
-  xxHash: [834ba0424240f519]
-  URL: https://gamebanana.com/mmdl/432097
+  Version: 1.0.3
+  LastUpdate: 1574462983
+  xxHash: [645d10745c2a698e]
+  URL: https://gamebanana.com/mmdl/439477
 KaydenFoxShroudedThoughts:
-  Version: 1.1.0
-  LastUpdate: 1573078524
-  xxHash: [b1620fc9f8fb4da7]
-  URL: https://gamebanana.com/mmdl/437781
+  Version: 1.1.1
+  LastUpdate: 1574462401
+  xxHash: [47d4e9523e89d87e]
+  URL: https://gamebanana.com/mmdl/439474
 FactoryHelper:
-  Version: 1.1.3
-  LastUpdate: 1573982494
-  xxHash: [88248061c9ceffaf]
-  URL: https://gamebanana.com/mmdl/438875
+  Version: 1.1.4
+  LastUpdate: 1574516635
+  xxHash: [35c3f0ed8de2d914]
+  URL: https://gamebanana.com/mmdl/439540
 forsakencity_remix:
   Version: '1.1'
   LastUpdate: 1550075395
@@ -54,10 +54,10 @@ DashCountMod:
   xxHash: [7e672d9de06a5bac]
   URL: https://gamebanana.com/mmdl/435282
 StaminaMeter:
-  Version: 1.1.1
-  LastUpdate: 1571458893
-  xxHash: [c9f200f65b32bb43]
-  URL: https://gamebanana.com/mmdl/435605
+  Version: 1.2.1
+  LastUpdate: 1575334922
+  xxHash: [ed887cc14547bbc2]
+  URL: https://gamebanana.com/mmdl/440680
 Suika's Summit:
   Version: 1.0.0
   LastUpdate: 1558336654
@@ -105,14 +105,19 @@ SimpleTeleporter:
   URL: https://gamebanana.com/mmdl/388808
 WaterTemple:
   Version: '1.04'
-  LastUpdate: 1556646508
-  xxHash: [bf0d1927204fa83d]
-  URL: https://gamebanana.com/mmdl/418393
+  LastUpdate: 1575478488
+  xxHash: [27c8dd135663f622]
+  URL: https://gamebanana.com/mmdl/440860
 Gauntlet:
   Version: 1.0.0
   LastUpdate: 1552530738
   xxHash: [0e8e01d038b2d1d9]
   URL: https://gamebanana.com/mmdl/413583
+TempleEyeTrackingMadeline:
+  Version: 0.0.3
+  LastUpdate: 1575190884
+  xxHash: [80c93371e6111392]
+  URL: https://gamebanana.com/mmdl/440472
 EnterTheSun:
   Version: 1.0.0
   LastUpdate: 1548133808
@@ -164,10 +169,10 @@ ArchaicTerrace:
   xxHash: [588489169e86b73e]
   URL: https://gamebanana.com/mmdl/437449
 BlackholeRealm:
-  Version: 1.0.0
-  LastUpdate: 1570568924
-  xxHash: [17de08501efa79ab]
-  URL: https://gamebanana.com/mmdl/434598
+  Version: 1.0.1
+  LastUpdate: 1575111092
+  xxHash: [e27d20f9dc7dc19d]
+  URL: https://gamebanana.com/mmdl/440308
 celeste_translated:
   Version: 1.0.0
   LastUpdate: 1572103028
@@ -184,10 +189,10 @@ GhostNetMod:
   xxHash: [264f24a9a7223e8c]
   URL: https://gamebanana.com/mmdl/393244
 CutsceneHelper:
-  Version: 1.4.0
-  LastUpdate: 1573148144
-  xxHash: [3640e3c113e53042]
-  URL: https://gamebanana.com/mmdl/437847
+  Version: 1.4.1
+  LastUpdate: 1575065146
+  xxHash: [f0ae520baa3e18a2]
+  URL: https://gamebanana.com/mmdl/440231
 ClutterHelper:
   Version: 1.0.0
   LastUpdate: 1572121921
@@ -209,15 +214,20 @@ C+:
   xxHash: [3e0a51548d8f41fa]
   URL: https://gamebanana.com/mmdl/403556
 PolygonDreams:
-  Version: 4.3.2
-  LastUpdate: 1573974207
-  xxHash: [2dfacdf340eae405]
-  URL: https://gamebanana.com/mmdl/438865
+  Version: 4.5.1
+  LastUpdate: 1575449997
+  xxHash: [81caec8c29f6dc2f]
+  URL: https://gamebanana.com/mmdl/440827
 DournMap:
   Version: 0.0.1
   LastUpdate: 1535752104
   xxHash: [c23af87865d7f5cf]
   URL: https://gamebanana.com/mmdl/395150
+Spoopy's Laid Back Level Pack:
+  Version: 1.0.0
+  LastUpdate: 1575351436
+  xxHash: [6c030d5b53583da5]
+  URL: https://gamebanana.com/mmdl/440706
 DecrepitLocale:
   Version: 1.1.0
   LastUpdate: 1565799785
@@ -259,10 +269,10 @@ CavernHelper:
   xxHash: [6f613c64ad040d52]
   URL: https://gamebanana.com/mmdl/413265
 ExtendedVariantMode:
-  Version: 0.11.1
-  LastUpdate: 1574360982
-  xxHash: [6d8eaaf4744c8e63]
-  URL: https://gamebanana.com/mmdl/439340
+  Version: 0.11.5
+  LastUpdate: 1575483824
+  xxHash: [4e0c017eaca4034c]
+  URL: https://gamebanana.com/mmdl/440868
 CrossoverMod:
   Version: 1.0.0
   LastUpdate: 1548114274
@@ -334,10 +344,10 @@ ForsakenMetropolis:
   xxHash: [d1e5cb01354ef468]
   URL: https://gamebanana.com/mmdl/434827
 DJMapHelper:
-  Version: 1.7.8
-  LastUpdate: 1574089055
-  xxHash: [d5f6f7e0bfbdc407]
-  URL: https://gamebanana.com/mmdl/439009
+  Version: 1.7.10
+  LastUpdate: 1574994226
+  xxHash: [715fe051bceb5c11]
+  URL: https://gamebanana.com/mmdl/440165
 Nameguy's D-Sides v2.07:
   Version: '2.07'
   LastUpdate: 1568509216
@@ -364,20 +374,20 @@ NoDevilLivedOn:
   xxHash: [5d2d88817211f50b]
   URL: https://gamebanana.com/mmdl/384205
 Etselec:
-  Version: 1.9.1
-  LastUpdate: 1573213619
-  xxHash: [6d243d2a17a7e467]
-  URL: https://gamebanana.com/mmdl/437908
+  Version: 2.2.0
+  LastUpdate: 1575039124
+  xxHash: [26ce2f7ae1a6df73]
+  URL: https://gamebanana.com/mmdl/440200
 The Pit:
   Version: 0.7.2
   LastUpdate: 1570798695
   xxHash: [1fd3fb19eeb06c57]
   URL: https://gamebanana.com/mmdl/434803
 Point of No Return:
-  Version: 1.0.1
-  LastUpdate: 1567757614
-  xxHash: [d1e78b9e752c42fb]
-  URL: https://gamebanana.com/mmdl/431119
+  Version: 1.0.2
+  LastUpdate: 1574462797
+  xxHash: [0ef55d035c58103f]
+  URL: https://gamebanana.com/mmdl/439475
 CoreModeResetter:
   Version: 1.0.0
   LastUpdate: 1531313680
@@ -438,6 +448,11 @@ Lake of Purity:
   LastUpdate: 1552151246
   xxHash: [157cdfc743289177]
   URL: https://gamebanana.com/mmdl/413101
+Ultra Heaven:
+  Version: 1.0.0
+  LastUpdate: 1575595239
+  xxHash: [4bbf2ed50cd8f16f]
+  URL: https://gamebanana.com/mmdl/440986
 Madeline's bizarre adventure:
   Version: 1.0.0
   LastUpdate: 1533107493
@@ -454,15 +469,15 @@ VanillaTweaks:
   xxHash: [29c199ef36aca759]
   URL: https://gamebanana.com/mmdl/438144
 SmaerdNogylop:
-  Version: 5.0.1
-  LastUpdate: 1574089346
-  xxHash: [7924905e481ae2cc]
-  URL: https://gamebanana.com/mmdl/439010
+  Version: 5.1.4
+  LastUpdate: 1575536910
+  xxHash: [8b087400942519f0]
+  URL: https://gamebanana.com/mmdl/440923
 Sib:
-  Version: 2.1.0
-  LastUpdate: 1573605061
-  xxHash: [7d8c26d2d222920f]
-  URL: https://gamebanana.com/mmdl/438473
+  Version: 3.0.0
+  LastUpdate: 1574458356
+  xxHash: [67d0c5fc591ee9cf]
+  URL: https://gamebanana.com/mmdl/439443
 its space jam:
   Version: NoVersion
   LastUpdate: 1551527521
@@ -509,10 +524,10 @@ Jutatsuki:
   xxHash: [2cf3c3c2b826470f]
   URL: https://gamebanana.com/mmdl/424931
 New Adventure:
-  Version: 0.4.1
-  LastUpdate: 1570873376
-  xxHash: [fb6e24ff442e5bf0]
-  URL: https://gamebanana.com/mmdl/434889
+  Version: 0.4.3
+  LastUpdate: 1574461971
+  xxHash: [c5646cfdadc26381]
+  URL: https://gamebanana.com/mmdl/439467
 Troll_City:
   Version: 1.0.0
   LastUpdate: 1546873269
@@ -524,15 +539,10 @@ The Nightmare:
   xxHash: [ad359a762ffb9003]
   URL: https://gamebanana.com/mmdl/425231
 CelesteTAS:
-  Version: 2.0.3
-  LastUpdate: 1573790744
-  xxHash: [ed3c8002326496b0]
-  URL: https://gamebanana.com/mmdl/438637
-TempleMod:
-  Version: 0.0.3
-  LastUpdate: 1567935290
-  xxHash: [04b20c4c9b47ae80]
-  URL: https://gamebanana.com/mmdl/431305
+  Version: 2.0.4
+  LastUpdate: 1574826904
+  xxHash: [5b0d8e588a81ed4c]
+  URL: https://gamebanana.com/mmdl/440008
 RainbowMod:
   Version: 3.2.0
   LastUpdate: 1533337098
@@ -544,10 +554,10 @@ GetOut:
   xxHash: [6fc37b808228a4d6]
   URL: https://gamebanana.com/mmdl/412127
 SummitPrologue:
-  Version: '1.3'
-  LastUpdate: 1574286793
-  xxHash: [41ef180d95860d99]
-  URL: https://gamebanana.com/mmdl/439266
+  Version: '1.401'
+  LastUpdate: 1575575359
+  xxHash: [a94a09cb1c0e35e2]
+  URL: https://gamebanana.com/mmdl/440962
 The Crystal City:
   Version: 1.0.0
   LastUpdate: 1569425144
@@ -608,6 +618,11 @@ CelesteArcade:
   LastUpdate: 1570057268
   xxHash: [647b2973e71ff655]
   URL: https://gamebanana.com/mmdl/433975
+FullClearStamp:
+  Version: 1.0.0
+  LastUpdate: 1575043790
+  xxHash: [130f8f16671d27af]
+  URL: https://gamebanana.com/mmdl/440207
 LiquidMod:
   Version: 1.0.0
   LastUpdate: 1565326670
