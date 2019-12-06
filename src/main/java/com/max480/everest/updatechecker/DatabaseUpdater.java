@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -103,6 +104,19 @@ class DatabaseUpdater {
     }
 
     /**
+     * A small object to hold an itemtype/itemid pair (this identifies a mod uniquely on GameBanana).
+     */
+    private static class QueriedModInfo {
+        private String itemtype;
+        private int itemid;
+
+        private QueriedModInfo(String itemtype, int itemid) {
+            this.itemtype = itemtype;
+            this.itemid = itemid;
+        }
+    }
+
+    /**
      * Loads all the mods from a page in GameBanana.
      *
      * @param page The page to load (1-based)
@@ -120,8 +134,13 @@ class DatabaseUpdater {
 
         if (mods.isEmpty()) return false;
 
-        String urlModInfoFinal = getModInfoCallUrl(mods);
-        loadPageModInfo(urlModInfoFinal);
+        // map this list of arrays into a more Java-friendly object
+        List<QueriedModInfo> queriedModInfo = mods.stream()
+                .map(info -> new QueriedModInfo((String) info.get(0), (int) info.get(1)))
+                .collect(Collectors.toList());
+
+        String urlModInfo = getModInfoCallUrl(queriedModInfo);
+        loadPageModInfo(urlModInfo, queriedModInfo);
 
         return true;
     }
@@ -133,16 +152,13 @@ class DatabaseUpdater {
      * @param mods The mods to get info for
      * @return The URL to call to get info on those mods
      */
-    private String getModInfoCallUrl(List<List<Object>> mods) {
+    private String getModInfoCallUrl(List<QueriedModInfo> mods) {
         StringBuilder urlModInfo = new StringBuilder("https://api.gamebanana.com/Core/Item/Data?");
         int index = 0;
-        for (List<Object> mod : mods) {
-            String type = (String) mod.get(0);
-            int id = (int) mod.get(1);
-
+        for (QueriedModInfo mod : mods) {
             urlModInfo
-                    .append("itemtype[").append(index).append("]=").append(type)
-                    .append("&itemid[").append(index).append("]=").append(id)
+                    .append("itemtype[").append(index).append("]=").append(mod.itemtype)
+                    .append("&itemid[").append(index).append("]=").append(mod.itemid)
                     .append("&fields[").append(index).append("]=name,Files().aFiles()&");
             index++;
         }
@@ -154,10 +170,11 @@ class DatabaseUpdater {
     /**
      * Loads a page of mod info by calling the given url and downloading the updated files.
      *
-     * @param modInfoUrl The url to call to get the mod info
+     * @param modInfoUrl     The url to call to get the mod info
+     * @param queriedModInfo The list of mods the URL gets info for
      * @throws IOException In case of connection or IO issues.
      */
-    private void loadPageModInfo(String modInfoUrl) throws IOException {
+    private void loadPageModInfo(String modInfoUrl, List<QueriedModInfo> queriedModInfo) throws IOException {
         log.debug("Loading mod details from GameBanana");
 
         log.trace("Mod info URL: {}", modInfoUrl);
@@ -167,11 +184,16 @@ class DatabaseUpdater {
             }
         });
 
+        Iterator<QueriedModInfo> queriedModInfoIterator = queriedModInfo.iterator();
+
         for (List<Object> mod : mods) {
+            // we asked for name,Files().aFiles()
             String name = (String) mod.get(0);
 
-            ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod, databaseNoYamlFiles);
+            ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod.get(1), databaseNoYamlFiles);
             existingFiles.addAll(parsedModInfo.allFileUrls);
+
+            QueriedModInfo thisModInfo = queriedModInfoIterator.next();
 
             if (parsedModInfo.mostRecentFileUrl == null) {
                 log.trace("{} => skipping, no suitable file found", name);
@@ -180,7 +202,8 @@ class DatabaseUpdater {
             } else {
                 log.trace("{} => URL of most recent file (uploaded at {}) is {}", name, parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
                 for (int i = 0; i < parsedModInfo.allFileUrls.size(); i++) {
-                    updateDatabase(parsedModInfo.allFileTimestamps.get(i), parsedModInfo.allFileUrls.get(i), parsedModInfo.allFileSizes.get(i));
+                    updateDatabase(parsedModInfo.allFileTimestamps.get(i), parsedModInfo.allFileUrls.get(i), parsedModInfo.allFileSizes.get(i),
+                            thisModInfo.itemtype, thisModInfo.itemid);
                 }
             }
         }
@@ -196,12 +219,12 @@ class DatabaseUpdater {
         List<Integer> allFileSizes = new ArrayList<>();
         List<Integer> allFileTimestamps = new ArrayList<>();
 
-        ModInfoParser invoke(List<Object> mod, Set<String> databaseNoYamlFiles) {
+        ModInfoParser invoke(Object fileList, Set<String> databaseNoYamlFiles) {
             // deal with mods with no file at all: in this case, GB sends out an empty list, not a map.
             // We should pay attention to this and handle this specifically.
-            if (Collections.emptyList().equals(mod.get(1))) return this;
+            if (Collections.emptyList().equals(fileList)) return this;
 
-            for (Map<String, Object> file : ((Map<String, Map<String, Object>>) mod.get(1)).values()) {
+            for (Map<String, Object> file : ((Map<String, Map<String, Object>>) fileList).values()) {
                 // get the obvious info about the file (URL and upload date)
                 int fileDate = (int) file.get("_tsDateAdded");
                 int filesize = (int) file.get("_nFilesize");
@@ -224,18 +247,20 @@ class DatabaseUpdater {
      * Checks if the database has to be updated to include the specified mod. If it does, downloads the mod
      * and extracts all required info from it, then includes it in the database.
      *
-     * @param mostRecentFileTimestamp The timestamp for the file
-     * @param mostRecentFileUrl       The file download URL
+     * @param fileTimestamp The timestamp for the file
+     * @param fileUrl       The file download URL
+     * @param gbType        The mod type on GameBanana
+     * @param gbId          The mod ID on GameBanana
      * @throws IOException In case of connection or IO issues.
      */
-    private void updateDatabase(int mostRecentFileTimestamp, String mostRecentFileUrl, int expectedSize)
+    private void updateDatabase(int fileTimestamp, String fileUrl, int expectedSize, String gbType, int gbId)
             throws IOException {
 
-        if (databaseExcludedFiles.containsKey(mostRecentFileUrl)) {
+        if (databaseExcludedFiles.containsKey(fileUrl)) {
             log.trace("=> file was skipped because it is in the excluded list.");
-        } else if (databaseNoYamlFiles.contains(mostRecentFileUrl)) {
+        } else if (databaseNoYamlFiles.contains(fileUrl)) {
             log.trace("=> file was skipped because it is in the no yaml file list.");
-        } else if (database.values().stream().anyMatch(mod -> mod.getUrl().equals(mostRecentFileUrl))) {
+        } else if (database.values().stream().anyMatch(mod -> mod.getUrl().equals(fileUrl))) {
             log.trace("=> already up to date");
         } else {
             // download the mod
@@ -243,7 +268,7 @@ class DatabaseUpdater {
 
             runWithRetry(() -> {
                 try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod.zip"))) {
-                    IOUtils.copy(new BufferedInputStream(new URL(mostRecentFileUrl).openStream()), os);
+                    IOUtils.copy(new BufferedInputStream(new URL(fileUrl).openStream()), os);
                     return null; // to fullfill this stupid method signature
                 }
             });
@@ -278,19 +303,19 @@ class DatabaseUpdater {
                     if (!entry.isDirectory() && (entry.getName().equals("everest.yaml")
                             || entry.getName().equals("everest.yml") || entry.getName().equals("multimetadata.yml"))) {
 
-                        parseEverestYamlFromZipFile(zip, xxHash, mostRecentFileUrl, mostRecentFileTimestamp);
+                        parseEverestYamlFromZipFile(zip, xxHash, fileUrl, fileTimestamp, gbType, gbId);
                         everestYamlFound = true;
                         break;
                     }
                 }
 
                 if (!everestYamlFound) {
-                    log.warn("=> {} has no yaml file. Adding to the no yaml files list.", mostRecentFileUrl);
-                    databaseNoYamlFiles.add(mostRecentFileUrl);
+                    log.warn("=> {} has no yaml file. Adding to the no yaml files list.", fileUrl);
+                    databaseNoYamlFiles.add(fileUrl);
                 }
             } catch (IOException e) {
-                log.warn("=> could not read zip file from {}. Adding to the excluded files list.", mostRecentFileUrl, e);
-                databaseExcludedFiles.put(mostRecentFileUrl, ExceptionUtils.getStackTrace(e));
+                log.warn("=> could not read zip file from {}. Adding to the excluded files list.", fileUrl, e);
+                databaseExcludedFiles.put(fileUrl, ExceptionUtils.getStackTrace(e));
             }
 
             FileUtils.forceDelete(new File("mod.zip"));
@@ -304,8 +329,11 @@ class DatabaseUpdater {
      * @param xxHash        The zip's xxHash checksum
      * @param fileUrl       The file URL on GameBanana
      * @param fileTimestamp The timestamp the file was uploaded at on GameBanana
+     * @param gbType        The mod type on GameBanana
+     * @param gbId          The mod ID on GameBanana
      */
-    private void parseEverestYamlFromZipFile(ZipInputStream zip, String xxHash, String fileUrl, int fileTimestamp) {
+    private void parseEverestYamlFromZipFile(ZipInputStream zip, String xxHash, String fileUrl, int fileTimestamp,
+                                             String gbType, int gbId) {
         try {
             List<Map<String, Object>> info = new Yaml().load(zip);
 
@@ -320,7 +348,7 @@ class DatabaseUpdater {
                     modVersion = "NoVersion";
                 }
 
-                Mod mod = new Mod(modName, modVersion, fileUrl, fileTimestamp, Collections.singletonList(xxHash));
+                Mod mod = new Mod(modName, modVersion, fileUrl, fileTimestamp, Collections.singletonList(xxHash), gbType, gbId);
 
                 if (database.containsKey(modName) && database.get(modName).getLastUpdate() > fileTimestamp) {
                     log.warn("=> database already contains more recent file {}. Adding to the excluded files list.", database.get(modName));
