@@ -2,6 +2,9 @@ https://gamebanana.com/mmdl/398096: Gauntlet Revamped (https://gamebanana.com/mm
   takes priority over this
 Ruby'sEntities: Ships with D-sides. D-sides should be updated instead.
 GhostMod: Ships with GhostNet. GhostNet should be updated instead.
+CrowControl-WebSockets: Ships with Crow Control. Crow Control should be updated instead.
+CoreModeResetter: Ships with the June Collab, blacklisted to only have it listed once
+  as SimpleTeleporter.
 https://gamebanana.com/mmdl/396979: "java.util.zip.ZipException: only DEFLATED entries\
   \ can have EXT descriptor\r\n\tat java.util.zip.ZipInputStream.readLOC(ZipInputStream.java:310)\r\
   \n\tat java.util.zip.ZipInputStream.getNextEntry(ZipInputStream.java:122)\r\n\t\
@@ -111,8 +114,6 @@ https://gamebanana.com/mmdl/437078: "mapping values are not allowed here\n in 'r
   \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:119)\n\
   \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:36)\n\
   \tat com.max480.everest.updatechecker.Main.main(Main.java:49)\n"
-https://gamebanana.com/mmdl/408595: File https://gamebanana.com/mmdl/438509 has same
-  mod ID and is more recent
 https://gamebanana.com/mmdl/402534: testroom 1.0.1 ; permanently blacklisted by Everest
 https://gamebanana.com/mmdl/409745: Elemental Chaos 1.0.0 ; permanently blacklisted
   by Everest
@@ -267,8 +268,6 @@ https://gamebanana.com/mmdl/431777: File https://gamebanana.com/mmdl/438726 has 
   mod ID and is more recent
 https://gamebanana.com/mmdl/431761: File https://gamebanana.com/mmdl/438726 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/431518: File https://gamebanana.com/mmdl/438726 has same
-  mod ID and is more recent
 https://gamebanana.com/mmdl/426904: File https://gamebanana.com/mmdl/438726 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/418701: File https://gamebanana.com/mmdl/438726 has same
@@ -343,11 +342,41 @@ https://gamebanana.com/mmdl/437847: File https://gamebanana.com/mmdl/440231 has 
   mod ID and is more recent
 https://gamebanana.com/mmdl/434598: File https://gamebanana.com/mmdl/440308 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/440136: File https://gamebanana.com/mmdl/440647 has same
+https://gamebanana.com/mmdl/437888: File https://gamebanana.com/mmdl/441165 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/438506: File https://gamebanana.com/mmdl/440647 has same
+https://gamebanana.com/mmdl/435605: File https://gamebanana.com/mmdl/441241 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/435605: File https://gamebanana.com/mmdl/440680 has same
+https://gamebanana.com/mmdl/441241: File https://gamebanana.com/mmdl/441349 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/440647: File https://gamebanana.com/mmdl/440868 has same
+https://gamebanana.com/mmdl/441165: File https://gamebanana.com/mmdl/441706 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/438726: File https://gamebanana.com/mmdl/442295 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/408595: File https://gamebanana.com/mmdl/442610 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/438506: File https://gamebanana.com/mmdl/442743 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/442295: File https://gamebanana.com/mmdl/442867 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/442936: "while parsing a block collection\n in 'reader',\
+  \ line 4, column 5:\n        - Name: Everest\n        ^\nexpected <block end>, but\
+  \ found '<block sequence start>'\n in 'reader', line 16, column 6:\n         - Name:\
+  \ DJMapHelper\n         ^\n\n\tat org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry.produce(ParserImpl.java:514)\n\
+  \tat org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)\n\tat org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)\n\
+  \tat org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:188)\n\
+  \tat org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:142)\n\tat org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:236)\n\
+  \tat org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:227)\n\
+  \tat org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:215)\n\
+  \tat org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)\n\tat org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:189)\n\
+  \tat org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:142)\n\tat org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)\n\
+  \tat org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:108)\n\tat\
+  \ org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:141)\n\
+  \tat org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:525)\n\tat org.yaml.snakeyaml.Yaml.load(Yaml.java:453)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.parseEverestYamlFromZipFile(DatabaseUpdater.java:338)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabase(DatabaseUpdater.java:306)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPageModInfo(DatabaseUpdater.java:205)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:143)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:41)\n\
+  \tat com.max480.everest.updatechecker.Main.main(Main.java:49)\n"
+https://gamebanana.com/mmdl/442743: File https://gamebanana.com/mmdl/442957 has same
   mod ID and is more recent
