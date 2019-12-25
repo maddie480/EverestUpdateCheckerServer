@@ -392,11 +392,11 @@ CavernHelper:
   URL: https://gamebanana.com/mmdl/413265
 ExtendedVariantMode:
   GameBananaType: Gamefile
-  Version: 0.12.0
-  LastUpdate: 1577198390
+  Version: 0.12.1
+  LastUpdate: 1577272134
   GameBananaId: 9486
-  xxHash: [180d8b78fa3829d3]
-  URL: https://gamebanana.com/mmdl/442957
+  xxHash: [b01bcca53eb254fd]
+  URL: https://gamebanana.com/mmdl/443075
 CrossoverMod:
   GameBananaType: Skin
   Version: 1.0.0
@@ -456,10 +456,10 @@ Nameguy's D-Sides v2.05:
 CrowControl:
   GameBananaType: Tool
   Version: 1.0.0
-  LastUpdate: 1577230729
+  LastUpdate: 1577300252
   GameBananaId: 6741
-  xxHash: [4d648fb38a7f0650]
-  URL: https://gamebanana.com/mmdl/443030
+  xxHash: [eed35518b78b197f]
+  URL: https://gamebanana.com/mmdl/443116
 CelesteEmojis:
   GameBananaType: Gamefile
   Version: 1.1.0
@@ -698,13 +698,6 @@ its space jam:
   GameBananaId: 202371
   xxHash: [a0e346b4458bf602]
   URL: https://gamebanana.com/mmdl/412209
-MadelinesChristmasCarol:
-  GameBananaType: Map
-  Version: 1.0.0
-  LastUpdate: 1577166470
-  GameBananaId: 207359
-  xxHash: [7fa8d7a975fbdeb7]
-  URL: https://gamebanana.com/mmdl/442935
 SummitDownhill:
   GameBananaType: Map
   Version: '1.1'

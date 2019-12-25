@@ -3,6 +3,7 @@ https://gamebanana.com/mmdl/398096: Gauntlet Revamped (https://gamebanana.com/mm
 Ruby'sEntities: Ships with D-sides. D-sides should be updated instead.
 GhostMod: Ships with GhostNet. GhostNet should be updated instead.
 CrowControl-WebSockets: Ships with Crow Control. Crow Control should be updated instead.
+CrowControl-WS: Ships with Crow Control. Crow Control should be updated instead.
 CoreModeResetter: Ships with the June Collab, blacklisted to only have it listed once
   as SimpleTeleporter.
 https://gamebanana.com/mmdl/396979: "java.util.zip.ZipException: only DEFLATED entries\
@@ -378,5 +379,7 @@ https://gamebanana.com/mmdl/442936: "while parsing a block collection\n in 'read
   \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:143)\n\
   \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:41)\n\
   \tat com.max480.everest.updatechecker.Main.main(Main.java:49)\n"
-https://gamebanana.com/mmdl/442743: File https://gamebanana.com/mmdl/442957 has same
+https://gamebanana.com/mmdl/442743: File https://gamebanana.com/mmdl/443075 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/443030: File https://gamebanana.com/mmdl/443116 has same
   mod ID and is more recent
