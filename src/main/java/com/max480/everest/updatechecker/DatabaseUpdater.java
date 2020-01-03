@@ -11,6 +11,7 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -127,7 +128,7 @@ class DatabaseUpdater {
         log.debug("Loading page {} of the list of mods from GameBanana", page);
 
         List<List<Object>> mods = runWithRetry(() -> {
-            try (InputStream is = new URL("https://api.gamebanana.com/Core/List/New?page=" + page + "&gameid=6460&format=yaml").openStream()) {
+            try (InputStream is = openStreamWithTimeout(new URL("https://api.gamebanana.com/Core/List/New?page=" + page + "&gameid=6460&format=yaml"))) {
                 return new Yaml().load(is);
             }
         });
@@ -179,7 +180,7 @@ class DatabaseUpdater {
 
         log.trace("Mod info URL: {}", modInfoUrl);
         List<List<Object>> mods = runWithRetry(() -> {
-            try (InputStream is = new URL(modInfoUrl).openStream()) {
+            try (InputStream is = openStreamWithTimeout(new URL(modInfoUrl))) {
                 return new Yaml().load(is);
             }
         });
@@ -268,7 +269,7 @@ class DatabaseUpdater {
 
             runWithRetry(() -> {
                 try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod.zip"))) {
-                    IOUtils.copy(new BufferedInputStream(new URL(fileUrl).openStream()), os);
+                    IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL(fileUrl))), os);
                     return null; // to fullfill this stupid method signature
                 }
             });
@@ -463,5 +464,20 @@ class DatabaseUpdater {
 
         // 3rd try: this time, if it crashes, let it crash
         return task.run();
+    }
+
+    /**
+     * Opens a stream to the specified URL, getting sure timeouts are set
+     * (connect timeout = 10 seconds, read timeout = 30 seconds).
+     *
+     * @param url The URL to connect to
+     * @return A stream to this URL
+     * @throws IOException If an exception occured while trying to connect
+     */
+    private InputStream openStreamWithTimeout(URL url) throws IOException {
+        URLConnection con = url.openConnection();
+        con.setConnectTimeout(10000);
+        con.setReadTimeout(60000);
+        return con.getInputStream();
     }
 }
