@@ -26,6 +26,13 @@ Synchronized Jumping:
   GameBananaId: 206380
   xxHash: [645d10745c2a698e]
   URL: https://gamebanana.com/mmdl/439477
+ToTheMars:
+  GameBananaType: Map
+  Version: '1.3'
+  LastUpdate: 1578363478
+  GameBananaId: 207527
+  xxHash: [d33386d83e60f4bb]
+  URL: https://gamebanana.com/mmdl/444604
 KaydenFoxShroudedThoughts:
   GameBananaType: Map
   Version: 1.1.1
@@ -56,11 +63,11 @@ IAccidentallyFourCassetteBlocks:
   URL: https://gamebanana.com/mmdl/386507
 CanyonHelper:
   GameBananaType: Gamefile
-  Version: 1.0.0
-  LastUpdate: 1572794479
+  Version: 1.1.2
+  LastUpdate: 1582037072
   GameBananaId: 10166
-  xxHash: [b012a2c09cc2e6ff]
-  URL: https://gamebanana.com/mmdl/437484
+  xxHash: [11b8f2ec5d7f075b]
+  URL: https://gamebanana.com/mmdl/449446
 Beta:
   GameBananaType: Map
   Version: '2.0'
@@ -75,13 +82,20 @@ DashPrologue:
   GameBananaId: 202603
   xxHash: [aa741977454a647e]
   URL: https://gamebanana.com/mmdl/419057
+DeathTracker:
+  GameBananaType: Gamefile
+  Version: 1.0.1
+  LastUpdate: 1583587274
+  GameBananaId: 11024
+  xxHash: [8d8230d5ebda5d9c]
+  URL: https://gamebanana.com/mmdl/451528
 DashCountMod:
   GameBananaType: Gamefile
-  Version: 0.3.1
-  LastUpdate: 1571167207
+  Version: 0.3.2
+  LastUpdate: 1578155126
   GameBananaId: 9534
-  xxHash: [7e672d9de06a5bac]
-  URL: https://gamebanana.com/mmdl/435282
+  xxHash: [f6ebe511d684f2c3]
+  URL: https://gamebanana.com/mmdl/444331
 StaminaMeter:
   GameBananaType: Gui
   Version: 1.2.3
@@ -105,11 +119,11 @@ Core OSC:
   URL: https://gamebanana.com/mmdl/438454
 OutbackHelper:
   GameBananaType: Gamefile
-  Version: 1.1.0
-  LastUpdate: 1567184001
+  Version: 1.2.0
+  LastUpdate: 1582035947
   GameBananaId: 7555
-  xxHash: [5cd9364ea0650d89]
-  URL: https://gamebanana.com/mmdl/430444
+  xxHash: [05759c06ea8857ad]
+  URL: https://gamebanana.com/mmdl/449444
 Simpleste-Medium:
   GameBananaType: Gamefile
   Version: 1.0.0
@@ -138,13 +152,6 @@ CavernOfTheAncients:
   GameBananaId: 203181
   xxHash: [8c08ac018865a130]
   URL: https://gamebanana.com/mmdl/408352
-Ezel:
-  GameBananaType: Map
-  Version: '1.0'
-  LastUpdate: 1577977866
-  GameBananaId: 207309
-  xxHash: [52b209c845dbc06d]
-  URL: https://gamebanana.com/mmdl/444059
 BlueOceanFloor:
   GameBananaType: Map
   Version: '1.0'
@@ -187,6 +194,13 @@ EnterTheSun:
   GameBananaId: 49542
   xxHash: [3ac1ae098ab307c6]
   URL: https://gamebanana.com/mmdl/407959
+OtherSelfDialog:
+  GameBananaType: Gamefile
+  Version: 1.0.0
+  LastUpdate: 1582061471
+  GameBananaId: 10932
+  xxHash: [891c32dda01fec52]
+  URL: https://gamebanana.com/mmdl/449488
 EnchantedCanyon:
   GameBananaType: Map
   Version: 1.0.0
@@ -243,6 +257,13 @@ IsaGrabBag:
   GameBananaId: 8283
   xxHash: [beffd4e2eef1eb6b]
   URL: https://gamebanana.com/mmdl/432694
+LuaCutscenes:
+  GameBananaType: Gamefile
+  Version: 0.1.3
+  LastUpdate: 1580206372
+  GameBananaId: 10788
+  xxHash: [f9fe7ca2afc2860c]
+  URL: https://gamebanana.com/mmdl/446900
 ArchaicTerrace:
   GameBananaType: Map
   Version: 1.1.1
@@ -285,13 +306,20 @@ CutsceneHelper:
   GameBananaId: 10004
   xxHash: [f0ae520baa3e18a2]
   URL: https://gamebanana.com/mmdl/440231
+TheVoid:
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1579149791
+  GameBananaId: 207623
+  xxHash: [c973900cc05bb7fb]
+  URL: https://gamebanana.com/mmdl/445554
 ClutterHelper:
   GameBananaType: Gamefile
   Version: 1.0.0
-  LastUpdate: 1572121921
+  LastUpdate: 1580049639
   GameBananaId: 10136
-  xxHash: [31f4de565853b2bd]
-  URL: https://gamebanana.com/mmdl/436526
+  xxHash: [688d021d643e7379]
+  URL: https://gamebanana.com/mmdl/446648
 Prideline:
   GameBananaType: Skin
   Version: 1.0.0
@@ -299,13 +327,27 @@ Prideline:
   GameBananaId: 171934
   xxHash: [898a8fa3861ed4c2]
   URL: https://gamebanana.com/mmdl/430886
+7DSingleDashVer:
+  GameBananaType: Map
+  Version: 1.1.0
+  LastUpdate: 1582801082
+  GameBananaId: 207746
+  xxHash: [4020e4fd86cf9e36]
+  URL: https://gamebanana.com/mmdl/450521
+Asleep:
+  GameBananaType: Map
+  Version: 1.1.0
+  LastUpdate: 1583695337
+  GameBananaId: 207902
+  xxHash: [290c40634a02d90a]
+  URL: https://gamebanana.com/mmdl/451713
 SpeedrunTool:
   GameBananaType: Tool
-  Version: 1.6.27
-  LastUpdate: 1577772723
+  Version: 1.7.7
+  LastUpdate: 1584105591
   GameBananaId: 6597
-  xxHash: [fd2a6ad1eebe4ed8]
-  URL: https://gamebanana.com/mmdl/443683
+  xxHash: [85549d0a0d5deedc]
+  URL: https://gamebanana.com/mmdl/452311
 C+:
   GameBananaType: Map
   Version: '2.0'
@@ -315,11 +357,18 @@ C+:
   URL: https://gamebanana.com/mmdl/403556
 PolygonDreams:
   GameBananaType: Map
-  Version: 4.5.1
-  LastUpdate: 1575449997
+  Version: '5.0'
+  LastUpdate: 1583676574
   GameBananaId: 201404
-  xxHash: [81caec8c29f6dc2f]
-  URL: https://gamebanana.com/mmdl/440827
+  xxHash: [6597564e96838a2c]
+  URL: https://gamebanana.com/mmdl/451660
+VideoRecordingMusic:
+  GameBananaType: Gamefile
+  Version: 1.0.0
+  LastUpdate: 1584087600
+  GameBananaId: 11042
+  xxHash: [f6f6ef6f45536957]
+  URL: https://gamebanana.com/mmdl/452290
 Spoopy's Laid Back Level Pack:
   GameBananaType: Map
   Version: 1.0.0
@@ -334,6 +383,13 @@ DournMap:
   GameBananaId: 201446
   xxHash: [c23af87865d7f5cf]
   URL: https://gamebanana.com/mmdl/395150
+ColoredLights:
+  GameBananaType: Gamefile
+  Version: 1.1.1
+  LastUpdate: 1582032463
+  GameBananaId: 10658
+  xxHash: [b5be64b42d9ce12f]
+  URL: https://gamebanana.com/mmdl/449441
 DecrepitLocale:
   GameBananaType: Map
   Version: 1.1.0
@@ -341,6 +397,20 @@ DecrepitLocale:
   GameBananaId: 206110
   xxHash: [67050ca7592143d9]
   URL: https://gamebanana.com/mmdl/428902
+MouseControls:
+  GameBananaType: Gamefile
+  Version: 1.1.1
+  LastUpdate: 1580431757
+  GameBananaId: 10776
+  xxHash: [51bda196b93b4c7a]
+  URL: https://gamebanana.com/mmdl/447188
+BGswitch:
+  GameBananaType: Gamefile
+  Version: 1.1.0
+  LastUpdate: 1578708716
+  GameBananaId: 8219
+  xxHash: [5046b941b0c0e799]
+  URL: https://gamebanana.com/mmdl/445001
 PathofHopeChapter:
   GameBananaType: Map
   Version: 1.0.3
@@ -348,13 +418,41 @@ PathofHopeChapter:
   GameBananaId: 202813
   xxHash: [227aaa9b3eeb7545]
   URL: https://gamebanana.com/mmdl/433840
+Baldeline:
+  GameBananaType: Skin
+  Version: 1.0.0
+  LastUpdate: 1583773159
+  GameBananaId: 175525
+  xxHash: [d16c129a91009f24]
+  URL: https://gamebanana.com/mmdl/451847
+Flamesprite:
+  GameBananaType: Skin
+  Version: 1.0.0
+  LastUpdate: 1581375805
+  GameBananaId: 174920
+  xxHash: [1e17ab9d8ff9a7d3]
+  URL: https://gamebanana.com/mmdl/448555
 PandorasBox:
   GameBananaType: Gamefile
-  Version: 1.0.8
-  LastUpdate: 1578004350
+  Version: 1.0.13
+  LastUpdate: 1583594364
   GameBananaId: 9518
-  xxHash: [34d7443eb5b15177]
-  URL: https://gamebanana.com/mmdl/444100
+  xxHash: [1fb06db52c378dc0]
+  URL: https://gamebanana.com/mmdl/451547
+RedIsBad:
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1584153242
+  GameBananaId: 208319
+  xxHash: [f2a2671c15d9da96]
+  URL: https://gamebanana.com/mmdl/452389
+Relogue:
+  GameBananaType: Map
+  Version: 1.0.1
+  LastUpdate: 1582917746
+  GameBananaId: 208141
+  xxHash: [c010525ea47afe12]
+  URL: https://gamebanana.com/mmdl/450660
 CelestialRetreatLodge:
   GameBananaType: Map
   Version: 1.1.0
@@ -379,24 +477,24 @@ DialogCutscene:
 Nameguy's D-Sides:
   GameBananaType: Map
   Version: '2.072'
-  LastUpdate: 1569454829
+  LastUpdate: 1583789654
   GameBananaId: 202524
   xxHash: [493d9fd571ef7452]
-  URL: https://gamebanana.com/mmdl/433199
+  URL: https://gamebanana.com/mmdl/451871
 CavernHelper:
   GameBananaType: Gamefile
-  Version: 1.0.0
-  LastUpdate: 1552248153
+  Version: 1.3.1
+  LastUpdate: 1582036531
   GameBananaId: 8210
-  xxHash: [6f613c64ad040d52]
-  URL: https://gamebanana.com/mmdl/413265
+  xxHash: [dc6fcf0512c90ed4]
+  URL: https://gamebanana.com/mmdl/449445
 ExtendedVariantMode:
   GameBananaType: Gamefile
-  Version: 0.12.7
-  LastUpdate: 1578066853
+  Version: 0.14.4
+  LastUpdate: 1584284846
   GameBananaId: 9486
-  xxHash: [ec05b8c21afa139e]
-  URL: https://gamebanana.com/mmdl/444207
+  xxHash: [cbe5f5fe0317b1e7]
+  URL: https://gamebanana.com/mmdl/452600
 CrossoverMod:
   GameBananaType: Skin
   Version: 1.0.0
@@ -427,11 +525,11 @@ Levels of Darkness:
   URL: https://gamebanana.com/mmdl/385724
 FrostTemple:
   GameBananaType: Map
-  Version: 0.1.0
-  LastUpdate: 1569429710
+  Version: 0.1.2
+  LastUpdate: 1582559453
   GameBananaId: 206602
-  xxHash: [4ad210c8bcd20c7a]
-  URL: https://gamebanana.com/mmdl/433170
+  xxHash: [e3c79fbe8f9ccf4d]
+  URL: https://gamebanana.com/mmdl/450191
 CrimsonKeep:
   GameBananaType: Map
   Version: 1.0.0
@@ -441,18 +539,11 @@ CrimsonKeep:
   URL: https://gamebanana.com/mmdl/389200
 FrostHelper:
   GameBananaType: Gamefile
-  Version: 1.5.2
-  LastUpdate: 1572384550
+  Version: 1.15.2
+  LastUpdate: 1583688684
   GameBananaId: 9201
-  xxHash: [7462b20c02dd59cd]
-  URL: https://gamebanana.com/mmdl/436934
-Nameguy's D-Sides v2.05:
-  GameBananaType: Map
-  Version: '2.05'
-  LastUpdate: 1553778743
-  GameBananaId: 202524
-  xxHash: [a8d4ee44b633f09c]
-  URL: https://gamebanana.com/mmdl/414924
+  xxHash: [60939ca2f8d01802]
+  URL: https://gamebanana.com/mmdl/451693
 CrowControl:
   GameBananaType: Tool
   Version: 1.0.7
@@ -467,13 +558,6 @@ CelesteEmojis:
   GameBananaId: 10320
   xxHash: [916d0421501d7270]
   URL: https://gamebanana.com/mmdl/442610
-Nameguy's D-Sides v2.04:
-  GameBananaType: Map
-  Version: '2.04'
-  LastUpdate: 1553649784
-  GameBananaId: 202524
-  xxHash: [c778f689249da1f6]
-  URL: https://gamebanana.com/mmdl/414817
 EventMode:
   GameBananaType: Gamefile
   Version: 0.0.1
@@ -488,6 +572,13 @@ t:
   GameBananaId: 207345
   xxHash: [5367907f5b559d78]
   URL: https://gamebanana.com/mmdl/442820
+DashlessDreamBlocks:
+  GameBananaType: Gamefile
+  Version: 1.0.0
+  LastUpdate: 1582536257
+  GameBananaId: 10965
+  xxHash: [4b77317da22c37d3]
+  URL: https://gamebanana.com/mmdl/450168
 SealsSummit:
   GameBananaType: Map
   Version: 1.0.0
@@ -518,18 +609,18 @@ ForsakenMetropolis:
   URL: https://gamebanana.com/mmdl/392995
 DJMapHelper:
   GameBananaType: Gamefile
-  Version: 1.7.10
-  LastUpdate: 1574994226
+  Version: 1.8.4
+  LastUpdate: 1580473089
   GameBananaId: 8458
-  xxHash: [715fe051bceb5c11]
-  URL: https://gamebanana.com/mmdl/440165
-Nameguy's D-Sides v2.07:
+  xxHash: [8772a3d6721b22c0]
+  URL: https://gamebanana.com/mmdl/447275
+Ezel's CC-Sides:
   GameBananaType: Map
-  Version: '2.07'
-  LastUpdate: 1568509216
-  GameBananaId: 202524
-  xxHash: [b77499bd21c79d8d]
-  URL: https://gamebanana.com/mmdl/431967
+  Version: 1.5.1
+  LastUpdate: 1582755791
+  GameBananaId: 207309
+  xxHash: [9242522d6d798c9a]
+  URL: https://gamebanana.com/mmdl/450483
 Dadbod:
   GameBananaType: Map
   Version: 1.0.0
@@ -572,6 +663,13 @@ The Pit:
   GameBananaId: 206740
   xxHash: [1fd3fb19eeb06c57]
   URL: https://gamebanana.com/mmdl/434803
+Dreams:
+  GameBananaType: Map
+  Version: '1.2'
+  LastUpdate: 1582666730
+  GameBananaId: 207664
+  xxHash: [3422c989e7d5e587]
+  URL: https://gamebanana.com/mmdl/450350
 Point of No Return:
   GameBananaType: Map
   Version: 1.0.2
@@ -642,6 +740,13 @@ Shadow's Sanctuary:
   GameBananaId: 204463
   xxHash: [c84724651b7e7286]
   URL: https://gamebanana.com/mmdl/420466
+Descent:
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1579311411
+  GameBananaId: 207502
+  xxHash: [f6c792da0b8de6de]
+  URL: https://gamebanana.com/mmdl/445738
 ForkCity:
   GameBananaType: Wip
   Version: 0.0.1
@@ -649,6 +754,13 @@ ForkCity:
   GameBananaId: 49620
   xxHash: [6d038db56c6aaba9]
   URL: https://gamebanana.com/mmdl/407662
+Core Refill:
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1580702516
+  GameBananaId: 207843
+  xxHash: [388d034631905029]
+  URL: https://gamebanana.com/mmdl/447643
 Lake of Purity:
   GameBananaType: Map
   Version: 1.0.0
@@ -659,10 +771,10 @@ Lake of Purity:
 Ultra Heaven:
   GameBananaType: Map
   Version: 1.0.0
-  LastUpdate: 1577828769
+  LastUpdate: 1580767770
   GameBananaId: 207214
-  xxHash: [f9b9d0f2fc29d796]
-  URL: https://gamebanana.com/mmdl/443765
+  xxHash: [55456aede034ae0f]
+  URL: https://gamebanana.com/mmdl/447719
 Madeline's bizarre adventure:
   GameBananaType: Map
   Version: 1.0.0
@@ -686,25 +798,32 @@ L9M2LostTheo:
   URL: https://gamebanana.com/mmdl/443944
 VanillaTweaks:
   GameBananaType: Gamefile
-  Version: 1.0.0
-  LastUpdate: 1573393614
+  Version: 1.2.1
+  LastUpdate: 1581969309
   GameBananaId: 10301
-  xxHash: [29c199ef36aca759]
-  URL: https://gamebanana.com/mmdl/438144
+  xxHash: [e76e3c8d552bce26]
+  URL: https://gamebanana.com/mmdl/449359
 SmaerdNogylop:
   GameBananaType: Map
-  Version: 5.1.5
-  LastUpdate: 1577779884
+  Version: 5.1.8
+  LastUpdate: 1582547470
   GameBananaId: 206747
-  xxHash: [6514d07c59e2e191]
-  URL: https://gamebanana.com/mmdl/443692
+  xxHash: [87f9de46f6fedf39]
+  URL: https://gamebanana.com/mmdl/450175
+CustomPoints:
+  GameBananaType: Gamefile
+  Version: 1.1.0
+  LastUpdate: 1582677668
+  GameBananaId: 10872
+  xxHash: [e5c580be432c67f7]
+  URL: https://gamebanana.com/mmdl/450361
 Sib:
   GameBananaType: Map
-  Version: 4.0.0
-  LastUpdate: 1575847698
+  Version: 4.5.0
+  LastUpdate: 1584229630
   GameBananaId: 206790
-  xxHash: [3609825708c7bc70]
-  URL: https://gamebanana.com/mmdl/441359
+  xxHash: [0231b25700c56b83]
+  URL: https://gamebanana.com/mmdl/452478
 its space jam:
   GameBananaType: Map
   Version: NoVersion
@@ -775,6 +894,13 @@ New Adventure:
   GameBananaId: 205074
   xxHash: [c5646cfdadc26381]
   URL: https://gamebanana.com/mmdl/439467
+TimeTrials:
+  GameBananaType: Gamefile
+  Version: 1.0.0
+  LastUpdate: 1579165271
+  GameBananaId: 10704
+  xxHash: [f213e9e7d2fecc50]
+  URL: https://gamebanana.com/mmdl/445571
 Troll_City:
   GameBananaType: Map
   Version: 1.0.0
@@ -784,11 +910,11 @@ Troll_City:
   URL: https://gamebanana.com/mmdl/406466
 CelesteTAS:
   GameBananaType: Tool
-  Version: 2.0.4
-  LastUpdate: 1574826904
+  Version: 2.0.5
+  LastUpdate: 1580336100
   GameBananaId: 6715
-  xxHash: [5b0d8e588a81ed4c]
-  URL: https://gamebanana.com/mmdl/440008
+  xxHash: [a357647fe081916c]
+  URL: https://gamebanana.com/mmdl/447074
 The Nightmare:
   GameBananaType: Map
   Version: 1.0.0
@@ -803,6 +929,20 @@ RainbowMod:
   GameBananaId: 163152
   xxHash: [a0f2e325f212ebb4]
   URL: https://gamebanana.com/mmdl/392063
+OneHourChallenge:
+  GameBananaType: Gamefile
+  Version: 1.0.0
+  LastUpdate: 1582616867
+  GameBananaId: 10972
+  xxHash: [8c466434198178c0]
+  URL: https://gamebanana.com/mmdl/450284
+Monika's D-Sides:
+  GameBananaType: Map
+  Version: '3.19'
+  LastUpdate: 1584274830
+  GameBananaId: 202524
+  xxHash: [e9bcaf167a8807d9]
+  URL: https://gamebanana.com/mmdl/452533
 GetOut:
   GameBananaType: Map
   Version: '1.2'
@@ -810,13 +950,27 @@ GetOut:
   GameBananaId: 201551
   xxHash: [6fc37b808228a4d6]
   URL: https://gamebanana.com/mmdl/412127
+New_Wonders:
+  GameBananaType: Map
+  Version: 1.0.5
+  LastUpdate: 1578847273
+  GameBananaId: 207588
+  xxHash: [c069dca83862ee23]
+  URL: https://gamebanana.com/mmdl/445202
 SummitPrologue:
   GameBananaType: Map
-  Version: '1.401'
-  LastUpdate: 1575575359
+  Version: '1.45'
+  LastUpdate: 1579209268
   GameBananaId: 206633
-  xxHash: [a94a09cb1c0e35e2]
-  URL: https://gamebanana.com/mmdl/440962
+  xxHash: [6f72b4a34be0caac]
+  URL: https://gamebanana.com/mmdl/445625
+DashlessAndGrabless:
+  GameBananaType: Map
+  Version: '7.1'
+  LastUpdate: 1584125747
+  GameBananaId: 207805
+  xxHash: [6b56848465d4f1d6]
+  URL: https://gamebanana.com/mmdl/452357
 The Crystal City:
   GameBananaType: Map
   Version: 1.0.0
@@ -861,11 +1015,18 @@ InfiniteSaves:
   URL: https://gamebanana.com/mmdl/431626
 AdventureHelper:
   GameBananaType: Gamefile
-  Version: 1.3.0
-  LastUpdate: 1572011129
+  Version: 1.3.2
+  LastUpdate: 1580756368
   GameBananaId: 9807
-  xxHash: [87df256b06922a8e]
-  URL: https://gamebanana.com/mmdl/436308
+  xxHash: [e4db900bc3711645]
+  URL: https://gamebanana.com/mmdl/447701
+HardcoreMode:
+  GameBananaType: Gamefile
+  Version: 1.0.1
+  LastUpdate: 1582504596
+  GameBananaId: 10950
+  xxHash: [eb5a47b1e49d1a7e]
+  URL: https://gamebanana.com/mmdl/450134
 TornadoValleyConcept:
   GameBananaType: Map
   Version: 1.0.0
@@ -924,11 +1085,18 @@ FullClearStamp:
   URL: https://gamebanana.com/mmdl/444056
 AChristmasNight:
   GameBananaType: Map
-  Version: 1.0.0
-  LastUpdate: 1577124463
+  Version: 1.2.0
+  LastUpdate: 1582225117
   GameBananaId: 207352
-  xxHash: [4a0981f530f55e77]
-  URL: https://gamebanana.com/mmdl/442883
+  xxHash: [a06897e4954fda7d]
+  URL: https://gamebanana.com/mmdl/449684
+PruebasDeBadeline:
+  GameBananaType: Map
+  Version: '2.8'
+  LastUpdate: 1584214228
+  GameBananaId: 207516
+  xxHash: [9c7bdbffa0a6dc89]
+  URL: https://gamebanana.com/mmdl/452455
 LiquidMod:
   GameBananaType: Effect
   Version: 1.0.0
@@ -952,11 +1120,11 @@ CelesteOfLevels:
   URL: https://gamebanana.com/mmdl/385360
 MoreDasheline:
   GameBananaType: Gamefile
-  Version: 1.2.0
-  LastUpdate: 1572124012
+  Version: 1.4.0
+  LastUpdate: 1584177754
   GameBananaId: 10097
-  xxHash: [641d80aae1cd76cf]
-  URL: https://gamebanana.com/mmdl/436530
+  xxHash: [aa1a78088abb2232]
+  URL: https://gamebanana.com/mmdl/452410
 Collab-2018-10:
   GameBananaType: Map
   Version: 1.0.0
@@ -973,11 +1141,11 @@ EasyRetry:
   URL: https://gamebanana.com/mmdl/408251
 Aftermath:
   GameBananaType: Map
-  Version: 1.1.3
-  LastUpdate: 1572384812
+  Version: 1.2.3
+  LastUpdate: 1581426469
   GameBananaId: 206698
-  xxHash: [d163f8d9c67a3e68]
-  URL: https://gamebanana.com/mmdl/436935
+  xxHash: [e72ae478158ce66b]
+  URL: https://gamebanana.com/mmdl/448622
 Insanelynicemap:
   GameBananaType: Map
   Version: '1.1'
