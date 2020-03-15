@@ -69,7 +69,7 @@ allows to overwrite the current database. This aims to give control over the dat
 To be able to use this method, you have to pass the content of the `code.txt` file in the Authorization header.
 
 You can also use these two methods with those two other files:
-* `/everestupdateexcluded.yaml`: this file lists all downloads that should be skipped on GameBanana for any reason. Corrupted zips or duplicates (f.e. Gauntlet is an older duplicate of Gauntlet Revamped) are automatically added to this.
+* `/everestupdateexcluded.yaml`: this file lists all downloads that should be skipped on GameBanana for any reason. Corrupted zips or duplicates (f.e. Gauntlet is an older duplicate of Gauntlet Revamped) are automatically added to this. _If the most recent file on a GameBanana page is in this list, the whole page will be ignored by the update server._
 * `/everestupdatenoyaml.yaml`: this file holds the list of all zips that have been downloaded and don't contain any everest.yaml, so that they aren't downloaded again.
 
 ## Handling special cases
@@ -88,7 +88,7 @@ DJMapHelper:
   URL: https://gamebanana.com/mmdl/413533
 ```
 
-_(Please note DJ Map Helper no longer has two separate downloads, this is just an example if this happens again.)_
+_(Please note DJ Map Helper no longer has two separate downloads, and no mod currently needs this anymore, this is just an example if this happens again.)_
 
 ### List of mods to handle manually
 
@@ -96,6 +96,7 @@ _Please note that the `everestupdate.yaml` file uploaded to this repository alre
 
 * Ruby's Entities: Remove it from the database and blacklist it. Ships with D-sides.
 * GhostMod: Remove it from the database and blacklist it. Ships with GhostNet.
+* CrowControl-WS: Remove it from the database and blacklist it. Ships with Crow Control.
 
 ## Libraries used
 
