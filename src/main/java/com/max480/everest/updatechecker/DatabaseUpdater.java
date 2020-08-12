@@ -17,7 +17,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
+import java.util.zip.ZipFile;
 
 class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
@@ -296,15 +296,17 @@ class DatabaseUpdater {
                 while (xxHash.length() < 16) xxHash = "0" + xxHash;
             }
 
-            try (ZipInputStream zip = new ZipInputStream(new FileInputStream("mod.zip"))) {
+            try (ZipFile zipFile = new ZipFile(new File("mod.zip"))) {
                 boolean everestYamlFound = false;
 
-                ZipEntry entry;
-                while ((entry = zip.getNextEntry()) != null) {
+                Enumeration<? extends ZipEntry> entries = zipFile.entries();
+                while (entries.hasMoreElements()) {
+                    ZipEntry entry = entries.nextElement();
+
                     if (!entry.isDirectory() && (entry.getName().equals("everest.yaml")
                             || entry.getName().equals("everest.yml") || entry.getName().equals("multimetadata.yml"))) {
 
-                        parseEverestYamlFromZipFile(zip, xxHash, fileUrl, fileTimestamp, gbType, gbId);
+                        parseEverestYamlFromZipFile(zipFile.getInputStream(entry), xxHash, fileUrl, fileTimestamp, gbType, gbId);
                         everestYamlFound = true;
                         break;
                     }
@@ -326,17 +328,17 @@ class DatabaseUpdater {
     /**
      * Parses the everest.yaml from the mod zip, then builds a Mod object from it and adds it to the database.
      *
-     * @param zip           The zip input stream, positioned on the everest.yaml file
-     * @param xxHash        The zip's xxHash checksum
-     * @param fileUrl       The file URL on GameBanana
-     * @param fileTimestamp The timestamp the file was uploaded at on GameBanana
-     * @param gbType        The mod type on GameBanana
-     * @param gbId          The mod ID on GameBanana
+     * @param yamlInputStream The input stream the everest.yaml file can be read from
+     * @param xxHash          The zip's xxHash checksum
+     * @param fileUrl         The file URL on GameBanana
+     * @param fileTimestamp   The timestamp the file was uploaded at on GameBanana
+     * @param gbType          The mod type on GameBanana
+     * @param gbId            The mod ID on GameBanana
      */
-    private void parseEverestYamlFromZipFile(ZipInputStream zip, String xxHash, String fileUrl, int fileTimestamp,
+    private void parseEverestYamlFromZipFile(InputStream yamlInputStream, String xxHash, String fileUrl, int fileTimestamp,
                                              String gbType, int gbId) {
         try {
-            List<Map<String, Object>> info = new Yaml().load(zip);
+            List<Map<String, Object>> info = new Yaml().load(yamlInputStream);
 
             for (Map<String, Object> infoMod : info) {
                 String modName = infoMod.get("Name").toString();
