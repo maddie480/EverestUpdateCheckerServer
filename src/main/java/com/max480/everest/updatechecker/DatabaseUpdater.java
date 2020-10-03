@@ -297,24 +297,19 @@ class DatabaseUpdater {
             }
 
             try (ZipFile zipFile = new ZipFile(new File("mod.zip"))) {
-                boolean everestYamlFound = false;
-
-                Enumeration<? extends ZipEntry> entries = zipFile.entries();
-                while (entries.hasMoreElements()) {
-                    ZipEntry entry = entries.nextElement();
-
-                    if (!entry.isDirectory() && (entry.getName().equals("everest.yaml")
-                            || entry.getName().equals("everest.yml") || entry.getName().equals("multimetadata.yml"))) {
-
-                        parseEverestYamlFromZipFile(zipFile.getInputStream(entry), xxHash, fileUrl, fileTimestamp, gbType, gbId);
-                        everestYamlFound = true;
-                        break;
-                    }
+                ZipEntry everestYaml = zipFile.getEntry("everest.yaml");
+                if (everestYaml == null) {
+                    everestYaml = zipFile.getEntry("everest.yml");
+                }
+                if (everestYaml == null) {
+                    everestYaml = zipFile.getEntry("multimetadata.yml");
                 }
 
-                if (!everestYamlFound) {
+                if (everestYaml == null) {
                     log.warn("=> {} has no yaml file. Adding to the no yaml files list.", fileUrl);
                     databaseNoYamlFiles.add(fileUrl);
+                } else {
+                    parseEverestYamlFromZipFile(zipFile.getInputStream(everestYaml), xxHash, fileUrl, fileTimestamp, gbType, gbId);
                 }
             } catch (IOException e) {
                 log.warn("=> could not read zip file from {}. Adding to the excluded files list.", fileUrl, e);

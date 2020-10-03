@@ -31,7 +31,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.7.jar`.
+This will build the project to `target/update-checker-0.0.8.jar`.
 
 ## Running the project
 
@@ -44,7 +44,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.7.jar [port] [minutes]
+java -jar update-checker-0.0.8.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
