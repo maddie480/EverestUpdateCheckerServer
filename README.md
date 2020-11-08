@@ -31,7 +31,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.8.jar`.
+This will build the project to `target/update-checker-0.0.9.jar`.
 
 ## Running the project
 
@@ -44,7 +44,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.8.jar [port] [minutes]
+java -jar update-checker-0.0.9.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
@@ -69,7 +69,7 @@ allows to overwrite the current database. This aims to give control over the dat
 To be able to use this method, you have to pass the content of the `code.txt` file in the Authorization header.
 
 You can also use these two methods with those two other files:
-* `/everestupdateexcluded.yaml`: this file lists all downloads that should be skipped on GameBanana for any reason. Corrupted zips or duplicates (f.e. Gauntlet is an older duplicate of Gauntlet Revamped) are automatically added to this. _If the most recent file on a GameBanana page is in this list, the whole page will be ignored by the update server._
+* `/everestupdateexcluded.yaml`: this file lists all downloads that should be skipped on GameBanana for any reason. Corrupted zips or duplicates (f.e. Gauntlet is an older duplicate of Gauntlet Revamped) are automatically added to this. Those files won't be checked again by the update checker server.
 * `/everestupdatenoyaml.yaml`: this file holds the list of all zips that have been downloaded and don't contain any everest.yaml, so that they aren't downloaded again.
 
 ## Handling special cases

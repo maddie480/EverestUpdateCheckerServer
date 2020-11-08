@@ -1349,13 +1349,6 @@ ForgottenTrail:
   GameBananaId: 210993
   xxHash: [c1fb6285f1b045f1]
   URL: https://gamebanana.com/mmdl/474517
-Into The Jungle Music Pack:
-  GameBananaType: Gamefile
-  Version: 1.0.0
-  LastUpdate: 1600544473
-  GameBananaId: 11911
-  xxHash: [f37ad3e1b63dbcbd]
-  URL: https://gamebanana.com/mmdl/486929
 PathOfHopeRandomizerConfig:
   GameBananaType: Gamefile
   Version: 1.0.0

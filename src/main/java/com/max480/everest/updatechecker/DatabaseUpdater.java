@@ -198,8 +198,6 @@ class DatabaseUpdater {
 
             if (parsedModInfo.mostRecentFileUrl == null) {
                 log.trace("{} => skipping, no suitable file found", name);
-            } else if (databaseExcludedFiles.containsKey(parsedModInfo.mostRecentFileUrl)) {
-                log.trace("=> mod was skipped because the most recent file is in the excluded list.");
             } else {
                 log.trace("{} => URL of most recent file (uploaded at {}) is {}", name, parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
                 for (int i = 0; i < parsedModInfo.allFileUrls.size(); i++) {
