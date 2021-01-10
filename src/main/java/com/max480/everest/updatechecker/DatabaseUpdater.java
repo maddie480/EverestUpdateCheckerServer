@@ -32,6 +32,8 @@ class DatabaseUpdater {
 
     private Pattern gamebananaLinkRegex = Pattern.compile(".*(https://gamebanana.com/mmdl/[0-9]+).*");
 
+    private final ModSearchDatabaseBuilder modSearchDatabaseBuilder = new ModSearchDatabaseBuilder();
+
     void updateDatabaseYaml() throws IOException {
         log.info("=== Started searching for updates");
         long startMillis = System.currentTimeMillis();
@@ -102,6 +104,9 @@ class DatabaseUpdater {
         try (FileWriter writer = new FileWriter("uploads/everestupdatenoyaml.yaml")) {
             new Yaml().dump(new ArrayList<>(databaseNoYamlFiles), writer);
         }
+
+        // also write the mod search database to disk.
+        modSearchDatabaseBuilder.saveSearchDatabase();
     }
 
     /**
@@ -160,7 +165,13 @@ class DatabaseUpdater {
             urlModInfo
                     .append("itemtype[").append(index).append("]=").append(mod.itemtype)
                     .append("&itemid[").append(index).append("]=").append(mod.itemid)
-                    .append("&fields[").append(index).append("]=name,Files().aFiles()&");
+                    .append("&fields[").append(index).append("]=name,Files().aFiles(),");
+            if (mod.itemtype.equals("Wip")) {
+                urlModInfo.append("userid");
+            } else {
+                urlModInfo.append("authors");
+            }
+            urlModInfo.append(",description,text&");
             index++;
         }
 
@@ -188,7 +199,7 @@ class DatabaseUpdater {
         Iterator<QueriedModInfo> queriedModInfoIterator = queriedModInfo.iterator();
 
         for (List<Object> mod : mods) {
-            // we asked for name,Files().aFiles()
+            // we asked for name,Files().aFiles(),authors,description,text
             String name = (String) mod.get(0);
 
             ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod.get(1), databaseNoYamlFiles);
@@ -205,6 +216,9 @@ class DatabaseUpdater {
                             thisModInfo.itemtype, thisModInfo.itemid);
                 }
             }
+
+            // save the info about this mod in the mod search database.
+            modSearchDatabaseBuilder.addMod(thisModInfo.itemtype, thisModInfo.itemid, mod);
         }
     }
 
@@ -440,7 +454,7 @@ class DatabaseUpdater {
      * @return What the task returned
      * @throws IOException If the task failed 3 times
      */
-    private <T> T runWithRetry(NetworkingOperation<T> task) throws IOException {
+    static <T> T runWithRetry(NetworkingOperation<T> task) throws IOException {
         for (int i = 1; i < 3; i++) {
             try {
                 return task.run();
@@ -469,7 +483,7 @@ class DatabaseUpdater {
      * @return A stream to this URL
      * @throws IOException If an exception occured while trying to connect
      */
-    private InputStream openStreamWithTimeout(URL url) throws IOException {
+    static InputStream openStreamWithTimeout(URL url) throws IOException {
         URLConnection con = url.openConnection();
         con.setConnectTimeout(10000);
         con.setReadTimeout(60000);
