@@ -15,7 +15,21 @@ SuperHotMod:
 
 Everest can then download this file from the server, and check if an update is available on a mod (by comparing the hash).
 
-The server used by Everest is currently hosted by max480 (max480#4596 on [the "Mt. Celeste Climbing Association" Discord server](https://discord.gg/6qjaePQ)).
+The server used by Everest is currently hosted by max480 (max480#4596 on [the "Mt. Celeste Climbing Association" Discord server](https://discord.gg/celeste)).
+
+Additionally, this server generates a `modsearchdatabase.yaml` file that can be used as a database of mod names, authors and descriptions on GameBanana. This is used by [the GameBanana search API](https://github.com/max4805/RandomStuffWebsite#the-gamebanana-search-api) to find mods. A mod in this file looks like this:
+```yaml
+- GameBananaType: Map
+  GameBananaId: 213863
+  Name: Old Site but... weird
+  Authors: [vitellary, Celeste Devs]
+  Description: It's been flipped!
+  Text: Had this dumb idea a couple months ago, been working on it on and off and
+    finally decided to finish it. Dependencies are Communal Helper and Max's Helping
+    Hand. Difficulty is a bit harder than the vanilla equivalent of each level (though
+    it's a decent bit more puzzly), and only advanced tech required is wallbounces
+    for the C-Side.
+```
 
 ## Getting the project
 
@@ -106,3 +120,5 @@ _Please note that the `everestupdate.yaml` file uploaded to this repository alre
 * [Logback](http://logback.qos.ch/), licensed under [GNU LGPL version 2.1](http://logback.qos.ch/license.html)
 * [NanoHTTPD](https://github.com/NanoHttpd/nanohttpd), licensed under the [BSD 3-Clause "New" License](https://github.com/NanoHttpd/nanohttpd/blob/master/LICENSE.md)
 * [LZ4 Java](https://github.com/lz4/lz4-java), licensed under [Apache License 2.0](https://github.com/lz4/lz4-java/blob/master/LICENSE.txt), used for xxHash hash calculation
+* [Jsoup](https://github.com/jhy/jsoup/), licensed under the [MIT License](https://github.com/jhy/jsoup/blob/master/LICENSE)
+* [org.json](https://github.com/stleary/JSON-java) ([license](https://github.com/stleary/JSON-java/blob/master/LICENSE))
