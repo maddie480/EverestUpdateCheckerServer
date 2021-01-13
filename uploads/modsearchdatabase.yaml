@@ -1,3 +1,98 @@
+- GameBananaType: Map
+  GameBananaId: 214062
+  Name: Dog Mountain
+  Authors: [Me]
+  Description: BirthdayDogBirthdayDogBirthdayDogBirthdayDogBirthdayDogBirthdayDog
+  Text: Today was my Birthday so i decided "hey im gonna make a map". Why? I have
+    no clue I made this all in one day so don't go in expecting anything amazing lmao
+    Also i wont be making any changes unless they're fixing something game breaking
+- GameBananaType: Gamefile
+  GameBananaId: 13866
+  Name: crowberry basket (decal set)
+  Authors: [crowberry, Holly Magala, SpoopySoup]
+  Description: caw caw. want berry?
+  Text: caw hello use pixel art in map make pritty currently has mushroom please use
+    as a dependency instead of installing yourself. should be ahorn compatible will
+    update in future. allowed to suggest more caw!
+- GameBananaType: Map
+  GameBananaId: 214025
+  Name: The Windy Skyline
+  Authors: [SnowyFlakeFox]
+  Description: Includes quite a bit of wind.
+  Text: 'After many attempts at trying to make a map that I like, I finally had an
+    idea that I clung onto. Hopefully, you enjoy it too. Includes: Five strawberries.
+    11 or so Rooms. A Golden Strawberry. A Crystal Heart Quite a bit of Wind. Maybe,
+    after some time, a B Side. Hopefully you enjoy this windy little adventure. :)'
+- GameBananaType: Map
+  GameBananaId: 214021
+  Name: Fire Dreams
+  Authors: [Samah]
+  Description: ''
+  Text: Initial release of my first Celeste map for playtesting. Just a linear Core-themed
+    map with lots of dream blocks. Target difficulty is for very casual players, the
+    only tech required are dream jumps and wall bounces. Be Kind!
+- GameBananaType: Gamefile
+  GameBananaId: 13829
+  Name: Frozen Heights Audio
+  Authors: [Cabob, Soichi Terada]
+  Description: ''
+  Text: This is the audio required to play the celeste mod Frozen Heights.
+- GameBananaType: Map
+  GameBananaId: 214019
+  Name: B side The adventure of OI!
+  Authors: [beast1425]
+  Description: oi
+  Text: B side of my first map has custom content took a bit will be updating and
+    will probably fill in and add more to some screens
+- GameBananaType: Map
+  GameBananaId: 214018
+  Name: Mountain*
+  Authors: [Doc Ock, Doc Ock, Mt. Celeste Climbing Association, Mt. Celeste Climbing
+      Association]
+  Description: A mod about climbing a Mountain*
+  Text: Mountain* is my first mod, it doesn't really have a story, and it mainly started
+    off as an experiment. However, it has good gameplay, a decent amount of strawberries,
+    and some secrets. I hope you enjoy it! Required* techs- Supers, Wallbounces, Neutrals,
+    Wavedashes Optional* techs- Ultras, Demos
+- GameBananaType: Map
+  GameBananaId: 211773
+  Name: Cryoshock
+  Authors: [Jackal-Pommeletheus, Viv, Donker19, Anilmky -Nikko-, Bissy, CarelessAnonymous,
+    Marcossanches, MaxBoi, Holly Magala, HarryLTS, Cabob, Little Gamer, DeathKontrol,
+    tobyaaa, iamdadbod, ThetaGC, Banana 23, Quantum Spaceman, 'elio:)']
+  Description: A Celeste Map by Jackal
+  Text: 'After over 6 months of mapping, learning code, bubble jank, and consulting
+    Celestecord too many times to count, I''m proud to present Cryoshock! Taking place
+    a year after Madeline explores the Core, she returns to Celeste Mountain upon
+    receiving a letter from Granny describing a new trail and an interesting tree.
+    This map assumes you understand all mechanics through Core B-Side, brushing up
+    and teaching new tricks along the way. I put a ton of effort into this, and I
+    hope you enjoy it. If you have any feedback, let me know in the comments or DM
+    me at Jackal#0880. Good luck! This map is planned to be a part of a mini-campaign,
+    featuring 2-3 chapters with B-Sides and C-Sides. More info will be put here as
+    those maps get developed! Included in this mod: 1 Chapter A, B, and C Side New
+    Story 50+ Rooms 14 Strawberry Ice Creams Cassette Tape 3 Golden Ice Creams Crystal
+    Heart with a Puzzle Custom Sprites Reskinned and Custom Entities Intro Car And
+    more! This map ranges in difficulty from late advanced to early expert, while
+    the B-Side will probably hover around early expert. For a complete clear of this
+    map, you will need to understand: Super Dashes (Normal and Booster) This map teaches
+    you the following tech: Wave Dashes (Normal and Booster) Wallbounces Reverse Wave
+    Dashes (Normal and Booster) Corner Boosts (Normal, Booster, Bunny, and Sled) Bunny
+    Hops Sled Ultra Dashes In addition, later rooms will require you to consider how
+    the above tech interacts with certain momentum modifiers (sleds, blizzard wind)
+    and adapt your playstyle to match it. Please note that rooms were not designed
+    with fast bubbling as the primary solution, so while each room can be completed
+    without fast bubbling, the opposite is not necessarily true. Huge thanks to the
+    playtesters (find them in the Demo Gang cutscene), as well as Nikko for styleground
+    and tileset assets, Bissy for decal design, and Viv for teaching me code modding.
+    During the development of the B and C sides, I also received custom assets for
+    spinners from Donker19 and crystal decals from Marcossanches and CarelessAnonymous.
+    You all are the reason this project was possible, and I couldn''t have done this
+    without you! Song Credits: Checkpoints 1 and 2:https://www.youtube.com/watch?v=pzlhkRtXlhc&t=1s
+    Checkpoint 3: https://www.youtube.com/watch?v=3uCdvGStEeQ&list=LL0HUxoWLTS4AbgNZoq8XQ0w&index=4&t=0s
+    Dependencies 1. Everest 2. Frost Helper 3. DjMapHelper 4. IsaGrabBag 5. Sardine7
+    6. Viv''s Helper 7. Max''s Helping Hand 8. Contort Helper 9. Jackal Helper 10.
+    Flaglines and Such'
 - GameBananaType: Wip
   GameBananaId: 52955
   Name: Dusk
@@ -37,7 +132,7 @@
 - GameBananaType: Map
   GameBananaId: 213890
   Name: RITE
-  Authors: [Pond Games Pty Ltd, Grand Prize Big Fuzz, PugRoy]
+  Authors: [PugRoy, Pond Games Pty Ltd, Grand Prize Big Fuzz]
   Description: Rite of the Jungle in Celeste!
   Text: 'This is a WIP Campaign and currently only contains the first chapter, Rite
     of the Jungle. This map will be updated if and when I make the other 4 chapters.
@@ -52,7 +147,7 @@
 - GameBananaType: Map
   GameBananaId: 213882
   Name: 1D_Garbage_Version.bin
-  Authors: [' Mt. Celeste Climbing Association', Flinchless, Monika523]
+  Authors: [Flinchless, Monika523, ' Mt. Celeste Climbing Association']
   Description: 1D but cycles. (That's about it)
   Text: 'Have you ever thought the d-sides pack was too easy? Well, I have a solution
     to that! This map contains: Cycles More Cycles A Golden Strawberry And even more
@@ -82,8 +177,8 @@
 - GameBananaType: Map
   GameBananaId: 213841
   Name: The Seaside C-Side
-  Authors: [iamdadbod, Anilmky -Nikko-, SpoopySoup, LumaCeleste, ThetaGC, Hydro0,
-    MunTheory, LumaCeleste]
+  Authors: [iamdadbod, MunTheory, LumaCeleste, Anilmky -Nikko-, SpoopySoup, LumaCeleste,
+    ThetaGC, Hydro0]
   Description: ''
   Text: 'The Seaside C-Side is a map that I''ve been working on for a little over
     6 months though it was on the back burner for a while. This map was a side project
@@ -127,7 +222,7 @@
 - GameBananaType: Map
   GameBananaId: 213799
   Name: Rectangles
-  Authors: [Projecteer, WizardOfWit, snolls, eee., Phyre, Worldwaker2]
+  Authors: [Worldwaker2, Projecteer, WizardOfWit, snolls, eee., Phyre]
   Description: A Labyrinth of Single-Screen Challenges
   Text: Hey! Thanks for checking out my first (released) map, Rectangles. I built
     this map to experiment with single-screen gameplay, and to help myself get better
@@ -163,8 +258,8 @@
 - GameBananaType: Map
   GameBananaId: 213681
   Name: Another Farewell Map
-  Authors: [Banana 23, Jackal.exe, Donker19, CarelessAnonymous, bigkahuna443, RamenTwig,
-    MastarMusic]
+  Authors: [Banana 23, MastarMusic, Jackal.exe, Donker19, CarelessAnonymous, bigkahuna443,
+    RamenTwig]
   Description: Keep on scrolling, cause this is just Another Farewell Map.
   Text: 'A project that took me nearly 5 months can finally be released, I hope you
     all are ready for... Another Farewell Map! This map contains around: 90~ish gameplay
@@ -313,9 +408,9 @@
 - GameBananaType: Map
   GameBananaId: 213619
   Name: iamdadbod Halloween Contest 2020
-  Authors: [bigkahuna443, OkNano, Appels, Banana 23, BlueXans, jessnoises, Lichtbaulb,
-    Macaroni Boi, OkNano, phant, xRue, sknolls, Tortoise, WizardOfWit, xolimono, RadleyMcTuneston,
-    Donker19, iamdadbod, ThetaGC, rocketguy2]
+  Authors: [RadleyMcTuneston, Donker19, iamdadbod, ThetaGC, rocketguy2, Appels, Banana
+      23, BlueXans, jessnoises, Lichtbaulb, Macaroni Boi, OkNano, phant, xRue, sknolls,
+    Tortoise, WizardOfWit, xolimono, bigkahuna443, OkNano]
   Description: Haunted Hotel
   Text: This pack features thirteen mappers who created dark, spooky maps featuring
     Badeline chasers for the iamdadbod Halloween Contest 2020. Maps range from Intermediate
@@ -408,7 +503,7 @@
 - GameBananaType: Map
   GameBananaId: 213599
   Name: Jelly Bubbles
-  Authors: [tobyaaa, max480, Everest and Ahorn team, Donker19]
+  Authors: [tobyaaa, Donker19, max480, Everest and Ahorn team]
   Description: hmm, how do I spice up mirror temple deco? Oh, I know!
   Text: This is my contest entry for the contest held awhile ago on the Iamdadbod
     server. For this competition, participants were meant to make a single 30-seconds-or-less
@@ -434,7 +529,7 @@
 - GameBananaType: Map
   GameBananaId: 213587
   Name: snolls cursed map
-  Authors: [theta, lennygold, sknolls]
+  Authors: [sknolls, theta, lennygold]
   Description: An extremely difficult and cursed map made by snolls.
   Text: 'Fair warning now: Your enjoyment of this map is going to be almost entirely
     dependent on how much you like corner tech and banging your head against a wall.
@@ -442,7 +537,7 @@
     screens multiple times when making this.'
 - GameBananaType: Wip
   GameBananaId: 52824
-  Name: Untitled Farewell Map ALPHA
+  Name: Untitled Farewell Map (WIP)
   Authors: [charkol]
   Description: ''
   Text: A map i'm working on. It's only 3 rooms long
@@ -497,7 +592,7 @@
 - GameBananaType: Map
   GameBananaId: 213456
   Name: EPIC e-girl campaign
-  Authors: [Crasseyon, BV502, Eenox, 'me :^)', BV502]
+  Authors: ['me :^)', Crasseyon, BV502, Eenox, BV502]
   Description: A satirical masterpiece which includes the 3 letter C word that ends
     with an M and has U somewhere in the middle.
   Text: 'Content Warning: Mild NSFW Verbal profanity Chat Metahumor This map is dedicated
@@ -601,7 +696,7 @@
 - GameBananaType: Map
   GameBananaId: 213346
   Name: Volcanoes are just Spicy Mountains
-  Authors: [Nikko | CEO of skinmod, LethargicDoggo]
+  Authors: [LethargicDoggo, Nikko | CEO of skinmod]
   Description: It's the truth and you know it
   Text: 'It''s the truth and you know it VAJSM is a project I started back in June
     2020 and recently decided to finish Contains: 32 Rooms A half-assed golden room
@@ -683,7 +778,7 @@
 - GameBananaType: Map
   GameBananaId: 213285
   Name: Stuck in my head
-  Authors: [Thegur90, Phyre, sknolls]
+  Authors: [Phyre, sknolls, Thegur90]
   Description: ''
   Text: my first map, with some advanced tech required, but nothing crazy like ultras
     or spike jumps. Im not sure what else to put here, but enjoy! its not thoughtful
@@ -697,7 +792,7 @@
 - GameBananaType: Map
   GameBananaId: 213257
   Name: The Cavernous Crystal Cave
-  Authors: [Piniferd, Antihuman767, thebreadstick1]
+  Authors: [thebreadstick1, Piniferd, Antihuman767]
   Description: ''
   Text: 'IT''S FINALLY HERE! My first map has finally been completed after 3 months
     and 90 hours of work. The map takes place after the events of Farewell, where
@@ -857,8 +952,8 @@
 - GameBananaType: Map
   GameBananaId: 213028
   Name: Vibe Mountain
-  Authors: [max480, JaThePlayer, DemoJameson, Brokemia, coloursofnoise, lennygold,
-    Phyre, LIER0, sknolls, RDoggo8]
+  Authors: [RDoggo8, Brokemia, Phyre, LIER0, sknolls, coloursofnoise, lennygold, max480,
+    JaThePlayer, DemoJameson]
   Description: A short simple campaign
   Text: 'Vibe Mountain is my first Celeste Campaign! It includes 4 moderately short
     chapters based around rhythm blocks. There is no tech required in the A-Sides.
@@ -890,8 +985,8 @@
 - GameBananaType: Map
   GameBananaId: 213017
   Name: Corruption
-  Authors: [catapillie, max480, marshall h, Cruor, fishtank_underflow, RadleyMcTuneston,
-    Lollipop, mothbeanie, Joshua, pixelator]
+  Authors: [pixelator, catapillie, max480, marshall h, Cruor, fishtank_underflow,
+    RadleyMcTuneston, Lollipop, mothbeanie, Joshua]
   Description: Investigate the Mountain's recent odd happenings
   Text: 'Madeline has returned to Celeste Mountain (for what seems like the fiftieth
     time now), only to discover that its power has begun to twist and distort it in
@@ -950,8 +1045,8 @@
 - GameBananaType: Map
   GameBananaId: 212998
   Name: Sunset Rise
-  Authors: [aridai, max480, deskilln, Indecx, Vanilla Celeste, Ezel142, snolls, Banana
-      23, lennygold, WizardOfWit, Renatotheflowey, DeathKontrol]
+  Authors: [Ezel142, snolls, Banana 23, lennygold, WizardOfWit, Renatotheflowey, DeathKontrol,
+    aridai, max480, deskilln, Indecx, Vanilla Celeste]
   Description: A dashless map that focuses on double jumps, various platforming challenges
     and puzzles.
   Text: 'Sunset Rise is a dashless summit-esque map that utilizes the double jump
@@ -1000,9 +1095,9 @@
 - GameBananaType: Map
   GameBananaId: 212911
   Name: Temporal Shrine
-  Authors: [RamenTwig, vitellary, catapillie, Bio., coloursofnoise, Viv, Anilmky -Nikko-,
-    MunTheory, DemoJameson, max480, Brokemia, marshall h, Donker19, ThetaGC, BigKahuna,
-    Cabob]
+  Authors: [RamenTwig, Donker19, ThetaGC, BigKahuna, Cabob, vitellary, catapillie,
+    Bio., coloursofnoise, Viv, Anilmky -Nikko-, MunTheory, DemoJameson, max480, Brokemia,
+    marshall h]
   Description: Madeline dreams of a strange shrine to the past, and works to figure
     out what such a dream means for her, and her sense of identity.
   Text: 'Temporal Shrine is a moderately difficult puzzle-platforming map centered
@@ -1028,7 +1123,7 @@
 - GameBananaType: Map
   GameBananaId: 212107
   Name: Rock Bottom
-  Authors: [catapillie, aridai, Cabob, pixelator, CarelessAnonymous]
+  Authors: [CarelessAnonymous, Cabob, pixelator, catapillie, aridai]
   Description: A long way down...
   Text: 'Madeline falls down a very large pit and ends up back where Reflection takes
     place. Tech Required: -Supers -wavedashes -wallbounces -ultras -reverse variants
@@ -1043,7 +1138,7 @@
 - GameBananaType: Map
   GameBananaId: 212907
   Name: Depth Of The Mountain
-  Authors: [SummitBadeline, Diotan, '- max12 -', max480, Viv, pixelator, Wery, MrLynel]
+  Authors: [SummitBadeline, max480, Viv, pixelator, Diotan, '- max12 -', Wery, MrLynel]
   Description: ''
   Text: 'Oh, i need to write body? Ok Map Contained: Badeline Ruins ~30 rooms 6 strawberries
     2 checkpoints 3 secret thanks Old Hotel ~60 rooms 8 strawberryes 3 checkpoints
@@ -1059,13 +1154,14 @@
     gnommis, xolimono, Quantum Spaceman, aleph_null, Katrina, pansear, Appels, tobyaaa,
     iamdadbod, Goldian, MaxBoi, Norah, woofdoggo, gnommis, SpoopySoup]
   Description: ''
-  Text: This was a competition hosted back in September 2020, full details are here.
-    For this competition it will be through public voting, meaning you can vote your
-    favorite maps for them to win, you can do so in here.
+  Text: 'This was a competition hosted back in September 2020, full details are here.
+    This competition was through public voting, meaning you could vote your favorite
+    maps for them to win. Winners:Gameplay: aleph_null (Low Effort Ultra Map) Decoration:
+    Quantum Spaceman (Hallucinations of Flying) Creativity: tobyaaa (Royal Blue Reef)'
 - GameBananaType: Gamefile
   GameBananaId: 13215
   Name: Chaos Mode
-  Authors: [Kaze, JaThePlayer]
+  Authors: [JaThePlayer, Kaze]
   Description: Pure chaos...
   Text: 'This code mode introduces chaos to the game, by enabling a set amount of
     effects while in a level. Some are purely visual, others change gameplay in big
@@ -1099,13 +1195,14 @@
 - GameBananaType: Map
   GameBananaId: 212830
   Name: Nightmare´s Realm
-  Authors: [iamdadbod, celestecord, Rue]
+  Authors: [Rue, iamdadbod, celestecord]
   Description: A short halloween map by Rue
   Text: My halloween entry map! took about a month to make 5 advanced difficulty rooms
 - GameBananaType: Gamefile
   GameBananaId: 13185
   Name: Decals+
-  Authors: [Dio, '- Max12 -', SummitBadeline, Spring Collab 2020 Team, Celeste, SummitBadeline]
+  Authors: [SummitBadeline, Spring Collab 2020 Team, Celeste, SummitBadeline, Dio,
+    '- Max12 -']
   Description: A decals pack for celeste
   Text: 'yea, a decals pack for celeste (small in this moment, and big in next versions)
     Decals: Titles: PERFECT (animation title) GO DOWN (animation title) FakeObjects:
@@ -1122,7 +1219,7 @@
 - GameBananaType: Map
   GameBananaId: 212797
   Name: The SummitBadeline challanges
-  Authors: [Dio, SummitBadeline]
+  Authors: [SummitBadeline, Dio]
   Description: ''
   Text: 'Just a set of my random challenges. Try to get through! (not difficult) Map
     contained: Moon Event Crimson Night ?????core Tricks need: Fast bubble Wavedash
@@ -1141,7 +1238,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 13148
   Name: Yet Another Helper
-  Authors: [Viv, max480, TheAdvertisement, Norah, woofdoggo]
+  Authors: [Norah, woofdoggo, Viv, max480, TheAdvertisement]
   Description: ''
   Text: 'Yet Another Helper for Celeste, what were you expecting? This mod is a list
     of entities and triggers I''ve thought or wanted to create because of a map or
@@ -1180,7 +1277,7 @@
 - GameBananaType: Map
   GameBananaId: 212759
   Name: Forgotten Path
-  Authors: [galaktikpotato, Donker19, Iamdadbod]
+  Authors: [galaktikpotato, Iamdadbod, Donker19]
   Description: Another cave, Another adventure.
   Text: Granny told Madeline of a cave she found not to far from the forsaken city.
     Madeline, of course went looking looking for this cave and after 9 hours of searching...
@@ -1301,7 +1398,7 @@
 - GameBananaType: Map
   GameBananaId: 212666
   Name: Short & Sweet (Discontinued)
-  Authors: [MaxBoi, You, Draconeiryx]
+  Authors: [MaxBoi, Draconeiryx, You]
   Description: Imagine me finishing projects i start
   Text: 'Another project i was working on. Sort of like sm64, but smaller and in Celeste.
     Theres only 2 levels, each 10 rooms long, currently. Contains: 1 lobby 2 Levels
@@ -1309,8 +1406,8 @@
 - GameBananaType: Gamefile
   GameBananaId: 13115
   Name: Flaglines And Such
-  Authors: [tobyaaa, Celeste devs, The Ahorn team, The Everest team, coloursofnoise,
-    Cruor, Viv, vitellary, Probably some other people I forgot but oh well]
+  Authors: [tobyaaa, coloursofnoise, Cruor, Viv, vitellary, Probably some other people
+      I forgot but oh well, Celeste devs, The Ahorn team, The Everest team]
   Description: guys how do I remove the ellipsis in the subtitle
   Text: 'This is a small code mod I''ve been working on for a while... It isn''t the
     greatest thing out there as I''m not the greatest coder, but it''s got a few interesting
@@ -1387,8 +1484,8 @@
 - GameBananaType: Gamefile
   GameBananaId: 13046
   Name: Celeste Randomizer Helper
-  Authors: [Mnstrman06, nebs13, Yoshachobi7, Ezel142, LumaCeleste, Ezel142, marshall
-      h, rhelmot, Mnstrman06, Yoshachobi7]
+  Authors: [Mnstrman06, nebs13, Yoshachobi7, Ezel142, LumaCeleste, Mnstrman06, Yoshachobi7,
+    Ezel142, marshall h, rhelmot]
   Description: An addon to the Celeste Randomizer mod which adds custom map support
     for Ezel's CC-Sides and Glyph to the randomizer.
   Text: 'An addon to the Randomizer mod which adds custom map support for Ezel''s
@@ -1597,8 +1694,8 @@
 - GameBananaType: Map
   GameBananaId: 212404
   Name: Hakoniwa Adventure
-  Authors: [max480, Meowsmith, Hydro0, zZerex, Appels, Aroxon, The_Cookie_Monster,
-    Fishtank, fishtank_underflow]
+  Authors: [Fishtank, fishtank_underflow, Appels, Aroxon, The_Cookie_Monster, max480,
+    Meowsmith, Hydro0, zZerex]
   Description: Celeste Mountain Is A Box
   Text: 'The so-called "Celeste Mountain" is but a huge box, and Madeline is delving
     into the deepest corners of it... Gameplay Simplistic puzzle map with heavy focus
@@ -1624,7 +1721,7 @@
 - GameBananaType: Map
   GameBananaId: 212365
   Name: For iamdadbod :)
-  Authors: [JaThePlayer, Macaroni Boi, max480, others idk]
+  Authors: [Macaroni Boi, max480, others idk, JaThePlayer]
   Description: Dedicated to iamdadbod
   Text: WARNING! The stylegrounds can get pretty trippy/nauseating. This is a map
     dedicated to iamdadbod! I put a lot of effort into it and i hope you like it!
@@ -1649,10 +1746,10 @@
 - GameBananaType: Map
   GameBananaId: 211789
   Name: 'Overgrown Metro: A Mapping Contest'
-  Authors: [MunTheory, Donker19, Nikko, Donker19, Appels, Aroxon, Cabob, chase_333,
-    DanTKO, Donker19, Flagpole1up, hennyburger, iamdadbod, Indecx, JaThePlayer, Luma,
-    Mineman, MunTheory, NeoKat, OkNano, Rocketguy2, TriggerChoco, Donker19, iamdadbod,
-    MunTheory, TriggerChoco]
+  Authors: [Appels, Aroxon, Cabob, chase_333, DanTKO, Donker19, Flagpole1up, hennyburger,
+    iamdadbod, Indecx, JaThePlayer, Luma, Mineman, MunTheory, NeoKat, OkNano, Rocketguy2,
+    TriggerChoco, Nikko, Donker19, Donker19, iamdadbod, MunTheory, TriggerChoco, MunTheory,
+    Donker19]
   Description: A Mapping Contest
   Text: 'Context: This was a mapping contest I hosted back on June 26, 2020 in the
     Official iamdadbod Discord Server (Join Here: https://discord.gg/mnamK8). Me and
@@ -1663,7 +1760,7 @@
 - GameBananaType: Map
   GameBananaId: 212325
   Name: Blindsided (Demo Ver.)
-  Authors: [iamdadbod, Benjamanian, NotYourBadeline, Snas]
+  Authors: [NotYourBadeline, Snas, iamdadbod, Benjamanian]
   Description: You are Allison. Your father blinded you as a child, he lives on Celeste
     Mountain. You know what to do.
   Text: 'You are Allison. Your father blinded you as a child, he lives on Celeste
@@ -1684,7 +1781,7 @@
 - GameBananaType: Map
   GameBananaId: 212317
   Name: Dystopia
-  Authors: [Spring Collab 2020 Team, ICookieI, marshall h, Lieutenant AI]
+  Authors: [Lieutenant AI, marshall h, Spring Collab 2020 Team, ICookieI]
   Description: Crimson Night Inspired Beginner Mini Map
   Text: 'First, I would like to say thank you to all the wonderful people that worked
     on The 2020 Celeste Spring Community Collab, It''s been tons of fun and is the
@@ -1699,7 +1796,7 @@
 - GameBananaType: Map
   GameBananaId: 212315
   Name: Dream before a journey
-  Authors: [The sauce queen, Donker19, shirb, The sauce queen]
+  Authors: [The sauce queen, The sauce queen, shirb, Donker19]
   Description: Dream before a journey by the sauce queen
   Text: 'Dream before a journey is a map ive been working on for 3 months that contains
     60+ rooms. It has 15 strawberries to collect and 1 moonberry. Major thanks to
@@ -1791,8 +1888,8 @@
 - GameBananaType: Map
   GameBananaId: 211525
   Name: IronSmeltery's Campaign
-  Authors: [IronSmeltery, max480, LIER0, Viv, Norah, nockscitney, ItsTangent, And
-      many more]
+  Authors: [IronSmeltery, Viv, Norah, nockscitney, ItsTangent, And many more, max480,
+    LIER0]
   Description: Is not hard :>
   Text: 'I decided to make a remix of Forsaken City, and I somehow made an expert
     level while aiming for an easy one, welp. I''m making a full 8 chapter Campaign.
@@ -1846,8 +1943,8 @@
 - GameBananaType: Gamefile
   GameBananaId: 12784
   Name: Collab Utils 2
-  Authors: ['0x0ade', max480, Cruor, Vexatos, JaThePlayer, DanTKO, maildrop, RadleyMcTuneston,
-    SpoopySoup, Thegur90]
+  Authors: ['0x0ade', max480, JaThePlayer, DanTKO, maildrop, RadleyMcTuneston, SpoopySoup,
+    Thegur90, Cruor, Vexatos]
   Description: A mod providing useful features for collabs
   Text: 'This mod adds some entities and features that are useful for collabs: Chapter
     Panel and Journal Triggers: those triggers allow you to bring up a chapter panel
@@ -1936,7 +2033,7 @@
 - GameBananaType: Map
   GameBananaId: 211917
   Name: Kevlov Dog
-  Authors: [RamenTwig, Cabob, fishtank_underflow, marshall h, max480, Donker19, st0tch]
+  Authors: [RamenTwig, Donker19, st0tch, Cabob, fishtank_underflow, marshall h, max480]
   Description: Madeline enters a frosty temple, where she finds a breed of Kevin's
     cowardly cousins, the Vinnies!
   Text: 'Kevlov Dog was made in 24 hours for Donker19''s Celeste mapping competition
@@ -1957,7 +2054,7 @@
 - GameBananaType: Map
   GameBananaId: 211913
   Name: Hug A Kevin
-  Authors: [RamenTwig, Monika523, Habbedaz, Twitch Chat, ThetaGC]
+  Authors: [ThetaGC, RamenTwig, Monika523, Habbedaz, Twitch Chat]
   Description: I hugged a Kevin and said goodbye
   Text: 'This is my submission for the 24 hour Donker19 map contest in the iamdadbod
     discord server (https://discord.gg/xnuNZfU). The rules were to only use mechanics
@@ -2027,7 +2124,7 @@
 - GameBananaType: Map
   GameBananaId: 211903
   Name: Crystallised Reflections
-  Authors: [aridai, ThouArtThyself]
+  Authors: [ThouArtThyself, aridai]
   Description: Small map, made for a contest
   Text: 'Small map (around 30 seconds of gameplay). No story, no berries, a heart
     to end the level. 5 intermediate difficulty screens. Tech required: 1. Wavedash
@@ -2072,7 +2169,7 @@
 - GameBananaType: Map
   GameBananaId: 211855
   Name: World's Hardest Game - Celeste Remake
-  Authors: [Snubby Land, Alice2O3]
+  Authors: [Alice2O3, Snubby Land]
   Description: The World's Hardest Game Remake
   Text: 'My new map based on a flash game The World''s Hardest Game by This map is
     a relatively complete port, nearly all of the maps and the texts shown before
@@ -2103,9 +2200,9 @@
   GameBananaId: 211807
   Name: '[100-Floor] Madeline wanna trial the 100trap'
   Authors:
+  - Alice2O3
   - !!binary |-
     w6nCl8KHw6fCqcK6w6PCgcKuw6XCo8Kw
-  - Alice2O3
   Description: An 100-Floor game inspired by the game 'I wanna trial the 100trap'
   Text: 'Well, this game is my first (and maybe the community) 100-floor style game
     inspired by an iwanna game - I wanna trial the 100trap. This game is not a remake,
@@ -2202,7 +2299,7 @@
 - GameBananaType: Map
   GameBananaId: 211778
   Name: Downwards - My First Map
-  Authors: [Spatchy, Iplayit12]
+  Authors: [Iplayit12, Spatchy]
   Description: Hi! This is my First Map, so please don't have high expectations!
   Text: 'I mean it''s my first map... Nothing much to tell about... Uhh... This maps
     needs: DJ Map Helper Factory Helper Adventure Helper Or you could just start celeste
@@ -2247,8 +2344,8 @@
 - GameBananaType: Map
   GameBananaId: 211710
   Name: Ideas, Ideas...
-  Authors: [Aylse, '0x0ade', Cruor, fri0s, KaydenFox, Bio., DemoJameson, JaThePlayer,
-    max480]
+  Authors: [Aylse, '0x0ade', Cruor, KaydenFox, Bio., DemoJameson, JaThePlayer, max480,
+    fri0s]
   Description: A pit of random ideas...
   Text: This is my first time actually uploading a map to GameBanana! This campaign
     is really just a hole that I can throw ideas into and hope they turn out good,
@@ -2280,8 +2377,8 @@
 - GameBananaType: Map
   GameBananaId: 211644
   Name: Midnight Aquarium
-  Authors: [RamenTwig, '0x0ade', Cruor, MunTheory, max480, marshall h, JaThePlayer,
-    DemoJameson, ThetaGC, Cabob, 30chad03]
+  Authors: [RamenTwig, ThetaGC, Cabob, 30chad03, '0x0ade', Cruor, MunTheory, max480,
+    marshall h, JaThePlayer, DemoJameson]
   Description: Madeline explores a new haunting biome in the depths of a terrifying
     spiral.
   Text: 'Midnight Aquarium is an incredibly difficult aquatic-temple themed Celeste
@@ -2381,8 +2478,9 @@
 - GameBananaType: Map
   GameBananaId: 211606
   Name: Hard Old Site (WIP)
-  Authors: [Reaver (The Ghost Block Guy), max480, Theta, All other Mt. Celeste Climbing
-      Association members who helped with file modeling, Matt Makes Games Inc., Silverfish003]
+  Authors: [Silverfish003, Matt Makes Games Inc., Reaver (The Ghost Block Guy), max480,
+    Theta, All other Mt. Celeste Climbing Association members who helped with file
+      modeling]
   Description: A default adventure with a lot of pain.
   Text: 'If something isn´t working, message me. I will quickly fix it. This map is
     currently in alpha. When I played Old Site, I found it boring. So I decided to
@@ -2436,7 +2534,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 12614
   Name: AltLevels Helper
-  Authors: [Evilleafy, Sklz]
+  Authors: [Sklz, Evilleafy]
   Description: A helper intended to be used for the upcoming Alternate Levels. Still
     pretty WIP.
   Text: Hello! This is a helper that I did not make! This helper was made by my friend
@@ -2464,8 +2562,8 @@
 - GameBananaType: Map
   GameBananaId: 211548
   Name: Flavors of Pi
-  Authors: [Evermar314159, Bio., '0x0ade', max480, catapillie, Viv, KaydenFox, Whytefang,
-    caeyo, SSM24]
+  Authors: [Evermar314159, Bio., Whytefang, caeyo, SSM24, '0x0ade', max480, catapillie,
+    Viv, KaydenFox]
   Description: Zip Movers galore with a custom mechanic! Madeline finds herself in
     a strange digital world.
   Text: 'My first Celeste Custom Campaign: Flavors of Pi This map mainly features
@@ -2544,8 +2642,8 @@
 - GameBananaType: Map
   GameBananaId: 211523
   Name: Crimson Temple
-  Authors: [Red_Boule, iamdadbod, Cabob, MastarMusic, Little Gamer, cool, Hydro0,
-    Marcossanches, iamdadbod]
+  Authors: [Red_Boule, Cabob, MastarMusic, Little Gamer, cool, Hydro0, Marcossanches,
+    iamdadbod, iamdadbod]
   Description: A fun and challenging map
   Text: 'Madeline climbs Celeste Mountain once again to visit Granny''s grave. But
     she discovers a new and unexplored Temple. This is my first map and I''m quite
@@ -2580,7 +2678,7 @@
 - GameBananaType: Map
   GameBananaId: 211493
   Name: Whispers of the Heart
-  Authors: [Neko-Maki, marshall h, JaThePlayer, max480, DemoJameson, ThetaGC]
+  Authors: [Neko-Maki, ThetaGC, marshall h, JaThePlayer, max480, DemoJameson]
   Description: Maddy ends up lost in yet another strange location...
   Text: 'Whispers of the Heart Hello and thank you for looking at this map of mine!
     I am Maki on discord (Neko-maki#1930) MAP 1: A Vignetted Memory Info Madeline
@@ -2633,9 +2731,9 @@
 - GameBananaType: Map
   GameBananaId: 211420
   Name: 'Frozen Heights (Now with chapter 3: Frost Complex)'
-  Authors: [Cabob, iamdadbod, DanTKO, Marcossanches, ThetaGC, RamenTwig, Quantum Spaceman,
+  Authors: [Cabob, Pupett, Soichi Terada, max480, ThetaGC, RamenTwig, Quantum Spaceman,
     Minemah, Donker19, Projecteer, Mariel, kaisomir, Little Gamer, CarelessAnonymous,
-    Pupett, Soichi Terada, max480]
+    iamdadbod, DanTKO, Marcossanches]
   Description: Madeline's plane crashes on an unexplored cold mountain.
   Text: 'After messing around in Ahorn I found a lot of unique ways to use mechanics
     like ice and water and decided to create a small ice-themed campaign! The music
@@ -2955,7 +3053,7 @@
 - GameBananaType: Tool
   GameBananaId: 6850
   Name: Memorial Helper
-  Authors: ['0x0ade', maildrop]
+  Authors: [maildrop, '0x0ade']
   Description: Useful objects for mapmaking
   Text: 'Some extra objects for making maps Three items are currently included: Parallax
     text -- Core text is great and all, but maybe you don''t want white text. Maybe
@@ -2971,8 +3069,8 @@
 - GameBananaType: Map
   GameBananaId: 211289
   Name: MacaHotel
-  Authors: [Macaroni Boi, Arsenal Boi, Next101x, Dabba, The Gentle One, chase_333,
-    Macaroni Boi]
+  Authors: [Macaroni Boi, Macaroni Boi, Arsenal Boi, Next101x, Dabba, The Gentle One,
+    chase_333]
   Description: vibe palace
   Text: 'A big map with no purpose at all, filled with secrets and places to explore.
     Warning: some places are very trippy. If you want a room inside the hotel, DM
@@ -2993,14 +3091,14 @@
 - GameBananaType: Map
   GameBananaId: 211260
   Name: Ridgevator
-  Authors: [Cruor, Vexatos, '0x0ade', LiquidHelix]
+  Authors: [LiquidHelix, Cruor, Vexatos, '0x0ade']
   Description: A short and sweet ridge map
   Text: 'A short, easy Golden Ridge-themed map focused around sinking platforms. Features:
     15 rooms 8 strawberries Easy difficulty'
 - GameBananaType: Map
   GameBananaId: 211257
   Name: Rhythm Universe
-  Authors: [Brokemia, JaThePlayer, Ezel142, Banana 23]
+  Authors: [Ezel142, Banana 23, Brokemia, JaThePlayer]
   Description: A map that focuses around cassette block related platforming and puzzles.
   Text: 'NOTE: If the "frozen" cassette blocks don''t respawn immediately after transitioning
     between rooms, reset the current room you''re in, and the cycle should change
@@ -3019,7 +3117,7 @@
 - GameBananaType: Map
   GameBananaId: 211240
   Name: Bing World
-  Authors: ['Everyone from #Map_Making on the Celeste Discord', Bing_Over_Google]
+  Authors: [Bing_Over_Google, 'Everyone from #Map_Making on the Celeste Discord']
   Description: Will you find what you're looking for?
   Text: 'Play through an alternate version of the world and climb up Celeste Mountain
     on a shorter, but harder trail. Included so far: - Prologue - Sets up the story
@@ -3032,7 +3130,7 @@
 - GameBananaType: Tool
   GameBananaId: 6848
   Name: Celeste Randomizer
-  Authors: [rhelmot, UltraMarlin, Brokemia, Ezra3, bigkahuna443, Monika523, DraconicAncestry]
+  Authors: [rhelmot, Monika523, DraconicAncestry, UltraMarlin, Brokemia, Ezra3, bigkahuna443]
   Description: Generate random conglomerates of your favorite maps!
   Text: This is a mod for Celeste that automatically generates randomly constructed
     maps by treating each room as a building block that can fit against certain other
@@ -3368,7 +3466,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 12267
   Name: CelesteNet
-  Authors: ['https://github.com/0x0ade/CelesteNet/graphs/contributors', '0x0ade']
+  Authors: ['0x0ade', 'https://github.com/0x0ade/CelesteNet/graphs/contributors']
   Description: Online Multiplayer Mod for Celeste
   Text: CelesteNet is an online multiplayer mod for Celeste, made with a lot of love
     and sweat. It completely replaces the previous GhostNet mod from 2018. Press T
@@ -3416,8 +3514,8 @@
 - GameBananaType: Map
   GameBananaId: 210887
   Name: Farewell B-Side - Rework Update!
-  Authors: ['0x0ade', Cruor, Vexatos, JaThePlayer, DemoJameson, aridai, Zerex, Hydro0,
-    Norah, DeathKontrol, Cr33pyCat, Flash, LumaCeleste]
+  Authors: [LumaCeleste, Zerex, Hydro0, Norah, DeathKontrol, Cr33pyCat, Flash, '0x0ade',
+    Cruor, Vexatos, JaThePlayer, DemoJameson, aridai]
   Description: The B-Side to Chapter 9.
   Text: 'You''ve heard of 9A, 9C, 9CC, and 9D. Now get ready for 9B. After many months
     and some delays in the development process, it''s finally out! This map has recently
@@ -3436,8 +3534,8 @@
 - GameBananaType: Map
   GameBananaId: 210855
   Name: The Climbing Blind Trilogy
-  Authors: [Snas, Monika523, My Surgeons, iamdadbod, Devon/Percussive, Benjamanian,
-    NotYourBadeline]
+  Authors: [NotYourBadeline, Devon/Percussive, Benjamanian, Snas, Monika523, My Surgeons,
+    iamdadbod]
   Description: A Celeste-Themed Trust Fall
   Text: 'A collection of maps you play blindfolded, with outside help. Over the course
     of a few years I''ve made a handful of maps for streamers to play with their chat
@@ -3508,7 +3606,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 12131
   Name: Guneline
-  Authors: [Foxer29, OliH]
+  Authors: [OliH, Foxer29]
   Description: Madeline has a gun and she's not afraid to use it
   Text: Guneline isn't an ordinary mod - Guneline is the finest mod to ever mod. Its
     sole purpose is to let you mess around, and it allows for this by granting Madeline
@@ -3527,8 +3625,8 @@
 - GameBananaType: Map
   GameBananaId: 210730
   Name: Quickie Mountain
-  Authors: [frozenflygone, BeanJammin, EdgeCaseCollective, Valdio, Celestecord Modding
-      Team, YukiLayla, Fellthekerl, Comet625, EricJ_Math, Amellensatz]
+  Authors: [frozenflygone, BeanJammin, YukiLayla, Fellthekerl, Comet625, EricJ_Math,
+    Amellensatz, EdgeCaseCollective, Valdio, Celestecord Modding Team]
   Description: ''
   Text: Welcome to Quickie Mountain! This custom map consists of an A-Side and B-Side
     modeled after two of my favorite Kaizo Hacks, Quickie World and Quickie World
@@ -3540,7 +3638,7 @@
 - GameBananaType: Map
   GameBananaId: 210705
   Name: Hydro's Campaign (Temp Name)
-  Authors: [Hydro0, Cruor, Vexatos, '0x0ade', pansear, tofufish, iamdadbod]
+  Authors: [Hydro0, pansear, tofufish, iamdadbod, Cruor, Vexatos, '0x0ade']
   Description: An overly ambitious campaign that has chances of being good
   Text: 'This campaign is going to have a total of 8 chapters+prologue if I ever finish
     it. Currently only has prologue in it, which is done except for the moonberry.
@@ -3597,7 +3695,7 @@
 - GameBananaType: Map
   GameBananaId: 210292
   Name: Frosted Cavern
-  Authors: [Lethargic Doggo, Draconeiric, 'Draconeiric ', Lethargic Doggo]
+  Authors: [Lethargic Doggo, Lethargic Doggo, 'Draconeiric ', Draconeiric]
   Description: ''
   Text: A Strange Cavern has appeared in Celeste Mountain. That wasn't there before...
     Lets go check it out! This is a remake of the first Celeste map I ever made, it
@@ -3648,8 +3746,8 @@
 - GameBananaType: Map
   GameBananaId: 210101
   Name: Conquerer
-  Authors: [beefyuncle, max480, iamdadbod, ThetaGC, max480, beefyuncle, iamdadbod,
-    Hydro0, Hydro0, Karma]
+  Authors: [Hydro0, Karma, beefyuncle, max480, iamdadbod, Hydro0, iamdadbod, ThetaGC,
+    max480, beefyuncle]
   Description: A Mini-Map
   Text: ConquererMadeline goes exploring near Granny's house... This is my first mini-map
     uploaded to GameBanana! I hope you enjoy the map as much as I did making it! There
@@ -3710,7 +3808,7 @@
 - GameBananaType: Map
   GameBananaId: 209951
   Name: Mount Everest
-  Authors: [Indecx, iamdadbod, DeathKontrol, MasterMario97, Jipisiko, Donker19]
+  Authors: [Indecx, DeathKontrol, MasterMario97, Jipisiko, Donker19, iamdadbod]
   Description: Climb another mountain!
   Text: 'My second full map. Please comment on what you would improve Shoutout to
     Kriog16 for being the first to get the golden on all the sides in this map. Absolutely
@@ -3743,7 +3841,7 @@
 - GameBananaType: Map
   GameBananaId: 209844
   Name: Hello
-  Authors: [deleste, eliportico, beefyuncle, eliportico, deleste]
+  Authors: [deleste, deleste, eliportico, eliportico, beefyuncle]
   Description: Never before seen amounts of Ogmo.
   Text: 'Hello includes: - 111 Red Berries - 5 Golden Berries (which change the experience
     in unique ways) - 7 Chapters, each with their own B side - Cool unique names for
@@ -3962,8 +4060,8 @@
 - GameBananaType: Map
   GameBananaId: 209460
   Name: Mirror Memories
-  Authors: [Aroxon, '0x0ade', Cruor, Vexatos, DemoJameson, max480, Hydro0, tof, Chloe,
-    tobyaaa]
+  Authors: [Aroxon, Hydro0, tof, Chloe, tobyaaa, '0x0ade', Cruor, Vexatos, DemoJameson,
+    max480]
   Description: ''
   Text: 'After 2 months of work I am here to finally present my first map! I put a
     lot of effort into this and it ended up turning out surprisingly well. This is
@@ -3994,8 +4092,8 @@
 - GameBananaType: Map
   GameBananaId: 209296
   Name: Glyph
-  Authors: [beefyuncle, 'Proxima4 ', 'FunWithSound ', 'reidedo ', 'Alexander ', '0x0ade',
-    max480, JaThePlayer, Cruor, Vexatos, Natalie, canadianclimber]
+  Authors: [beefyuncle, canadianclimber, '0x0ade', max480, JaThePlayer, Cruor, Vexatos,
+    Natalie, 'Proxima4 ', 'FunWithSound ', 'reidedo ', 'Alexander ']
   Description: Maddie goes on a journey through the mind & memories of one that are
     not her own.
   Text: 'Hi thanks for playing this map! this was created by marshall (aka beefyuncle)
@@ -4100,15 +4198,18 @@
 - GameBananaType: Gamefile
   GameBananaId: 11423
   Name: max480's Helping Hand
-  Authors: [max480, maildrop, MastarMusic, '0x0ade']
+  Authors: [max480, '0x0ade', maildrop, MastarMusic]
   Description: A grab bag of requests
   Text: 'This helper provides a few entities and triggers that were requested, and
     that could be useful for other people as well. Here is what is in the pack: New
     entities: Upside-Down and Sideways Jumpthroughs: platforms you can only cross
-    in one direction (left to right, right to left, or up to down). Flag Touch Switches
-    and Flag Switch Gates: touch switches that activate a flag, and switch gates that
-    listen to a flag. Check the readme on GitHub for more details on their usage.
-    You can also customize the delays for the flag switch gate, customize sounds,
+    in one direction (left to right, right to left, or up to down). The helper also
+    comes with Floaty Space Blocks that support Sideways Jumpthroughs attached to
+    them. For example, those will sink when the player grabs a jumpthrough attached
+    to it, and they will move if the player dashes into the jumpthrough. Flag Touch
+    Switches and Flag Switch Gates: touch switches that activate a flag, and switch
+    gates that listen to a flag. Check the readme on GitHub for more details on their
+    usage. You can also customize the delays for the flag switch gate, customize sounds,
     or make the gates come back to their initial position. Note that those have a
     lot of options, but the default values match vanilla, so you just have to adjust
     "Flag" as needed if you don''t need much customization. Flag Exit Blocks: exit
@@ -4180,33 +4281,36 @@
     lock the camera horizontally by using a Camera Target Trigger with lerp = 1 and
     X Only enabled. Pulled from Celsius by 0x0ade. Rainbow Spinner Color Controller:
     a controller that changes the color gradient of all rainbow spinners in the room.
-    Parallax Fade Out Controller: if this controller is present in a room, the parallax
-    stylegrounds that are set to "fade in" will fade out as well in this room. Flag
-    Logic Gate: this is a controller (invisible on the map) that allows you to calculate
-    a flag based on other flags (for example flag1 = flag2 AND flag3). Useful for
-    advanced setups. Set Flag On Spawn Controller: this controller can set or unset
-    a flag when the player enters the room it is in, or respawns in it. This is useful
-    in (rare) cases where resetting a flag on respawn is necessary, and a flag trigger
-    doesn''t set the flag early enough after respawn. New triggers: Strawberry Collection
-    Field: a zone where strawberries are collected, even if Madeline is not on the
-    ground. The opposite of Strawberry Blockfield, if you want. Gradient Dust Trigger:
-    gives the dust sprites in your rooms a color gradient, similarly to rainbow spinners.
-    Madeline Silhouette Trigger: a trigger turning Madeline into a ghost playback.
-    Madeline''s color will match her hair color. Color Grade Fade Trigger: a trigger
-    allowing to fade between two color grades in a similar way as Light Fade Trigger
-    (color grade A on the left, color grade B on the right). Camera Catchup Speed
-    Trigger: allows to set how fast the camera reaches its target. This is useful
-    for really fast sections, where growing offsets would be necessary otherwise.
-    Flag-Toggled Camera Triggers: camera offset, camera target and smooth camera offset
-    triggers you can turn on or off with a session flag. Pause Badeline Bosses Trigger:
-    Badeline bosses will stop attacking Madeline while she sits inside this trigger.
-    Speed-Based Music Param Trigger: this allows modulating a music param depending
-    on the player''s speed, for example to enable a layer or make it louder when the
-    player is fast enough. The change is persistent (the music param will continue
-    to be adjusted even when the player leaves the trigger and goes to other screens),
-    but you can override/disable this with another trigger. This helper also provides
-    support for Animated Parallax stylegrounds. In order to make an animated parallax:
-    add all your frames in Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/YourModName/bgName00.png,
+    Seeker Barrier Color Controller: a controller that changes the background color
+    and/or particle color of all seeker barriers in the room. Parallax Fade Out Controller:
+    if this controller is present in a room, the parallax stylegrounds that are set
+    to "fade in" will fade out as well in this room. Flag Logic Gate: this is a controller
+    (invisible on the map) that allows you to calculate a flag based on other flags
+    (for example flag1 = flag2 AND flag3). Useful for advanced setups. Set Flag On
+    Spawn Controller: this controller can set or unset a flag when the player enters
+    the room it is in, or respawns in it. This is useful in (rare) cases where resetting
+    a flag on respawn is necessary, and a flag trigger doesn''t set the flag early
+    enough after respawn. New triggers: Strawberry Collection Field: a zone where
+    strawberries are collected, even if Madeline is not on the ground. The opposite
+    of Strawberry Blockfield, if you want. Gradient Dust Trigger: gives the dust sprites
+    in your rooms a color gradient, similarly to rainbow spinners. Madeline Silhouette
+    Trigger: a trigger turning Madeline into a ghost playback. Madeline''s color will
+    match her hair color. Color Grade Fade Trigger: a trigger allowing to fade between
+    two color grades in a similar way as Light Fade Trigger (color grade A on the
+    left, color grade B on the right). Camera Catchup Speed Trigger: allows to set
+    how fast the camera reaches its target. This is useful for really fast sections,
+    where growing offsets would be necessary otherwise. Flag-Toggled Camera Triggers:
+    camera offset, camera target and smooth camera offset triggers you can turn on
+    or off with a session flag. Pause Badeline Bosses Trigger: Badeline bosses will
+    stop attacking Madeline while she sits inside this trigger. Speed-Based Music
+    Param Trigger: this allows modulating a music param depending on the player''s
+    speed, for example to enable a layer or make it louder when the player is fast
+    enough. The change is persistent (the music param will continue to be adjusted
+    even when the player leaves the trigger and goes to other screens), but you can
+    override/disable this with another trigger. Ambience Volume Trigger: allows you
+    to lower the ambience volume, much like music fade triggers. This helper also
+    provides support for Animated Parallax stylegrounds. In order to make an animated
+    parallax: add all your frames in Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/YourModName/bgName00.png,
     bgName01.png, etc... if you want a specific frame rate, specify it in the animation
     name by adding XXfps at the end of it: mySlowBackground3fps00.png, mySlowBackground3fps01.png...
     If you don''t, the default frame rate will be 12fps (same as for decals). then,
@@ -4218,7 +4322,7 @@
     the wiki for that.) The source code of this mod is available on GitHub. If you
     use this helper in your map, you should add it as a dependency. To do that, edit
     your everest.yaml and include it in the Dependencies section: - Name: YourModName   Version:
-    1.0.0   Dependencies:     - Name: MaxHelpingHand       Version: 1.11.3'
+    1.0.0   Dependencies:     - Name: MaxHelpingHand       Version: 1.12.0'
 - GameBananaType: Map
   GameBananaId: 209180
   Name: Chapter 3 L-Side (Celestial Resort)
@@ -4305,14 +4409,14 @@
 - GameBananaType: Skin
   GameBananaId: 176408
   Name: Maddy Crown
-  Authors: [Norah, DrIvanKO, MaxBoi, CloverCube, PenguinOwl, CyberGamer1539]
+  Authors: [Norah, PenguinOwl, CyberGamer1539, DrIvanKO, MaxBoi, CloverCube]
   Description: ''
   Text: Simple mod that allows Maddy to have a crown on top, comes with enabled and
     disabled switch
 - GameBananaType: Map
   GameBananaId: 208924
   Name: Inner Depths
-  Authors: [DemoJameson, Flamecrafter113]
+  Authors: [Flamecrafter113, DemoJameson]
   Description: Core-space and speed, what else does one need?
   Text: 'Inner Depths is a map concept that is currently cut from my previous work,
     Descent. This concept was expanded because it was too good to pass up and I also
@@ -4327,7 +4431,7 @@
 - GameBananaType: Map
   GameBananaId: 208919
   Name: Mystic Cavern
-  Authors: [MastarMusic, Brokemia, '0x0ade', Cruor, Dree]
+  Authors: [Dree, '0x0ade', Cruor, MastarMusic, Brokemia]
   Description: ''
   Text: 'Hello there fellow climber! I decided to get into mapping and made a little
     map. It is my first time I''ve done something like this, so please don''t be too
@@ -4336,7 +4440,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 11297
   Name: Better Refill Gems
-  Authors: [Monika523, SuperSupermario24]
+  Authors: [SuperSupermario24, Monika523]
   Description: Gives no-respawn refill gems a red outline
   Text: I got sick of not being able to tell which refill gems would respawn after
     use, so I made this mod to fix that. Now, ones that don't respawn will have red
@@ -4388,7 +4492,7 @@
 - GameBananaType: Map
   GameBananaId: 208846
   Name: Space Peak
-  Authors: [Indecx, Jipisiko, iamdadbod, '0x0ade', Cruor]
+  Authors: [Indecx, '0x0ade', Cruor, Jipisiko, iamdadbod]
   Description: Venture back into space!
   Text: 'Madeline appeares again in space! This map is hopefully designed for people
     who have completed all C-Sides of the base game. It is also my first full length
@@ -4399,8 +4503,8 @@
 - GameBananaType: Map
   GameBananaId: 208831
   Name: Minileste [Mastar`s Minimaps] - 2/?9? Done
-  Authors: [Karma & Shiro, Karma, iamdadbod, NeoKat, '0x0ade', Cruor, DemoJameson,
-    MastarMusic]
+  Authors: [MastarMusic, '0x0ade', Cruor, DemoJameson, Karma, iamdadbod, NeoKat, Karma
+      & Shiro]
   Description: Minimaps that mainly focus on Screens, with a small amount of Berries.
   Text: 'Hello there! Required Tech Ultra [Easied down] Wall bounce Neutrals make
     the maps easier Hyper, Wave, Super Light & Dark Uploading this took some bravery.
@@ -4430,7 +4534,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 11138
   Name: Disposable Theo
-  Authors: [max480, coloursofnoise]
+  Authors: [coloursofnoise, max480]
   Description: Just throw him away.
   Text: Chuck him in a pit, leave him behind, whatever. Comes disabled by default,
     enable in mod options. Also comes with a configurable trigger for map makers.
@@ -4438,7 +4542,7 @@
 - GameBananaType: Map
   GameBananaId: 208410
   Name: Solitude
-  Authors: [Thegur90, Celestecord modding helpers, '0x0ade', Cruor, Vexatos, Hydro0]
+  Authors: [Thegur90, Hydro0, Celestecord modding helpers, '0x0ade', Cruor, Vexatos]
   Description: Made in a single week, in spirit of the COVID-19 lock-in.
   Text: 'v1.0.2 changelog: - fixed a spot where you could stand on fgtiles from the
     room below v1.0.1 changelog: - moved the wind trigger to a nicer spot - fixed
@@ -4466,7 +4570,7 @@
 - GameBananaType: Tool
   GameBananaId: 6779
   Name: Celeste Mod Packager
-  Authors: [devilsquirrel, KaydenFox]
+  Authors: [KaydenFox, devilsquirrel]
   Description: ''
   Text: 'This tool is useful for both new modders and veterans alike. With the Celeste
     Mod Packager, you can create a publishable mod in no time. No more do you have
@@ -4570,7 +4674,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 10950
   Name: Hardcore Mode
-  Authors: [max480, SuperSupermario24]
+  Authors: [SuperSupermario24, max480]
   Description: Celeste but with permadeath
   Text: 'Do you find golden strawberries too easy? Do you like hurting yourself in
     new and exciting ways? If so, you''ll like Hardcore Mode, where if you die, you''re
@@ -4727,8 +4831,8 @@
 - GameBananaType: Map
   GameBananaId: 207746
   Name: 7d(single dash ver)
-  Authors: ['0x0ade', canadianclimber, max480, Meowsmith, HyperCube, skeletonskeleton,
-    Xaphan67, Bissy, Exudias, fishtank_underflow, Monika523]
+  Authors: [fishtank_underflow, Monika523, '0x0ade', canadianclimber, max480, Meowsmith,
+    HyperCube, skeletonskeleton, Xaphan67, Bissy, Exudias]
   Description: Climb the mountain's D-side with only one dash!
   Text: 'How can you beat 7d with only 1 dash? This map is a modified version of "The
     Summit D-side." from The D-sides Pack by Monika. The map is hard. It''s grandma
@@ -4741,7 +4845,7 @@
 - GameBananaType: Map
   GameBananaId: 207705
   Name: Alternative Levels
-  Authors: [Tremen, Silvercore]
+  Authors: [Silvercore, Tremen]
   Description: ''
   Text: 2 Levels expanding on specific mechanics of Celeste. First, a Temple level
     with a lot more Theo. Second, a Core level with a twist. A total of 23 strawberries
@@ -5027,9 +5131,9 @@
 - GameBananaType: Map
   GameBananaId: 207309
   Name: Ezel's CC-Sides
-  Authors: [Vanilla Celeste, Monika523, NeoKat, Holly Magala, YellowRelic3714, Hydro0,
-    Zerex, fishtank_underflow, thelolguy, Norah, LumaCeleste, TriggerChoco, MunTheory,
-    MastarMusic, Ezel142]
+  Authors: [Ezel142, NeoKat, Holly Magala, YellowRelic3714, Hydro0, Zerex, fishtank_underflow,
+    thelolguy, Norah, LumaCeleste, TriggerChoco, MunTheory, MastarMusic, Vanilla Celeste,
+    Monika523]
   Description: A set of short but challenging maps, inspired by original Celeste C-Sides
     and Monika's D-Sides pack.
   Text: 'UPDATE: The map pack is now compatible with the Celeste randomizer mod, you
@@ -5120,7 +5224,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 10381
   Name: 'Celeste: Polish game translation'
-  Authors: [NajekK, YellowRelic3714, Ezel142]
+  Authors: [Ezel142, NajekK, YellowRelic3714]
   Description: A Polish translation for the vanilla version of Celeste. It can be
     easily added without the need of replacing existing game files!
   Text: 'This is a project I''ve been working since a while but never have gotten
@@ -5149,7 +5253,7 @@
 - GameBananaType: Map
   GameBananaId: 207073
   Name: Aching Cavern
-  Authors: [nameguy523, Pupqet]
+  Authors: [Pupqet, nameguy523]
   Description: A what I'm pretty sure is unique map
   Text: This is my first map, Aching Cavern! This is a pretty short map in terms of
     room count but I feel like it's still pretty good. It's themed around a boss battle
@@ -5162,7 +5266,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 10320
   Name: CelesteEmojis
-  Authors: [leo60228, Celeste Discord]
+  Authors: [Celeste Discord, leo60228]
   Description: An updated version of Celestemojis by leo60228
   Text: 'New Update, all non-animated emojis as of 03.10.2020 (DD/MM/YYYY) This took
     like 2-3 hours and to be honest, it isn''t the greatest thing I''ve ever done
@@ -5204,8 +5308,8 @@
 - GameBananaType: Map
   GameBananaId: 206930
   Name: Shrouded Thoughts
-  Authors: [Albcat, Dav, DevAnj, Ghajestis, HyperCube, Meowsmith, Samario, adenator,
-    Zerex, NeoKat, Sodiumitis, Rodmod, KaydenFox, MastarMusic, Juanpa98ar]
+  Authors: [KaydenFox, MastarMusic, Juanpa98ar, Albcat, Dav, DevAnj, Ghajestis, HyperCube,
+    Meowsmith, Samario, adenator, Zerex, NeoKat, Sodiumitis, Rodmod]
   Description: ''
   Text: Requires Factory Helper to play! This is a post Farewell chapter about Madeline
     and her continued struggles to hold it together after the events of Celeste's
@@ -5221,8 +5325,8 @@
 - GameBananaType: Gamefile
   GameBananaId: 10260
   Name: Factory Helper
-  Authors: [MastarMusic, 'Kayden ', Albcat, The(Dav)Smasher, DevAnj, Ghajestis, HyperCube,
-    Meowsmith, Samario, adenator, Zerex, NeoKat, Sodiumitis, Rodmod, Juanpa98ar]
+  Authors: ['Kayden ', MastarMusic, Juanpa98ar, Albcat, The(Dav)Smasher, DevAnj, Ghajestis,
+    HyperCube, Meowsmith, Samario, adenator, Zerex, NeoKat, Sodiumitis, Rodmod]
   Description: ''
   Text: 'Factory Helper This entity pack contains a fair few new entities. To help
     out anyone who wants to use these entities in their own mods, I have created this
@@ -5504,7 +5608,7 @@
 - GameBananaType: Map
   GameBananaId: 206758
   Name: Black Hole Realm
-  Authors: [iamdadbod, JaThePlayer]
+  Authors: [JaThePlayer, iamdadbod]
   Description: ''
   Text: Black Hole Realm is a short Celeste Map based around Cassette Blocks, containing
     custom mechanics done entirely using Simple Cutscenes Like I said, it's short,
@@ -5512,7 +5616,7 @@
 - GameBananaType: Map
   GameBananaId: 206747
   Name: Smaerd Nogylop
-  Authors: [orbittwz, '0x0ade', Vexatos, Cruor, orbittwz]
+  Authors: [orbittwz, orbittwz, '0x0ade', Vexatos, Cruor]
   Description: ''
   Text: Well, without further ado, this is Polygon Dreams reversed! I always wanted
     to do this, ever since I finished the original campaign. A whole different experience,
@@ -5583,8 +5687,8 @@
 - GameBananaType: Map
   GameBananaId: 206675
   Name: Celeste Arcade
-  Authors: ['0x0ade', Cruor, Vexatos, People on Discord who helped me with things,
-    Brokemia]
+  Authors: [Brokemia, '0x0ade', Cruor, Vexatos, People on Discord who helped me with
+      things]
   Description: Madeline ventures into arcade cabinets and stuff.
   Text: A fun collection of levels themed around old arcade games. Features 8 arcade
     cabinets, 12 strawberries, and 1 hidden crystal heart
@@ -5608,8 +5712,8 @@
 - GameBananaType: Map
   GameBananaId: 206636
   Name: 'Lake of Purity 2: Electric Boogaloo'
-  Authors: [HyperCube, iamdadbod, '0x0ade', Cruor, The rest of the modding community!,
-    And you!, HyperCube]
+  Authors: [HyperCube, HyperCube, iamdadbod, '0x0ade', Cruor, The rest of the modding
+      community!, And you!]
   Description: My second Celeste map, one year late.
   Text: Lake of Purity 2 The sequel to Lake of Purity and my best map by far! ---Music
     used--- Camellia - Crystallized Camellia - Megalovania Remix This map took me
@@ -5636,7 +5740,7 @@
 - GameBananaType: Map
   GameBananaId: 206611
   Name: The Crystal City
-  Authors: [Meowsmith, Holly Magala]
+  Authors: [Holly Magala, Meowsmith]
   Description: A city, but filled with treacherous spinners and zippy boys.
   Text: 'Future Holly here, please don''t play this, iirc it breaks the base-game
     prologue. But I''m leaving it up regardless because archival purposes, or something
@@ -5646,7 +5750,7 @@
 - GameBananaType: Map
   GameBananaId: 206602
   Name: Frozen Waterfall
-  Authors: [Ezel142, iamdadbod, ThetaGC, MasterMario97, JaThePlayer]
+  Authors: [JaThePlayer, Ezel142, iamdadbod, ThetaGC, MasterMario97]
   Description: Two codemod-heavy maps
   Text: 'This is now a map pack containing two maps: Frozen Waterfall and Beyond The
     Waterfall Frozen Waterfall is a map featuring: - Tons of unique custom mechanics
@@ -5680,8 +5784,8 @@
 - GameBananaType: Map
   GameBananaId: 206364
   Name: Celestial Retreat Lodge
-  Authors: [DemoJameson, HigashiD, Celeste Discord People, IsaGoodFriend, nameguy523,
-    skeletonskeleton]
+  Authors: [skeletonskeleton, DemoJameson, HigashiD, Celeste Discord People, IsaGoodFriend,
+    nameguy523]
   Description: It's like the Celestial Resort Hotel except more... Celestial?
   Text: The third installment in my unofficial unnamed series of stages that attempt
     to mimic the main adventure through excessive use of synonyms. This one mimics
@@ -5724,7 +5828,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 9807
   Name: Adventure Helper
-  Authors: [Cruor, coloursofnoise, Anilmky -Nikko-, KaydenFox]
+  Authors: [KaydenFox, Cruor, coloursofnoise, Anilmky -Nikko-]
   Description: ''
   Text: 'This mod contains some useful items for custom map creation. Generally will
     contain vanilla objects with enhanced functionality, but eventually some unique
@@ -5760,8 +5864,8 @@
 - GameBananaType: Map
   GameBananaId: 206110
   Name: Decrepit Locale
-  Authors: [skeletonskeleton, chapter nineline (nameguy523), KaydenFox, NeoKat, celeste
-      discord folks]
+  Authors: [skeletonskeleton, celeste discord folks, chapter nineline (nameguy523),
+    KaydenFox, NeoKat]
   Description: It's like the Old Site but more old.
   Text: Decrepit Locale is my second attempt at map-making and mimics the Old Site
     theme, making use of Space Jam and Badeline Chasers. The level features 61 screens,
@@ -5796,7 +5900,7 @@
 - GameBananaType: Map
   GameBananaId: 206009
   Name: Forsaken Metropolis
-  Authors: [Folks at the MCCA discord, Skeleton]
+  Authors: [Skeleton, Folks at the MCCA discord]
   Description: It's like the Forsaken City but a little more Forsaken
   Text: Welcome to the Forsaken Metropolis - my first proper attempt at dipping my
     toe into map-making in Celeste. The stage uses only the mechanics and themes from
@@ -5825,7 +5929,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 9518
   Name: Pandora's Box
-  Authors: [Cruor, '0x0ade', Vexatos, Meowsmith, Flagpole1up]
+  Authors: [Cruor, Meowsmith, Flagpole1up, '0x0ade', Vexatos]
   Description: ''
   Text: This mod pack is the random entities/triggers I have thrown together when
     I felt like it. Adds a lot of pointless and weird things. Feel free to use any
@@ -5841,8 +5945,8 @@
 - GameBananaType: Gamefile
   GameBananaId: 9486
   Name: Extended Variant Mode
-  Authors: [max480, DemoJameson, Flamecrafter113, Albcatmastercat, nameguy523, Juanpa98ar,
-    sj5lee, Zerex, SuperSupermario24, MrStaneh, '0x0ade']
+  Authors: [max480, DemoJameson, Flamecrafter113, SuperSupermario24, MrStaneh, '0x0ade',
+    Albcatmastercat, nameguy523, Juanpa98ar, sj5lee, Zerex]
   Description: Like Variant Mode but taken way too far
   Text: 'A code mod allowing to destroy Celeste change some things in the game mechanics.
     Adds some options to the Mod Options menu: Gravity and Max fall speed: can be
@@ -5974,8 +6078,8 @@
 - GameBananaType: Map
   GameBananaId: 205757
   Name: 'The Nightmare: A One Screen Challenge'
-  Authors: [iamdadbod, The(Dav)Smasher, iamdadbod, maildropfolder, Beat the level
-      to be featured here!, DarthTheSheep]
+  Authors: [DarthTheSheep, iamdadbod, The(Dav)Smasher, iamdadbod, maildropfolder,
+    Beat the level to be featured here!]
   Description: ''
   Text: This one screen challenge throws you into Madeline's nightmares, where she
     must collect the key to escape. All mechanics are thrown at you (expect for clouds
@@ -6007,10 +6111,10 @@
 - GameBananaType: Map
   GameBananaId: 205581
   Name: iamdadbod Collab
-  Authors: [Meowsmith, Exudias, Cruor, '0x0ade', DemoJameson, RadleyMcTuneston, iamdadbod,
-    DarthTheSheep, The(Dav)Smasher, Xaphan67, DarthTheSheep, The(Dav)Smasher, IsaGoodFriend,
-    Ghajestis, Bissy, deskilln, FlipKING78, KaydenFox, Devon/Percussive, RadleyMcTuneston,
-    Rocketguy2, Xaphan67, aridai.shi, KubeKing, Snas, Pupperino, TriggerChoco, iamdadbod]
+  Authors: [iamdadbod, DarthTheSheep, The(Dav)Smasher, Xaphan67, DarthTheSheep, The(Dav)Smasher,
+    IsaGoodFriend, Ghajestis, Bissy, deskilln, FlipKING78, KaydenFox, Devon/Percussive,
+    RadleyMcTuneston, Rocketguy2, Xaphan67, aridai.shi, KubeKing, Snas, Pupperino,
+    TriggerChoco, iamdadbod, Meowsmith, Exudias, Cruor, '0x0ade', DemoJameson, RadleyMcTuneston]
   Description: 1,000 Subscriber Celebration
   Text: To commemorate the moment of youtuber iamdadbod reaching 1k subscribers, here
     is a new collaboration project consisting of 17 collaborators plus iamdadbod himself!
@@ -6022,7 +6126,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 9201
   Name: Frost Helper
-  Authors: [RadleyMcTuneston, JaThePlayer]
+  Authors: [JaThePlayer, RadleyMcTuneston]
   Description: ''
   Text: 'You can see the source code & feature list at https://github.com/JaThePlayer/FrostHelper
     For map makers: If you wish to use the things from here, add a dependency like
@@ -6075,7 +6179,7 @@
 - GameBananaType: Map
   GameBananaId: 204792
   Name: Blue Ocean Floor
-  Authors: [orbittwz, Cruor, Vexatos, '0x0ade', orbittwz]
+  Authors: [orbittwz, orbittwz, Cruor, Vexatos, '0x0ade']
   Description: ''
   Text: Yes, it's here, my second campaign for the game Celeste! Madeline is embarking
     another story, where she is in another world, with different realities. She will
@@ -6163,7 +6267,7 @@
 - GameBananaType: Map
   GameBananaId: 204463
   Name: Shadow's Sanctuary
-  Authors: ['0x0ade', iamdadbod, Meowsmith, DarthTheSheep]
+  Authors: [DarthTheSheep, '0x0ade', iamdadbod, Meowsmith]
   Description: ''
   Text: You've awoken in another dream. This time, however, there is a new place to
     discover, and Part of You doesn't like the feeling of it...
@@ -6431,7 +6535,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 8219
   Name: Background Toggler
-  Authors: [PenguinOwl, Hyperfenix, Flagpole1up]
+  Authors: [PenguinOwl, Flagpole1up, Hyperfenix]
   Description: ''
   Text: Remember that crystal heart in Golden Ridge? Remember how cool it was? Well,
     now you too can gimmick up your maps with my latest mechanic, the Background Switch!
@@ -6478,7 +6582,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 8162
   Name: Simpleste
-  Authors: [mat, TheFox231]
+  Authors: [TheFox231, mat]
   Description: Celeste, but much more simple!
   Text: 'Ever thought to yourself: "Man, Celeste is such a complex game!"? Ever wish
     the game was more simple? Introducing: Simpleste! This mod has 3 levels of "simple":
@@ -6548,7 +6652,7 @@
 - GameBananaType: Map
   GameBananaId: 202813
   Name: Path of Hope
-  Authors: ['0x0ade', Cruor, Vexatos, Celeste Discord, Flagpole1up]
+  Authors: [Flagpole1up, '0x0ade', Cruor, Vexatos, Celeste Discord]
   Description: Don't get stuck in Space Jelly.
   Text: A small Chapter focusing around Move Blocks and Dream Jelly/Space Jam, rounded
     off with a custom aesthetic. Now includes A-,B- and C-Sides, thank you to everyone
@@ -6622,10 +6726,10 @@
 - GameBananaType: Map
   GameBananaId: 202524
   Name: The D-Sides Pack
-  Authors: [bigkahuna443, ThetaGC, Various other contributors, dahlukeh, Rubydragon,
+  Authors: [Monika523, Rubydragon, '0x0ade', Thegur90, NeoKat, TheFox231, Norah, zZerex,
+    Hydro0, bigkahuna443, ThetaGC, Various other contributors, dahlukeh, Rubydragon,
     Flagpole1up, '0x0ade', Cruor, Eenox, iamdadbod, zZerex, Hydro0, Various other
-      people from the Celeste Discord, Rubydragon, '0x0ade', Thegur90, NeoKat, TheFox231,
-    Norah, zZerex, Hydro0, Monika523]
+      people from the Celeste Discord]
   Description: Randomizer Update
   Text: 'The complete D-Side series all in one big map pack!~ The D-Sides are very
     hard versions of the base game''s chapters, building on them but also adding new
@@ -6696,8 +6800,8 @@
 - GameBananaType: Map
   GameBananaId: 202241
   Name: Halloween Collaboration Project 2018
-  Authors: [Flagpole1up, SarCATstic, Cruor, Vexatos, '0x0ade', Meowsmith, Problemstrol,
-    SarCATstic, dahlukeh, Cruor, Vexatos, SarCATstic, dahlukeh]
+  Authors: [Cruor, Vexatos, SarCATstic, dahlukeh, Cruor, Vexatos, Flagpole1up, SarCATstic,
+    Meowsmith, Problemstrol, SarCATstic, dahlukeh, '0x0ade']
   Description: ''
   Text: You need Everest build 583 or later, and the Collaboration Utils mod! The
     map will not load without! A Halloween-themed spooky map consisting of twelve
@@ -6749,7 +6853,7 @@
 - GameBananaType: Gamefile
   GameBananaId: 7644
   Name: Sweet Victory Chapter Complete
-  Authors: [Nickelodeon, SarCATstic]
+  Authors: [SarCATstic, Nickelodeon]
   Description: ''
   Text: Small mod that replaces the chapter complete art and music with Sweet Victory
     from the show SpongeBob SquarePants Because there's nothing better than hearing
@@ -6766,8 +6870,8 @@
 - GameBananaType: Map
   GameBananaId: 201716
   Name: Switch Map Pack (Fuji)
-  Authors: [leo60228, Cruor, Vexatos, Dournbrood, nameguy523, Rubydragon, blueokapi12,
-    dahlukeh, meiyou]
+  Authors: [leo60228, nameguy523, Rubydragon, blueokapi12, dahlukeh, meiyou, Dournbrood,
+    Cruor, Vexatos]
   Description: 'Fuji Map Pack #1'
   Text: 'Using Nintendo Switch mods while online may get you banned. The risk is higher
     if a modded game crashes and displays an error code. While Atmosphere is lower-risk
@@ -6835,7 +6939,7 @@
 - GameBananaType: Map
   GameBananaId: 201404
   Name: Polygon Dreams
-  Authors: [orbittwz, Cruor, '0x0ade', Vexatos, orbittwz]
+  Authors: [orbittwz, orbittwz, Cruor, '0x0ade', Vexatos]
   Description: ''
   Text: Introducing my mini campaign for the platformer game Celeste called Polygon
     Dreams. All chapters are done! --------------- I embarked on this project midway
@@ -6862,7 +6966,7 @@
 - GameBananaType: Map
   GameBananaId: 201051
   Name: Gauntlet
-  Authors: [Devon/Percussive, blueokapi12, DidacticAscended, Devon/Percussive]
+  Authors: [Devon/Percussive, Devon/Percussive, DidacticAscended, blueokapi12]
   Description: ''
   Text: This level took me quite a long time to create! I am really proud of how it
     turned out. Special thanks to Okapi for testing my level since its earliest stages
@@ -6917,7 +7021,7 @@
 - GameBananaType: Map
   GameBananaId: 200736
   Name: Super Ogmo Boy remake
-  Authors: [Bowling, minecraftgamerpc64]
+  Authors: [minecraftgamerpc64, Bowling]
   Description: ''
   Text: super ogmo boy was made by minecraftgamerpc64 go play it https://minecraftgamerpc66.itch.io/super-ogmo-boy
     this is a shitpost level and itll take 30 seconds at best, so if youre looking
@@ -6926,7 +7030,7 @@
 - GameBananaType: Map
   GameBananaId: 200702
   Name: Collaboration Project June 2018
-  Authors: [Cruor, '0x0ade', Vexatos, Dournbrood, Dournbrood, Cruor]
+  Authors: [Cruor, Cruor, Dournbrood, '0x0ade', Vexatos, Dournbrood]
   Description: ''
   Text: The result of the collaboration project on the Mt. Celeste Climbing Association
     Discord server, having taken place in June of 2018. Huge thanks to everybody who
@@ -7093,12 +7197,13 @@
   Authors: ['0x0ade']
   Description: Olympus is an installer for the Everest mod loader and modding API
     for Celeste, enabling code mods, custom level sets and more.
-  Text: 'Notes: Your system will probably false-flag the patcher as a virus because
-    it modifies Celeste.exe. If you don''t trust us, check the source code. Linux
-    / macOS users, please follow the instructions on the Everest website. If you''ve
-    previously installed an old Everest installer, you''ll need to redownload the
-    newest installer (Olympus) from this page. Everest is an open-source mod loader
-    and modding API for Celeste, making texture replacements, custom level sets and
-    endless code mods a reality. Almost all other Celeste mods need you to install
-    Everest first. Likewise, you need other mods to actually do something. Everest
-    only enables other mods. Take a look at the full feature list on the Everest website.'
+  Text: 'Linux / macOS users, please follow the instructions on the Everest website.Windows
+    users, please continue on this page. Notes: Your system will probably false-flag
+    the patcher as a virus because it modifies Celeste.exe. If you don''t trust us,
+    check the source code. If you''ve previously installed an old Everest installer,
+    you''ll need to redownload the newest installer (Olympus) from this page. Everest
+    is an open-source mod loader and modding API for Celeste, making texture replacements,
+    custom level sets and endless code mods a reality. Almost all other Celeste mods
+    need you to install Everest first. Likewise, you need other mods to actually do
+    something. Everest only enables other mods. Take a look at the full feature list
+    on the Everest website.'

@@ -441,11 +441,11 @@ FoP:
   URL: https://gamebanana.com/mmdl/484280
 VivHelper:
   GameBananaType: Gamefile
-  Version: 1.1.3
-  LastUpdate: 1610218142
+  Version: 1.1.4
+  LastUpdate: 1610319778
   GameBananaId: 12484
-  xxHash: [40bf970268c99b3b]
-  URL: https://gamebanana.com/mmdl/506728
+  xxHash: [d04c786bb4855172]
+  URL: https://gamebanana.com/mmdl/507058
 Climbing Blind Trilogy:
   GameBananaType: Map
   Version: 1.5.0
@@ -803,6 +803,13 @@ KaydenFoxShroudedThoughts:
   GameBananaId: 206930
   xxHash: [b4bb96d1736880da]
   URL: https://gamebanana.com/mmdl/501328
+FireDreams:
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1610338304
+  GameBananaId: 214021
+  xxHash: [cde2ee21ff5ad454]
+  URL: https://gamebanana.com/mmdl/507143
 Ferret's Micro Mountain:
   GameBananaType: Map
   Version: 1.2.0
@@ -964,6 +971,13 @@ OutcastOutback:
   GameBananaId: 200895
   xxHash: [c41b0febf69e8b4b]
   URL: https://gamebanana.com/mmdl/404065
+Cryoshock:
+  GameBananaType: Map
+  Version: 1.2.1
+  LastUpdate: 1610516793
+  GameBananaId: 211773
+  xxHash: [297ce1687ec35200]
+  URL: https://gamebanana.com/mmdl/507701
 NanosSubmission:
   GameBananaType: Map
   Version: '1.1'
@@ -1456,11 +1470,11 @@ Cliffside Ultra:
   URL: https://gamebanana.com/mmdl/504089
 Pico_8_Remake:
   GameBananaType: Map
-  Version: '1.401'
-  LastUpdate: 1596624178
+  Version: '1.402'
+  LastUpdate: 1610403753
   GameBananaId: 203592
-  xxHash: [7268cac49ed9526b]
-  URL: https://gamebanana.com/mmdl/478627
+  xxHash: [5ffa3a9efbc28e17]
+  URL: https://gamebanana.com/mmdl/507364
 SpringCollab2020:
   GameBananaType: Map
   Version: 1.3.1
@@ -1911,11 +1925,11 @@ Levels of Darkness:
   URL: https://gamebanana.com/mmdl/385724
 MaxHelpingHand:
   GameBananaType: Gamefile
-  Version: 1.11.3
-  LastUpdate: 1608484944
+  Version: 1.12.0
+  LastUpdate: 1610321267
   GameBananaId: 11423
-  xxHash: [2170173eed4bfbe4]
-  URL: https://gamebanana.com/mmdl/502273
+  xxHash: [5e8716be59aec330]
+  URL: https://gamebanana.com/mmdl/507063
 demonetized_celeste:
   GameBananaType: Gamefile
   Version: 1.0.0
@@ -2107,11 +2121,11 @@ ForkCity:
   URL: https://gamebanana.com/mmdl/407662
 FrozenHeights:
   GameBananaType: Map
-  Version: 1.1.0
-  LastUpdate: 1610272631
+  Version: 1.1.2
+  LastUpdate: 1610326636
   GameBananaId: 211420
-  xxHash: [9f0473d654593f9d]
-  URL: https://gamebanana.com/mmdl/506905
+  xxHash: [15586d93240bd762]
+  URL: https://gamebanana.com/mmdl/507099
 Leisure Time:
   GameBananaType: Map
   Version: '1.1'
@@ -2322,6 +2336,13 @@ Bananas spoopy entry:
   GameBananaId: 211910
   xxHash: [10be4505614b9e50]
   URL: https://gamebanana.com/mmdl/492861
+Mountainasterisk:
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1610334641
+  GameBananaId: 214018
+  xxHash: [db1054f0809deb9c]
+  URL: https://gamebanana.com/mmdl/507128
 GetOut:
   GameBananaType: Map
   Version: '1.2'
@@ -2574,6 +2595,13 @@ Remirrored:
   GameBananaId: 210984
   xxHash: [0c267f602a7c0c2f]
   URL: https://gamebanana.com/mmdl/476653
+Snowy's Campaign:
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1610384729
+  GameBananaId: 214025
+  xxHash: [3a459418258ee2e5]
+  URL: https://gamebanana.com/mmdl/507266
 Badlands:
   GameBananaType: Map
   Version: 1.0.0
@@ -2651,6 +2679,13 @@ TheVoid:
   GameBananaId: 207623
   xxHash: [c973900cc05bb7fb]
   URL: https://gamebanana.com/mmdl/445554
+FrozenHeightsAudio:
+  GameBananaType: Gamefile
+  Version: 1.0.0
+  LastUpdate: 1610324955
+  GameBananaId: 13829
+  xxHash: [459db8a094eb56f5]
+  URL: https://gamebanana.com/mmdl/507086
 Prideline:
   GameBananaType: Skin
   Version: 1.1.1
@@ -2672,6 +2707,13 @@ PolygonDreams:
   GameBananaId: 201404
   xxHash: [332883f0323c107d]
   URL: https://gamebanana.com/mmdl/505410
+DogMountain:
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1610488140
+  GameBananaId: 214062
+  xxHash: [d881d9b7bc2e9e6a]
+  URL: https://gamebanana.com/mmdl/507596
 DournMap:
   GameBananaType: Map
   Version: 0.0.1
@@ -2745,10 +2787,10 @@ SSMQoLMod:
 FrostHelper:
   GameBananaType: Gamefile
   Version: 1.21.6
-  LastUpdate: 1610270692
+  LastUpdate: 1610395444
   GameBananaId: 9201
-  xxHash: [6315900e73b26a5e]
-  URL: https://gamebanana.com/mmdl/506900
+  xxHash: [fcdc029b26ab3c7a]
+  URL: https://gamebanana.com/mmdl/507316
 Madeline in Wonderland:
   GameBananaType: Map
   Version: NoVersion
@@ -2847,6 +2889,13 @@ The Pit:
   GameBananaId: 206740
   xxHash: [1fd3fb19eeb06c57]
   URL: https://gamebanana.com/mmdl/434803
+crowberrydecalpack:
+  GameBananaType: Gamefile
+  Version: 0.1.0
+  LastUpdate: 1610479987
+  GameBananaId: 13866
+  xxHash: [989f85dd02af036f]
+  URL: https://gamebanana.com/mmdl/507566
 Point of No Return:
   GameBananaType: Map
   Version: 1.0.2
@@ -2912,11 +2961,11 @@ Inner_Depths:
   URL: https://gamebanana.com/mmdl/462110
 JackalHelper:
   GameBananaType: Gamefile
-  Version: 1.2.9
-  LastUpdate: 1610235852
+  Version: 1.2.12
+  LastUpdate: 1610398001
   GameBananaId: 13588
-  xxHash: [bc8ed7767722e95d]
-  URL: https://gamebanana.com/mmdl/506803
+  xxHash: [3378fd704018a9d2]
+  URL: https://gamebanana.com/mmdl/507330
 Downwards:
   GameBananaType: Map
   Version: 1.1.0
@@ -3099,6 +3148,13 @@ Sunset Rise:
   GameBananaId: 212998
   xxHash: [a57de4c97276d68c]
   URL: https://gamebanana.com/mmdl/496055
+B side The adventure of OI!:
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1610382893
+  GameBananaId: 213951
+  xxHash: [ed49c8fde81ec2cf]
+  URL: https://gamebanana.com/mmdl/507259
 FullClearStamp:
   GameBananaType: Gui
   Version: 2.0.1
@@ -3176,3 +3232,10 @@ Madeline's bizarre adventure Golden wind:
   GameBananaId: 204067
   xxHash: [5afb9e1180e0fafb]
   URL: https://gamebanana.com/mmdl/414062
+TheoModv2:
+  GameBananaType: Skin
+  Version: 1.0.2
+  LastUpdate: 1610484637
+  GameBananaId: 179304
+  xxHash: [d1845453469a8124]
+  URL: https://gamebanana.com/mmdl/507579

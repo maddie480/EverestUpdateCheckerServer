@@ -1,7 +1,9 @@
 package com.max480.everest.updatechecker;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.ContainerFactory;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -78,8 +80,9 @@ public class ModSearchDatabaseBuilder {
      * @param itemtype The GameBanana type
      * @param itemid   The GameBanana id
      * @param mod      The mod name
+     * @throws IOException In case an error occurs while parsing the mod authors field
      */
-    public void addMod(String itemtype, int itemid, List<Object> mod) {
+    public void addMod(String itemtype, int itemid, List<Object> mod) throws IOException {
         try {
             ModSearchInfo newModSearchInfo = new ModSearchInfo(itemtype, itemid, mod.get(0).toString(),
                     Integer.parseInt(mod.get(2).toString()), mod.get(3).toString(), mod.get(4).toString());
@@ -96,9 +99,9 @@ public class ModSearchDatabaseBuilder {
         List<String> authorsParsed = new LinkedList<>();
 
         // each author category is an entry in a JSON object.
-        JSONObject authorCategories = new JSONObject(authors);
-        for (String category : authorCategories.keySet()) {
-            JSONArray authorsListForCategory = authorCategories.getJSONArray(category);
+        Map<String, Object> authorCategories = parseJSONObjectKeepingOrder(authors);
+        for (Map.Entry<String, Object> category : authorCategories.entrySet()) {
+            JSONArray authorsListForCategory = (JSONArray) category.getValue();
 
             // then each author is a JSON array [name, userid, role, ???]
             // and we want to keep the name.
@@ -110,6 +113,35 @@ public class ModSearchDatabaseBuilder {
 
         modSearchInfo.add(new ModSearchInfo(itemtype, itemid, mod.get(0).toString(), authorsParsed,
                 mod.get(3).toString(), mod.get(4).toString()));
+    }
+
+    /**
+     * Parses the given JSON as a LinkedHashMap <b>thus keeping the order</b>.
+     * Order is not supposed to matter in JSON, but it does matter in the GameBanana author list.
+     *
+     * @param json The JSON to parse
+     * @return The JSON parsed as a LinkedHashMap
+     * @throws IOException In case a parse error occurs
+     */
+    public Map<String, Object> parseJSONObjectKeepingOrder(String json) throws IOException {
+        JSONParser parser = new JSONParser();
+        ContainerFactory containerFactory = new ContainerFactory() {
+            @Override
+            public Map createObjectContainer() {
+                return new LinkedHashMap();
+            }
+
+            @Override
+            public List creatArrayContainer() {
+                return null;
+            }
+        };
+
+        try {
+            return (Map<String, Object>) parser.parse(json, containerFactory);
+        } catch (ParseException e) {
+            throw new IOException("Failed parsing JSON for authors list", e);
+        }
     }
 
     /**
