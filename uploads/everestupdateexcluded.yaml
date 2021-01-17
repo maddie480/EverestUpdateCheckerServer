@@ -740,8 +740,6 @@ https://gamebanana.com/mmdl/488808: File https://gamebanana.com/mmdl/488812 has 
   mod ID and is more recent
 https://gamebanana.com/mmdl/486794: File https://gamebanana.com/mmdl/488909 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/408595: File https://gamebanana.com/mmdl/488964 has same
-  mod ID and is more recent
 https://gamebanana.com/mmdl/489245: File https://gamebanana.com/mmdl/489289 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/489289: File https://gamebanana.com/mmdl/489406 has same
@@ -942,8 +940,6 @@ https://gamebanana.com/mmdl/503631: File https://gamebanana.com/mmdl/503652 has 
   mod ID and is more recent
 https://gamebanana.com/mmdl/501709: File https://gamebanana.com/mmdl/503899 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/498735: File https://gamebanana.com/mmdl/504109 has same
-  mod ID and is more recent
 https://gamebanana.com/mmdl/504166: File https://gamebanana.com/mmdl/504187 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/504187: File https://gamebanana.com/mmdl/504197 has same
@@ -967,8 +963,6 @@ https://gamebanana.com/mmdl/410778: File https://gamebanana.com/mmdl/504274 has 
 https://gamebanana.com/mmdl/410614: File https://gamebanana.com/mmdl/504274 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/410292: File https://gamebanana.com/mmdl/504274 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/504274: File https://gamebanana.com/mmdl/504299 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/503681: File https://gamebanana.com/mmdl/504335 has same
   mod ID and is more recent
@@ -999,8 +993,6 @@ https://gamebanana.com/mmdl/500279: File https://gamebanana.com/mmdl/505559 has 
 https://gamebanana.com/mmdl/490977: File https://gamebanana.com/mmdl/505758 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/496223: File https://gamebanana.com/mmdl/505798 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/504299: File https://gamebanana.com/mmdl/505856 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/501026: File https://gamebanana.com/mmdl/505866 has same
   mod ID and is more recent
@@ -1056,35 +1048,61 @@ https://gamebanana.com/mmdl/506689: File https://gamebanana.com/mmdl/506900 has 
   mod ID and is more recent
 https://gamebanana.com/mmdl/506827: File https://gamebanana.com/mmdl/506933 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/507455: File https://gamebanana.com/mmdl/507701 has same
+https://gamebanana.com/mmdl/506952: File https://gamebanana.com/mmdl/507028 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/507331: File https://gamebanana.com/mmdl/507701 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/507270: File https://gamebanana.com/mmdl/507701 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/507028: File https://gamebanana.com/mmdl/507701 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/506952: File https://gamebanana.com/mmdl/507701 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/507269: File https://gamebanana.com/mmdl/507330 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/507027: File https://gamebanana.com/mmdl/507330 has same
+https://gamebanana.com/mmdl/506715: File https://gamebanana.com/mmdl/507027 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/506728: File https://gamebanana.com/mmdl/507058 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/502273: File https://gamebanana.com/mmdl/507063 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/506900: File https://gamebanana.com/mmdl/507316 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/507386: "java.util.zip.ZipException: error in opening\
-  \ zip file\r\n\tat java.util.zip.ZipFile.open(Native Method)\r\n\tat java.util.zip.ZipFile.<init>(ZipFile.java:225)\r\
-  \n\tat java.util.zip.ZipFile.<init>(ZipFile.java:155)\r\n\tat java.util.zip.ZipFile.<init>(ZipFile.java:169)\r\
-  \n\tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabase(DatabaseUpdater.java:311)\r\
-  \n\tat com.max480.everest.updatechecker.DatabaseUpdater.loadPageModInfo(DatabaseUpdater.java:215)\r\
-  \n\tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:149)\r\
-  \n\tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:44)\r\
-  \n\tat com.max480.everest.updatechecker.Main.main(Main.java:49)\r\n"
 https://gamebanana.com/mmdl/507258: File https://gamebanana.com/mmdl/507259 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/506715: File https://gamebanana.com/mmdl/507330 has same
+https://gamebanana.com/mmdl/507028: File https://gamebanana.com/mmdl/507270 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/507027: File https://gamebanana.com/mmdl/507269 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/506900: File https://gamebanana.com/mmdl/507316 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/507270: File https://gamebanana.com/mmdl/507331 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/507269: File https://gamebanana.com/mmdl/507330 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/507331: File https://gamebanana.com/mmdl/507455 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/507455: File https://gamebanana.com/mmdl/507701 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/504109: File https://gamebanana.com/mmdl/507866 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/507937: "java.util.zip.ZipException: zip END header not\
+  \ found\n\tat java.base/java.util.zip.ZipFile$Source.zerror(ZipFile.java:1567)\n\
+  \tat java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1462)\n\tat java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1469)\n\
+  \tat java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1274)\n\tat java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1237)\n\
+  \tat java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:727)\n\
+  \tat java.base/java.util.zip.ZipFile$CleanableResource.get(ZipFile.java:844)\n\t\
+  at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:247)\n\tat java.base/java.util.zip.ZipFile.<init>(ZipFile.java:177)\n\
+  \tat java.base/java.util.zip.ZipFile.<init>(ZipFile.java:191)\n\tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabase(DatabaseUpdater.java:311)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPageModInfo(DatabaseUpdater.java:215)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:149)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:44)\n\
+  \tat com.max480.everest.updatechecker.Main.main(Main.java:49)\n"
+https://gamebanana.com/mmdl/507143: File https://gamebanana.com/mmdl/507987 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/507330: File https://gamebanana.com/mmdl/508002 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/508002: File https://gamebanana.com/mmdl/508010 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/508010: File https://gamebanana.com/mmdl/508011 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/505120: File https://gamebanana.com/mmdl/508148 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/507058: File https://gamebanana.com/mmdl/508292 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/408595: File https://gamebanana.com/mmdl/508323 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/504274: File https://gamebanana.com/mmdl/508593 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/501515: File https://gamebanana.com/mmdl/508760 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/508593: File https://gamebanana.com/mmdl/509008 has same
   mod ID and is more recent

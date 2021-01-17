@@ -1,4 +1,89 @@
 - GameBananaType: Map
+  GameBananaId: 214158
+  Name: Celestial Resort B-Side Dashless
+  Authors: [BlueXans, ThetaGC]
+  Description: AKA Celestial Resort B-Side but BAD
+  Text: I have no regrets
+- GameBananaType: Map
+  GameBananaId: 214152
+  Name: Ultra Garbage
+  Authors: [SexyPencil1029]
+  Description: ''
+  Text: My first map, its as short as a C Side. As the title suggests, its an ultra
+    map and its complete garbage. Enjoy!
+- GameBananaType: Map
+  GameBananaId: 214148
+  Name: Anubi
+  Authors: [LIER0, Alex6886, lennygold, phant]
+  Description: An ambient journey into the desert
+  Text: 'Hey, I made a new map ^^. This one is propably my second easiest being somewhere
+    in intermediate difficulty. It''s main gimmick is jumping off the wall and performing
+    wallbounces without holding any direction key to create perfect setups. Second
+    checkpoint also introduces falling blocks and plays with them. Besides double
+    refills (yes, only double) and falling blocks it only works around core movement.
+    It requires you to know how to perform a wallbounce and a wavedash (untaught).
+    Anubi has only 2 checkpoints, but they are longer than in Knipe. It has 4 strawberries,
+    but they are harder than the rest of the map, especially 2 of them. To get every
+    strawberry you will need to know: reverse wavedash, ultra dash, neutrals and corner
+    jump. The map has quite a few little secrets, but you shouldn''t search everywhere.
+    Not obvious side rooms are indicated with a lightbeam. The map''s biggest and
+    hardest secret is the mighty introductory automobile. Everything in the map was
+    made by me except for its icon and music. The music is made by Kubbi. First checkpoint:
+    Kubbi - Bright Matter Second checkpoint: Kubbi - Formed by Glaciers Thanks to
+    the Celeste community for bringing awesome helpers! If you have some feedback,
+    or find anything wrong with the map, please let me know. I hope you enjoy!'
+- GameBananaType: Wip
+  GameBananaId: 53004
+  Name: More Pie Endings (Art Needed)
+  Authors: [DJTom3]
+  Description: Three additional pie endings to impress your friends.
+  Text: 'This is a mod that adds a few more Epilogue Pie Endings with new dialog and
+    (descriptive placeholder for now) portraits. Special thanks to coloursofnoise
+    and WoofWoofDoggo for helping me compile and get my first codemod to work with
+    Everest. List of new endings: - Speedrun Ending (<20 berrries, <1 hour file timer)
+    - All Red Berries Ending (175-201 berries) - Golden Pie Ending ft. Theo chipping
+    his tooth (202 berries) If anyone is interested in joining this project and drawing
+    actual art for this mod in progress, contact me at DJ-Tom-3#4875.'
+- GameBananaType: Gamefile
+  GameBananaId: 13920
+  Name: Alternate Farewell (Golden) Ending
+  Authors: [DJTom3]
+  Description: A small piece of alt-dialog for Farewell (after getting the golden
+    berry)
+  Text: This is a simple dialog mod for Farewell. It changes the dialog during the
+    ending cutscenes involving Granny and Theo to something a bit more relevant for
+    after you get the golden strawberry for this level.
+- GameBananaType: Gamefile
+  GameBananaId: 13902
+  Name: Femto Helper
+  Authors: [Marcossanches, Viv, CarelessAnonymous]
+  Description: Entities as wacky as this helper's alternative name!
+  Text: 'After a week or so of work, I have finally made the first iteration of something
+    I always wanted to have - My very own helper! Here''s what it has for now: Custom
+    Speed Rotate Spinner: The rotating Dustbunny/Star/Blade you know and love, but
+    with a custom speed, for if you want a slow blade to fit your gameplay speed,
+    or perhaps a fast dustbunny if you''re feeling evil. Custom Fake Crystal Heart:
+    A huge boost of customization compared to the vanilla Fake Heart. Features multiple
+    behaviors, a support for custom particles, custom burst effects, and, most importantly,
+    the support for setting flags. Custom Parallax Big Waterfalls: What always bothered
+    me is that the big waterfalls in Reflection had a low parallax value but were
+    always drawn over every single parallax background. With a custom parallax value,
+    you have way more freedom with backgrounds while also using the waterfalls. Particle
+    Emitter: With this entity, you can create particles at your will! With a ton of
+    customization, those particles will make your custom map look absolutely beautiful!
+    If you encounter any issues with the helper, please contact me via Discord: Marcossanches#3110,
+    and I''ll try fixing it in the next update!'
+- GameBananaType: Map
+  GameBananaId: 214070
+  Name: Odessa's Playground
+  Authors: [SBW]
+  Description: ''
+  Text: Just something I've made during my spare time and then forgotten about after
+    a few months. Instead of scrapping it entirely, I've decided to upload the parts
+    that I'm quite happy with. For my first level, I'd say it's poorly done, but to
+    hell with it! I hope you enjoy and I'm always happy to hear feedback. Maybe someday
+    I'll add more, who knows?
+- GameBananaType: Map
   GameBananaId: 214062
   Name: Dog Mountain
   Authors: [Me]
@@ -11,9 +96,9 @@
   Name: crowberry basket (decal set)
   Authors: [crowberry, Holly Magala, SpoopySoup]
   Description: caw caw. want berry?
-  Text: caw hello use pixel art in map make pritty currently has mushroom please use
-    as a dependency instead of installing yourself. should be ahorn compatible will
-    update in future. allowed to suggest more caw!
+  Text: caw hello use pixel art in map make pritty currently has mushroom crystal
+    bush please use as a dependency instead of installing yourself. should be ahorn
+    compatible will update in future. allowed to suggest more caw!
 - GameBananaType: Map
   GameBananaId: 214025
   Name: The Windy Skyline
@@ -31,12 +116,6 @@
   Text: Initial release of my first Celeste map for playtesting. Just a linear Core-themed
     map with lots of dream blocks. Target difficulty is for very casual players, the
     only tech required are dream jumps and wall bounces. Be Kind!
-- GameBananaType: Gamefile
-  GameBananaId: 13829
-  Name: Frozen Heights Audio
-  Authors: [Cabob, Soichi Terada]
-  Description: ''
-  Text: This is the audio required to play the celeste mod Frozen Heights.
 - GameBananaType: Map
   GameBananaId: 214019
   Name: B side The adventure of OI!
@@ -129,6 +208,13 @@
   Description: The ravages of time can be undone...
   Text: This mod is simply a skin mod for the flags in Golden Ridge areas that repairs
     the ones that're tattered. Nothing more to it than that.
+- GameBananaType: Map
+  GameBananaId: 213895
+  Name: A little bit harder celeste
+  Authors: [wirare]
+  Description: ''
+  Text: 'This map contain 2 level : Forsaken city and Old site (old site is hard ,really)
+    Thx for playing'
 - GameBananaType: Map
   GameBananaId: 213890
   Name: RITE
@@ -339,7 +425,7 @@
     authority of the owners is highly illegal and I will end up in jail for that,
     so please do not sell this mod as a standalone project. Please respect the creators
     as they made this amazing game. Copyright Disclaimer under section 107 of the
-    Copyright Act of 1976, allowance is made for �fair use� for purposes such as criticism,
+    Copyright Act of 1976, allowance is made for “fair use” for purposes such as criticism,
     comment, news reporting, teaching, scholarship, education and research. Fair use
     is a use permitted by copyright statute that might otherwise be infringing. Non-profit,
     educational or personal use tips the balance in favor of fair use.'
@@ -433,8 +519,9 @@
   GameBananaId: 213645
   Name: The Gauntlet
   Authors: [AmberCeleste]
-  Description: Just the first version
-  Text: 3 levels, no b-sides (yet) and no berries sadly.
+  Description: small but fun
+  Text: 3 levels, with b and c sides, the levels get shorter the further in the mod
+    you get
 - GameBananaType: Gamefile
   GameBananaId: 13571
   Name: Crowd Control - Celeste
@@ -729,7 +816,7 @@
     a preview ;D) Bigkahuna is making the updated one btw This mod adds in randomizer
     options for maps from the 2020 Celeste Community Spring Collab. Currently, only
     beginner maps are available, but I am still actively working to add in every map.
-    If you have any questions feel free to post here or message me on discord: ?KawaiiDawn?#2795
+    If you have any questions feel free to post here or message me on discord: ✨KawaiiDawn✨#2795
     FINISHED: Beginner Maps PLANNED: Intermediate Maps, Advanced Maps, Expert Maps,
     Grandmaster Maps KNOWN ISSUES: Crystal Enigma causes the game to crash at the
     randomizer menu, so that map is currently absent from the list of available maps.
@@ -1194,7 +1281,7 @@
     were to big to fit with the rest. Oh and not to mention a little code editing!
 - GameBananaType: Map
   GameBananaId: 212830
-  Name: Nightmare�s Realm
+  Name: Nightmare´s Realm
   Authors: [Rue, iamdadbod, celestecord]
   Description: A short halloween map by Rue
   Text: My halloween entry map! took about a month to make 5 advanced difficulty rooms
@@ -1471,7 +1558,7 @@
     have that installed, click here to go to the download page. This program will
     not write into any files it generates. You'll have to write them yourself. This
     will be later implemented in a update! Any bugs or issues? If you encounter a
-    nasty bug or something is wrong, you can message me on discord at M�n#0001 or
+    nasty bug or something is wrong, you can message me on discord at Mün#0001 or
     ping me in the Celeste discord!
 - GameBananaType: Gamefile
   GameBananaId: 13065
@@ -1574,19 +1661,19 @@
   GameBananaId: 212505
   Name: Hexagon Force
   Authors: [Alice2O3, Cruor]
-  Description: A map featuring dual player inspired by "Nice Doppelg�nger"
+  Description: A map featuring dual player inspired by "Nice Doppelgänger"
   Text: 'Want to climb mountain with Part of You? There you go~ Well, it''s my first
     time trying to make my own styleground and dialog, and trying player clone(unholy)
     of the Pandora''s box. It''s really fun to play with. This map is inspired by
-    "Nice Doppelg�nger" of the spring collab so it features dual player. It means
+    "Nice Doppelgänger" of the spring collab so it features dual player. It means
     you are controling Madeline and Part of You at the same time and their moves are
-    synchronized. If you don''t get the idea, try "Nice Doppelg�nger" in spring collab
+    synchronized. If you don''t get the idea, try "Nice Doppelgänger" in spring collab
     or "Hexagon Force" in Geometry Dash first:) It has about 20 rooms and it is supposed
     to be brain teaser and it has some simple technique (dream jump, supers, hypers,
     fast-bubbling, etc.) It also features boxes and pressure plate from Factory Helper
     so that there are some puzzle gameplay in this map. Difficulty: Advanced Red,
     since there are some combinations of technique, multitasking and brain teaser,
-    rather than just straight routes like "Nice Doppelg�nger". Have fun playing with
+    rather than just straight routes like "Nice Doppelgänger". Have fun playing with
     Part of You and maybe the second map ever featuring dual player:) BGM: -Hexagon
     Force- by Waterflame'
 - GameBananaType: Map
@@ -2183,20 +2270,6 @@
     game. BGM: ''Growing on me'' by snayk (just the same as the original game). Have
     fun playing this map:)'
 - GameBananaType: Map
-  GameBananaId: 211846
-  Name: Celestia W.I.P
-  Authors: [Alex6886/alejandro6886]
-  Description: Celestia WIP
-  Text: This is a somewhat strange project, the truth is that I am not sure where
-    the story is going but I try to make a parallel story to the original, I do not
-    plan to make constant updates I will update when I feel that the progress is enough
-    to make a new version. in this test version I had to cut the content to avoid
-    problems, chapter 2 was removed because it was broken and the dialogue in "THE
-    END" was removed to avoid big spoilers in the story, feel free to give your opinion
-    on the project that I will be reading This test has the Spanish and English languages.
-    Feel free to give us any suggestions regarding the translation. And alex6886/alejandro6886,We
-    are the same person
-- GameBananaType: Map
   GameBananaId: 211807
   Name: '[100-Floor] Madeline wanna trial the 100trap'
   Authors:
@@ -2215,7 +2288,7 @@
     as the original ''I wanna trial the 100trap'' (A-side).'
 - GameBananaType: Map
   GameBananaId: 211806
-  Name: H�ll
+  Name: Häll
   Authors: [Norah, Teo0, Flamecrafter113, SleepyNuigurumiFox, BV502, mt_steve, DeathKontrol,
     Cubo_CZ, Appels, caeyo, tofufish]
   Description: ''
@@ -2313,7 +2386,7 @@
     and doing whatever my friends and I think would be funny, I bring this high-quality
     mess that is this mod. This is a partial texture pack with modded dialogue that
     you can change in settings. Be sure to also download The Endscreens for this mod
-    that I couldn''t fit in one file. Also download Boomeline for the full experience�?
+    that I couldn''t fit in one file. Also download Boomeline for the full experience™?
     Featuring: Actual good writing in like. 2 places. I''m mostly not serious when
     making this but there are exceptions-- Many hours-worth of spritework and custom
     dialogue, all for small, dumb (or not) jokes Custom art, including w a t e r m
@@ -2482,7 +2555,7 @@
     Theta, All other Mt. Celeste Climbing Association members who helped with file
       modeling]
   Description: A default adventure with a lot of pain.
-  Text: 'If something isn�t working, message me. I will quickly fix it. This map is
+  Text: 'If something isn´t working, message me. I will quickly fix it. This map is
     currently in alpha. When I played Old Site, I found it boring. So I decided to
     remake it. It no-longer is a sweet and easy map. Its now pain and new level of
     frustration. Be warned that this map is extremely precise and unforgiving. (not)
@@ -2493,8 +2566,8 @@
     get posted here. Even completing the map itself is amazing. This map features:
     - Tough as nails platforming challenges - Multiple hidden intro cars (3) - 18
     berries - New dialogues - Currently only A-Side (B - 50% and C sides are coming
-    in Collector�s Edition update) - And pain Everything should be possible. The map
-    looks rough in level select, don�t worry, still working on it. Its my first map.
+    in Collector´s Edition update) - And pain Everything should be possible. The map
+    looks rough in level select, don´t worry, still working on it. Its my first map.
     Have fun dying!'
 - GameBananaType: Map
   GameBananaId: 211580
@@ -2514,7 +2587,7 @@
   Name: Randomizer Chinese Lang Pack
   Authors: [DemoJameson]
   Description: ''
-  Text: Randomizer ??????????????????????????????? Randomizer ????????? Mod ???? The
+  Text: Randomizer 中文语言包，因为需要依赖比较大的扩展中文字体，所以就不集成到原 Randomizer 中了，单独作为一个 Mod 来发布。 The
     Randomizer Chinese language package is not integrated into the Randomizer, as
     it depends on a large extended Chinese font, so I released it as a separate mod.
 - GameBananaType: Gamefile
@@ -2522,8 +2595,8 @@
   Name: Extended Chinese Font
   Authors: [DemoJameson]
   Description: ''
-  Text: "????????/How to create an extended font ?? GB2312 ????????????? 6736 ????\
-    ????????? Mod ?????????????????????????????? ???????? everest.yaml ??? Based on\
+  Text: "扩展字库制作方法/How to create an extended font 基于 GB2312 字符集扩展中文字库，总共有 6736 个汉字，\
+    基本满足日常使用。 Mod 作者依赖此语言包后就能随意使用中文，避免出现文字缺失的问题。 按照如下格式修改 everest.yaml 文件： Based on\
     \ the GB2312 character set, it has 6736 Chinese characters in total, which is\
     \ sufficient for daily use. Mod devs can depend on this language pack to use Chinese\
     \ freely and avoid missing characters. Modify the everest.yaml file according\
@@ -2600,7 +2673,7 @@
     There are flashing, photosensitive, and potentionally dangerous effects that can
     be used in here. You can enable or disable them in the Mod Options if needed.
     If your game crashes or a room isn''t loading, consult the error.log or log.txt.
-    If you still don''t have a clue, you can message me on Discord at M�n#0001 or
+    If you still don''t have a clue, you can message me on Discord at Mün#0001 or
     ping me in the Official Celeste Discord Server. Update 1.1 is here: overhauling
     everything and adding more distorting placements that allow you to wild in your
     maps! This update also added some internal code that can help code mods that use
@@ -2946,7 +3019,7 @@
     this controller! (Also, you can wrap some entities around the room too :) ) A
     Super Custom Instant Teleport Trigger: It does what you think it does. Except
     a lot more. Exit Velocity modifiers, rotation modifiers, position modifiers, instant
-    transitions between rooms, and toggleable lightning (glitch effect coming soon�),
+    transitions between rooms, and toggleable lightning (glitch effect coming soon™),
     as well as some toggleability of the trigger itself. Floaty Break Block: What
     if we took a Floaty Space Block and crossed it with Shroom Helper''s Crumble Wall
     on Touch? A Floaty Break Block. Wrappable Entities: If configured correctly,***
@@ -3120,13 +3193,12 @@
   Authors: [Bing_Over_Google, 'Everyone from #Map_Making on the Celeste Discord']
   Description: Will you find what you're looking for?
   Text: 'Play through an alternate version of the world and climb up Celeste Mountain
-    on a shorter, but harder trail. Included so far: - Prologue - Sets up the story
-    - Chapter 1: A Different Path -A side -7 strawberries, a cassette, and a heart
-    -3 checkpoints -17 rooms -Golden berry -B side -3 checkpoints -5 rooms -Golden
-    berry -C side -0 checkpoints -3 rooms -Golden berry Once the campaign is fully
-    completed, there will an alternate version of every map in the base game from
-    Prologue to Epilogue. All of the A-side chapters will require no advanced speed
-    tech to complete, but for the bonuses and B/C-sides, anything is on the table.'
+    on a shorter, but harder trail. Included so far: - Prologue - Chapter 1: A Different
+    Path -A side -B side -C side -Chapter 2: Starry Night -A side -B side -C side
+    Once the campaign is fully completed, there will an alternate version of every
+    map in the base game from Prologue to Epilogue. All of the A-side chapters will
+    require no advanced speed tech to complete, but for the bonuses and B/C-sides,
+    anything is on the table.'
 - GameBananaType: Tool
   GameBananaId: 6848
   Name: Celeste Randomizer
@@ -3296,7 +3368,7 @@
     the same as regular Trigger Spikes, but coming off withing a specified amount
     of time. Move Swap Block - You get it; A Swap Block that''ll travel in a specified
     direction when interacted with. It can swap positions even when it''s travelling,
-    and steering can be enabled. Basically Move Block � Swap Block! Reset State Crystal
+    and steering can be enabled. Basically Move Block × Swap Block! Reset State Crystal
     - This refill entity will put you back in the default player state when you collect
     it, essentially getting kicked out of your previous state. For example, collecting
     it while being in the feather state will just turn you back to the simple player
@@ -3830,7 +3902,7 @@
     - Crystal heart. The songs on the map are not made by me, they were made by Toby
     Fox for the game Undertale, I recommend that you play this great game. Thanks
     Max480 for creating a customizable vanilla cutscene for my map, and indirectly
-    helping with fmod owo Chapter 2 coming soon�?'
+    helping with fmod owo Chapter 2 coming soon™?'
 - GameBananaType: Map
   GameBananaId: 209859
   Name: Playable Credits
@@ -3914,12 +3986,12 @@
   GameBananaId: 11682
   Name: Lunatic Helper
   Authors: [max480, beefyuncle, Thegur90, iamdadbod, WoofWoofDoggo]
-  Description: A small code mod by M�nTheory
+  Description: A small code mod by MünTheory
   Text: 'Lunatic Helper Lunatic Helper is a new code mod that has somewhat useful
     entities and effects. I still have many ideas I''d like to implement in this helper,
     so I''ll be in active development and will try to update as consistently as I
     can! If you have any suggestions, ideas, or found a mischievous bug, please contact
-    me on Discord atM�n#3821 (I''m also in the Celestecord and iamdadbod''s server)
+    me on Discord atMün#3821 (I''m also in the Celestecord and iamdadbod''s server)
     or DM me on Twitter. Special thanks tomax480,BeefyUncle, WoofWoofDoggo, Thegur90,
     andiamdadbod for suggesting ideas, making custom sound effects, and being sane
     enough to answer my dumb questions! You guys are the best~ PLEASE READ: In v1.1,
@@ -3954,7 +4026,7 @@
     if you wanted to implement a heart-field, you would make a heart folder in your
     .../particles folder and add your 00.png through 03.png sprites into the heart
     folder. In the path, you would put heart. Colors: The colors the particles will
-    use. Notice the plural � you can use multiple colors (the particle will grab a
+    use. Notice the plural — you can use multiple colors (the particle will grab a
     color by random). To set up, put in your colors and split them up with a comma
     (e.g. ff0000,00ff00,0000ff is for red, green and blue). Custom Dust Custom dust
     are just like stardust from Farewell, but with a lot more customization! Since
@@ -4173,18 +4245,18 @@
     to release a new series called The Dadsides. This is not going to be easy... The
     majority of this map requires some advanced tech. Best of Luck! Interludes: Prologue
     Madeline takes the easy path to a place that may very well be her demise.... Contains
-    1 Room Custom Assets by M�n A secret! Required Tech Moving Jumping Grabing Dashing
+    1 Room Custom Assets by Mün A secret! Required Tech Moving Jumping Grabing Dashing
     Cloud Jumps 1 Wavedash Chapter 1: Crystalline Caverns Madeline explores the deepest
     depths of a crystal cave she found... Contains 12 Rooms 4 Berries & Goldenberry
-    3 Checkpoints Custom Assets by M�n Custom Music by OGBee A secret! Required Tech
+    3 Checkpoints Custom Assets by Mün Custom Music by OGBee A secret! Required Tech
     Neutrals Wall Bounces Ultra Dashing Extended Hypers, Waves, & Supers Reverse Hypers,
     Waves, & Supers Spike Jumps (with Setups) Booster Supers Booster-Induced Wave-Dashing
     Demo-Dashing Chapter 2: Fierce Magma Madeline falls down a massive pit and lands
     in a very warm place... Contains 12 Rooms 6 Berries & Goldenberry 3 Checkpoints
-    Custom Assets by M�n Custom Music by OGBee A secret! Required Tech Neutrals Wall
+    Custom Assets by Mün Custom Music by OGBee A secret! Required Tech Neutrals Wall
     Bounces Ultra Dashing Extended Hypers, Waves, & Supers Reverse Hypers, Waves,
     & Supers Spike Jumps (with Setups) Contact Discord YouTube Twitch Twitter Too
-    many effects?! M�n can get a lil'' crazy with their decorations and effects, so
+    many effects?! Mün can get a lil'' crazy with their decorations and effects, so
     we''ve decided it''s best to add an option to disable heavy effects! It will be
     available via Mod Options and you can turn it on and off at will! Disclaimer:
     You will need to restart the chapter for the option to work.'
@@ -5268,7 +5340,7 @@
   Name: CelesteEmojis
   Authors: [Celeste Discord, leo60228]
   Description: An updated version of Celestemojis by leo60228
-  Text: 'New Update, all non-animated emojis as of 03.10.2020 (DD/MM/YYYY) This took
+  Text: 'New Update, all non-animated emojis as of 15.01.2021 (DD/MM/YYYY) This took
     like 2-3 hours and to be honest, it isn''t the greatest thing I''ve ever done
     but It''s close to it. (MADeline, theNO, arbF,arbH,arbP,arbF and MaddyS (might
     have missed a few) need to have big letters like that, the rest can not or it
@@ -6436,16 +6508,16 @@
     best is recorded. Statistics on deaths, including location, time lost, etc. Use
     the debug map with just the gamepad, pressed confirm button is sent Madeline to
     the selection room, and the push right joystick zooms the debug map. Debug mode
-    F6 teleport bug-fix � Dream blocks and Badeline not activating in Old Site, incorrect
+    F6 teleport bug-fix – Dream blocks and Badeline not activating in Old Site, incorrect
     ice/fire state in Core, Celestial Resort huge mess hall being strangely lit, etc.
     * Records the position and velocity of most object and recreates the whole scene
     from scratch, may not be 100% accurate. Previews Acknowledgments A huge shout-out
     to Matt Makes Games Inc. for designing Celeste, it has been my favorite platformer
-    ever since. Everest � Celeste Mod Loader and modding API, making this Mod a reality.
-    Ahorn � Map maker and level editor, useful for identifying different entities
-    in the game. FMOD � Curated library of high-quality sound effects for games and
+    ever since. Everest – Celeste Mod Loader and modding API, making this Mod a reality.
+    Ahorn – Map maker and level editor, useful for identifying different entities
+    in the game. FMOD – Curated library of high-quality sound effects for games and
     released Celeste complete audio project. xigua, buhbai, Evansfight, Lev067, sonicyellow,
-    nameguy� Mod tester. rjdimo � Shameless self-promoting translator of this readme
+    nameguy– Mod tester. rjdimo – Shameless self-promoting translator of this readme
     file.
 - GameBananaType: Map
   GameBananaId: 203473
@@ -6497,7 +6569,7 @@
   Description: ''
   Text: 'NOTE FOR ALL MOD MAKERS: Download both packages on this page. One is for
     Celeste, the other is for Ahorn. Come one, come all! It''s my Grab Bag of Unique
-    Mechanics�! If you ever wanted some fresh new ideas to play with in your levels,
+    Mechanics™! If you ever wanted some fresh new ideas to play with in your levels,
     I''ve got some good stuff for you. We currently house many mechanics such as:
     - Dream Spinners! Dream blocks, space jam, that weird chapter 2 junk, whatever
     it''s called. It''s now in spinner form! Dash through with ease, but be careful
