@@ -171,7 +171,7 @@ class DatabaseUpdater {
             } else {
                 urlModInfo.append("authors");
             }
-            urlModInfo.append(",description,text&");
+            urlModInfo.append(",description,text,likes,views,downloads&");
             index++;
         }
 

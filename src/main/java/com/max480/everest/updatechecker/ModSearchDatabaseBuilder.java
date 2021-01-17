@@ -30,9 +30,13 @@ public class ModSearchDatabaseBuilder {
         public final int authorId;
         private final String description;
         private final String text;
+        private final int likes;
+        private final int views;
+        private final int downloads;
 
         public ModSearchInfo(String gameBananaType, int gameBananaId, String name,
-                             List<String> authors, String description, String text) {
+                             List<String> authors, String description, String text,
+                             int likes, int views, int downloads) {
 
             this.gameBananaType = gameBananaType;
             this.gameBananaId = gameBananaId;
@@ -41,10 +45,14 @@ public class ModSearchDatabaseBuilder {
             this.authors = authors;
             this.description = description;
             this.text = Jsoup.parseBodyFragment(text).text(); // strip HTML
+            this.likes = likes;
+            this.views = views;
+            this.downloads = downloads;
         }
 
         public ModSearchInfo(String gameBananaType, int gameBananaId, String name,
-                             int authorId, String description, String text) {
+                             int authorId, String description, String text,
+                             int likes, int views, int downloads) {
 
             this.gameBananaType = gameBananaType;
             this.gameBananaId = gameBananaId;
@@ -52,6 +60,9 @@ public class ModSearchDatabaseBuilder {
             this.authorId = authorId;
             this.description = description;
             this.text = Jsoup.parseBodyFragment(text).text(); // strip HTML
+            this.likes = likes;
+            this.views = views;
+            this.downloads = downloads;
         }
 
         /**
@@ -67,6 +78,9 @@ public class ModSearchDatabaseBuilder {
             map.put("Authors", authors);
             map.put("Description", description);
             map.put("Text", text);
+            map.put("Likes", likes);
+            map.put("Views", views);
+            map.put("Downloads", downloads);
             return map;
         }
     }
@@ -85,7 +99,8 @@ public class ModSearchDatabaseBuilder {
     public void addMod(String itemtype, int itemid, List<Object> mod) throws IOException {
         try {
             ModSearchInfo newModSearchInfo = new ModSearchInfo(itemtype, itemid, mod.get(0).toString(),
-                    Integer.parseInt(mod.get(2).toString()), mod.get(3).toString(), mod.get(4).toString());
+                    Integer.parseInt(mod.get(2).toString()), mod.get(3).toString(), mod.get(4).toString(),
+                    (int) mod.get(5), (int) mod.get(6), (int) mod.get(7));
 
             modSearchInfo.add(newModSearchInfo);
             authorIds.add(newModSearchInfo.authorId);
@@ -112,7 +127,8 @@ public class ModSearchDatabaseBuilder {
         }
 
         modSearchInfo.add(new ModSearchInfo(itemtype, itemid, mod.get(0).toString(), authorsParsed,
-                mod.get(3).toString(), mod.get(4).toString()));
+                mod.get(3).toString(), mod.get(4).toString(),
+                (int) mod.get(5), (int) mod.get(6), (int) mod.get(7)));
     }
 
     /**
