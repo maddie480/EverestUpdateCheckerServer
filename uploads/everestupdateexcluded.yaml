@@ -772,18 +772,6 @@ https://gamebanana.com/mmdl/493194: File https://gamebanana.com/mmdl/493198 has 
   mod ID and is more recent
 https://gamebanana.com/mmdl/487703: File https://gamebanana.com/mmdl/493198 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/493221: "java.util.zip.ZipException: zip END header not\
-  \ found\n\tat java.base/java.util.zip.ZipFile$Source.zerror(ZipFile.java:1567)\n\
-  \tat java.base/java.util.zip.ZipFile$Source.findEND(ZipFile.java:1462)\n\tat java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1469)\n\
-  \tat java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1274)\n\tat java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1237)\n\
-  \tat java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:727)\n\
-  \tat java.base/java.util.zip.ZipFile$CleanableResource.get(ZipFile.java:844)\n\t\
-  at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:247)\n\tat java.base/java.util.zip.ZipFile.<init>(ZipFile.java:177)\n\
-  \tat java.base/java.util.zip.ZipFile.<init>(ZipFile.java:191)\n\tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabase(DatabaseUpdater.java:303)\n\
-  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPageModInfo(DatabaseUpdater.java:210)\n\
-  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:148)\n\
-  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:42)\n\
-  \tat com.max480.everest.updatechecker.Main.main(Main.java:49)\n"
 https://gamebanana.com/mmdl/492830: File https://gamebanana.com/mmdl/493235 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/485536: File https://gamebanana.com/mmdl/493259 has same
@@ -819,8 +807,6 @@ https://gamebanana.com/mmdl/392165: File https://gamebanana.com/mmdl/413583 has 
 https://gamebanana.com/mmdl/393522: File https://gamebanana.com/mmdl/413583 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/483623: File https://gamebanana.com/mmdl/494961 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/491838: File https://gamebanana.com/mmdl/494975 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/493491: File https://gamebanana.com/mmdl/495194 has same
   mod ID and is more recent
@@ -976,8 +962,6 @@ https://gamebanana.com/mmdl/500279: File https://gamebanana.com/mmdl/505559 has 
   mod ID and is more recent
 https://gamebanana.com/mmdl/490977: File https://gamebanana.com/mmdl/505758 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/496223: File https://gamebanana.com/mmdl/505798 has same
-  mod ID and is more recent
 https://gamebanana.com/mmdl/501026: File https://gamebanana.com/mmdl/505866 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/441349: File https://gamebanana.com/mmdl/506229 has same
@@ -1092,8 +1076,6 @@ https://gamebanana.com/mmdl/508292: File https://gamebanana.com/mmdl/510907 has 
   mod ID and is more recent
 https://gamebanana.com/mmdl/486422: File https://gamebanana.com/mmdl/511304 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/507866: File https://gamebanana.com/mmdl/511553 has same
-  mod ID and is more recent
 https://gamebanana.com/mmdl/510909: File https://gamebanana.com/mmdl/511607 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/504274: File https://gamebanana.com/mmdl/510893 has same
@@ -1116,15 +1098,11 @@ https://gamebanana.com/mmdl/513371: File https://gamebanana.com/mmdl/513884 has 
   mod ID and is more recent
 https://gamebanana.com/mmdl/511607: File https://gamebanana.com/mmdl/513978 has same
   mod ID and is more recent
-https://gamebanana.com/mmdl/510893: File https://gamebanana.com/mmdl/514163 has same
-  mod ID and is more recent
 https://gamebanana.com/mmdl/513978: File https://gamebanana.com/mmdl/514442 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/514705: File https://gamebanana.com/mmdl/515378 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/498840: File https://gamebanana.com/mmdl/515465 has same
-  mod ID and is more recent
-https://gamebanana.com/mmdl/513858: File https://gamebanana.com/mmdl/515624 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/503899: File https://gamebanana.com/mmdl/515757 has same
   mod ID and is more recent
@@ -1137,4 +1115,82 @@ https://gamebanana.com/mmdl/516113: "java.lang.NullPointerException\n\tat com.ma
 https://gamebanana.com/mmdl/515757: File https://gamebanana.com/mmdl/516504 has same
   mod ID and is more recent
 https://gamebanana.com/mmdl/511726: File https://gamebanana.com/mmdl/516609 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/499577: File https://gamebanana.com/mmdl/517048 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/514442: File https://gamebanana.com/mmdl/517118 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/510907: File https://gamebanana.com/mmdl/517336 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/510893: File https://gamebanana.com/mmdl/517369 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/515624: File https://gamebanana.com/mmdl/517450 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/517646: File https://gamebanana.com/mmdl/517753 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/505798: File https://gamebanana.com/mmdl/517775 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/517795: "java.lang.NullPointerException\n\tat com.max480.everest.updatechecker.DatabaseUpdater.parseEverestYamlFromZipFile(DatabaseUpdater.java:350)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabase(DatabaseUpdater.java:324)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPageModInfo(DatabaseUpdater.java:215)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:149)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:44)\n\
+  \tat com.max480.everest.updatechecker.Main.main(Main.java:49)\n"
+https://gamebanana.com/mmdl/509307: File https://gamebanana.com/mmdl/517822 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/506933: File https://gamebanana.com/mmdl/517828 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/517048: File https://gamebanana.com/mmdl/517850 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/481577: File https://gamebanana.com/mmdl/517882 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/484280: File https://gamebanana.com/mmdl/517885 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/509293: File https://gamebanana.com/mmdl/518075 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/517369: File https://gamebanana.com/mmdl/518086 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/518063: File https://gamebanana.com/mmdl/518084 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/518142: "java.lang.NullPointerException\n\tat com.max480.everest.updatechecker.DatabaseUpdater.parseEverestYamlFromZipFile(DatabaseUpdater.java:350)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabase(DatabaseUpdater.java:324)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPageModInfo(DatabaseUpdater.java:215)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:149)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:44)\n\
+  \tat com.max480.everest.updatechecker.Main.main(Main.java:49)\n"
+https://gamebanana.com/mmdl/517753: File https://gamebanana.com/mmdl/518224 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/517882: File https://gamebanana.com/mmdl/518231 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/511553: File https://gamebanana.com/mmdl/518257 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/517885: File https://gamebanana.com/mmdl/518390 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/508148: File https://gamebanana.com/mmdl/518498 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/476653: File https://gamebanana.com/mmdl/518541 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/518146: File https://gamebanana.com/mmdl/518598 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/517822: File https://gamebanana.com/mmdl/518639 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/518666: "java.lang.NullPointerException\n\tat com.max480.everest.updatechecker.DatabaseUpdater.parseEverestYamlFromZipFile(DatabaseUpdater.java:350)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabase(DatabaseUpdater.java:324)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPageModInfo(DatabaseUpdater.java:215)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.loadPage(DatabaseUpdater.java:149)\n\
+  \tat com.max480.everest.updatechecker.DatabaseUpdater.updateDatabaseYaml(DatabaseUpdater.java:44)\n\
+  \tat com.max480.everest.updatechecker.Main.main(Main.java:49)\n"
+https://gamebanana.com/mmdl/518224: File https://gamebanana.com/mmdl/518952 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/505133: File https://gamebanana.com/mmdl/518957 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/518598: File https://gamebanana.com/mmdl/519020 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/518707: File https://gamebanana.com/mmdl/519474 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/516504: File https://gamebanana.com/mmdl/519591 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/517850: File https://gamebanana.com/mmdl/519638 has same
+  mod ID and is more recent
+https://gamebanana.com/mmdl/517336: File https://gamebanana.com/mmdl/519942 has same
   mod ID and is more recent
