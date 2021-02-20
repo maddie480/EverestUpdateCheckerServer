@@ -134,7 +134,8 @@ class DatabaseUpdater {
 
         List<List<Object>> mods = runWithRetry(() -> {
             try (InputStream is = openStreamWithTimeout(new URL("https://api.gamebanana.com/Core/List/New?page=" + page + "&gameid=6460&format=yaml"))) {
-                return new Yaml().load(is);
+                return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
+                        .orElseThrow(() -> new IOException("Ended up with a null value when loading a mod page"));
             }
         });
 
@@ -233,7 +234,8 @@ class DatabaseUpdater {
         log.trace("Mod info URL: {}", modInfoUrl);
         List<List<Object>> mods = runWithRetry(() -> {
             try (InputStream is = openStreamWithTimeout(new URL(modInfoUrl))) {
-                return new Yaml().load(is);
+                return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
+                        .orElseThrow(() -> new IOException("Ended up with a null value when loading mod info"));
             }
         });
 

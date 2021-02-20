@@ -201,7 +201,8 @@ public class ModSearchDatabaseBuilder {
             // run the request, parse the result, and add this result to the list.
             authorNames = DatabaseUpdater.runWithRetry(() -> {
                 try (InputStream is = DatabaseUpdater.openStreamWithTimeout(new URL(url))) {
-                    return new Yaml().load(is);
+                    return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
+                            .orElseThrow(() -> new IOException("Ended up with a null value when loading a mod page"));
                 }
             });
         }
