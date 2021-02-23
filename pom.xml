@@ -6,7 +6,7 @@
 
     <groupId>com.max480.everest.updatechecker</groupId>
     <artifactId>update-checker</artifactId>
-    <version>0.0.14</version>
+    <version>0.0.15</version>
 
     <properties>
         <jdk.version>1.8</jdk.version>
@@ -73,7 +73,7 @@
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
-            <version>1.27</version>
+            <version>1.28</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->

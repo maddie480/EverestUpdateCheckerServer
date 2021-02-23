@@ -22,6 +22,9 @@ import java.util.zip.ZipFile;
 class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
 
+    // the update checker will load X pages, then get the mod info for those X pages in 1 call.
+    private static final int PAGE_GROUP_COUNT = 3;
+
     private Map<String, Mod> database = new HashMap<>();
     private Map<String, String> databaseExcludedFiles = new HashMap<>();
     private Set<String> databaseNoYamlFiles = new HashSet<>();
@@ -42,7 +45,7 @@ class DatabaseUpdater {
 
         int i = 1;
         while (loadPage(i)) {
-            i++;
+            i += PAGE_GROUP_COUNT;
         }
 
         checkForModDeletion();
@@ -132,14 +135,27 @@ class DatabaseUpdater {
     private boolean loadPage(int page) throws IOException {
         log.debug("Loading page {} of the list of mods from GameBanana", page);
 
-        List<List<Object>> mods = runWithRetry(() -> {
-            try (InputStream is = openStreamWithTimeout(new URL("https://api.gamebanana.com/Core/List/New?page=" + page + "&gameid=6460&format=yaml"))) {
-                return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
-                        .orElseThrow(() -> new IOException("Ended up with a null value when loading a mod page"));
-            }
-        });
+        boolean reachedEmptyPage = false;
 
-        if (mods.isEmpty()) return false;
+        // we are going to get [PAGE_GROUP_COUNT] pages and merge them all in a mods list.
+        List<List<Object>> mods = new LinkedList<>();
+        for (int i = 0; i < PAGE_GROUP_COUNT && !reachedEmptyPage; i++) {
+            final int pageOffset = page + i;
+            List<List<Object>> modsPage = runWithRetry(() -> {
+                try (InputStream is = openStreamWithTimeout(new URL("https://api.gamebanana.com/Core/List/New?page=" + pageOffset + "&gameid=6460&format=yaml"))) {
+                    return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
+                            .orElseThrow(() -> new IOException("Ended up with a null value when loading a mod page"));
+                }
+            });
+            mods.addAll(modsPage);
+
+            if (modsPage.isEmpty()) {
+                reachedEmptyPage = true;
+            }
+        }
+
+        // stop here if no mod was retrieved.
+        if (mods.isEmpty()) return !reachedEmptyPage;
 
         /*
             List of GameBanana types with whether or not they accept files:
@@ -190,7 +206,7 @@ class DatabaseUpdater {
         String urlModInfo = getModInfoCallUrl(queriedModInfo);
         loadPageModInfo(urlModInfo, queriedModInfo);
 
-        return true;
+        return !reachedEmptyPage;
     }
 
     /**
