@@ -546,11 +546,11 @@ FoP:
   URL: https://gamebanana.com/mmdl/518390
 VivHelper:
   GameBananaType: Gamefile
-  Version: 1.2.7
-  LastUpdate: 1614082967
+  Version: 1.2.8
+  LastUpdate: 1614112453
   GameBananaId: 12484
-  xxHash: [cf64fc181e65b3e4]
-  URL: https://gamebanana.com/mmdl/524141
+  xxHash: [1dd159b8e320cfc0]
+  URL: https://gamebanana.com/mmdl/524277
 Climbing Blind Trilogy:
   GameBananaType: Map
   Version: 1.5.0

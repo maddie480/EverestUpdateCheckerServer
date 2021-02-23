@@ -36,6 +36,7 @@ class DatabaseUpdater {
     private Pattern gamebananaLinkRegex = Pattern.compile(".*(https://gamebanana.com/mmdl/[0-9]+).*");
 
     private final ModSearchDatabaseBuilder modSearchDatabaseBuilder = new ModSearchDatabaseBuilder();
+    private final ModFilesDatabaseBuilder modFilesDatabaseBuilder = new ModFilesDatabaseBuilder();
 
     void updateDatabaseYaml() throws IOException {
         log.info("=== Started searching for updates");
@@ -108,8 +109,9 @@ class DatabaseUpdater {
             new Yaml().dump(new ArrayList<>(databaseNoYamlFiles), writer);
         }
 
-        // also write the mod search database to disk.
+        // also write the mod search and files databases to disk.
         modSearchDatabaseBuilder.saveSearchDatabase();
+        modFilesDatabaseBuilder.saveToDisk();
     }
 
     /**
@@ -276,8 +278,9 @@ class DatabaseUpdater {
                 }
             }
 
-            // save the info about this mod in the mod search database.
+            // save the info about this mod in the mod search and files databases.
             modSearchDatabaseBuilder.addMod(thisModInfo.itemtype, thisModInfo.itemid, mod);
+            modFilesDatabaseBuilder.addMod(mod.get(1));
         }
     }
 
