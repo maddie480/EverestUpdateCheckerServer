@@ -315,11 +315,11 @@ snollsspookmap:
   URL: https://gamebanana.com/mmdl/502798
 QuickieMountain2:
   GameBananaType: Map
-  Version: 1.0.2
-  LastUpdate: 1614042140
+  Version: 1.0.4
+  LastUpdate: 1614141489
   GameBananaId: 214450
-  xxHash: [1cee4c60014bc768]
-  URL: https://gamebanana.com/mmdl/523946
+  xxHash: [0c5b64939d099e4a]
+  URL: https://gamebanana.com/mmdl/524443
 Bruhleste:
   GameBananaType: Map
   Version: 1.0.0
@@ -546,11 +546,11 @@ FoP:
   URL: https://gamebanana.com/mmdl/518390
 VivHelper:
   GameBananaType: Gamefile
-  Version: 1.2.8
-  LastUpdate: 1614112453
+  Version: 1.2.9
+  LastUpdate: 1614135112
   GameBananaId: 12484
-  xxHash: [1dd159b8e320cfc0]
-  URL: https://gamebanana.com/mmdl/524277
+  xxHash: [78627afbe9c23d18]
+  URL: https://gamebanana.com/mmdl/524410
 Climbing Blind Trilogy:
   GameBananaType: Map
   Version: 1.5.0
@@ -1407,11 +1407,11 @@ Celestial Doomsday:
   URL: https://gamebanana.com/mmdl/502158
 AhornDependencyGenerator:
   GameBananaType: Tool
-  Version: 1.1.0
-  LastUpdate: 1613854320
+  Version: 1.1.1
+  LastUpdate: 1614124896
   GameBananaId: 6908
-  xxHash: [45cfe685ad6beeed]
-  URL: https://gamebanana.com/mmdl/522996
+  xxHash: [3e48cc58902be5a0]
+  URL: https://gamebanana.com/mmdl/524352
 NanosHecksides:
   GameBananaType: Map
   Version: 1.1.5
@@ -2156,11 +2156,11 @@ Rotating Resort:
   URL: https://gamebanana.com/mmdl/506773
 SpeedrunTool:
   GameBananaType: Tool
-  Version: 3.4.27
-  LastUpdate: 1613235026
+  Version: 3.4.29
+  LastUpdate: 1614137370
   GameBananaId: 6597
-  xxHash: [baaf232084dda934]
-  URL: https://gamebanana.com/mmdl/520027
+  xxHash: [31a2e8eef0e1bea3]
+  URL: https://gamebanana.com/mmdl/524420
 Tsubasa no Aru:
   GameBananaType: Map
   Version: 1.0.0
@@ -2807,11 +2807,11 @@ Celeste Binary Calculator:
   URL: https://gamebanana.com/mmdl/496390
 BingoClient:
   GameBananaType: Gui
-  Version: 0.0.1
-  LastUpdate: 1614052253
+  Version: 0.0.2
+  LastUpdate: 1614146991
   GameBananaId: 36684
-  xxHash: [82f148440bea10f3]
-  URL: https://gamebanana.com/mmdl/524009
+  xxHash: [87406c404307baea]
+  URL: https://gamebanana.com/mmdl/524464
 AchingCavern:
   GameBananaType: Map
   Version: 1.0.0
@@ -3410,10 +3410,10 @@ SuperHotMod:
 Jelly Factory:
   GameBananaType: Map
   Version: 1.0.0
-  LastUpdate: 1612211082
+  LastUpdate: 1614151202
   GameBananaId: 214495
-  xxHash: [0e6be2e9a1996758]
-  URL: https://gamebanana.com/mmdl/514632
+  xxHash: [4dae9842f03f5e68]
+  URL: https://gamebanana.com/mmdl/524480
 WeirdOldSite:
   GameBananaType: Map
   Version: 1.0.0

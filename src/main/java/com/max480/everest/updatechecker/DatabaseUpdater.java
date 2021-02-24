@@ -38,6 +38,9 @@ class DatabaseUpdater {
     private final ModSearchDatabaseBuilder modSearchDatabaseBuilder = new ModSearchDatabaseBuilder();
     private final ModFilesDatabaseBuilder modFilesDatabaseBuilder = new ModFilesDatabaseBuilder();
 
+    DatabaseUpdater() throws IOException {
+    }
+
     void updateDatabaseYaml() throws IOException {
         log.info("=== Started searching for updates");
         long startMillis = System.currentTimeMillis();
