@@ -1,0 +1,89 @@
+[Audio/ifeel_joy.bank, Audio/ifeel_joy.guids.txt, Cutscenes/Bruh.lua, Cutscenes/nut.lua,
+  Dialog/English.txt, everest.yaml, Graphics/Atlases/Checkpoints/Thesauceman/Funnylevel/grass/A/b-00.png,
+  Graphics/Atlases/Checkpoints/Thesauceman/Funnylevel/grass/A/c-00.png, Graphics/Atlases/Checkpoints/Thesauceman/Funnylevel/grass/A/d-00.png,
+  Graphics/Atlases/Checkpoints/Thesauceman/Funnylevel/grass/A/e-00.png, Graphics/Atlases/Checkpoints/Thesauceman/Funnylevel/grass/A/f-00.png,
+  Graphics/Atlases/Checkpoints/Thesauceman/Funnylevel/grass/A/g-00.png, Graphics/Atlases/Checkpoints/Thesauceman/Funnylevel/grass/A/h-00.png,
+  Graphics/Atlases/Checkpoints/Thesauceman/Funnylevel/grass/A/start.png, Graphics/Atlases/Gameplay/characters/bird/bird00.png,
+  Graphics/Atlases/Gameplay/characters/bird/frame_1_delay-0.1s.png, Graphics/Atlases/Gameplay/characters/bird/frame_2_delay-0.1s.png,
+  Graphics/Atlases/Gameplay/characters/bird/frame_3_delay-0.1s.png, Graphics/Atlases/Gameplay/characters/bird/frame_4_delay-0.1s.png,
+  Graphics/Atlases/Gameplay/characters/bird/frame_5_delay-0.1s.png, Graphics/Atlases/Gameplay/characters/bird/frame_6_delay-0.1s.png,
+  Graphics/Atlases/Gameplay/characters/bird/frame_7_delay-0.1s.png, Graphics/Atlases/Gameplay/characters/Default/default00.png,
+  Graphics/Atlases/Gameplay/characters/Default/default01.png, Graphics/Atlases/Gameplay/characters/Default/default02.png,
+  Graphics/Atlases/Gameplay/characters/Default/default03.png, Graphics/Atlases/Gameplay/characters/Default/default04.png,
+  Graphics/Atlases/Gameplay/characters/Default/default05.png, Graphics/Atlases/Gameplay/characters/Default/default06.png,
+  Graphics/Atlases/Gameplay/characters/Default/default07.png, Graphics/Atlases/Gameplay/characters/Default/default08.png,
+  Graphics/Atlases/Gameplay/characters/Default/default09.png, Graphics/Atlases/Gameplay/characters/Default/default10.png,
+  Graphics/Atlases/Gameplay/characters/Default/default11.png, Graphics/Atlases/Gameplay/characters/Default/default12.png,
+  Graphics/Atlases/Gameplay/characters/Default/default13.png, Graphics/Atlases/Gameplay/characters/Default/default14.png,
+  Graphics/Atlases/Gameplay/characters/Default/default15.png, Graphics/Atlases/Gameplay/characters/Default/default16.png,
+  Graphics/Atlases/Gameplay/characters/Default/default17.png, Graphics/Atlases/Gameplay/characters/Default/default18.png,
+  Graphics/Atlases/Gameplay/characters/Default/default19.png, Graphics/Atlases/Gameplay/characters/Default/default20.png,
+  Graphics/Atlases/Gameplay/characters/Default/default21.png, Graphics/Atlases/Gameplay/characters/Default/default22.png,
+  Graphics/Atlases/Gameplay/characters/Default/default23.png, Graphics/Atlases/Gameplay/characters/Default/default24.png,
+  Graphics/Atlases/Gameplay/characters/Default/default25.png, Graphics/Atlases/Gameplay/characters/Default/default26.png,
+  Graphics/Atlases/Gameplay/characters/Default/default27.png, Graphics/Atlases/Gameplay/characters/Default/default28.png,
+  Graphics/Atlases/Gameplay/characters/Default/default29.png, Graphics/Atlases/Gameplay/characters/Default/default30.png,
+  Graphics/Atlases/Gameplay/characters/Default/default31.png, Graphics/Atlases/Gameplay/characters/Default/default32.png,
+  Graphics/Atlases/Gameplay/characters/Default/default33.png, Graphics/Atlases/Gameplay/characters/Default/default34.png,
+  Graphics/Atlases/Gameplay/characters/Default/default35.png, Graphics/Atlases/Gameplay/characters/Default/default36.png,
+  Graphics/Atlases/Gameplay/characters/Default/default37.png, Graphics/Atlases/Gameplay/characters/Default/default38.png,
+  Graphics/Atlases/Gameplay/characters/Default/default39.png, Graphics/Atlases/Gameplay/characters/Default/default40.png,
+  Graphics/Atlases/Gameplay/characters/Default/default41.png, Graphics/Atlases/Gameplay/characters/Default/default42.png,
+  Graphics/Atlases/Gameplay/characters/Default/default43.png, Graphics/Atlases/Gameplay/characters/Default/default44.png,
+  Graphics/Atlases/Gameplay/characters/Default/default45.png, Graphics/Atlases/Gameplay/characters/Default/default46.png,
+  Graphics/Atlases/Gameplay/characters/Default/default47.png, Graphics/Atlases/Gameplay/characters/Default/default48.png,
+  Graphics/Atlases/Gameplay/characters/Default/default49.png, Graphics/Atlases/Gameplay/characters/Default/default50.png,
+  Graphics/Atlases/Gameplay/characters/Default/default51.png, Graphics/Atlases/Gameplay/characters/Default/default52.png,
+  Graphics/Atlases/Gameplay/characters/Default/default53.png, Graphics/Atlases/Gameplay/characters/Default/default54.png,
+  Graphics/Atlases/Gameplay/characters/Default/default55.png, Graphics/Atlases/Gameplay/characters/Default/default56.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/00.png, Graphics/Atlases/Gameplay/collectables/heartGem/01.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/02.png, Graphics/Atlases/Gameplay/collectables/heartGem/03.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/04.png, Graphics/Atlases/Gameplay/collectables/heartGem/05.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/06.png, Graphics/Atlases/Gameplay/collectables/heartGem/07.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/08.png, Graphics/Atlases/Gameplay/collectables/heartGem/09.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/10.png, Graphics/Atlases/Gameplay/collectables/heartGem/11.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/12.png, Graphics/Atlases/Gameplay/collectables/heartGem/13.png,
+  Graphics/Atlases/Gameplay/decals/Ash/The sauce mans channel/ash/ash_d00.png, Graphics/Atlases/Gameplay/decals/Ash/The
+    sauce mans channel/ash/ash_d01.png, Graphics/Atlases/Gameplay/decals/Ash/The sauce
+    mans channel/ash/ash_d02.png, Graphics/Atlases/Gameplay/decals/Ash/The sauce mans
+    channel/ash/ash_d03.png, Graphics/Atlases/Gameplay/decals/Ash/The sauce mans channel/ash/ash_d04.png,
+  Graphics/Atlases/Gameplay/decals/Ash/The sauce mans channel/ash/ash_d05.png, Graphics/Atlases/Gameplay/decals/Ash/The
+    sauce mans channel/ash/ash_d06.png, Graphics/Atlases/Gameplay/decals/bruh/the
+    sauce mans channel/-1/lmao-a .png, Graphics/Atlases/Gameplay/decals/checkpoint/the
+    sauce mans channel/cold/checkpoint.png, Graphics/Atlases/Gameplay/decals/clown/the
+    sauce mans channel/dab/bruh_00.png, Graphics/Atlases/Gameplay/decals/clown/the
+    sauce mans channel/dab/bruh_01.png, Graphics/Atlases/Gameplay/decals/clown/the
+    sauce mans channel/dab/bruh_02.png, Graphics/Atlases/Gameplay/decals/clown/the
+    sauce mans channel/dab/bruh_03.png, Graphics/Atlases/Gameplay/decals/clown/the
+    sauce mans channel/dab/bruh_04.png, Graphics/Atlases/Gameplay/decals/clown/the
+    sauce mans channel/dab/bruh_05.png, Graphics/Atlases/Gameplay/decals/clown/the
+    sauce mans channel/dab/bruh_06.png, Graphics/Atlases/Gameplay/decals/clown/the
+    sauce mans channel/dab/bruh_07.png, Graphics/Atlases/Gameplay/decals/donker/the
+    sauce mans channel/gaming setup/epic.png, Graphics/Atlases/Gameplay/decals/flower/The
+    sauce mans channel/niceflower/flower_a.png, Graphics/Atlases/Gameplay/decals/flower/The
+    sauce mans channel/niceflower/flower_b.png, Graphics/Atlases/Gameplay/decals/Forest/the
+    sauce mans channel/omg/forest_of_signs.png, Graphics/Atlases/Gameplay/decals/heart/the
+    sauce mans channel/galaxy/00.png, Graphics/Atlases/Gameplay/decals/heart/the sauce
+    mans channel/galaxy/01.png, Graphics/Atlases/Gameplay/decals/heart/the sauce mans
+    channel/galaxy/02.png, Graphics/Atlases/Gameplay/decals/heart/the sauce mans channel/galaxy/03.png,
+  Graphics/Atlases/Gameplay/decals/heart/the sauce mans channel/galaxy/04.png, Graphics/Atlases/Gameplay/decals/heart/the
+    sauce mans channel/galaxy/05.png, Graphics/Atlases/Gameplay/decals/heart/the sauce
+    mans channel/galaxy/06.png, Graphics/Atlases/Gameplay/decals/heart/the sauce mans
+    channel/galaxy/07.png, Graphics/Atlases/Gameplay/decals/heart/the sauce mans channel/galaxy/08.png,
+  Graphics/Atlases/Gameplay/decals/heart/the sauce mans channel/galaxy/09.png, Graphics/Atlases/Gameplay/decals/heart/the
+    sauce mans channel/galaxy/10.png, Graphics/Atlases/Gameplay/decals/heart/the sauce
+    mans channel/galaxy/11.png, Graphics/Atlases/Gameplay/decals/heart/the sauce mans
+    channel/galaxy/12.png, Graphics/Atlases/Gameplay/decals/heart/the sauce mans channel/galaxy/13.png,
+  Graphics/Atlases/Gameplay/decals/pog shark/the sauce mans channel/nut/sharkman.png,
+  Graphics/Atlases/Gameplay/decals/POG/the sauce mans channel/pogg/poggers.png, Graphics/Atlases/Gameplay/decals/Red/the
+    sauce mans channel/red/red_e00.png, Graphics/Atlases/Gameplay/decals/Red/the sauce
+    mans channel/red/red_e01.png, Graphics/Atlases/Gameplay/decals/Red/the sauce mans
+    channel/red/red_e02.png, Graphics/Atlases/Gameplay/decals/Red/the sauce mans channel/red/red_e03.png,
+  Graphics/Atlases/Gameplay/decals/Red/the sauce mans channel/red/red_e04.png, Graphics/Atlases/Gameplay/decals/Red/the
+    sauce mans channel/red/red_e05.png, Graphics/Atlases/Gameplay/decals/sign/the
+    sauce mans channel/purple/prologue_sign.png, Graphics/Atlases/Gameplay/decals/UFO/the
+    sauce mans channel/ufo/ufo.png, Graphics/Atlases/Gameplay/particles/bruh/nut/hearts/00.png,
+  Graphics/Atlases/Gameplay/particles/bruh/nut/hearts/01.png, Graphics/Atlases/Gameplay/particles/bruh/nut/hearts/02.png,
+  Graphics/Atlases/Gameplay/particles/bruh/nut/hearts/03.png, Graphics/Atlases/Portraits/honk/nice00.png,
+  Maps/Thesauceman/Funnylevel/grass.bin, Maps/Thesauceman/Funnylevel/grass.meta.yaml,
+  Tutorials/jellytech.bin, 'Tutorials/{bruh}.bin', 'Tutorials/{lmao}.bin']

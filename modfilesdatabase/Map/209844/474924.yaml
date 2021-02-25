@@ -1,0 +1,71 @@
+[Dialog/English.txt, everest.yaml, Graphics/Atlases/Checkpoints/del/Hello/1 Sleeping
+    Streets/A/Beacon.png, Graphics/Atlases/Checkpoints/del/Hello/1 Sleeping Streets/A/Companion.png,
+  Graphics/Atlases/Checkpoints/del/Hello/1 Sleeping Streets/A/Gravity Lapse.png, Graphics/Atlases/Checkpoints/del/Hello/1
+    Sleeping Streets/A/Lightswitch.png, Graphics/Atlases/Checkpoints/del/Hello/1 Sleeping
+    Streets/A/Rapture.png, Graphics/Atlases/Checkpoints/del/Hello/1 Sleeping Streets/A/Start.png,
+  Graphics/Atlases/Checkpoints/del/Hello/2 Grand Library/A/A Post History.png, Graphics/Atlases/Checkpoints/del/Hello/2
+    Grand Library/A/B Flat Circle.png, Graphics/Atlases/Checkpoints/del/Hello/2 Grand
+    Library/A/C Grey Matter.png, Graphics/Atlases/Checkpoints/del/Hello/2 Grand Library/A/D
+    Basement Hatch.png, Graphics/Atlases/Checkpoints/del/Hello/2 Grand Library/A/Start.png,
+  Graphics/Atlases/Checkpoints/del/Hello/3 Midas Citadel/A/A Minstrels Quarters.png,
+  Graphics/Atlases/Checkpoints/del/Hello/3 Midas Citadel/A/B Aurelian Strip.png, Graphics/Atlases/Checkpoints/del/Hello/3
+    Midas Citadel/A/C Hubris.png, Graphics/Atlases/Checkpoints/del/Hello/3 Midas Citadel/A/D
+    Opulent Causeway.png, Graphics/Atlases/Checkpoints/del/Hello/3 Midas Citadel/A/E
+    Dreadful Wingbeat.png, Graphics/Atlases/Checkpoints/del/Hello/3 Midas Citadel/A/Start.png,
+  Graphics/Atlases/Checkpoints/del/Hello/4 Thalassic Caverns/A/A Cerulean Wash.png,
+  Graphics/Atlases/Checkpoints/del/Hello/4 Thalassic Caverns/A/B Heatwave.png, Graphics/Atlases/Checkpoints/del/Hello/4
+    Thalassic Caverns/A/Celsius Median.png, Graphics/Atlases/Checkpoints/del/Hello/4
+    Thalassic Caverns/A/Start.png, Graphics/Atlases/Checkpoints/del/Hello/5 Magisters
+    Gardens/A/A Vintners Post.png, Graphics/Atlases/Checkpoints/del/Hello/5 Magisters
+    Gardens/A/Brambled Expanse.png, Graphics/Atlases/Checkpoints/del/Hello/5 Magisters
+    Gardens/A/Oggdrasil.png, Graphics/Atlases/Checkpoints/del/Hello/5 Magisters Gardens/A/Start.png,
+  Graphics/Atlases/Checkpoints/del/Hello/6-B/B/A Paperback Span.png, Graphics/Atlases/Checkpoints/del/Hello/6-B/B/Aurelian
+    Strip.png, Graphics/Atlases/Checkpoints/del/Hello/6-B/B/Droplet Cascade.png, Graphics/Atlases/Checkpoints/del/Hello/6-B/B/Oggdrasil.png,
+  Graphics/Atlases/Checkpoints/del/Hello/6-B/B/Start.png, Graphics/Atlases/Checkpoints/del/Hello/7
+    The Grid/A/Grid.png, Graphics/Atlases/Checkpoints/del/Hello/7 The Grid/A/Meadow.png,
+  Graphics/Atlases/Checkpoints/del/Hello/7 The Grid/A/Start.png, Graphics/Atlases/Endscreens/del/Hello/6.png,
+  Graphics/Atlases/Endscreens/del/Hello/Grand Library.png, Graphics/Atlases/Endscreens/del/Hello/Magisters
+    Gardens.png, Graphics/Atlases/Endscreens/del/Hello/Midas Citadel.png, Graphics/Atlases/Endscreens/del/Hello/Sleeping
+    Streets.png, Graphics/Atlases/Endscreens/del/Hello/Thalassic Caverns.png, Graphics/Atlases/Endscreens/del/Hello/The
+    Grid.png, Graphics/Atlases/Gameplay/bgs/del/red_clouds.png, Graphics/Atlases/Gameplay/decals/del/roots_a.png,
+  Graphics/Atlases/Gameplay/decals/del/roots_b.png, Graphics/Atlases/Gameplay/decals/del/roots_bot_a.png,
+  Graphics/Atlases/Gameplay/decals/del/roots_bot_b.png, Graphics/Atlases/Gameplay/decals/del/roots_c.png,
+  Graphics/Atlases/Gameplay/decals/del/tree_a.png, Graphics/Atlases/Gameplay/decals/del/tree_b.png,
+  Graphics/Atlases/Gameplay/decals/del/tree_c.png, Graphics/Atlases/Gameplay/decals/del/tree_d.png,
+  Graphics/Atlases/Gameplay/decals/del/vine_a.png, Graphics/Atlases/Gameplay/decals/del/vine_b.png,
+  Graphics/Atlases/Gameplay/decals/del/vine_c.png, Graphics/Atlases/Gameplay/decals/del/vine_d.png,
+  Graphics/Atlases/Gameplay/decals/del/vine_e.png, Graphics/Atlases/Gameplay/decals/del/vine_f.png,
+  Graphics/Atlases/Gameplay/decals/del/vine_g.png, Graphics/Atlases/Gameplay/decals/del/vine_h.png,
+  Graphics/Atlases/Gameplay/decals/del/vine_i.png, Graphics/Atlases/Gameplay/decals/del/vine_j.png,
+  Graphics/Atlases/Gameplay/decals/del/vine_k.png, Graphics/Atlases/Gui/areas/caverns.png,
+  Graphics/Atlases/Gui/areas/caverns_back.png, Graphics/Atlases/Gui/areas/city.png,
+  Graphics/Atlases/Gui/areas/city_back.png, Graphics/Atlases/Gui/areas/cliffside.png,
+  Graphics/Atlases/Gui/areas/cliffside_back.png, Graphics/Atlases/Gui/areas/core.png,
+  Graphics/Atlases/Gui/areas/core_back.png, Graphics/Atlases/Gui/areas/del/Hello/2
+    Grand Library_hover.png, Graphics/Atlases/Gui/areas/del/Hello/3 Midas Citadel_hover.png,
+  Graphics/Atlases/Gui/areas/del/Hello/4 Thalassic Caverns_hover.png, Graphics/Atlases/Gui/areas/del/Hello/5
+    Magisters Gardens_hover.png, Graphics/Atlases/Gui/areas/del/Hello/6_hover.png,
+  Graphics/Atlases/Gui/areas/del/Hello/7 The Grid_hover.png, Graphics/Atlases/Gui/areas/farewell.png,
+  Graphics/Atlases/Gui/areas/farewell_back.png, Graphics/Atlases/Gui/areas/gardens.png,
+  Graphics/Atlases/Gui/areas/gardens_back.png, Graphics/Atlases/Gui/areas/grid.png,
+  Graphics/Atlases/Gui/areas/grid_back.png, Graphics/Atlases/Gui/areas/hover.png,
+  Graphics/Atlases/Gui/areas/intro.png, Graphics/Atlases/Gui/areas/intro_back.png,
+  Graphics/Atlases/Gui/areas/library.png, Graphics/Atlases/Gui/areas/library_back.png,
+  Graphics/Atlases/Gui/areas/lock.png, Graphics/Atlases/Gui/areas/midas.png, Graphics/Atlases/Gui/areas/midas_back.png,
+  Graphics/Atlases/Gui/areas/new.png, Graphics/Atlases/Gui/areas/oldsite.png, Graphics/Atlases/Gui/areas/oldsite_back.png,
+  Graphics/Atlases/Gui/areas/reflection.png, Graphics/Atlases/Gui/areas/reflection_back.png,
+  Graphics/Atlases/Gui/areas/resort.png, Graphics/Atlases/Gui/areas/resort_back.png,
+  Graphics/Atlases/Gui/areas/strain.png, Graphics/Atlases/Gui/areas/strain_back.png,
+  Graphics/Atlases/Gui/areas/streets.png, Graphics/Atlases/Gui/areas/streets_back.png,
+  Graphics/Atlases/Gui/areas/Summit.png, Graphics/Atlases/Gui/areas/Summit_back.png,
+  Graphics/Atlases/Gui/areas/temple.png, Graphics/Atlases/Gui/areas/temple_back.png,
+  Hello.cmp, Maps/del/Hello/1 Sleeping Streets.bin, Maps/del/Hello/1 Sleeping Streets.meta.yaml,
+  Maps/del/Hello/1 Sleeping Streets-B.bin, Maps/del/Hello/2 Grand Library.bin, Maps/del/Hello/2
+    Grand Library.meta.yaml, Maps/del/Hello/2 Grand Library-B.bin, Maps/del/Hello/3
+    Midas Citadel.bin, Maps/del/Hello/3 Midas Citadel.meta.yaml, Maps/del/Hello/3
+    Midas Citadel-B.bin, Maps/del/Hello/4 Thalassic Caverns.bin, Maps/del/Hello/4
+    Thalassic Caverns.meta.yaml, Maps/del/Hello/4 Thalassic Caverns-B.bin, Maps/del/Hello/5
+    Magisters Gardens.bin, Maps/del/Hello/5 Magisters Gardens.meta.yaml, Maps/del/Hello/5
+    Magisters Gardens-B.bin, Maps/del/Hello/6.bin, Maps/del/Hello/6.meta.yaml, Maps/del/Hello/6-B.bin,
+  Maps/del/Hello/7 The Grid.bin, Maps/del/Hello/7 The Grid.meta.yaml, Maps/del/Hello/7
+    The Grid-B.bin]

@@ -34,10 +34,14 @@ Additionally, this server generates a `modsearchdatabase.yaml` file that can be 
   Downloads: 44
 ```
 
-It also generates a "mod files database" that can be downloaded to quickly check which files are in mod zips, based on their links. For example, the file list of https://gamebanana.com/mmdl/425231 can be found in `uploads/modsearchdatabase/425231.yaml` that contains:
+It also generates a "mod files database" that allows checking the zip contents without downloading them:
+- `modfilesdatabase/list.yaml` is a list of all detected mods
+- `modfilesdatabase/[itemtype]/[itemid]/info.yaml` is a file containing the name of the mod and its file list:
 ```yaml
-[Dialog/English.txt, nightmare.bin, everest.yaml]
+Files: ['523435', '513691']
+Name: Extended Variant Mode
 ```
+- `modfilesdatabase/[itemtype]/[itemid]/[fileid].yaml` is a file listing all the zip contents. It will contain an empty zip for anything that is not a zip.
 
 ## Getting the project
 
@@ -53,7 +57,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.17.jar`.
+This will build the project to `target/update-checker-0.0.18.jar`.
 
 ## Running the project
 
@@ -66,7 +70,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.17.jar [port] [minutes]
+java -jar update-checker-0.0.18.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).

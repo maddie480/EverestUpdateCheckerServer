@@ -283,7 +283,8 @@ class DatabaseUpdater {
 
             // save the info about this mod in the mod search and files databases.
             modSearchDatabaseBuilder.addMod(thisModInfo.itemtype, thisModInfo.itemid, mod);
-            modFilesDatabaseBuilder.addMod(mod.get(1));
+            modFilesDatabaseBuilder.addMod(thisModInfo.itemtype, thisModInfo.itemid, name,
+                    parsedModInfo.allFileUrls, parsedModInfo.allFileSizes);
         }
     }
 

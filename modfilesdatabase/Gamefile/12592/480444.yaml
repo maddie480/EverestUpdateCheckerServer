@@ -1,0 +1,9 @@
+[Ahorn/entities/burstEffect.jl, Ahorn/entities/burstZone.jl, Ahorn/entities/flickerLightSource.jl,
+  Ahorn/entities/lightSource.jl, Ahorn/entities/lightSourceZone.jl, Ahorn/entities/teleportationTarget.jl,
+  Ahorn/triggers/burstEffectOccurrenceTrigger.jl, Ahorn/triggers/flashTrigger.jl,
+  Ahorn/triggers/freezeTrigger.jl, Ahorn/triggers/lightningStrikeTrigger.jl, Ahorn/triggers/patchedCameraTrigger.jl,
+  Ahorn/triggers/randomSoundTrigger.jl, Ahorn/triggers/rumbleTrigger.jl, Ahorn/triggers/screenWipeTrigger.jl,
+  Ahorn/triggers/shakeTrigger.jl, Ahorn/triggers/teleportationTrigger.jl, ContortHelper.dll,
+  Dialog/English.txt, everest.yaml, Graphics/Atlases/Gameplay/ahorn/muntheory/contorthelper/burstEffectAdvanceFlag.png,
+  Graphics/Atlases/Gameplay/ahorn/muntheory/contorthelper/burstEffectFlag.png, Graphics/Atlases/Gameplay/ahorn/muntheory/contorthelper/burstEffectNormal.png,
+  Graphics/Atlases/Gameplay/ahorn/muntheory/contorthelper/teleportationTarget.png]

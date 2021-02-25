@@ -1,0 +1,19 @@
+[Dialog/English.txt, Graphics/Atlases/Checkpoints/lennygold/doomsday/1-Deterioration
+    city/A/b-01.meta.yaml, Graphics/Atlases/Checkpoints/lennygold/doomsday/1-Deterioration
+    city/A/b-01.png, Graphics/Atlases/Checkpoints/lennygold/doomsday/1-Deterioration
+    city/A/c-01.meta.yaml, Graphics/Atlases/Checkpoints/lennygold/doomsday/1-Deterioration
+    city/A/c-01.png, Graphics/Atlases/Checkpoints/lennygold/doomsday/1-Deterioration
+    city/A/start.meta.yaml, Graphics/Atlases/Checkpoints/lennygold/doomsday/1-Deterioration
+    city/A/start.png, Graphics/Atlases/Checkpoints/lennygold/doomsday/2-Delusional
+    Spire/A/b-01.png, Graphics/Atlases/Checkpoints/lennygold/doomsday/2-Delusional
+    Spire/A/c-01.png, Graphics/Atlases/Checkpoints/lennygold/doomsday/2-Delusional
+    Spire/A/start.png, Graphics/Atlases/Gui/areas/lennygold/lennygold_prolouge.png,
+  Graphics/Atlases/lennygold/Ch0/complete.meta.yaml, Graphics/Atlases/lennygold/Ch0/Dreadedheights.png,
+  Graphics/Atlases/lennygold/Ch1/complete.meta.yaml, Graphics/Atlases/lennygold/Ch1/DeteriorationCity.png,
+  Graphics/Atlases/lennygold/Ch2/complete.meta.yaml, Graphics/Atlases/lennygold/Ch2/DelusionalSpire.png,
+  Maps/lennygold/doomsday/0-Dreaded beginning.bin, Maps/lennygold/doomsday/0-Dreaded
+    beginning.meta.yaml, Maps/lennygold/doomsday/1-Deterioration city.bin, Maps/lennygold/doomsday/1-Deterioration
+    city.meta.yaml, Maps/lennygold/doomsday/2-Delusional Spire.bin, Maps/lennygold/doomsday/2-Delusional
+    Spire.meta.yaml, Tutorials/ceilingscrape.bin, Tutorials/crouchjump.bin, Tutorials/jellyjam.bin,
+  Tutorials/reformtech.bin, Tutorials/reformtech2.bin, everest.yaml, Audio/lennygold_Doomsday.bank,
+  Audio/lennygold_Doomsday.guids.txt]

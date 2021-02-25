@@ -1,0 +1,163 @@
+[Dialog/English.txt, Graphics/Atlases/Gameplay/bgs/11/bg0.png, Graphics/Atlases/Gameplay/bgs/11/bg1.png,
+  Graphics/Atlases/Gameplay/bgs/11/bg2.png, Graphics/Atlases/Gameplay/bgs/11/bg3.png,
+  Graphics/Atlases/Gameplay/bgs/11/bg4.png, Graphics/Atlases/Gameplay/bgs/11/bg5.png,
+  Graphics/Atlases/Gameplay/bgs/11/bgmagma0.png, Graphics/Atlases/Gameplay/bgs/11/bgmagma1.png,
+  Graphics/Atlases/Gameplay/bgs/stagB.ase, Graphics/Atlases/Gameplay/danger/crystal/bg_mine00.png,
+  Graphics/Atlases/Gameplay/danger/crystal/fg_mine00.png, Graphics/Atlases/Gameplay/danger/crystal/fg_mine01.png,
+  Graphics/Atlases/Gameplay/danger/crystal/fg_mine02.png, Graphics/Atlases/Gameplay/danger/crystal/fg_mine03.png,
+  Graphics/Atlases/Gameplay/danger/fg_mine01.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/BigCrystalBlueA00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalBlueB00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalBlueC00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/BigCrystalBlueD00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalGreenA00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalGreenD00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/BigCrystalPurpleA00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalPurpleB00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalPurpleC00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/BigCrystalPurpleD00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalRedorYellowIDontKnowA00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalRedorYellowIDontKnowC00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalRedorYellowIDontKnowD00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/BigCrystalYellowA00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/blueCrystal-1-00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/checkerboard00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/CheckPoint.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/ClassicChain00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/crystalBeta.aseprite,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/CrystalCage00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/crystal_rock_aBlue.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/crystal_rock_agreen.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/crystal_rock_apurple.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/deadLamp.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/EnterZone00.aseprite,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/EnterZone00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/flowerOnAtable00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/greenCrystal-1-00.aseprite,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/greenCrystal-1-00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/MineBridge00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/movingChain00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/movingChain01.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/movingChain02.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/movingChain03.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/redCrystal-1-00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/rock-0-00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/rock-1-00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/rockM_a.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/rockM_ac.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/rockM_b.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/rockM_bc.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/rockM_d.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/rockM_dc.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/rockstock.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble1/rubble_a.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_b.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_c.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble1/rubble_d.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_e.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_f.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble1/rubble_g.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_h.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_i.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble1/rubble_j.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_k.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_l.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble1/rubble_m.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_n.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_o.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble1/rubble_p.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble1/rubble_q.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_a.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble2/rubble_b.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_c.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_d.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble2/rubble_e.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_f.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_g.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble2/rubble_h.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_i.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_j.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble2/rubble_k.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_l.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_m.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble2/rubble_n.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_o.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/Rubble2/rubble_p.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/Rubble2/rubble_q.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/stalagmite2-00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/stalagmite3-00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/stalagtite1-00.aseprite, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/stalagtite1-00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/stalagtite2-00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/stalagtite3-00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/stalamite1-00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/stone-1-00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/stone-2-00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/structure00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/suportstructure00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/toolbox.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/torch00.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/torch2-00.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/water00.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/water01.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/water02.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/water03.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/water04.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/water05.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/water06.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/water07.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/water08.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/water09.png, Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/water10.png,
+  Graphics/Atlases/Gameplay/decals/The Mine/1-Mine/water11.png, Graphics/Atlases/Gameplay/decals/The
+    Mine/1-Mine/water12.png, Graphics/Atlases/Gameplay/objects/Bridge/bridge.png,
+  Graphics/Atlases/Gameplay/objects/chain/chain00.png, Graphics/Atlases/Gameplay/objects/CrackedStone/CrackedStone00.png,
+  Graphics/Atlases/Gameplay/objects/CrackedStone/CrackedStone01.png, Graphics/Atlases/Gameplay/objects/CrackedStone/CrackedStone02.png,
+  Graphics/Atlases/Gameplay/objects/CrackedStone/CrackedStone03.png, Graphics/Atlases/Gameplay/objects/CrackedStone/CrackedStone04.png,
+  Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile00.png, Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile01.png,
+  Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile02.png, Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile03.png,
+  Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile04.png, Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile05.png,
+  Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile06.png, Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile07.png,
+  Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile08.png, Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile09.png,
+  Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile10.png, Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile11.png,
+  Graphics/Atlases/Gameplay/objects/crystalprojectile/projectile12.png, Graphics/Atlases/Gameplay/objects/crystalShooter/shooter00.png,
+  Graphics/Atlases/Gameplay/objects/crystalShooter/shooter01.png, Graphics/Atlases/Gameplay/objects/crystalShooter/shooter02.png,
+  Graphics/Atlases/Gameplay/objects/crystalShooter/shooter03.png, Graphics/Atlases/Gameplay/objects/crystalShooter/shooter04.png,
+  Graphics/Atlases/Gameplay/objects/crystalShooter/shooter05.png, Graphics/Atlases/Gameplay/objects/crystalShooter/shooter06.png,
+  Graphics/Atlases/Gameplay/objects/crystalShooter/shooter07.png, Graphics/Atlases/Gameplay/objects/crystalShooter/shooter08.png,
+  Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-00.png, Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-01.png,
+  Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-02.png, Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-03.png,
+  Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-04.png, Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-05.png,
+  Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-06.png, Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-07.png,
+  Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-08.png, Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-09.png,
+  Graphics/Atlases/Gameplay/objects/finalCrystal/FCrystal-10.png, Graphics/Atlases/Gameplay/objects/JumpBar/JumpBar00.png,
+  Graphics/Atlases/Gameplay/objects/lazerbeam/lazerBeam00.png, Graphics/Atlases/Gameplay/objects/magicLight/magicLight00.png,
+  Graphics/Atlases/Gameplay/objects/magicLight/magicLightClose00.png, Graphics/Atlases/Gameplay/objects/magicLight/magicLightClose01.png,
+  Graphics/Atlases/Gameplay/objects/magicLight/magicLightClose02.png, Graphics/Atlases/Gameplay/objects/magicLight/magicLightMove00.png,
+  Graphics/Atlases/Gameplay/objects/minecart/minecart00.png, Graphics/Atlases/Gameplay/objects/minecart/wagon00.ase,
+  Graphics/Atlases/Gameplay/objects/MineGlider/death00.png, Graphics/Atlases/Gameplay/objects/MineGlider/death01.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/death02.png, Graphics/Atlases/Gameplay/objects/MineGlider/death03.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/death04.png, Graphics/Atlases/Gameplay/objects/MineGlider/death05.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/death06.png, Graphics/Atlases/Gameplay/objects/MineGlider/death07.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/fall0.png, Graphics/Atlases/Gameplay/objects/MineGlider/fall1.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/fall2.png, Graphics/Atlases/Gameplay/objects/MineGlider/fallLoop0.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/fallLoop1.png, Graphics/Atlases/Gameplay/objects/MineGlider/held0.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/Idle0.png, Graphics/Atlases/Gameplay/objects/MineGlider/Idle1.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/Idle2.png, Graphics/Atlases/Gameplay/objects/MineGlider/Idle3.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/Idle4.png, Graphics/Atlases/Gameplay/objects/MineGlider/Idle5.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/Idle6.png, Graphics/Atlases/Gameplay/objects/MineGlider/Idle7.png,
+  Graphics/Atlases/Gameplay/objects/MineGlider/Idle8.png, Graphics/Atlases/Gameplay/objects/MineGlider/Idle9.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/block.png, Graphics/Atlases/Gameplay/objects/MineZipMover/block2.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/cog.png, Graphics/Atlases/Gameplay/objects/MineZipMover/innercog00.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/innercog01.png, Graphics/Atlases/Gameplay/objects/MineZipMover/innercog02.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/innercog03.png, Graphics/Atlases/Gameplay/objects/MineZipMover/innercog04.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/innercog05.png, Graphics/Atlases/Gameplay/objects/MineZipMover/innercog06.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/innercog07.png, Graphics/Atlases/Gameplay/objects/MineZipMover/innercog08.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/innercog09.png, Graphics/Atlases/Gameplay/objects/MineZipMover/innercog10.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/innercog11.png, Graphics/Atlases/Gameplay/objects/MineZipMover/light00.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/light01.png, Graphics/Atlases/Gameplay/objects/MineZipMover/light02.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/light03.png, Graphics/Atlases/Gameplay/objects/MineZipMover/moon/block.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/moon/cog.png, Graphics/Atlases/Gameplay/objects/MineZipMover/moon/innercog00.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/moon/innercog01.png, Graphics/Atlases/Gameplay/objects/MineZipMover/moon/innercog02.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/moon/innercog03.png, Graphics/Atlases/Gameplay/objects/MineZipMover/moon/innercog04.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/moon/innercog05.png, Graphics/Atlases/Gameplay/objects/MineZipMover/moon/innercog06.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/moon/light00.png, Graphics/Atlases/Gameplay/objects/MineZipMover/moon/light01.png,
+  Graphics/Atlases/Gameplay/objects/MineZipMover/moon/light02.png, Graphics/Atlases/Gameplay/objects/MineZipMover/moon/light03.png,
+  Graphics/Atlases/Gameplay/objects/poteaux/poteau.png, Graphics/Atlases/Gameplay/objects/reverseRisingLava/AhornIcon00.png,
+  Graphics/Atlases/Gameplay/objects/TeacherGravestone/TeacherGravestone00.png, Graphics/Atlases/Gameplay/objects/TNT/TNT00.png,
+  Graphics/Atlases/Gameplay/objects/UpPlatform/UpPlatform00.png, Graphics/Atlases/Gameplay/particles/tntCircle.png,
+  Graphics/Atlases/Gameplay/tilesets/bgstoneMine.png, Graphics/Atlases/Gameplay/tilesets/bgTemplestone.png,
+  Graphics/Atlases/Gameplay/tilesets/mineBrick.png, Graphics/Atlases/Gameplay/tilesets/mineRock.png,
+  Graphics/Atlases/Gameplay/tilesets/mineRockMossy.png, Graphics/Atlases/Gameplay/tilesets/MinerockSmooth.png,
+  Graphics/Atlases/Gameplay/tilesets/Minestone.png, Graphics/Atlases/Gui/areas/supercyp/The
+    Mine/themine2_hover.pdn, Graphics/Atlases/Gui/areas/supercyp/The Mine/themine2_hover.png,
+  Graphics/Atlases/Gui/areas/TheMineIcon_Supercyp.png, Graphics/Mine/BackgroundTiles.xml,
+  Graphics/Mine/ForegroundTiles.xml, Graphics/Mine/Sprites.xml, Maps/Supercyp/The
+    Mine/themine2.bin, Maps/Supercyp/The Mine/themine2.meta.yaml, theMine/Content/Dialog/English.txt,
+  theMine/Entities/BetterCutscene.cs, theMine/Entities/chain.cs, theMine/Entities/Cinematic_00_Enter.cs,
+  theMine/Entities/CrackedStone.cs, theMine/Entities/CrystalBall.cs, theMine/Entities/CrystalShooter.cs,
+  theMine/Entities/Dark/DarkEntityManager.cs, theMine/Entities/Dark/magicLights.cs,
+  theMine/Entities/DashZone.cs, theMine/Entities/fireManager.cs, theMine/Entities/ForcedDashZone.cs,
+  theMine/Entities/GCrystal.cs, theMine/Entities/LazerBeam.cs, theMine/Entities/Minecart.cs,
+  theMine/Entities/MineGlider.cs, theMine/Entities/MineZip.cs, theMine/Entities/rail.cs,
+  theMine/Entities/ReverseRisingLava.cs, theMine/Entities/TeacherGravestone.cs, theMine/Entities/TextFile1.txt,
+  theMine/Entities/TNT.cs, theMine/Entities/UpPlatform.cs, theMine/everest.yaml, theMine/Mine.csproj,
+  theMine/MineModule.cs, theMine/MineModulesSetting.cs, theMine/obj/Release/DesignTimeResolveAssemblyReferences.cache,
+  theMine/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache, theMine/obj/Release/Mine.csproj.CopyComplete,
+  theMine/obj/Release/Mine.csproj.CoreCompileInputs.cache, theMine/obj/Release/Mine.csproj.FileListAbsolute.txt,
+  theMine/obj/Release/Mine.csprojAssemblyReference.cache, theMine/obj/Release/Mine.dll,
+  theMine/obj/Release/Mine.pdb, theMine/packages.config, theMine/Properties/AssemblyInfo.cs,
+  theMine/settings.celeste, crystalIcon.png, everest.yaml, Mine.dll, Ahorn/entities/chain.jl,
+  Ahorn/entities/CrackedStone.jl, Ahorn/entities/crystalShooter.jl, Ahorn/entities/cutscene.jl,
+  Ahorn/entities/DarkManager.jl, Ahorn/entities/dashZone.jl, Ahorn/entities/fireManager.jl,
+  Ahorn/entities/forcedDashZone.jl, Ahorn/entities/gcrystal.jl, Ahorn/entities/JumpBar.jl,
+  Ahorn/entities/lazerbeam.jl, Ahorn/entities/magicLight.jl, Ahorn/entities/minecart.jl,
+  Ahorn/entities/mineGlider.jl, Ahorn/entities/rail.jl, Ahorn/entities/ReverseRisingLava.jl,
+  Ahorn/entities/TeacherGravestone.jl, Ahorn/entities/TheMineZipMover.jl, Ahorn/entities/TNT.jl,
+  Ahorn/entities/upPlatform.jl, Asset/LuaCutscenes/into.lua]

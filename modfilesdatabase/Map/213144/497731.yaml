@@ -1,0 +1,206 @@
+[Code/.vs/RubysEntities/v14/.suo, Code/AltHeightDisplay.cs, Code/bin/Debug/DSidesHelper.dll,
+  Code/bin/Debug/DSidesHelper.pdb, Code/DSidesHelper.csproj, Code/DSidesHelper.sln,
+  Code/DSidesModule.cs, Code/HeightDisplayTrigger.cs, Code/InvisibleCassetteBlockComponent.cs,
+  Code/Module.cs, Code/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache, Code/obj/Debug/RubysEntities.csproj.FileListAbsolute.txt,
+  Code/obj/Debug/RubysEntities.csprojResolveAssemblyReference.cache, Code/obj/Debug/RubysEntities.dll,
+  Code/obj/Debug/RubysEntities.pdb, Code/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs,
+  Code/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs, Code/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs,
+  Code/Properties/AssemblyInfo.cs, Code/RubysEntities.csproj, Code/RubysEntities.sln,
+  Code/Save.cs, Dialog/English.txt, everest.yaml, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/b-01.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/b-01.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/c-01.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/c-01.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/d-01.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/d-01.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/e-01n.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/e-01n.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/f-01.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/f-01.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/g-01.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/g-01.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/start.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/A/start.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/b-01b.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/b-01b.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/c-01b.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/c-01b.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/d-01b.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/d-01b.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/e-01bn.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/e-01bn.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/f-01b.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/f-01b.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/g-01b.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/g-01b.png, Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/start.meta.yaml,
+  Graphics/Atlases/Checkpoints/Clantis/7duff/1-Summit/B/start.png, Graphics/Atlases/Ending_DSides_Mod/07.meta.yaml,
+  Graphics/Atlases/Ending_DSides_Mod/07.png, Graphics/Atlases/Gameplay/bgs/nameguysdsides_stylegrounds/core_bg_a.png,
+  Graphics/Atlases/Gameplay/bgs/nameguysdsides_stylegrounds/core_bg_b.png, Graphics/Atlases/Gameplay/bgs/nameguysdsides_stylegrounds/core_bg_c.png,
+  Graphics/Atlases/Gameplay/bgs/nameguysdsides_stylegrounds/summit_extralayer_dark.png,
+  Graphics/Atlases/Gameplay/bgs/nameguysdsides_stylegrounds/summit_extralayer_darker_topmost.png,
+  Graphics/Atlases/Gameplay/bgs/nameguysdsides_stylegrounds/summit_extralayer_default_nobg.png,
+  Graphics/Atlases/Gameplay/bgs/nameguysdsides_stylegrounds/summit_extralayer_slightly_less_dark.png,
+  Graphics/Atlases/Gameplay/bgs/nameguysdsides_stylegrounds/summit_extralayer_slightly_less_dark_nobg.png,
+  Graphics/Atlases/Gameplay/characters/player/launch00.png, Graphics/Atlases/Gameplay/characters/player/launch01.png,
+  Graphics/Atlases/Gameplay/characters/player/launch02.png, Graphics/Atlases/Gameplay/characters/player/launch03.png,
+  Graphics/Atlases/Gameplay/characters/player/launch04.png, Graphics/Atlases/Gameplay/characters/player/launch05.png,
+  Graphics/Atlases/Gameplay/characters/player/launch06.png, Graphics/Atlases/Gameplay/characters/player/launch07.png,
+  Graphics/Atlases/Gameplay/characters/player/launchRecover00.png, Graphics/Atlases/Gameplay/characters/player/launchRecover01.png,
+  Graphics/Atlases/Gameplay/characters/player/launchRecover02.png, Graphics/Atlases/Gameplay/characters/player/launchRecover03.png,
+  Graphics/Atlases/Gameplay/characters/player/launchRecover04.png, Graphics/Atlases/Gameplay/characters/player/launchRecover05.png,
+  Graphics/Atlases/Gameplay/characters/player/launchRecover06.png, Graphics/Atlases/Gameplay/characters/player/launchRecover07.png,
+  Graphics/Atlases/Gameplay/characters/player/launchRecover08.png, Graphics/Atlases/Gameplay/characters/player/launchRecover09.png,
+  Graphics/Atlases/Gameplay/characters/player/launchRecover10.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/0/00.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/0/00.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/01.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/01.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/0/02.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/0/02.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/03.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/03.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/0/04.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/0/04.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/05.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/05.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/0/06.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/0/06.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/07.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/07.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/0/08.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/0/08.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/09.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/09.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/0/10.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/0/10.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/11.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/11.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/0/12.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/0/12.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/13.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/0/13.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/1/00.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/1/00.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/01.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/01.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/1/02.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/1/02.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/03.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/03.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/1/04.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/1/04.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/05.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/05.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/1/06.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/1/06.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/07.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/07.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/1/08.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/1/08.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/09.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/09.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/1/10.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/1/10.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/11.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/11.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/1/12.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/1/12.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/13.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/1/13.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/2/00.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/2/00.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/01.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/01.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/2/02.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/2/02.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/03.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/03.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/2/04.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/2/04.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/05.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/05.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/2/06.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/2/06.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/07.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/07.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/2/08.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/2/08.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/09.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/09.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/2/10.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/2/10.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/11.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/11.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/2/12.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/2/12.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/13.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/2/13.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost00.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost00.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost01.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost01.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost02.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost02.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost03.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost03.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost04.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost04.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost05.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost05.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost06.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost06.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost07.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost07.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost08.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost08.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost09.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost09.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost10.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost10.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost11.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost11.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost12.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/ghost12.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost13.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/ghost13.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/orb.meta.yaml, Graphics/Atlases/Gameplay/collectables/One Two
+    Three/heart/orb.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/shape.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/shape.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white00.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white00.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white01.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white01.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white02.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white02.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white03.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white03.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white04.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white04.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white05.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white05.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white06.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white06.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white07.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white07.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white08.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white08.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white09.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white09.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white10.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white10.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white11.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white11.png, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white12.meta.yaml, Graphics/Atlases/Gameplay/collectables/One
+    Two Three/heart/white12.png, Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white13.meta.yaml,
+  Graphics/Atlases/Gameplay/collectables/One Two Three/heart/white13.png, Graphics/Atlases/Gameplay/decals/nameguy/1000M.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/1500M.png, Graphics/Atlases/Gameplay/decals/nameguy/2000M.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/2500M.png, Graphics/Atlases/Gameplay/decals/nameguy/3000M.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/500M.png, Graphics/Atlases/Gameplay/decals/nameguy/are_you_spinner_ready_sign.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/arrow_old_right.png, Graphics/Atlases/Gameplay/decals/nameguy/block_a.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/block_b.png, Graphics/Atlases/Gameplay/decals/nameguy/block_c.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/bubs.png, Graphics/Atlases/Gameplay/decals/nameguy/cliffside_woodbeam_splinter.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/cliffside_woodbeam_splinter_l.png, Graphics/Atlases/Gameplay/decals/nameguy/cliffside_woodbeam_thick_h.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/door_broken.png, Graphics/Atlases/Gameplay/decals/nameguy/gem_blue.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/gem_lavender.png, Graphics/Atlases/Gameplay/decals/nameguy/gem_red.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/gem_white.png, Graphics/Atlases/Gameplay/decals/nameguy/gem_yellow.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/just_monika.png, Graphics/Atlases/Gameplay/decals/nameguy/just_monika_lighter.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/nameguy_checkpoint_reflection.png, Graphics/Atlases/Gameplay/decals/nameguy/nameguy_checkpoint_reflectionalt.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/nameguy_oldsite_pillar_bigcross.png, Graphics/Atlases/Gameplay/decals/nameguy/nameguy_oldsite_pillar_smallcross.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/nameguy_oldsite_pillar_smallcross_alt.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/oldsite_chain.png, Graphics/Atlases/Gameplay/decals/nameguy/oldsite_chain_broken.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/oldsite_pillar.png, Graphics/Atlases/Gameplay/decals/nameguy/oldsite_pillar_diagonal.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/oldsite_pillar_h.png, Graphics/Atlases/Gameplay/decals/nameguy/oofelinethinkbig.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/orb_00.png, Graphics/Atlases/Gameplay/decals/nameguy/orb_1.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/orb_10.png, Graphics/Atlases/Gameplay/decals/nameguy/orb_2.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/orb_3.png, Graphics/Atlases/Gameplay/decals/nameguy/orb_4.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/orb_5.png, Graphics/Atlases/Gameplay/decals/nameguy/orb_6.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/orb_7.png, Graphics/Atlases/Gameplay/decals/nameguy/orb_8.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/orb_9.png, Graphics/Atlases/Gameplay/decals/nameguy/prologue_sign.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/pumpkin.png, Graphics/Atlases/Gameplay/decals/nameguy/pumpkin_grass.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/pumpkin_grass_alt.png, Graphics/Atlases/Gameplay/decals/nameguy/pumpkin_grass_edge.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/pumpkin_multiple.png, Graphics/Atlases/Gameplay/decals/nameguy/redspikes.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/reflection_bg_1c.png, Graphics/Atlases/Gameplay/decals/nameguy/reflection_bg_2c.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/reflection_bg_3c.png, Graphics/Atlases/Gameplay/decals/nameguy/reflection_bg_a.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/reflection_bg_b.png, Graphics/Atlases/Gameplay/decals/nameguy/reflection_bg_c.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/reflection_bg_d.png, Graphics/Atlases/Gameplay/decals/nameguy/reflection_gem.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/reflection_shape_a.png, Graphics/Atlases/Gameplay/decals/nameguy/reflection_shape_b.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/reflection_shape_c.png, Graphics/Atlases/Gameplay/decals/nameguy/sinking_platform_bg_line.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/sinking_platform_bg_line_top.png, Graphics/Atlases/Gameplay/decals/nameguy/squares_00.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/squares_1.png, Graphics/Atlases/Gameplay/decals/nameguy/squares_2.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/squares_3.png, Graphics/Atlases/Gameplay/decals/nameguy/squares_4.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/strawbthonk.png, Graphics/Atlases/Gameplay/decals/nameguy/strawbthonksmall.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_00.meta.yaml, Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_00.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_1.meta.yaml, Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_1.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_2.meta.yaml, Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_2.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_3.meta.yaml, Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_3.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_4.meta.yaml, Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_4.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_5.meta.yaml, Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_5.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_6.meta.yaml, Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_6.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_7.meta.yaml, Graphics/Atlases/Gameplay/decals/nameguy/SummitFlagDark_7.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/temple_vine_except_not_stupid.png, Graphics/Atlases/Gameplay/decals/nameguy/tile_a.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/tile_b.png, Graphics/Atlases/Gameplay/decals/nameguy/tile_c.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/tile_d.png, Graphics/Atlases/Gameplay/decals/nameguy/tile_line.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/tree_00.png, Graphics/Atlases/Gameplay/decals/nameguy/tree_1.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/tree_2.png, Graphics/Atlases/Gameplay/decals/nameguy/tree_3.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/tree_4.png, Graphics/Atlases/Gameplay/decals/nameguy/tree_5.png,
+  Graphics/Atlases/Gameplay/decals/nameguy/tree_6.png, Graphics/Atlases/Gameplay/decals/nameguy/tree_7.png,
+  Graphics/Atlases/Gameplay/decals/nameguy_city/introcar.png, Graphics/Atlases/Gameplay/decals/nameguy_city/monikasmallerthanthree.png,
+  Graphics/Atlases/Gui/areas/nameguys7dicon.meta.yaml, Graphics/Atlases/Gui/areas/nameguys7dicon.png,
+  Graphics/Atlases/Gui/areas/nameguys7dicon_back.meta.yaml, Graphics/Atlases/Gui/areas/nameguys7dicon_back.png,
+  Graphics/NameguyDSidesPackMod/Sprites.xml, Graphics/RubysEntities/Sprites.xml, Maps/Clantis/7duff/1-Summit.bin,
+  Maps/Clantis/7duff/1-Summit.meta.yaml, RubysEntities.dll, Screenshots/City.png,
+  Screenshots/Fishtank.png, Screenshots/Hotel.png, Screenshots/Reflection.png, Screenshots/Ridge.png,
+  Screenshots/Site.png, Screenshots/Summit.png, Screenshots/Temple.png]

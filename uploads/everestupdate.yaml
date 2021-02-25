@@ -315,11 +315,11 @@ snollsspookmap:
   URL: https://gamebanana.com/mmdl/502798
 QuickieMountain2:
   GameBananaType: Map
-  Version: 1.0.4
-  LastUpdate: 1614141489
+  Version: 1.0.5
+  LastUpdate: 1614272455
   GameBananaId: 214450
-  xxHash: [0c5b64939d099e4a]
-  URL: https://gamebanana.com/mmdl/524443
+  xxHash: [e7af01c6473b8312]
+  URL: https://gamebanana.com/mmdl/525044
 Bruhleste:
   GameBananaType: Map
   Version: 1.0.0
@@ -497,11 +497,11 @@ Infinite Farewell:
   URL: https://gamebanana.com/mmdl/516192
 XaphanHelper:
   GameBananaType: Gamefile
-  Version: 1.0.1
-  LastUpdate: 1613870517
+  Version: 1.0.2
+  LastUpdate: 1614176486
   GameBananaId: 15412
-  xxHash: [8c7ba63c678be7b3]
-  URL: https://gamebanana.com/mmdl/523119
+  xxHash: [adff29636862a45d]
+  URL: https://gamebanana.com/mmdl/524569
 ForsakenMetropolis:
   GameBananaType: Map
   Version: 1.0.1
@@ -1722,11 +1722,11 @@ Jankness:
   URL: https://gamebanana.com/mmdl/504335
 changgePAO:
   GameBananaType: Map
-  Version: 1.5.5
-  LastUpdate: 1613416313
+  Version: 1.6.0
+  LastUpdate: 1614165457
   GameBananaId: 214711
-  xxHash: [505da1ea137102b0]
-  URL: https://gamebanana.com/mmdl/520937
+  xxHash: [47ed86fef4f6c134]
+  URL: https://gamebanana.com/mmdl/524518
 MaddyCrown:
   GameBananaType: Skin
   Version: 1.0.1
@@ -2114,11 +2114,11 @@ second_try:
   URL: https://gamebanana.com/mmdl/520351
 QuickieMountain:
   GameBananaType: Map
-  Version: 1.1.0
-  LastUpdate: 1614004243
+  Version: 1.1.1
+  LastUpdate: 1614272700
   GameBananaId: 210730
-  xxHash: [e3ef117282f77afe]
-  URL: https://gamebanana.com/mmdl/523765
+  xxHash: [c22981229063306e]
+  URL: https://gamebanana.com/mmdl/525046
 SpoopyRepaint:
   GameBananaType: Wip
   Version: 1.0.0
@@ -2338,11 +2338,11 @@ EventMode:
   URL: https://gamebanana.com/mmdl/442701
 CrystallineHelper:
   GameBananaType: Gamefile
-  Version: 1.8.1
-  LastUpdate: 1613878252
+  Version: 1.9.0
+  LastUpdate: 1614216018
   GameBananaId: 12664
-  xxHash: [c872a34d29f5dea5]
-  URL: https://gamebanana.com/mmdl/523144
+  xxHash: [eca71b440ee65cf0]
+  URL: https://gamebanana.com/mmdl/524807
 DashlessDreamBlocks:
   GameBananaType: Gamefile
   Version: 1.0.0
@@ -2737,11 +2737,11 @@ RuntimeEntity:
   URL: https://gamebanana.com/mmdl/458291
 CelesteTAS:
   GameBananaType: Tool
-  Version: 3.1.20
-  LastUpdate: 1612852747
+  Version: 3.2.1
+  LastUpdate: 1614237425
   GameBananaId: 6715
-  xxHash: [fdfcea176342f328]
-  URL: https://gamebanana.com/mmdl/518075
+  xxHash: [c75c25e84775d42d]
+  URL: https://gamebanana.com/mmdl/524903
 The Nightmare:
   GameBananaType: Map
   Version: 1.0.0
@@ -2807,11 +2807,11 @@ Celeste Binary Calculator:
   URL: https://gamebanana.com/mmdl/496390
 BingoClient:
   GameBananaType: Gui
-  Version: 0.0.2
-  LastUpdate: 1614146991
+  Version: 0.0.3
+  LastUpdate: 1614231612
   GameBananaId: 36684
-  xxHash: [87406c404307baea]
-  URL: https://gamebanana.com/mmdl/524464
+  xxHash: [1077196eac20e302]
+  URL: https://gamebanana.com/mmdl/524884
 AchingCavern:
   GameBananaType: Map
   Version: 1.0.0
