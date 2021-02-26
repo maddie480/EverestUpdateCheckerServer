@@ -43,6 +43,9 @@ Name: Extended Variant Mode
 ```
 - `modfilesdatabase/[itemtype]/[itemid]/[fileid].yaml` is a file listing all the zip contents. It will contain an empty zip for anything that is not a zip.
 
+The update checker also uploads copies of the latest versions of all mods from GameBanana to [Google Cloud Storage](https://cloud.google.com/storage), to have a mirror in case GameBanana goes down.
+The URL to access those mirrored files is: `https://storage.googleapis.com/max480-banana-mirror/[mod ID from everest.yaml].zip`.
+
 ## Getting the project
 
 You can get the update checker server by checking [the Releases tab](https://github.com/max4805/EverestUpdateCheckerServer/releases).
@@ -57,7 +60,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.18.jar`.
+This will build the project to `target/update-checker-0.0.19.jar`.
 
 ## Running the project
 
@@ -70,7 +73,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.18.jar [port] [minutes]
+java -jar update-checker-0.0.19.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
@@ -133,4 +136,4 @@ _Please note that the `everestupdate.yaml` file uploaded to this repository alre
 * [NanoHTTPD](https://github.com/NanoHttpd/nanohttpd), licensed under the [BSD 3-Clause "New" License](https://github.com/NanoHttpd/nanohttpd/blob/master/LICENSE.md)
 * [LZ4 Java](https://github.com/lz4/lz4-java), licensed under [Apache License 2.0](https://github.com/lz4/lz4-java/blob/master/LICENSE.txt), used for xxHash hash calculation
 * [Jsoup](https://github.com/jhy/jsoup/), licensed under the [MIT License](https://github.com/jhy/jsoup/blob/master/LICENSE)
-* [json-simple](https://code.google.com/archive/p/json-simple/), licensed under the  ([Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* [the Google Cloud Storage client libraries](https://github.com/googleapis/java-storage), licensed under the [Apache License 2.0](https://github.com/googleapis/java-storage/blob/master/LICENSE), only required for the GameBanana mirror feature

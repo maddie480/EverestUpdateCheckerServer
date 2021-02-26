@@ -115,6 +115,9 @@ class DatabaseUpdater {
         // also write the mod search and files databases to disk.
         modSearchDatabaseBuilder.saveSearchDatabase();
         modFilesDatabaseBuilder.saveToDisk();
+
+        // update the file mirror
+        BananaMirror.main(null);
     }
 
     /**
