@@ -41,7 +41,21 @@ It also generates a "mod files database" that allows checking the zip contents w
 Files: ['523435', '513691']
 Name: Extended Variant Mode
 ```
-- `modfilesdatabase/[itemtype]/[itemid]/[fileid].yaml` is a file listing all the zip contents. It will contain an empty zip for anything that is not a zip.
+- `modfilesdatabase/[itemtype]/[itemid]/[fileid].yaml` is a file listing all the zip contents. It will contain an empty list for anything that is not a zip.
+- `modfilesdatabase/[itemtype]/[itemid]/ahorn_[fileid].yaml` is a file listing all Ahorn entity, trigger and effect IDs defined in `[fileid]`'s Ahorn plugins:
+```yaml
+Triggers: [MaxHelpingHand/AllBlackholesStrengthTrigger, MaxHelpingHand/AmbienceVolumeTrigger,
+  MaxHelpingHand/CameraCatchupSpeedTrigger, MaxHelpingHand/ColorGradeFadeTrigger,
+  ...]
+Effects: [MaxHelpingHand/BlackholeCustomColors, MaxHelpingHand/CustomPlanets, MaxHelpingHand/CustomStars,
+  MaxHelpingHand/HeatWaveNoColorGrade, MaxHelpingHand/NorthernLightsCustomColors,
+  MaxHelpingHand/SnowCustomColors]
+Entities: [MaxHelpingHand/CoreModeSpikesUp, MaxHelpingHand/CoreModeSpikesDown, MaxHelpingHand/CoreModeSpikesLeft,
+  MaxHelpingHand/CoreModeSpikesRight, MaxHelpingHand/CustomizableCrumblePlatform,
+  ...]
+```
+This file only exists for zips that have a Ahorn folder in them.
+- `modfilesdatabase/ahorn_vanilla.yaml` is a list of all vanilla and Everest entities, triggers and effects defined in [Maple](https://github.com/CelestialCartographers/Maple), in the same format as above.
 
 The update checker also uploads copies of the latest versions of all mods from GameBanana to [Google Cloud Storage](https://cloud.google.com/storage), to have a mirror in case GameBanana goes down.
 The URL to access those mirrored files is: `https://storage.googleapis.com/max480-banana-mirror/[mod ID from everest.yaml].zip`.
