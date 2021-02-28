@@ -1,0 +1,8 @@
+Triggers: [everest/entityTrigger]
+Effects: []
+Entities: [FancyTileEntities/BetterRidgeGate, FancyTileEntities/FancyConditionBlock=LoadConditionBlock,
+  FancyTileEntities/FancyCoverupWall, FancyTileEntities/FancyCrumbleWallOnRumble,
+  FancyTileEntities/FancyDashBlock, FancyTileEntities/FancyExitBlock, FancyTileEntities/FancyFakeWall,
+  FancyTileEntities/FancyFallingBlock, FancyTileEntities/FancyFinalBossMovingBlock,
+  FancyTileEntities/FancyFloatySpaceBlock, FancyTileEntities/FancyIntroCrusher, FancyTileEntities/FancyRidgeGate,
+  FancyTileEntities/FancySolidTiles]

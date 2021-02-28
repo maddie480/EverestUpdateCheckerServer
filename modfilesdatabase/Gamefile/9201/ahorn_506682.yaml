@@ -1,0 +1,12 @@
+Triggers: [FrostHelper/AnxietyTrigger, FrostHelper/CassetteTempoTrigger, FrostHelper/LightningColorTrigger,
+  FrostHelper/SnowballTrigger, FrostHelper/SpeedChallengeJournal]
+Effects: []
+Entities: [FrostHelper/BadelineChaserBlock, FrostHelper/BadelineChaserBlockActivator,
+  FrostHelper/BlueBooster, FrostHelper/Bubbler, FrostHelper/ColoredLightbeam, FrostHelper/CoreBerry,
+  FrostHelper/CustomFeather, FrostHelper/CustomFireBarrier, FrostHelper/CustomFlutterBird,
+  FrostHelper/CustomRisingLava, FrostHelper/CustomDreamBlock, FrostHelper/IceSpinner,
+  FrostHelper/SpringFloor, FrostHelper/SpringRight, FrostHelper/SpringLeft, FrostHelper/CustomZipMover,
+  FrostHelper/EntityMover, FrostHelper/GrayBooster, FrostHelper/KeyIce, FrostHelper/NoDashArea,
+  FrostHelper/PlusOneRefill, FrostHelper/Skateboard, FrostHelper/SlowCrushBlock, FrostHelper/SpeedRingChallenge,
+  FrostHelper/StaticBumper, FrostHelper/TemporaryKey, FrostHelper/TemporaryKeyDoor,
+  FrostHelper/ToggleSwapBlock, FrostHelper/YellowBooster]

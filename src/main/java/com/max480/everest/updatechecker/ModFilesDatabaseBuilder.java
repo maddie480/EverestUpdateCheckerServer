@@ -12,6 +12,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -127,6 +129,8 @@ public class ModFilesDatabaseBuilder {
             new Yaml().dump(fullList, writer);
         }
 
+        checkForAhornPlugins();
+
         // delete modfilesdatabase and move modfilesdatabase_temp to replace it.
         Path databasePath = Paths.get("modfilesdatabase");
         Path databasePathTemp = Paths.get("modfilesdatabase_temp");
@@ -136,6 +140,131 @@ public class ModFilesDatabaseBuilder {
         }
         if (Files.isDirectory(databasePathTemp)) {
             Files.move(databasePathTemp, databasePath);
+        }
+    }
+
+    private void checkForAhornPlugins() throws IOException {
+        {
+            List<String> ahornEntities = new LinkedList<>();
+            List<String> ahornTriggers = new LinkedList<>();
+            List<String> ahornEffects = new LinkedList<>();
+
+            try (InputStream is = new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/entity.jl").openStream()) {
+                extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, "Ahorn/entities/vanilla.jl", is);
+            }
+            try (InputStream is = new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/trigger.jl").openStream()) {
+                extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, "Ahorn/triggers/vanilla.jl", is);
+            }
+            try (InputStream is = new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/style.jl").openStream()) {
+                extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, "Ahorn/effects/vanilla.jl", is);
+            }
+
+            try (FileWriter writer = new FileWriter(Paths.get("modfilesdatabase_temp/ahorn_vanilla.yaml").toFile())) {
+                Map<String, List<String>> ahornPlugins = new HashMap<>();
+                ahornPlugins.put("Entities", ahornEntities);
+                ahornPlugins.put("Triggers", ahornTriggers);
+                ahornPlugins.put("Effects", ahornEffects);
+                new Yaml().dump(ahornPlugins, writer);
+            }
+        }
+
+        for (String mod : fullList) {
+            // get the versions list
+            Path modFolder = Paths.get("modfilesdatabase_temp/" + mod);
+            Map<String, Object> versions;
+            try (InputStream is = new FileInputStream(modFolder.resolve("info.yaml").toFile())) {
+                versions = new Yaml().load(is);
+            }
+
+            for (String version : (List<String>) versions.get("Files")) {
+                Path oldPath = Paths.get("modfilesdatabase/" + mod + "/ahorn_" + version + ".yaml");
+                Path targetPath = modFolder.resolve("ahorn_" + version + ".yaml");
+
+                if (Files.exists(oldPath)) {
+                    // this zip was already scanned!
+                    Files.copy(oldPath, targetPath);
+                } else {
+                    List<String> fileList;
+                    try (InputStream is = new FileInputStream(modFolder.resolve(version + ".yaml").toFile())) {
+                        fileList = new Yaml().load(is);
+                    }
+
+                    if (fileList.stream().anyMatch(f -> f.startsWith("Ahorn/"))) {
+                        List<String> ahornEntities = new LinkedList<>();
+                        List<String> ahornTriggers = new LinkedList<>();
+                        List<String> ahornEffects = new LinkedList<>();
+
+                        // download file
+                        DatabaseUpdater.runWithRetry(() -> {
+                            try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-ahornscan.zip"))) {
+                                IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL("https://gamebanana.com/mmdl/" + version))), os);
+                                return null; // to fullfill this stupid method signature
+                            }
+                        });
+
+                        // scan its contents, opening Ahorn plugin files
+                        try (ZipFile zipFile = new ZipFile(new File("mod-ahornscan.zip"))) {
+                            for (String file : fileList) {
+                                if (file.startsWith("Ahorn/") && file.endsWith(".jl")) {
+                                    InputStream inputStream = zipFile.getInputStream(zipFile.getEntry(file));
+                                    extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, file, inputStream);
+                                }
+                            }
+
+                            log.info("Found {} Ahorn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
+                                    ahornEntities.size(), ahornTriggers.size(), ahornEffects.size(), version);
+                        } catch (IOException | IllegalArgumentException e) {
+                            // if a file cannot be read as a zip, no need to worry about it.
+                            // we will just write an empty array.
+                            log.warn("Could not analyze Ahorn plugins from https://gamebanana.com/mmdl/{}", version, e);
+                        }
+
+                        // write the result.
+                        try (FileWriter writer = new FileWriter(targetPath.toFile())) {
+                            Map<String, List<String>> ahornPlugins = new HashMap<>();
+                            ahornPlugins.put("Entities", ahornEntities);
+                            ahornPlugins.put("Triggers", ahornTriggers);
+                            ahornPlugins.put("Effects", ahornEffects);
+                            new Yaml().dump(ahornPlugins, writer);
+                        }
+
+                        FileUtils.forceDelete(new File("mod-ahornscan.zip"));
+                    }
+                }
+            }
+        }
+    }
+
+    private void extractAhornEntities(List<String> ahornEntities, List<String> ahornTriggers, List<String> ahornEffects,
+                                      String file, InputStream inputStream) throws IOException {
+
+        Pattern mapdefMatcher = Pattern.compile(".*@mapdef [A-Za-z]+ \"([^\"]+)\".*");
+        Pattern pardefMatcher = Pattern.compile(".*Entity\\(\"([^\"]+)\".*");
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String entityID = null;
+
+                Matcher mapdefMatch = mapdefMatcher.matcher(line);
+                if (mapdefMatch.matches()) {
+                    entityID = mapdefMatch.group(1);
+                }
+                Matcher pardefMatch = pardefMatcher.matcher(line);
+                if (pardefMatch.matches()) {
+                    entityID = pardefMatch.group(1);
+                }
+
+                if (entityID != null) {
+                    if (file.startsWith("Ahorn/effects/")) {
+                        ahornEffects.add(entityID);
+                    } else if (file.startsWith("Ahorn/entities/")) {
+                        ahornEntities.add(entityID);
+                    } else if (file.startsWith("Ahorn/triggers/")) {
+                        ahornTriggers.add(entityID);
+                    }
+                }
+            }
         }
     }
 }

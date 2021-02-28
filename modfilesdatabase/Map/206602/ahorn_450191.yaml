@@ -1,0 +1,5 @@
+Triggers: [FrostTemple/SnowstormTrigger]
+Effects: []
+Entities: [FrostTemple/ReturnStrawberry, FrostTemple/dashWaterSwitchH, FrostTemple/dashWaterSwitchV,
+  FrostTemple/HorizontalWaterfall, FrostTemple/Icicle, FrostTemple/coloredWater, FrostTemple/coloredWaterfall,
+  FrostTemple/Paintball]

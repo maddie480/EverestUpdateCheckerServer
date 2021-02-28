@@ -1,0 +1,6 @@
+Triggers: []
+Effects: []
+Entities: [AdventureHelper/CustomCrystalHeart, AdventureHelper/DashPushBlock, AdventureHelper/GroupedFallingBlock,
+  AdventureHelper/BladeTrackSpinnerMultinode, AdventureHelper/DustTrackSpinnerMultinode,
+  AdventureHelper/OutroCar, AdventureHelper/LinkedZipMover, AdventureHelper/LinkedZipMoverNoReturn,
+  AdventureHelper/ZipMoverNoReturn]

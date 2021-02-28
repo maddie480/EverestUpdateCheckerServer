@@ -1,0 +1,3 @@
+Triggers: [luaCutscenes/luaCutsceneTrigger]
+Effects: []
+Entities: [luaCutscenes/luaTalker]

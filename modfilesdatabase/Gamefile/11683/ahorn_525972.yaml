@@ -1,0 +1,9 @@
+Triggers: [CherryHelper/AudioPlayTrigger, CherryHelper/RottenBerryCollectTrigger,
+  CherryHelper/SaveFlagTrigger, CherryHelper/SnowballStop, CherryHelper/NightTimeTrigger,
+  CherryHelper/PlayerStateChange]
+Effects: []
+Entities: [CherryHelper/AnterogradeController, CherryHelper/AssistRect, CherryHelper/BadelineBot,
+  CherryHelper/CatEye, CherryHelper/DoorField, CherryHelper/NightItemLockfield, CherryHelper/FallTeleport,
+  CherryHelper/ItemCrystal, CherryHelper/ItemCrystalPedestal, CherryHelper/LightningDashSwitch,
+  CherryHelper/NonReturnKevin, CherryHelper/NonReturnSokoban, CherryHelper/RottenBerry,
+  CherryHelper/ShadowBumper, CherryHelper/ShadowDashRefill]

@@ -1,0 +1,5 @@
+Triggers: [JackalHelper/BlizzardRemovalTrigger.cs, JackalHelper/BlizzardTrigger.cs]
+Effects: []
+Entities: [JackalHelper/BraveBird, JackalHelper/CryoBooster, JackalHelper/MovingLava,
+  JackalHelper/OWJellyBarrier, JackalHelper/StarRefill, JackalHelper/TracerRefill,
+  JackalHelper/RoundKevin]

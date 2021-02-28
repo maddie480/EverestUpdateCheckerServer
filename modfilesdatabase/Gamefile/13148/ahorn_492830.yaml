@@ -1,0 +1,4 @@
+Triggers: [YetAnotherHelper/SpawnJellyTrigger, YetAnotherHelper/LightningStrikeTrigger,
+  YetAnotherHelper/FlagKillBox]
+Effects: []
+Entities: [YetAnotherHelper/FlagKillBarrier]

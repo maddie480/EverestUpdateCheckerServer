@@ -1,0 +1,22 @@
+Triggers: [ContortHelper/BurstEffectOccurrenceTrigger, ContortHelper/FlagBurstEffectOccurrenceTrigger,
+  ContortHelper/AdvanceFlagBurstEffectOccurrenceTrigger, ContortHelper/FlashTrigger,
+  ContortHelper/FlagFlashTrigger, ContortHelper/AdvanceFlagFlashTrigger, ContortHelper/FreezeTrigger,
+  ContortHelper/FlagFreezeTrigger, ContortHelper/AdvanceFlagFreezeTrigger, ContortHelper/LightningStrikeTrigger,
+  ContortHelper/FlagLightningStrikeTrigger, ContortHelper/AdvanceFlagLightningStrikeTrigger,
+  ContortHelper/PatchedCameraTargetTrigger, ContortHelper/PatchedCameraAdvanceTargetTrigger,
+  ContortHelper/PatchedCameraOffsetTrigger, ContortHelper/PatchedSmoothCameraOffsetTrigger,
+  ContortHelper/RandomSoundTrigger, ContortHelper/FlagRandomSoundTrigger, ContortHelper/AdvanceFlagRandomSoundTrigger,
+  ContortHelper/RumbleTrigger, ContortHelper/FlagRumbleTrigger, ContortHelper/AdvanceFlagRumbleTrigger,
+  ContortHelper/ScreenWipeTrigger, ContortHelper/FlagScreenWipeTrigger, ContortHelper/AdvanceFlagScreenWipeTrigger,
+  ContortHelper/ShakeTrigger, ContortHelper/FlagShakeTrigger, ContortHelper/AdvanceFlagShakeTrigger,
+  ContortHelper/TeleportationTrigger, ContortHelper/FlagTeleportationTrigger, ContortHelper/AdvanceFlagTeleportationTrigger,
+  ContortHelper/TeleportationTriggerSimple, ContortHelper/FlagTeleportationTriggerSimple,
+  ContortHelper/AdvanceFlagTeleportationTriggerSimple, ContortHelper/TeleportationTriggerMinimal,
+  ContortHelper/FlagTeleportationTriggerMinimal, ContortHelper/AdvanceFlagTeleportationTriggerMinimal]
+Effects: []
+Entities: [ContortHelper/BurstEffect, ContortHelper/FlagBurstEffect, ContortHelper/AdvanceFlagBurstEffect,
+  ContortHelper/BurstZone, ContortHelper/FlagBurstZone, ContortHelper/AdvanceFlagBurstZone,
+  ContortHelper/FlickerLightSource, ContortHelper/FlagFlickerLightSource, ContortHelper/AdvanceFlagFlickerLightSource,
+  ContortHelper/LightSource, ContortHelper/FlagLightSource, ContortHelper/AdvanceFlagLightSource,
+  ContortHelper/LightSourceZone, ContortHelper/FlagLightSourceZone, ContortHelper/AdvanceFlagLightSourceZone,
+  ContortHelper/TeleportationTarget]

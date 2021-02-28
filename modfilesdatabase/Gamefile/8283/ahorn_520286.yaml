@@ -1,0 +1,4 @@
+Triggers: [CoreHeatWindTrigger, ForceVariantTrigger, isaBag/colorSwitchTrigger]
+Effects: []
+Entities: [isaBag/dreamSpinner, isaBag/dreamSpinFake, isaBag/colorBlock, isaBag/colorSwitch,
+  isaBag/waterBoost, isaBag/zipline, isaBag/baddyFollow]

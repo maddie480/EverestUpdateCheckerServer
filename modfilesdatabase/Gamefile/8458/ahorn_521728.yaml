@@ -1,0 +1,11 @@
+Triggers: [DJMapHelper/badelineProtectTrigger, DJMapHelper/changeBossPatternTrigger,
+  DJMapHelper/changeSpinnerColorTrigger, DJMapHelper/climbBlockerTrigger, DJMapHelper/colorGradeTrigger,
+  DJMapHelper/killBoxTrigger, DJMapHelper/maxDashesTrigger, DJMapHelper/oshiroRightTrigger,
+  DJMapHelper/payphoneCallTrigger, DJMapHelper/stopProtectTrigger, DJMapHelper/talkToBadelineTrigger,
+  DJMapHelper/teleportTrigger, DJMapHelper/windAttackTriggerLeft]
+Effects: []
+Entities: [DJMapHelper/badelineBoostDown, DJMapHelper/badelineBoostTeleport, DJMapHelper/colorfulFlyFeather,
+  DJMapHelper/colorfulRefill, DJMapHelper/featherBarrier, DJMapHelper/finalBossReversed,
+  DJMapHelper/flingBirdReversed, DJMapHelper/oshiroBossRight, DJMapHelper/playSprite,
+  DJMapHelper/shield, DJMapHelper/springGreen, DJMapHelper/startPoint, DJMapHelper/templeGateReversed,
+  DJMapHelper/theoCrystalBarrier]

@@ -1,0 +1,9 @@
+Triggers: [altlevelshelper/setspawntoclosest, altlevelshelper/portaltrigger]
+Effects: []
+Entities: [altlevelshelper/airbubble, altlevelshelper/angrykevin, altlevelshelper/cassettezipmover,
+  altlevelshelper/cassettespikesup, altlevelshelper/cassettespikesdown, altlevelshelper/cassettespikesleft,
+  altlevelshelper/cassettespikesright, altlevelshelper/customcrumbl, altlevelshelper/custompoem,
+  altlevelshelper/customsatellite, altlevelshelper/customzipmover, altlevelshelper/fakespikesup,
+  altlevelshelper/fakespikesdown, altlevelshelper/fakespikesleft, altlevelshelper/fakespikesright,
+  altlevelshelper/fallingblock, altlevelshelper/staticspikesup, altlevelshelper/staticspikesdown,
+  altlevelshelper/staticspikesleft, altlevelshelper/staticspikesright]

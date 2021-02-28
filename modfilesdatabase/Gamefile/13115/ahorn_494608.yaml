@@ -1,0 +1,4 @@
+Triggers: [FlaglinesAndSuch/DialogIfFlag, FlaglinesAndSuch/FlagIfFlag, FlaglinesAndSuch/FlagLightFade,
+  FlaglinesAndSuch/FlagLogicGate, FlaglinesAndSuch/GroundRefillsIfFlag, FlaglinesAndSuch/MusicIfFlag]
+Effects: [FlaglinesAndSuch/customDreamStars, FlaglinesAndSuch/customGodrays]
+Entities: [FlaglinesAndSuch/CustomFlagline, FlaglinesAndSuch/PlatformJelly]

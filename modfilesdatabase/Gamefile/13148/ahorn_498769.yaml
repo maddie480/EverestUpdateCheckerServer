@@ -1,0 +1,5 @@
+Triggers: [YetAnotherHelper/SpawnJellyTrigger, YetAnotherHelper/RemoveLightSourcesTrigger,
+  YetAnotherHelper/LightningStrikeTrigger, YetAnotherHelper/FlagKillBox]
+Effects: []
+Entities: [YetAnotherHelper/BubbleField, YetAnotherHelper/FlagKillBarrier, YetAnotherHelper/StickyJellyfish,
+  YetAnotherHelper/SpikeJumpThruController]

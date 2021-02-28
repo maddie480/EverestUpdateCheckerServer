@@ -1,0 +1,10 @@
+Triggers: []
+Effects: []
+Entities: [pandorasBox/airBubbles, pandorasBox/circularResortPlatform, pandorasBox/clearPipe,
+  pandorasBox/coloredBigWaterfall, pandorasBox/dustSpriteColorController, pandorasBox/coloredWater,
+  pandorasBox/coloredWaterfall, pandorasBox/dashToggleBlock, pandorasBox/dreamDashController,
+  pandorasBox/introCar, pandorasBox/entityActivator, pandorasBox/flagToggleSwitch,
+  pandorasBox/gate, pandorasBox/lamp, pandorasBox/laserEmitter, pandorasBox/laserMirror,
+  pandorasBox/laserNoteBlock, pandorasBox/laserSensor, pandorasBox/laserValve, pandorasBox/lever,
+  pandorasBox/shell, pandorasBox/pandorasBox, pandorasBox/playerClone, pandorasBox/propellerBox,
+  pandorasBox/tileGlitcher, pandorasBox/timefield, pandorasBox/waterDrowningController]

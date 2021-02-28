@@ -1,0 +1,20 @@
+Triggers: [ContortHelper/FlashTrigger, ContortHelper/FreezeTrigger, ContortHelper/HiresSnowTrigger,
+  ContortHelper/LightningStrikeTrigger, ContortHelper/MadelineSpotlightModifierTrigger,
+  ContortHelper/MomentumModifierTrigger, ContortHelper/PatchedCameraTargetTrigger,
+  ContortHelper/PatchedCameraAdvanceTargetTrigger, ContortHelper/PatchedCameraOffsetTrigger,
+  ContortHelper/PatchedSmoothCameraOffsetTrigger, ContortHelper/RandomSoundTrigger,
+  ContortHelper/RumbleTrigger, ContortHelper/SaveDataBooleanStorageTrigger, ContortHelper/SaveDataIntegerStorageTrigger,
+  ContortHelper/SaveDataFloatStorageTrigger, ContortHelper/SaveDataStringStorageTrigger,
+  ContortHelper/ScreenWipeTrigger, ContortHelper/ScreenWipeModifierTrigger, ContortHelper/SessionBooleanStorageTrigger,
+  ContortHelper/SessionIntegerStorageTrigger, ContortHelper/SessionFloatStorageTrigger,
+  ContortHelper/SessionStringStorageTrigger, ContortHelper/ShakeTrigger, ContortHelper/TeleportationTriggerLevel5,
+  ContortHelper/TeleportationTriggerLevel4, ContortHelper/TeleportationTriggerLevel3,
+  ContortHelper/TeleportationTriggerLevel2, ContortHelper/TeleportationTriggerLevel1,
+  ContortHelper/WindModifierTrigger]
+Effects: [ContortHelper/HighResolutionParticleBackdrop]
+Entities: [ContortHelper/AlphaLerpLightSource, ContortHelper/AlphaLerpLightSourcePath,
+  ContortHelper/BurstAttacher, ContortHelper/BurstEffect, ContortHelper/BurstPath,
+  ContortHelper/BurstZone, ContortHelper/ColorLerpLightSource, ContortHelper/ColorLerpLightSourcePath,
+  ContortHelper/CustomMemo, ContortHelper/CustomNote, ContortHelper/FlickerLightSource,
+  ContortHelper/FlickerLightSourcePath, ContortHelper/LightSource, ContortHelper/LightSourcePath,
+  ContortHelper/LightSourceZone, ContortHelper/TeleportationTarget]

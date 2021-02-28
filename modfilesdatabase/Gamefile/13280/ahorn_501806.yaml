@@ -1,0 +1,5 @@
+Triggers: [EmHelper/Switchtrigger]
+Effects: []
+Entities: [EmHelper/Monumentflipswitch, EmHelper/Monumentpressureplate, EmHelper/MonumentspikesUp,
+  EmHelper/MonumentspikesDown, EmHelper/MonumentspikesLeft, EmHelper/MonumentspikesRight,
+  EmHelper/Monumentswapblock, EmHelper/Monumentswitchblock, EmHelper/Walkeline]

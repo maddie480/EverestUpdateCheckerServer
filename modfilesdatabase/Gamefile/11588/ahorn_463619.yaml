@@ -1,0 +1,5 @@
+Triggers: [ShroomHelper/GradualChangeColorGradeTrigger, ShroomHelper/MultilayerMusicFadeTrigger,
+  ShroomHelper/TimeModulationTrigger]
+Effects: [ShroomHelper/ShroomPetals]
+Entities: [ShroomHelper/AttachedIceWall, ShroomHelper/CrumbleBlockOnTouch, ShroomHelper/KillerHeartGate,
+  ShroomHelper/RealityDistortionField, ShroomHelper/ShroomBookInteraction]

@@ -1,0 +1,5 @@
+Triggers: []
+Effects: []
+Entities: [brokemiahelper/cassetteCassette, brokemiahelper/cassetteDreamBlock, BrokemiaHelper/caveWall,
+  BrokemiaHelper/dashSpring, BrokemiaHelper/wallDashSpringRight, BrokemiaHelper/wallDashSpringLeft,
+  BrokemiaHelper/nonBadelineMovingBlock, BrokemiaHelper/floatierSpaceBlock, BrokemiaHelper/trollStrawberry]

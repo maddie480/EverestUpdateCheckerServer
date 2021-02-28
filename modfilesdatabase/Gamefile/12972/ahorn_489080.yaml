@@ -1,0 +1,5 @@
+Triggers: [BounceHelper/BounceHelperTrigger]
+Effects: []
+Entities: [BounceHelper/BounceBumper, BounceHelper/BounceDreamBlock, BounceHelper/BounceJellyfish,
+  BounceHelper/BounceMoveBlock, BounceHelper/BounceRefill, BounceHelper/BounceSwapBlock,
+  BounceHelper/BounceZipMover]

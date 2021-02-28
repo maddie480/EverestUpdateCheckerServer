@@ -1,0 +1,6 @@
+Triggers: [VortexHelper/ColorSwitchTrigger, VortexHelper/KillLightningTrigger]
+Effects: []
+Entities: [VortexHelper/AttachedJumpThru, VortexHelper/AutoFallingBlock, VortexHelper/BowlPuffer,
+  VortexHelper/BubbleWrapBlock, VortexHelper/ColorSwitch, VortexHelper/VortexSwitchGate,
+  VortexHelper/FloorBooster, VortexHelper/PufferBarrier, VortexHelper/PurpleBooster,
+  VortexHelper/SwitchBlock, VortexHelper/VortexCustomBumper]
