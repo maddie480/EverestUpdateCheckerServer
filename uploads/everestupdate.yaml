@@ -1,4 +1,5 @@
 super ogmo boy:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/super ogmo boy.zip
   GameBananaType: Map
   Version: NoVersion
   LastUpdate: 1531484704
@@ -6,6 +7,7 @@ super ogmo boy:
   xxHash: [1a3dfff696299862]
   URL: https://gamebanana.com/mmdl/389157
 WobbleDecals:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/WobbleDecals.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1567521581
@@ -13,6 +15,7 @@ WobbleDecals:
   xxHash: [49ec0c58414c99ea]
   URL: https://gamebanana.com/mmdl/430826
 Grand Escape:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Grand Escape.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1575760037
@@ -20,6 +23,7 @@ Grand Escape:
   xxHash: [0942355e17d5f9da]
   URL: https://gamebanana.com/mmdl/441215
 ToTheMars:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ToTheMars.zip
   GameBananaType: Map
   Version: '1.3'
   LastUpdate: 1578363478
@@ -27,6 +31,8 @@ ToTheMars:
   xxHash: [d33386d83e60f4bb]
   URL: https://gamebanana.com/mmdl/444604
 The adventure of OI!:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The adventure of
+    OI!.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610064799
@@ -34,6 +40,7 @@ The adventure of OI!:
   xxHash: [fcd7f4ff48f9a476]
   URL: https://gamebanana.com/mmdl/506381
 FactoryHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FactoryHelper.zip
   GameBananaType: Gamefile
   Version: 1.2.4
   LastUpdate: 1612968730
@@ -41,6 +48,7 @@ FactoryHelper:
   xxHash: [a592be70b0393b67]
   URL: https://gamebanana.com/mmdl/518639
 WitheredPassage:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/WitheredPassage.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599424932
@@ -48,6 +56,7 @@ WitheredPassage:
   xxHash: [3f60c63eb9b7b1ce]
   URL: https://gamebanana.com/mmdl/484636
 forsakencity_remix:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/forsakencity_remix.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1550075395
@@ -55,6 +64,7 @@ forsakencity_remix:
   xxHash: [cd52474bb72cd0b4]
   URL: https://gamebanana.com/mmdl/410220
 IAccidentallyFourCassetteBlocks:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/IAccidentallyFourCassetteBlocks.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1529592322
@@ -62,6 +72,7 @@ IAccidentallyFourCassetteBlocks:
   xxHash: [07e80bd1e6661754]
   URL: https://gamebanana.com/mmdl/386507
 CaveOfBubbles:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CaveOfBubbles.zip
   GameBananaType: Map
   Version: 1.4.0
   LastUpdate: 1612851394
@@ -69,6 +80,7 @@ CaveOfBubbles:
   xxHash: [2fbb1eaa59606e15]
   URL: https://gamebanana.com/mmdl/518071
 CanyonHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CanyonHelper.zip
   GameBananaType: Gamefile
   Version: 1.1.3
   LastUpdate: 1611012749
@@ -76,6 +88,7 @@ CanyonHelper:
   xxHash: [dc7c509113a40753]
   URL: https://gamebanana.com/mmdl/509516
 Sardine7:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Sardine7.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1592822480
@@ -83,6 +96,7 @@ Sardine7:
   xxHash: [1faae423988f15f3]
   URL: https://gamebanana.com/mmdl/469915
 CelesteToggleableHair:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CelesteToggleableHair.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1589493677
@@ -90,6 +104,7 @@ CelesteToggleableHair:
   xxHash: [cc58ba33835b789e]
   URL: https://gamebanana.com/mmdl/462990
 Hexagon Force:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Hexagon Force.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1602078670
@@ -97,6 +112,7 @@ Hexagon Force:
   xxHash: [2cccbfbeb57f8de1]
   URL: https://gamebanana.com/mmdl/489659
 VibeMountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/VibeMountain.zip
   GameBananaType: Map
   Version: 1.1.0
   LastUpdate: 1606586234
@@ -104,6 +120,7 @@ VibeMountain:
   xxHash: [aac299764c549cf3]
   URL: https://gamebanana.com/mmdl/498369
 Ridgevator:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ridgevator.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1596135987
@@ -111,6 +128,7 @@ Ridgevator:
   xxHash: [ab104606fb05dc55]
   URL: https://gamebanana.com/mmdl/477466
 granny:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/granny.zip
   GameBananaType: Skin
   Version: 1.0.3
   LastUpdate: 1613209265
@@ -118,6 +136,7 @@ granny:
   xxHash: [80fbe20cef8cd60c]
   URL: https://gamebanana.com/mmdl/519909
 binb:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/binb.zip
   GameBananaType: Skin
   Version: 1.2.2
   LastUpdate: 1606650198
@@ -125,6 +144,7 @@ binb:
   xxHash: [62f8ae4a78a05f2a]
   URL: https://gamebanana.com/mmdl/498507
 Myna's MareLine:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Myna's MareLine.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1612454000
@@ -132,6 +152,8 @@ Myna's MareLine:
   xxHash: [977cb22c0ab8870e]
   URL: https://gamebanana.com/mmdl/515959
 X-Side - Arrietty's Adventures:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/X-Side - Arrietty's
+    Adventures.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599114265
@@ -139,6 +161,7 @@ X-Side - Arrietty's Adventures:
   xxHash: [e13f46474f2e9c2d]
   URL: https://gamebanana.com/mmdl/483966
 OutbackHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/OutbackHelper.zip
   GameBananaType: Gamefile
   Version: 1.4.0
   LastUpdate: 1609288458
@@ -146,6 +169,7 @@ OutbackHelper:
   xxHash: [3789acdf5977996a]
   URL: https://gamebanana.com/mmdl/504414
 CavernOfTheAncients:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CavernOfTheAncients.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1548416033
@@ -153,6 +177,7 @@ CavernOfTheAncients:
   xxHash: [8c08ac018865a130]
   URL: https://gamebanana.com/mmdl/408352
 Astronaut Madeline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Astronaut Madeline.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1600519552
@@ -160,6 +185,7 @@ Astronaut Madeline:
   xxHash: [2b139d4f58500a83]
   URL: https://gamebanana.com/mmdl/486862
 WaterTemple:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/WaterTemple.zip
   GameBananaType: Map
   Version: '1.07'
   LastUpdate: 1596873863
@@ -167,6 +193,7 @@ WaterTemple:
   xxHash: [42e3b09d4ad18129]
   URL: https://gamebanana.com/mmdl/479202
 Gauntlet:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Gauntlet.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1552530738
@@ -174,6 +201,7 @@ Gauntlet:
   xxHash: [0e8e01d038b2d1d9]
   URL: https://gamebanana.com/mmdl/413583
 OtherSelfDialog:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/OtherSelfDialog.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1582061471
@@ -181,13 +209,15 @@ OtherSelfDialog:
   xxHash: [891c32dda01fec52]
   URL: https://gamebanana.com/mmdl/449488
 ContortHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ContortHelper.zip
   GameBananaType: Gamefile
-  Version: 1.4.2
-  LastUpdate: 1613706100
+  Version: 1.5.0
+  LastUpdate: 1614985182
   GameBananaId: 12592
-  xxHash: [8f8e3238f8ecdb72]
-  URL: https://gamebanana.com/mmdl/522326
+  xxHash: [7af84b97e23129cb]
+  URL: https://gamebanana.com/mmdl/528855
 straightflychallenge:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/straightflychallenge.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612738159
@@ -195,6 +225,7 @@ straightflychallenge:
   xxHash: [f2bb93587864a9b9]
   URL: https://gamebanana.com/mmdl/517551
 KiyoMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/KiyoMod.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1593956040
@@ -202,6 +233,7 @@ KiyoMod:
   xxHash: [5c95a0778eb1f0df]
   URL: https://gamebanana.com/mmdl/472246
 BlackholeRealm:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BlackholeRealm.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1575111092
@@ -209,6 +241,7 @@ BlackholeRealm:
   xxHash: [e27d20f9dc7dc19d]
   URL: https://gamebanana.com/mmdl/440308
 SPRINT:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SPRINT.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1613426124
@@ -216,6 +249,7 @@ SPRINT:
   xxHash: [abde69fca8be1246]
   URL: https://gamebanana.com/mmdl/521009
 QuickieMountain2Audio:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/QuickieMountain2Audio.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1614005598
@@ -223,6 +257,7 @@ QuickieMountain2Audio:
   xxHash: [832b1b255642d415]
   URL: https://gamebanana.com/mmdl/523778
 Iris_map:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Iris_map.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613579090
@@ -230,6 +265,7 @@ Iris_map:
   xxHash: [ffe571c42f006497]
   URL: https://gamebanana.com/mmdl/521724
 Sweet Victory:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Sweet Victory.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1538436124
@@ -237,6 +273,7 @@ Sweet Victory:
   xxHash: [8c8a19a081113cfd]
   URL: https://gamebanana.com/mmdl/398070
 Desertric Busuberance:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Desertric Busuberance.zip
   GameBananaType: Map
   Version: 1.3.2
   LastUpdate: 1609544037
@@ -244,6 +281,7 @@ Desertric Busuberance:
   xxHash: [c52e5a7ec61db6d4]
   URL: https://gamebanana.com/mmdl/505108
 CutsceneHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CutsceneHelper.zip
   GameBananaType: Gamefile
   Version: 1.4.1
   LastUpdate: 1575065146
@@ -251,6 +289,7 @@ CutsceneHelper:
   xxHash: [f0ae520baa3e18a2]
   URL: https://gamebanana.com/mmdl/440231
 ClutterHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ClutterHelper.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1597419668
@@ -258,6 +297,7 @@ ClutterHelper:
   xxHash: [73ffa771579709e0]
   URL: https://gamebanana.com/mmdl/480391
 Mt Everest:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Mt Everest.zip
   GameBananaType: Map
   Version: '3.0'
   LastUpdate: 1598989629
@@ -265,6 +305,7 @@ Mt Everest:
   xxHash: [21d59c98f562c7b2]
   URL: https://gamebanana.com/mmdl/483713
 7DSingleDashVer:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/7DSingleDashVer.zip
   GameBananaType: Map
   Version: 2.1.3
   LastUpdate: 1590414406
@@ -272,6 +313,7 @@ Mt Everest:
   xxHash: [fe49d282c6b22d9c]
   URL: https://gamebanana.com/mmdl/464821
 C+:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/C+.zip
   GameBananaType: Map
   Version: '2.0'
   LastUpdate: 1543852304
@@ -279,6 +321,7 @@ C+:
   xxHash: [3e0a51548d8f41fa]
   URL: https://gamebanana.com/mmdl/403556
 VideoRecordingMusic:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/VideoRecordingMusic.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1584087600
@@ -286,6 +329,7 @@ VideoRecordingMusic:
   xxHash: [f6f6ef6f45536957]
   URL: https://gamebanana.com/mmdl/452290
 Meat Of The D Sides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Meat Of The D Sides.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1592779605
@@ -293,6 +337,7 @@ Meat Of The D Sides:
   xxHash: [e8a22df2cc78599b]
   URL: https://gamebanana.com/mmdl/469823
 NotAnotherTrollMap:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/NotAnotherTrollMap.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1608652762
@@ -300,6 +345,8 @@ NotAnotherTrollMap:
   xxHash: [b337b3c045e4c275]
   URL: https://gamebanana.com/mmdl/502749
 Madeline wanna trial the 100trap:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Madeline wanna trial
+    the 100trap.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599405780
@@ -307,6 +354,7 @@ Madeline wanna trial the 100trap:
   xxHash: [9b1181e933bc6c2a]
   URL: https://gamebanana.com/mmdl/484567
 snollsspookmap:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/snollsspookmap.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1608666960
@@ -314,6 +362,7 @@ snollsspookmap:
   xxHash: [61134b544c8a5cd8]
   URL: https://gamebanana.com/mmdl/502798
 QuickieMountain2:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/QuickieMountain2.zip
   GameBananaType: Map
   Version: 1.0.5
   LastUpdate: 1614272455
@@ -321,6 +370,7 @@ QuickieMountain2:
   xxHash: [e7af01c6473b8312]
   URL: https://gamebanana.com/mmdl/525044
 Bruhleste:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Bruhleste.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1605220612
@@ -328,6 +378,7 @@ Bruhleste:
   xxHash: [864754bbef1121d4]
   URL: https://gamebanana.com/mmdl/495597
 TicTacToe:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TicTacToe.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1606153489
@@ -335,13 +386,15 @@ TicTacToe:
   xxHash: [d32da1682221cc06]
   URL: https://gamebanana.com/mmdl/497482
 FemtoHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FemtoHelper.zip
   GameBananaType: Gamefile
-  Version: 1.0.0
-  LastUpdate: 1610662024
+  Version: 1.1.0
+  LastUpdate: 1614630800
   GameBananaId: 13902
-  xxHash: [6bcc946acb3f3951]
-  URL: https://gamebanana.com/mmdl/508182
+  xxHash: [47a61d52aba0a5c5]
+  URL: https://gamebanana.com/mmdl/526961
 Crystal Garden:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Crystal Garden.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613814127
@@ -349,6 +402,7 @@ Crystal Garden:
   xxHash: [702fa93245c91dff]
   URL: https://gamebanana.com/mmdl/522776
 MouseControls:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MouseControls.zip
   GameBananaType: Gamefile
   Version: 1.2.1
   LastUpdate: 1588899100
@@ -356,6 +410,7 @@ MouseControls:
   xxHash: [6d449f17ebd752fb]
   URL: https://gamebanana.com/mmdl/461667
 Sequel:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Sequel.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1608598162
@@ -363,6 +418,8 @@ Sequel:
   xxHash: [fd57473d4987c5fd]
   URL: https://gamebanana.com/mmdl/502635
 Madeline vs. Voter Supression:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Madeline vs. Voter
+    Supression.zip
   GameBananaType: Map
   Version: 1.2.0
   LastUpdate: 1605407180
@@ -370,6 +427,7 @@ Madeline vs. Voter Supression:
   xxHash: [e34383afd7e436b8]
   URL: https://gamebanana.com/mmdl/495996
 Flamesprite:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Flamesprite.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1581375805
@@ -377,6 +435,7 @@ Flamesprite:
   xxHash: [1e17ab9d8ff9a7d3]
   URL: https://gamebanana.com/mmdl/448555
 MidnightAquarium:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MidnightAquarium.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1598400783
@@ -384,6 +443,7 @@ MidnightAquarium:
   xxHash: [cea9f499fe87a93b]
   URL: https://gamebanana.com/mmdl/482416
 Return To The Mountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Return To The Mountain.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1595672258
@@ -391,6 +451,7 @@ Return To The Mountain:
   xxHash: [e73dfaed823949e1]
   URL: https://gamebanana.com/mmdl/476403
 TheSecretOfCelesteMountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TheSecretOfCelesteMountain.zip
   GameBananaType: Map
   Version: 2.0.1
   LastUpdate: 1613869471
@@ -398,6 +459,7 @@ TheSecretOfCelesteMountain:
   xxHash: [42196ecab7ce1270]
   URL: https://gamebanana.com/mmdl/523116
 MacaHotel:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MacaHotel.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1596318882
@@ -405,13 +467,15 @@ MacaHotel:
   xxHash: [1ed12ba9c4b0b626]
   URL: https://gamebanana.com/mmdl/477941
 ExtendedVariantMode:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ExtendedVariantMode.zip
   GameBananaType: Gamefile
-  Version: 0.19.8
-  LastUpdate: 1613937145
+  Version: 0.19.11
+  LastUpdate: 1614891146
   GameBananaId: 9486
-  xxHash: [ea7d301ed6b342d6]
-  URL: https://gamebanana.com/mmdl/523435
+  xxHash: [73ae13245739b85c]
+  URL: https://gamebanana.com/mmdl/528344
 CrossoverMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CrossoverMod.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1548114274
@@ -419,6 +483,8 @@ CrossoverMod:
   xxHash: [4363258ad25da305]
   URL: https://gamebanana.com/mmdl/407929
 Another Farewell Map:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Another Farewell
+    Map.zip
   GameBananaType: Map
   Version: 1.2.2
   LastUpdate: 1611850539
@@ -426,13 +492,23 @@ Another Farewell Map:
   xxHash: [e9663c7c495049e4]
   URL: https://gamebanana.com/mmdl/513019
 Simpleste-Low:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Simpleste-Low.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1547289674
   GameBananaId: 8162
   xxHash: [e10580e67ca55cb0]
   URL: https://gamebanana.com/mmdl/406848
+SaveFilePortraits:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SaveFilePortraits.zip
+  GameBananaType: Gamefile
+  Version: 1.0.0
+  LastUpdate: 1614720651
+  GameBananaId: 16206
+  xxHash: [3075e145b9cc0d1a]
+  URL: https://gamebanana.com/mmdl/527451
 FrostTemple:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FrostTemple.zip
   GameBananaType: Map
   Version: 0.2.1
   LastUpdate: 1596228804
@@ -440,6 +516,7 @@ FrostTemple:
   xxHash: [b22d681ea448e90d]
   URL: https://gamebanana.com/mmdl/477702
 CrimsonKeep:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CrimsonKeep.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1531516443
@@ -447,6 +524,7 @@ CrimsonKeep:
   xxHash: [82486d070e1c02b0]
   URL: https://gamebanana.com/mmdl/389200
 Hydro's Campaign:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Hydro's Campaign.zip
   GameBananaType: Map
   Version: 0.1.0
   LastUpdate: 1593423472
@@ -454,6 +532,7 @@ Hydro's Campaign:
   xxHash: [9d6809f7d3270d4e]
   URL: https://gamebanana.com/mmdl/471195
 t:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/t.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1577078034
@@ -461,6 +540,7 @@ t:
   xxHash: [5367907f5b559d78]
   URL: https://gamebanana.com/mmdl/442820
 MaxBoiEvent3:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MaxBoiEvent3.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599413610
@@ -468,6 +548,7 @@ MaxBoiEvent3:
   xxHash: [a27d3bd18e4ffe22]
   URL: https://gamebanana.com/mmdl/484599
 angy_feesh:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/angy_feesh.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1612135069
@@ -475,6 +556,7 @@ angy_feesh:
   xxHash: [a4908dbd0559654c]
   URL: https://gamebanana.com/mmdl/514313
 DonkerMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DonkerMod.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1612595904
@@ -482,6 +564,7 @@ DonkerMod:
   xxHash: [db7763bc630abbbf]
   URL: https://gamebanana.com/mmdl/516778
 Hyperline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Hyperline.zip
   GameBananaType: Effect
   Version: 0.1.12
   LastUpdate: 1613357427
@@ -489,6 +572,7 @@ Hyperline:
   xxHash: [993c517e89aa6e96]
   URL: https://gamebanana.com/mmdl/520676
 Infinite Farewell:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Infinite Farewell.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612482890
@@ -496,13 +580,15 @@ Infinite Farewell:
   xxHash: [45398c8331fc6886]
   URL: https://gamebanana.com/mmdl/516192
 XaphanHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/XaphanHelper.zip
   GameBananaType: Gamefile
-  Version: 1.0.3
-  LastUpdate: 1614451499
+  Version: 1.0.5
+  LastUpdate: 1614958324
   GameBananaId: 15412
-  xxHash: [00b7368f1e7471b0]
-  URL: https://gamebanana.com/mmdl/525970
+  xxHash: [37f95248ea383d97]
+  URL: https://gamebanana.com/mmdl/528670
 ForsakenMetropolis:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ForsakenMetropolis.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1570822519
@@ -510,6 +596,8 @@ ForsakenMetropolis:
   xxHash: [d1e5cb01354ef468]
   URL: https://gamebanana.com/mmdl/434827
 I Super Ultra Love You:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/I Super Ultra Love
+    You.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613300119
@@ -517,6 +605,7 @@ I Super Ultra Love You:
   xxHash: [7506f4f5ad8c3740]
   URL: https://gamebanana.com/mmdl/520383
 KaydenFoxSkin:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/KaydenFoxSkin.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1607786495
@@ -524,13 +613,23 @@ KaydenFoxSkin:
   xxHash: [da9cd849f766f88a]
   URL: https://gamebanana.com/mmdl/500784
 KevinsRevenge:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/KevinsRevenge.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1596049448
   GameBananaId: 211127
   xxHash: [6d9bffd7ce32dbe2]
   URL: https://gamebanana.com/mmdl/477278
+AhornFavoritesSaver:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AhornFavoritesSaver.zip
+  GameBananaType: Tool
+  Version: 1.0.0
+  LastUpdate: 1614724839
+  GameBananaId: 6983
+  xxHash: [88aaee66291a316b]
+  URL: https://gamebanana.com/mmdl/527472
 Soupeline64:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Soupeline64.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1608847013
@@ -538,20 +637,23 @@ Soupeline64:
   xxHash: [3947233bf4b6febc]
   URL: https://gamebanana.com/mmdl/503334
 FoP:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FoP.zip
   GameBananaType: Map
-  Version: 1.0.7
-  LastUpdate: 1612917420
+  Version: 1.0.8
+  LastUpdate: 1614657348
   GameBananaId: 211548
-  xxHash: [c14bbfff4f7a633a]
-  URL: https://gamebanana.com/mmdl/518390
+  xxHash: [0d61590d0eff2835]
+  URL: https://gamebanana.com/mmdl/527134
 VivHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/VivHelper.zip
   GameBananaType: Gamefile
-  Version: 1.2.9
-  LastUpdate: 1614135112
+  Version: 1.3.1
+  LastUpdate: 1614875447
   GameBananaId: 12484
-  xxHash: [78627afbe9c23d18]
-  URL: https://gamebanana.com/mmdl/524410
+  xxHash: [2cfafa62c3ddc876]
+  URL: https://gamebanana.com/mmdl/528233
 Climbing Blind Trilogy:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Climbing Blind Trilogy.zip
   GameBananaType: Map
   Version: 1.5.0
   LastUpdate: 1594165690
@@ -559,6 +661,7 @@ Climbing Blind Trilogy:
   xxHash: [5df9b9dc4f37d90f]
   URL: https://gamebanana.com/mmdl/472725
 Hug A Kevin:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Hug A Kevin.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1599441535
@@ -566,6 +669,7 @@ Hug A Kevin:
   xxHash: [c0e1c9c5b4682d2b]
   URL: https://gamebanana.com/mmdl/484690
 TransBerry:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TransBerry.zip
   GameBananaType: Skin
   Version: 1.4.2
   LastUpdate: 1614421103
@@ -573,6 +677,7 @@ TransBerry:
   xxHash: [4ba5b9451b5900b8]
   URL: https://gamebanana.com/mmdl/525789
 Moonless Dream:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Moonless Dream.zip
   GameBananaType: Map
   Version: 0.1.1
   LastUpdate: 1549242392
@@ -580,6 +685,7 @@ Moonless Dream:
   xxHash: [ed707ae5e1eeff12]
   URL: https://gamebanana.com/mmdl/409311
 Chatsides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Chatsides.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1592630537
@@ -587,6 +693,7 @@ Chatsides:
   xxHash: [cf600e853eadaa67]
   URL: https://gamebanana.com/mmdl/469550
 Hello:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Hello.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1595007718
@@ -594,6 +701,7 @@ Hello:
   xxHash: [05db9c6c8c559355]
   URL: https://gamebanana.com/mmdl/474924
 WindySwapBlockBonanza:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/WindySwapBlockBonanza.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1604928938
@@ -601,6 +709,7 @@ WindySwapBlockBonanza:
   xxHash: [5332fe7446fec5a6]
   URL: https://gamebanana.com/mmdl/495026
 Blindsided:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Blindsided.zip
   GameBananaType: Map
   Version: 0.1.0
   LastUpdate: 1601054389
@@ -608,6 +717,7 @@ Blindsided:
   xxHash: [0a3962b5b4fbf5c4]
   URL: https://gamebanana.com/mmdl/487852
 Descent:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Descent.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1579311411
@@ -615,6 +725,7 @@ Descent:
   xxHash: [f6c792da0b8de6de]
   URL: https://gamebanana.com/mmdl/445738
 Solaris:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Solaris.zip
   GameBananaType: Map
   Version: '1.2'
   LastUpdate: 1604264394
@@ -622,6 +733,7 @@ Solaris:
   xxHash: [b884a05b8209605f]
   URL: https://gamebanana.com/mmdl/493709
 VanillaTweaks:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/VanillaTweaks.zip
   GameBananaType: Gamefile
   Version: 1.3.0
   LastUpdate: 1584552065
@@ -629,6 +741,7 @@ VanillaTweaks:
   xxHash: [e484584731b4b0a8]
   URL: https://gamebanana.com/mmdl/453124
 RainbowSummit:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/RainbowSummit.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609527800
@@ -636,6 +749,7 @@ RainbowSummit:
   xxHash: [837f5f32313ae75c]
   URL: https://gamebanana.com/mmdl/505062
 TheoDialog:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TheoDialog.zip
   GameBananaType: Gamefile
   Version: '2.0'
   LastUpdate: 1612357262
@@ -643,6 +757,7 @@ TheoDialog:
   xxHash: [0bcf094fc86857c1]
   URL: https://gamebanana.com/mmdl/515378
 Celestial Lands:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Celestial Lands.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1593620358
@@ -650,6 +765,7 @@ Celestial Lands:
   xxHash: [708545c5ff5db54a]
   URL: https://gamebanana.com/mmdl/471531
 Through the Walls:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Through the Walls.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1601330396
@@ -657,6 +773,7 @@ Through the Walls:
   xxHash: [863c71574e9bbf60]
   URL: https://gamebanana.com/mmdl/488353
 CustomPoints:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CustomPoints.zip
   GameBananaType: Gamefile
   Version: 1.1.0
   LastUpdate: 1599697670
@@ -664,6 +781,7 @@ CustomPoints:
   xxHash: [1584f3ccfb6269f7]
   URL: https://gamebanana.com/mmdl/485161
 Sib:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Sib.zip
   GameBananaType: Map
   Version: 4.5.5
   LastUpdate: 1589231544
@@ -671,6 +789,7 @@ Sib:
   xxHash: [59178f65e9742a6f]
   URL: https://gamebanana.com/mmdl/462383
 InfiniteBackups:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/InfiniteBackups.zip
   GameBananaType: Gamefile
   Version: 1.1.0
   LastUpdate: 1605435890
@@ -678,6 +797,7 @@ InfiniteBackups:
   xxHash: [3a82259d2df2dd20]
   URL: https://gamebanana.com/mmdl/496052
 MyMaps:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MyMaps.zip
   GameBananaType: Wip
   Version: 1.7.6
   LastUpdate: 1601894414
@@ -685,6 +805,7 @@ MyMaps:
   xxHash: [8edb3df6dc07b274]
   URL: https://gamebanana.com/mmdl/489321
 AndypowerzExploration:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AndypowerzExploration.zip
   GameBananaType: Wip
   Version: 1.0.0
   LastUpdate: 1614090989
@@ -692,6 +813,7 @@ AndypowerzExploration:
   xxHash: [7dccb362512d4b63]
   URL: https://gamebanana.com/mmdl/524168
 Summit Challenge:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Summit Challenge.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1584386925
@@ -699,6 +821,7 @@ Summit Challenge:
   xxHash: [dc051977349edbd7]
   URL: https://gamebanana.com/mmdl/452803
 CloverHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CloverHelper.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1595700692
@@ -706,6 +829,7 @@ CloverHelper:
   xxHash: [c285f31a11e82098]
   URL: https://gamebanana.com/mmdl/476453
 SummitReimagined:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SummitReimagined.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609602490
@@ -713,6 +837,7 @@ SummitReimagined:
   xxHash: [68654b663efae5d9]
   URL: https://gamebanana.com/mmdl/505220
 ExportToPostcard:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ExportToPostcard.zip
   GameBananaType: Tool
   Version: 1.0.0
   LastUpdate: 1546906811
@@ -720,6 +845,7 @@ ExportToPostcard:
   xxHash: [10273a35689de7ec]
   URL: https://gamebanana.com/mmdl/406513
 OgmoCompiler:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/OgmoCompiler.zip
   GameBananaType: Tool
   Version: 0.2.0
   LastUpdate: 1613181942
@@ -727,6 +853,7 @@ OgmoCompiler:
   xxHash: [c5a1121ed131287a]
   URL: https://gamebanana.com/mmdl/519792
 SumoMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SumoMod.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1594926327
@@ -734,6 +861,7 @@ SumoMod:
   xxHash: [f164d2cf7bf21dd3]
   URL: https://gamebanana.com/mmdl/474723
 Randomizer:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Randomizer.zip
   GameBananaType: Tool
   Version: 0.7.1
   LastUpdate: 1614490800
@@ -741,6 +869,7 @@ Randomizer:
   xxHash: [e28f9f3fff461926]
   URL: https://gamebanana.com/mmdl/526261
 EmHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EmHelper.zip
   GameBananaType: Gamefile
   Version: 1.1.2
   LastUpdate: 1614455111
@@ -748,6 +877,8 @@ EmHelper:
   xxHash: [669f31b4c5344ac1]
   URL: https://gamebanana.com/mmdl/525996
 World's hardest game remake:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/World's hardest game
+    remake.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599407228
@@ -755,6 +886,7 @@ World's hardest game remake:
   xxHash: [86a47f9b8fbadfb8]
   URL: https://gamebanana.com/mmdl/484571
 RainbowMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/RainbowMod.zip
   GameBananaType: Skin
   Version: 3.2.0
   LastUpdate: 1533337098
@@ -762,6 +894,7 @@ RainbowMod:
   xxHash: [a0f2e325f212ebb4]
   URL: https://gamebanana.com/mmdl/392063
 MirrorMemories:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MirrorMemories.zip
   GameBananaType: Map
   Version: 1.2.0
   LastUpdate: 1592932093
@@ -769,6 +902,7 @@ MirrorMemories:
   xxHash: [49ecbc35264a42c6]
   URL: https://gamebanana.com/mmdl/470161
 Haell:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Haell.zip
   GameBananaType: Map
   Version: 1.4.5
   LastUpdate: 1598894150
@@ -776,6 +910,7 @@ Haell:
   xxHash: [20ea9c0c4dcd6f3d]
   URL: https://gamebanana.com/mmdl/483528
 Conquerer:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Conquerer.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1591058603
@@ -783,6 +918,7 @@ Conquerer:
   xxHash: [950a2586a4eff181]
   URL: https://gamebanana.com/mmdl/466279
 New_Wonders:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/New_Wonders.zip
   GameBananaType: Map
   Version: 1.0.5
   LastUpdate: 1578847273
@@ -790,6 +926,7 @@ New_Wonders:
   xxHash: [c069dca83862ee23]
   URL: https://gamebanana.com/mmdl/445202
 set_time:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/set_time.zip
   GameBananaType: Gamefile
   Version: 1.0.3
   LastUpdate: 1611956531
@@ -797,6 +934,7 @@ set_time:
   xxHash: [e4f60e8f016dfb24]
   URL: https://gamebanana.com/mmdl/513452
 RCside:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/RCside.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1563505224
@@ -804,6 +942,7 @@ RCside:
   xxHash: [0cbcf1a44a072aed]
   URL: https://gamebanana.com/mmdl/426349
 Cat Binos:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Cat Binos.zip
   GameBananaType: Skin
   Version: 1.1.0
   LastUpdate: 1612142425
@@ -811,6 +950,7 @@ Cat Binos:
   xxHash: [8cd783a388359543]
   URL: https://gamebanana.com/mmdl/514346
 MadelineDefiesGravity:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MadelineDefiesGravity.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1610936932
@@ -818,6 +958,7 @@ MadelineDefiesGravity:
   xxHash: [64916c8dbbcc70d5]
   URL: https://gamebanana.com/mmdl/509227
 Celesital_Resort_Revisited:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Celesital_Resort_Revisited.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1577500706
@@ -825,6 +966,7 @@ Celesital_Resort_Revisited:
   xxHash: [d839c927fcf80bb8]
   URL: https://gamebanana.com/mmdl/443323
 Crystallised Reflections:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Crystallised Reflections.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1599413761
@@ -832,6 +974,7 @@ Crystallised Reflections:
   xxHash: [a8dd378f33ffabc6]
   URL: https://gamebanana.com/mmdl/484600
 CelesteRandomizerHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CelesteRandomizerHelper.zip
   GameBananaType: Gamefile
   Version: 1.4.3
   LastUpdate: 1612132865
@@ -839,6 +982,7 @@ CelesteRandomizerHelper:
   xxHash: [a7b4dc6244346f58]
   URL: https://gamebanana.com/mmdl/514304
 CeLeLeLeLeLe:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CeLeLeLeLeLe.zip
   GameBananaType: Gui
   Version: 1.1.0
   LastUpdate: 1584537566
@@ -846,6 +990,7 @@ CeLeLeLeLeLe:
   xxHash: [62e1d231c8ed6f23]
   URL: https://gamebanana.com/mmdl/453072
 NeutralMetroBod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/NeutralMetroBod.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1607609451
@@ -853,6 +998,7 @@ NeutralMetroBod:
   xxHash: [a225f978cab14ccd]
   URL: https://gamebanana.com/mmdl/500390
 AhornMoveRoomTool:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AhornMoveRoomTool.zip
   GameBananaType: Tool
   Version: 1.1.2
   LastUpdate: 1612771008
@@ -860,6 +1006,7 @@ AhornMoveRoomTool:
   xxHash: [c842239daa21fcce]
   URL: https://gamebanana.com/mmdl/517659
 TheGlitch:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TheGlitch.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599771616
@@ -867,6 +1014,7 @@ TheGlitch:
   xxHash: [ebbd9f94dd9ca9d7]
   URL: https://gamebanana.com/mmdl/485314
 FlamerSkylineAudio:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FlamerSkylineAudio.zip
   GameBananaType: Wip
   Version: 1.0.0
   LastUpdate: 1614477886
@@ -874,6 +1022,8 @@ FlamerSkylineAudio:
   xxHash: [78d404bbb851c9d0]
   URL: https://gamebanana.com/mmdl/526152
 Ythundyth's Chapter 6 EX-Side:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ythundyth's Chapter
+    6 EX-Side.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1600505083
@@ -881,6 +1031,7 @@ Ythundyth's Chapter 6 EX-Side:
   xxHash: [13c01890088a8028]
   URL: https://gamebanana.com/mmdl/486831
 AChristmasNight:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AChristmasNight.zip
   GameBananaType: Map
   Version: 1.3.0
   LastUpdate: 1597569112
@@ -888,6 +1039,7 @@ AChristmasNight:
   xxHash: [fe013ade1bc1149f]
   URL: https://gamebanana.com/mmdl/480653
 CheyenneMapPack:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CheyenneMapPack.zip
   GameBananaType: Map
   Version: NoVersion
   LastUpdate: 1527114752
@@ -895,6 +1047,7 @@ CheyenneMapPack:
   xxHash: [63c1b11e2d2314c1]
   URL: https://gamebanana.com/mmdl/383523
 dreamlessmetro:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/dreamlessmetro.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613208607
@@ -902,6 +1055,7 @@ dreamlessmetro:
   xxHash: [30863163e3a65b7d]
   URL: https://gamebanana.com/mmdl/519908
 CrowdControl:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CrowdControl.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1608692444
@@ -909,6 +1063,7 @@ CrowdControl:
   xxHash: [084584795e5ede7e]
   URL: https://gamebanana.com/mmdl/502895
 SSTD:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SSTD.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1598856079
@@ -916,6 +1071,7 @@ SSTD:
   xxHash: [a2b65a1e1da69840]
   URL: https://gamebanana.com/mmdl/483461
 PathOfHopeRandomizerConfig:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/PathOfHopeRandomizerConfig.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1602851432
@@ -923,6 +1079,7 @@ PathOfHopeRandomizerConfig:
   xxHash: [ed7d13ee6bdbcc74]
   URL: https://gamebanana.com/mmdl/491007
 Midnight:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Midnight.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612402771
@@ -930,6 +1087,7 @@ Midnight:
   xxHash: [36e895a383fd7b38]
   URL: https://gamebanana.com/mmdl/515719
 AbandonedCity:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AbandonedCity.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1598757804
@@ -937,6 +1095,7 @@ AbandonedCity:
   xxHash: [5485438ec8a3279e]
   URL: https://gamebanana.com/mmdl/483231
 BounceHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BounceHelper.zip
   GameBananaType: Gamefile
   Version: 1.0.1
   LastUpdate: 1601772560
@@ -944,6 +1103,7 @@ BounceHelper:
   xxHash: [e59e290075d13451]
   URL: https://gamebanana.com/mmdl/489080
 TechCompendium:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TechCompendium.zip
   GameBananaType: Map
   Version: 0.4.0
   LastUpdate: 1599168594
@@ -951,6 +1111,7 @@ TechCompendium:
   xxHash: [3f19ed3923fff16d]
   URL: https://gamebanana.com/mmdl/484060
 FarewellC:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FarewellC.zip
   GameBananaType: Map
   Version: 1.2.0
   LastUpdate: 1594447123
@@ -958,6 +1119,7 @@ FarewellC:
   xxHash: [49bcfb87deb4b728]
   URL: https://gamebanana.com/mmdl/473665
 MemeSides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MemeSides.zip
   GameBananaType: Map
   Version: 3.0.0
   LastUpdate: 1595182268
@@ -965,6 +1127,7 @@ MemeSides:
   xxHash: [e1f8cab2e02ddc38]
   URL: https://gamebanana.com/mmdl/475332
 KaydenFoxShroudedThoughts:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/KaydenFoxShroudedThoughts.zip
   GameBananaType: Map
   Version: 1.1.2
   LastUpdate: 1608054828
@@ -972,6 +1135,8 @@ KaydenFoxShroudedThoughts:
   xxHash: [b4bb96d1736880da]
   URL: https://gamebanana.com/mmdl/501328
 Farewell to the power of 9:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Farewell to the power
+    of 9.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1614005248
@@ -979,6 +1144,7 @@ Farewell to the power of 9:
   xxHash: [f364031ff2ced13b]
   URL: https://gamebanana.com/mmdl/523774
 FireDreams:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FireDreams.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1610600726
@@ -986,6 +1152,7 @@ FireDreams:
   xxHash: [dc01c949c3969fb6]
   URL: https://gamebanana.com/mmdl/507987
 Ferret's Micro Mountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ferret's Micro Mountain.zip
   GameBananaType: Map
   Version: 1.2.0
   LastUpdate: 1608005015
@@ -993,6 +1160,7 @@ Ferret's Micro Mountain:
   xxHash: [38cda6849f6b6f1e]
   URL: https://gamebanana.com/mmdl/501242
 Dino's maps:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Dino's maps.zip
   GameBananaType: Map
   Version: 0.0.1
   LastUpdate: 1585851456
@@ -1000,6 +1168,7 @@ Dino's maps:
   xxHash: [20e4df2d63d69717]
   URL: https://gamebanana.com/mmdl/455501
 Forsaken Fortress:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Forsaken Fortress.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1596402863
@@ -1007,6 +1176,7 @@ Forsaken Fortress:
   xxHash: [e1212c9f84a1f0a6]
   URL: https://gamebanana.com/mmdl/478162
 Celest:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Celest.zip
   GameBananaType: Gui
   Version: 1.0.0
   LastUpdate: 1597357610
@@ -1014,20 +1184,31 @@ Celest:
   xxHash: [9e9117675aa7aeb5]
   URL: https://gamebanana.com/mmdl/480304
 CombDeluxe:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CombDeluxe.zip
   GameBananaType: Map
-  Version: 1.2.1
-  LastUpdate: 1614290202
+  Version: 1.2.4
+  LastUpdate: 1614720462
   GameBananaId: 211344
-  xxHash: [381cc008a15906e4]
-  URL: https://gamebanana.com/mmdl/525160
+  xxHash: [0b05af5cc14f6c34]
+  URL: https://gamebanana.com/mmdl/527449
 Celestial Needle:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Celestial Needle.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1614100629
   GameBananaId: 215046
   xxHash: [e7c586038b649ea5]
   URL: https://gamebanana.com/mmdl/524236
+Emptiness:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Emptiness.zip
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1614629059
+  GameBananaId: 215174
+  xxHash: [5d8db818452d46d5]
+  URL: https://gamebanana.com/mmdl/526941
 DeathTracker:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DeathTracker.zip
   GameBananaType: Gamefile
   Version: 1.0.3
   LastUpdate: 1584836939
@@ -1035,6 +1216,7 @@ DeathTracker:
   xxHash: [f917cf1313317abb]
   URL: https://gamebanana.com/mmdl/453676
 UltraSkool:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/UltraSkool.zip
   GameBananaType: Map
   Version: 1.0.3
   LastUpdate: 1600171354
@@ -1042,6 +1224,7 @@ UltraSkool:
   xxHash: [87fe470872470a69]
   URL: https://gamebanana.com/mmdl/486147
 DashCountMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DashCountMod.zip
   GameBananaType: Gamefile
   Version: 0.4.1
   LastUpdate: 1607368160
@@ -1049,6 +1232,7 @@ DashCountMod:
   xxHash: [e9799ef77249749d]
   URL: https://gamebanana.com/mmdl/499884
 StaminaMeter:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/StaminaMeter.zip
   GameBananaType: Gui
   Version: 1.3.0
   LastUpdate: 1610006103
@@ -1056,6 +1240,7 @@ StaminaMeter:
   xxHash: [14f89078d2e386d7]
   URL: https://gamebanana.com/mmdl/506229
 The Speed-Side Pack:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Speed-Side Pack.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613703859
@@ -1063,6 +1248,7 @@ The Speed-Side Pack:
   xxHash: [652ecd27b182a41b]
   URL: https://gamebanana.com/mmdl/522308
 Suika's Summit:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Suika's Summit.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1558336654
@@ -1070,6 +1256,7 @@ Suika's Summit:
   xxHash: [592e25cf42ab8f9e]
   URL: https://gamebanana.com/mmdl/420480
 Core OSC:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Core OSC.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1573592459
@@ -1077,6 +1264,7 @@ Core OSC:
   xxHash: [86520879ac5eedd9]
   URL: https://gamebanana.com/mmdl/438454
 Glyph:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Glyph.zip
   GameBananaType: Map
   Version: 2.2.3
   LastUpdate: 1610265120
@@ -1084,6 +1272,7 @@ Glyph:
   xxHash: [316e34ce709a8268]
   URL: https://gamebanana.com/mmdl/506897
 Difficult:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Difficult.zip
   GameBananaType: Map
   Version: 1.1.2
   LastUpdate: 1604515826
@@ -1091,6 +1280,7 @@ Difficult:
   xxHash: [422ae85ba9c3f1b0]
   URL: https://gamebanana.com/mmdl/494254
 TwoStepsFromDeath:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TwoStepsFromDeath.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1527700531
@@ -1098,6 +1288,7 @@ TwoStepsFromDeath:
   xxHash: [4ef535a063f05c05]
   URL: https://gamebanana.com/mmdl/384269
 Celese:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Celese.zip
   GameBananaType: Gui
   Version: 0.1.0
   LastUpdate: 1595376113
@@ -1105,6 +1296,7 @@ Celese:
   xxHash: [563a87e8bef6ad2a]
   URL: https://gamebanana.com/mmdl/475822
 3b0d:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/3b0d.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610868531
@@ -1112,6 +1304,8 @@ Celese:
   xxHash: [0b2914f39bab9202]
   URL: https://gamebanana.com/mmdl/508942
 Complimentary Ice Map:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Complimentary Ice
+    Map.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1611698401
@@ -1119,6 +1313,7 @@ Complimentary Ice Map:
   xxHash: [b145c9944d1e0665]
   URL: https://gamebanana.com/mmdl/512449
 BlueOceanFloor:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BlueOceanFloor.zip
   GameBananaType: Map
   Version: 4.0.2
   LastUpdate: 1608715193
@@ -1126,6 +1321,7 @@ BlueOceanFloor:
   xxHash: [f07a8a419448c607]
   URL: https://gamebanana.com/mmdl/502943
 SimpleTeleporter:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SimpleTeleporter.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1531313680
@@ -1133,6 +1329,7 @@ SimpleTeleporter:
   xxHash: [11e1b304a8353392]
   URL: https://gamebanana.com/mmdl/388808
 HalloweenContest2020:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/HalloweenContest2020.zip
   GameBananaType: Map
   Version: 1.0.4
   LastUpdate: 1608753285
@@ -1140,6 +1337,7 @@ HalloweenContest2020:
   xxHash: [2c6887d38e0b0ba7]
   URL: https://gamebanana.com/mmdl/503036
 ShaderHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ShaderHelper.zip
   GameBananaType: Wip
   Version: 0.0.3
   LastUpdate: 1612308532
@@ -1147,6 +1345,7 @@ ShaderHelper:
   xxHash: [88732a5dd258654c]
   URL: https://gamebanana.com/mmdl/515163
 TheoMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TheoMod.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1595382909
@@ -1154,6 +1353,7 @@ TheoMod:
   xxHash: [3119116cc1099ced]
   URL: https://gamebanana.com/mmdl/475839
 Evil_Sides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Evil_Sides.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609527866
@@ -1161,6 +1361,7 @@ Evil_Sides:
   xxHash: [6976dd78a9a9e616]
   URL: https://gamebanana.com/mmdl/505066
 Forsaken City E-Side:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Forsaken City E-Side.zip
   GameBananaType: Map
   Version: '1.2'
   LastUpdate: 1612635650
@@ -1168,6 +1369,7 @@ Forsaken City E-Side:
   xxHash: [36a8f2ca475abaff]
   URL: https://gamebanana.com/mmdl/516952
 ExplorationMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ExplorationMod.zip
   GameBananaType: Map
   Version: 1.3.0
   LastUpdate: 1597559650
@@ -1175,6 +1377,7 @@ ExplorationMod:
   xxHash: [215b11376a0e3f42]
   URL: https://gamebanana.com/mmdl/480639
 CrystalValley:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CrystalValley.zip
   GameBananaType: Map
   Version: 1.4.1
   LastUpdate: 1613269182
@@ -1182,6 +1385,7 @@ CrystalValley:
   xxHash: [f60724716ad1c4b9]
   URL: https://gamebanana.com/mmdl/520253
 OutcastOutback:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/OutcastOutback.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1544447274
@@ -1189,13 +1393,15 @@ OutcastOutback:
   xxHash: [c41b0febf69e8b4b]
   URL: https://gamebanana.com/mmdl/404065
 Cryoshock:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Cryoshock.zip
   GameBananaType: Map
-  Version: 1.2.2
-  LastUpdate: 1610933168
+  Version: 1.2.4
+  LastUpdate: 1614814793
   GameBananaId: 211773
-  xxHash: [c841e9551c1bb9a7]
-  URL: https://gamebanana.com/mmdl/509196
+  xxHash: ['65452126e5400966']
+  URL: https://gamebanana.com/mmdl/527968
 NanosSubmission:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/NanosSubmission.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1599423097
@@ -1203,6 +1409,7 @@ NanosSubmission:
   xxHash: [9a5ffeb623fab948]
   URL: https://gamebanana.com/mmdl/484631
 FlaglinesAndSuch:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FlaglinesAndSuch.zip
   GameBananaType: Gamefile
   Version: 1.4.6
   LastUpdate: 1612808533
@@ -1210,6 +1417,7 @@ FlaglinesAndSuch:
   xxHash: [69cda893e430a166]
   URL: https://gamebanana.com/mmdl/517828
 ArchaicTerrace:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ArchaicTerrace.zip
   GameBananaType: Map
   Version: 1.3.0
   LastUpdate: 1602012229
@@ -1217,6 +1425,7 @@ ArchaicTerrace:
   xxHash: [885585308249ff1f]
   URL: https://gamebanana.com/mmdl/489544
 UltraProcessing:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/UltraProcessing.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1612071875
@@ -1224,6 +1433,7 @@ UltraProcessing:
   xxHash: [954f012212142c3f]
   URL: https://gamebanana.com/mmdl/514023
 CrystalCave:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CrystalCave.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1606505493
@@ -1231,6 +1441,7 @@ CrystalCave:
   xxHash: [ac29a3ba4a12105b]
   URL: https://gamebanana.com/mmdl/498194
 Cateline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Cateline.zip
   GameBananaType: Skin
   Version: 0.0.2
   LastUpdate: 1606929323
@@ -1238,6 +1449,7 @@ Cateline:
   xxHash: [0d5f8af156769049]
   URL: https://gamebanana.com/mmdl/498978
 Darkness:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Darkness.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1596324017
@@ -1245,6 +1457,7 @@ Darkness:
   xxHash: [564688f5c059fbe9]
   URL: https://gamebanana.com/mmdl/477950
 LouisMaps:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/LouisMaps.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612306506
@@ -1252,6 +1465,7 @@ LouisMaps:
   xxHash: [f3314cfbc12c9bd0]
   URL: https://gamebanana.com/mmdl/515138
 Hotel_Ascent:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Hotel_Ascent.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613079569
@@ -1259,6 +1473,7 @@ Hotel_Ascent:
   xxHash: [4a47992c7536bd41]
   URL: https://gamebanana.com/mmdl/519256
 Corruption:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Corruption.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1606528233
@@ -1266,6 +1481,7 @@ Corruption:
   xxHash: [b9d2d1e651fa8d98]
   URL: https://gamebanana.com/mmdl/498275
 greenvalley:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/greenvalley.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1611486495
@@ -1273,6 +1489,7 @@ greenvalley:
   xxHash: [f42c3657527d50cf]
   URL: https://gamebanana.com/mmdl/511477
 CelesteButHard:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CelesteButHard.zip
   GameBananaType: Map
   Version: 0.5.27
   LastUpdate: 1603477592
@@ -1280,6 +1497,7 @@ CelesteButHard:
   xxHash: [0e663ad66de999d6]
   URL: https://gamebanana.com/mmdl/492112
 SummitEncore:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SummitEncore.zip
   GameBananaType: Map
   Version: '1.01'
   LastUpdate: 1605387632
@@ -1287,6 +1505,7 @@ SummitEncore:
   xxHash: [2113b78974d7b289]
   URL: https://gamebanana.com/mmdl/495933
 Sanctuary_jan_01:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Sanctuary_jan_01.zip
   GameBananaType: Map
   Version: '1.14'
   LastUpdate: 1613453293
@@ -1294,6 +1513,7 @@ Sanctuary_jan_01:
   xxHash: [f7f303f80332d491]
   URL: https://gamebanana.com/mmdl/521164
 JsTextues:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/JsTextues.zip
   GameBananaType: Skin
   Version: 1.4.1
   LastUpdate: 1602901684
@@ -1301,6 +1521,7 @@ JsTextues:
   xxHash: [5b4bb1a6956d374d]
   URL: https://gamebanana.com/mmdl/491115
 Celestial Garden:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Celestial Garden.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1597108511
@@ -1308,6 +1529,7 @@ Celestial Garden:
   xxHash: [d8f1730f43e83331]
   URL: https://gamebanana.com/mmdl/479720
 Batteries:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Batteries.zip
   GameBananaType: Gamefile
   Version: 1.1.0
   LastUpdate: 1586770844
@@ -1315,6 +1537,7 @@ Batteries:
   xxHash: [033b93ff13a97750]
   URL: https://gamebanana.com/mmdl/457167
 Anonhelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Anonhelper.zip
   GameBananaType: Gamefile
   Version: 1.0.4
   LastUpdate: 1612382460
@@ -1322,6 +1545,8 @@ Anonhelper:
   xxHash: [a25af4f21ecd570f]
   URL: https://gamebanana.com/mmdl/515565
 Spoopy's Laid Back Level Pack:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Spoopy's Laid Back
+    Level Pack.zip
   GameBananaType: Map
   Version: 2.0.1
   LastUpdate: 1599979035
@@ -1329,6 +1554,7 @@ Spoopy's Laid Back Level Pack:
   xxHash: [c1c070c78f0198dc]
   URL: https://gamebanana.com/mmdl/485710
 ColoredLights:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ColoredLights.zip
   GameBananaType: Gamefile
   Version: 1.1.1
   LastUpdate: 1582032463
@@ -1336,6 +1562,7 @@ ColoredLights:
   xxHash: [b5be64b42d9ce12f]
   URL: https://gamebanana.com/mmdl/449441
 RandomizerChineseLangPack:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/RandomizerChineseLangPack.zip
   GameBananaType: Gamefile
   Version: 0.6.4
   LastUpdate: 1605687705
@@ -1343,6 +1570,7 @@ RandomizerChineseLangPack:
   xxHash: [5501169e06ef372a]
   URL: https://gamebanana.com/mmdl/496572
 UltraGarbage:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/UltraGarbage.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610841025
@@ -1350,6 +1578,7 @@ UltraGarbage:
   xxHash: [790438c38f87c3cf]
   URL: https://gamebanana.com/mmdl/508816
 CherryHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CherryHelper.zip
   GameBananaType: Gamefile
   Version: 1.6.7
   LastUpdate: 1614451794
@@ -1357,6 +1586,7 @@ CherryHelper:
   xxHash: [acdbb65f151d8d98]
   URL: https://gamebanana.com/mmdl/525972
 BGswitch:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BGswitch.zip
   GameBananaType: Gamefile
   Version: 1.1.5
   LastUpdate: 1584815234
@@ -1364,6 +1594,7 @@ BGswitch:
   xxHash: [da48b698be9e7906]
   URL: https://gamebanana.com/mmdl/453635
 Dadside:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Dadside.zip
   GameBananaType: Map
   Version: '2.0'
   LastUpdate: 1595044571
@@ -1371,6 +1602,7 @@ Dadside:
   xxHash: [95ccbb905cb32b94]
   URL: https://gamebanana.com/mmdl/475047
 AppelsConWeekSub:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AppelsConWeekSub.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599483219
@@ -1378,6 +1610,7 @@ AppelsConWeekSub:
   xxHash: [dfde84b3e5536812]
   URL: https://gamebanana.com/mmdl/484785
 Baldeline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Baldeline.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1583773159
@@ -1385,6 +1618,7 @@ Baldeline:
   xxHash: [d16c129a91009f24]
   URL: https://gamebanana.com/mmdl/451847
 AtoneCelesteRemake:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AtoneCelesteRemake.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1598745816
@@ -1392,6 +1626,7 @@ AtoneCelesteRemake:
   xxHash: [43ca19a3b03919da]
   URL: https://gamebanana.com/mmdl/483202
 Forsaken City Z Side:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Forsaken City Z Side.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599973145
@@ -1399,6 +1634,7 @@ Forsaken City Z Side:
   xxHash: [a65b2e6be8aaf44d]
   URL: https://gamebanana.com/mmdl/485700
 TrampolineOutskirts:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TrampolineOutskirts.zip
   GameBananaType: Map
   Version: 1.0.4
   LastUpdate: 1590245359
@@ -1406,6 +1642,7 @@ TrampolineOutskirts:
   xxHash: [5e4c942e84b32753]
   URL: https://gamebanana.com/mmdl/464447
 downpour:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/downpour.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613683151
@@ -1413,6 +1650,7 @@ downpour:
   xxHash: [b50f0c199974c44a]
   URL: https://gamebanana.com/mmdl/522199
 Celestial Doomsday:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Celestial Doomsday.zip
   GameBananaType: Map
   Version: 1.5.0
   LastUpdate: 1608426691
@@ -1420,6 +1658,7 @@ Celestial Doomsday:
   xxHash: [9193160012b81a12]
   URL: https://gamebanana.com/mmdl/502158
 AhornDependencyGenerator:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AhornDependencyGenerator.zip
   GameBananaType: Tool
   Version: 1.1.1
   LastUpdate: 1614124896
@@ -1427,13 +1666,15 @@ AhornDependencyGenerator:
   xxHash: [3e48cc58902be5a0]
   URL: https://gamebanana.com/mmdl/524352
 NanosHecksides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/NanosHecksides.zip
   GameBananaType: Map
-  Version: 1.1.5
-  LastUpdate: 1608227826
+  Version: 1.1.6
+  LastUpdate: 1614708967
   GameBananaId: 212653
-  xxHash: [837be1b9228fd25c]
-  URL: https://gamebanana.com/mmdl/501684
+  xxHash: [7b52265571b32848]
+  URL: https://gamebanana.com/mmdl/527364
 Overgrowth:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Overgrowth.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1597186940
@@ -1441,6 +1682,7 @@ Overgrowth:
   xxHash: [79076f6da52b7865]
   URL: https://gamebanana.com/mmdl/479900
 NewYearsContest2021:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/NewYearsContest2021.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1611539041
@@ -1448,6 +1690,7 @@ NewYearsContest2021:
   xxHash: [2662114951f82dfa]
   URL: https://gamebanana.com/mmdl/511746
 CrowControl:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CrowControl.zip
   GameBananaType: Tool
   Version: 1.0.9
   LastUpdate: 1610248146
@@ -1455,6 +1698,7 @@ CrowControl:
   xxHash: [9002bda2ad5fc67f]
   URL: https://gamebanana.com/mmdl/506851
 MorePortraits:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MorePortraits.zip
   GameBananaType: Tool
   Version: 1.1.1
   LastUpdate: 1600470665
@@ -1462,6 +1706,7 @@ MorePortraits:
   xxHash: [4ca86475d46e823c]
   URL: https://gamebanana.com/mmdl/486765
 HollyEndscreens:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/HollyEndscreens.zip
   GameBananaType: Gui
   Version: 1.0.0
   LastUpdate: 1608048831
@@ -1469,6 +1714,7 @@ HollyEndscreens:
   xxHash: [8ef32006ef1e9c5f]
   URL: https://gamebanana.com/mmdl/501316
 AppelsHalloween:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AppelsHalloween.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1608374445
@@ -1476,6 +1722,7 @@ AppelsHalloween:
   xxHash: [e96a726fb5d93593]
   URL: https://gamebanana.com/mmdl/502016
 LunaticHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/LunaticHelper.zip
   GameBananaType: Gamefile
   Version: 1.1.1
   LastUpdate: 1591050173
@@ -1483,6 +1730,7 @@ LunaticHelper:
   xxHash: [684181314d7be3d6]
   URL: https://gamebanana.com/mmdl/466257
 bonker:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/bonker.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1608425313
@@ -1490,6 +1738,7 @@ bonker:
   xxHash: [12005530315ccec2]
   URL: https://gamebanana.com/mmdl/502150
 Dadbod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Dadbod.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1569950143
@@ -1497,6 +1746,7 @@ Dadbod:
   xxHash: [080ce32613a97e4d]
   URL: https://gamebanana.com/mmdl/433847
 GoldenWings:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/GoldenWings.zip
   GameBananaType: Skin
   Version: '1.0'
   LastUpdate: 1605428311
@@ -1504,6 +1754,7 @@ GoldenWings:
   xxHash: [91011cf9f0de9ad0]
   URL: https://gamebanana.com/mmdl/496032
 Frosted Cavern:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Frosted Cavern.zip
   GameBananaType: Map
   Version: '0.5'
   LastUpdate: 1591896729
@@ -1511,6 +1762,7 @@ Frosted Cavern:
   xxHash: [1a22d6eb7b586b6c]
   URL: https://gamebanana.com/mmdl/468038
 madbadeline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/madbadeline.zip
   GameBananaType: Skin
   Version: 1.3.0
   LastUpdate: 1610189630
@@ -1518,6 +1770,7 @@ madbadeline:
   xxHash: [9b9d1b9ae604cbe6]
   URL: https://gamebanana.com/mmdl/506647
 MadelineCrystal:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MadelineCrystal.zip
   GameBananaType: Skin
   Version: '1.0'
   LastUpdate: 1605862461
@@ -1525,6 +1778,7 @@ MadelineCrystal:
   xxHash: [99e2ffaf5537b51f]
   URL: https://gamebanana.com/mmdl/496877
 sanny and drip theo:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/sanny and drip theo.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1612178843
@@ -1532,6 +1786,7 @@ sanny and drip theo:
   xxHash: [a72dde4aefff9c4e]
   URL: https://gamebanana.com/mmdl/514476
 InterstellarCaverns:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/InterstellarCaverns.zip
   GameBananaType: Map
   Version: 1.5.4
   LastUpdate: 1594829301
@@ -1539,6 +1794,7 @@ InterstellarCaverns:
   xxHash: [9f084a3c5b2241f2]
   URL: https://gamebanana.com/mmdl/474446
 Lake of Purity 2:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Lake of Purity 2.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1570317331
@@ -1546,6 +1802,7 @@ Lake of Purity 2:
   xxHash: [8b231c5acb31ec25]
   URL: https://gamebanana.com/mmdl/434306
 BetterRefillGems:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BetterRefillGems.zip
   GameBananaType: Gamefile
   Version: 1.0.1
   LastUpdate: 1597206795
@@ -1553,6 +1810,7 @@ BetterRefillGems:
   xxHash: [7e2b5bc27f1fd92d]
   URL: https://gamebanana.com/mmdl/479939
 FancyTileEntities:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FancyTileEntities.zip
   GameBananaType: Gamefile
   Version: 1.4.0
   LastUpdate: 1614500870
@@ -1560,6 +1818,7 @@ FancyTileEntities:
   xxHash: [7d0148754e6271e4]
   URL: https://gamebanana.com/mmdl/526314
 24x33:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/24x33.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1600862626
@@ -1567,6 +1826,7 @@ FancyTileEntities:
   xxHash: [0b5dea856645f8d0]
   URL: https://gamebanana.com/mmdl/487549
 Etselec:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Etselec.zip
   GameBananaType: Map
   Version: 2.4.1
   LastUpdate: 1613555016
@@ -1574,6 +1834,7 @@ Etselec:
   xxHash: [fb43d0aa51d57ed7]
   URL: https://gamebanana.com/mmdl/521640
 WhirlwindGrotto:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/WhirlwindGrotto.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1614043949
@@ -1581,6 +1842,7 @@ WhirlwindGrotto:
   xxHash: [b182889faf9ca9c7]
   URL: https://gamebanana.com/mmdl/523966
 IronSmelterysCampaign:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/IronSmelterysCampaign.zip
   GameBananaType: Map
   Version: 0.5.31
   LastUpdate: 1604277477
@@ -1588,6 +1850,7 @@ IronSmelterysCampaign:
   xxHash: [8abaace21f4154a2]
   URL: https://gamebanana.com/mmdl/493753
 The Magic River:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Magic River.zip
   GameBananaType: Wip
   Version: 1.0.0
   LastUpdate: 1547486297
@@ -1595,6 +1858,7 @@ The Magic River:
   xxHash: [cf7c9864a02bc85e]
   URL: https://gamebanana.com/mmdl/407149
 LBreak:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/LBreak.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1609513524
@@ -1602,6 +1866,7 @@ LBreak:
   xxHash: [0ea7d70976056e76]
   URL: https://gamebanana.com/mmdl/504995
 CommunalHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CommunalHelper.zip
   GameBananaType: Gamefile
   Version: 1.7.0
   LastUpdate: 1614405785
@@ -1609,6 +1874,7 @@ CommunalHelper:
   xxHash: [d70b113f399de439]
   URL: https://gamebanana.com/mmdl/525738
 Simpleste-Max:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Simpleste-Max.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1547289672
@@ -1616,6 +1882,7 @@ Simpleste-Max:
   xxHash: [1fc15038c09e8b7c]
   URL: https://gamebanana.com/mmdl/406847
 Shadow's Sanctuary:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Shadow's Sanctuary.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1558319193
@@ -1623,6 +1890,7 @@ Shadow's Sanctuary:
   xxHash: [c84724651b7e7286]
   URL: https://gamebanana.com/mmdl/420466
 sokz' mod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/sokz' mod.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1610970333
@@ -1630,6 +1898,7 @@ sokz' mod:
   xxHash: [22488a34fae9b80b]
   URL: https://gamebanana.com/mmdl/509340
 TheTower:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TheTower.zip
   GameBananaType: Map
   Version: 0.2.1-beta
   LastUpdate: 1600821063
@@ -1637,6 +1906,7 @@ TheTower:
   xxHash: [dae8c1e50185986e]
   URL: https://gamebanana.com/mmdl/487502
 Core Refill:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Core Refill.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1580702516
@@ -1644,6 +1914,7 @@ Core Refill:
   xxHash: [388d034631905029]
   URL: https://gamebanana.com/mmdl/447643
 ChaosMode:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ChaosMode.zip
   GameBananaType: Gamefile
   Version: 1.0.3
   LastUpdate: 1604433015
@@ -1651,6 +1922,7 @@ ChaosMode:
   xxHash: [eacb7b21127028e0]
   URL: https://gamebanana.com/mmdl/494076
 DirectionalFeedback:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DirectionalFeedback.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1604913621
@@ -1658,6 +1930,7 @@ DirectionalFeedback:
   xxHash: [6cf64a119bf65b83]
   URL: https://gamebanana.com/mmdl/495010
 Kayonara Collection:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Kayonara Collection.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1605130264
@@ -1665,6 +1938,7 @@ Kayonara Collection:
   xxHash: [25136bb4c0d605c7]
   URL: https://gamebanana.com/mmdl/495448
 FlagRepair:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FlagRepair.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1609865427
@@ -1672,13 +1946,23 @@ FlagRepair:
   xxHash: [f87c45546b5e4e49]
   URL: https://gamebanana.com/mmdl/505898
 L9M2LostTheo:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/L9M2LostTheo.zip
   GameBananaType: Map
   Version: '0.16'
   LastUpdate: 1577913496
   GameBananaId: 207442
   xxHash: [c902f13fa21aa06b]
   URL: https://gamebanana.com/mmdl/443944
+CenterOfTheEarth:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CenterOfTheEarth.zip
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1614544574
+  GameBananaId: 215140
+  xxHash: [35fa8af4070cc741]
+  URL: https://gamebanana.com/mmdl/526546
 SmaerdNogylop:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SmaerdNogylop.zip
   GameBananaType: Map
   Version: 6.0.1
   LastUpdate: 1613894879
@@ -1686,6 +1970,7 @@ SmaerdNogylop:
   xxHash: [800d14c3d8d8924f]
   URL: https://gamebanana.com/mmdl/523245
 ProBananaSkin:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ProBananaSkin.zip
   GameBananaType: Skin
   Version: '1.2'
   LastUpdate: 1611375914
@@ -1693,6 +1978,7 @@ ProBananaSkin:
   xxHash: [6fcd0d6627b4c87b]
   URL: https://gamebanana.com/mmdl/511105
 NeonMetropolis:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/NeonMetropolis.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613461863
@@ -1700,6 +1986,7 @@ NeonMetropolis:
   xxHash: [5808c208ce30a974]
   URL: https://gamebanana.com/mmdl/521184
 its space jam:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/its space jam.zip
   GameBananaType: Map
   Version: NoVersion
   LastUpdate: 1551527521
@@ -1707,13 +1994,15 @@ its space jam:
   xxHash: [a0e346b4458bf602]
   URL: https://gamebanana.com/mmdl/412209
 StrawberryTool:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/StrawberryTool.zip
   GameBananaType: Tool
-  Version: 1.0.1
-  LastUpdate: 1611218922
+  Version: 1.0.2
+  LastUpdate: 1614758249
   GameBananaId: 6924
-  xxHash: [36c191c86e108414]
-  URL: https://gamebanana.com/mmdl/510397
+  xxHash: [10821c09eef7f268]
+  URL: https://gamebanana.com/mmdl/527635
 1abuffed:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/1abuffed.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1607298887
@@ -1721,6 +2010,8 @@ StrawberryTool:
   xxHash: [6d4b1048a36ca94e]
   URL: https://gamebanana.com/mmdl/499752
 Ythundyth's Chapter 3 L-Side:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ythundyth's Chapter
+    3 L-Side.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1589295124
@@ -1728,6 +2019,7 @@ Ythundyth's Chapter 3 L-Side:
   xxHash: [07970c27ebf34a45]
   URL: https://gamebanana.com/mmdl/462512
 Jankness:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Jankness.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609255650
@@ -1735,6 +2027,7 @@ Jankness:
   xxHash: [d16a48fb1bb599a6]
   URL: https://gamebanana.com/mmdl/504335
 changgePAO:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/changgePAO.zip
   GameBananaType: Map
   Version: 1.6.0
   LastUpdate: 1614165457
@@ -1742,6 +2035,7 @@ changgePAO:
   xxHash: [47ed86fef4f6c134]
   URL: https://gamebanana.com/mmdl/524518
 MaddyCrown:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MaddyCrown.zip
   GameBananaType: Skin
   Version: 1.0.1
   LastUpdate: 1587675144
@@ -1749,6 +2043,7 @@ MaddyCrown:
   xxHash: [432a6289bd82284c]
   URL: https://gamebanana.com/mmdl/459036
 SafeRespawnCrumble:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SafeRespawnCrumble.zip
   GameBananaType: Gamefile
   Version: 1.1.0
   LastUpdate: 1606333330
@@ -1756,6 +2051,7 @@ SafeRespawnCrumble:
   xxHash: [510d75504d6af774]
   URL: https://gamebanana.com/mmdl/497822
 Cliffside Ultra:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Cliffside Ultra.zip
   GameBananaType: Map
   Version: 2.0.1
   LastUpdate: 1609159100
@@ -1763,6 +2059,7 @@ Cliffside Ultra:
   xxHash: [b1d1851839edf7ce]
   URL: https://gamebanana.com/mmdl/504089
 Pico_8_Remake:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Pico_8_Remake.zip
   GameBananaType: Map
   Version: '1.402'
   LastUpdate: 1610403753
@@ -1770,6 +2067,7 @@ Pico_8_Remake:
   xxHash: [5ffa3a9efbc28e17]
   URL: https://gamebanana.com/mmdl/507364
 SpringCollab2020:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SpringCollab2020.zip
   GameBananaType: Map
   Version: 1.3.2
   LastUpdate: 1611441985
@@ -1777,6 +2075,7 @@ SpringCollab2020:
   xxHash: [b82f91ce5367a2e5]
   URL: https://gamebanana.com/mmdl/511328
 Jutatsuki:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Jutatsuki.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1587001476
@@ -1784,6 +2083,7 @@ Jutatsuki:
   xxHash: [fcddef481ea1b6cf]
   URL: https://gamebanana.com/mmdl/457759
 Troll_City:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Troll_City.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1546873269
@@ -1791,6 +2091,7 @@ Troll_City:
   xxHash: [31eefaa716fa073e]
   URL: https://gamebanana.com/mmdl/406466
 Forzaken Zity:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Forzaken Zity.zip
   GameBananaType: Wip
   Version: 1.0.0
   LastUpdate: 1600040393
@@ -1798,6 +2099,7 @@ Forzaken Zity:
   xxHash: [0f1b986f098b1cb4]
   URL: https://gamebanana.com/mmdl/485838
 OgmoDemo:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/OgmoDemo.zip
   GameBananaType: Tool
   Version: 0.2.0
   LastUpdate: 1613182934
@@ -1805,6 +2107,7 @@ OgmoDemo:
   xxHash: [8255d810a505cfd9]
   URL: https://gamebanana.com/mmdl/519798
 OneHourChallenge:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/OneHourChallenge.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1582616867
@@ -1812,6 +2115,7 @@ OneHourChallenge:
   xxHash: [8c466434198178c0]
   URL: https://gamebanana.com/mmdl/450284
 FemTheoCrystal:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FemTheoCrystal.zip
   GameBananaType: Skin
   Version: '1.0'
   LastUpdate: 1604821591
@@ -1819,6 +2123,7 @@ FemTheoCrystal:
   xxHash: [aa00e6b8aea1504b]
   URL: https://gamebanana.com/mmdl/494845
 Forsaken City E-Side++:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Forsaken City E-Side++.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1612634454
@@ -1826,6 +2131,7 @@ Forsaken City E-Side++:
   xxHash: [1347191d565c5e4c]
   URL: https://gamebanana.com/mmdl/516941
 Hakoniwa Adventure:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Hakoniwa Adventure.zip
   GameBananaType: Map
   Version: 1.1.1
   LastUpdate: 1601643331
@@ -1833,6 +2139,7 @@ Hakoniwa Adventure:
   xxHash: [0c91bc75261cd81d]
   URL: https://gamebanana.com/mmdl/488812
 Xem_WayHome:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Xem_WayHome.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1607988855
@@ -1840,6 +2147,7 @@ Xem_WayHome:
   xxHash: [daaf4f99b77c12c9]
   URL: https://gamebanana.com/mmdl/501214
 ExtendedChineseFont:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ExtendedChineseFont.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1597593857
@@ -1847,6 +2155,7 @@ ExtendedChineseFont:
   xxHash: [0a1f20bed075dbb8]
   URL: https://gamebanana.com/mmdl/480692
 EarlyCore:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EarlyCore.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1555294564
@@ -1854,6 +2163,7 @@ EarlyCore:
   xxHash: [8647844ed79a38e4]
   URL: https://gamebanana.com/mmdl/416890
 Forsaken City E-Side+:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Forsaken City E-Side+.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1612635571
@@ -1861,6 +2171,7 @@ Forsaken City E-Side+:
   xxHash: [2d4a3ff957e7dd91]
   URL: https://gamebanana.com/mmdl/516950
 InfiniteSaves:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/InfiniteSaves.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1568217515
@@ -1868,6 +2179,7 @@ InfiniteSaves:
   xxHash: [58d1d2edd6942ef4]
   URL: https://gamebanana.com/mmdl/431626
 SillyThings:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SillyThings.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1607397527
@@ -1875,6 +2187,7 @@ SillyThings:
   xxHash: [e314ff587af021bd]
   URL: https://gamebanana.com/mmdl/499951
 CelesteNet.Client:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CelesteNet.Client.zip
   GameBananaType: Gamefile
   Version: 1.1.16
   LastUpdate: 1595433987
@@ -1882,6 +2195,7 @@ CelesteNet.Client:
   xxHash: [c5c6fd50abeca26a]
   URL: https://gamebanana.com/mmdl/475922
 groundedwallboost:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/groundedwallboost.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613645167
@@ -1889,6 +2203,7 @@ groundedwallboost:
   xxHash: [cd969d806f422670]
   URL: https://gamebanana.com/mmdl/522030
 Vriska:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Vriska.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1578014209
@@ -1896,6 +2211,7 @@ Vriska:
   xxHash: [4145dc414f96ee8c]
   URL: https://gamebanana.com/mmdl/444120
 Dreamy_trials:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Dreamy_trials.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613502520
@@ -1903,6 +2219,7 @@ Dreamy_trials:
   xxHash: [b46688bb6e12143a]
   URL: https://gamebanana.com/mmdl/521353
 Lunar Ruins:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Lunar Ruins.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1603471409
@@ -1910,6 +2227,8 @@ Lunar Ruins:
   xxHash: [d92b2d2f24795f69]
   URL: https://gamebanana.com/mmdl/492103
 Madeline Gets Her Keys:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Madeline Gets Her
+    Keys.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610954703
@@ -1917,6 +2236,7 @@ Madeline Gets Her Keys:
   xxHash: [6a46b1039815401f]
   URL: https://gamebanana.com/mmdl/509287
 YourModName:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/YourModName.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609531155
@@ -1924,6 +2244,7 @@ YourModName:
   xxHash: [f1918532508b9d2a]
   URL: https://gamebanana.com/mmdl/505080
 AhornPresetTool:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AhornPresetTool.zip
   GameBananaType: Tool
   Version: 1.1.0
   LastUpdate: 1614378895
@@ -1931,6 +2252,7 @@ AhornPresetTool:
   xxHash: [5c22902a29ad2ab9]
   URL: https://gamebanana.com/mmdl/525580
 Glitch World:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Glitch World.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1584290318
@@ -1938,6 +2260,7 @@ Glitch World:
   xxHash: [e3e63d6ada728e7f]
   URL: https://gamebanana.com/mmdl/452616
 1-FlinchOneScreenChallenge:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/1-FlinchOneScreenChallenge.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610926305
@@ -1945,6 +2268,7 @@ Glitch World:
   xxHash: [7ee057a787d19ffb]
   URL: https://gamebanana.com/mmdl/509159
 CelesteOfLevels:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CelesteOfLevels.zip
   GameBananaType: Map
   Version: NoVersion
   LastUpdate: 1528597686
@@ -1952,6 +2276,7 @@ CelesteOfLevels:
   xxHash: [35bcbb453ce44466]
   URL: https://gamebanana.com/mmdl/385360
 The Frosty Fell:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Frosty Fell.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1608686381
@@ -1959,6 +2284,8 @@ The Frosty Fell:
   xxHash: [3e60071b1348c2b9]
   URL: https://gamebanana.com/mmdl/502875
 The Cavernous Crystal Cave:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Cavernous Crystal
+    Cave.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1607114862
@@ -1966,6 +2293,7 @@ The Cavernous Crystal Cave:
   xxHash: [2552c5f9ab9ce792]
   URL: https://gamebanana.com/mmdl/499328
 Error 404:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Error 404.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1601220087
@@ -1973,6 +2301,7 @@ Error 404:
   xxHash: [509f7d5eb0c94fd2]
   URL: https://gamebanana.com/mmdl/488131
 IronSmelterysCampaign(DevelopmentVersion):
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/IronSmelterysCampaign(DevelopmentVersion).zip
   GameBananaType: Wip
   Version: 0.5.42
   LastUpdate: 1613931984
@@ -1980,6 +2309,7 @@ IronSmelterysCampaign(DevelopmentVersion):
   xxHash: [f13ad6610cc03fbe]
   URL: https://gamebanana.com/mmdl/523402
 Collab Randomizer:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Collab Randomizer.zip
   GameBananaType: Gamefile
   Version: '0.1'
   LastUpdate: 1607136797
@@ -1987,6 +2317,7 @@ Collab Randomizer:
   xxHash: [69a868dcb43f6db9]
   URL: https://gamebanana.com/mmdl/499384
 Beta:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Beta.zip
   GameBananaType: Map
   Version: '2.0'
   LastUpdate: 1573416063
@@ -1994,6 +2325,8 @@ Beta:
   xxHash: [bf015256602df340]
   URL: https://gamebanana.com/mmdl/438200
 Macaroni Boi's Random Maps:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Macaroni Boi's Random
+    Maps.zip
   GameBananaType: Map
   Version: 2.0.0
   LastUpdate: 1596227335
@@ -2001,6 +2334,7 @@ Macaroni Boi's Random Maps:
   xxHash: [cb5684435bca5b14]
   URL: https://gamebanana.com/mmdl/477695
 mountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/mountain.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1602457568
@@ -2008,6 +2342,7 @@ mountain:
   xxHash: [3f9fe63b53418313]
   URL: https://gamebanana.com/mmdl/490365
 Skqw's Mods:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Skqw's Mods.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1601651206
@@ -2015,6 +2350,7 @@ Skqw's Mods:
   xxHash: [b86ead9f8e63125e]
   URL: https://gamebanana.com/mmdl/488823
 Simpleste-Medium:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Simpleste-Medium.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1547289664
@@ -2022,6 +2358,7 @@ Simpleste-Medium:
   xxHash: [cf678cf268080b26]
   URL: https://gamebanana.com/mmdl/406846
 Geode Gauntlet:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Geode Gauntlet.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612222959
@@ -2029,6 +2366,7 @@ Geode Gauntlet:
   xxHash: [359c76274449635a]
   URL: https://gamebanana.com/mmdl/514710
 dadbodportraits:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/dadbodportraits.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1607927383
@@ -2036,6 +2374,7 @@ dadbodportraits:
   xxHash: [0b73f7a4313e8a85]
   URL: https://gamebanana.com/mmdl/501079
 EnchantedCanyon:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EnchantedCanyon.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1572794367
@@ -2043,6 +2382,7 @@ EnchantedCanyon:
   xxHash: [9cc1cfcfae5915a1]
   URL: https://gamebanana.com/mmdl/437483
 BingoUI:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BingoUI.zip
   GameBananaType: Gui
   Version: 1.2.0
   LastUpdate: 1597713084
@@ -2050,6 +2390,7 @@ BingoUI:
   xxHash: [9da04b96571db9d9]
   URL: https://gamebanana.com/mmdl/480935
 Celeste Castle:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Celeste Castle.zip
   GameBananaType: Map
   Version: '1.991'
   LastUpdate: 1549480456
@@ -2057,6 +2398,7 @@ Celeste Castle:
   xxHash: [39da0778b472b33d]
   URL: https://gamebanana.com/mmdl/409584
 Pray_Introscreen:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Pray_Introscreen.zip
   GameBananaType: Gui
   Version: 1.0.0
   LastUpdate: 1597355932
@@ -2064,6 +2406,7 @@ Pray_Introscreen:
   xxHash: [cc77870d10ed1b46]
   URL: https://gamebanana.com/mmdl/480296
 niko_-_celeste:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/niko_-_celeste.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1598582390
@@ -2071,6 +2414,7 @@ niko_-_celeste:
   xxHash: [0ff2f60eb00e34ff]
   URL: https://gamebanana.com/mmdl/482812
 PartOfMe:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/PartOfMe.zip
   GameBananaType: Map
   Version: 0.10.5
   LastUpdate: 1604198587
@@ -2078,6 +2422,7 @@ PartOfMe:
   xxHash: [f384fda7a2638a34]
   URL: https://gamebanana.com/mmdl/493569
 KaydenCommands:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/KaydenCommands.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1572987667
@@ -2085,6 +2430,7 @@ KaydenCommands:
   xxHash: [45b87b7e3149c559]
   URL: https://gamebanana.com/mmdl/437707
 IsaGrabBag:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/IsaGrabBag.zip
   GameBananaType: Gamefile
   Version: 1.4.1
   LastUpdate: 1613274260
@@ -2092,6 +2438,7 @@ IsaGrabBag:
   xxHash: [4ba58160a385e9ba]
   URL: https://gamebanana.com/mmdl/520286
 LuaCutscenes:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/LuaCutscenes.zip
   GameBananaType: Gamefile
   Version: 0.2.2
   LastUpdate: 1613774106
@@ -2099,6 +2446,7 @@ LuaCutscenes:
   xxHash: [929d752b80450200]
   URL: https://gamebanana.com/mmdl/522587
 YetAnotherHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/YetAnotherHelper.zip
   GameBananaType: Gamefile
   Version: 1.2.1
   LastUpdate: 1606784212
@@ -2106,6 +2454,8 @@ YetAnotherHelper:
   xxHash: [f7be6f66e54bd85b]
   URL: https://gamebanana.com/mmdl/498769
 DrIvanKO's Torture City:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DrIvanKO's Torture
+    City.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1603612931
@@ -2113,6 +2463,7 @@ DrIvanKO's Torture City:
   xxHash: [b6d142fc55660629]
   URL: https://gamebanana.com/mmdl/492427
 celeste_translated:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/celeste_translated.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1572103028
@@ -2120,6 +2471,8 @@ celeste_translated:
   xxHash: [43075dfaaeb0fdff]
   URL: https://gamebanana.com/mmdl/436480
 Ythundyth's Chapter 6 Death Label:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ythundyth's Chapter
+    6 Death Label.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1607476650
@@ -2127,13 +2480,23 @@ Ythundyth's Chapter 6 Death Label:
   xxHash: [dc645adc0f6d0492]
   URL: https://gamebanana.com/mmdl/500150
 second_try:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/second_try.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1613289749
   GameBananaId: 214852
   xxHash: [04de62c84bf46e28]
   URL: https://gamebanana.com/mmdl/520351
+Cold Ultra:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Cold Ultra.zip
+  GameBananaType: Map
+  Version: 1.0.0
+  LastUpdate: 1614891644
+  GameBananaId: 215236
+  xxHash: [645432033a07a2d5]
+  URL: https://gamebanana.com/mmdl/528348
 QuickieMountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/QuickieMountain.zip
   GameBananaType: Map
   Version: 1.1.1
   LastUpdate: 1614272700
@@ -2141,6 +2504,7 @@ QuickieMountain:
   xxHash: [c22981229063306e]
   URL: https://gamebanana.com/mmdl/525046
 SpoopyRepaint:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SpoopyRepaint.zip
   GameBananaType: Wip
   Version: 1.0.0
   LastUpdate: 1608330716
@@ -2148,6 +2512,7 @@ SpoopyRepaint:
   xxHash: [e9c21204e8a1aae2]
   URL: https://gamebanana.com/mmdl/501924
 FoeEnMonolith:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FoeEnMonolith.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1613705333
@@ -2155,6 +2520,7 @@ FoeEnMonolith:
   xxHash: [4618af7f430a5b09]
   URL: https://gamebanana.com/mmdl/522320
 Asleep:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Asleep.zip
   GameBananaType: Map
   Version: 1.7.0
   LastUpdate: 1602861783
@@ -2162,6 +2528,7 @@ Asleep:
   xxHash: [a5f6c71ed9239f1c]
   URL: https://gamebanana.com/mmdl/491021
 IntangibleClouds:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/IntangibleClouds.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1585781016
@@ -2169,6 +2536,7 @@ IntangibleClouds:
   xxHash: [acd518265f82213a]
   URL: https://gamebanana.com/mmdl/455381
 Rotating Resort:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Rotating Resort.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610229896
@@ -2176,13 +2544,15 @@ Rotating Resort:
   xxHash: [4c4a23a8597aaf9d]
   URL: https://gamebanana.com/mmdl/506773
 SpeedrunTool:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SpeedrunTool.zip
   GameBananaType: Tool
-  Version: 3.4.29
-  LastUpdate: 1614137370
+  Version: 3.4.30
+  LastUpdate: 1615040112
   GameBananaId: 6597
-  xxHash: [31a2e8eef0e1bea3]
-  URL: https://gamebanana.com/mmdl/524420
+  xxHash: [7cec207a31eccfc3]
+  URL: https://gamebanana.com/mmdl/529154
 Tsubasa no Aru:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Tsubasa no Aru.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1602174831
@@ -2190,6 +2560,7 @@ Tsubasa no Aru:
   xxHash: [f713daf148db1edf]
   URL: https://gamebanana.com/mmdl/489794
 Quill:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Quill.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613325766
@@ -2197,6 +2568,7 @@ Quill:
   xxHash: [96a991a422c40329]
   URL: https://gamebanana.com/mmdl/520478
 Ultra Hell:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ultra Hell.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1611969674
@@ -2204,6 +2576,7 @@ Ultra Hell:
   xxHash: [bdc72033d58c766a]
   URL: https://gamebanana.com/mmdl/513526
 Ideas, Ideas...:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ideas, Ideas....zip
   GameBananaType: Map
   Version: 0.1.1
   LastUpdate: 1598416007
@@ -2211,6 +2584,7 @@ Ideas, Ideas...:
   xxHash: [40a75a1a6f8c6011]
   URL: https://gamebanana.com/mmdl/482460
 What Could've Been:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/What Could've Been.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1597448510
@@ -2218,6 +2592,7 @@ What Could've Been:
   xxHash: [d829a2e56676cd22]
   URL: https://gamebanana.com/mmdl/480457
 Starter:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Starter.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1611437389
@@ -2225,6 +2600,7 @@ Starter:
   xxHash: [7b0fead0fea2c24e]
   URL: https://gamebanana.com/mmdl/511299
 DesertBus:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DesertBus.zip
   GameBananaType: Map
   Version: 1.4.0
   LastUpdate: 1596735304
@@ -2232,6 +2608,7 @@ DesertBus:
   xxHash: [b556855823723597]
   URL: https://gamebanana.com/mmdl/478888
 Bing World:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Bing World.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1610821865
@@ -2239,6 +2616,8 @@ Bing World:
   xxHash: [696550430d2f675d]
   URL: https://gamebanana.com/mmdl/508720
 Cycle Madness Garbage Version:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Cycle Madness Garbage
+    Version.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612252903
@@ -2246,6 +2625,7 @@ Cycle Madness Garbage Version:
   xxHash: [7964697bcaaa2c43]
   URL: https://gamebanana.com/mmdl/514822
 Needle Helper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Needle Helper.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1611568067
@@ -2253,6 +2633,7 @@ Needle Helper:
   xxHash: [786af5c29a7cc7f4]
   URL: https://gamebanana.com/mmdl/511864
 InputHistory:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/InputHistory.zip
   GameBananaType: Gui
   Version: 1.0.0
   LastUpdate: 1607152540
@@ -2260,6 +2641,7 @@ InputHistory:
   xxHash: [0a69acdd53a0f25a]
   URL: https://gamebanana.com/mmdl/499414
 PandorasBox:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/PandorasBox.zip
   GameBananaType: Gamefile
   Version: 1.0.29
   LastUpdate: 1612370153
@@ -2267,6 +2649,7 @@ PandorasBox:
   xxHash: [3a78aab8e506d2ab]
   URL: https://gamebanana.com/mmdl/515465
 Relogue:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Relogue.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1582917746
@@ -2274,6 +2657,7 @@ Relogue:
   xxHash: [c010525ea47afe12]
   URL: https://gamebanana.com/mmdl/450660
 MarioSkin:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MarioSkin.zip
   GameBananaType: Skin
   Version: '1.1'
   LastUpdate: 1594911951
@@ -2281,6 +2665,7 @@ MarioSkin:
   xxHash: [4a0559fe505cc91c]
   URL: https://gamebanana.com/mmdl/474680
 CelestialRetreatLodge:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CelestialRetreatLodge.zip
   GameBananaType: Map
   Version: 1.1.0
   LastUpdate: 1570822217
@@ -2288,6 +2673,7 @@ CelestialRetreatLodge:
   xxHash: [96f59ae4ac15660d]
   URL: https://gamebanana.com/mmdl/434825
 RockBottom:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/RockBottom.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1608860258
@@ -2295,6 +2681,7 @@ RockBottom:
   xxHash: [2bce26d07bab7cfc]
   URL: https://gamebanana.com/mmdl/503386
 CollabUtils:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CollabUtils.zip
   GameBananaType: Gamefile
   Version: 1.0.1
   LastUpdate: 1540994219
@@ -2302,6 +2689,7 @@ CollabUtils:
   xxHash: [74aa1c7a22a17e2c]
   URL: https://gamebanana.com/mmdl/400703
 DogSides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DogSides.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1597027451
@@ -2309,6 +2697,7 @@ DogSides:
   xxHash: [b869be22ea011f0f]
   URL: https://gamebanana.com/mmdl/479555
 NighttimeClimb:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/NighttimeClimb.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1608177396
@@ -2316,6 +2705,7 @@ NighttimeClimb:
   xxHash: [02d29d6e1a77211c]
   URL: https://gamebanana.com/mmdl/501586
 Levels of Darkness:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Levels of Darkness.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1528940655
@@ -2323,13 +2713,15 @@ Levels of Darkness:
   xxHash: [e5d0ea9f117c0da5]
   URL: https://gamebanana.com/mmdl/385724
 MaxHelpingHand:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MaxHelpingHand.zip
   GameBananaType: Gamefile
-  Version: 1.12.8
-  LastUpdate: 1614371997
+  Version: 1.13.0
+  LastUpdate: 1615054770
   GameBananaId: 11423
-  xxHash: [7ff172bc919922e5]
-  URL: https://gamebanana.com/mmdl/525541
+  xxHash: [65308c84124f9d32]
+  URL: https://gamebanana.com/mmdl/529260
 demonetized_celeste:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/demonetized_celeste.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1609637323
@@ -2337,6 +2729,7 @@ demonetized_celeste:
   xxHash: [ab8ab02997e8d1dc]
   URL: https://gamebanana.com/mmdl/505334
 snollswindpipes:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/snollswindpipes.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609356724
@@ -2344,6 +2737,7 @@ snollswindpipes:
   xxHash: [9226c3c23c9c8121]
   URL: https://gamebanana.com/mmdl/504581
 memorialHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/memorialHelper.zip
   GameBananaType: Tool
   Version: 1.0.3
   LastUpdate: 1604880758
@@ -2351,6 +2745,7 @@ memorialHelper:
   xxHash: [3b3d9673c85a48e1]
   URL: https://gamebanana.com/mmdl/494961
 EventMode:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EventMode.zip
   GameBananaType: Gamefile
   Version: 0.0.1
   LastUpdate: 1577010626
@@ -2358,6 +2753,7 @@ EventMode:
   xxHash: [3bf16c3242f6b688]
   URL: https://gamebanana.com/mmdl/442701
 CrystallineHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CrystallineHelper.zip
   GameBananaType: Gamefile
   Version: 1.9.0
   LastUpdate: 1614216018
@@ -2365,6 +2761,7 @@ CrystallineHelper:
   xxHash: [eca71b440ee65cf0]
   URL: https://gamebanana.com/mmdl/524807
 DashlessDreamBlocks:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DashlessDreamBlocks.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1582536257
@@ -2372,6 +2769,7 @@ DashlessDreamBlocks:
   xxHash: [4b77317da22c37d3]
   URL: https://gamebanana.com/mmdl/450168
 Starry_Sanctuary:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Starry_Sanctuary.zip
   GameBananaType: Map
   Version: 1.2138.0
   LastUpdate: 1608655835
@@ -2379,6 +2777,7 @@ Starry_Sanctuary:
   xxHash: [2737b6e2afa210c0]
   URL: https://gamebanana.com/mmdl/502755
 MorePieEndings:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MorePieEndings.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1612826383
@@ -2386,6 +2785,7 @@ MorePieEndings:
   xxHash: [3a61514a09fbd84a]
   URL: https://gamebanana.com/mmdl/517926
 SealsSummit:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SealsSummit.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1573601078
@@ -2393,6 +2793,7 @@ SealsSummit:
   xxHash: [12be3a84575dadb1]
   URL: https://gamebanana.com/mmdl/438464
 DeathMarkers:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DeathMarkers.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1562780390
@@ -2400,6 +2801,7 @@ DeathMarkers:
   xxHash: [21b35dcefa217bb9]
   URL: https://gamebanana.com/mmdl/425531
 DJMapHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DJMapHelper.zip
   GameBananaType: Gamefile
   Version: 1.8.27
   LastUpdate: 1613580075
@@ -2407,6 +2809,7 @@ DJMapHelper:
   xxHash: [5ffd612f98f35a6d]
   URL: https://gamebanana.com/mmdl/521728
 Ezel's CC-Sides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ezel's CC-Sides.zip
   GameBananaType: Map
   Version: 1.8.6
   LastUpdate: 1605220475
@@ -2414,6 +2817,7 @@ Ezel's CC-Sides:
   xxHash: [a405a5be4cb5032d]
   URL: https://gamebanana.com/mmdl/495596
 Astral Tower:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Astral Tower.zip
   GameBananaType: Map
   Version: 1.2.2
   LastUpdate: 1608600700
@@ -2421,6 +2825,7 @@ Astral Tower:
   xxHash: [5e9bc8fee931ece1]
   URL: https://gamebanana.com/mmdl/502644
 Dad'sTower:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Dad'sTower.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1607642003
@@ -2428,6 +2833,7 @@ Dad'sTower:
   xxHash: [f755297bbd09f174]
   URL: https://gamebanana.com/mmdl/500466
 GlyphAudio:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/GlyphAudio.zip
   GameBananaType: Gamefile
   Version: 1.2.0
   LastUpdate: 1610092147
@@ -2435,6 +2841,7 @@ GlyphAudio:
   xxHash: [811aa3ecc75ab4aa]
   URL: https://gamebanana.com/mmdl/506439
 KevlovDog:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/KevlovDog.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1599468013
@@ -2442,6 +2849,7 @@ KevlovDog:
   xxHash: [c905b466fb7858c5]
   URL: https://gamebanana.com/mmdl/484734
 Pidgey Skin:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Pidgey Skin.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1604620219
@@ -2449,6 +2857,7 @@ Pidgey Skin:
   xxHash: [b2f03c2ce5f5a681]
   URL: https://gamebanana.com/mmdl/494413
 TheSummitBadelineChallanges:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TheSummitBadelineChallanges.zip
   GameBananaType: Map
   Version: 0.2.1
   LastUpdate: 1604391632
@@ -2456,20 +2865,39 @@ TheSummitBadelineChallanges:
   xxHash: [6c7fa38af414b7a1]
   URL: https://gamebanana.com/mmdl/493976
 Peelsa:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Peelsa.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1612893785
   GameBananaId: 214716
   xxHash: [dc0e1e91b0109942]
   URL: https://gamebanana.com/mmdl/518258
+DELTASCENEONE:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DELTASCENEONE.zip
+  GameBananaType: Map
+  Version: '1.0'
+  LastUpdate: 1614823077
+  GameBananaId: 215222
+  xxHash: [d0da5e993d676075]
+  URL: https://gamebanana.com/mmdl/528033
 MaddieAsksMaddieToGetMilk:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MaddieAsksMaddieToGetMilk.zip
   GameBananaType: Map
   Version: 1.1.1
   LastUpdate: 1612030054
   GameBananaId: 213706
   xxHash: [66eeb477660dead9]
   URL: https://gamebanana.com/mmdl/513807
+TwigHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TwigHelper.zip
+  GameBananaType: Gamefile
+  Version: 1.1.2
+  LastUpdate: 1614779525
+  GameBananaId: 15942
+  xxHash: [ef0356031ae35efd]
+  URL: https://gamebanana.com/mmdl/527697
 NoDevilLivedOn:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/NoDevilLivedOn.zip
   GameBananaType: Map
   Version: NoVersion
   LastUpdate: 1527650145
@@ -2477,6 +2905,7 @@ NoDevilLivedOn:
   xxHash: [5d2d88817211f50b]
   URL: https://gamebanana.com/mmdl/384205
 Odessa:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Odessa.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610622456
@@ -2484,6 +2913,7 @@ Odessa:
   xxHash: [dfefae25d2380042]
   URL: https://gamebanana.com/mmdl/508029
 Dreams:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Dreams.zip
   GameBananaType: Map
   Version: '1.2'
   LastUpdate: 1582666730
@@ -2491,6 +2921,7 @@ Dreams:
   xxHash: [3422c989e7d5e587]
   URL: https://gamebanana.com/mmdl/450350
 EJRCompetitionSeptember2020:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EJRCompetitionSeptember2020.zip
   GameBananaType: Map
   Version: 1.0.5
   LastUpdate: 1604698867
@@ -2498,6 +2929,7 @@ EJRCompetitionSeptember2020:
   xxHash: [7ef13fb40aefaa04]
   URL: https://gamebanana.com/mmdl/494601
 FoxsDecalPack:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FoxsDecalPack.zip
   GameBananaType: Texture
   Version: 1.0.0
   LastUpdate: 1546086481
@@ -2505,6 +2937,7 @@ FoxsDecalPack:
   xxHash: [5ee0bc9977da2fef]
   URL: https://gamebanana.com/mmdl/405560
 SpicyMountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SpicyMountain.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1607225074
@@ -2512,6 +2945,7 @@ SpicyMountain:
   xxHash: [eca30253ed429412]
   URL: https://gamebanana.com/mmdl/499584
 Donker19CelesteMappingEvent:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Donker19CelesteMappingEvent.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1601212060
@@ -2519,6 +2953,7 @@ Donker19CelesteMappingEvent:
   xxHash: [bc52d47e071ee178]
   URL: https://gamebanana.com/mmdl/488114
 Madelocator:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Madelocator.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1562139073
@@ -2526,6 +2961,7 @@ Madelocator:
   xxHash: [73bb79c1f7dbd83c]
   URL: https://gamebanana.com/mmdl/424848
 Guneline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Guneline.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1597693299
@@ -2533,6 +2969,7 @@ Guneline:
   xxHash: [cff18737cbf6534e]
   URL: https://gamebanana.com/mmdl/480872
 cursedthings:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/cursedthings.zip
   GameBananaType: Skin
   Version: 1.0.3
   LastUpdate: 1612331027
@@ -2540,6 +2977,7 @@ cursedthings:
   xxHash: [ef7717b48b842cd4]
   URL: https://gamebanana.com/mmdl/515290
 Sedis-D Sakinom:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Sedis-D Sakinom.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613752283
@@ -2547,6 +2985,7 @@ Sedis-D Sakinom:
   xxHash: [c3317b3a22858b4e]
   URL: https://gamebanana.com/mmdl/522459
 ForkCity:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ForkCity.zip
   GameBananaType: Wip
   Version: 0.0.1
   LastUpdate: 1547959213
@@ -2554,6 +2993,7 @@ ForkCity:
   xxHash: [6d038db56c6aaba9]
   URL: https://gamebanana.com/mmdl/407662
 Leisure Time:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Leisure Time.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1606042118
@@ -2561,6 +3001,7 @@ Leisure Time:
   xxHash: [a953ba48b878df41]
   URL: https://gamebanana.com/mmdl/497239
 FrozenHeights:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FrozenHeights.zip
   GameBananaType: Map
   Version: 1.1.4
   LastUpdate: 1613890094
@@ -2568,6 +3009,7 @@ FrozenHeights:
   xxHash: [8fc460f22bc1ff09]
   URL: https://gamebanana.com/mmdl/523219
 Lake of Purity:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Lake of Purity.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1552151246
@@ -2575,6 +3017,7 @@ Lake of Purity:
   xxHash: [157cdfc743289177]
   URL: https://gamebanana.com/mmdl/413101
 BrokemiaHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BrokemiaHelper.zip
   GameBananaType: Gamefile
   Version: 1.2.2
   LastUpdate: 1613950633
@@ -2582,6 +3025,7 @@ BrokemiaHelper:
   xxHash: [52f6f509329db1cf]
   URL: https://gamebanana.com/mmdl/523535
 Islands of Mystery:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Islands of Mystery.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609527808
@@ -2589,6 +3033,7 @@ Islands of Mystery:
   xxHash: [1137a731065744c1]
   URL: https://gamebanana.com/mmdl/505063
 Ultra Heaven:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ultra Heaven.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1580767770
@@ -2596,6 +3041,7 @@ Ultra Heaven:
   xxHash: [55456aede034ae0f]
   URL: https://gamebanana.com/mmdl/447719
 AltLevelsHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AltLevelsHelper.zip
   GameBananaType: Gamefile
   Version: 1.1.0
   LastUpdate: 1601115741
@@ -2603,6 +3049,7 @@ AltLevelsHelper:
   xxHash: [6f6dddba98d684da]
   URL: https://gamebanana.com/mmdl/487937
 Space Peak:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Space Peak.zip
   GameBananaType: Map
   Version: '1.4'
   LastUpdate: 1607625736
@@ -2610,6 +3057,7 @@ Space Peak:
   xxHash: [2bf075f6a9766ffd]
   URL: https://gamebanana.com/mmdl/500420
 Desorum:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Desorum.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613241347
@@ -2617,6 +3065,7 @@ Desorum:
   xxHash: [e5c23483e6c3ac7a]
   URL: https://gamebanana.com/mmdl/520063
 HitboxFixer:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/HitboxFixer.zip
   GameBananaType: Gamefile
   Version: 1.0.2
   LastUpdate: 1595302352
@@ -2624,6 +3073,7 @@ HitboxFixer:
   xxHash: [f6e47e2a44d2763d]
   URL: https://gamebanana.com/mmdl/475623
 BlackholeHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BlackholeHelper.zip
   GameBananaType: Tool
   Version: 1.0.0
   LastUpdate: 1587143823
@@ -2631,6 +3081,7 @@ BlackholeHelper:
   xxHash: [8816549ef1f68e8b]
   URL: https://gamebanana.com/mmdl/457989
 6 Jump Hell:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/6 Jump Hell.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1605382348
@@ -2638,13 +3089,15 @@ BlackholeHelper:
   xxHash: [14e962d2fe8dc294]
   URL: https://gamebanana.com/mmdl/495923
 Chocoberries:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Chocoberries.zip
   GameBananaType: Skin
-  Version: 1.0.0
-  LastUpdate: 1613399024
+  Version: 1.0.1
+  LastUpdate: 1614729164
   GameBananaId: 188229
-  xxHash: [2d6078cb9c87d35f]
-  URL: https://gamebanana.com/mmdl/520828
+  xxHash: [f395a90851781703]
+  URL: https://gamebanana.com/mmdl/527507
 No-Backpack Other-Self:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/No-Backpack Other-Self.zip
   GameBananaType: Skin
   Version: 1.0.2
   LastUpdate: 1596079661
@@ -2652,6 +3105,7 @@ No-Backpack Other-Self:
   xxHash: [96165984711a9f03]
   URL: https://gamebanana.com/mmdl/477356
 MiniboxForMadeline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MiniboxForMadeline.zip
   GameBananaType: Gui
   Version: '1.0'
   LastUpdate: 1546202996
@@ -2659,6 +3113,7 @@ MiniboxForMadeline:
   xxHash: [9d93d9dfb7f0a24c]
   URL: https://gamebanana.com/mmdl/405738
 EmHelper tutorial:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EmHelper tutorial.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1605525099
@@ -2666,6 +3121,7 @@ EmHelper tutorial:
   xxHash: [8468c9c2d735a6e8]
   URL: https://gamebanana.com/mmdl/496237
 SpaceJam:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SpaceJam.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612806852
@@ -2673,6 +3129,7 @@ SpaceJam:
   xxHash: [b76ececd5fbfc775]
   URL: https://gamebanana.com/mmdl/517816
 Haunting Temple:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Haunting Temple.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1549253390
@@ -2680,13 +3137,15 @@ Haunting Temple:
   xxHash: [53cbba4fe732b91a]
   URL: https://gamebanana.com/mmdl/409321
 CollabUtils2:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CollabUtils2.zip
   GameBananaType: Gamefile
-  Version: 1.3.9
-  LastUpdate: 1612893351
+  Version: 1.3.10
+  LastUpdate: 1614938172
   GameBananaId: 12784
-  xxHash: [b91b9b8cee6ee088]
-  URL: https://gamebanana.com/mmdl/518257
+  xxHash: [2aea025a34ff2308]
+  URL: https://gamebanana.com/mmdl/528572
 playablecredits:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/playablecredits.zip
   GameBananaType: Map
   Version: 1.0.4
   LastUpdate: 1590245922
@@ -2694,6 +3153,7 @@ playablecredits:
   xxHash: [6def5b3281b26552]
   URL: https://gamebanana.com/mmdl/464448
 celeste_quest_for_the_super_meme:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/celeste_quest_for_the_super_meme.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1570492152
@@ -2701,6 +3161,7 @@ celeste_quest_for_the_super_meme:
   xxHash: [3d23aeccaecc53af]
   URL: https://gamebanana.com/mmdl/434537
 madelinegetsacall:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/madelinegetsacall.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612232147
@@ -2708,6 +3169,7 @@ madelinegetsacall:
   xxHash: [71b3cec1126e3036]
   URL: https://gamebanana.com/mmdl/514763
 FastPlayerDie:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FastPlayerDie.zip
   GameBananaType: Skin
   Version: 1.2.5
   LastUpdate: 1609980791
@@ -2715,6 +3177,7 @@ FastPlayerDie:
   xxHash: [eb8ffe3e7ebb82fd]
   URL: https://gamebanana.com/mmdl/506177
 ShortnSweet:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ShortnSweet.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1603299016
@@ -2722,6 +3185,7 @@ ShortnSweet:
   xxHash: [de9527802addbe4a]
   URL: https://gamebanana.com/mmdl/491793
 New Adventure:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/New Adventure.zip
   GameBananaType: Map
   Version: 0.5.2
   LastUpdate: 1611437765
@@ -2729,6 +3193,7 @@ New Adventure:
   xxHash: [448776c669582b91]
   URL: https://gamebanana.com/mmdl/511304
 HonlyHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/HonlyHelper.zip
   GameBananaType: Gamefile
   Version: 1.3.2
   LastUpdate: 1611529844
@@ -2736,6 +3201,8 @@ HonlyHelper:
   xxHash: [218a992d21fbea53]
   URL: https://gamebanana.com/mmdl/511693
 BlueXans Event Week Submission:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BlueXans Event Week
+    Submission.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599427741
@@ -2743,6 +3210,7 @@ BlueXans Event Week Submission:
   xxHash: [b8d60e156d0ebd6c]
   URL: https://gamebanana.com/mmdl/484645
 TimeTrials:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TimeTrials.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1579165271
@@ -2750,6 +3218,7 @@ TimeTrials:
   xxHash: [f213e9e7d2fecc50]
   URL: https://gamebanana.com/mmdl/445571
 RuntimeEntity:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/RuntimeEntity.zip
   GameBananaType: Gamefile
   Version: 1.1.0
   LastUpdate: 1587300614
@@ -2757,13 +3226,15 @@ RuntimeEntity:
   xxHash: [99fd5b35b2c98d17]
   URL: https://gamebanana.com/mmdl/458291
 CelesteTAS:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CelesteTAS.zip
   GameBananaType: Tool
-  Version: 3.2.2
-  LastUpdate: 1614346484
+  Version: 3.2.3
+  LastUpdate: 1615041804
   GameBananaId: 6715
-  xxHash: [ae6741e1d0cae32c]
-  URL: https://gamebanana.com/mmdl/525384
+  xxHash: [8b94be1a32e228be]
+  URL: https://gamebanana.com/mmdl/529167
 The Nightmare:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Nightmare.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1562480157
@@ -2771,6 +3242,7 @@ The Nightmare:
   xxHash: [ad359a762ffb9003]
   URL: https://gamebanana.com/mmdl/425231
 snollsspookmapcensored:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/snollsspookmapcensored.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1608593789
@@ -2778,6 +3250,7 @@ snollsspookmapcensored:
   xxHash: [715bf6f06f7d0933]
   URL: https://gamebanana.com/mmdl/502620
 RITE:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/RITE.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609734227
@@ -2785,13 +3258,15 @@ RITE:
   xxHash: [2c2097d91c2ece00]
   URL: https://gamebanana.com/mmdl/505565
 Farewell Plus:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Farewell Plus.zip
   GameBananaType: Map
-  Version: 1.8.0
-  LastUpdate: 1612043789
+  Version: 1.8.1
+  LastUpdate: 1614651529
   GameBananaId: 214364
-  xxHash: [087c1f2cb81ec498]
-  URL: https://gamebanana.com/mmdl/513884
+  xxHash: [b6a365e65c37f878]
+  URL: https://gamebanana.com/mmdl/527103
 7Duff:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/7Duff.zip
   GameBananaType: Map
   Version: 1.2.1
   LastUpdate: 1609546107
@@ -2799,6 +3274,7 @@ Farewell Plus:
   xxHash: [361c964d7e675acb]
   URL: https://gamebanana.com/mmdl/505122
 Bananas spoopy entry:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Bananas spoopy entry.zip
   GameBananaType: Map
   Version: 1.1.0
   LastUpdate: 1603818188
@@ -2806,6 +3282,7 @@ Bananas spoopy entry:
   xxHash: [10be4505614b9e50]
   URL: https://gamebanana.com/mmdl/492861
 Mountainasterisk:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Mountainasterisk.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610334641
@@ -2813,6 +3290,7 @@ Mountainasterisk:
   xxHash: [db1054f0809deb9c]
   URL: https://gamebanana.com/mmdl/507128
 GetOut:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/GetOut.zip
   GameBananaType: Map
   Version: '1.2'
   LastUpdate: 1551458470
@@ -2820,6 +3298,7 @@ GetOut:
   xxHash: [6fc37b808228a4d6]
   URL: https://gamebanana.com/mmdl/412127
 Celeste Binary Calculator:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Celeste Binary Calculator.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1605598275
@@ -2827,13 +3306,15 @@ Celeste Binary Calculator:
   xxHash: [c3eaa491d2bca094]
   URL: https://gamebanana.com/mmdl/496390
 BingoClient:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BingoClient.zip
   GameBananaType: Gui
-  Version: 0.0.6
-  LastUpdate: 1614451839
+  Version: 0.0.9
+  LastUpdate: 1614758870
   GameBananaId: 36684
-  xxHash: [684d2d99c8e84788]
-  URL: https://gamebanana.com/mmdl/525973
+  xxHash: [e3bb36c20af54daf]
+  URL: https://gamebanana.com/mmdl/527636
 AchingCavern:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AchingCavern.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1574240470
@@ -2841,6 +3322,8 @@ AchingCavern:
   xxHash: [6ff21ac782b9870b]
   URL: https://gamebanana.com/mmdl/439216
 Kayo's Dadbod Birthday Map:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Kayo's Dadbod Birthday
+    Map.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1607704670
@@ -2848,6 +3331,7 @@ Kayo's Dadbod Birthday Map:
   xxHash: [3e1658e783a8b7cb]
   URL: https://gamebanana.com/mmdl/500569
 GoldenBirdInJournal:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/GoldenBirdInJournal.zip
   GameBananaType: Gamefile
   Version: 1.1.0
   LastUpdate: 1571171689
@@ -2855,6 +3339,7 @@ GoldenBirdInJournal:
   xxHash: [fdf29829aa7cba41]
   URL: https://gamebanana.com/mmdl/435288
 NubMountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/NubMountain.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613070091
@@ -2862,6 +3347,7 @@ NubMountain:
   xxHash: [cca69652cd074e1f]
   URL: https://gamebanana.com/mmdl/519194
 Adrenaline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Adrenaline.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1607812634
@@ -2869,6 +3355,7 @@ Adrenaline:
   xxHash: [b804897d22049f71]
   URL: https://gamebanana.com/mmdl/500849
 CelesteArcade:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CelesteArcade.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1577711710
@@ -2876,6 +3363,8 @@ CelesteArcade:
   xxHash: [3be0dca2604e40af]
   URL: https://gamebanana.com/mmdl/443579
 My thing but for Donker18:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/My thing but for
+    Donker18.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1599426619
@@ -2883,6 +3372,7 @@ My thing but for Donker18:
   xxHash: [21413b075ab17abc]
   URL: https://gamebanana.com/mmdl/484640
 9tvb66v:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/9tvb66v.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1603673536
@@ -2890,6 +3380,7 @@ My thing but for Donker18:
   xxHash: [4a1dd696ca7aa597]
   URL: https://gamebanana.com/mmdl/492579
 LiquidMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/LiquidMod.zip
   GameBananaType: Effect
   Version: 1.0.0
   LastUpdate: 1565326670
@@ -2897,6 +3388,7 @@ LiquidMod:
   xxHash: [fdd5d1a55851159d]
   URL: https://gamebanana.com/mmdl/428338
 VortexHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/VortexHelper.zip
   GameBananaType: Gamefile
   Version: 1.1.0
   LastUpdate: 1612889068
@@ -2904,6 +3396,7 @@ VortexHelper:
   xxHash: [9f118bc9a79f7045]
   URL: https://gamebanana.com/mmdl/518231
 TheMine:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TheMine.zip
   GameBananaType: Map
   Version: 0.1.0
   LastUpdate: 1601719895
@@ -2911,6 +3404,7 @@ TheMine:
   xxHash: [ac7b55cac5ad261f]
   URL: https://gamebanana.com/mmdl/488963
 MoreDasheline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MoreDasheline.zip
   GameBananaType: Gamefile
   Version: 1.6.3
   LastUpdate: 1603031861
@@ -2918,6 +3412,7 @@ MoreDasheline:
   xxHash: [dddeb03450da4244]
   URL: https://gamebanana.com/mmdl/491359
 Sunset Mountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Sunset Mountain.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1590686064
@@ -2925,6 +3420,7 @@ Sunset Mountain:
   xxHash: [9035fa353929d1b3]
   URL: https://gamebanana.com/mmdl/465459
 GrannyTask:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/GrannyTask.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609527844
@@ -2932,13 +3428,23 @@ GrannyTask:
   xxHash: [bb2eee2da2b37e70]
   URL: https://gamebanana.com/mmdl/505065
 EasyRetry:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EasyRetry.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1548308480
   GameBananaId: 8248
   xxHash: [fe9a8f21a84e7702]
   URL: https://gamebanana.com/mmdl/408251
+Hehe:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Hehe.zip
+  GameBananaType: Map
+  Version: 0.0.5
+  LastUpdate: 1615023230
+  GameBananaId: 215271
+  xxHash: [5f6ee4d46ac79015]
+  URL: https://gamebanana.com/mmdl/529087
 Aftermath:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Aftermath.zip
   GameBananaType: Map
   Version: 1.2.4
   LastUpdate: 1599084083
@@ -2946,6 +3452,7 @@ Aftermath:
   xxHash: [5ed07ff9075b80ce]
   URL: https://gamebanana.com/mmdl/483903
 Dystopia:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Dystopia.zip
   GameBananaType: Map
   Version: 1.0.3
   LastUpdate: 1604003448
@@ -2953,6 +3460,7 @@ Dystopia:
   xxHash: [b1342796c37d02f3]
   URL: https://gamebanana.com/mmdl/493198
 Buried City:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Buried City.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1591574496
@@ -2960,6 +3468,7 @@ Buried City:
   xxHash: [49cf62dc3e4bf16e]
   URL: https://gamebanana.com/mmdl/467403
 ForgottenTrail:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ForgottenTrail.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1594850713
@@ -2967,6 +3476,7 @@ ForgottenTrail:
   xxHash: [c1fb6285f1b045f1]
   URL: https://gamebanana.com/mmdl/474517
 GrannySkin:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/GrannySkin.zip
   GameBananaType: Wip
   Version: 3.0.0
   LastUpdate: 1610831008
@@ -2974,6 +3484,7 @@ GrannySkin:
   xxHash: [c13fae62c88894b1]
   URL: https://gamebanana.com/mmdl/508760
 The Gauntlet:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Gauntlet.zip
   GameBananaType: Map
   Version: 1.2.0
   LastUpdate: 1612281091
@@ -2981,6 +3492,7 @@ The Gauntlet:
   xxHash: [ec2d29f1d92cdaf2]
   URL: https://gamebanana.com/mmdl/514920
 Farewell B-Side:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Farewell B-Side.zip
   GameBananaType: Map
   Version: '2.5'
   LastUpdate: 1611936267
@@ -2988,6 +3500,7 @@ Farewell B-Side:
   xxHash: [b19400405d0e5c53]
   URL: https://gamebanana.com/mmdl/513363
 Crimson Temple:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Crimson Temple.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1597499512
@@ -2995,6 +3508,7 @@ Crimson Temple:
   xxHash: [b4eff9814605c1e3]
   URL: https://gamebanana.com/mmdl/480530
 Synchronized Jumping:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Synchronized Jumping.zip
   GameBananaType: Map
   Version: 1.0.3
   LastUpdate: 1574462983
@@ -3002,6 +3516,7 @@ Synchronized Jumping:
   xxHash: [645d10745c2a698e]
   URL: https://gamebanana.com/mmdl/439477
 HildaMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/HildaMod.zip
   GameBananaType: Wip
   Version: 1.0.0
   LastUpdate: 1598679260
@@ -3009,6 +3524,7 @@ HildaMod:
   xxHash: [4315d9ed5543435a]
   URL: https://gamebanana.com/mmdl/483040
 The Abyss:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Abyss.zip
   GameBananaType: Map
   Version: '1.2'
   LastUpdate: 1614465230
@@ -3016,6 +3532,7 @@ The Abyss:
   xxHash: [7067563daab2025e]
   URL: https://gamebanana.com/mmdl/526073
 1AGV:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/1AGV.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1611441987
@@ -3023,6 +3540,7 @@ The Abyss:
   xxHash: [ae309489b00f9e8e]
   URL: https://gamebanana.com/mmdl/511330
 Trolleste:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Trolleste.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1601755181
@@ -3030,6 +3548,7 @@ Trolleste:
   xxHash: [4977432a10f0f340]
   URL: https://gamebanana.com/mmdl/489025
 CyberSkyline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CyberSkyline.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613443228
@@ -3037,6 +3556,7 @@ CyberSkyline:
   xxHash: [5b1e15de3825eaa4]
   URL: https://gamebanana.com/mmdl/521116
 DashPrologue:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DashPrologue.zip
   GameBananaType: Map
   Version: 2.0.1
   LastUpdate: 1609052535
@@ -3044,13 +3564,23 @@ DashPrologue:
   xxHash: [ed4bd401b66ae1c2]
   URL: https://gamebanana.com/mmdl/503762
 Maki's Maps:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Maki's Maps.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1597844709
   GameBananaId: 211493
   xxHash: [7aa43e1b42086c20]
   URL: https://gamebanana.com/mmdl/481212
+KatanaZERO:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/KatanaZERO.zip
+  GameBananaType: Map
+  Version: '1.2'
+  LastUpdate: 1614727137
+  GameBananaId: 215197
+  xxHash: [26eca471fe81594e]
+  URL: https://gamebanana.com/mmdl/527491
 Resting Grounds:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Resting Grounds.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1599678258
@@ -3058,6 +3588,7 @@ Resting Grounds:
   xxHash: [82df0abea1b0af87]
   URL: https://gamebanana.com/mmdl/485115
 Contest:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Contest.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599440515
@@ -3065,6 +3596,7 @@ Contest:
   xxHash: [5b6c7d49eb339f0c]
   URL: https://gamebanana.com/mmdl/484685
 Stardust Sanctum:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Stardust Sanctum.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1535577016
@@ -3072,6 +3604,7 @@ Stardust Sanctum:
   xxHash: [4eed2914b43ea01f]
   URL: https://gamebanana.com/mmdl/394972
 EnterTheSun:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EnterTheSun.zip
   GameBananaType: Wip
   Version: 1.0.0
   LastUpdate: 1548133808
@@ -3079,6 +3612,7 @@ EnterTheSun:
   xxHash: [3ac1ae098ab307c6]
   URL: https://gamebanana.com/mmdl/407959
 Speleology:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Speleology.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613868893
@@ -3086,6 +3620,7 @@ Speleology:
   xxHash: [caf80f8b8ce6916c]
   URL: https://gamebanana.com/mmdl/523108
 Solitude:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Solitude.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1585517910
@@ -3093,6 +3628,7 @@ Solitude:
   xxHash: [47d30b3b1c960ca4]
   URL: https://gamebanana.com/mmdl/454822
 FarewellGoldenAltEnding:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FarewellGoldenAltEnding.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1610761789
@@ -3100,6 +3636,7 @@ FarewellGoldenAltEnding:
   xxHash: [342c877b08a81f63]
   URL: https://gamebanana.com/mmdl/508518
 Remirrored:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Remirrored.zip
   GameBananaType: Map
   Version: 1.0.4
   LastUpdate: 1612948834
@@ -3107,6 +3644,7 @@ Remirrored:
   xxHash: [4951690b926d61f2]
   URL: https://gamebanana.com/mmdl/518541
 Snowy's Campaign:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Snowy's Campaign.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612317884
@@ -3114,6 +3652,7 @@ Snowy's Campaign:
   xxHash: [51791ae0930d9c0f]
   URL: https://gamebanana.com/mmdl/515222
 Badlands:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Badlands.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1607829314
@@ -3121,6 +3660,7 @@ Badlands:
   xxHash: [78e21e09b2a7621d]
   URL: https://gamebanana.com/mmdl/500885
 Ghost Blocks:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Ghost Blocks.zip
   GameBananaType: Map
   Version: 1.0.4
   LastUpdate: 1613522669
@@ -3128,6 +3668,7 @@ Ghost Blocks:
   xxHash: [27902554908db25a]
   URL: https://gamebanana.com/mmdl/521499
 DisposableTheo:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DisposableTheo.zip
   GameBananaType: Gamefile
   Version: 1.0.5
   LastUpdate: 1591598105
@@ -3135,6 +3676,7 @@ DisposableTheo:
   xxHash: [db82f5b05c794c2e]
   URL: https://gamebanana.com/mmdl/467455
 EchsMods:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EchsMods.zip
   GameBananaType: Map
   Version: 1.0.4
   LastUpdate: 1593996139
@@ -3142,6 +3684,7 @@ EchsMods:
   xxHash: [e78468e7c1037f3e]
   URL: https://gamebanana.com/mmdl/472349
 Neptune Temple:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Neptune Temple.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599371315
@@ -3149,6 +3692,7 @@ Neptune Temple:
   xxHash: [be5f8a2251411947]
   URL: https://gamebanana.com/mmdl/484506
 snollsvent:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/snollsvent.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1608593619
@@ -3156,6 +3700,7 @@ snollsvent:
   xxHash: [1858cdb8e8a2dae9]
   URL: https://gamebanana.com/mmdl/502616
 EmoteMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EmoteMod.zip
   GameBananaType: Tool
   Version: 1.4.0.8
   LastUpdate: 1606819844
@@ -3163,6 +3708,7 @@ EmoteMod:
   xxHash: [9aebd11bc028e381]
   URL: https://gamebanana.com/mmdl/498810
 Stuck In My Mind:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Stuck In My Mind.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1606773671
@@ -3170,6 +3716,7 @@ Stuck In My Mind:
   xxHash: [76264b4dbdb65112]
   URL: https://gamebanana.com/mmdl/498744
 rue_icycliff:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/rue_icycliff.zip
   GameBananaType: Map
   Version: 0.0.1
   LastUpdate: 1605119507
@@ -3177,6 +3724,7 @@ rue_icycliff:
   xxHash: [dc2668b0fea42a2b]
   URL: https://gamebanana.com/mmdl/495410
 GhostNetMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/GhostNetMod.zip
   GameBananaType: Gamefile
   Version: 1.3.14
   LastUpdate: 1534197663
@@ -3184,6 +3732,7 @@ GhostNetMod:
   xxHash: [264f24a9a7223e8c]
   URL: https://gamebanana.com/mmdl/393244
 TheVoid:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TheVoid.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1579149791
@@ -3191,6 +3740,7 @@ TheVoid:
   xxHash: [c973900cc05bb7fb]
   URL: https://gamebanana.com/mmdl/445554
 FrozenHeightsAudio:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FrozenHeightsAudio.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610556637
@@ -3198,6 +3748,7 @@ FrozenHeightsAudio:
   xxHash: [459db8a094eb56f5]
   URL: https://gamebanana.com/mmdl/507806
 Prideline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Prideline.zip
   GameBananaType: Skin
   Version: 1.1.5
   LastUpdate: 1613080070
@@ -3205,6 +3756,7 @@ Prideline:
   xxHash: [e6fd73ff99611532]
   URL: https://gamebanana.com/mmdl/519260
 Unknown Mountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Unknown Mountain.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1605027155
@@ -3212,6 +3764,7 @@ Unknown Mountain:
   xxHash: [1accf3a2cf4890c2]
   URL: https://gamebanana.com/mmdl/495238
 PolygonDreams:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/PolygonDreams.zip
   GameBananaType: Map
   Version: '5.2'
   LastUpdate: 1613378334
@@ -3219,6 +3772,7 @@ PolygonDreams:
   xxHash: [df989e6c578f0241]
   URL: https://gamebanana.com/mmdl/520745
 Forsaken City AA-side:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Forsaken City AA-side.zip
   GameBananaType: Wip
   Version: 0.5.0
   LastUpdate: 1614350228
@@ -3226,6 +3780,7 @@ Forsaken City AA-side:
   xxHash: [0c33181349e487f5]
   URL: https://gamebanana.com/mmdl/525393
 Birdeline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Birdeline.zip
   GameBananaType: Skin
   Version: 1.5.0
   LastUpdate: 1613663436
@@ -3233,13 +3788,23 @@ Birdeline:
   xxHash: [70ce203a9f840998]
   URL: https://gamebanana.com/mmdl/522096
 DogMountain:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DogMountain.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610488140
   GameBananaId: 214062
   xxHash: [d881d9b7bc2e9e6a]
   URL: https://gamebanana.com/mmdl/507596
+EeveeHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/EeveeHelper.zip
+  GameBananaType: Gamefile
+  Version: 1.0.2
+  LastUpdate: 1615000602
+  GameBananaId: 16356
+  xxHash: [632d564800a6b1d0]
+  URL: https://gamebanana.com/mmdl/528971
 DournMap:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DournMap.zip
   GameBananaType: Map
   Version: 0.0.1
   LastUpdate: 1535752104
@@ -3247,6 +3812,7 @@ DournMap:
   xxHash: [c23af87865d7f5cf]
   URL: https://gamebanana.com/mmdl/395150
 Jelly Dream:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Jelly Dream.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1605240511
@@ -3254,6 +3820,7 @@ Jelly Dream:
   xxHash: [31ed088c53a22a42]
   URL: https://gamebanana.com/mmdl/495647
 Untitledfarewellmap:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Untitledfarewellmap.zip
   GameBananaType: Wip
   Version: 0.1.0
   LastUpdate: 1611260044
@@ -3261,6 +3828,7 @@ Untitledfarewellmap:
   xxHash: [c84b36cbb2128ff7]
   URL: https://gamebanana.com/mmdl/510581
 Scattered Disc:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Scattered Disc.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1611054975
@@ -3268,6 +3836,7 @@ Scattered Disc:
   xxHash: [7ac469ad9f1665cc]
   URL: https://gamebanana.com/mmdl/509646
 DecrepitLocale:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DecrepitLocale.zip
   GameBananaType: Map
   Version: 1.1.0
   LastUpdate: 1565799785
@@ -3275,6 +3844,7 @@ DecrepitLocale:
   xxHash: [67050ca7592143d9]
   URL: https://gamebanana.com/mmdl/428902
 PathofHopeChapter:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/PathofHopeChapter.zip
   GameBananaType: Map
   Version: 1.0.3
   LastUpdate: 1569946598
@@ -3282,6 +3852,7 @@ PathofHopeChapter:
   xxHash: [227aaa9b3eeb7545]
   URL: https://gamebanana.com/mmdl/433840
 DialogCutscene:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DialogCutscene.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1542725525
@@ -3289,6 +3860,7 @@ DialogCutscene:
   xxHash: [e8c60ff3a137e14b]
   URL: https://gamebanana.com/mmdl/402388
 BloomCommand:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BloomCommand.zip
   GameBananaType: Gamefile
   Version: 0.0.1
   LastUpdate: 1598788091
@@ -3296,6 +3868,7 @@ BloomCommand:
   xxHash: [e874b42ccfafde84]
   URL: https://gamebanana.com/mmdl/483279
 CavernHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CavernHelper.zip
   GameBananaType: Gamefile
   Version: 1.3.3
   LastUpdate: 1610096240
@@ -3303,6 +3876,7 @@ CavernHelper:
   xxHash: [4049fb8daa7f8b9b]
   URL: https://gamebanana.com/mmdl/506448
 SSMQoLMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SSMQoLMod.zip
   GameBananaType: Gamefile
   Version: 1.0.2
   LastUpdate: 1609806269
@@ -3310,6 +3884,7 @@ SSMQoLMod:
   xxHash: [2a09a8f48018aaf8]
   URL: https://gamebanana.com/mmdl/505758
 Wolfy's garden decals:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Wolfy's garden decals.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1613690557
@@ -3317,6 +3892,7 @@ Wolfy's garden decals:
   xxHash: [2e33581aba06bac7]
   URL: https://gamebanana.com/mmdl/522240
 Boosterblind:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Boosterblind.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1613671806
@@ -3324,6 +3900,7 @@ Boosterblind:
   xxHash: [cf683fd980955011]
   URL: https://gamebanana.com/mmdl/522139
 FrostHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FrostHelper.zip
   GameBananaType: Gamefile
   Version: 1.22.4
   LastUpdate: 1614349023
@@ -3331,6 +3908,7 @@ FrostHelper:
   xxHash: [2cad5e7e5015b877]
   URL: https://gamebanana.com/mmdl/525389
 Madeline in Wonderland:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Madeline in Wonderland.zip
   GameBananaType: Map
   Version: NoVersion
   LastUpdate: 1601721162
@@ -3338,6 +3916,7 @@ Madeline in Wonderland:
   xxHash: [bcd4a1c5c266b0c1]
   URL: https://gamebanana.com/mmdl/488966
 CelesteEmojis:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/CelesteEmojis.zip
   GameBananaType: Gamefile
   Version: 1.3.0
   LastUpdate: 1610712256
@@ -3345,6 +3924,7 @@ CelesteEmojis:
   xxHash: [9662fab6ceecf108]
   URL: https://gamebanana.com/mmdl/508323
 Feelings:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Feelings.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609527829
@@ -3352,6 +3932,7 @@ Feelings:
   xxHash: [b7e741dd351c1e98]
   URL: https://gamebanana.com/mmdl/505064
 Partnership:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Partnership.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1594960966
@@ -3359,6 +3940,7 @@ Partnership:
   xxHash: [c946a50d9cdddf59]
   URL: https://gamebanana.com/mmdl/474828
 RhythmUniverse:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/RhythmUniverse.zip
   GameBananaType: Map
   Version: 1.2.1
   LastUpdate: 1597085391
@@ -3366,6 +3948,7 @@ RhythmUniverse:
   xxHash: [6ef93f1339465445]
   URL: https://gamebanana.com/mmdl/479650
 Mikuline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Mikuline.zip
   GameBananaType: Skin
   Version: '0.4'
   LastUpdate: 1611137510
@@ -3373,6 +3956,7 @@ Mikuline:
   xxHash: [0fe955b53dad383a]
   URL: https://gamebanana.com/mmdl/509990
 McLeste:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/McLeste.zip
   GameBananaType: Gamefile
   Version: 1.3.0
   LastUpdate: 1611320646
@@ -3380,6 +3964,8 @@ McLeste:
   xxHash: [d4f0a7cf1f8efd86]
   URL: https://gamebanana.com/mmdl/510837
 Donker's Mapping Contest Entry by RedBoule:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Donker's Mapping
+    Contest Entry by RedBoule.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599477997
@@ -3387,6 +3973,7 @@ Donker's Mapping Contest Entry by RedBoule:
   xxHash: [0e1080f308645d8c]
   URL: https://gamebanana.com/mmdl/484759
 7BSingleDashVer:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/7BSingleDashVer.zip
   GameBananaType: Map
   Version: 2.0.0
   LastUpdate: 1534000646
@@ -3394,6 +3981,7 @@ Donker's Mapping Contest Entry by RedBoule:
   xxHash: [8db5d69c6905e149]
   URL: https://gamebanana.com/mmdl/392995
 T-Pose:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/T-Pose.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1613447332
@@ -3401,6 +3989,7 @@ T-Pose:
   xxHash: [edc4376c56279ccb]
   URL: https://gamebanana.com/mmdl/521135
 SpringCollab2020Audio:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SpringCollab2020Audio.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1599575103
@@ -3408,6 +3997,7 @@ SpringCollab2020Audio:
   xxHash: [312e55329aea1c7a]
   URL: https://gamebanana.com/mmdl/484937
 TobyaaaBubbleCompEntry:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TobyaaaBubbleCompEntry.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1608427265
@@ -3415,6 +4005,7 @@ TobyaaaBubbleCompEntry:
   xxHash: [29bc5ba24582dce4]
   URL: https://gamebanana.com/mmdl/502163
 FacingFears:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FacingFears.zip
   GameBananaType: Map
   Version: 1.0.3
   LastUpdate: 1596855762
@@ -3422,6 +4013,7 @@ FacingFears:
   xxHash: [bcd3ae1c864bfb1e]
   URL: https://gamebanana.com/mmdl/479179
 SuperHotMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SuperHotMod.zip
   GameBananaType: Gamefile
   Version: 2.0.0
   LastUpdate: 1567660611
@@ -3429,6 +4021,7 @@ SuperHotMod:
   xxHash: [ab8e6117a0ef3cab]
   URL: https://gamebanana.com/mmdl/430983
 Jelly Factory:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Jelly Factory.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1614151202
@@ -3436,6 +4029,7 @@ Jelly Factory:
   xxHash: [4dae9842f03f5e68]
   URL: https://gamebanana.com/mmdl/524480
 WeirdOldSite:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/WeirdOldSite.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609618709
@@ -3443,6 +4037,7 @@ WeirdOldSite:
   xxHash: [ccfcd335c9a86b67]
   URL: https://gamebanana.com/mmdl/505272
 JaThePlayerContests:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/JaThePlayerContests.zip
   GameBananaType: Map
   Version: 1.0.3
   LastUpdate: 1599485465
@@ -3450,6 +4045,7 @@ JaThePlayerContests:
   xxHash: [5b98c4b8fa79d93c]
   URL: https://gamebanana.com/mmdl/484788
 ProBananaBirdMod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ProBananaBirdMod.zip
   GameBananaType: Skin
   Version: 1.0.0
   LastUpdate: 1612684414
@@ -3457,6 +4053,7 @@ ProBananaBirdMod:
   xxHash: [3e6ff1145531f70f]
   URL: https://gamebanana.com/mmdl/517289
 The Pit:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Pit.zip
   GameBananaType: Map
   Version: 0.7.2
   LastUpdate: 1570798695
@@ -3464,13 +4061,15 @@ The Pit:
   xxHash: [1fd3fb19eeb06c57]
   URL: https://gamebanana.com/mmdl/434803
 crowberrydecalpack:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/crowberrydecalpack.zip
   GameBananaType: Gamefile
   Version: 0.1.0
-  LastUpdate: 1611514768
+  LastUpdate: 1614660169
   GameBananaId: 13866
-  xxHash: [0891e9563b8623cd]
-  URL: https://gamebanana.com/mmdl/511589
+  xxHash: [76aa80d1c3369821]
+  URL: https://gamebanana.com/mmdl/527158
 Point of No Return:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Point of No Return.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1574462797
@@ -3478,6 +4077,7 @@ Point of No Return:
   xxHash: [0ef55d035c58103f]
   URL: https://gamebanana.com/mmdl/439475
 Intermediate:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Intermediate.zip
   GameBananaType: Map
   Version: 1.1.1
   LastUpdate: 1604699291
@@ -3485,6 +4085,7 @@ Intermediate:
   xxHash: [f25cf2f648955a41]
   URL: https://gamebanana.com/mmdl/494602
 Rolling Thunder:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Rolling Thunder.zip
   GameBananaType: Map
   Version: NoVersion
   LastUpdate: 1539609605
@@ -3492,6 +4093,7 @@ Rolling Thunder:
   xxHash: [51cc350e324b7afd]
   URL: https://gamebanana.com/mmdl/399245
 Breath:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Breath.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612914752
@@ -3499,6 +4101,7 @@ Breath:
   xxHash: [512ccdc3308838f7]
   URL: https://gamebanana.com/mmdl/518369
 MagicValley:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MagicValley.zip
   GameBananaType: Map
   Version: 1.4.1
   LastUpdate: 1572025394
@@ -3506,6 +4109,7 @@ MagicValley:
   xxHash: [6222392dd177949e]
   URL: https://gamebanana.com/mmdl/436325
 TemporalShrine:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TemporalShrine.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1605910820
@@ -3513,6 +4117,7 @@ TemporalShrine:
   xxHash: [a7e6fb54e731f578]
   URL: https://gamebanana.com/mmdl/496946
 3CBuffed:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/3CBuffed.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1612231032
@@ -3520,6 +4125,7 @@ TemporalShrine:
   xxHash: [58fba6607bbcd2ae]
   URL: https://gamebanana.com/mmdl/514758
 The Fall:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Fall.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1613118208
@@ -3527,6 +4133,8 @@ The Fall:
   xxHash: [5d247f03bc2586bf]
   URL: https://gamebanana.com/mmdl/519474
 Madeline's bizarre adventure:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Madeline's bizarre
+    adventure.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1533107493
@@ -3534,6 +4142,7 @@ Madeline's bizarre adventure:
   xxHash: [b7c95c1d16749c42]
   URL: https://gamebanana.com/mmdl/391735
 OneScreenChallenges:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/OneScreenChallenges.zip
   GameBananaType: Map
   Version: 1.1.0
   LastUpdate: 1551203473
@@ -3541,6 +4150,7 @@ OneScreenChallenges:
   xxHash: [9eeb3051721cfa3a]
   URL: https://gamebanana.com/mmdl/411803
 InvertedControls:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/InvertedControls.zip
   GameBananaType: Gamefile
   Version: 1.1.1
   LastUpdate: 1588053418
@@ -3548,6 +4158,7 @@ InvertedControls:
   xxHash: [99d0220e856db91c]
   URL: https://gamebanana.com/mmdl/459839
 Inner_Depths:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Inner_Depths.zip
   GameBananaType: Map
   Version: 1.1.9
   LastUpdate: 1589131247
@@ -3555,6 +4166,7 @@ Inner_Depths:
   xxHash: [a7d22426a8ffa297]
   URL: https://gamebanana.com/mmdl/462110
 Quibble:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Quibble.zip
   GameBananaType: Skin
   Version: 0.0.1
   LastUpdate: 1612843045
@@ -3562,6 +4174,7 @@ Quibble:
   xxHash: [a6ea726d5add9fa1]
   URL: https://gamebanana.com/mmdl/518040
 JackalHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/JackalHelper.zip
   GameBananaType: Gamefile
   Version: 1.3.5
   LastUpdate: 1612655668
@@ -3569,6 +4182,7 @@ JackalHelper:
   xxHash: [3d490f283115bda9]
   URL: https://gamebanana.com/mmdl/517118
 Downwards:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Downwards.zip
   GameBananaType: Map
   Version: 1.1.0
   LastUpdate: 1598723004
@@ -3576,6 +4190,7 @@ Downwards:
   xxHash: [055a986a1456b622]
   URL: https://gamebanana.com/mmdl/483135
 SummitDownhill:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SummitDownhill.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1537374355
@@ -3583,6 +4198,7 @@ SummitDownhill:
   xxHash: [bee777b2051ffe06]
   URL: https://gamebanana.com/mmdl/396959
 ShroomHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ShroomHelper.zip
   GameBananaType: Gamefile
   Version: 1.0.1
   LastUpdate: 1589834522
@@ -3590,6 +4206,7 @@ ShroomHelper:
   xxHash: [900647e1b4a1ca51]
   URL: https://gamebanana.com/mmdl/463619
 Rectangles:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Rectangles.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1609457924
@@ -3597,6 +4214,7 @@ Rectangles:
   xxHash: [663524e3942d4445]
   URL: https://gamebanana.com/mmdl/504881
 OshirosFunRide:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/OshirosFunRide.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1606427254
@@ -3604,6 +4222,7 @@ OshirosFunRide:
   xxHash: [c5749f66971810bd]
   URL: https://gamebanana.com/mmdl/498032
 Veryepicmap:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Veryepicmap.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1570055426
@@ -3611,6 +4230,7 @@ Veryepicmap:
   xxHash: [5c83b0d165430df8]
   URL: https://gamebanana.com/mmdl/433971
 KaydenFoxWatchtowerTax:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/KaydenFoxWatchtowerTax.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1612912899
@@ -3618,6 +4238,7 @@ KaydenFoxWatchtowerTax:
   xxHash: [454141539503f54a]
   URL: https://gamebanana.com/mmdl/518353
 Anubi:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Anubi.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610825658
@@ -3625,6 +4246,8 @@ Anubi:
   xxHash: [07b61a34dfab8fe3]
   URL: https://gamebanana.com/mmdl/508733
 For iamdadbod 2 dadbolic boogaloo:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/For iamdadbod 2 dadbolic
+    boogaloo.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1607711782
@@ -3632,6 +4255,7 @@ For iamdadbod 2 dadbolic boogaloo:
   xxHash: [710f5e2db8664303]
   URL: https://gamebanana.com/mmdl/500589
 MeatOfTheDSides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MeatOfTheDSides.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1592960540
@@ -3639,6 +4263,7 @@ MeatOfTheDSides:
   xxHash: [038d62e19431bdcb]
   URL: https://gamebanana.com/mmdl/470250
 Seasides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Seasides.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1613019006
@@ -3646,6 +4271,7 @@ Seasides:
   xxHash: [022e3c867ed578f0]
   URL: https://gamebanana.com/mmdl/518957
 Monika's D-Sides:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Monika's D-Sides.zip
   GameBananaType: Map
   Version: '3.72'
   LastUpdate: 1612854290
@@ -3653,13 +4279,23 @@ Monika's D-Sides:
   xxHash: [787482d6dd7c68d2]
   URL: https://gamebanana.com/mmdl/518084
 QuickJelly:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/QuickJelly.zip
   GameBananaType: Gamefile
   Version: 1.0.5
   LastUpdate: 1592360434
   GameBananaId: 11283
   xxHash: [7d2533985d81c225]
   URL: https://gamebanana.com/mmdl/469055
+Shade World:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Shade World.zip
+  GameBananaType: Map
+  Version: '1.04'
+  LastUpdate: 1615049432
+  GameBananaId: 215230
+  xxHash: [ae0ead56db73c5bf]
+  URL: https://gamebanana.com/mmdl/529211
 Sky City:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Sky City.zip
   GameBananaType: Map
   Version: '1.0'
   LastUpdate: 1591816450
@@ -3667,6 +4303,7 @@ Sky City:
   xxHash: [08689e05f658577a]
   URL: https://gamebanana.com/mmdl/467896
 Winter Peak:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Winter Peak.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1594357163
@@ -3674,6 +4311,7 @@ Winter Peak:
   xxHash: [f68201c449eacd5e]
   URL: https://gamebanana.com/mmdl/473495
 Off Trail:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Off Trail.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1612490212
@@ -3681,6 +4319,7 @@ Off Trail:
   xxHash: [3f188d6a82719837]
   URL: https://gamebanana.com/mmdl/516244
 HARDOLDSITE:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/HARDOLDSITE.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1598687505
@@ -3688,6 +4327,7 @@ HARDOLDSITE:
   xxHash: [f72aca3e850d9511]
   URL: https://gamebanana.com/mmdl/483056
 FlamerSkylineBounces:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FlamerSkylineBounces.zip
   GameBananaType: Wip
   Version: 0.2.0
   LastUpdate: 1614479864
@@ -3695,20 +4335,15 @@ FlamerSkylineBounces:
   xxHash: [78fc146661af9b18]
   URL: https://gamebanana.com/mmdl/526165
 SummitPrologue:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SummitPrologue.zip
   GameBananaType: Map
   Version: '1.45'
   LastUpdate: 1579209268
   GameBananaId: 206633
   xxHash: [6f72b4a34be0caac]
   URL: https://gamebanana.com/mmdl/445625
-DashlessAndGrabless:
-  GameBananaType: Map
-  Version: '7.1'
-  LastUpdate: 1584125747
-  GameBananaId: 207805
-  xxHash: [6b56848465d4f1d6]
-  URL: https://gamebanana.com/mmdl/452357
 The Crystal City:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/The Crystal City.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1569425144
@@ -3716,6 +4351,7 @@ The Crystal City:
   xxHash: [b6b4645203c8241b]
   URL: https://gamebanana.com/mmdl/433162
 For iamdadbod:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/For iamdadbod.zip
   GameBananaType: Map
   Version: 1.0.1
   LastUpdate: 1601320651
@@ -3723,6 +4359,7 @@ For iamdadbod:
   xxHash: [adee11bed7655765]
   URL: https://gamebanana.com/mmdl/488331
 SpeedCommands:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/SpeedCommands.zip
   GameBananaType: Gamefile
   Version: 1.0.0
   LastUpdate: 1570927559
@@ -3730,6 +4367,7 @@ SpeedCommands:
   xxHash: [68936982f9e8186e]
   URL: https://gamebanana.com/mmdl/434983
 HardcoreMode:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/HardcoreMode.zip
   GameBananaType: Gamefile
   Version: 1.0.5
   LastUpdate: 1611976463
@@ -3737,6 +4375,7 @@ HardcoreMode:
   xxHash: [62a1b071a65f70df]
   URL: https://gamebanana.com/mmdl/513553
 AdventureHelper:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AdventureHelper.zip
   GameBananaType: Gamefile
   Version: 1.5.1
   LastUpdate: 1613601588
@@ -3744,6 +4383,7 @@ AdventureHelper:
   xxHash: [ead8194da92a8230]
   URL: https://gamebanana.com/mmdl/521836
 TornadoValleyConcept:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TornadoValleyConcept.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1539530564
@@ -3751,6 +4391,7 @@ TornadoValleyConcept:
   xxHash: [7de192cf21bc8d4d]
   URL: https://gamebanana.com/mmdl/399127
 Mario-1-1:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Mario-1-1.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1527673754
@@ -3758,6 +4399,7 @@ Mario-1-1:
   xxHash: [88285e08a29bd420]
   URL: https://gamebanana.com/mmdl/384223
 MarathonOfBlades:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/MarathonOfBlades.zip
   GameBananaType: Map
   Version: NoVersion
   LastUpdate: 1527474720
@@ -3765,6 +4407,7 @@ MarathonOfBlades:
   xxHash: [9b26f0971145dc44]
   URL: https://gamebanana.com/mmdl/383958
 Sunset Rise:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Sunset Rise.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1605441045
@@ -3772,6 +4415,8 @@ Sunset Rise:
   xxHash: [a57de4c97276d68c]
   URL: https://gamebanana.com/mmdl/496055
 B side The adventure of OI!:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/B side The adventure
+    of OI!.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1610382893
@@ -3779,6 +4424,7 @@ B side The adventure of OI!:
   xxHash: [ed49c8fde81ec2cf]
   URL: https://gamebanana.com/mmdl/507259
 AsparagiiDusk:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AsparagiiDusk.zip
   GameBananaType: Map
   Version: 1.1.1
   LastUpdate: 1613597602
@@ -3786,6 +4432,7 @@ AsparagiiDusk:
   xxHash: [38983c9fda677a95]
   URL: https://gamebanana.com/mmdl/521813
 FullClearStamp:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/FullClearStamp.zip
   GameBananaType: Gui
   Version: 2.0.1
   LastUpdate: 1585054492
@@ -3793,6 +4440,7 @@ FullClearStamp:
   xxHash: [8af19dde5b389470]
   URL: https://gamebanana.com/mmdl/454047
 PruebasDeBadeline:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/PruebasDeBadeline.zip
   GameBananaType: Map
   Version: 3.1.3
   LastUpdate: 1613690568
@@ -3800,6 +4448,8 @@ PruebasDeBadeline:
   xxHash: [536b1cd22ca7bb24]
   URL: https://gamebanana.com/mmdl/522241
 AvapXia's Super Dash Series:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/AvapXia's Super Dash
+    Series.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1589249494
@@ -3807,6 +4457,7 @@ AvapXia's Super Dash Series:
   xxHash: [21bc1309c47825c7]
   URL: https://gamebanana.com/mmdl/462432
 DebugConsole:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/DebugConsole.zip
   GameBananaType: Tool
   Version: 0.1.2
   LastUpdate: 1613634580
@@ -3814,6 +4465,7 @@ DebugConsole:
   xxHash: [a7ab4715d3794c6d]
   URL: https://gamebanana.com/mmdl/521991
 mastarscollabpart:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/mastarscollabpart.zip
   GameBananaType: Map
   Version: '2.3'
   LastUpdate: 1587749544
@@ -3821,6 +4473,7 @@ mastarscollabpart:
   xxHash: [69e5684622a414da]
   URL: https://gamebanana.com/mmdl/459204
 BadelinesRealm:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/BadelinesRealm.zip
   GameBananaType: Map
   Version: 1.0.2
   LastUpdate: 1604185762
@@ -3828,6 +4481,7 @@ BadelinesRealm:
   xxHash: [1f30998b86c26ff1]
   URL: https://gamebanana.com/mmdl/493525
 ForgottenBuildings:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/ForgottenBuildings.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1608771161
@@ -3835,6 +4489,7 @@ ForgottenBuildings:
   xxHash: [80359b4c33eace8c]
   URL: https://gamebanana.com/mmdl/503095
 Collab-2018-10:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Collab-2018-10.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1592503829
@@ -3842,6 +4497,7 @@ Collab-2018-10:
   xxHash: [0bf2df740591b906, e3a1c976cc7b31b1]
   URL: https://gamebanana.com/mmdl/469305
 A resort in the sky:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/A resort in the sky.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1595450881
@@ -3849,13 +4505,15 @@ A resort in the sky:
   xxHash: [de7d89dbb713604d]
   URL: https://gamebanana.com/mmdl/475969
 PrideHearts:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/PrideHearts.zip
   GameBananaType: Skin
   Version: 1.1.0
-  LastUpdate: 1610147436
+  LastUpdate: 1614890430
   GameBananaId: 184359
-  xxHash: [9e6fb87d9894b65c]
-  URL: https://gamebanana.com/mmdl/506555
+  xxHash: [64d78a249df3a17a]
+  URL: https://gamebanana.com/mmdl/528341
 Insanelynicemap:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Insanelynicemap.zip
   GameBananaType: Map
   Version: '1.1'
   LastUpdate: 1569100542
@@ -3863,6 +4521,7 @@ Insanelynicemap:
   xxHash: [c976391c5b9a28c8]
   URL: https://gamebanana.com/mmdl/432728
 OrigFlagSound:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/OrigFlagSound.zip
   GameBananaType: Gamefile
   Version: 1.1.0
   LastUpdate: 1612214918
@@ -3870,6 +4529,8 @@ OrigFlagSound:
   xxHash: [2cb0b78c1088cabf]
   URL: https://gamebanana.com/mmdl/514670
 Madeline's bizarre adventure Golden wind:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/Madeline's bizarre
+    adventure Golden wind.zip
   GameBananaType: Map
   Version: 1.0.0
   LastUpdate: 1552926980
@@ -3877,6 +4538,7 @@ Madeline's bizarre adventure Golden wind:
   xxHash: [5afb9e1180e0fafb]
   URL: https://gamebanana.com/mmdl/414062
 TheoModv2:
+  MirrorURL: https://storage.googleapis.com/max480-banana-mirror/TheoModv2.zip
   GameBananaType: Skin
   Version: 1.0.2
   LastUpdate: 1610484637

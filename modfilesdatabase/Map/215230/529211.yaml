@@ -1,0 +1,154 @@
+[Audio/Shade World.bank, Audio/Shade World.guids.txt, DecalRegistry.xml, Dialog/English.txt,
+  everest.yaml, Graphics/Atlases/Checkpoints/coffe/Shade World/ShadeWorld/A/Start.png,
+  Graphics/Atlases/Checkpoints/coffe/Shade World/ShadeWorld/A/sw2-8.png, Graphics/Atlases/Checkpoints/coffe/Shade
+    World/ShadeWorld/A/sw2-914.png, Graphics/Atlases/Checkpoints/coffe/Shade World/ShadeWorld/A/sw3-13.png,
+  Graphics/Atlases/Checkpoints/coffe/Shade World/ShadeWorld/A/sw3-6.png, Graphics/Atlases/Endscreens/coffe/Shade
+    World/00.png, Graphics/Atlases/Endscreens/coffe/Shade World/01.png, Graphics/Atlases/Endscreens/coffe/Shade
+    World/02.png, Graphics/Atlases/Endscreens/coffe/Shade World/03.png, Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/BG00.png,
+  Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/BG01 - Copy.png, Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/BG01.png,
+  Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/BG02.png, Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/BG03.png,
+  Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/BG04.png, Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/BG05.png,
+  Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/BG06.png, Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/FX0.png,
+  Graphics/Atlases/Gameplay/bgs/coffe/coffe_mod/FX1.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/backCrystals2fps00.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/backCrystals2fps01.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/backCrystals2fps02.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/backCrystals2fps03.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/backCrystals2fps04.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/backCrystals2fps05.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/backCrystals2fps06.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/backCrystals2fps07.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/bgPurpleRays2fps00.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/bgPurpleRays2fps01.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS1fps06.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps00.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps01.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps02.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps03.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps04.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps05.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps06.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps07.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps08.golden_png.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps08.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps09.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps10.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps11.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps12.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/CYSTALS2fps13.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_backCrystals2fps00.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_backCrystals2fps01.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_backCrystals2fps02.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_backCrystals2fps03.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_backCrystals2fps04.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_backCrystals2fps05.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_backCrystals2fps06.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_backCrystals2fps07.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps00.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps01.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps02.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps03.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps04.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps05.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps06.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps07.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps08.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps09.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps10.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps11.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps12.png, Graphics/Atlases/Gameplay/bgs/MaxHelpingHand/animatedParallax/Shade
+    World/golden_CYSTALS2fps13.png, Graphics/Atlases/Gameplay/characters/coffe/none00.png,
+  Graphics/Atlases/Gameplay/collectables/bounceGem/gem00.png, Graphics/Atlases/Gameplay/collectables/bounceGem/gem01.png,
+  Graphics/Atlases/Gameplay/collectables/bounceGem/gem02.png, Graphics/Atlases/Gameplay/collectables/bounceGem/gem03.png,
+  Graphics/Atlases/Gameplay/collectables/bounceGem/gem04.png, Graphics/Atlases/Gameplay/collectables/bounceGem/gem05.png,
+  Graphics/Atlases/Gameplay/collectables/bounceGem/gem06.png, Graphics/Atlases/Gameplay/collectables/bounceGem/gem07.png,
+  Graphics/Atlases/Gameplay/collectables/bounceGem/gem08.png, Graphics/Atlases/Gameplay/collectables/bounceGem/gem09.png,
+  Graphics/Atlases/Gameplay/collectables/bounceGem/gem10.png, Graphics/Atlases/Gameplay/collectables/bounceGem/gem11.png,
+  Graphics/Atlases/Gameplay/collectables/bounceGem/gem12.png, Graphics/Atlases/Gameplay/collectables/bounceGem/gem13.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/00.png, Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/01.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/02.png, Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/03.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/04.png, Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/05.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/06.png, Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/07.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/08.png, Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/09.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/10.png, Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/11.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/12.png, Graphics/Atlases/Gameplay/collectables/heartGem/coffe_green/13.png,
+  Graphics/Atlases/Gameplay/collectables/heartGem/green heart.zip, Graphics/Atlases/Gameplay/danger/crystal/sat_white.zip,
+  Graphics/Atlases/Gameplay/danger/crystal/sat_white/bg_sat_white00.png, Graphics/Atlases/Gameplay/danger/crystal/sat_white/debris.png,
+  Graphics/Atlases/Gameplay/danger/crystal/sat_white/fg_sat_white00.png, Graphics/Atlases/Gameplay/danger/crystal/sat_white/fg_sat_white01.png,
+  Graphics/Atlases/Gameplay/danger/crystal/sat_white/fg_sat_white02.png, Graphics/Atlases/Gameplay/danger/crystal/sat_white/fg_sat_white03.png,
+  Graphics/Atlases/Gameplay/danger/spikes/coffe/ccropped_down00.png, Graphics/Atlases/Gameplay/danger/spikes/coffe/ccropped_left00.png,
+  Graphics/Atlases/Gameplay/danger/spikes/coffe/ccropped_right00.png, Graphics/Atlases/Gameplay/danger/spikes/coffe/ccropped_up00.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bar_h.png, Graphics/Atlases/Gameplay/decals/coffe/bars.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_c_a.png, Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_c_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_c_c.png, Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_c_d.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_h_a.png, Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_h_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_h_c.png, Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_h_d.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_h_e.png, Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_h_f.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_h_g.png, Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_h_h.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_v_a.png, Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_v_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_v_c.png, Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_v_d.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_v_e.png, Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_v_f.png,
+  Graphics/Atlases/Gameplay/decals/coffe/bg_symbols_v_g.png, Graphics/Atlases/Gameplay/decals/coffe/broken_arch.png,
+  Graphics/Atlases/Gameplay/decals/coffe/chest_a.png, Graphics/Atlases/Gameplay/decals/coffe/coffe_fern.png,
+  Graphics/Atlases/Gameplay/decals/coffe/coffe_hint.png, Graphics/Atlases/Gameplay/decals/coffe/coffe_none.png,
+  Graphics/Atlases/Gameplay/decals/coffe/collumn_bot.png, Graphics/Atlases/Gameplay/decals/coffe/collumn_broken_bot.png,
+  Graphics/Atlases/Gameplay/decals/coffe/collumn_broken_top.png, Graphics/Atlases/Gameplay/decals/coffe/collumn_mid_a.png,
+  Graphics/Atlases/Gameplay/decals/coffe/collumn_mid_b.png, Graphics/Atlases/Gameplay/decals/coffe/collumn_mid_c.png,
+  Graphics/Atlases/Gameplay/decals/coffe/collumn_mid_d.png, Graphics/Atlases/Gameplay/decals/coffe/collumn_top.png,
+  Graphics/Atlases/Gameplay/decals/coffe/crystal_a.png, Graphics/Atlases/Gameplay/decals/coffe/crystal_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/crystal_c.png, Graphics/Atlases/Gameplay/decals/coffe/crystal_d.png,
+  Graphics/Atlases/Gameplay/decals/coffe/crystal_e.png, Graphics/Atlases/Gameplay/decals/coffe/crystal_f.png,
+  Graphics/Atlases/Gameplay/decals/coffe/crystal_plant_a.png, Graphics/Atlases/Gameplay/decals/coffe/golden_crystal_d.png,
+  Graphics/Atlases/Gameplay/decals/coffe/golden_crystal_e.png, Graphics/Atlases/Gameplay/decals/coffe/golden_crystal_f.png,
+  Graphics/Atlases/Gameplay/decals/coffe/golden_memorial.png, Graphics/Atlases/Gameplay/decals/coffe/golden_side_crystal_a.png,
+  Graphics/Atlases/Gameplay/decals/coffe/golden_side_crystal_b.png, Graphics/Atlases/Gameplay/decals/coffe/golden_side_crystal_c.png,
+  Graphics/Atlases/Gameplay/decals/coffe/jail_decal.png, Graphics/Atlases/Gameplay/decals/coffe/jail_decal_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/lock.png, Graphics/Atlases/Gameplay/decals/coffe/Mosaic_a.png,
+  Graphics/Atlases/Gameplay/decals/coffe/Mosaic_b.png, Graphics/Atlases/Gameplay/decals/coffe/Mosaic_c.png,
+  Graphics/Atlases/Gameplay/decals/coffe/Mosaic_jump.png, Graphics/Atlases/Gameplay/decals/coffe/plant_h.png,
+  Graphics/Atlases/Gameplay/decals/coffe/plant_i.png, Graphics/Atlases/Gameplay/decals/coffe/plants_j.png,
+  Graphics/Atlases/Gameplay/decals/coffe/portaltorajlkdfha.png, Graphics/Atlases/Gameplay/decals/coffe/portaltorch00.png,
+  Graphics/Atlases/Gameplay/decals/coffe/portaltorch01.png, Graphics/Atlases/Gameplay/decals/coffe/portaltorch02.png,
+  Graphics/Atlases/Gameplay/decals/coffe/portaltorch03.png, Graphics/Atlases/Gameplay/decals/coffe/portaltorch04.png,
+  Graphics/Atlases/Gameplay/decals/coffe/portaltorch05.png, Graphics/Atlases/Gameplay/decals/coffe/red_vine_a.png,
+  Graphics/Atlases/Gameplay/decals/coffe/red_vine_b.png, Graphics/Atlases/Gameplay/decals/coffe/red_vine_c.png,
+  Graphics/Atlases/Gameplay/decals/coffe/red_vine_d.png, Graphics/Atlases/Gameplay/decals/coffe/red_vine_e.png,
+  Graphics/Atlases/Gameplay/decals/coffe/red_vine_f.png, Graphics/Atlases/Gameplay/decals/coffe/red_vine_g.png,
+  Graphics/Atlases/Gameplay/decals/coffe/red_vine_h.png, Graphics/Atlases/Gameplay/decals/coffe/red_vine_i.png,
+  Graphics/Atlases/Gameplay/decals/coffe/red_vine_j.png, Graphics/Atlases/Gameplay/decals/coffe/red_vine_k.png,
+  Graphics/Atlases/Gameplay/decals/coffe/side_crystal_a.png, Graphics/Atlases/Gameplay/decals/coffe/side_crystal_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/side_crystal_c.png, Graphics/Atlases/Gameplay/decals/coffe/static/pland_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/static/plant_a.png, Graphics/Atlases/Gameplay/decals/coffe/static/plant_c.png,
+  Graphics/Atlases/Gameplay/decals/coffe/static/plant_d.png, Graphics/Atlases/Gameplay/decals/coffe/static/plant_e.png,
+  Graphics/Atlases/Gameplay/decals/coffe/static/plant_f.png, Graphics/Atlases/Gameplay/decals/coffe/static/plant_g.png,
+  Graphics/Atlases/Gameplay/decals/coffe/statue_a.png, Graphics/Atlases/Gameplay/decals/coffe/statue_a_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/statue_a_c.png, Graphics/Atlases/Gameplay/decals/coffe/statue_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/vine_a.png, Graphics/Atlases/Gameplay/decals/coffe/vine_b.png,
+  Graphics/Atlases/Gameplay/decals/coffe/vine_c.png, Graphics/Atlases/Gameplay/decals/coffe/vine_d.png,
+  Graphics/Atlases/Gameplay/decals/coffe/vine_e.png, Graphics/Atlases/Gameplay/decals/coffe/vine_f.png,
+  Graphics/Atlases/Gameplay/decals/coffe/vine_g.png, Graphics/Atlases/Gameplay/decals/coffe/vine_h.png,
+  Graphics/Atlases/Gameplay/decals/coffe/vine_i.png, Graphics/Atlases/Gameplay/decals/coffe/vine_j.png,
+  Graphics/Atlases/Gameplay/decals/coffe/vine_k.png, Graphics/Atlases/Gameplay/decals/coffe/wooden_bench.png,
+  Graphics/Atlases/Gameplay/objects/checkpoint/bg/COFFE_1.png, Graphics/Atlases/Gameplay/objects/checkpoint/bg/COFFE_2.png,
+  Graphics/Atlases/Gameplay/tilesets/coffe/nikkopurple.png, Graphics/Atlases/Gameplay/tilesets/coffe/nikkopurpleoutlined.png,
+  Graphics/Atlases/Gameplay/tilesets/coffe/summitPurple.png, Graphics/Atlases/Gameplay/tilesets/coffe/summitPurpleDark.png,
+  Graphics/Atlases/Gui/areas/coffe/ShadeWorld/shade_world_icon.png, Graphics/Atlases/Gui/areas/coffe/ShadeWorld/shade_world_icon_back.png,
+  Graphics/Atlases/Gui/areaselect/coffe/Shade World/card.png, Graphics/Atlases/Gui/areaselect/coffe/Shade
+    World/card_golden.png, Graphics/Atlases/Gui/areaselect/coffe/Shade World/cardtop.png,
+  Graphics/Atlases/Gui/areaselect/coffe/Shade World/cardtop_golden.png, Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin00.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin01.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin02.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin03.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin04.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin05.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin06.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin07.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin08.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin09.png,
+  Graphics/Atlases/Gui/collectables/coffe/green_heart_poemtextcolor_c8ffc2/spin10.png,
+  Graphics/Atlases/Mountain/coffe/Shade_World/buildings_0.png, Graphics/Atlases/Mountain/coffe/Shade_World/fog.png,
+  Graphics/Atlases/Mountain/coffe/Shade_World/mountain_0.png, Graphics/Atlases/Mountain/coffe/Shade_World/skybox_0.png,
+  Graphics/coffe/ShadeWorld/BackgroundTiles.xml, Graphics/coffe/ShadeWorld/ForegroundTiles.xml,
+  Graphics/coffe/ShadeWorld/Sprites.xml, Graphics/coffe/ShadeWorld/SpritesGui.xml,
+  Graphics/CollabUtils2/CrystalHeartSwaps_ShadeWorld.xml, Graphics/ColorGrading/coffe/golden.png,
+  Maps/coffe/Shade World/ShadeWorld.bin, Maps/coffe/Shade World/ShadeWorld.meta.yaml]

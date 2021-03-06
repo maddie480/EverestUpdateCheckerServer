@@ -1,0 +1,7 @@
+Triggers: [CollabUtils2/MiniHeartDoorUnlockCutsceneTrigger, CollabUtils2/SpeedBerryCollectTrigger,
+  CollabUtils2/RainbowBerryUnlockCutsceneTrigger, CollabUtils2/ChapterPanelTrigger,
+  CollabUtils2/JournalTrigger]
+Effects: []
+Entities: [CollabUtils2/MiniHeart, CollabUtils2/FakeMiniHeart, CollabUtils2/SilverBerry,
+  CollabUtils2/GoldenBerryPlayerRespawnPoint, CollabUtils2/SpeedBerry, CollabUtils2/MiniHeartDoor,
+  CollabUtils2/SilverBlock, CollabUtils2/RainbowBerry]

@@ -6,7 +6,7 @@
 
     <groupId>com.max480.everest.updatechecker</groupId>
     <artifactId>update-checker</artifactId>
-    <version>0.0.20</version>
+    <version>0.0.21</version>
 
     <properties>
         <jdk.version>1.8</jdk.version>
@@ -99,7 +99,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
+            <version>3.12.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->

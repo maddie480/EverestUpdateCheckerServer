@@ -48,6 +48,7 @@ public class Mod {
         Map<String, Object> modMap = new HashMap<>();
         modMap.put("Version", version);
         modMap.put("URL", url);
+        modMap.put("MirrorURL", "https://storage.googleapis.com/max480-banana-mirror/" + name + ".zip");
         modMap.put("LastUpdate", lastUpdate);
         modMap.put("xxHash", xxHash);
         modMap.put("GameBananaType", gameBananaType);

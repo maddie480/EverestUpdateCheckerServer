@@ -1,0 +1,4 @@
+Triggers: []
+Effects: []
+Entities: [EeveeHelper/HoldableContainer, EeveeHelper/AttachedContainer, EeveeHelper/HoldableTiles,
+  EeveeHelper/RoomChest, EeveeHelper/RoomChestExit]

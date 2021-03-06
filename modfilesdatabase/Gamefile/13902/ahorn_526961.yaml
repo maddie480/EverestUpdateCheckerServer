@@ -1,0 +1,4 @@
+Triggers: []
+Effects: []
+Entities: [FemtoHelper/CustomFakeHeart, FemtoHelper/CustomParallaxBigWaterfall, FemtoHelper/CustomSpeedRotateSpinner,
+  FemtoHelper/OshiroCaller, FemtoHelper/ParticleEmitter]
