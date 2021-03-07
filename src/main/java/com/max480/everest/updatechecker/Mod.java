@@ -1,5 +1,7 @@
 package com.max480.everest.updatechecker;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,11 +46,18 @@ public class Mod {
     /**
      * Converts the Mod object to a map that can be exported to everestupdate.yaml.
      */
-    Map<String, Object> toMap() {
+    Map<String, Object> toMap() throws UnsupportedEncodingException {
         Map<String, Object> modMap = new HashMap<>();
         modMap.put("Version", version);
         modMap.put("URL", url);
-        modMap.put("MirrorURL", "https://storage.googleapis.com/max480-banana-mirror/" + name + ".zip");
+        modMap.put("MirrorURL", "https://storage.googleapis.com/max480-banana-mirror/" +
+                URLEncoder.encode(name, "UTF-8")
+                        .replaceAll("\\+", "%20")
+                        .replaceAll("\\%21", "!")
+                        .replaceAll("\\%27", "'")
+                        .replaceAll("\\%28", "(")
+                        .replaceAll("\\%29", ")")
+                        .replaceAll("\\%7E", "~") + ".zip");
         modMap.put("LastUpdate", lastUpdate);
         modMap.put("xxHash", xxHash);
         modMap.put("GameBananaType", gameBananaType);
