@@ -61,7 +61,7 @@ public class BananaMirror {
 
         // delete all files that disappeared from the database.
         for (String file : toDelete) {
-            deleteFile(file);
+            deleteFile(file, bananaMirrorList);
         }
     }
 
@@ -119,8 +119,15 @@ public class BananaMirror {
         log.info("Uploaded {}.zip to Banana Mirror", fileId);
     }
 
-    private static void deleteFile(String fileId) throws IOException {
+    private static void deleteFile(String fileId, List<String> fileList) throws IOException {
         makeSftpAction(channel -> channel.rm(fileId + ".zip"));
+
+        // delete the file from the list of files that are actually on the mirror, and write it to disk.
+        fileList.remove(fileId);
+        try (FileOutputStream os = new FileOutputStream("banana_mirror.yaml")) {
+            IOUtils.write(new Yaml().dump(fileList), os, "UTF-8");
+        }
+
         log.info("Deleted {}.zip from Banana Mirror", fileId);
     }
 
