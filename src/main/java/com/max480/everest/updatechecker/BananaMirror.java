@@ -1,8 +1,6 @@
 package com.max480.everest.updatechecker;
 
-import com.google.api.gax.paging.Page;
-import com.google.cloud.storage.*;
-import com.google.common.collect.ImmutableMap;
+import com.jcraft.jsch.*;
 import net.jpountz.xxhash.StreamingXXHash64;
 import net.jpountz.xxhash.XXHashFactory;
 import org.apache.commons.io.FileUtils;
@@ -15,50 +13,59 @@ import java.io.*;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class BananaMirror {
     private static final Logger log = LoggerFactory.getLogger(BananaMirror.class);
     private static XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
 
-    public static void main(String[] args) throws IOException {
-        Storage storage = StorageOptions.newBuilder().setProjectId("max480-random-stuff").build().getService();
+    private static final String KNOWN_HOSTS = "REPLACEME";
+    private static final String SERVER_ADDRESS = "REPLACEME";
+    private static final String USERNAME = "REPLACEME";
+    private static final String PASSWORD = "REPLACEME";
+    private static final String DIRECTORY = "REPLACEME";
 
+    public static void main(String[] args) throws IOException {
+        // load the list of existing mods.
         Map<String, Map<String, Object>> everestUpdateYaml;
         try (InputStream stream = new FileInputStream("uploads/everestupdate.yaml")) {
             everestUpdateYaml = new Yaml().load(stream);
         }
 
-        Map<String, String> bananaMirrorList = listFiles(storage);
+        // load the list of files that are already in the mirror.
+        List<String> bananaMirrorList = listFiles();
+        Set<String> toDelete = new HashSet<>(bananaMirrorList);
 
-        for (String modId : everestUpdateYaml.keySet()) {
-            String modUrl = everestUpdateYaml.get(modId).get("URL").toString();
-            List<String> modHashes = (List<String>) everestUpdateYaml.get(modId).get("xxHash");
+        for (Map<String, Object> mod : everestUpdateYaml.values()) {
+            // get the mod URL and hash.
+            String modUrl = mod.get("URL").toString();
+            List<String> modHashes = (List<String>) mod.get("xxHash");
 
-            if (bananaMirrorList.containsKey(modId + ".zip")) {
-                String cachedModURL = bananaMirrorList.get(modId + ".zip");
-                if (!modUrl.equals(cachedModURL)) {
-                    // file changed!
-                    downloadFile(storage, modId, modUrl, modHashes);
-                }
+            // extract the file ID: only handle valid GameBanana links, as we use the GameBanana URL format to name our file.
+            if (!modUrl.matches("https://gamebanana.com/mmdl/[0-9]+")) {
+                continue;
+            }
+            String fileId = modUrl.substring("https://gamebanana.com/mmdl/".length());
 
-                // this file should be kept.
-                bananaMirrorList.remove(modId + ".zip");
+            if (bananaMirrorList.contains(fileId)) {
+                // existing file! this file should be kept.
+                toDelete.remove(fileId);
             } else {
                 // file is new!
-                downloadFile(storage, modId, modUrl, modHashes);
+                downloadFile(modUrl, fileId, modHashes, bananaMirrorList);
             }
         }
 
         // delete all files that disappeared from the database.
-        for (String file : bananaMirrorList.keySet()) {
-            deleteFile(storage, file);
+        for (String file : toDelete) {
+            deleteFile(file);
         }
     }
 
-    private static void downloadFile(Storage storage, String modId, String modUrl, List<String> modHashes) throws IOException {
+    private static void downloadFile(String modUrl, String fileId, List<String> modHashes, List<String> fileList) throws IOException {
         // download the mod
         DatabaseUpdater.runWithRetry(() -> {
             try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-for-cloud.zip"))) {
@@ -85,36 +92,69 @@ public class BananaMirror {
 
         // check that it matches
         if (!modHashes.contains(xxHash)) {
-            throw new IOException("xxHash checksum failure on " + modId + " @ " + modUrl + "!");
+            throw new IOException("xxHash checksum failure on file with id " + fileId + " @ " + modUrl + "!");
         }
 
-        // upload to Google Cloud Storage
-        uploadFile(storage, Paths.get("mod-for-cloud.zip"), modId + ".zip", modUrl);
+        // upload to Banana Mirror
+        uploadFile(Paths.get("mod-for-cloud.zip"), fileId, fileList);
         FileUtils.forceDelete(new File("mod-for-cloud.zip"));
     }
 
-    private static Map<String, String> listFiles(Storage storage) {
-        Map<String, String> result = new HashMap<>();
+    private static List<String> listFiles() throws IOException {
+        try (FileInputStream is = new FileInputStream("banana_mirror.yaml")) {
+            return new Yaml().load(is);
+        }
+    }
 
-        final Page<Blob> page = storage.list("max480-banana-mirror");
-        for (Blob blob : page.iterateAll()) {
-            result.put(blob.getName(), blob.getMetadata().get("original-url"));
+    private static void uploadFile(Path filePath, String fileId, List<String> fileList) throws IOException {
+        // actually upload the file
+        makeSftpAction(channel -> channel.put(filePath.toAbsolutePath().toString(), fileId + ".zip"));
+
+        // add the file to the list of files that are actually on the mirror, and write it to disk.
+        fileList.add(fileId);
+        try (FileOutputStream os = new FileOutputStream("banana_mirror.yaml")) {
+            IOUtils.write(new Yaml().dump(fileList), os, "UTF-8");
         }
 
-        return result;
+        log.info("Uploaded {}.zip to Banana Mirror", fileId);
     }
 
-    private static void uploadFile(Storage storage, Path filePath, String fileName, String url) throws IOException {
-        BlobId blobId = BlobId.of("max480-banana-mirror", fileName);
-        BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setMetadata(ImmutableMap.of("original-url", url)).build();
-        storage.createFrom(blobInfo, filePath, 4096);
-        storage.createAcl(blobId, Acl.of(Acl.User.ofAllUsers(), Acl.Role.READER));
-
-        log.info("Uploaded {} (from {}) to Banana Mirror", fileName, url);
+    private static void deleteFile(String fileId) throws IOException {
+        makeSftpAction(channel -> channel.rm(fileId + ".zip"));
+        log.info("Deleted {}.zip from Banana Mirror", fileId);
     }
 
-    private static void deleteFile(Storage storage, String fileName) {
-        storage.delete("max480-banana-mirror", fileName);
-        log.info("Deleted {} from Banana Mirror", fileName);
+    // simple interface for a method that takes a ChannelSftp **and throws a SftpException**.
+    private interface SftpAction {
+        void doSftpAction(ChannelSftp channel) throws SftpException;
+    }
+
+    private static void makeSftpAction(SftpAction action) throws IOException {
+        Session session = null;
+        try {
+            // connect
+            JSch jsch = new JSch();
+            jsch.setKnownHosts(KNOWN_HOSTS);
+            session = jsch.getSession(USERNAME, SERVER_ADDRESS);
+            session.setPassword(PASSWORD);
+            session.connect();
+
+            // do the action
+            ChannelSftp sftp = (ChannelSftp) session.openChannel("sftp");
+            sftp.connect();
+            sftp.cd(DIRECTORY);
+            action.doSftpAction(sftp);
+            sftp.exit();
+
+            // disconnect
+            session.disconnect();
+            session = null;
+        } catch (JSchException | SftpException e) {
+            throw new IOException(e);
+        } finally {
+            if (session != null) {
+                session.disconnect();
+            }
+        }
     }
 }

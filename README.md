@@ -57,8 +57,8 @@ Entities: [MaxHelpingHand/CoreModeSpikesUp, MaxHelpingHand/CoreModeSpikesDown, M
 This file only exists for zips that have a Ahorn folder in them.
 - `modfilesdatabase/ahorn_vanilla.yaml` is a list of all vanilla and Everest entities, triggers and effects defined in [Maple](https://github.com/CelestialCartographers/Maple), in the same format as above.
 
-The update checker also uploads copies of the latest versions of all mods from GameBanana to [Google Cloud Storage](https://cloud.google.com/storage), to have a mirror in case GameBanana goes down.
-The URL to access those mirrored files is: `https://storage.googleapis.com/max480-banana-mirror/[mod ID from everest.yaml].zip`.
+The update checker also uploads copies of the latest versions of all mods from GameBanana to a SFTP server, in order to have a backup in case of GameBanana issues.
+The configuration used by the server is defined in the constants for `BananaMirror.java`.
 
 ## Getting the project
 
@@ -74,7 +74,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.22.jar`.
+This will build the project to `target/update-checker-0.0.23.jar`.
 
 ## Running the project
 
@@ -87,7 +87,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.22.jar [port] [minutes]
+java -jar update-checker-0.0.23.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
@@ -150,4 +150,4 @@ _Please note that the `everestupdate.yaml` file uploaded to this repository alre
 * [NanoHTTPD](https://github.com/NanoHttpd/nanohttpd), licensed under the [BSD 3-Clause "New" License](https://github.com/NanoHttpd/nanohttpd/blob/master/LICENSE.md)
 * [LZ4 Java](https://github.com/lz4/lz4-java), licensed under [Apache License 2.0](https://github.com/lz4/lz4-java/blob/master/LICENSE.txt), used for xxHash hash calculation
 * [Jsoup](https://github.com/jhy/jsoup/), licensed under the [MIT License](https://github.com/jhy/jsoup/blob/master/LICENSE)
-* [the Google Cloud Storage client libraries](https://github.com/googleapis/java-storage), licensed under the [Apache License 2.0](https://github.com/googleapis/java-storage/blob/master/LICENSE), only required for the GameBanana mirror feature
+* [JSch](http://www.jcraft.com/jsch/), licensed under [a BSD-style license](http://www.jcraft.com/jsch/LICENSE.txt)
