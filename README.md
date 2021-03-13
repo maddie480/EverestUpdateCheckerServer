@@ -58,7 +58,7 @@ This file only exists for zips that have a Ahorn folder in them.
 - `modfilesdatabase/ahorn_vanilla.yaml` is a list of all vanilla and Everest entities, triggers and effects defined in [Maple](https://github.com/CelestialCartographers/Maple), in the same format as above.
 
 The update checker also uploads copies of the latest versions of all mods from GameBanana to a SFTP server, in order to have a backup in case of GameBanana issues.
-The configuration used by the server is defined in the constants for `BananaMirror.java`.
+The configuration used by the server is defined in the constants for `BananaMirror.java`. If this configuration is not filled out (which is the case in the released jar), mirror updating will be disabled.
 
 ## Getting the project
 

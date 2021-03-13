@@ -29,6 +29,11 @@ public class BananaMirror {
     private static final String DIRECTORY = "REPLACEME";
 
     public static void main(String[] args) throws IOException {
+        if (SERVER_ADDRESS.equals("REPLACEME")) {
+            // if the info wasn't filled out, turn off mirror updating.
+            return;
+        }
+
         // load the list of existing mods.
         Map<String, Map<String, Object>> everestUpdateYaml;
         try (InputStream stream = new FileInputStream("uploads/everestupdate.yaml")) {
