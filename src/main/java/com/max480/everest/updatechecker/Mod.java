@@ -46,18 +46,17 @@ public class Mod {
     /**
      * Converts the Mod object to a map that can be exported to everestupdate.yaml.
      */
-    Map<String, Object> toMap() throws UnsupportedEncodingException {
+    Map<String, Object> toMap() {
+        // extract the file ID from the GameBanana link, to build the mirror URL.
+        if (!url.matches("https://gamebanana.com/mmdl/[0-9]+")) {
+            throw new RuntimeException("URL is in an invalid format: " + url);
+        }
+        String fileId = url.substring("https://gamebanana.com/mmdl/".length());
+
         Map<String, Object> modMap = new HashMap<>();
         modMap.put("Version", version);
         modMap.put("URL", url);
-        modMap.put("MirrorURL", "https://storage.googleapis.com/max480-banana-mirror/" +
-                URLEncoder.encode(name, "UTF-8")
-                        .replaceAll("\\+", "%20")
-                        .replaceAll("\\%21", "!")
-                        .replaceAll("\\%27", "'")
-                        .replaceAll("\\%28", "(")
-                        .replaceAll("\\%29", ")")
-                        .replaceAll("\\%7E", "~") + ".zip");
+        modMap.put("MirrorURL", "https://celestemodupdater.0x0ade.ga/banana-mirror/" + fileId + ".zip");
         modMap.put("LastUpdate", lastUpdate);
         modMap.put("xxHash", xxHash);
         modMap.put("GameBananaType", gameBananaType);
