@@ -1,4 +1,0 @@
-Triggers: [XaphanHelper/StopAdjustInGameMapTrigger]
-Effects: []
-Entities: [XaphanHelper/InGameMapController, XaphanHelper/InGameMapRoomAdjustController,
-  XaphanHelper/InGameMapRoomController]

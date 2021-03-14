@@ -1,3 +1,0 @@
-Triggers: [isa/crystalDialog, crystal/revertCore, crystal/saveCore, crystal/hideTheo]
-Effects: []
-Entities: [crystal/cutsceneHelper, crystal/craneLift]

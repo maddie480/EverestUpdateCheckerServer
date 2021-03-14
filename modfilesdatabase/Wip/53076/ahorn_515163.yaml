@@ -1,4 +1,0 @@
-Triggers: [ShaderHelper/AddEffectTrigger, ShaderHelper/ClearEffectTrigger, ShaderHelper/SetBoolParameterTrigger,
-  ShaderHelper/SetFloatParameterTrigger, ShaderHelper/SetIntegerParameterTrigger]
-Effects: []
-Entities: []

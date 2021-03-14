@@ -1,4 +1,0 @@
-Triggers: []
-Effects: []
-Entities: [batteries/recharge_platform, batteries/battery_switch, batteries/battery,
-  batteries/power_refill, batteries/battery_gate]

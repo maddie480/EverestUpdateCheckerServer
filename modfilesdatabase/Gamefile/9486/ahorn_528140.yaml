@@ -1,6 +1,0 @@
-Triggers: [ExtendedVariantMode/ColorGradeTrigger, ExtendedVariantMode/ExtendedVariantFadeTrigger,
-  ExtendedVariantMode/ExtendedVariantTrigger, ExtendedVariantMode/FlagToggledExtendedVariantTrigger,
-  ExtendedVariantMode/ToggleDashDirectionTrigger]
-Effects: []
-Entities: [ExtendedVariantMode/ExtendedVariantController, ExtendedVariantMode/ExtraJumpRefill,
-  ExtendedVariantMode/RecoverJumpRefill, ExtendedVariantMode/JumpRefill]

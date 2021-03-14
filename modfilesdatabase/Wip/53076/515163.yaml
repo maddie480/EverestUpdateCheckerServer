@@ -1,5 +1,0 @@
-[ShaderHelper.dll, ShaderHelper.pdb, everest.yaml, Ahorn/triggers/AddEffectTrigger.jl,
-  Ahorn/triggers/ClearEffectTrigger.jl, Ahorn/triggers/SetBoolParameterTrigger.jl,
-  Ahorn/triggers/SetFloatParameterTrigger.jl, Ahorn/triggers/SetIntegerParameterTrigger
-    - Copy.jl, Effects/shaderhelper/grayscaleeffect.cso, Effects/shaderhelper/testshader.cso,
-  Effects/shaderhelper/testshader2.cso]

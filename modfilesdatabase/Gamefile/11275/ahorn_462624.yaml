@@ -1,5 +1,0 @@
-Triggers: [Sardine7/AmbienceTrigger, Sardine7/DashCodeTrigger, Sardine7/GokuroLeaveTrigger,
-  Sardine7/GokuroSpawnTrigger]
-Effects: []
-Entities: [Sardine7/Beeker, Sardine7/ChainMover, Sardine7/LightSource, Sardine7/SokobanBlock,
-  Sardine7/SwitchMover]

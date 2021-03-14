@@ -1,4 +1,0 @@
-Triggers: [canyon/monstertrigger, canyon/templefalltrigger]
-Effects: []
-Entities: [canyon/spinorb, canyon/pushblock, canyon/toggleblock, canyon/grannytemple,
-  canyon/grannymonster, canyon/grannystart, canyon/unbreakablestone]

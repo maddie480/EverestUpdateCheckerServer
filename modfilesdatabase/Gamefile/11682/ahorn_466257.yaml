@@ -1,4 +1,0 @@
-Triggers: []
-Effects: [LunaticHelper/CustomDust, LunaticHelper/CustomField]
-Entities: [LunaticHelper/CustomRefill, LunaticHelper/GoldenberryGate, LunaticHelper/InvisibleLightSource,
-  LunaticHelper/StrawberryGate, LunaticHelper/StrawberryWithReturn]

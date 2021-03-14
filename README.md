@@ -80,7 +80,6 @@ This will build the project to `target/update-checker-0.0.23.jar`.
 
 First, follow these steps to set it up:
 * Get the JAR that was produced by Maven, or download it in [the Releases tab](https://github.com/max4805/EverestUpdateCheckerServer/releases).
-* Download the `uploads` directory on this repository, and put it next to the JAR: that will prevent the server from rebuilding the database, which implies _downloading the entirety of GameBanana_.
 * If you want to give control over the database to other people, in order for them to handle the few specific cases where automatic update doesn't work (this is really rare though, see [Handling special cases](#handling-special-cases)), create a `code.txt` file next to the JAR. Put a code in it, then share it with the people you want to be allowed to edit the database.
   * If you don't create a `code.txt` file, the "edit database remotely" feature will be disabled.
 

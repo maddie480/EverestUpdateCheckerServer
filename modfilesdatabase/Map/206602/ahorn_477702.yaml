@@ -1,6 +1,0 @@
-Triggers: [FrostTemple/CutsceneTrigger, FrostTemple/SnowstormTrigger]
-Effects: []
-Entities: [FrostTemple/ReturnStrawberry, FrostTemple/dashWaterSwitchH, FrostTemple/dashWaterSwitchV,
-  FrozenWaterfall/BossHeart, FrostTemple/HorizontalWaterfall, FrostTemple/Icicle,
-  FrostTemple/coloredWater, FrostTemple/coloredWaterfall, FrozenWaterfall/Raincloud,
-  FrozenWaterfall/RoomRainController, FrostTemple/Paintball]

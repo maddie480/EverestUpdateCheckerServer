@@ -1,6 +1,0 @@
-Triggers: []
-Effects: []
-Entities: [JackalHelper/BraveBird, JackalHelper/CardinalBumper, JackalHelper/CryoBooster,
-  JackalHelper/DeadlyWater, JackalHelper/MovingLava, JackalHelper/OWJellyBarrier,
-  JackalHelper/PyroBoosterObject, JackalHelper/StarRefill, JackalHelper/TracerRefill,
-  JackalHelper/RoundKevin]

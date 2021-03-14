@@ -1,5 +1,0 @@
-Triggers: []
-Effects: []
-Entities: [Anonhelper/DestructableBounceBlock, Anonhelper/InvisibleSeekerBarrier,
-  Anonhelper/OneUseBooster, Anonhelper/AnonCloud, Anonhelper/CloudRefill, Anonhelper/JellyRefill,
-  Anonhelper/WindCloud, Anonhelper/FeatherBumper, Anonhelper/FeatherRefill]

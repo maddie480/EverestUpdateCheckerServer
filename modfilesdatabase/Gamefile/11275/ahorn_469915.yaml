@@ -1,6 +1,0 @@
-Triggers: [Sardine7/AmbienceTrigger, Sardine7/DashCodeTrigger, Sardine7/GokuroLeaveTrigger,
-  Sardine7/GokuroNormalizeTrigger, Sardine7/GokuroSpawnTrigger, Sardine7/SecondTextboxTrigger,
-  Sardine7/SmoothieCameraTargetTrigger]
-Effects: []
-Entities: [Sardine7/Beeker, Sardine7/ChainMover, Sardine7/HumbleLookout, Sardine7/LightSource,
-  Sardine7/SokobanBlock, Sardine7/SturdyFakeWall, Sardine7/SwitchMover]

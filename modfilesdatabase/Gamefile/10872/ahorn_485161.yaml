@@ -1,3 +1,0 @@
-Triggers: [CustomPoints/PointsTrigger]
-Effects: []
-Entities: [CustomPoints/CustomPointsStrawberry, CustomPoints/CustomPointsGolden, CustomPoints/CustomPointsGoldenNoDash]

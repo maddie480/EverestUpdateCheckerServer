@@ -1,5 +1,0 @@
-Triggers: [VortexHelper/ColorSwitchTrigger, VortexHelper/KillLightningTrigger]
-Effects: []
-Entities: [VortexHelper/AutoFallingBlock, VortexHelper/ColorSwitch, VortexHelper/VortexSwitchGate,
-  VortexHelper/FloorBooster, VortexHelper/PurpleBooster, VortexHelper/SwitchBlock,
-  VortexHelper/VortexCustomBumper]

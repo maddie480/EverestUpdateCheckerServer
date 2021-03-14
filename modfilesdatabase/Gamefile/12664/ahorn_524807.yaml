@@ -1,9 +1,0 @@
-Triggers: [vitellary/bloomstrengthtrigger, vitellary/custombridgeactivator, vitellary/customwindtrigger,
-  vitellary/editdepthtrigger, vitellary/remotetrigger, vitellary/nodashtrigger, vitellary/nograbtrigger,
-  vitellary/nojumptrigger, vitellary/nomovetrigger, vitellary/nomovetrigger, vitellary/resetdoortrigger,
-  vitellary/timedfadetrigger, vitellary/triggertrigger]
-Effects: [CrystallineHelper/CustomWindSnow]
-Entities: [vitellary/boostbumper, vitellary/customprologuebridge, vitellary/fillcrystal,
-  vitellary/forcedashcrystal, vitellary/keyberry, vitellary/returnkeyberry, vitellary/vitmoveblock,
-  vitellary/lockedintrocar, vitellary/starcrystal, vitellary/telecrystal, vitellary/goodtelecrystal,
-  vitellary/timecrystal]

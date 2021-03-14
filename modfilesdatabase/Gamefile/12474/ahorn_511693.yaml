@@ -1,5 +1,0 @@
-Triggers: [HonlyHelper/CameraTargetCornerTrigger, HonlyHelper/CameraTargetCrossfadeTrigger]
-Effects: []
-Entities: [HonlyHelper/BouncySpikesUp, HonlyHelper/BouncySpikesDown, HonlyHelper/BouncySpikesLeft,
-  HonlyHelper/BouncySpikesRight, HonlyHelper/FlagSoundSource, HonlyHelper/FloatyBgTile,
-  HonlyHelper/RisingBlock]

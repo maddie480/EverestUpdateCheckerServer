@@ -1,7 +1,0 @@
-[Ahorn/entities/luatalker.jl, Ahorn/lang/en_gb.lang, Ahorn/triggers/luacutscenetrigger.jl,
-  Assets/LuaCutscenes/cutscene_helper.lua, Assets/LuaCutscenes/examples/example_cutscene.lua,
-  Assets/LuaCutscenes/examples/example_talker.lua, Assets/LuaCutscenes/helper_functions.lua,
-  Assets/LuaCutscenes/warmup_cutscene.lua, Documentation/index.html, Documentation/ldoc.css,
-  Documentation/modules/example_cutscene.html, Documentation/modules/example_talker.html,
-  Documentation/modules/helper_functions.html, everest.yaml, Graphics/Atlases/Gameplay/objects/LuaCutscenes/hover_idle.png,
-  LuaCutscenes.dll]
