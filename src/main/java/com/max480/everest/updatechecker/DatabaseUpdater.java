@@ -306,7 +306,7 @@ class DatabaseUpdater {
             // We should pay attention to this and handle this specifically.
             if (Collections.emptyList().equals(fileList)) return this;
 
-            for (Map<String, Object> file : ((Map<String, Map<String, Object>>) fileList).values()) {
+            for (Map<String, Object> file : (List<Map<String, Object>>) fileList) {
                 // get the obvious info about the file (URL and upload date)
                 int fileDate = (int) file.get("_tsDateAdded");
                 int filesize = (int) file.get("_nFilesize");
