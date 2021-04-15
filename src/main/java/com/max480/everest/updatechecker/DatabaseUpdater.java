@@ -182,6 +182,7 @@ class DatabaseUpdater {
             Idea - NO
             Jam - NO
             Map - YES
+            Mod - YES
             Model - YES
             News - NO
             Poll - NO
@@ -208,7 +209,7 @@ class DatabaseUpdater {
         // map this list of arrays into a more Java-friendly object, and keep only item types that should have files attached to it.
         List<QueriedModInfo> queriedModInfo = mods.stream()
                 .map(info -> new QueriedModInfo((String) info.get(0), (int) info.get(1)))
-                .filter(info -> Arrays.asList("Castaway", "Crafting", "Effect", "Gamefile", "Gui", "Map", "Model", "Prefab", "Skin",
+                .filter(info -> Arrays.asList("Castaway", "Crafting", "Effect", "Gamefile", "Gui", "Map", "Mod", "Model", "Prefab", "Skin",
                         "Sound", "Spray", "Texture", "Tool", "Wip").contains(info.itemtype))
                 .collect(Collectors.toList());
 
