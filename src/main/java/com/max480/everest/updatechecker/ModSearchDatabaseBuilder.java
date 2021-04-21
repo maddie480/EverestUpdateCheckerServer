@@ -33,10 +33,12 @@ public class ModSearchDatabaseBuilder {
         private final int likes;
         private final int views;
         private final int downloads;
+        private final int categoryId;
+        private String categoryName;
 
         public ModSearchInfo(String gameBananaType, int gameBananaId, String name,
                              List<String> authors, String description, String text,
-                             int likes, int views, int downloads) {
+                             int likes, int views, int downloads, int categoryId) {
 
             this.gameBananaType = gameBananaType;
             this.gameBananaId = gameBananaId;
@@ -48,11 +50,12 @@ public class ModSearchDatabaseBuilder {
             this.likes = likes;
             this.views = views;
             this.downloads = downloads;
+            this.categoryId = categoryId;
         }
 
         public ModSearchInfo(String gameBananaType, int gameBananaId, String name,
                              int authorId, String description, String text,
-                             int likes, int views, int downloads) {
+                             int likes, int views, int downloads, int categoryId) {
 
             this.gameBananaType = gameBananaType;
             this.gameBananaId = gameBananaId;
@@ -63,6 +66,7 @@ public class ModSearchDatabaseBuilder {
             this.likes = likes;
             this.views = views;
             this.downloads = downloads;
+            this.categoryId = categoryId;
         }
 
         /**
@@ -77,16 +81,21 @@ public class ModSearchDatabaseBuilder {
             map.put("Name", name);
             map.put("Authors", authors);
             map.put("Description", description);
-            map.put("Text", text);
             map.put("Likes", likes);
             map.put("Views", views);
             map.put("Downloads", downloads);
+            map.put("Text", text);
+            if (categoryName != null) {
+                map.put("CategoryId", categoryId);
+                map.put("CategoryName", categoryName);
+            }
             return map;
         }
     }
 
     private final List<ModSearchInfo> modSearchInfo = new LinkedList<>();
     private final Set<Integer> authorIds = new HashSet<>();
+    private final Set<Integer> categoryIds = new HashSet<>();
 
     /**
      * Adds this mod to the mod search info database.
@@ -97,10 +106,15 @@ public class ModSearchDatabaseBuilder {
      * @throws IOException In case an error occurs while parsing the mod authors field
      */
     public void addMod(String itemtype, int itemid, List<Object> mod) throws IOException {
+        if ("Mod".equals(itemtype)) {
+            // "Mod" is a generic itemtype, and we should get a more precise category instead.
+            categoryIds.add((int) mod.get(8));
+        }
+
         try {
             ModSearchInfo newModSearchInfo = new ModSearchInfo(itemtype, itemid, mod.get(0).toString(),
                     Integer.parseInt(mod.get(2).toString()), mod.get(3).toString(), mod.get(4).toString(),
-                    (int) mod.get(5), (int) mod.get(6), (int) mod.get(7));
+                    (int) mod.get(5), (int) mod.get(6), (int) mod.get(7), (int) mod.get(8));
 
             modSearchInfo.add(newModSearchInfo);
             authorIds.add(newModSearchInfo.authorId);
@@ -128,7 +142,7 @@ public class ModSearchDatabaseBuilder {
 
         modSearchInfo.add(new ModSearchInfo(itemtype, itemid, mod.get(0).toString(), authorsParsed,
                 mod.get(3).toString(), mod.get(4).toString(),
-                (int) mod.get(5), (int) mod.get(6), (int) mod.get(7)));
+                (int) mod.get(5), (int) mod.get(6), (int) mod.get(7), (int) mod.get(8)));
     }
 
     /**
@@ -163,10 +177,20 @@ public class ModSearchDatabaseBuilder {
     /**
      * Saves the mod search database to uploads/modsearchdatabase.yaml.
      *
-     * @throws IOException If the file couldn't be written, or something went wrong with getting author names.
+     * @throws IOException If the file couldn't be written, or something went wrong with getting author/mod category names.
      */
     public void saveSearchDatabase() throws IOException {
-        fetchAuthorNames();
+        // get authors and category names
+        fetchNamesAndUpdate(authorIds, "Member", (mod, id, name) -> {
+            if (mod.authorId == id) {
+                mod.authors = Collections.singletonList(name);
+            }
+        });
+        fetchNamesAndUpdate(categoryIds, "ModCategory", (mod, id, name) -> {
+            if (mod.categoryId == id) {
+                mod.categoryName = name;
+            }
+        });
 
         // map ModSearchInfo's to Maps and save them.
         try (FileWriter writer = new FileWriter("uploads/modsearchdatabase.yaml")) {
@@ -175,31 +199,47 @@ public class ModSearchDatabaseBuilder {
     }
 
     /**
-     * Fetches all author names based on their IDs, and replaces them in the mod search database.
-     * (Most mods use credits instead, but WIPs don't, so this is for them.)
+     * Like BiConsumer but triple
      *
-     * @throws IOException If something went wrong when querying GameBanana for the author list.
+     * @param <A> The type of the first argument
+     * @param <B> The type of the second argument
+     * @param <C> The type of the third argument
+     * @see java.util.function.BiConsumer
      */
-    private void fetchAuthorNames() throws IOException {
-        // turn the Set into a List to be able to access it by index.
-        List<Integer> authorsAsList = new ArrayList<>(authorIds);
+    private interface TriConsumer<A, B, C> {
+        void accept(A a, B b, C c);
+    }
 
-        List<List<Object>> authorNames;
+    /**
+     * Fetches all names based on their IDs, and replaces them in the mod search database.
+     * Used for both authors and mod categories.
+     *
+     * @param ids           The list of ids to get
+     * @param itemtype      The GameBanana itemtype (Member for authors, ModCategory for mod categories)
+     * @param handleMapping The function that takes a mod, an id and the corresponding name and updates the name in the mod
+     *                      if the id matches.
+     * @throws IOException If something went wrong when querying GameBanana for the list.
+     */
+    private void fetchNamesAndUpdate(Set<Integer> ids, String itemtype, TriConsumer<ModSearchInfo, Integer, String> handleMapping) throws IOException {
+        // turn the Set into a List to be able to access it by index.
+        List<Integer> idsAsList = new ArrayList<>(ids);
+
+        List<List<Object>> names;
         {
-            // build the URL that is going to get all author names at once.
-            // that is one big URL, but since only WIPs are affected here, this should be fine.
+            // build the URL that is going to get all names matching IDs at once.
+            // that is one big URL, but this should be fine.
             StringBuilder urlUserInfo = new StringBuilder("https://api.gamebanana.com/Core/Item/Data?");
             int index = 0;
-            for (Integer author : authorsAsList) {
+            for (Integer id : idsAsList) {
                 urlUserInfo
-                        .append("itemtype[").append(index).append("]=Member&itemid[").append(index).append("]=").append(author)
+                        .append("itemtype[").append(index).append("]=").append(itemtype).append("&itemid[").append(index).append("]=").append(id)
                         .append("&fields[").append(index).append("]=name&");
                 index++;
             }
             String url = urlUserInfo.append("format=yaml").toString();
 
             // run the request, parse the result, and add this result to the list.
-            authorNames = DatabaseUpdater.runWithRetry(() -> {
+            names = DatabaseUpdater.runWithRetry(() -> {
                 try (InputStream is = DatabaseUpdater.openStreamWithTimeout(new URL(url))) {
                     return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
                             .orElseThrow(() -> new IOException("Ended up with a null value when loading a mod page"));
@@ -208,19 +248,17 @@ public class ModSearchDatabaseBuilder {
         }
 
         // go through the results.
-        int authorIndex = 0;
-        for (List<Object> authorInfo : authorNames) {
-            int authorId = authorsAsList.get(authorIndex);
-            String authorName = authorInfo.get(0).toString();
+        int index = 0;
+        for (List<Object> info : names) {
+            int id = idsAsList.get(index);
+            String name = info.get(0).toString();
 
-            // apply the author name to every mod that has it as an author ID.
+            // apply the name to every mod that has it as an ID.
             for (ModSearchInfo mod : modSearchInfo) {
-                if (mod.authorId == authorId) {
-                    mod.authors = Collections.singletonList(authorName);
-                }
+                handleMapping.accept(mod, id, name);
             }
 
-            authorIndex++;
+            index++;
         }
     }
 }

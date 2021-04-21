@@ -56,7 +56,7 @@ public class Mod {
         Map<String, Object> modMap = new HashMap<>();
         modMap.put("Version", version);
         modMap.put("URL", url);
-        modMap.put("MirrorURL", "https://celestemodupdater.0x0ade.ga/banana-mirror/" + fileId + ".zip");
+        modMap.put("MirrorURL", "https://celestemodupdater.0x0a.de/banana-mirror/" + fileId + ".zip");
         modMap.put("LastUpdate", lastUpdate);
         modMap.put("xxHash", xxHash);
         modMap.put("GameBananaType", gameBananaType);
