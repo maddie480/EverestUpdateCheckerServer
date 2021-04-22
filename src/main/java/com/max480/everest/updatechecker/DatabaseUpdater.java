@@ -354,6 +354,11 @@ class DatabaseUpdater {
             log.trace("=> file was skipped because it is in the no yaml file list.");
         } else if (database.values().stream().anyMatch(mod -> mod.getUrl().equals(fileUrl))) {
             log.trace("=> already up to date");
+
+            // be sure to sync up GameBanana type and id.
+            database.values().stream()
+                    .filter(mod -> mod.getUrl().equals(fileUrl))
+                    .forEach(mod -> mod.updateGameBananaIds(gbType, gbId));
         } else {
             // download the mod
             numberOfModsDownloaded++;

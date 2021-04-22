@@ -1,7 +1,5 @@
 package com.max480.everest.updatechecker;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,6 +60,11 @@ public class Mod {
         modMap.put("GameBananaType", gameBananaType);
         modMap.put("GameBananaId", gameBananaId);
         return modMap;
+    }
+
+    public void updateGameBananaIds(String gameBananaType, int gameBananaId) {
+        this.gameBananaType = gameBananaType;
+        this.gameBananaId = gameBananaId;
     }
 
     @Override
