@@ -1,8 +1,14 @@
 # Everest Update Checker Server
 
-This is the server powering [Everest](https://github.com/EverestAPI/Everest)'s "Check for Mod Updates" feature.
+This server periodically goes through the mods posted in [the Celeste category on GameBanana](https://gamebanana.com/games/6460), and saves a few files that may be used by various services that need to know more information about mods.
 
-It basically generates a file named `uploads/everestupdate.yaml` containing information on all Celeste mods published on GameBanana including an `everest.yaml`. For example:
+This service is currently hosted by max480 (max480#4596 on [the "Mt. Celeste Climbing Association" Discord server](https://discord.gg/celeste)).
+
+## Mod update database
+
+### What it does
+
+When running, the bot generates a file named `uploads/everestupdate.yaml` containing information on all Celeste mods published on GameBanana including an `everest.yaml`. For example:
 ```yaml
 SuperHotMod:
   GameBananaType: Gamefile
@@ -13,11 +19,20 @@ SuperHotMod:
   URL: https://gamebanana.com/mmdl/430983
 ```
 
-Everest can then download this file from the server, and check if an update is available on a mod (by comparing the hash).
+### Where it is used
 
-The server used by Everest is currently hosted by max480 (max480#4596 on [the "Mt. Celeste Climbing Association" Discord server](https://discord.gg/celeste)).
+- [Everest](https://github.com/EverestAPI/Everest) uses this file for its "Check for Mod Updates" feature. For all mods someone has installed as a zip with an everest.yaml, Everest can check if the hash matches what is present in this file, to know if the mod is up-to-date (regardless of version number, since some modders don't update this one).
+- The [Banana Mirror Browser](https://max480-random-stuff.herokuapp.com/banana-mirror-browser) uses it to get the list of files present in the mirror.
 
-Additionally, this server generates a `modsearchdatabase.yaml` file that can be used as a database of mod names, authors and descriptions on GameBanana. This is used by [the GameBanana search API](https://github.com/max4805/RandomStuffWebsite#the-gamebanana-search-api) to find mods. A mod in this file looks like this:
+### Access
+
+This file is publicly accessible at https://max480-random-stuff.appspot.com/celeste/everest_update.yaml.
+
+## Mod search database
+
+### What it does
+
+A file is generated at `uploads/modsearchdatabase.yaml` with extensive info about all mods. It can be used as a database of mod names, authors and descriptions on GameBanana. A mod in this file looks like this:
 ```yaml
 - GameBananaType: Map
   GameBananaId: 213863
@@ -34,8 +49,24 @@ Additionally, this server generates a `modsearchdatabase.yaml` file that can be 
   Downloads: 44
 ```
 
-It also generates a "mod files database" that allows checking the zip contents without downloading them:
+### Where it is used
+
+- [The GameBanana search API](https://github.com/max4805/RandomStuffWebsite#the-gamebanana-search-api) uses it to find mods.
+- [The GameBanana sorted list API (deprecated)](https://github.com/max4805/RandomStuffWebsite#gamebanana-sorted-list-api-deprecated) uses it to be able to give a list of mod IDs sorted by likes, views, or downloads.
+- The [Banana Mirror Browser](https://max480-random-stuff.herokuapp.com/banana-mirror-browser) uses it to link a mod ID to its name on GameBanana.
+- The [Custom Entity Catalog](https://max480-random-stuff.appspot.com/celeste/custom-entity-catalog) uses it to get category names for each listed mod.
+
+### Access
+
+This file is **not** publicly accessible.
+
+## Mod files database
+
+### What it does
+
+The mod files database is a folder contaning information about mods in the form of yaml files:
 - `modfilesdatabase/list.yaml` is a list of all detected mods
+- `modfilesdatabase/file_ids.yaml` is a list of all Celeste file IDs that exist on GameBanana. The ID is the number at the end of GameBanana file downloads: `https://gamebanana.com/dl/xxxxx`
 - `modfilesdatabase/[itemtype]/[itemid]/info.yaml` is a file containing the name of the mod and its file list:
 ```yaml
 Files: ['523435', '513691']
@@ -57,16 +88,38 @@ Entities: [MaxHelpingHand/CoreModeSpikesUp, MaxHelpingHand/CoreModeSpikesDown, M
 This file only exists for zips that have a Ahorn folder in them.
 - `modfilesdatabase/ahorn_vanilla.yaml` is a list of all vanilla and Everest entities, triggers and effects defined in [Maple](https://github.com/CelestialCartographers/Maple), in the same format as above.
 
-The update checker also uploads copies of the latest versions of all mods from GameBanana to a SFTP server, in order to have a backup in case of GameBanana issues.
-The configuration used by the server is defined in the constants for `BananaMirror.java`. If this configuration is not filled out (which is the case in the released jar), mirror updating will be disabled.
+### Where it is used
 
-## Getting the project
+- The [Custom Entity Catalog](https://max480-random-stuff.appspot.com/celeste/custom-entity-catalog) uses it to get the file names of Ahorn plugins, and be able to list out what each mod contains.
+- The [Mod Structure Verifier Discord bot](https://github.com/max4805/RandomDiscordBots) uses it to know which assets each mod used as a dependency contains, and which entities helpers contain.
+
+### Access
+
+The only file made available publicly is the `modfilesdatabase/file_ids.yaml` file, at https://max480-random-stuff.appspot.com/celeste/file_ids.yaml.
+
+## Banana Mirror
+
+### What it does
+
+The update checker uploads copies of the **latest versions** of all mods with an everest.yaml from GameBanana to a SFTP server, in order to have a backup in case of GameBanana issues or slowness.
+
+### Access
+
+Files are uploaded to [0x0ade's server](https://celestemodupdater.0x0a.de/banana-mirror). You can download all files directly from there directly, but since files are named after their GameBanana file IDs, you can use this website to navigate in it with mod names and 1-click install buttons: https://max480-random-stuff.herokuapp.com/banana-mirror-browser
+
+[Everest](https://github.com/EverestAPI/Everest) and [Olympus](https://github.com/EverestAPI/Olympus) will also automatically use it as a substitute for GameBanana if it is down and you try to download or update a mod.
+
+## Developing and running your own copy
+
+You shouldn't need this unless max480 vanishes from the Celeste community, but here it is anyway. 😅
+
+### Getting the project
 
 You can get the update checker server by checking [the Releases tab](https://github.com/max4805/EverestUpdateCheckerServer/releases).
 
 If you download this to take over Everest's update server, preferably ask max480 for the latest yaml files to spare you some massive downloading from GameBanana.
 
-## Building the project
+### Building the project
 
 Get Maven, then run the following command at the project root:
 
@@ -76,12 +129,13 @@ mvn clean package
 
 This will build the project to `target/update-checker-0.0.29.jar`.
 
-## Running the project
+### Running the project
 
 First, follow these steps to set it up:
 * Get the JAR that was produced by Maven, or download it in [the Releases tab](https://github.com/max4805/EverestUpdateCheckerServer/releases).
 * If you want to give control over the database to other people, in order for them to handle the few specific cases where automatic update doesn't work (this is really rare though, see [Handling special cases](#handling-special-cases)), create a `code.txt` file next to the JAR. Put a code in it, then share it with the people you want to be allowed to edit the database.
   * If you don't create a `code.txt` file, the "edit database remotely" feature will be disabled.
+* If you want to activate the mirror, fill in the connection details in the `BananaMirror.java` class.
 
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
@@ -93,7 +147,7 @@ java -jar update-checker-0.0.29.jar [port] [minutes]
 
 [minutes] is the wait delay in minutes between two GameBanana checks (defaults to 30). Be aware that the program makes ~13 API calls per check, and that the GameBanana API has a cap at 250 requests/hour.
 
-## HTTP server usage
+### HTTP server usage
 
 The server uses [NanoHttpd](https://github.com/NanoHttpd/nanohttpd) to provide the database over HTTP.
 
@@ -114,11 +168,11 @@ You can also use these two methods with those two other files:
 * `/everestupdateexcluded.yaml`: this file lists all downloads that should be skipped on GameBanana for any reason. Corrupted zips or duplicates (f.e. Gauntlet is an older duplicate of Gauntlet Revamped) are automatically added to this. Those files won't be checked again by the update checker server.
 * `/everestupdatenoyaml.yaml`: this file holds the list of all zips that have been downloaded and don't contain any everest.yaml, so that they aren't downloaded again.
 
-## Handling special cases
+### Handling special cases
 
 Some mods may need editing the database manually: that is, all cases where a mod offers multiple downloads. These cases need manual editing of the database.
 
-### Multiple downloads with the same ID
+#### Multiple downloads with the same ID
 
 Those mods be defined with two hashes in `everestupdate.yaml`, so that the updater can tell if the version the user has is _one of_ the up-to-date ones.
 
@@ -132,7 +186,7 @@ DJMapHelper:
 
 _(Please note DJ Map Helper no longer has two separate downloads, and no mod currently needs this anymore, this is just an example if this happens again.)_
 
-### List of mods to handle manually
+#### List of mods to handle manually
 
 _Please note that the `everestupdate.yaml` file uploaded to this repository already takes these cases into account. You don't need to edit it, just get the `uploads` directory and run the server._
 
@@ -140,7 +194,7 @@ _Please note that the `everestupdate.yaml` file uploaded to this repository alre
 * GhostMod: Remove it from the database and blacklist it. Ships with GhostNet.
 * CrowControl-WS: Remove it from the database and blacklist it. Ships with Crow Control.
 
-## Libraries used
+### Libraries used
 
 * [SnakeYAML](https://bitbucket.org/asomov/snakeyaml/src/default/), licensed under the [Apache License 2.0](https://bitbucket.org/asomov/snakeyaml/src/default/LICENSE.txt)
 * [Apache Commons IO](http://commons.apache.org/proper/commons-io/)
