@@ -23,6 +23,7 @@ public class ModFilesDatabaseBuilder {
     private static final Logger log = LoggerFactory.getLogger(ModFilesDatabaseBuilder.class);
 
     private final List<String> fullList = new LinkedList<>();
+    private final List<String> fullFileIdList = new LinkedList<>();
 
     public ModFilesDatabaseBuilder() throws IOException {
         Path modFilesDatabaseDir = Paths.get("modfilesdatabase_temp");
@@ -59,6 +60,8 @@ public class ModFilesDatabaseBuilder {
             String fileid = fileUrl.substring("https://gamebanana.com/mmdl/".length());
             Path listPath = modFilesDatabaseDir.resolve(fileid + ".yaml");
             createdYamls.add(fileid);
+
+            fullFileIdList.add(fileid);
 
             Path cachedFilesPath = Paths.get("modfilesdatabase", itemtype, Integer.toString(itemid), fileid + ".yaml");
             if (Files.exists(cachedFilesPath)) {
@@ -125,6 +128,10 @@ public class ModFilesDatabaseBuilder {
 
     public void saveToDisk() throws IOException {
         // write the files list to disk.
+        try (FileWriter writer = new FileWriter("modfilesdatabase_temp/file_ids.yaml")) {
+            new Yaml().dump(fullFileIdList, writer);
+        }
+
         try (FileWriter writer = new FileWriter("modfilesdatabase_temp/list.yaml")) {
             new Yaml().dump(fullList, writer);
         }
