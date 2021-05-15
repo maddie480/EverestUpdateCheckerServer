@@ -2,7 +2,7 @@
 
 This server periodically goes through the mods posted in [the Celeste category on GameBanana](https://gamebanana.com/games/6460), and saves a few files that may be used by various services that need to know more information about mods.
 
-This service is currently hosted by max480 (max480#4596 on [the "Mt. Celeste Climbing Association" Discord server](https://discord.gg/celeste)).
+I'm currently running this server, some of its features are made available through APIs and others are used internally.
 
 ## Mod update database
 
@@ -149,6 +149,8 @@ java -jar update-checker-0.0.29.jar [port] [minutes]
 
 ### HTTP server usage
 
+**Note: the max480-random-stuff.appspot.com setup does not use this.**
+
 The server uses [NanoHttpd](https://github.com/NanoHttpd/nanohttpd) to provide the database over HTTP.
 
 It supports two methods:
@@ -165,7 +167,7 @@ allows to overwrite the current database. This aims to give control over the dat
 To be able to use this method, you have to pass the content of the `code.txt` file in the Authorization header.
 
 You can also use these two methods with those two other files:
-* `/everestupdateexcluded.yaml`: this file lists all downloads that should be skipped on GameBanana for any reason. Corrupted zips or duplicates (f.e. Gauntlet is an older duplicate of Gauntlet Revamped) are automatically added to this. Those files won't be checked again by the update checker server.
+* `/everestupdateexcluded.yaml`: this file lists all downloads that should be skipped on GameBanana for any reason. Corrupted zips or duplicates (f.e. Gauntlet is an older duplicate of Gauntlet Revamped) are automatically added to this. Those files won't be checked again by the update checker server. _If the blacklist reason contains a link to a GameBanana file, the entry will be deleted automatically if that file is deleted._ This is useful in cases where file A obsoletes file B, but should take over if file B is deleted.
 * `/everestupdatenoyaml.yaml`: this file holds the list of all zips that have been downloaded and don't contain any everest.yaml, so that they aren't downloaded again.
 
 ### Handling special cases
@@ -186,13 +188,14 @@ DJMapHelper:
 
 _(Please note DJ Map Helper no longer has two separate downloads, and no mod currently needs this anymore, this is just an example if this happens again.)_
 
-#### List of mods to handle manually
+#### Mods with multiple entries in their everest.yaml
 
-_Please note that the `everestupdate.yaml` file uploaded to this repository already takes these cases into account. You don't need to edit it, just get the `uploads` directory and run the server._
+Mods that have multiple entries in their everest.yaml (for example, `Monika's D-Sides` and `Ruby'sEntities`) will be registered multiple times in the database.
 
-* Ruby's Entities: Remove it from the database and blacklist it. Ships with D-sides.
-* GhostMod: Remove it from the database and blacklist it. Ships with GhostNet.
-* CrowControl-WS: Remove it from the database and blacklist it. Ships with Crow Control.
+To prevent that from happening, you can add the ID of the mod you don't want in `everestupdateexcluded.yaml`:
+```yaml
+Ruby'sEntities: Part of D-sides
+``` 
 
 ### Libraries used
 
