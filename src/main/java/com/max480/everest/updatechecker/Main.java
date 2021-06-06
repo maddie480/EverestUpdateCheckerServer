@@ -2,13 +2,28 @@ package com.max480.everest.updatechecker;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.yaml.snakeyaml.Yaml;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
 
 public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
+    public static ServerConfig serverConfig;
+
     public static void main(String[] args) throws InterruptedException {
+        // read the config file.
+        try (InputStream is = new FileInputStream("update_checker_config.yaml")) {
+            Map<String, Object> config = new Yaml().load(is);
+            serverConfig = new ServerConfig(config);
+        } catch (IOException e) {
+            log.error("Could not load update_checker_config.yaml!", e);
+            System.exit(1);
+        }
+
         int port = -1;
         if (args.length > 0) {
             try {

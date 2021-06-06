@@ -22,14 +22,8 @@ public class BananaMirror {
     private static final Logger log = LoggerFactory.getLogger(BananaMirror.class);
     private static XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
 
-    private static final String KNOWN_HOSTS = "REPLACEME";
-    private static final String SERVER_ADDRESS = "REPLACEME";
-    private static final String USERNAME = "REPLACEME";
-    private static final String PASSWORD = "REPLACEME";
-    private static final String DIRECTORY = "REPLACEME";
-
     public static void main(String[] args) throws IOException {
-        if (SERVER_ADDRESS.equals("REPLACEME")) {
+        if (Main.serverConfig.bananaMirrorConfig == null) {
             // if the info wasn't filled out, turn off mirror updating.
             return;
         }
@@ -46,7 +40,7 @@ public class BananaMirror {
 
         for (Map<String, Object> mod : everestUpdateYaml.values()) {
             // get the mod URL and hash.
-            String modUrl = mod.get("URL").toString();
+            String modUrl = mod.get(Main.serverConfig.mainServerIsMirror ? "MirrorURL" : "URL").toString();
             List<String> modHashes = (List<String>) mod.get("xxHash");
 
             // extract the file ID: only handle valid GameBanana links, as we use the GameBanana URL format to name our file.
@@ -146,15 +140,15 @@ public class BananaMirror {
         try {
             // connect
             JSch jsch = new JSch();
-            jsch.setKnownHosts(KNOWN_HOSTS);
-            session = jsch.getSession(USERNAME, SERVER_ADDRESS);
-            session.setPassword(PASSWORD);
+            jsch.setKnownHosts(Main.serverConfig.bananaMirrorConfig.knownHosts);
+            session = jsch.getSession(Main.serverConfig.bananaMirrorConfig.username, Main.serverConfig.bananaMirrorConfig.serverAddress);
+            session.setPassword(Main.serverConfig.bananaMirrorConfig.password);
             session.connect();
 
             // do the action
             ChannelSftp sftp = (ChannelSftp) session.openChannel("sftp");
             sftp.connect();
-            sftp.cd(DIRECTORY);
+            sftp.cd(Main.serverConfig.bananaMirrorConfig.directory);
             action.doSftpAction(sftp);
             sftp.exit();
 

@@ -34,7 +34,7 @@ public class Mod {
     Mod(Map.Entry<String, Map<String, Object>> yamlDatabaseEntry) {
         name = yamlDatabaseEntry.getKey();
         version = (String) yamlDatabaseEntry.getValue().get("Version");
-        url = (String) yamlDatabaseEntry.getValue().get("URL");
+        url = (String) yamlDatabaseEntry.getValue().get(Main.serverConfig.mainServerIsMirror ? "MirrorURL" : "URL");
         lastUpdate = (int) yamlDatabaseEntry.getValue().get("LastUpdate");
         xxHash = (List<String>) yamlDatabaseEntry.getValue().get("xxHash");
         gameBananaType = (String) yamlDatabaseEntry.getValue().get("GameBananaType");
@@ -53,8 +53,8 @@ public class Mod {
 
         Map<String, Object> modMap = new HashMap<>();
         modMap.put("Version", version);
-        modMap.put("URL", url);
-        modMap.put("MirrorURL", "https://celestemodupdater.0x0a.de/banana-mirror/" + fileId + ".zip");
+        modMap.put(Main.serverConfig.mainServerIsMirror ? "MirrorURL" : "URL", url);
+        modMap.put(Main.serverConfig.mainServerIsMirror ? "URL" : "MirrorURL", "https://celestemodupdater.0x0a.de/banana-mirror/" + fileId + ".zip");
         modMap.put("LastUpdate", lastUpdate);
         modMap.put("xxHash", xxHash);
         modMap.put("GameBananaType", gameBananaType);

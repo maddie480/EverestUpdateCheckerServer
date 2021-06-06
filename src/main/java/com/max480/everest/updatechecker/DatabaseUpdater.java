@@ -52,6 +52,12 @@ class DatabaseUpdater {
             i += PAGE_GROUP_COUNT;
         }
 
+        if (Main.serverConfig.forceRegisterMods) {
+            // register this particular mod no matter if public or private.
+            this.loadPageModInfo("https://api.gamebanana.com/Core/Item/Data?format=yaml&itemtype[0]=Mod&itemid[0]=53674&fields[0]=name,Files().aFiles(),authors,description,text,likes,views,downloads,RootCategory().id",
+                    Collections.singletonList(new com.max480.everest.updatechecker.DatabaseUpdater.QueriedModInfo("Mod", 53674)));
+        }
+
         checkForModDeletion();
 
         saveDatabaseToYaml();

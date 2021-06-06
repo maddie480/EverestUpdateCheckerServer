@@ -1,0 +1,7 @@
+MainServerIsMirror: false
+BananaMirrorConfig: # omit to disable mirroring
+  KnownHosts: path/to/file
+  ServerAddress: serveraddress
+  Username: username
+  Password: password
+  Directory: directory/on/sftp/server
