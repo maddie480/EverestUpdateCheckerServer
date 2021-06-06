@@ -135,7 +135,7 @@ First, follow these steps to set it up:
 * Get the JAR that was produced by Maven, or download it in [the Releases tab](https://github.com/max4805/EverestUpdateCheckerServer/releases).
 * If you want to give control over the database to other people, in order for them to handle the few specific cases where automatic update doesn't work (this is really rare though, see [Handling special cases](#handling-special-cases)), create a `code.txt` file next to the JAR. Put a code in it, then share it with the people you want to be allowed to edit the database.
   * If you don't create a `code.txt` file, the "edit database remotely" feature will be disabled.
-* If you want to activate the mirror, fill in the connection details in the `BananaMirror.java` class.
+* Fill in the `update_checker_config.yaml` file present in this repository with Banana Mirror info, and drop it in the same directory as the JAR.
 
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
