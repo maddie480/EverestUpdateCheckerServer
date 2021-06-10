@@ -245,7 +245,7 @@ public class ModFilesDatabaseBuilder {
     private void extractAhornEntities(List<String> ahornEntities, List<String> ahornTriggers, List<String> ahornEffects,
                                       String file, InputStream inputStream) throws IOException {
 
-        Pattern mapdefMatcher = Pattern.compile(".*@mapdef [A-Za-z]+ \"([^\"]+)\".*");
+        Pattern mapdefMatcher = Pattern.compile(".*@mapdef(?:data)? [A-Za-z]+ \"([^\"]+)\".*");
         Pattern pardefMatcher = Pattern.compile(".*Entity\\(\"([^\"]+)\".*");
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
