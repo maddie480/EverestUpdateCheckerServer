@@ -1,10 +1,7 @@
 package com.max480.everest.updatechecker;
 
-import org.json.simple.JSONArray;
-import org.json.simple.parser.ContainerFactory;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import org.jsoup.Jsoup;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
@@ -26,8 +23,7 @@ public class ModSearchDatabaseBuilder {
         private final String gameBananaType;
         private final int gameBananaId;
         private final String name;
-        public List<String> authors;
-        public final int authorId;
+        public final String authorName;
         private final String description;
         private final String text;
         private final int likes;
@@ -35,38 +31,26 @@ public class ModSearchDatabaseBuilder {
         private final int downloads;
         private final int categoryId;
         private String categoryName;
+        private final long createdDate;
+        private final List<String> screenshots;
 
         public ModSearchInfo(String gameBananaType, int gameBananaId, String name,
-                             List<String> authors, String description, String text,
-                             int likes, int views, int downloads, int categoryId) {
+                             String authorName, String description, String text,
+                             int likes, int views, int downloads, int categoryId,
+                             long createdDate, List<String> screenshots) {
 
             this.gameBananaType = gameBananaType;
             this.gameBananaId = gameBananaId;
             this.name = name;
-            this.authorId = -1;
-            this.authors = authors;
+            this.authorName = authorName;
             this.description = description;
-            this.text = Jsoup.parseBodyFragment(text).text(); // strip HTML
+            this.text = text;
             this.likes = likes;
             this.views = views;
             this.downloads = downloads;
             this.categoryId = categoryId;
-        }
-
-        public ModSearchInfo(String gameBananaType, int gameBananaId, String name,
-                             int authorId, String description, String text,
-                             int likes, int views, int downloads, int categoryId) {
-
-            this.gameBananaType = gameBananaType;
-            this.gameBananaId = gameBananaId;
-            this.name = name;
-            this.authorId = authorId;
-            this.description = description;
-            this.text = Jsoup.parseBodyFragment(text).text(); // strip HTML
-            this.likes = likes;
-            this.views = views;
-            this.downloads = downloads;
-            this.categoryId = categoryId;
+            this.createdDate = createdDate;
+            this.screenshots = screenshots;
         }
 
         /**
@@ -79,12 +63,14 @@ public class ModSearchDatabaseBuilder {
             map.put("GameBananaType", gameBananaType);
             map.put("GameBananaId", gameBananaId);
             map.put("Name", name);
-            map.put("Authors", authors);
+            map.put("Author", authorName);
             map.put("Description", description);
             map.put("Likes", likes);
             map.put("Views", views);
             map.put("Downloads", downloads);
             map.put("Text", text);
+            map.put("CreatedDate", createdDate);
+            map.put("Screenshots", screenshots);
             if (categoryName != null) {
                 map.put("CategoryId", categoryId);
                 map.put("CategoryName", categoryName);
@@ -94,7 +80,6 @@ public class ModSearchDatabaseBuilder {
     }
 
     private final List<ModSearchInfo> modSearchInfo = new LinkedList<>();
-    private final Set<Integer> authorIds = new HashSet<>();
     private final Set<Integer> categoryIds = new HashSet<>();
 
     /**
@@ -106,71 +91,31 @@ public class ModSearchDatabaseBuilder {
      * @throws IOException In case an error occurs while parsing the mod authors field
      */
     public void addMod(String itemtype, int itemid, List<Object> mod) throws IOException {
+        // parse screenshots and determine their URLs.
+        List<String> screenshots = new ArrayList<>();
+        JSONArray screenshotsJson = new JSONArray(mod.get(10).toString());
+        for (int i = 0; i < screenshotsJson.length(); i++) {
+            JSONObject screenshotJson = screenshotsJson.getJSONObject(i);
+            screenshots.add("https://images.gamebanana.com/" + screenshotJson.getString("_sRelativeImageDir") + "/" + screenshotJson.getString("_sFile"));
+        }
+
+        // depending on its length, the created date field can be interpreted as an integer or as a long.
+        long modCreatedDate;
+        if (mod.get(9) instanceof Integer) {
+            modCreatedDate = (int) mod.get(9);
+        } else {
+            modCreatedDate = (long) mod.get(9);
+        }
+
+        ModSearchInfo newModSearchInfo = new ModSearchInfo(itemtype, itemid, mod.get(0).toString(),
+                mod.get(2).toString(), mod.get(3).toString(), mod.get(4).toString(),
+                (int) mod.get(5), (int) mod.get(6), (int) mod.get(7), (int) mod.get(8), modCreatedDate, screenshots);
+
+        modSearchInfo.add(newModSearchInfo);
+
         if ("Mod".equals(itemtype)) {
             // "Mod" is a generic itemtype, and we should get a more precise category instead.
             categoryIds.add((int) mod.get(8));
-        }
-
-        try {
-            ModSearchInfo newModSearchInfo = new ModSearchInfo(itemtype, itemid, mod.get(0).toString(),
-                    Integer.parseInt(mod.get(2).toString()), mod.get(3).toString(), mod.get(4).toString(),
-                    (int) mod.get(5), (int) mod.get(6), (int) mod.get(7), (int) mod.get(8));
-
-            modSearchInfo.add(newModSearchInfo);
-            authorIds.add(newModSearchInfo.authorId);
-            return;
-        } catch (NumberFormatException e) {
-            // this mod has an author list rather than an author id, which is objectively better.
-        }
-
-        // the authors list is actually JSON. :faintshiro:
-        String authors = mod.get(2).toString();
-        List<String> authorsParsed = new LinkedList<>();
-
-        // each author category is an entry in a JSON object.
-        Map<String, Object> authorCategories = parseJSONObjectKeepingOrder(authors);
-        for (Map.Entry<String, Object> category : authorCategories.entrySet()) {
-            JSONArray authorsListForCategory = (JSONArray) category.getValue();
-
-            // then each author is a JSON array [name, userid, role, ???]
-            // and we want to keep the name.
-            for (Object author : authorsListForCategory) {
-                JSONArray authorArray = (JSONArray) author;
-                authorsParsed.add(authorArray.get(0).toString());
-            }
-        }
-
-        modSearchInfo.add(new ModSearchInfo(itemtype, itemid, mod.get(0).toString(), authorsParsed,
-                mod.get(3).toString(), mod.get(4).toString(),
-                (int) mod.get(5), (int) mod.get(6), (int) mod.get(7), (int) mod.get(8)));
-    }
-
-    /**
-     * Parses the given JSON as a LinkedHashMap <b>thus keeping the order</b>.
-     * Order is not supposed to matter in JSON, but it does matter in the GameBanana author list.
-     *
-     * @param json The JSON to parse
-     * @return The JSON parsed as a LinkedHashMap
-     * @throws IOException In case a parse error occurs
-     */
-    public Map<String, Object> parseJSONObjectKeepingOrder(String json) throws IOException {
-        JSONParser parser = new JSONParser();
-        ContainerFactory containerFactory = new ContainerFactory() {
-            @Override
-            public Map createObjectContainer() {
-                return new LinkedHashMap();
-            }
-
-            @Override
-            public List creatArrayContainer() {
-                return null;
-            }
-        };
-
-        try {
-            return (Map<String, Object>) parser.parse(json, containerFactory);
-        } catch (ParseException e) {
-            throw new IOException("Failed parsing JSON for authors list", e);
         }
     }
 
@@ -181,11 +126,6 @@ public class ModSearchDatabaseBuilder {
      */
     public void saveSearchDatabase() throws IOException {
         // get authors and category names
-        fetchNamesAndUpdate(authorIds, "Member", (mod, id, name) -> {
-            if (mod.authorId == id) {
-                mod.authors = Collections.singletonList(name);
-            }
-        });
         fetchNamesAndUpdate(categoryIds, "ModCategory", (mod, id, name) -> {
             if (mod.categoryId == id) {
                 mod.categoryName = name;

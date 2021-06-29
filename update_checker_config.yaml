@@ -5,3 +5,4 @@ BananaMirrorConfig: # omit to disable mirroring
   Username: username
   Password: password
   Directory: directory/on/sftp/server
+  ImagesDirectory: other/directory/on/sftp/server

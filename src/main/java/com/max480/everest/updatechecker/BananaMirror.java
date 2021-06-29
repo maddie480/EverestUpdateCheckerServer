@@ -107,7 +107,7 @@ public class BananaMirror {
 
     private static void uploadFile(Path filePath, String fileId, List<String> fileList) throws IOException {
         // actually upload the file
-        makeSftpAction(channel -> channel.put(filePath.toAbsolutePath().toString(), fileId + ".zip"));
+        makeSftpAction(Main.serverConfig.bananaMirrorConfig.directory, channel -> channel.put(filePath.toAbsolutePath().toString(), fileId + ".zip"));
 
         // add the file to the list of files that are actually on the mirror, and write it to disk.
         fileList.add(fileId);
@@ -119,7 +119,7 @@ public class BananaMirror {
     }
 
     private static void deleteFile(String fileId, List<String> fileList) throws IOException {
-        makeSftpAction(channel -> channel.rm(fileId + ".zip"));
+        makeSftpAction(Main.serverConfig.bananaMirrorConfig.directory, channel -> channel.rm(fileId + ".zip"));
 
         // delete the file from the list of files that are actually on the mirror, and write it to disk.
         fileList.remove(fileId);
@@ -131,11 +131,11 @@ public class BananaMirror {
     }
 
     // simple interface for a method that takes a ChannelSftp **and throws a SftpException**.
-    private interface SftpAction {
+    interface SftpAction {
         void doSftpAction(ChannelSftp channel) throws SftpException;
     }
 
-    private static void makeSftpAction(SftpAction action) throws IOException {
+    static void makeSftpAction(String directory, SftpAction action) throws IOException {
         Session session = null;
         try {
             // connect
@@ -148,7 +148,7 @@ public class BananaMirror {
             // do the action
             ChannelSftp sftp = (ChannelSftp) session.openChannel("sftp");
             sftp.connect();
-            sftp.cd(Main.serverConfig.bananaMirrorConfig.directory);
+            sftp.cd(directory);
             action.doSftpAction(sftp);
             sftp.exit();
 

@@ -22,8 +22,8 @@ import java.util.zip.ZipFile;
 class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
 
-    // the update checker will load X pages, then get the mod info for those X pages in 1 call.
-    private static final int PAGE_GROUP_COUNT = 3;
+    // the update checker will retrieve this amount of mods in one call.
+    private static final int RETRIEVE_CHUNKS = 52;
 
     private Map<String, Mod> database = new HashMap<>();
     private Map<String, String> databaseExcludedFiles = new HashMap<>();
@@ -47,10 +47,7 @@ class DatabaseUpdater {
 
         loadDatabaseFromYaml();
 
-        int i = 1;
-        while (loadPage(i)) {
-            i += PAGE_GROUP_COUNT;
-        }
+        crawlModList();
 
         if (Main.serverConfig.forceRegisterMods) {
             // register this particular mod no matter if public or private.
@@ -124,6 +121,7 @@ class DatabaseUpdater {
 
         // update the file mirror
         BananaMirror.main(null);
+        BananaMirrorImages.main(null);
     }
 
     /**
@@ -142,87 +140,101 @@ class DatabaseUpdater {
     /**
      * Loads all the mods from a page in GameBanana.
      *
-     * @param page The page to load (1-based)
-     * @return true if the page actually contains mods, false otherwise.
      * @throws IOException In case of connection or IO issues.
      */
-    private boolean loadPage(int page) throws IOException {
-        log.debug("Loading page {} of the list of mods from GameBanana", page);
+    private void crawlModList() throws IOException {
+        log.debug("Loading list of mods from GameBanana");
 
         boolean reachedEmptyPage = false;
 
-        // we are going to get [PAGE_GROUP_COUNT] pages and merge them all in a mods list.
         List<List<Object>> mods = new LinkedList<>();
-        for (int i = 0; i < PAGE_GROUP_COUNT && !reachedEmptyPage; i++) {
-            final int pageOffset = page + i;
-            List<List<Object>> modsPage = runWithRetry(() -> {
-                try (InputStream is = openStreamWithTimeout(new URL("https://api.gamebanana.com/Core/List/New?page=" + pageOffset + "&gameid=6460&format=yaml"))) {
-                    return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
-                            .orElseThrow(() -> new IOException("Ended up with a null value when loading a mod page"));
-                }
-            });
-            mods.addAll(modsPage);
+        int currentPage = 1;
 
-            if (modsPage.isEmpty()) {
-                reachedEmptyPage = true;
+        while (!reachedEmptyPage) {
+            // we are going to get pages and merge them all in a mods list, until this mod list reaches RETRIEVE_CHUNKS.
+            for (int i = 0; mods.size() < RETRIEVE_CHUNKS && !reachedEmptyPage; i++) {
+                final int page = currentPage;
+                List<List<Object>> modsPage = runWithRetry(() -> {
+                    try (InputStream is = openStreamWithTimeout(new URL("https://api.gamebanana.com/Core/List/New?page=" + page + "&gameid=6460&format=yaml"))) {
+                        return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
+                                .orElseThrow(() -> new IOException("Ended up with a null value when loading a mod page"));
+                    }
+                });
+                mods.addAll(modsPage);
+                currentPage++;
+
+                if (modsPage.isEmpty()) {
+                    reachedEmptyPage = true;
+                }
             }
+
+            /*
+                List of GameBanana types with whether or not they accept files:
+                App - NO
+                Article - NO
+                Blog - NO
+                Castaway - YES
+                Club - NO
+                Concept - NO
+                Contest - NO
+                Crafting - YES
+                Effect - YES
+                Event - NO
+                Gamefile - YES
+                Gui - YES
+                Idea - NO
+                Jam - NO
+                Map - YES
+                Mod - YES
+                Model - YES
+                News - NO
+                Poll - NO
+                PositionAvailable - NO
+                Prefab - YES
+                Project - NO
+                Question - NO
+                Request - NO
+                Review - NO
+                Script - NO
+                Skin - YES
+                Sound - YES
+                Spray - YES
+                Studio - NO
+                Texture - YES
+                Thread - NO
+                Tool - YES
+                Tutorial - NO
+                Ware - NO
+                Wiki - NO
+                Wip - YES
+             */
+
+            retrievePageOfMods(mods);
         }
 
-        // stop here if no mod was retrieved.
-        if (mods.isEmpty()) return !reachedEmptyPage;
+        // retrieve the last page of mods with what we're left with.
+        retrievePageOfMods(mods);
+    }
 
-        /*
-            List of GameBanana types with whether or not they accept files:
-            App - NO
-            Article - NO
-            Blog - NO
-            Castaway - YES
-            Club - NO
-            Concept - NO
-            Contest - NO
-            Crafting - YES
-            Effect - YES
-            Event - NO
-            Gamefile - YES
-            Gui - YES
-            Idea - NO
-            Jam - NO
-            Map - YES
-            Mod - YES
-            Model - YES
-            News - NO
-            Poll - NO
-            PositionAvailable - NO
-            Prefab - YES
-            Project - NO
-            Question - NO
-            Request - NO
-            Review - NO
-            Script - NO
-            Skin - YES
-            Sound - YES
-            Spray - YES
-            Studio - NO
-            Texture - YES
-            Thread - NO
-            Tool - YES
-            Tutorial - NO
-            Ware - NO
-            Wiki - NO
-            Wip - YES
-         */
+    private void retrievePageOfMods(List<List<Object>> mods) throws IOException {
+        // extract RETRIEVE_CHUNKS mods from the list.
+        List<List<Object>> modsToRetrieve = new ArrayList<>();
+
+        while (modsToRetrieve.size() < RETRIEVE_CHUNKS && !mods.isEmpty()) {
+            modsToRetrieve.add(mods.remove(0));
+        }
 
         // map this list of arrays into a more Java-friendly object, and keep only item types that should have files attached to it.
-        List<QueriedModInfo> queriedModInfo = mods.stream()
+        List<QueriedModInfo> queriedModInfo = modsToRetrieve.stream()
                 .map(info -> new QueriedModInfo((String) info.get(0), (int) info.get(1)))
                 .filter(info -> Arrays.asList("Castaway", "Crafting", "Effect", "Gamefile", "Gui", "Map", "Mod", "Model", "Prefab", "Skin",
                         "Sound", "Spray", "Texture", "Tool", "Wip").contains(info.itemtype))
                 .collect(Collectors.toList());
 
-        String urlModInfo = getModInfoCallUrl(queriedModInfo);
-        loadPageModInfo(urlModInfo, queriedModInfo);
-
-        return !reachedEmptyPage;
+        if (!queriedModInfo.isEmpty()) {
+            String urlModInfo = getModInfoCallUrl(queriedModInfo);
+            loadPageModInfo(urlModInfo, queriedModInfo);
+        }
     }
 
     /**
@@ -239,13 +251,7 @@ class DatabaseUpdater {
             urlModInfo
                     .append("itemtype[").append(index).append("]=").append(mod.itemtype)
                     .append("&itemid[").append(index).append("]=").append(mod.itemid)
-                    .append("&fields[").append(index).append("]=name,Files().aFiles(),");
-            if (mod.itemtype.equals("Wip")) {
-                urlModInfo.append("userid");
-            } else {
-                urlModInfo.append("authors");
-            }
-            urlModInfo.append(",description,text,likes,views,downloads,RootCategory().id&");
+                    .append("&fields[").append(index).append("]=name,Files().aFiles(),Owner().name,description,text,likes,views,downloads,RootCategory().id,date,screenshots&");
             index++;
         }
 

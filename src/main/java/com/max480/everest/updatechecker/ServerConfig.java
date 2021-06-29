@@ -9,6 +9,7 @@ public class ServerConfig {
         public final String username;
         public final String password;
         public final String directory;
+        public final String imagesDirectory;
 
         public BananaMirrorConfig(Map<String, Object> config) {
             knownHosts = config.get("KnownHosts").toString();
@@ -16,6 +17,7 @@ public class ServerConfig {
             username = config.get("Username").toString();
             password = config.get("Password").toString();
             directory = config.get("Directory").toString();
+            imagesDirectory = config.get("ImagesDirectory").toString();
         }
     }
 

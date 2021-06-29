@@ -127,7 +127,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.31.jar`.
+This will build the project to `target/update-checker-0.0.32.jar`.
 
 ### Running the project
 
@@ -140,7 +140,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.31.jar [port] [minutes]
+java -jar update-checker-0.0.32.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
@@ -205,5 +205,7 @@ Ruby'sEntities: Part of D-sides
 * [Logback](http://logback.qos.ch/), licensed under [GNU LGPL version 2.1](http://logback.qos.ch/license.html)
 * [NanoHTTPD](https://github.com/NanoHttpd/nanohttpd), licensed under the [BSD 3-Clause "New" License](https://github.com/NanoHttpd/nanohttpd/blob/master/LICENSE.md)
 * [LZ4 Java](https://github.com/lz4/lz4-java), licensed under [Apache License 2.0](https://github.com/lz4/lz4-java/blob/master/LICENSE.txt), used for xxHash hash calculation
-* [Jsoup](https://github.com/jhy/jsoup/), licensed under the [MIT License](https://github.com/jhy/jsoup/blob/master/LICENSE)
 * [JSch](http://www.jcraft.com/jsch/), licensed under [a BSD-style license](http://www.jcraft.com/jsch/LICENSE.txt)
+* [JSON in Java](https://github.com/stleary/JSON-java) ([license](https://github.com/stleary/JSON-java/blob/master/LICENSE))
+* [Thumbnailator](https://github.com/coobird/thumbnailator), licensed under [the MIT license](https://github.com/coobird/thumbnailator/blob/master/LICENSE)
+* [webp-imageio](https://github.com/sejda-pdf/webp-imageio), licensed under [the Apache License 2.0](https://github.com/sejda-pdf/webp-imageio/blob/master/LICENSE)
