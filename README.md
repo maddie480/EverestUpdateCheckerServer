@@ -34,26 +34,30 @@ This file is publicly accessible at https://max480-random-stuff.appspot.com/cele
 
 A file is generated at `uploads/modsearchdatabase.yaml` with extensive info about all mods. It can be used as a database of mod names, authors and descriptions on GameBanana. A mod in this file looks like this:
 ```yaml
-- GameBananaType: Map
-  GameBananaId: 213863
+- GameBananaType: Mod
+  GameBananaId: 150525
   Name: Old Site but... weird
-  Authors: [vitellary, Celeste Devs]
+  Author: vitellary
   Description: It's been flipped!
+  Likes: 2
+  Views: 1794
+  Downloads: 105
   Text: Had this dumb idea a couple months ago, been working on it on and off and
     finally decided to finish it. Dependencies are Communal Helper and Max's Helping
     Hand. Difficulty is a bit harder than the vanilla equivalent of each level (though
     it's a decent bit more puzzly), and only advanced tech required is wallbounces
     for the C-Side.
-  Likes: 2
-  Views: 911
-  Downloads: 44
+  CreatedDate: 1609618797
+  Screenshots: ['https://images.gamebanana.com/img/ss/mods/5ff0d4c6e3472.jpg', 'https://images.gamebanana.com/img/ss/mods/5ff0d4fe36733.jpg']
+  CategoryId: 6800
+  CategoryName: Maps
 ```
 
 ### Where it is used
 
 - [The GameBanana search API](https://github.com/max4805/RandomStuffWebsite#the-gamebanana-search-api) uses it to find mods.
 - [The GameBanana sorted list API (deprecated)](https://github.com/max4805/RandomStuffWebsite#gamebanana-sorted-list-api-deprecated) uses it to be able to give a list of mod IDs sorted by likes, views, or downloads.
-- The [Banana Mirror Browser](https://max480-random-stuff.herokuapp.com/banana-mirror-browser) uses it to link a mod ID to its name on GameBanana.
+- The [Banana Mirror Browser](https://max480-random-stuff.herokuapp.com/banana-mirror-browser) takes all mod information it displays (name, description, stats, etc) from it.
 - The [Custom Entity Catalog](https://max480-random-stuff.appspot.com/celeste/custom-entity-catalog) uses it to get category names for each listed mod.
 
 ### Access
@@ -103,11 +107,13 @@ The only file made available publicly is the `modfilesdatabase/file_ids.yaml` fi
 
 The update checker uploads copies of the **latest versions** of all mods with an everest.yaml from GameBanana to a SFTP server, in order to have a backup in case of GameBanana issues or slowness.
 
+It will do the same with the **2 first screenshots** of each Celeste mod on GameBanana, after converting them to PNG and shrinking them to 220x220. Combine those mirrored files with the [mod search database](#mod-search-database) to get enough info to make a backup website in case GameBanana goes down.
+
 ### Access
 
-Files are uploaded to [0x0ade's server](https://celestemodupdater.0x0a.de/banana-mirror). You can download all files directly from there directly, but since files are named after their GameBanana file IDs, you can use this website to navigate in it with mod names and 1-click install buttons: https://max480-random-stuff.herokuapp.com/banana-mirror-browser
+Files and images are uploaded to [0x0ade's server](https://celestemodupdater.0x0a.de/). You can download all files directly from there directly, but since files are named after their GameBanana file IDs, you can use this website to navigate in it with mod names, descriptions and 1-click install buttons: https://max480-random-stuff.herokuapp.com/banana-mirror-browser
 
-[Everest](https://github.com/EverestAPI/Everest) and [Olympus](https://github.com/EverestAPI/Olympus) will also automatically use it as a substitute for GameBanana if it is down and you try to download or update a mod.
+[Everest](https://github.com/EverestAPI/Everest) and [Olympus](https://github.com/EverestAPI/Olympus) will also automatically use it as a substitute for GameBanana if it is down and you try to download or update a mod. Olympus uses the mirrored images instead of ones from GameBanana when they are in the `webp` format, since the mirror has them all converted to PNG.
 
 ## Developing and running your own copy
 
