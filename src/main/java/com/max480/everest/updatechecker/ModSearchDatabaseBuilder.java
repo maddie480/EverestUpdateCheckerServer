@@ -3,8 +3,6 @@ package com.max480.everest.updatechecker;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.FileWriter;
@@ -17,8 +15,6 @@ import java.util.stream.Collectors;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class ModSearchDatabaseBuilder {
-    private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
-
     /**
      * This object holds the name, author, description and text of a GameBanana mod.
      */
@@ -83,7 +79,6 @@ public class ModSearchDatabaseBuilder {
     }
 
     private final List<ModSearchInfo> modSearchInfo = new LinkedList<>();
-    private final Set<Integer> categoryIds = new HashSet<>();
 
     /**
      * Adds this mod to the mod search info database.
@@ -109,7 +104,6 @@ public class ModSearchDatabaseBuilder {
                 mod.getJSONObject("_aCategory").getInt("_idRow"), modCreatedDate, screenshots);
 
         modSearchInfo.add(newModSearchInfo);
-        categoryIds.add(mod.getJSONObject("_aCategory").getInt("_idRow"));
     }
 
     /**
@@ -163,17 +157,5 @@ public class ModSearchDatabaseBuilder {
         try (FileWriter writer = new FileWriter("uploads/modsearchdatabase.yaml")) {
             new Yaml().dump(modSearchInfo.stream().map(ModSearchInfo::toMap).collect(Collectors.toList()), writer);
         }
-    }
-
-    /**
-     * Like BiConsumer but triple
-     *
-     * @param <A> The type of the first argument
-     * @param <B> The type of the second argument
-     * @param <C> The type of the third argument
-     * @see java.util.function.BiConsumer
-     */
-    private interface TriConsumer<A, B, C> {
-        void accept(A a, B b, C c);
     }
 }

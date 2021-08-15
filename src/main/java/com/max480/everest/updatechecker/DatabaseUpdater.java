@@ -25,9 +25,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
 
-    // the update checker will retrieve this amount of mods in one call.
-    private static final int RETRIEVE_CHUNKS = 52;
-
     private Map<String, Mod> database = new HashMap<>();
     private Map<String, String> databaseExcludedFiles = new HashMap<>();
     private Set<String> databaseNoYamlFiles = new HashSet<>();
