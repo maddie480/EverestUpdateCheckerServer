@@ -5,6 +5,8 @@ import net.jpountz.xxhash.XXHashFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
@@ -15,9 +17,10 @@ import java.net.URLConnection;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
@@ -47,12 +50,51 @@ class DatabaseUpdater {
 
         loadDatabaseFromYaml();
 
-        crawlModList();
+        /*
+            List of GameBanana types with whether or not they accept files:
+            App - NO
+            Article - NO
+            Blog - NO
+            Castaway - YES
+            Club - NO
+            Concept - NO
+            Contest - NO
+            Crafting - YES
+            Effect - YES
+            Event - NO
+            Gamefile - YES
+            Gui - YES
+            Idea - NO
+            Jam - NO
+            Map - YES
+            Mod - YES
+            Model - YES
+            News - NO
+            Poll - NO
+            PositionAvailable - NO
+            Prefab - YES
+            Project - NO
+            Question - NO
+            Request - NO
+            Review - NO
+            Script - NO
+            Skin - YES
+            Sound - YES
+            Spray - YES
+            Studio - NO
+            Texture - YES
+            Thread - NO
+            Tool - YES
+            Tutorial - NO
+            Ware - NO
+            Wiki - NO
+            Wip - YES
+         */
 
-        if (Main.serverConfig.forceRegisterMods) {
-            // register this particular mod no matter if public or private.
-            this.loadPageModInfo("https://api.gamebanana.com/Core/Item/Data?format=yaml&itemtype[0]=Mod&itemid[0]=53674&fields[0]=name,Files().aFiles(),authors,description,text,likes,views,downloads,RootCategory().id",
-                    Collections.singletonList(new com.max480.everest.updatechecker.DatabaseUpdater.QueriedModInfo("Mod", 53674)));
+        // only sections that can have files are here
+        // old merged sections (Skins, Maps, Gamefiles, Effects, GUIs, Textures, Prefabs, Castaways & Craftings) still return stuff so they're excluded as well
+        for (String category : Arrays.asList("Mod", "Model", "Sound", "Spray", "Tool", "Wip")) {
+            crawlModsFromCategory(category);
         }
 
         checkForModDeletion();
@@ -125,168 +167,57 @@ class DatabaseUpdater {
     }
 
     /**
-     * A small object to hold an itemtype/itemid pair (this identifies a mod uniquely on GameBanana).
-     */
-    private static class QueriedModInfo {
-        private String itemtype;
-        private int itemid;
-
-        private QueriedModInfo(String itemtype, int itemid) {
-            this.itemtype = itemtype;
-            this.itemid = itemid;
-        }
-    }
-
-    /**
-     * Loads all the mods from a page in GameBanana.
+     * Checks all mods from a specific category (itemtype).
      *
-     * @throws IOException In case of connection or IO issues.
+     * @param category The category to check
+     * @throws IOException If a I/O error occurs while communicating with GameBanana
      */
-    private void crawlModList() throws IOException {
-        log.debug("Loading list of mods from GameBanana");
+    private void crawlModsFromCategory(String category) throws IOException {
+        int page = 1;
+        while (true) {
+            // load a page of mods.
+            final int thisPage = page;
+            JSONArray pageContents = runWithRetry(() -> {
+                try (InputStream is = new URL("https://gamebanana.com/apiv5/" + category + "/ByGame?_aGameRowIds[]=6460&" +
+                        "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory,_tsDateAdded,_aPreviewMedia" +
+                        "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=50").openStream()) {
 
-        boolean reachedEmptyPage = false;
-
-        List<List<Object>> mods = new LinkedList<>();
-        int currentPage = 1;
-
-        while (!reachedEmptyPage) {
-            // we are going to get pages and merge them all in a mods list, until this mod list reaches RETRIEVE_CHUNKS.
-            for (int i = 0; mods.size() < RETRIEVE_CHUNKS && !reachedEmptyPage; i++) {
-                final int page = currentPage;
-                List<List<Object>> modsPage = runWithRetry(() -> {
-                    try (InputStream is = openStreamWithTimeout(new URL("https://api.gamebanana.com/Core/List/New?page=" + page + "&gameid=6460&format=yaml"))) {
-                        return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
-                                .orElseThrow(() -> new IOException("Ended up with a null value when loading a mod page"));
-                    }
-                });
-                mods.addAll(modsPage);
-                currentPage++;
-
-                if (modsPage.isEmpty()) {
-                    reachedEmptyPage = true;
+                    return new JSONArray(IOUtils.toString(is, UTF_8));
                 }
+            });
+
+            // process it.
+            crawlModInfo(category, pageContents);
+
+            // if we just got an empty page, this means we reached the end of the list!
+            if (pageContents.isEmpty()) {
+                break;
             }
 
-            /*
-                List of GameBanana types with whether or not they accept files:
-                App - NO
-                Article - NO
-                Blog - NO
-                Castaway - YES
-                Club - NO
-                Concept - NO
-                Contest - NO
-                Crafting - YES
-                Effect - YES
-                Event - NO
-                Gamefile - YES
-                Gui - YES
-                Idea - NO
-                Jam - NO
-                Map - YES
-                Mod - YES
-                Model - YES
-                News - NO
-                Poll - NO
-                PositionAvailable - NO
-                Prefab - YES
-                Project - NO
-                Question - NO
-                Request - NO
-                Review - NO
-                Script - NO
-                Skin - YES
-                Sound - YES
-                Spray - YES
-                Studio - NO
-                Texture - YES
-                Thread - NO
-                Tool - YES
-                Tutorial - NO
-                Ware - NO
-                Wiki - NO
-                Wip - YES
-             */
-
-            retrievePageOfMods(mods);
-        }
-
-        // retrieve the last page of mods with what we're left with.
-        retrievePageOfMods(mods);
-    }
-
-    private void retrievePageOfMods(List<List<Object>> mods) throws IOException {
-        // extract RETRIEVE_CHUNKS mods from the list.
-        List<List<Object>> modsToRetrieve = new ArrayList<>();
-
-        while (modsToRetrieve.size() < RETRIEVE_CHUNKS && !mods.isEmpty()) {
-            modsToRetrieve.add(mods.remove(0));
-        }
-
-        // map this list of arrays into a more Java-friendly object, and keep only item types that should have files attached to it.
-        List<QueriedModInfo> queriedModInfo = modsToRetrieve.stream()
-                .map(info -> new QueriedModInfo((String) info.get(0), (int) info.get(1)))
-                .filter(info -> Arrays.asList("Castaway", "Crafting", "Effect", "Gamefile", "Gui", "Map", "Mod", "Model", "Prefab", "Skin",
-                        "Sound", "Spray", "Texture", "Tool", "Wip").contains(info.itemtype))
-                .collect(Collectors.toList());
-
-        if (!queriedModInfo.isEmpty()) {
-            String urlModInfo = getModInfoCallUrl(queriedModInfo);
-            loadPageModInfo(urlModInfo, queriedModInfo);
+            // otherwise, go on.
+            page++;
         }
     }
 
     /**
-     * Builds the URL used to retrieve details on the files for all mods given in parameter.
-     * (https://api.gamebanana.com/Core/Item/Data?itemtype[0]=Map&itemid[0]=204390&fields[0]=name,Files().aFiles() [...])
+     * Parses a page of mods, and updates the database as needed.
      *
-     * @param mods The mods to get info for
-     * @return The URL to call to get info on those mods
+     * @param category The category to check
+     * @throws IOException If a I/O error occurs while communicating with GameBanana
      */
-    private String getModInfoCallUrl(List<QueriedModInfo> mods) {
-        StringBuilder urlModInfo = new StringBuilder("https://api.gamebanana.com/Core/Item/Data?");
-        int index = 0;
-        for (QueriedModInfo mod : mods) {
-            urlModInfo
-                    .append("itemtype[").append(index).append("]=").append(mod.itemtype)
-                    .append("&itemid[").append(index).append("]=").append(mod.itemid)
-                    .append("&fields[").append(index).append("]=name,Files().aFiles(),Owner().name,description,text,likes,views,downloads,RootCategory().id,date,screenshots&");
-            index++;
-        }
+    private void crawlModInfo(String category, JSONArray pageContents) throws IOException {
+        for (Object itemRaw : pageContents) {
+            JSONObject mod = (JSONObject) itemRaw;
 
-        urlModInfo.append("format=yaml");
-        return urlModInfo.toString();
-    }
+            String name = mod.getString("_sName");
 
-    /**
-     * Loads a page of mod info by calling the given url and downloading the updated files.
-     *
-     * @param modInfoUrl     The url to call to get the mod info
-     * @param queriedModInfo The list of mods the URL gets info for
-     * @throws IOException In case of connection or IO issues.
-     */
-    private void loadPageModInfo(String modInfoUrl, List<QueriedModInfo> queriedModInfo) throws IOException {
-        log.debug("Loading mod details from GameBanana");
-
-        log.trace("Mod info URL: {}", modInfoUrl);
-        List<List<Object>> mods = runWithRetry(() -> {
-            try (InputStream is = openStreamWithTimeout(new URL(modInfoUrl))) {
-                return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
-                        .orElseThrow(() -> new IOException("Ended up with a null value when loading mod info"));
+            // if the mod has no file, _aFiles will be null.
+            if (mod.isNull("_aFiles")) {
+                continue;
             }
-        });
 
-        Iterator<QueriedModInfo> queriedModInfoIterator = queriedModInfo.iterator();
-
-        for (List<Object> mod : mods) {
-            // we asked for name,Files().aFiles(),authors,description,text
-            String name = (String) mod.get(0);
-
-            ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod.get(1), databaseNoYamlFiles);
+            ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod.getJSONArray("_aFiles"), databaseNoYamlFiles);
             existingFiles.addAll(parsedModInfo.allFileUrls);
-
-            QueriedModInfo thisModInfo = queriedModInfoIterator.next();
 
             if (parsedModInfo.mostRecentFileUrl == null) {
                 log.trace("{} => skipping, no suitable file found", name);
@@ -294,13 +225,13 @@ class DatabaseUpdater {
                 log.trace("{} => URL of most recent file (uploaded at {}) is {}", name, parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
                 for (int i = 0; i < parsedModInfo.allFileUrls.size(); i++) {
                     updateDatabase(parsedModInfo.allFileTimestamps.get(i), parsedModInfo.allFileUrls.get(i), parsedModInfo.allFileSizes.get(i),
-                            thisModInfo.itemtype, thisModInfo.itemid);
+                            category, mod.getInt("_idRow"));
                 }
             }
 
             // save the info about this mod in the mod search and files databases.
-            modSearchDatabaseBuilder.addMod(thisModInfo.itemtype, thisModInfo.itemid, mod);
-            modFilesDatabaseBuilder.addMod(thisModInfo.itemtype, thisModInfo.itemid, name,
+            modSearchDatabaseBuilder.addMod(category, mod.getInt("_idRow"), mod);
+            modFilesDatabaseBuilder.addMod(category, mod.getInt("_idRow"), name,
                     parsedModInfo.allFileUrls, parsedModInfo.allFileSizes);
         }
     }
@@ -315,24 +246,14 @@ class DatabaseUpdater {
         List<Integer> allFileSizes = new ArrayList<>();
         List<Integer> allFileTimestamps = new ArrayList<>();
 
-        ModInfoParser invoke(Object fileList, Set<String> databaseNoYamlFiles) {
-            // deal with mods with no file at all: in this case, GB sends out an empty list, not a map.
-            // We should pay attention to this and handle this specifically.
-            if (Collections.emptyList().equals(fileList)) return this;
+        ModInfoParser invoke(JSONArray fileList, Set<String> databaseNoYamlFiles) {
+            for (Object fileRaw : fileList) {
+                JSONObject file = (JSONObject) fileRaw;
 
-            // the file list can either be a map (fileid => file info), or just a list of file info.
-            Collection<Map<String, Object>> fileListCasted;
-            if (fileList instanceof Map) {
-                fileListCasted = ((Map<String, Map<String, Object>>) fileList).values();
-            } else {
-                fileListCasted = (List<Map<String, Object>>) fileList;
-            }
-
-            for (Map<String, Object> file : fileListCasted) {
                 // get the obvious info about the file (URL and upload date)
-                int fileDate = (int) file.get("_tsDateAdded");
-                int filesize = (int) file.get("_nFilesize");
-                String fileUrl = ((String) file.get("_sDownloadUrl")).replace("dl", "mmdl");
+                int fileDate = file.getInt("_tsDateAdded");
+                int filesize = file.getInt("_nFilesize");
+                String fileUrl = file.getString("_sDownloadUrl").replace("dl", "mmdl");
                 allFileUrls.add(fileUrl);
                 allFileSizes.add(filesize);
                 allFileTimestamps.add(fileDate);

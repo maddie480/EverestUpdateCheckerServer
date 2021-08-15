@@ -1,5 +1,6 @@
 package com.max480.everest.updatechecker;
 
+import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -12,6 +13,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class ModSearchDatabaseBuilder {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
@@ -29,7 +32,7 @@ public class ModSearchDatabaseBuilder {
         private final int likes;
         private final int views;
         private final int downloads;
-        private final int categoryId;
+        private int categoryId;
         private String categoryName;
         private final long createdDate;
         private final List<String> screenshots;
@@ -88,35 +91,25 @@ public class ModSearchDatabaseBuilder {
      * @param itemtype The GameBanana type
      * @param itemid   The GameBanana id
      * @param mod      The mod name
-     * @throws IOException In case an error occurs while parsing the mod authors field
      */
-    public void addMod(String itemtype, int itemid, List<Object> mod) throws IOException {
+    public void addMod(String itemtype, int itemid, JSONObject mod) {
         // parse screenshots and determine their URLs.
         List<String> screenshots = new ArrayList<>();
-        JSONArray screenshotsJson = new JSONArray(mod.get(10).toString());
+        JSONArray screenshotsJson = mod.getJSONArray("_aPreviewMedia");
         for (int i = 0; i < screenshotsJson.length(); i++) {
             JSONObject screenshotJson = screenshotsJson.getJSONObject(i);
-            screenshots.add("https://images.gamebanana.com/" + screenshotJson.getString("_sRelativeImageDir") + "/" + screenshotJson.getString("_sFile"));
+            screenshots.add(screenshotJson.getString("_sBaseUrl") + "/" + screenshotJson.getString("_sFile"));
         }
 
-        // depending on its length, the created date field can be interpreted as an integer or as a long.
-        long modCreatedDate;
-        if (mod.get(9) instanceof Integer) {
-            modCreatedDate = (int) mod.get(9);
-        } else {
-            modCreatedDate = (long) mod.get(9);
-        }
+        long modCreatedDate = mod.getLong("_tsDateAdded");
 
-        ModSearchInfo newModSearchInfo = new ModSearchInfo(itemtype, itemid, mod.get(0).toString(),
-                mod.get(2).toString(), mod.get(3).toString(), mod.get(4).toString(),
-                (int) mod.get(5), (int) mod.get(6), (int) mod.get(7), (int) mod.get(8), modCreatedDate, screenshots);
+        ModSearchInfo newModSearchInfo = new ModSearchInfo(itemtype, itemid, mod.getString("_sName"),
+                mod.getJSONObject("_aSubmitter").getString("_sName"), mod.getString("_sDescription"), mod.getString("_sText"),
+                mod.getInt("_nLikeCount"), mod.getInt("_nViewCount"), mod.getInt("_nDownloadCount"),
+                mod.getJSONObject("_aCategory").getInt("_idRow"), modCreatedDate, screenshots);
 
         modSearchInfo.add(newModSearchInfo);
-
-        if ("Mod".equals(itemtype)) {
-            // "Mod" is a generic itemtype, and we should get a more precise category instead.
-            categoryIds.add((int) mod.get(8));
-        }
+        categoryIds.add(mod.getJSONObject("_aCategory").getInt("_idRow"));
     }
 
     /**
@@ -125,12 +118,46 @@ public class ModSearchDatabaseBuilder {
      * @throws IOException If the file couldn't be written, or something went wrong with getting author/mod category names.
      */
     public void saveSearchDatabase() throws IOException {
-        // get authors and category names
-        fetchNamesAndUpdate(categoryIds, "ModCategory", (mod, id, name) -> {
-            if (mod.categoryId == id) {
-                mod.categoryName = name;
+        // get the list of categories from GameBanana
+        JSONArray listOfCategories = DatabaseUpdater.runWithRetry(() -> {
+            try (InputStream is = new URL("https://gamebanana.com/apiv5/ModCategory/ByGame?_aGameRowIds[]=6460&" +
+                    "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50").openStream()) {
+
+                return new JSONArray(IOUtils.toString(is, UTF_8));
             }
         });
+
+        // parse it in a convenient way
+        Map<Integer, String> categoryNames = new HashMap<>();
+        Map<Integer, Integer> categoryToParent = new HashMap<>();
+
+        for (Object categoryRaw : listOfCategories) {
+            JSONObject category = (JSONObject) categoryRaw;
+
+            if (category.getInt("_idParentCategoryRow") == 0) {
+                // this is a root category!
+                categoryNames.put(category.getInt("_idRow"), category.getString("_sName"));
+            } else {
+                // this is a subcategory.
+                categoryToParent.put(category.getInt("_idRow"), category.getInt("_idParentCategoryRow"));
+            }
+        }
+
+        // associate each mod to its root category.
+        for (ModSearchInfo info : modSearchInfo) {
+            if (info.gameBananaType.equals("Mod")) {
+                int category = info.categoryId;
+
+                // go up to the root category!
+                while (categoryToParent.containsKey(category)) {
+                    category = categoryToParent.get(category);
+                }
+
+                // assign it.
+                info.categoryId = category;
+                info.categoryName = categoryNames.get(category);
+            }
+        }
 
         // map ModSearchInfo's to Maps and save them.
         try (FileWriter writer = new FileWriter("uploads/modsearchdatabase.yaml")) {
@@ -148,57 +175,5 @@ public class ModSearchDatabaseBuilder {
      */
     private interface TriConsumer<A, B, C> {
         void accept(A a, B b, C c);
-    }
-
-    /**
-     * Fetches all names based on their IDs, and replaces them in the mod search database.
-     * Used for both authors and mod categories.
-     *
-     * @param ids           The list of ids to get
-     * @param itemtype      The GameBanana itemtype (Member for authors, ModCategory for mod categories)
-     * @param handleMapping The function that takes a mod, an id and the corresponding name and updates the name in the mod
-     *                      if the id matches.
-     * @throws IOException If something went wrong when querying GameBanana for the list.
-     */
-    private void fetchNamesAndUpdate(Set<Integer> ids, String itemtype, TriConsumer<ModSearchInfo, Integer, String> handleMapping) throws IOException {
-        // turn the Set into a List to be able to access it by index.
-        List<Integer> idsAsList = new ArrayList<>(ids);
-
-        List<List<Object>> names;
-        {
-            // build the URL that is going to get all names matching IDs at once.
-            // that is one big URL, but this should be fine.
-            StringBuilder urlUserInfo = new StringBuilder("https://api.gamebanana.com/Core/Item/Data?");
-            int index = 0;
-            for (Integer id : idsAsList) {
-                urlUserInfo
-                        .append("itemtype[").append(index).append("]=").append(itemtype).append("&itemid[").append(index).append("]=").append(id)
-                        .append("&fields[").append(index).append("]=name&");
-                index++;
-            }
-            String url = urlUserInfo.append("format=yaml").toString();
-
-            // run the request, parse the result, and add this result to the list.
-            names = DatabaseUpdater.runWithRetry(() -> {
-                try (InputStream is = DatabaseUpdater.openStreamWithTimeout(new URL(url))) {
-                    return Optional.ofNullable(new Yaml().<List<List<Object>>>load(is))
-                            .orElseThrow(() -> new IOException("Ended up with a null value when loading a mod page"));
-                }
-            });
-        }
-
-        // go through the results.
-        int index = 0;
-        for (List<Object> info : names) {
-            int id = idsAsList.get(index);
-            String name = info.get(0).toString();
-
-            // apply the name to every mod that has it as an ID.
-            for (ModSearchInfo mod : modSearchInfo) {
-                handleMapping.accept(mod, id, name);
-            }
-
-            index++;
-        }
     }
 }

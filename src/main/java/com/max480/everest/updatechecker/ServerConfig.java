@@ -22,12 +22,10 @@ public class ServerConfig {
     }
 
     public final boolean mainServerIsMirror;
-    public final boolean forceRegisterMods;
     public final BananaMirrorConfig bananaMirrorConfig;
 
     public ServerConfig(Map<String, Object> config) {
         mainServerIsMirror = (boolean) config.getOrDefault("MainServerIsMirror", false);
-        forceRegisterMods = (boolean) config.getOrDefault("ForceRegisterMods", false);
         bananaMirrorConfig = config.containsKey("BananaMirrorConfig") ?
                 new BananaMirrorConfig((Map<String, Object>) config.get("BananaMirrorConfig")) : null;
     }
