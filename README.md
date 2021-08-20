@@ -62,7 +62,7 @@ A file is generated at `uploads/modsearchdatabase.yaml` with extensive info abou
 
 ### Access
 
-This file is **not** publicly accessible.
+This file is publicly accessible at https://max480-random-stuff.appspot.com/celeste/mod_search_database.yaml.
 
 ## Mod files database
 
