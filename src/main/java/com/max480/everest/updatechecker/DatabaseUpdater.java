@@ -209,11 +209,10 @@ class DatabaseUpdater {
             String name = mod.getString("_sName");
 
             // if the mod has no file, _aFiles will be null.
-            if (mod.isNull("_aFiles")) {
-                continue;
+            ModInfoParser parsedModInfo = new ModInfoParser();
+            if (!mod.isNull("_aFiles")) {
+                parsedModInfo.invoke(mod.getJSONArray("_aFiles"), databaseNoYamlFiles);
             }
-
-            ModInfoParser parsedModInfo = new ModInfoParser().invoke(mod.getJSONArray("_aFiles"), databaseNoYamlFiles);
             existingFiles.addAll(parsedModInfo.allFileUrls);
 
             if (parsedModInfo.mostRecentFileUrl == null) {
