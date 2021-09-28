@@ -12,12 +12,13 @@ public class Mod {
     private List<String> xxHash;
     private String gameBananaType;
     private int gameBananaId;
+    private int size;
 
     /**
      * Builds a Mod object based on all its information.
      */
     Mod(String name, String version, String url, int lastUpdate, List<String> xxHash,
-        String gameBananaType, int gameBananaId) {
+        String gameBananaType, int gameBananaId, int size) {
 
         this.name = name;
         this.version = version;
@@ -26,6 +27,7 @@ public class Mod {
         this.xxHash = xxHash;
         this.gameBananaType = gameBananaType;
         this.gameBananaId = gameBananaId;
+        this.size = size;
     }
 
     /**
@@ -39,6 +41,7 @@ public class Mod {
         xxHash = (List<String>) yamlDatabaseEntry.getValue().get("xxHash");
         gameBananaType = (String) yamlDatabaseEntry.getValue().get("GameBananaType");
         gameBananaId = (int) yamlDatabaseEntry.getValue().get("GameBananaId");
+        size = (int) yamlDatabaseEntry.getValue().get("Size");
     }
 
     /**
@@ -59,12 +62,14 @@ public class Mod {
         modMap.put("xxHash", xxHash);
         modMap.put("GameBananaType", gameBananaType);
         modMap.put("GameBananaId", gameBananaId);
+        modMap.put("Size", size);
         return modMap;
     }
 
-    public void updateGameBananaIds(String gameBananaType, int gameBananaId) {
+    public void updateGameBananaIds(String gameBananaType, int gameBananaId, int size) {
         this.gameBananaType = gameBananaType;
         this.gameBananaId = gameBananaId;
+        this.size = size;
     }
 
     @Override
@@ -77,6 +82,7 @@ public class Mod {
                 ", xxHash=" + xxHash +
                 ", gameBananaType='" + gameBananaType + '\'' +
                 ", gameBananaId=" + gameBananaId +
+                ", size=" + size +
                 '}';
     }
 

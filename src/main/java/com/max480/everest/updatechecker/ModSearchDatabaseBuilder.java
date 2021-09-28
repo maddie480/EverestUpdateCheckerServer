@@ -3,18 +3,21 @@ package com.max480.everest.updatechecker;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class ModSearchDatabaseBuilder {
+    private static final Logger log = LoggerFactory.getLogger(ModSearchDatabaseBuilder.class);
+
     /**
      * This object holds the name, author, description and text of a GameBanana mod.
      */
@@ -32,11 +35,13 @@ public class ModSearchDatabaseBuilder {
         private String categoryName;
         private final long createdDate;
         private final List<String> screenshots;
+        private final List<Map<String, Object>> files;
 
         public ModSearchInfo(String gameBananaType, int gameBananaId, String name,
                              String authorName, String description, String text,
                              int likes, int views, int downloads, int categoryId,
-                             long createdDate, List<String> screenshots) {
+                             long createdDate, List<String> screenshots,
+                             List<Map<String, Object>> files) {
 
             this.gameBananaType = gameBananaType;
             this.gameBananaId = gameBananaId;
@@ -50,6 +55,7 @@ public class ModSearchDatabaseBuilder {
             this.categoryId = categoryId;
             this.createdDate = createdDate;
             this.screenshots = screenshots;
+            this.files = files;
         }
 
         /**
@@ -70,6 +76,7 @@ public class ModSearchDatabaseBuilder {
             map.put("Text", text);
             map.put("CreatedDate", createdDate);
             map.put("Screenshots", screenshots);
+            map.put("Files", files);
             if (categoryName != null) {
                 map.put("CategoryId", categoryId);
                 map.put("CategoryName", categoryName);
@@ -98,10 +105,37 @@ public class ModSearchDatabaseBuilder {
 
         long modCreatedDate = mod.getLong("_tsDateAdded");
 
+        List<Map<String, Object>> filesInMod = new ArrayList<>();
+        if (!mod.isNull("_aFiles")) {
+            filesInMod = StreamSupport.stream(mod.getJSONArray("_aFiles").spliterator(), false)
+                    .map(item -> {
+                        // map a file into a hash map.
+                        JSONObject file = (JSONObject) item;
+                        Map<String, Object> map = new HashMap<>();
+                        map.put("URL", file.getString("_sDownloadUrl"));
+                        map.put("Name", file.getString("_sFile"));
+                        map.put("Size", file.getInt("_nFilesize"));
+                        map.put("Downloads", file.getInt("_nDownloadCount"));
+
+                        boolean hasYaml = false;
+                        File modFilesDatabase = new File("modfilesdatabase/" + itemtype + "/" + itemid + "/" + file.getInt("_idRow") + ".yaml");
+                        if (modFilesDatabase.exists()) {
+                            try (FileInputStream is = new FileInputStream(modFilesDatabase)) {
+                                List<String> files = new Yaml().load(is);
+                                hasYaml = files.contains("multimetadata.yml") || files.contains("everest.yml") || files.contains("everest.yaml");
+                            } catch (IOException e) {
+                                log.error("Could not read files database at " + modFilesDatabase.getPath() + "!", e);
+                            }
+                        }
+                        map.put("HasEverestYaml", hasYaml);
+                        return map;
+                    }).collect(Collectors.toList());
+        }
+
         ModSearchInfo newModSearchInfo = new ModSearchInfo(itemtype, itemid, mod.getString("_sName"),
                 mod.getJSONObject("_aSubmitter").getString("_sName"), mod.getString("_sDescription"), mod.getString("_sText"),
                 mod.getInt("_nLikeCount"), mod.getInt("_nViewCount"), mod.getInt("_nDownloadCount"),
-                mod.getJSONObject("_aCategory").getInt("_idRow"), modCreatedDate, screenshots);
+                mod.getJSONObject("_aCategory").getInt("_idRow"), modCreatedDate, screenshots, filesInMod);
 
         modSearchInfo.add(newModSearchInfo);
     }
@@ -114,7 +148,7 @@ public class ModSearchDatabaseBuilder {
     public void saveSearchDatabase() throws IOException {
         // get the list of categories from GameBanana
         JSONArray listOfCategories = DatabaseUpdater.runWithRetry(() -> {
-            try (InputStream is = new URL("https://gamebanana.com/apiv5/ModCategory/ByGame?_aGameRowIds[]=6460&" +
+            try (InputStream is = new URL("https://gamebanana.com/apiv6/ModCategory/ByGame?_aGameRowIds[]=6460&" +
                     "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50").openStream()) {
 
                 return new JSONArray(IOUtils.toString(is, UTF_8));

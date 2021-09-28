@@ -155,8 +155,8 @@ class DatabaseUpdater {
         }
 
         // also write the mod search and files databases to disk.
-        modSearchDatabaseBuilder.saveSearchDatabase();
         modFilesDatabaseBuilder.saveToDisk();
+        modSearchDatabaseBuilder.saveSearchDatabase();
 
         // update the file mirror
         BananaMirror.main(null);
@@ -175,7 +175,7 @@ class DatabaseUpdater {
             // load a page of mods.
             final int thisPage = page;
             JSONArray pageContents = runWithRetry(() -> {
-                try (InputStream is = new URL("https://gamebanana.com/apiv5/" + category + "/ByGame?_aGameRowIds[]=6460&" +
+                try (InputStream is = new URL("https://gamebanana.com/apiv6/" + category + "/ByGame?_aGameRowIds[]=6460&" +
                         "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory,_tsDateAdded,_aPreviewMedia" +
                         "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=50").openStream()) {
 
@@ -287,7 +287,7 @@ class DatabaseUpdater {
             // be sure to sync up GameBanana type and id.
             database.values().stream()
                     .filter(mod -> mod.getUrl().equals(fileUrl))
-                    .forEach(mod -> mod.updateGameBananaIds(gbType, gbId));
+                    .forEach(mod -> mod.updateGameBananaIds(gbType, gbId, expectedSize));
         } else {
             // download the mod
             numberOfModsDownloaded++;
@@ -334,7 +334,7 @@ class DatabaseUpdater {
                     log.warn("=> {} has no yaml file. Adding to the no yaml files list.", fileUrl);
                     databaseNoYamlFiles.add(fileUrl);
                 } else {
-                    parseEverestYamlFromZipFile(zipFile.getInputStream(everestYaml), xxHash, fileUrl, fileTimestamp, gbType, gbId);
+                    parseEverestYamlFromZipFile(zipFile.getInputStream(everestYaml), xxHash, fileUrl, fileTimestamp, gbType, gbId, expectedSize);
                 }
             } catch (IOException e) {
                 log.warn("=> could not read zip file from {}. Adding to the excluded files list.", fileUrl, e);
@@ -354,9 +354,10 @@ class DatabaseUpdater {
      * @param fileTimestamp   The timestamp the file was uploaded at on GameBanana
      * @param gbType          The mod type on GameBanana
      * @param gbId            The mod ID on GameBanana
+     * @param fileSize        The size of the file
      */
     private void parseEverestYamlFromZipFile(InputStream yamlInputStream, String xxHash, String fileUrl, int fileTimestamp,
-                                             String gbType, int gbId) {
+                                             String gbType, int gbId, int fileSize) {
         try {
             List<Map<String, Object>> info = new Yaml().load(yamlInputStream);
 
@@ -371,7 +372,7 @@ class DatabaseUpdater {
                     modVersion = "NoVersion";
                 }
 
-                Mod mod = new Mod(modName, modVersion, fileUrl, fileTimestamp, Collections.singletonList(xxHash), gbType, gbId);
+                Mod mod = new Mod(modName, modVersion, fileUrl, fileTimestamp, Collections.singletonList(xxHash), gbType, gbId, fileSize);
 
                 if (database.containsKey(modName) && database.get(modName).getLastUpdate() > fileTimestamp) {
                     log.warn("=> database already contains more recent file {}. Adding to the excluded files list.", database.get(modName));

@@ -11,12 +11,14 @@ I'm currently running this server, some of its features are made available throu
 When running, the bot generates a file named `uploads/everestupdate.yaml` containing information on all Celeste mods published on GameBanana including an `everest.yaml`. For example:
 ```yaml
 SuperHotMod:
-  GameBananaType: Gamefile
+  URL: https://gamebanana.com/mmdl/430983
+  GameBananaType: Mod
   Version: 2.0.0
   LastUpdate: 1567660611
-  GameBananaId: 7936
+  Size: 26223
+  GameBananaId: 53639
   xxHash: [ab8e6117a0ef3cab]
-  URL: https://gamebanana.com/mmdl/430983
+  MirrorURL: https://celestemodupdater.0x0a.de/banana-mirror/430983.zip
 ```
 
 ### Where it is used
@@ -40,8 +42,8 @@ A file is generated at `uploads/modsearchdatabase.yaml` with extensive info abou
   Author: vitellary
   Description: It's been flipped!
   Likes: 2
-  Views: 1794
-  Downloads: 105
+  Views: 1970
+  Downloads: 112
   Text: Had this dumb idea a couple months ago, been working on it on and off and
     finally decided to finish it. Dependencies are Communal Helper and Max's Helping
     Hand. Difficulty is a bit harder than the vanilla equivalent of each level (though
@@ -49,6 +51,9 @@ A file is generated at `uploads/modsearchdatabase.yaml` with extensive info abou
     for the C-Side.
   CreatedDate: 1609618797
   Screenshots: ['https://images.gamebanana.com/img/ss/mods/5ff0d4c6e3472.jpg', 'https://images.gamebanana.com/img/ss/mods/5ff0d4fe36733.jpg']
+  Files:
+    - {HasEverestYaml: true, Size: 1247578, Downloads: 112, URL: 'https://gamebanana.com/dl/505272',
+       Name: weirdsite.zip}
   CategoryId: 6800
   CategoryName: Maps
 ```
@@ -133,7 +138,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.34.jar`.
+This will build the project to `target/update-checker-0.0.35.jar`.
 
 ### Running the project
 
@@ -146,7 +151,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.34.jar [port] [minutes]
+java -jar update-checker-0.0.35.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
