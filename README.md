@@ -52,8 +52,8 @@ A file is generated at `uploads/modsearchdatabase.yaml` with extensive info abou
   CreatedDate: 1609618797
   Screenshots: ['https://images.gamebanana.com/img/ss/mods/5ff0d4c6e3472.jpg', 'https://images.gamebanana.com/img/ss/mods/5ff0d4fe36733.jpg']
   Files:
-    - {HasEverestYaml: true, Size: 1247578, Downloads: 112, URL: 'https://gamebanana.com/dl/505272',
-       Name: weirdsite.zip}
+    - {HasEverestYaml: true, Size: 1247578, CreatedDate: 1609618709, Downloads: 112,
+       URL: 'https://gamebanana.com/dl/505272', Name: weirdsite.zip}
   CategoryId: 6800
   CategoryName: Maps
 ```
@@ -138,7 +138,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.35.jar`.
+This will build the project to `target/update-checker-0.0.36.jar`.
 
 ### Running the project
 
@@ -151,7 +151,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.35.jar [port] [minutes]
+java -jar update-checker-0.0.36.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).

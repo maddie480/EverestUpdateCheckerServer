@@ -115,6 +115,7 @@ public class ModSearchDatabaseBuilder {
                         map.put("URL", file.getString("_sDownloadUrl"));
                         map.put("Name", file.getString("_sFile"));
                         map.put("Size", file.getInt("_nFilesize"));
+                        map.put("CreatedDate", file.getInt("_tsDateAdded"));
                         map.put("Downloads", file.getInt("_nDownloadCount"));
 
                         boolean hasYaml = false;
