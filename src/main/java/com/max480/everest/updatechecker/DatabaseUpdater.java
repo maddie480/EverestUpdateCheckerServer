@@ -226,9 +226,9 @@ class DatabaseUpdater {
             }
 
             // save the info about this mod in the mod search and files databases.
-            modSearchDatabaseBuilder.addMod(category, mod.getInt("_idRow"), mod);
             modFilesDatabaseBuilder.addMod(category, mod.getInt("_idRow"), name,
                     parsedModInfo.allFileUrls, parsedModInfo.allFileSizes);
+            modSearchDatabaseBuilder.addMod(category, mod.getInt("_idRow"), mod);
         }
     }
 

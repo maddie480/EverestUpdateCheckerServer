@@ -13,6 +13,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import static com.max480.everest.updatechecker.DatabaseUpdater.openStreamWithTimeout;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class ModSearchDatabaseBuilder {
@@ -36,6 +37,7 @@ public class ModSearchDatabaseBuilder {
         private final long createdDate;
         private final List<String> screenshots;
         private final List<Map<String, Object>> files;
+        private Map<String, Object> featured;
 
         public ModSearchInfo(String gameBananaType, int gameBananaId, String name,
                              String authorName, String description, String text,
@@ -56,6 +58,13 @@ public class ModSearchDatabaseBuilder {
             this.createdDate = createdDate;
             this.screenshots = screenshots;
             this.files = files;
+            this.featured = null;
+        }
+
+        public void setFeatured(String category, int position) {
+            featured = new HashMap<>();
+            featured.put("Category", category);
+            featured.put("Position", position);
         }
 
         /**
@@ -80,6 +89,9 @@ public class ModSearchDatabaseBuilder {
             if (categoryName != null) {
                 map.put("CategoryId", categoryId);
                 map.put("CategoryName", categoryName);
+            }
+            if (featured != null) {
+                map.put("Featured", featured);
             }
             return map;
         }
@@ -120,7 +132,7 @@ public class ModSearchDatabaseBuilder {
                         map.put("Description", file.getString("_sDescription"));
 
                         boolean hasYaml = false;
-                        File modFilesDatabase = new File("modfilesdatabase/" + itemtype + "/" + itemid + "/" + file.getInt("_idRow") + ".yaml");
+                        File modFilesDatabase = new File("modfilesdatabase_temp/" + itemtype + "/" + itemid + "/" + file.getInt("_idRow") + ".yaml");
                         if (modFilesDatabase.exists()) {
                             try (FileInputStream is = new FileInputStream(modFilesDatabase)) {
                                 List<String> files = new Yaml().load(is);
@@ -150,8 +162,8 @@ public class ModSearchDatabaseBuilder {
     public void saveSearchDatabase() throws IOException {
         // get the list of categories from GameBanana
         JSONArray listOfCategories = DatabaseUpdater.runWithRetry(() -> {
-            try (InputStream is = new URL("https://gamebanana.com/apiv6/ModCategory/ByGame?_aGameRowIds[]=6460&" +
-                    "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50").openStream()) {
+            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv6/ModCategory/ByGame?_aGameRowIds[]=6460&" +
+                    "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50"))) {
 
                 return new JSONArray(IOUtils.toString(is, UTF_8));
             }
@@ -186,6 +198,27 @@ public class ModSearchDatabaseBuilder {
                 // assign it.
                 info.categoryId = category;
                 info.categoryName = categoryNames.get(category);
+            }
+        }
+
+        // get featured mods and fill in the info for mods accordingly.
+        JSONObject featured = DatabaseUpdater.runWithRetry(() -> {
+            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv7/Game/6460/TopSubs"))) {
+                return new JSONObject(IOUtils.toString(is, UTF_8));
+            }
+        });
+        for (String category : featured.keySet()) {
+            int position = 0;
+            for (Object mod : featured.getJSONArray(category)) {
+                JSONObject modObject = (JSONObject) mod;
+                String itemtype = modObject.getString("_sModelName");
+                int itemid = modObject.getInt("_idRow");
+
+                int thisPosition = position;
+                modSearchInfo.stream()
+                        .filter(i -> i.gameBananaType.equals(itemtype) && i.gameBananaId == itemid)
+                        .forEach(i -> i.setFeatured(category, thisPosition));
+                position++;
             }
         }
 

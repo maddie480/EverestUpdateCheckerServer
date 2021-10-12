@@ -18,6 +18,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import static com.max480.everest.updatechecker.DatabaseUpdater.openStreamWithTimeout;
+import static com.max480.everest.updatechecker.DatabaseUpdater.runWithRetry;
 
 public class ModFilesDatabaseBuilder {
     private static final Logger log = LoggerFactory.getLogger(ModFilesDatabaseBuilder.class);
@@ -152,19 +153,27 @@ public class ModFilesDatabaseBuilder {
 
     private void checkForAhornPlugins() throws IOException {
         {
-            List<String> ahornEntities = new LinkedList<>();
-            List<String> ahornTriggers = new LinkedList<>();
-            List<String> ahornEffects = new LinkedList<>();
-
-            try (InputStream is = new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/entity.jl").openStream()) {
-                extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, "Ahorn/entities/vanilla.jl", is);
-            }
-            try (InputStream is = new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/trigger.jl").openStream()) {
-                extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, "Ahorn/triggers/vanilla.jl", is);
-            }
-            try (InputStream is = new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/style.jl").openStream()) {
-                extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, "Ahorn/effects/vanilla.jl", is);
-            }
+            List<String> ahornEntities = runWithRetry(() -> {
+                try (InputStream is = openStreamWithTimeout(new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/entity.jl"))) {
+                    List<String> entities = new LinkedList<>();
+                    extractAhornEntities(entities, null, null, "Ahorn/entities/vanilla.jl", is);
+                    return entities;
+                }
+            });
+            List<String> ahornTriggers = runWithRetry(() -> {
+                try (InputStream is = openStreamWithTimeout(new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/trigger.jl"))) {
+                    List<String> triggers = new LinkedList<>();
+                    extractAhornEntities(null, triggers, null, "Ahorn/triggers/vanilla.jl", is);
+                    return triggers;
+                }
+            });
+            List<String> ahornEffects = runWithRetry(() -> {
+                try (InputStream is = openStreamWithTimeout(new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/style.jl"))) {
+                    List<String> effects = new LinkedList<>();
+                    extractAhornEntities(null, null, effects, "Ahorn/effects/vanilla.jl", is);
+                    return effects;
+                }
+            });
 
             try (FileWriter writer = new FileWriter(Paths.get("modfilesdatabase_temp/ahorn_vanilla.yaml").toFile())) {
                 Map<String, List<String>> ahornPlugins = new HashMap<>();
