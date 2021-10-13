@@ -23,6 +23,7 @@ public class ModSearchDatabaseBuilder {
      * This object holds the name, author, description and text of a GameBanana mod.
      */
     private static class ModSearchInfo {
+        private final String url;
         private final String gameBananaType;
         private final int gameBananaId;
         private final String name;
@@ -39,12 +40,13 @@ public class ModSearchDatabaseBuilder {
         private final List<Map<String, Object>> files;
         private Map<String, Object> featured;
 
-        public ModSearchInfo(String gameBananaType, int gameBananaId, String name,
+        public ModSearchInfo(String url, String gameBananaType, int gameBananaId, String name,
                              String authorName, String description, String text,
                              int likes, int views, int downloads, int categoryId,
                              long createdDate, List<String> screenshots,
                              List<Map<String, Object>> files) {
 
+            this.url = url;
             this.gameBananaType = gameBananaType;
             this.gameBananaId = gameBananaId;
             this.name = name;
@@ -74,6 +76,7 @@ public class ModSearchDatabaseBuilder {
          */
         public Map<String, Object> toMap() {
             Map<String, Object> map = new LinkedHashMap<>();
+            map.put("PageURL", url);
             map.put("GameBananaType", gameBananaType);
             map.put("GameBananaId", gameBananaId);
             map.put("Name", name);
@@ -85,6 +88,13 @@ public class ModSearchDatabaseBuilder {
             map.put("Text", text);
             map.put("CreatedDate", createdDate);
             map.put("Screenshots", screenshots);
+            List<String> mirroredScreenshots = new ArrayList<>();
+            for (int i = 0; i < 2 && i < screenshots.size(); i++) {
+                String screenshotUrl = screenshots.get(i);
+                mirroredScreenshots.add("https://celestemodupdater.0x0a.de/banana-mirror-images/" +
+                        screenshotUrl.substring("https://images.gamebanana.com/".length(), screenshotUrl.lastIndexOf(".")).replace("/", "_") + ".png");
+            }
+            map.put("MirroredScreenshots", mirroredScreenshots);
             map.put("Files", files);
             if (categoryName != null) {
                 map.put("CategoryId", categoryId);
@@ -146,7 +156,7 @@ public class ModSearchDatabaseBuilder {
                     }).collect(Collectors.toList());
         }
 
-        ModSearchInfo newModSearchInfo = new ModSearchInfo(itemtype, itemid, mod.getString("_sName"),
+        ModSearchInfo newModSearchInfo = new ModSearchInfo(mod.getString("_sProfileUrl"), itemtype, itemid, mod.getString("_sName"),
                 mod.getJSONObject("_aSubmitter").getString("_sName"), mod.getString("_sDescription"), mod.getString("_sText"),
                 mod.getInt("_nLikeCount"), mod.getInt("_nViewCount"), mod.getInt("_nDownloadCount"),
                 mod.getJSONObject("_aCategory").getInt("_idRow"), modCreatedDate, screenshots, filesInMod);

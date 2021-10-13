@@ -36,26 +36,34 @@ This file is publicly accessible at https://max480-random-stuff.appspot.com/cele
 
 A file is generated at `uploads/modsearchdatabase.yaml` with extensive info about all mods. It can be used as a database of mod names, authors and descriptions on GameBanana. A mod in this file looks like this:
 ```yaml
-- GameBananaType: Mod
-  GameBananaId: 150525
-  Name: Old Site but... weird
-  Author: vitellary
-  Description: It's been flipped!
-  Likes: 2
-  Views: 1970
-  Downloads: 112
-  Text: Had this dumb idea a couple months ago, been working on it on and off and
-    finally decided to finish it. Dependencies are Communal Helper and Max's Helping
-    Hand. Difficulty is a bit harder than the vanilla equivalent of each level (though
-    it's a decent bit more puzzly), and only advanced tech required is wallbounces
-    for the C-Side.
-  CreatedDate: 1609618797
-  Screenshots: ['https://images.gamebanana.com/img/ss/mods/5ff0d4c6e3472.jpg', 'https://images.gamebanana.com/img/ss/mods/5ff0d4fe36733.jpg']
+- PageURL: https://gamebanana.com/mods/150453
+  GameBananaType: Mod
+  GameBananaId: 150453
+  Name: Glyph
+  Author: marshall h
+  Description: Maddie goes on a journey through the mind & memories of one that are
+    not her own.
+  Likes: 84
+  Views: 175923
+  Downloads: 4097
+  Text: 'Hi thanks for playing this map! this was created by marshall h (marshall#9018
+    on discord)<br><br>I do this for fun and personal development, but I aspire to
+    do game development / music for a living someday, and I''d definitely appreciate
+    support. You can purchase the soundtrack for this Mod on <a href="https://mwhatt.bandcamp.com/releases"
+    target="_blank">Bandcamp</a>. [...]'
+  CreatedDate: 1588357721
+  Screenshots: ['https://images.gamebanana.com/img/ss/mods/60e5d6e408360.jpg']
+  MirroredScreenshots: ['https://celestemodupdater.0x0a.de/banana-mirror-images/img_ss_mods_60e5d6e408360.png']
   Files:
-    - {HasEverestYaml: true, Size: 1247578, CreatedDate: 1609618709, Downloads: 112,
-       URL: 'https://gamebanana.com/dl/505272', Name: weirdsite.zip}
+  - {Description: v2.3.1, HasEverestYaml: true, Size: 23273323, CreatedDate: 1629786878,
+    Downloads: 254, URL: 'https://gamebanana.com/dl/643617', Name: glyph_d8867.zip}
+  - {Description: v2.3.0, HasEverestYaml: true, Size: 23270154, CreatedDate: 1626888153,
+    Downloads: 200, URL: 'https://gamebanana.com/dl/619609', Name: glyph_b4c4f.zip}
+  - {Description: v2.2.0, HasEverestYaml: true, Size: 18559501, CreatedDate: 1610265120,
+    Downloads: 2263, URL: 'https://gamebanana.com/dl/506897', Name: glyph_6ec44.zip}
   CategoryId: 6800
   CategoryName: Maps
+  Featured: {Category: alltime, Position: 1}
 ```
 
 ### Where it is used
@@ -138,7 +146,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.38.jar`.
+This will build the project to `target/update-checker-0.0.39.jar`.
 
 ### Running the project
 
@@ -151,7 +159,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.38.jar [port] [minutes]
+java -jar update-checker-0.0.39.jar [port] [minutes]
 ```
 
 [port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).

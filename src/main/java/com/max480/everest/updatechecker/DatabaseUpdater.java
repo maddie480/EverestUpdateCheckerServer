@@ -176,7 +176,7 @@ class DatabaseUpdater {
             final int thisPage = page;
             JSONArray pageContents = runWithRetry(() -> {
                 try (InputStream is = new URL("https://gamebanana.com/apiv6/" + category + "/ByGame?_aGameRowIds[]=6460&" +
-                        "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory,_tsDateAdded,_aPreviewMedia" +
+                        "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory,_tsDateAdded,_aPreviewMedia,_sProfileUrl" +
                         "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=50").openStream()) {
 
                     return new JSONArray(IOUtils.toString(is, UTF_8));
