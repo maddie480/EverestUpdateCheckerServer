@@ -112,7 +112,9 @@ This file only exists for zips that have a Ahorn folder in them.
 
 ### Access
 
-The only file made available publicly is the `modfilesdatabase/file_ids.yaml` file, at https://max480-random-stuff.appspot.com/celeste/file_ids.yaml.
+You can download the `modfilesdatabase` directory as a zip at https://max480-random-stuff.appspot.com/celeste/mod_files_database.zip.
+
+Il you only need  `modfilesdatabase/file_ids.yaml`, you can get it at https://max480-random-stuff.appspot.com/celeste/file_ids.yaml.
 
 ## Banana Mirror
 
