@@ -136,28 +136,28 @@ Files and images are uploaded to [0x0ade's server](https://celestemodupdater.0x0
 
 This file is generated at `uploads/moddependencygraph.yaml` and lists what each mod in `everestupdate.yaml` depends on:
 ```yaml
-SuperHotMod:
-  URL: https://gamebanana.com/mmdl/430983
-  GameBananaType: Mod
-  Version: 2.0.0
-  LastUpdate: 1567660611
-  Size: 26223
-  GameBananaId: 53639
-  xxHash: [ab8e6117a0ef3cab]
-  MirrorURL: https://celestemodupdater.0x0a.de/banana-mirror/430983.zip
+WitheredPassage:
+  URL: https://gamebanana.com/mmdl/484636
+  Dependencies:
+    FrostHelper: 1.17.8
+    MoreDasheline: 1.6.0
+    Everest: 1.1884.0
+    MaxHelpingHand: 1.5.0
+    ContortHelper: 1.0.0
+    DJMapHelper: 1.8.13
 ```
 
 ### Where it is used
 
 The [Custom Entity Catalog](https://max480-random-stuff.appspot.com/celeste/custom-entity-catalog) uses it to show how many mods depend on each helper.
 
-This can also be used whenever it is needed to know which mods depend on a particular one, for example to evaluate impacts after a helper is deleted from GameBanana, or to check which mods depend on Spring Collab.
+This can also be used whenever it is needed to know which mods depend on a particular one, for example to evaluate impacts after a helper is deleted from GameBanana, or to check which mods have dependencies on big maps.
 
 It is possible to download a mod and all dependencies, including transitive ones, by building a graph from this file.
 
 ### Access
 
-This file is publicly accessible at https://max480-random-stuff.appspot.com/celeste/everest_update.yaml.
+This file is publicly accessible at https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml.
 
 ## Developing and running your own copy
 
