@@ -161,6 +161,9 @@ class DatabaseUpdater {
         // update the file mirror
         BananaMirror.main(null);
         BananaMirrorImages.main(null);
+
+        // update the dependency graph with new entries.
+        DependencyGraphBuilder.updateDependencyGraph();
     }
 
     /**
