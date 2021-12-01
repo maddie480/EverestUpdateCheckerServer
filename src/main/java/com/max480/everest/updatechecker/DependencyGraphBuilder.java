@@ -21,6 +21,10 @@ import static com.max480.everest.updatechecker.DatabaseUpdater.openStreamWithTim
 public class DependencyGraphBuilder {
     private static final Logger log = LoggerFactory.getLogger(DependencyGraphBuilder.class);
 
+    public static void main(String[] args) throws IOException {
+        updateDependencyGraph();
+    }
+
     static void updateDependencyGraph() throws IOException {
         Map<String, Map<String, Object>> oldDependencyGraph;
         try (InputStream is = new FileInputStream("uploads/moddependencygraph.yaml")) {
@@ -49,7 +53,7 @@ public class DependencyGraphBuilder {
 
             if (existingDependencyGraphEntry != null) {
                 // we already have that mod!
-                newDependencyGraph.put(existingDependencyGraphEntry.getKey(), new HashMap<>(existingDependencyGraphEntry.getValue()));
+                newDependencyGraph.put(existingDependencyGraphEntry.getKey(), existingDependencyGraphEntry.getValue());
             } else {
                 // download file from mirror
                 DatabaseUpdater.runWithRetry(() -> {
@@ -68,6 +72,7 @@ public class DependencyGraphBuilder {
 
                 // read its everest.yaml
                 Map<String, String> dependencies = new HashMap<>();
+                Map<String, String> optionalDependencies = new HashMap<>();
                 try (ZipFile zipFile = new ZipFile(new File("mod-dependencytree.zip"))) {
                     ZipEntry everestYaml = zipFile.getEntry("everest.yaml");
                     if (everestYaml == null) {
@@ -91,11 +96,14 @@ public class DependencyGraphBuilder {
                         for (Map<String, String> dependencyEntry : (List<Map<String, String>>) matchingYamlEntry.get("Dependencies")) {
                             dependencies.put(dependencyEntry.get("Name"), dependencyEntry.getOrDefault("Version", "NoVersion"));
                         }
-                    } else {
-                        log.info("{} has no Dependencies entry in its everest.yaml file.", mod.getKey());
+                    }
+                    if (matchingYamlEntry.containsKey("OptionalDependencies")) {
+                        for (Map<String, String> dependencyEntry : (List<Map<String, String>>) matchingYamlEntry.get("OptionalDependencies")) {
+                            optionalDependencies.put(dependencyEntry.get("Name"), dependencyEntry.getOrDefault("Version", "NoVersion"));
+                        }
                     }
 
-                    log.info("Found {} dependencies for {}.", dependencies.size(), mod.getKey());
+                    log.info("Found {} dependencies and {} optional dependencies for {}.", dependencies.size(), optionalDependencies.size(), mod.getKey());
                 } catch (Exception e) {
                     // if a file cannot be read as a zip, no need to worry about it.
                     // we will just write an empty array.
@@ -106,6 +114,7 @@ public class DependencyGraphBuilder {
                 Map<String, Object> graphEntry = new HashMap<>();
                 graphEntry.put("URL", url);
                 graphEntry.put("Dependencies", dependencies);
+                graphEntry.put("OptionalDependencies", optionalDependencies);
                 newDependencyGraph.put(mod.getKey(), graphEntry);
 
                 FileUtils.forceDelete(new File("mod-dependencytree.zip"));
