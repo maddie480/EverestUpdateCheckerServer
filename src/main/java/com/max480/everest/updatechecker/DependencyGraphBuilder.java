@@ -21,10 +21,6 @@ import static com.max480.everest.updatechecker.DatabaseUpdater.openStreamWithTim
 public class DependencyGraphBuilder {
     private static final Logger log = LoggerFactory.getLogger(DependencyGraphBuilder.class);
 
-    public static void main(String[] args) throws IOException {
-        updateDependencyGraph();
-    }
-
     static void updateDependencyGraph() throws IOException {
         Map<String, Map<String, Object>> oldDependencyGraph;
         try (InputStream is = new FileInputStream("uploads/moddependencygraph.yaml")) {
