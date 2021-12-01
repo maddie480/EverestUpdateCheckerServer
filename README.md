@@ -190,35 +190,10 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.40.jar [port] [minutes]
+java -jar update-checker-0.0.40.jar [minutes]
 ```
-
-[port] is the HTTP port for the server. If you don't provide any, there won't be any server hosted (useful if you already have something else hosting the files).
 
 [minutes] is the wait delay in minutes between two GameBanana checks (defaults to 30). Be aware that the program makes ~13 API calls per check, and that the GameBanana API has a cap at 250 requests/hour.
-
-### HTTP server usage
-
-**Note: the max480-random-stuff.appspot.com setup does not use this.**
-
-The server uses [NanoHttpd](https://github.com/NanoHttpd/nanohttpd) to provide the database over HTTP.
-
-It supports two methods:
-```
-GET /everestupdate.yaml 
-```
-provides the up-to-date everestupdate.yaml.
-
-```
-POST /everestupdate.yaml 
-```
-allows to overwrite the current database. This aims to give control over the database to people that do not host the server, to handle the special cases.
-
-To be able to use this method, you have to pass the content of the `code.txt` file in the Authorization header.
-
-You can also use these two methods with those two other files:
-* `/everestupdateexcluded.yaml`: this file lists all downloads that should be skipped on GameBanana for any reason. Corrupted zips or duplicates (f.e. Gauntlet is an older duplicate of Gauntlet Revamped) are automatically added to this. Those files won't be checked again by the update checker server. _If the blacklist reason contains a link to a GameBanana file, the entry will be deleted automatically if that file is deleted._ This is useful in cases where file A obsoletes file B, but should take over if file B is deleted.
-* `/everestupdatenoyaml.yaml`: this file holds the list of all zips that have been downloaded and don't contain any everest.yaml, so that they aren't downloaded again.
 
 ### Handling special cases
 
@@ -253,7 +228,6 @@ Ruby'sEntities: Part of D-sides
 * [Apache Commons IO](http://commons.apache.org/proper/commons-io/)
 * [Apache Commons Lang](https://commons.apache.org/proper/commons-lang/)
 * [Logback](http://logback.qos.ch/), licensed under [GNU LGPL version 2.1](http://logback.qos.ch/license.html)
-* [NanoHTTPD](https://github.com/NanoHttpd/nanohttpd), licensed under the [BSD 3-Clause "New" License](https://github.com/NanoHttpd/nanohttpd/blob/master/LICENSE.md)
 * [LZ4 Java](https://github.com/lz4/lz4-java), licensed under [Apache License 2.0](https://github.com/lz4/lz4-java/blob/master/LICENSE.txt), used for xxHash hash calculation
 * [JSch](http://www.jcraft.com/jsch/), licensed under [a BSD-style license](http://www.jcraft.com/jsch/LICENSE.txt)
 * [JSON in Java](https://github.com/stleary/JSON-java) ([license](https://github.com/stleary/JSON-java/blob/master/LICENSE))
