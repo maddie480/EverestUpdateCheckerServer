@@ -119,7 +119,7 @@ public class ModSearchDatabaseBuilder {
     public void addMod(String itemtype, int itemid, JSONObject mod) {
         // parse screenshots and determine their URLs.
         List<String> screenshots = new ArrayList<>();
-        JSONArray screenshotsJson = mod.getJSONArray("_aPreviewMedia");
+        JSONArray screenshotsJson = mod.getJSONObject("_aPreviewMedia").getJSONArray("_aImages");
         for (int i = 0; i < screenshotsJson.length(); i++) {
             JSONObject screenshotJson = screenshotsJson.getJSONObject(i);
             screenshots.add(screenshotJson.getString("_sBaseUrl") + "/" + screenshotJson.getString("_sFile"));
@@ -172,7 +172,7 @@ public class ModSearchDatabaseBuilder {
     public void saveSearchDatabase() throws IOException {
         // get the list of categories from GameBanana
         JSONArray listOfCategories = DatabaseUpdater.runWithRetry(() -> {
-            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv6/ModCategory/ByGame?_aGameRowIds[]=6460&" +
+            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv7/ModCategory/ByGame?_aGameRowIds[]=6460&" +
                     "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50"))) {
 
                 return new JSONArray(IOUtils.toString(is, UTF_8));
