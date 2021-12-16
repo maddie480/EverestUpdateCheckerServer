@@ -102,6 +102,7 @@ Entities: [MaxHelpingHand/CoreModeSpikesUp, MaxHelpingHand/CoreModeSpikesDown, M
   MaxHelpingHand/CoreModeSpikesRight, MaxHelpingHand/CustomizableCrumblePlatform,
   ...]
 ```
+- `modfilesdatabase/[itemtype]/[itemid]/loenn_[fileid].yaml` is a file listing all Lönn entity, trigger and effect IDs defined in `[fileid]`'s Lönn plugins, in the same format as Ahorn plugins above
 This file only exists for zips that have a Ahorn folder in them.
 - `modfilesdatabase/ahorn_vanilla.yaml` is a list of all vanilla and Everest entities, triggers and effects defined in [Maple](https://github.com/CelestialCartographers/Maple), in the same format as above.
 
@@ -177,7 +178,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.41.jar`.
+This will build the project to `target/update-checker-0.0.42.jar`.
 
 ### Running the project
 
@@ -188,7 +189,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.41.jar [minutes]
+java -jar update-checker-0.0.42.jar [minutes]
 ```
 
 [minutes] is the wait delay in minutes between two GameBanana checks (defaults to 30). Be aware that the program makes ~13 API calls per check, and that the GameBanana API has a cap at 250 requests/hour.

@@ -8,6 +8,7 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -193,60 +194,65 @@ public class ModFilesDatabaseBuilder {
             }
 
             for (String version : (List<String>) versions.get("Files")) {
-                Path oldPath = Paths.get("modfilesdatabase/" + mod + "/ahorn_" + version + ".yaml");
-                Path targetPath = modFolder.resolve("ahorn_" + version + ".yaml");
+                checkAhornFilesDatabase(mod, modFolder, version);
+                checkLoennFilesDatabase(mod, modFolder, version);
+            }
+        }
+    }
 
-                if (Files.exists(oldPath)) {
-                    // this zip was already scanned!
-                    Files.copy(oldPath, targetPath);
-                } else {
-                    List<String> fileList;
-                    try (InputStream is = new FileInputStream(modFolder.resolve(version + ".yaml").toFile())) {
-                        fileList = new Yaml().load(is);
+    private void checkAhornFilesDatabase(String mod, Path modFolder, String version) throws IOException {
+        Path oldPath = Paths.get("modfilesdatabase/" + mod + "/ahorn_" + version + ".yaml");
+        Path targetPath = modFolder.resolve("ahorn_" + version + ".yaml");
+
+        if (Files.exists(oldPath)) {
+            // this zip was already scanned!
+            Files.copy(oldPath, targetPath);
+        } else {
+            List<String> fileList;
+            try (InputStream is = new FileInputStream(modFolder.resolve(version + ".yaml").toFile())) {
+                fileList = new Yaml().load(is);
+            }
+
+            if (fileList.stream().anyMatch(f -> f.startsWith("Ahorn/"))) {
+                List<String> ahornEntities = new LinkedList<>();
+                List<String> ahornTriggers = new LinkedList<>();
+                List<String> ahornEffects = new LinkedList<>();
+
+                // download file
+                DatabaseUpdater.runWithRetry(() -> {
+                    try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-ahornscan.zip"))) {
+                        IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL("https://gamebanana.com/mmdl/" + version))), os);
+                        return null; // to fullfill this stupid method signature
+                    }
+                });
+
+                // scan its contents, opening Ahorn plugin files
+                try (ZipFile zipFile = new ZipFile(new File("mod-ahornscan.zip"))) {
+                    for (String file : fileList) {
+                        if (file.startsWith("Ahorn/") && file.endsWith(".jl")) {
+                            InputStream inputStream = zipFile.getInputStream(zipFile.getEntry(file));
+                            extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, file, inputStream);
+                        }
                     }
 
-                    if (fileList.stream().anyMatch(f -> f.startsWith("Ahorn/"))) {
-                        List<String> ahornEntities = new LinkedList<>();
-                        List<String> ahornTriggers = new LinkedList<>();
-                        List<String> ahornEffects = new LinkedList<>();
-
-                        // download file
-                        DatabaseUpdater.runWithRetry(() -> {
-                            try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-ahornscan.zip"))) {
-                                IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL("https://gamebanana.com/mmdl/" + version))), os);
-                                return null; // to fullfill this stupid method signature
-                            }
-                        });
-
-                        // scan its contents, opening Ahorn plugin files
-                        try (ZipFile zipFile = new ZipFile(new File("mod-ahornscan.zip"))) {
-                            for (String file : fileList) {
-                                if (file.startsWith("Ahorn/") && file.endsWith(".jl")) {
-                                    InputStream inputStream = zipFile.getInputStream(zipFile.getEntry(file));
-                                    extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, file, inputStream);
-                                }
-                            }
-
-                            log.info("Found {} Ahorn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
-                                    ahornEntities.size(), ahornTriggers.size(), ahornEffects.size(), version);
-                        } catch (IOException | IllegalArgumentException e) {
-                            // if a file cannot be read as a zip, no need to worry about it.
-                            // we will just write an empty array.
-                            log.warn("Could not analyze Ahorn plugins from https://gamebanana.com/mmdl/{}", version, e);
-                        }
-
-                        // write the result.
-                        try (FileWriter writer = new FileWriter(targetPath.toFile())) {
-                            Map<String, List<String>> ahornPlugins = new HashMap<>();
-                            ahornPlugins.put("Entities", ahornEntities);
-                            ahornPlugins.put("Triggers", ahornTriggers);
-                            ahornPlugins.put("Effects", ahornEffects);
-                            new Yaml().dump(ahornPlugins, writer);
-                        }
-
-                        FileUtils.forceDelete(new File("mod-ahornscan.zip"));
-                    }
+                    log.info("Found {} Ahorn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
+                            ahornEntities.size(), ahornTriggers.size(), ahornEffects.size(), version);
+                } catch (IOException | IllegalArgumentException e) {
+                    // if a file cannot be read as a zip, no need to worry about it.
+                    // we will just write an empty array.
+                    log.warn("Could not analyze Ahorn plugins from https://gamebanana.com/mmdl/{}", version, e);
                 }
+
+                // write the result.
+                try (FileWriter writer = new FileWriter(targetPath.toFile())) {
+                    Map<String, List<String>> ahornPlugins = new HashMap<>();
+                    ahornPlugins.put("Entities", ahornEntities);
+                    ahornPlugins.put("Triggers", ahornTriggers);
+                    ahornPlugins.put("Effects", ahornEffects);
+                    new Yaml().dump(ahornPlugins, writer);
+                }
+
+                FileUtils.forceDelete(new File("mod-ahornscan.zip"));
             }
         }
     }
@@ -280,6 +286,81 @@ public class ModFilesDatabaseBuilder {
                         ahornTriggers.add(entityID);
                     }
                 }
+            }
+        }
+    }
+
+    private void checkLoennFilesDatabase(String mod, Path modFolder, String version) throws IOException {
+        Path oldPath = Paths.get("modfilesdatabase/" + mod + "/loenn_" + version + ".yaml");
+        Path targetPath = modFolder.resolve("loenn_" + version + ".yaml");
+
+        if (Files.exists(oldPath)) {
+            // this zip was already scanned!
+            Files.copy(oldPath, targetPath);
+        } else {
+            List<String> fileList;
+            try (InputStream is = new FileInputStream(modFolder.resolve(version + ".yaml").toFile())) {
+                fileList = new Yaml().load(is);
+            }
+
+            if (fileList.contains("Loenn/lang/en_gb.lang")) {
+                Set<String> loennEntities = new HashSet<>();
+                Set<String> loennTriggers = new HashSet<>();
+                Set<String> loennEffects = new HashSet<>();
+
+                // download file
+                DatabaseUpdater.runWithRetry(() -> {
+                    try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-loennscan.zip"))) {
+                        IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL("https://gamebanana.com/mmdl/" + version))), os);
+                        return null; // to fullfill this stupid method signature
+                    }
+                });
+
+                // extract the en_gb.lang file
+                try (ZipFile zipFile = new ZipFile(new File("mod-loennscan.zip"));
+                     InputStream inputStream = zipFile.getInputStream(zipFile.getEntry("Loenn/lang/en_gb.lang"));
+                     BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+
+                    // read line per line, and extract the entity ID from each line starting with entities., triggers. or effects.
+                    Pattern regex = Pattern.compile("^(entities|triggers|effects)\\.([^.]+)\\..*$");
+
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        Matcher match = regex.matcher(line);
+                        if (match.matches()) {
+                            String entityName = match.group(2);
+                            switch (match.group(1)) {
+                                case "entities":
+                                    loennEntities.add(entityName);
+                                    break;
+                                case "triggers":
+                                    loennTriggers.add(entityName);
+                                    break;
+                                case "effects":
+                                    loennEffects.add(entityName);
+                                    break;
+                            }
+                        }
+                    }
+
+                    log.info("Found {} Lönn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
+                            loennEntities.size(), loennTriggers.size(), loennEffects.size(), version);
+                } catch (IOException | IllegalArgumentException e) {
+                    // if a file cannot be read as a zip, no need to worry about it.
+                    // we will just write an empty array.
+                    log.warn("Could not analyze Lönn plugins from https://gamebanana.com/mmdl/{}", version, e);
+                }
+
+                // write the result.
+                try (FileWriter writer = new FileWriter(targetPath.toFile())) {
+                    Map<String, List<String>> loennPlugins = new HashMap<>();
+                    loennPlugins.put("Entities", new ArrayList<>(loennEntities));
+                    loennPlugins.put("Triggers", new ArrayList<>(loennTriggers));
+                    loennPlugins.put("Effects", new ArrayList<>(loennEffects));
+                    new Yaml().dump(loennPlugins, writer);
+                }
+
+                FileUtils.forceDelete(new File("mod-loennscan.zip"));
             }
         }
     }
