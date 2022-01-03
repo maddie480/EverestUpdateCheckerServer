@@ -52,34 +52,25 @@ class DatabaseUpdater {
             App - NO
             Article - NO
             Blog - NO
-            Castaway - YES
             Club - NO
             Concept - NO
             Contest - NO
-            Crafting - YES
-            Effect - YES
             Event - NO
-            Gamefile - YES
-            Gui - YES
             Idea - NO
             Jam - NO
-            Map - YES
             Mod - YES
             Model - YES
             News - NO
             Poll - NO
             PositionAvailable - NO
-            Prefab - YES
             Project - NO
             Question - NO
             Request - NO
             Review - NO
             Script - NO
-            Skin - YES
             Sound - YES
             Spray - YES
             Studio - NO
-            Texture - YES
             Thread - NO
             Tool - YES
             Tutorial - NO
@@ -89,7 +80,6 @@ class DatabaseUpdater {
          */
 
         // only sections that can have files are here
-        // old merged sections (Skins, Maps, Gamefiles, Effects, GUIs, Textures, Prefabs, Castaways & Craftings) still return stuff so they're excluded as well
         for (String category : Arrays.asList("Mod", "Model", "Sound", "Spray", "Tool", "Wip")) {
             crawlModsFromCategory(category);
         }
