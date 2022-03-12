@@ -36,6 +36,8 @@ public class ModSearchDatabaseBuilder {
         private int categoryId;
         private String categoryName;
         private final long createdDate;
+        private final long modifiedDate;
+        private final long updatedDate;
         private final List<String> screenshots;
         private final List<Map<String, Object>> files;
         private Map<String, Object> featured;
@@ -43,7 +45,7 @@ public class ModSearchDatabaseBuilder {
         public ModSearchInfo(String url, String gameBananaType, int gameBananaId, String name,
                              String authorName, String description, String text,
                              int likes, int views, int downloads, int categoryId,
-                             long createdDate, List<String> screenshots,
+                             long createdDate, long modifiedDate, long updatedDate, List<String> screenshots,
                              List<Map<String, Object>> files) {
 
             this.url = url;
@@ -58,6 +60,8 @@ public class ModSearchDatabaseBuilder {
             this.downloads = downloads;
             this.categoryId = categoryId;
             this.createdDate = createdDate;
+            this.modifiedDate = modifiedDate;
+            this.updatedDate = updatedDate;
             this.screenshots = screenshots;
             this.files = files;
             this.featured = null;
@@ -87,6 +91,8 @@ public class ModSearchDatabaseBuilder {
             map.put("Downloads", downloads);
             map.put("Text", text);
             map.put("CreatedDate", createdDate);
+            map.put("ModifiedDate", modifiedDate);
+            map.put("UpdatedDate", updatedDate);
             map.put("Screenshots", screenshots);
             List<String> mirroredScreenshots = new ArrayList<>();
             for (int i = 0; i < 2 && i < screenshots.size(); i++) {
@@ -125,8 +131,6 @@ public class ModSearchDatabaseBuilder {
             screenshots.add(screenshotJson.getString("_sBaseUrl") + "/" + screenshotJson.getString("_sFile"));
         }
 
-        long modCreatedDate = mod.getLong("_tsDateAdded");
-
         List<Map<String, Object>> filesInMod = new ArrayList<>();
         if (!mod.isNull("_aFiles")) {
             filesInMod = StreamSupport.stream(mod.getJSONArray("_aFiles").spliterator(), false)
@@ -159,7 +163,8 @@ public class ModSearchDatabaseBuilder {
         ModSearchInfo newModSearchInfo = new ModSearchInfo(mod.getString("_sProfileUrl"), itemtype, itemid, mod.getString("_sName"),
                 mod.getJSONObject("_aSubmitter").getString("_sName"), mod.getString("_sDescription"), mod.getString("_sText"),
                 mod.getInt("_nLikeCount"), mod.getInt("_nViewCount"), mod.getInt("_nDownloadCount"),
-                mod.getJSONObject("_aCategory").getInt("_idRow"), modCreatedDate, screenshots, filesInMod);
+                mod.getJSONObject("_aCategory").getInt("_idRow"), mod.getLong("_tsDateAdded"), mod.getLong("_tsDateModified"),
+                mod.getLong("_tsDateUpdated"), screenshots, filesInMod);
 
         modSearchInfo.add(newModSearchInfo);
     }

@@ -43,24 +43,28 @@ A file is generated at `uploads/modsearchdatabase.yaml` with extensive info abou
   Author: marshall h
   Description: Maddie goes on a journey through the mind & memories of one that are
     not her own.
-  Likes: 84
-  Views: 175923
-  Downloads: 4097
-  Text: 'Hi thanks for playing this map! this was created by marshall h (marshall#9018
+  Likes: 94
+  Views: 202540
+  Downloads: 5860
+  Text: 'Hi thanks for playing this map! this was created by marshall h (marshall#9752
     on discord)<br><br>I do this for fun and personal development, but I aspire to
     do game development / music for a living someday, and I''d definitely appreciate
     support. You can purchase the soundtrack for this Mod on <a href="https://mwhatt.bandcamp.com/releases"
     target="_blank">Bandcamp</a>. [...]'
   CreatedDate: 1588357721
+  ModifiedDate: 1641636742
+  UpdatedDate: 1638481949
   Screenshots: ['https://images.gamebanana.com/img/ss/mods/60e5d6e408360.jpg']
   MirroredScreenshots: ['https://celestemodupdater.0x0a.de/banana-mirror-images/img_ss_mods_60e5d6e408360.png']
   Files:
-  - {Description: v2.3.1, HasEverestYaml: true, Size: 23273323, CreatedDate: 1629786878,
-    Downloads: 254, URL: 'https://gamebanana.com/dl/643617', Name: glyph_d8867.zip}
-  - {Description: v2.3.0, HasEverestYaml: true, Size: 23270154, CreatedDate: 1626888153,
-    Downloads: 200, URL: 'https://gamebanana.com/dl/619609', Name: glyph_b4c4f.zip}
-  - {Description: v2.2.0, HasEverestYaml: true, Size: 18559501, CreatedDate: 1610265120,
-    Downloads: 2263, URL: 'https://gamebanana.com/dl/506897', Name: glyph_6ec44.zip}
+    - {Description: v2.3.2, HasEverestYaml: true, Size: 29179347, CreatedDate: 1638481866,
+       Downloads: 1471, URL: 'https://gamebanana.com/dl/703925', Name: glyph_d2f43.zip}
+    - {Description: v2.3.1, HasEverestYaml: true, Size: 23273323, CreatedDate: 1629786878,
+       Downloads: 466, URL: 'https://gamebanana.com/dl/643617', Name: glyph_d8867.zip}
+    - {Description: v2.3.0, HasEverestYaml: true, Size: 23270154, CreatedDate: 1626888153,
+       Downloads: 214, URL: 'https://gamebanana.com/dl/619609', Name: glyph_b4c4f.zip}
+    - {Description: v2.2.0, HasEverestYaml: true, Size: 18559501, CreatedDate: 1610265120,
+       Downloads: 2328, URL: 'https://gamebanana.com/dl/506897', Name: glyph_6ec44.zip}
   CategoryId: 6800
   CategoryName: Maps
   Featured: {Category: alltime, Position: 1}
@@ -138,7 +142,7 @@ Files and images are uploaded to [0x0ade's server](https://celestemodupdater.0x0
 This file is generated at `uploads/moddependencygraph.yaml` and lists what each mod in `everestupdate.yaml` depends on:
 ```yaml
 WitheredPassage:
-  URL: https://gamebanana.com/mmdl/484636
+  OptionalDependencies: {}
   Dependencies:
     FrostHelper: 1.17.8
     MoreDasheline: 1.6.0
@@ -146,6 +150,7 @@ WitheredPassage:
     MaxHelpingHand: 1.5.0
     ContortHelper: 1.0.0
     DJMapHelper: 1.8.13
+  URL: https://gamebanana.com/mmdl/484636
 ```
 
 ### Where it is used
@@ -158,7 +163,28 @@ It is possible to download a mod and all dependencies, including transitive ones
 
 ### Access
 
-This file is publicly accessible at https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml.
+This file is publicly accessible at [https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml](https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml).
+
+If you prefer a format more similar to everest.yaml files, you can use [https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml?format=everestyaml](https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml?format=everestyaml) instead, and the result will look like this:
+
+```yaml
+WitheredPassage:
+  OptionalDependencies: []
+  Dependencies:
+  - Name: FrostHelper
+    Version: 1.17.8
+  - Name: MoreDasheline
+    Version: 1.6.0
+  - Name: Everest
+    Version: 1.1884.0
+  - Name: MaxHelpingHand
+    Version: 1.5.0
+  - Name: ContortHelper
+    Version: 1.0.0
+  - Name: DJMapHelper
+    Version: 1.8.13
+  URL: https://gamebanana.com/mmdl/484636
+```
 
 ## Developing and running your own copy
 
@@ -178,7 +204,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.0.42.jar`.
+This will build the project to `target/update-checker-0.0.43.jar`.
 
 ### Running the project
 
@@ -189,7 +215,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.0.42.jar [minutes]
+java -jar update-checker-0.0.43.jar [minutes]
 ```
 
 [minutes] is the wait delay in minutes between two GameBanana checks (defaults to 30). Be aware that the program makes ~13 API calls per check, and that the GameBanana API has a cap at 250 requests/hour.
