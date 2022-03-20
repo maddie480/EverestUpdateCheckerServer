@@ -168,10 +168,10 @@ class DatabaseUpdater {
             // load a page of mods.
             final int thisPage = page;
             JSONArray pageContents = runWithRetry(() -> {
-                try (InputStream is = new URL("https://gamebanana.com/apiv7/" + category + "/ByGame?_aGameRowIds[]=6460&" +
+                try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv7/" + category + "/ByGame?_aGameRowIds[]=6460&" +
                         "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
                         "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl" +
-                        "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=50").openStream()) {
+                        "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=50"))) {
 
                     return new JSONArray(IOUtils.toString(is, UTF_8));
                 }
