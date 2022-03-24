@@ -177,7 +177,7 @@ public class ModSearchDatabaseBuilder {
     public void saveSearchDatabase() throws IOException {
         // get the list of categories from GameBanana
         JSONArray listOfCategories = DatabaseUpdater.runWithRetry(() -> {
-            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv7/ModCategory/ByGame?_aGameRowIds[]=6460&" +
+            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/ModCategory/ByGame?_aGameRowIds[]=6460&" +
                     "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50"))) {
 
                 return new JSONArray(IOUtils.toString(is, UTF_8));
@@ -218,7 +218,7 @@ public class ModSearchDatabaseBuilder {
 
         // get featured mods and fill in the info for mods accordingly.
         JSONObject featured = DatabaseUpdater.runWithRetry(() -> {
-            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv7/Game/6460/TopSubs"))) {
+            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/Game/6460/TopSubs"))) {
                 return new JSONObject(IOUtils.toString(is, UTF_8));
             }
         });
