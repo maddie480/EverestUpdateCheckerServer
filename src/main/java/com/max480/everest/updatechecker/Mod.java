@@ -52,7 +52,7 @@ public class Mod {
         if (!url.matches("https://gamebanana.com/mmdl/[0-9]+")) {
             throw new RuntimeException("URL is in an invalid format: " + url);
         }
-        String fileId = url.substring("https://gamebanana.com/mmdl/".length());
+        int fileId = Integer.parseInt(url.substring("https://gamebanana.com/mmdl/".length()));
 
         Map<String, Object> modMap = new HashMap<>();
         modMap.put("Version", version);
@@ -62,6 +62,7 @@ public class Mod {
         modMap.put("xxHash", xxHash);
         modMap.put("GameBananaType", gameBananaType);
         modMap.put("GameBananaId", gameBananaId);
+        modMap.put("GameBananaFileId", fileId);
         modMap.put("Size", size);
         return modMap;
     }
