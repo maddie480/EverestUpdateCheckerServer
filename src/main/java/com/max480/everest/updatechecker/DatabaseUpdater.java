@@ -371,6 +371,13 @@ class DatabaseUpdater {
                 if (database.containsKey(modName) && database.get(modName).getLastUpdate() > fileTimestamp) {
                     log.warn("=> database already contains more recent file {}. Adding to the excluded files list.", database.get(modName));
                     databaseExcludedFiles.put(fileUrl, "File " + database.get(modName).getUrl() + " has same mod ID and is more recent");
+
+                } else if (database.containsKey(modName) &&
+                        (!database.get(modName).getGameBananaType().equals(gbType) || database.get(modName).getGameBananaId() != gbId)) {
+
+                    log.warn("=> The current version of {} in the database belongs to another mod. Adding to the excluded files list.", fileUrl);
+                    databaseExcludedFiles.put(fileUrl, "File " + database.get(modName).getUrl() + " is already in the database and belongs to another mod");
+
                 } else if (databaseExcludedFiles.containsKey(modName)) {
                     log.warn("=> Mod was skipped because it is in the exclude list: " + mod.toString());
                 } else {

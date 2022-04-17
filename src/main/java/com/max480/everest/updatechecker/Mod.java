@@ -94,4 +94,12 @@ public class Mod {
     int getLastUpdate() {
         return lastUpdate;
     }
+
+    String getGameBananaType() {
+        return gameBananaType;
+    }
+
+    int getGameBananaId() {
+        return gameBananaId;
+    }
 }
