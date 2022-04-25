@@ -19,7 +19,7 @@ import java.util.Set;
 public class BananaMirrorImages {
     private static final Logger log = LoggerFactory.getLogger(BananaMirrorImages.class);
 
-    public static void main(String[] args) throws IOException {
+    static void run() throws IOException {
         if (Main.serverConfig.bananaMirrorConfig == null) {
             // if the info wasn't filled out, turn off mirror updating.
             return;
@@ -98,6 +98,7 @@ public class BananaMirrorImages {
         }
 
         log.info("Uploaded {} to Banana Mirror", fileId);
+        EventListener.handle(listener -> listener.uploadedImageToBananaMirror(fileId));
     }
 
     private static void deleteFile(String fileId, List<String> fileList) throws IOException {
@@ -110,5 +111,6 @@ public class BananaMirrorImages {
         }
 
         log.info("Deleted {} from Banana Mirror", fileId);
+        EventListener.handle(listener -> listener.deletedImageFromBananaMirror(fileId));
     }
 }

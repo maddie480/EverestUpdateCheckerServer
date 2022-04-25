@@ -122,7 +122,7 @@ public class ModSearchDatabaseBuilder {
      * @param itemid   The GameBanana id
      * @param mod      The mod name
      */
-    public void addMod(String itemtype, int itemid, JSONObject mod) {
+    void addMod(String itemtype, int itemid, JSONObject mod) {
         // parse screenshots and determine their URLs.
         List<String> screenshots = new ArrayList<>();
         JSONArray screenshotsJson = mod.getJSONObject("_aPreviewMedia").getJSONArray("_aImages");
@@ -174,7 +174,7 @@ public class ModSearchDatabaseBuilder {
      *
      * @throws IOException If the file couldn't be written, or something went wrong with getting author/mod category names.
      */
-    public void saveSearchDatabase() throws IOException {
+    void saveSearchDatabase() throws IOException {
         // get the list of categories from GameBanana
         JSONArray listOfCategories = DatabaseUpdater.runWithRetry(() -> {
             try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/ModCategory/ByGame?_aGameRowIds[]=6460&" +

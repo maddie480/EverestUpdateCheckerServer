@@ -38,14 +38,19 @@ public class Main {
         }
 
         while (true) {
-            try {
-                new DatabaseUpdater().updateDatabaseYaml();
-            } catch (Exception e) {
-                log.error("Uncaught error while updating the database.", e);
-            }
+            updateDatabase();
 
             log.info("Waiting for {} minute(s) before next update.", updateRate);
             Thread.sleep(updateRate * 60_000);
+        }
+    }
+
+    public static void updateDatabase() {
+        try {
+            new DatabaseUpdater().updateDatabaseYaml();
+        } catch (Exception e) {
+            log.error("Uncaught error while updating the database.", e);
+            EventListener.handle(listener -> listener.uncaughtError(e));
         }
     }
 }

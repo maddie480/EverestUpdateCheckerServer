@@ -43,6 +43,7 @@ class DatabaseUpdater {
 
     void updateDatabaseYaml() throws IOException {
         log.info("=== Started searching for updates");
+        EventListener.handle(EventListener::startedSearchingForUpdates);
         long startMillis = System.currentTimeMillis();
 
         loadDatabaseFromYaml();
@@ -88,8 +89,9 @@ class DatabaseUpdater {
 
         saveDatabaseToYaml();
 
-        log.info("=== Ended searching for updates. Downloaded {} mods while doing so. Total duration = {} ms.",
-                numberOfModsDownloaded, System.currentTimeMillis() - startMillis);
+        long time = System.currentTimeMillis() - startMillis;
+        log.info("=== Ended searching for updates. Downloaded {} mods while doing so. Total duration = {} ms.", numberOfModsDownloaded, time);
+        EventListener.handle(listener -> listener.endedSearchingForUpdates(numberOfModsDownloaded, time));
     }
 
     /**
@@ -149,8 +151,8 @@ class DatabaseUpdater {
         modSearchDatabaseBuilder.saveSearchDatabase();
 
         // update the file mirror
-        BananaMirror.main(null);
-        BananaMirrorImages.main(null);
+        BananaMirror.run();
+        BananaMirrorImages.run();
 
         // update the dependency graph with new entries.
         DependencyGraphBuilder.updateDependencyGraph();
@@ -326,12 +328,14 @@ class DatabaseUpdater {
 
                 if (everestYaml == null) {
                     log.warn("=> {} has no yaml file. Adding to the no yaml files list.", fileUrl);
+                    EventListener.handle(listener -> listener.modHasNoYamlFile(gbType, gbId, fileUrl));
                     databaseNoYamlFiles.add(fileUrl);
                 } else {
                     parseEverestYamlFromZipFile(zipFile.getInputStream(everestYaml), xxHash, fileUrl, fileTimestamp, gbType, gbId, expectedSize);
                 }
             } catch (IOException e) {
                 log.warn("=> could not read zip file from {}. Adding to the excluded files list.", fileUrl, e);
+                EventListener.handle(listener -> listener.zipFileIsUnreadable(gbType, gbId, fileUrl, e));
                 databaseExcludedFiles.put(fileUrl, ExceptionUtils.getStackTrace(e));
             }
 
@@ -370,23 +374,28 @@ class DatabaseUpdater {
 
                 if (database.containsKey(modName) && database.get(modName).getLastUpdate() > fileTimestamp) {
                     log.warn("=> database already contains more recent file {}. Adding to the excluded files list.", database.get(modName));
+                    EventListener.handle(listener -> listener.moreRecentFileAlreadyExists(gbType, gbId, fileUrl, database.get(modName)));
                     databaseExcludedFiles.put(fileUrl, "File " + database.get(modName).getUrl() + " has same mod ID and is more recent");
 
                 } else if (database.containsKey(modName) &&
                         (!database.get(modName).getGameBananaType().equals(gbType) || database.get(modName).getGameBananaId() != gbId)) {
 
                     log.warn("=> The current version of {} in the database belongs to another mod. Adding to the excluded files list.", fileUrl);
+                    EventListener.handle(listener -> listener.currentVersionBelongsToAnotherMod(gbType, gbId, fileUrl, database.get(modName)));
                     databaseExcludedFiles.put(fileUrl, "File " + database.get(modName).getUrl() + " is already in the database and belongs to another mod");
 
                 } else if (databaseExcludedFiles.containsKey(modName)) {
                     log.warn("=> Mod was skipped because it is in the exclude list: " + mod.toString());
+                    EventListener.handle(listener -> listener.modIsExcludedByName(mod));
                 } else {
                     database.put(modName, mod);
                     log.info("=> Saved new information to database: " + mod.toString());
+                    EventListener.handle(listener -> listener.savedNewInformationToDatabase(mod));
                 }
             }
         } catch (Exception e) {
             log.warn("=> error while reading the YAML file from {}. Adding to the excluded files list.", fileUrl, e);
+            EventListener.handle(listener -> listener.yamlFileIsUnreadable(gbType, gbId, fileUrl, e));
             databaseExcludedFiles.put(fileUrl, ExceptionUtils.getStackTrace(e));
         }
     }
@@ -412,6 +421,7 @@ class DatabaseUpdater {
         for (String deletedMod : deletedMods) {
             Mod mod = database.remove(deletedMod);
             log.warn("Mod {} was deleted from the database", mod.toString());
+            EventListener.handle(listener -> listener.modWasDeletedFromDatabase(mod));
         }
 
 
@@ -440,6 +450,7 @@ class DatabaseUpdater {
         for (String deletedMod : deletedMods) {
             databaseExcludedFiles.remove(deletedMod);
             log.warn("File {} was deleted from the excluded files list", deletedMod);
+            EventListener.handle(listener -> listener.modWasDeletedFromExcludedFileList(deletedMod));
         }
 
 
@@ -458,6 +469,10 @@ class DatabaseUpdater {
         if (!deletedMods.isEmpty()) {
             databaseNoYamlFiles.removeAll(deletedMods);
             log.warn("Files {} were deleted from the no yaml files list", deletedMods);
+
+            for (String mod : deletedMods) {
+                EventListener.handle(listener -> listener.modWasDeletedFromNoYamlFileList(mod));
+            }
         }
     }
 
@@ -475,6 +490,7 @@ class DatabaseUpdater {
                 return task.run();
             } catch (IOException e) {
                 log.warn("I/O exception while doing networking operation (try {}/3).", i, e);
+                EventListener.handle(listener -> listener.retriedIOException(e));
 
                 // wait a bit before retrying
                 try {

@@ -22,7 +22,7 @@ public class BananaMirror {
     private static final Logger log = LoggerFactory.getLogger(BananaMirror.class);
     private static XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
 
-    public static void main(String[] args) throws IOException {
+    static void run() throws IOException {
         if (Main.serverConfig.bananaMirrorConfig == null) {
             // if the info wasn't filled out, turn off mirror updating.
             return;
@@ -116,6 +116,7 @@ public class BananaMirror {
         }
 
         log.info("Uploaded {}.zip to Banana Mirror", fileId);
+        EventListener.handle(listener -> listener.uploadedModToBananaMirror(fileId + ".zip"));
     }
 
     private static void deleteFile(String fileId, List<String> fileList) throws IOException {
@@ -128,6 +129,7 @@ public class BananaMirror {
         }
 
         log.info("Deleted {}.zip from Banana Mirror", fileId);
+        EventListener.handle(listener -> listener.deletedModFromBananaMirror(fileId + ".zip"));
     }
 
     // simple interface for a method that takes a ChannelSftp **and throws a SftpException**.

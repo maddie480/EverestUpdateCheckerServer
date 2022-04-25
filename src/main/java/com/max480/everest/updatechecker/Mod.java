@@ -87,19 +87,35 @@ public class Mod {
                 '}';
     }
 
-    String getUrl() {
+    public String getName() {
+        return name;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public List<String> getXxHash() {
+        return xxHash;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public String getUrl() {
         return url;
     }
 
-    int getLastUpdate() {
+    public int getLastUpdate() {
         return lastUpdate;
     }
 
-    String getGameBananaType() {
+    public String getGameBananaType() {
         return gameBananaType;
     }
 
-    int getGameBananaId() {
+    public int getGameBananaId() {
         return gameBananaId;
     }
 }

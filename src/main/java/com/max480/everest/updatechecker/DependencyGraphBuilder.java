@@ -100,10 +100,12 @@ public class DependencyGraphBuilder {
                     }
 
                     log.info("Found {} dependencies and {} optional dependencies for {}.", dependencies.size(), optionalDependencies.size(), mod.getKey());
+                    EventListener.handle(listener -> listener.scannedModDependencies(mod.getKey(), dependencies.size(), optionalDependencies.size()));
                 } catch (Exception e) {
                     // if a file cannot be read as a zip, no need to worry about it.
                     // we will just write an empty array.
                     log.warn("Could not analyze dependency tree from {}", mod.getKey(), e);
+                    EventListener.handle(listener -> listener.dependencyTreeScanException(mod.getKey(), e));
                 }
 
                 // save the entry we just got.

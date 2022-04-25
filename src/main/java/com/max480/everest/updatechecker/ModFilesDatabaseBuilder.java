@@ -27,14 +27,14 @@ public class ModFilesDatabaseBuilder {
     private final List<String> fullList = new LinkedList<>();
     private final List<String> fullFileIdList = new LinkedList<>();
 
-    public ModFilesDatabaseBuilder() throws IOException {
+    ModFilesDatabaseBuilder() throws IOException {
         Path modFilesDatabaseDir = Paths.get("modfilesdatabase_temp");
         if (Files.isDirectory(modFilesDatabaseDir)) {
             FileUtils.deleteDirectory(modFilesDatabaseDir.toFile());
         }
     }
 
-    public void addMod(String itemtype, int itemid, String modname, List<String> urls, List<Integer> expectedSizes) throws IOException {
+    void addMod(String itemtype, int itemid, String modname, List<String> urls, List<Integer> expectedSizes) throws IOException {
         if (urls.isEmpty()) {
             // nothing to do at all!
             return;
@@ -100,14 +100,17 @@ public class ModFilesDatabaseBuilder {
                             }
                         } catch (IllegalArgumentException e) {
                             log.warn("Encountered error while going through zip file", e);
+                            EventListener.handle(listener -> listener.zipFileWalkthroughError(itemtype, itemid, fileUrl, e));
                         }
                     }
 
                     log.info("Found {} file(s) in {}.", filePaths.size(), fileUrl);
+                    EventListener.handle(listener -> listener.scannedZipContents(fileUrl, filePaths.size()));
                 } catch (IOException | IllegalArgumentException e) {
                     // if a file cannot be read as a zip, no need to worry about it.
                     // we will just write an empty array.
                     log.warn("Could not analyze zip from {}", fileUrl, e);
+                    EventListener.handle(listener -> listener.zipFileIsUnreadableForFileListing(itemtype, itemid, fileUrl, e));
                 }
 
                 FileUtils.forceDelete(new File("mod-filescan.zip"));
@@ -128,7 +131,7 @@ public class ModFilesDatabaseBuilder {
         }
     }
 
-    public void saveToDisk() throws IOException {
+    void saveToDisk() throws IOException {
         // write the files list to disk.
         try (FileWriter writer = new FileWriter("modfilesdatabase_temp/file_ids.yaml")) {
             new Yaml().dump(fullFileIdList, writer);
@@ -237,10 +240,13 @@ public class ModFilesDatabaseBuilder {
 
                     log.info("Found {} Ahorn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
                             ahornEntities.size(), ahornTriggers.size(), ahornEffects.size(), version);
+                    EventListener.handle(listener -> listener.scannedAhornEntities("https://gamebanana.com/mmdl/" + version,
+                            ahornEntities.size(), ahornTriggers.size(), ahornEffects.size()));
                 } catch (IOException | IllegalArgumentException e) {
                     // if a file cannot be read as a zip, no need to worry about it.
                     // we will just write an empty array.
                     log.warn("Could not analyze Ahorn plugins from https://gamebanana.com/mmdl/{}", version, e);
+                    EventListener.handle(listener -> listener.ahornPluginScanError("https://gamebanana.com/mmdl/" + version, e));
                 }
 
                 // write the result.
@@ -345,10 +351,13 @@ public class ModFilesDatabaseBuilder {
 
                     log.info("Found {} Lönn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
                             loennEntities.size(), loennTriggers.size(), loennEffects.size(), version);
+                    EventListener.handle(listener -> listener.scannedLoennEntities("https://gamebanana.com/mmdl/" + version,
+                            loennEntities.size(), loennTriggers.size(), loennEffects.size()));
                 } catch (IOException | IllegalArgumentException e) {
                     // if a file cannot be read as a zip, no need to worry about it.
                     // we will just write an empty array.
                     log.warn("Could not analyze Lönn plugins from https://gamebanana.com/mmdl/{}", version, e);
+                    EventListener.handle(listener -> listener.loennPluginScanError("https://gamebanana.com/mmdl/" + version, e));
                 }
 
                 // write the result.
