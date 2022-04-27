@@ -25,6 +25,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
 
+    private static int pageSize = 40;
     private Map<String, Mod> database = new HashMap<>();
     private Map<String, String> databaseExcludedFiles = new HashMap<>();
     private Set<String> databaseNoYamlFiles = new HashSet<>();
@@ -45,6 +46,10 @@ class DatabaseUpdater {
         log.info("=== Started searching for updates");
         EventListener.handle(EventListener::startedSearchingForUpdates);
         long startMillis = System.currentTimeMillis();
+
+        // GameBanana cache tends not to refresh properly, so we need to alternate page sizes to dodge the cache. ^^'
+        pageSize++;
+        if (pageSize > 50) pageSize = 40;
 
         loadDatabaseFromYaml();
 
@@ -173,7 +178,7 @@ class DatabaseUpdater {
                 try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/" + category + "/ByGame?_aGameRowIds[]=6460&" +
                         "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
                         "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl" +
-                        "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=50"))) {
+                        "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=" + pageSize))) {
 
                     return new JSONArray(IOUtils.toString(is, UTF_8));
                 }
