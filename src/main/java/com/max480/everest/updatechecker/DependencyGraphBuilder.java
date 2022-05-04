@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+import static com.max480.everest.updatechecker.DatabaseUpdater.checkZipSignature;
 import static com.max480.everest.updatechecker.DatabaseUpdater.openStreamWithTimeout;
 
 public class DependencyGraphBuilder {
@@ -70,6 +71,8 @@ public class DependencyGraphBuilder {
                 Map<String, String> dependencies = new HashMap<>();
                 Map<String, String> optionalDependencies = new HashMap<>();
                 try (ZipFile zipFile = new ZipFile(new File("mod-dependencytree.zip"))) {
+                    checkZipSignature(new File("mod-dependencytree.zip").toPath());
+
                     ZipEntry everestYaml = zipFile.getEntry("everest.yaml");
                     if (everestYaml == null) {
                         everestYaml = zipFile.getEntry("everest.yml");

@@ -14,6 +14,8 @@ import org.yaml.snakeyaml.Yaml;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -323,6 +325,8 @@ class DatabaseUpdater {
             }
 
             try (ZipFile zipFile = new ZipFile(new File("mod.zip"))) {
+                checkZipSignature(new File("mod.zip").toPath());
+                
                 ZipEntry everestYaml = zipFile.getEntry("everest.yaml");
                 if (everestYaml == null) {
                     everestYaml = zipFile.getEntry("everest.yml");
@@ -524,5 +528,21 @@ class DatabaseUpdater {
         con.setConnectTimeout(10000);
         con.setReadTimeout(60000);
         return con.getInputStream();
+    }
+
+    static void checkZipSignature(Path path) throws IOException {
+        try (InputStream is = Files.newInputStream(path)) {
+            byte[] signature = new byte[4];
+            int readBytes = is.read(signature);
+
+            if (readBytes < 4
+                    || signature[0] != 0x50
+                    || signature[1] != 0x4B
+                    || signature[2] != 0x03
+                    || signature[3] != 0x04) {
+
+                throw new IOException("Bad ZIP signature!");
+            }
+        }
     }
 }

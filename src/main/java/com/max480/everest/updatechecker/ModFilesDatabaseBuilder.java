@@ -18,8 +18,7 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import static com.max480.everest.updatechecker.DatabaseUpdater.openStreamWithTimeout;
-import static com.max480.everest.updatechecker.DatabaseUpdater.runWithRetry;
+import static com.max480.everest.updatechecker.DatabaseUpdater.*;
 
 public class ModFilesDatabaseBuilder {
     private static final Logger log = LoggerFactory.getLogger(ModFilesDatabaseBuilder.class);
@@ -91,6 +90,8 @@ public class ModFilesDatabaseBuilder {
                 // go through it!
                 List<String> filePaths = new LinkedList<>();
                 try (ZipFile zipFile = new ZipFile(new File("mod-filescan.zip"))) {
+                    checkZipSignature(new File("mod-filescan.zip").toPath());
+
                     final Enumeration<? extends ZipEntry> entriesEnum = zipFile.entries();
                     while (entriesEnum.hasMoreElements()) {
                         try {
@@ -231,6 +232,8 @@ public class ModFilesDatabaseBuilder {
 
                 // scan its contents, opening Ahorn plugin files
                 try (ZipFile zipFile = new ZipFile(new File("mod-ahornscan.zip"))) {
+                    checkZipSignature(new File("mod-ahornscan.zip").toPath());
+
                     for (String file : fileList) {
                         if (file.startsWith("Ahorn/") && file.endsWith(".jl")) {
                             InputStream inputStream = zipFile.getInputStream(zipFile.getEntry(file));
@@ -326,6 +329,8 @@ public class ModFilesDatabaseBuilder {
                 try (ZipFile zipFile = new ZipFile(new File("mod-loennscan.zip"));
                      InputStream inputStream = zipFile.getInputStream(zipFile.getEntry("Loenn/lang/en_gb.lang"));
                      BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+
+                    checkZipSignature(new File("mod-loennscan.zip").toPath());
 
                     // read line per line, and extract the entity ID from each line starting with entities., triggers. or effects.
                     Pattern regex = Pattern.compile("^(entities|triggers|effects)\\.([^.]+)\\..*$");
