@@ -102,10 +102,8 @@ public class ModSearchDatabaseBuilder {
             }
             map.put("MirroredScreenshots", mirroredScreenshots);
             map.put("Files", files);
-            if (categoryName != null) {
-                map.put("CategoryId", categoryId);
-                map.put("CategoryName", categoryName);
-            }
+            map.put("CategoryId", categoryId);
+            map.put("CategoryName", categoryName);
             if (featured != null) {
                 map.put("Featured", featured);
             }
@@ -175,44 +173,15 @@ public class ModSearchDatabaseBuilder {
      * @throws IOException If the file couldn't be written, or something went wrong with getting author/mod category names.
      */
     void saveSearchDatabase() throws IOException {
-        // get the list of categories from GameBanana
-        JSONArray listOfCategories = DatabaseUpdater.runWithRetry(() -> {
-            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/ModCategory/ByGame?_aGameRowIds[]=6460&" +
-                    "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50"))) {
-
-                return new JSONArray(IOUtils.toString(is, UTF_8));
-            }
-        });
-
-        // parse it in a convenient way
-        Map<Integer, String> categoryNames = new HashMap<>();
-        Map<Integer, Integer> categoryToParent = new HashMap<>();
-
-        for (Object categoryRaw : listOfCategories) {
-            JSONObject category = (JSONObject) categoryRaw;
-
-            if (category.getInt("_idParentCategoryRow") == 0) {
-                // this is a root category!
-                categoryNames.put(category.getInt("_idRow"), category.getString("_sName"));
-            } else {
-                // this is a subcategory.
-                categoryToParent.put(category.getInt("_idRow"), category.getInt("_idParentCategoryRow"));
-            }
+        // assign category names to mods from all itemtypes...
+        for (String itemtype : modSearchInfo.stream().map(m -> m.gameBananaType).collect(Collectors.toSet())) {
+            assignCategoryNamesToMods(itemtype);
         }
 
-        // associate each mod to its root category.
-        for (ModSearchInfo info : modSearchInfo) {
-            if (info.gameBananaType.equals("Mod")) {
-                int category = info.categoryId;
-
-                // go up to the root category!
-                while (categoryToParent.containsKey(category)) {
-                    category = categoryToParent.get(category);
-                }
-
-                // assign it.
-                info.categoryId = category;
-                info.categoryName = categoryNames.get(category);
+        // ... then check that we did not miss any.
+        for (ModSearchInfo mod : modSearchInfo) {
+            if (mod.categoryName == null) {
+                throw new IOException("Category name for " + mod.gameBananaType + " category " + mod.categoryId + " was not found!");
             }
         }
 
@@ -240,6 +209,49 @@ public class ModSearchDatabaseBuilder {
         // map ModSearchInfo's to Maps and save them.
         try (FileWriter writer = new FileWriter("uploads/modsearchdatabase.yaml")) {
             new Yaml().dump(modSearchInfo.stream().map(ModSearchInfo::toMap).collect(Collectors.toList()), writer);
+        }
+    }
+
+    private void assignCategoryNamesToMods(String itemtype) throws IOException {
+        // get the list of categories from GameBanana
+        JSONArray listOfCategories = DatabaseUpdater.runWithRetry(() -> {
+            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/" + itemtype + "Category/ByGame?_aGameRowIds[]=6460&" +
+                    "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50"))) {
+
+                return new JSONArray(IOUtils.toString(is, UTF_8));
+            }
+        });
+
+        // parse it in a convenient way
+        Map<Integer, String> categoryNames = new HashMap<>();
+        Map<Integer, Integer> categoryToParent = new HashMap<>();
+
+        for (Object categoryRaw : listOfCategories) {
+            JSONObject category = (JSONObject) categoryRaw;
+
+            if (category.getInt("_idParentCategoryRow") == 0) {
+                // this is a root category!
+                categoryNames.put(category.getInt("_idRow"), category.getString("_sName"));
+            } else {
+                // this is a subcategory.
+                categoryToParent.put(category.getInt("_idRow"), category.getInt("_idParentCategoryRow"));
+            }
+        }
+
+        // associate each mod to its root category.
+        for (ModSearchInfo info : modSearchInfo) {
+            if (info.gameBananaType.equals(itemtype)) {
+                int category = info.categoryId;
+
+                // go up to the root category!
+                while (categoryToParent.containsKey(category)) {
+                    category = categoryToParent.get(category);
+                }
+
+                // assign it.
+                info.categoryId = category;
+                info.categoryName = categoryNames.get(category);
+            }
         }
     }
 }
