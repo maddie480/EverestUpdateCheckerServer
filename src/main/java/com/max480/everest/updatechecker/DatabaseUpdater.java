@@ -309,7 +309,8 @@ class DatabaseUpdater {
             long actualSize = new File("mod.zip").length();
             if (expectedSize != actualSize) {
                 FileUtils.forceDelete(new File("mod.zip"));
-                throw new IOException("The announced file size (" + expectedSize + ") does not match what we got (" + actualSize + ")");
+                throw new IOException("The announced file size (" + expectedSize + ") does not match what we got (" + actualSize + ")" +
+                        " for file " + fileUrl + " belonging to " + gbType + " " + gbId);
             }
 
             // compute its xxHash checksum

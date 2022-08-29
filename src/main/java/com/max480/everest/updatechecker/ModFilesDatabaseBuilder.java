@@ -84,7 +84,8 @@ public class ModFilesDatabaseBuilder {
                 long actualSize = new File("mod-filescan.zip").length();
                 if (expectedSize != actualSize) {
                     FileUtils.forceDelete(new File("mod-filescan.zip"));
-                    throw new IOException("The announced file size (" + expectedSize + ") does not match what we got (" + actualSize + ")");
+                    throw new IOException("The announced file size (" + expectedSize + ") does not match what we got (" + actualSize + ")" +
+                            " for file" + fileUrl + " belonging to " + itemtype + " " + itemid);
                 }
 
                 // go through it!

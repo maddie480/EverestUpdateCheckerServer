@@ -66,7 +66,8 @@ public class DependencyGraphBuilder {
                 long actualSize = new File("mod-dependencytree.zip").length();
                 if (((int) mod.getValue().get("Size")) != actualSize) {
                     FileUtils.forceDelete(new File("mod-dependencytree.zip"));
-                    throw new IOException("The announced file size (" + mod.getValue().get("Size") + ") does not match what we got (" + actualSize + ")");
+                    throw new IOException("The announced file size (" + mod.getValue().get("Size") + ") does not match what we got (" + actualSize + ")" +
+                            " for file " + mirrorUrl);
                 }
 
                 // read its everest.yaml
