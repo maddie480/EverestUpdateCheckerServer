@@ -74,9 +74,9 @@ public class ModFilesDatabaseBuilder {
 
                 // download file
                 DatabaseUpdater.runWithRetry(() -> {
-                    try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-filescan.zip"))) {
+                    try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-filescan.zip")))) {
                         IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL(fileUrl))), os);
-                        return null; // to fullfill this stupid method signature
+                        return null; // to fulfill this stupid method signature
                     }
                 });
 
@@ -193,7 +193,7 @@ public class ModFilesDatabaseBuilder {
             // get the versions list
             Path modFolder = Paths.get("modfilesdatabase_temp/" + mod);
             Map<String, Object> versions;
-            try (InputStream is = new FileInputStream(modFolder.resolve("info.yaml").toFile())) {
+            try (InputStream is = Files.newInputStream(modFolder.resolve("info.yaml"))) {
                 versions = new Yaml().load(is);
             }
 
@@ -213,7 +213,7 @@ public class ModFilesDatabaseBuilder {
             Files.copy(oldPath, targetPath);
         } else {
             List<String> fileList;
-            try (InputStream is = new FileInputStream(modFolder.resolve(version + ".yaml").toFile())) {
+            try (InputStream is = Files.newInputStream(modFolder.resolve(version + ".yaml"))) {
                 fileList = new Yaml().load(is);
             }
 
@@ -224,9 +224,9 @@ public class ModFilesDatabaseBuilder {
 
                 // download file
                 DatabaseUpdater.runWithRetry(() -> {
-                    try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-ahornscan.zip"))) {
+                    try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-ahornscan.zip")))) {
                         IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL("https://gamebanana.com/mmdl/" + version))), os);
-                        return null; // to fullfill this stupid method signature
+                        return null; // to fulfill this stupid method signature
                     }
                 });
 
@@ -308,7 +308,7 @@ public class ModFilesDatabaseBuilder {
             Files.copy(oldPath, targetPath);
         } else {
             List<String> fileList;
-            try (InputStream is = new FileInputStream(modFolder.resolve(version + ".yaml").toFile())) {
+            try (InputStream is = Files.newInputStream(modFolder.resolve(version + ".yaml"))) {
                 fileList = new Yaml().load(is);
             }
 
@@ -319,9 +319,9 @@ public class ModFilesDatabaseBuilder {
 
                 // download file
                 DatabaseUpdater.runWithRetry(() -> {
-                    try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-loennscan.zip"))) {
+                    try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-loennscan.zip")))) {
                         IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL("https://gamebanana.com/mmdl/" + version))), os);
-                        return null; // to fullfill this stupid method signature
+                        return null; // to fulfill this stupid method signature
                     }
                 });
 

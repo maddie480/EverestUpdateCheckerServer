@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,15 +30,15 @@ class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
 
     private static int pageSize = 40;
-    private Map<String, Mod> database = new HashMap<>();
+    private final Map<String, Mod> database = new HashMap<>();
     private Map<String, String> databaseExcludedFiles = new HashMap<>();
     private Set<String> databaseNoYamlFiles = new HashSet<>();
     private int numberOfModsDownloaded = 0;
-    private Set<String> existingFiles = new HashSet<>();
+    private final Set<String> existingFiles = new HashSet<>();
 
-    private XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
+    private static final XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
 
-    private Pattern gamebananaLinkRegex = Pattern.compile(".*(https://gamebanana.com/mmdl/[0-9]+).*");
+    private final Pattern gamebananaLinkRegex = Pattern.compile(".*(https://gamebanana.com/mmdl/[0-9]+).*");
 
     private final ModSearchDatabaseBuilder modSearchDatabaseBuilder = new ModSearchDatabaseBuilder();
     private final ModFilesDatabaseBuilder modFilesDatabaseBuilder = new ModFilesDatabaseBuilder();
@@ -56,7 +58,7 @@ class DatabaseUpdater {
         loadDatabaseFromYaml();
 
         /*
-            List of GameBanana types with whether or not they accept files:
+            List of GameBanana types with whether they accept files:
             App - NO
             Article - NO
             Blog - NO
@@ -108,7 +110,7 @@ class DatabaseUpdater {
      */
     private void loadDatabaseFromYaml() throws IOException {
         if (new File("uploads/everestupdate.yaml").exists()) {
-            try (InputStream is = new FileInputStream("uploads/everestupdate.yaml")) {
+            try (InputStream is = Files.newInputStream(Paths.get("uploads/everestupdate.yaml"))) {
                 Map<String, Map<String, Object>> imported = new Yaml().load(is);
 
                 for (Map.Entry<String, Map<String, Object>> entry : imported.entrySet()) {
@@ -119,13 +121,13 @@ class DatabaseUpdater {
         }
 
         if (new File("uploads/everestupdateexcluded.yaml").exists()) {
-            try (InputStream is = new FileInputStream("uploads/everestupdateexcluded.yaml")) {
+            try (InputStream is = Files.newInputStream(Paths.get("uploads/everestupdateexcluded.yaml"))) {
                 databaseExcludedFiles = new Yaml().load(is);
             }
         }
 
         if (new File("uploads/everestupdatenoyaml.yaml").exists()) {
-            try (InputStream is = new FileInputStream("uploads/everestupdatenoyaml.yaml")) {
+            try (InputStream is = Files.newInputStream(Paths.get("uploads/everestupdatenoyaml.yaml"))) {
                 List<String> noYamlFilesList = new Yaml().load(is);
                 databaseNoYamlFiles = new TreeSet<>(noYamlFilesList);
             }
@@ -183,6 +185,9 @@ class DatabaseUpdater {
                         "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=" + pageSize))) {
 
                     return new JSONArray(IOUtils.toString(is, UTF_8));
+                } catch (JSONException e) {
+                    // turn JSON parse errors into IOExceptions to trigger a retry.
+                    throw new IOException(e);
                 }
             });
 
@@ -245,7 +250,7 @@ class DatabaseUpdater {
         List<Integer> allFileSizes = new ArrayList<>();
         List<Integer> allFileTimestamps = new ArrayList<>();
 
-        ModInfoParser invoke(JSONArray fileList, Set<String> databaseNoYamlFiles) {
+        void invoke(JSONArray fileList, Set<String> databaseNoYamlFiles) {
             for (Object fileRaw : fileList) {
                 JSONObject file = (JSONObject) fileRaw;
 
@@ -263,7 +268,6 @@ class DatabaseUpdater {
                     mostRecentFileUrl = fileUrl;
                 }
             }
-            return this;
         }
     }
 
@@ -296,9 +300,9 @@ class DatabaseUpdater {
             numberOfModsDownloaded++;
 
             runWithRetry(() -> {
-                try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod.zip"))) {
+                try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod.zip")))) {
                     IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL(fileUrl))), os);
-                    return null; // to fullfill this stupid method signature
+                    return null; // to fulfill this stupid method signature
                 }
             });
 
@@ -309,24 +313,11 @@ class DatabaseUpdater {
             }
 
             // compute its xxHash checksum
-            String xxHash;
-            try (InputStream is = new FileInputStream("mod.zip")) {
-                StreamingXXHash64 hash64 = xxHashFactory.newStreamingHash64(0);
-                byte[] buf = new byte[8192];
-                while (true) {
-                    int read = is.read(buf);
-                    if (read == -1) break;
-                    hash64.update(buf, 0, read);
-                }
-                xxHash = Long.toHexString(hash64.getValue());
-
-                // pad it with zeroes
-                while (xxHash.length() < 16) xxHash = "0" + xxHash;
-            }
+            String xxHash = computeXXHash("mod.zip");
 
             try (ZipFile zipFile = new ZipFile(new File("mod.zip"))) {
                 checkZipSignature(new File("mod.zip").toPath());
-                
+
                 ZipEntry everestYaml = zipFile.getEntry("everest.yaml");
                 if (everestYaml == null) {
                     everestYaml = zipFile.getEntry("everest.yml");
@@ -350,6 +341,27 @@ class DatabaseUpdater {
 
             FileUtils.forceDelete(new File("mod.zip"));
         }
+    }
+
+    static String computeXXHash(String fileName) throws IOException {
+        StringBuilder xxHash;
+
+        try (InputStream is = Files.newInputStream(Paths.get(fileName));
+             StreamingXXHash64 hash64 = xxHashFactory.newStreamingHash64(0)) {
+
+            byte[] buf = new byte[8192];
+            while (true) {
+                int read = is.read(buf);
+                if (read == -1) break;
+                hash64.update(buf, 0, read);
+            }
+            xxHash = new StringBuilder(Long.toHexString(hash64.getValue()));
+
+            // pad it with zeroes
+            while (xxHash.length() < 16) xxHash.insert(0, "0");
+        }
+
+        return xxHash.toString();
     }
 
     /**
@@ -394,11 +406,11 @@ class DatabaseUpdater {
                     databaseExcludedFiles.put(fileUrl, "File " + database.get(modName).getUrl() + " is already in the database and belongs to another mod");
 
                 } else if (databaseExcludedFiles.containsKey(modName)) {
-                    log.warn("=> Mod was skipped because it is in the exclude list: " + mod.toString());
+                    log.warn("=> Mod was skipped because it is in the exclude list: " + mod);
                     EventListener.handle(listener -> listener.modIsExcludedByName(mod));
                 } else {
                     database.put(modName, mod);
-                    log.info("=> Saved new information to database: " + mod.toString());
+                    log.info("=> Saved new information to database: " + mod);
                     EventListener.handle(listener -> listener.savedNewInformationToDatabase(mod));
                 }
             }
@@ -438,7 +450,7 @@ class DatabaseUpdater {
         deletedMods.clear();
 
         for (Map.Entry<String, String> databaseEntry : databaseExcludedFiles.entrySet()) {
-            // if the entry is an URL, check if the file still exists
+            // if the entry is a URL, check if the file still exists
             if (databaseEntry.getKey().startsWith("http://") || databaseEntry.getKey().startsWith("https://")) {
                 if (!existingFiles.contains(databaseEntry.getKey())) {
                     deletedMods.add(databaseEntry.getKey());

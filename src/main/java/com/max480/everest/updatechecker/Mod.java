@@ -5,11 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Mod {
-    private String name;
-    private String version;
-    private String url;
-    private int lastUpdate;
-    private List<String> xxHash;
+    private final String name;
+    private final String version;
+    private final String url;
+    private final int lastUpdate;
+    private final List<String> xxHash;
     private String gameBananaType;
     private int gameBananaId;
     private int size;

@@ -4,9 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Map;
 
 public class Main {
@@ -16,7 +17,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         // read the config file.
-        try (InputStream is = new FileInputStream("update_checker_config.yaml")) {
+        try (InputStream is = Files.newInputStream(Paths.get("update_checker_config.yaml"))) {
             Map<String, Object> config = new Yaml().load(is);
             serverConfig = new ServerConfig(config);
         } catch (IOException e) {
@@ -41,7 +42,7 @@ public class Main {
             updateDatabase();
 
             log.info("Waiting for {} minute(s) before next update.", updateRate);
-            Thread.sleep(updateRate * 60_000);
+            Thread.sleep(updateRate * 60_000L);
         }
     }
 

@@ -1,8 +1,6 @@
 package com.max480.everest.updatechecker;
 
 import com.jcraft.jsch.*;
-import net.jpountz.xxhash.StreamingXXHash64;
-import net.jpountz.xxhash.XXHashFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -11,6 +9,7 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashSet;
@@ -20,7 +19,6 @@ import java.util.Set;
 
 public class BananaMirror {
     private static final Logger log = LoggerFactory.getLogger(BananaMirror.class);
-    private static XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
 
     static void run() throws IOException {
         if (Main.serverConfig.bananaMirrorConfig == null) {
@@ -30,7 +28,7 @@ public class BananaMirror {
 
         // load the list of existing mods.
         Map<String, Map<String, Object>> everestUpdateYaml;
-        try (InputStream stream = new FileInputStream("uploads/everestupdate.yaml")) {
+        try (InputStream stream = Files.newInputStream(Paths.get("uploads/everestupdate.yaml"))) {
             everestUpdateYaml = new Yaml().load(stream);
         }
 
@@ -67,27 +65,14 @@ public class BananaMirror {
     private static void downloadFile(String modUrl, String fileId, List<String> modHashes, List<String> fileList) throws IOException {
         // download the mod
         DatabaseUpdater.runWithRetry(() -> {
-            try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-for-cloud.zip"))) {
+            try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-for-cloud.zip")))) {
                 IOUtils.copy(new BufferedInputStream(DatabaseUpdater.openStreamWithTimeout(new URL(modUrl))), os);
-                return null; // to fullfill this stupid method signature
+                return null; // to fulfill this stupid method signature
             }
         });
 
         // compute its xxHash checksum
-        String xxHash;
-        try (InputStream is = new FileInputStream("mod-for-cloud.zip")) {
-            StreamingXXHash64 hash64 = xxHashFactory.newStreamingHash64(0);
-            byte[] buf = new byte[8192];
-            while (true) {
-                int read = is.read(buf);
-                if (read == -1) break;
-                hash64.update(buf, 0, read);
-            }
-            xxHash = Long.toHexString(hash64.getValue());
-
-            // pad it with zeroes
-            while (xxHash.length() < 16) xxHash = "0" + xxHash;
-        }
+        String xxHash = DatabaseUpdater.computeXXHash("mod-for-cloud.zip");
 
         // check that it matches
         if (!modHashes.contains(xxHash)) {

@@ -2,6 +2,7 @@ package com.max480.everest.updatechecker;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -189,6 +190,9 @@ public class ModSearchDatabaseBuilder {
         JSONObject featured = DatabaseUpdater.runWithRetry(() -> {
             try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/Game/6460/TopSubs"))) {
                 return new JSONObject(IOUtils.toString(is, UTF_8));
+            } catch (JSONException e) {
+                // turn JSON parse errors into IOExceptions to trigger a retry.
+                throw new IOException(e);
             }
         });
         for (String category : featured.keySet()) {
@@ -219,6 +223,9 @@ public class ModSearchDatabaseBuilder {
                     "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50"))) {
 
                 return new JSONArray(IOUtils.toString(is, UTF_8));
+            } catch (JSONException e) {
+                // turn JSON parse errors into IOExceptions to trigger a retry.
+                throw new IOException(e);
             }
         });
 

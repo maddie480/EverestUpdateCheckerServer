@@ -10,6 +10,8 @@ import org.yaml.snakeyaml.Yaml;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,12 +26,12 @@ public class DependencyGraphBuilder {
 
     static void updateDependencyGraph() throws IOException {
         Map<String, Map<String, Object>> oldDependencyGraph;
-        try (InputStream is = new FileInputStream("uploads/moddependencygraph.yaml")) {
+        try (InputStream is = Files.newInputStream(Paths.get("uploads/moddependencygraph.yaml"))) {
             oldDependencyGraph = new Yaml().load(is);
         }
 
         Map<String, Map<String, Object>> everestUpdate;
-        try (InputStream is = new FileInputStream("uploads/everestupdate.yaml")) {
+        try (InputStream is = Files.newInputStream(Paths.get("uploads/everestupdate.yaml"))) {
             everestUpdate = new Yaml().load(is);
         }
 
@@ -54,9 +56,9 @@ public class DependencyGraphBuilder {
             } else {
                 // download file from mirror
                 DatabaseUpdater.runWithRetry(() -> {
-                    try (OutputStream os = new BufferedOutputStream(new FileOutputStream("mod-dependencytree.zip"))) {
+                    try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-dependencytree.zip")))) {
                         IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL(mirrorUrl))), os);
-                        return null; // to fullfill this stupid method signature
+                        return null; // to fulfill this stupid method signature
                     }
                 });
 

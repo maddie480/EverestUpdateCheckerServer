@@ -9,6 +9,7 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashSet;
@@ -27,7 +28,7 @@ public class BananaMirrorImages {
 
         // load the list of existing mods.
         List<Map<String, Object>> modSearchDatabase;
-        try (InputStream stream = new FileInputStream("uploads/modsearchdatabase.yaml")) {
+        try (InputStream stream = Files.newInputStream(Paths.get("uploads/modsearchdatabase.yaml"))) {
             modSearchDatabase = new Yaml().load(stream);
         }
 
@@ -62,9 +63,9 @@ public class BananaMirrorImages {
     private static void downloadFile(String screenshotUrl, String screenshotId, List<String> fileList) throws IOException {
         // download the screenshot
         DatabaseUpdater.runWithRetry(() -> {
-            try (OutputStream os = new BufferedOutputStream(new FileOutputStream("image_to_read"))) {
+            try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("image_to_read")))) {
                 IOUtils.copy(new BufferedInputStream(DatabaseUpdater.openStreamWithTimeout(new URL(screenshotUrl))), os);
-                return null; // to fullfill this stupid method signature
+                return null; // to fulfill this stupid method signature
             }
         });
 
