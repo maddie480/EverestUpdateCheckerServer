@@ -333,8 +333,8 @@ public class ModFilesDatabaseBuilder {
 
                     checkZipSignature(new File("mod-loennscan.zip").toPath());
 
-                    // read line per line, and extract the entity ID from each line starting with entities., triggers. or effects.
-                    Pattern regex = Pattern.compile("^(entities|triggers|effects)\\.([^.]+)\\..*$");
+                    // read line per line, and extract the entity ID from each line starting with entities., triggers. or style.effects.
+                    Pattern regex = Pattern.compile("^(entities|triggers|style\\.effects)\\.([^.]+)\\..*$");
 
                     String line;
                     while ((line = br.readLine()) != null) {
@@ -348,7 +348,7 @@ public class ModFilesDatabaseBuilder {
                                 case "triggers":
                                     loennTriggers.add(entityName);
                                     break;
-                                case "effects":
+                                case "style.effects":
                                     loennEffects.add(entityName);
                                     break;
                             }
