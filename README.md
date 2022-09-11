@@ -107,8 +107,8 @@ Entities: [MaxHelpingHand/CoreModeSpikesUp, MaxHelpingHand/CoreModeSpikesDown, M
   MaxHelpingHand/CoreModeSpikesRight, MaxHelpingHand/CustomizableCrumblePlatform,
   ...]
 ```
-- `modfilesdatabase/[itemtype]/[itemid]/loenn_[fileid].yaml` is a file listing all Lönn entity, trigger and effect IDs defined in `[fileid]`'s Lönn plugins, in the same format as Ahorn plugins above
-This file only exists for zips that have a Ahorn folder in them.
+- `modfilesdatabase/[itemtype]/[itemid]/loenn_[fileid].yaml` is a file listing all Lönn entity, trigger and effect IDs defined in `[fileid]`'s Lönn plugins, in the same format as Ahorn plugins above.
+This file only exists for zips that include a `Loenn/lang/en_gb.lang` file, since the detection is based on this file.
 - `modfilesdatabase/ahorn_vanilla.yaml` is a list of all vanilla and Everest entities, triggers and effects defined in [Maple](https://github.com/CelestialCartographers/Maple), in the same format as above.
 
 ### Where it is used
