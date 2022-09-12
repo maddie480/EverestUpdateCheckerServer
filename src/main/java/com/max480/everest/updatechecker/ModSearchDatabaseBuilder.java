@@ -98,7 +98,7 @@ public class ModSearchDatabaseBuilder {
             List<String> mirroredScreenshots = new ArrayList<>();
             for (int i = 0; i < 2 && i < screenshots.size(); i++) {
                 String screenshotUrl = screenshots.get(i);
-                mirroredScreenshots.add("https://celestemodupdater.0x0ade.io/banana-mirror-images/" +
+                mirroredScreenshots.add("https://celestemodupdater.0x0a.de/banana-mirror-images/" +
                         screenshotUrl.substring("https://images.gamebanana.com/".length(), screenshotUrl.lastIndexOf(".")).replace("/", "_") + ".png");
             }
             map.put("MirroredScreenshots", mirroredScreenshots);

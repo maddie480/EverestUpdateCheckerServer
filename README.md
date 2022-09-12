@@ -19,7 +19,7 @@ SuperHotMod:
   GameBananaId: 53639
   GameBananaFileId: 430983
   xxHash: [ab8e6117a0ef3cab]
-  MirrorURL: https://celestemodupdater.0x0ade.io/banana-mirror/430983.zip
+  MirrorURL: https://celestemodupdater.0x0a.de/banana-mirror/430983.zip
 ```
 
 ### Where it is used
@@ -56,7 +56,7 @@ A file is generated at `uploads/modsearchdatabase.yaml` with extensive info abou
   ModifiedDate: 1641636742
   UpdatedDate: 1638481949
   Screenshots: ['https://images.gamebanana.com/img/ss/mods/60e5d6e408360.jpg']
-  MirroredScreenshots: ['https://celestemodupdater.0x0ade.io/banana-mirror-images/img_ss_mods_60e5d6e408360.png']
+  MirroredScreenshots: ['https://celestemodupdater.0x0a.de/banana-mirror-images/img_ss_mods_60e5d6e408360.png']
   Files:
     - {Description: v2.3.2, HasEverestYaml: true, Size: 29179347, CreatedDate: 1638481866,
        Downloads: 1471, URL: 'https://gamebanana.com/dl/703925', Name: glyph_d2f43.zip}
@@ -132,7 +132,7 @@ It will do the same with the **2 first screenshots** of each Celeste mod on Game
 
 ### Access
 
-Files and images are uploaded to [0x0ade's server](https://celestemodupdater.0x0ade.io/). You can download all files directly from there directly, but since files are named after their GameBanana file IDs, you can use this website to navigate in it with mod names, descriptions and 1-click install buttons: https://max480-random-stuff.herokuapp.com/banana-mirror-browser
+Files and images are uploaded to [0x0ade's server](https://celestemodupdater.0x0a.de/). You can download all files directly from there directly, but since files are named after their GameBanana file IDs, you can use this website to navigate in it with mod names, descriptions and 1-click install buttons: https://max480-random-stuff.herokuapp.com/banana-mirror-browser
 
 [Everest](https://github.com/EverestAPI/Everest) and [Olympus](https://github.com/EverestAPI/Olympus) will also automatically use it as a substitute for GameBanana if it is down and you try to download or update a mod. Olympus uses the mirrored images instead of ones from GameBanana when they are in the `webp` format, since the mirror has them all converted to PNG.
 
