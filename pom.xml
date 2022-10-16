@@ -6,7 +6,7 @@
 
     <groupId>com.max480.everest.updatechecker</groupId>
     <artifactId>update-checker</artifactId>
-    <version>0.1.5</version>
+    <version>0.2.0</version>
 
     <properties>
         <jdk.version>1.8</jdk.version>

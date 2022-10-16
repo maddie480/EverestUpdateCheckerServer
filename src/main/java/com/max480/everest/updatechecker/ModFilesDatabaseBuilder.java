@@ -133,7 +133,15 @@ public class ModFilesDatabaseBuilder {
         }
     }
 
-    void saveToDisk() throws IOException {
+    List<String> getFileIds() {
+        return fullFileIdList;
+    }
+
+    void saveToDisk(boolean full) throws IOException {
+        if (!full) {
+            fillInGapsForIncrementalUpdate();
+        }
+
         // write the files list to disk.
         try (FileWriter writer = new FileWriter("modfilesdatabase_temp/file_ids.yaml")) {
             new Yaml().dump(fullFileIdList, writer);
@@ -154,6 +162,32 @@ public class ModFilesDatabaseBuilder {
         }
         if (Files.isDirectory(databasePathTemp)) {
             Files.move(databasePathTemp, databasePath);
+        }
+    }
+
+    private void fillInGapsForIncrementalUpdate() throws IOException {
+        List<String> mods;
+        try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/list.yaml"))) {
+            mods = new Yaml().load(is);
+        }
+
+        for (String mod : mods) {
+            if (fullList.contains(mod)) {
+                // this mod was updated incrementally, so we don't need to get it.
+                continue;
+            }
+
+            // load this mod's info
+            Map<String, Object> fileInfo;
+            try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/" + mod + "/info.yaml"))) {
+                fileInfo = new Yaml().load(is);
+            }
+
+            // carry over all information from the old mod files database
+            Files.createDirectories(Paths.get("modfilesdatabase_temp/" + mod).getParent());
+            FileUtils.copyDirectory(new File("modfilesdatabase/" + mod), new File("modfilesdatabase_temp/" + mod));
+            fullFileIdList.addAll((List<String>) fileInfo.get("Files"));
+            fullList.add(mod);
         }
     }
 
@@ -211,7 +245,9 @@ public class ModFilesDatabaseBuilder {
 
         if (Files.exists(oldPath)) {
             // this zip was already scanned!
-            Files.copy(oldPath, targetPath);
+            if (!Files.exists(targetPath)) {
+                Files.copy(oldPath, targetPath);
+            }
         } else {
             List<String> fileList;
             try (InputStream is = Files.newInputStream(modFolder.resolve(version + ".yaml"))) {
@@ -306,7 +342,9 @@ public class ModFilesDatabaseBuilder {
 
         if (Files.exists(oldPath)) {
             // this zip was already scanned!
-            Files.copy(oldPath, targetPath);
+            if (!Files.exists(targetPath)) {
+                Files.copy(oldPath, targetPath);
+            }
         } else {
             List<String> fileList;
             try (InputStream is = Files.newInputStream(modFolder.resolve(version + ".yaml"))) {

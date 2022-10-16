@@ -24,7 +24,7 @@ public abstract class EventListener {
 
     // === info
 
-    public abstract void startedSearchingForUpdates();
+    public abstract void startedSearchingForUpdates(boolean full);
 
     public abstract void endedSearchingForUpdates(int modDownloadedCount, long timeTakenMilliseconds);
 
@@ -45,6 +45,8 @@ public abstract class EventListener {
     public abstract void scannedLoennEntities(String fileUrl, int entityCount, int triggerCount, int effectCount);
 
     public abstract void scannedModDependencies(String modId, int dependencyCount, int optionalDependencyCount);
+
+    public abstract void modUpdatedIncrementally(String gameBananaType, int gameBananaId, String modName);
 
 
     // === warn

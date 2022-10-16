@@ -10,6 +10,8 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -173,7 +175,7 @@ public class ModSearchDatabaseBuilder {
      *
      * @throws IOException If the file couldn't be written, or something went wrong with getting author/mod category names.
      */
-    void saveSearchDatabase() throws IOException {
+    void saveSearchDatabase(boolean full) throws IOException {
         // assign category names to mods from all itemtypes...
         for (String itemtype : modSearchInfo.stream().map(m -> m.gameBananaType).collect(Collectors.toSet())) {
             assignCategoryNamesToMods(itemtype);
@@ -210,9 +212,15 @@ public class ModSearchDatabaseBuilder {
             }
         }
 
+        List<Map<String, Object>> modSearchDatabase = modSearchInfo.stream().map(ModSearchInfo::toMap).collect(Collectors.toList());
+
+        if (!full) {
+            fillInGapsForIncrementalUpdate(modSearchDatabase);
+        }
+
         // map ModSearchInfo's to Maps and save them.
         try (FileWriter writer = new FileWriter("uploads/modsearchdatabase.yaml")) {
-            new Yaml().dump(modSearchInfo.stream().map(ModSearchInfo::toMap).collect(Collectors.toList()), writer);
+            new Yaml().dump(modSearchDatabase, writer);
         }
     }
 
@@ -258,6 +266,23 @@ public class ModSearchDatabaseBuilder {
                 // assign it.
                 info.categoryId = category;
                 info.categoryName = categoryNames.get(category);
+            }
+        }
+    }
+
+    private void fillInGapsForIncrementalUpdate(List<Map<String, Object>> database) throws IOException {
+        List<Map<String, Object>> previousModInfo;
+        try (InputStream is = Files.newInputStream(Paths.get("uploads/modsearchdatabase.yaml"))) {
+            previousModInfo = new Yaml().load(is);
+        }
+
+        for (Map<String, Object> oldMod : previousModInfo) {
+            if (database.stream().noneMatch(newMod ->
+                    newMod.get("GameBananaType").equals(oldMod.get("GameBananaType"))
+                            && newMod.get("GameBananaId").equals(oldMod.get("GameBananaId")))) {
+
+                // mod is not in new database => carry it over from old database
+                database.add(oldMod);
             }
         }
     }

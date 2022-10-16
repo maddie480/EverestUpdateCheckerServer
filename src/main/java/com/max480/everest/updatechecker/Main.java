@@ -39,16 +39,16 @@ public class Main {
         }
 
         while (true) {
-            updateDatabase();
+            updateDatabase(true);
 
             log.info("Waiting for {} minute(s) before next update.", updateRate);
             Thread.sleep(updateRate * 60_000L);
         }
     }
 
-    public static void updateDatabase() {
+    public static void updateDatabase(boolean full) {
         try {
-            new DatabaseUpdater().updateDatabaseYaml();
+            new DatabaseUpdater().updateDatabaseYaml(full);
         } catch (Exception e) {
             log.error("Uncaught error while updating the database.", e);
             EventListener.handle(listener -> listener.uncaughtError(e));

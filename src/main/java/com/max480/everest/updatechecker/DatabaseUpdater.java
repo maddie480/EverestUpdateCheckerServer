@@ -21,6 +21,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -29,12 +30,17 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
 
-    private static int pageSize = 40;
+    // Model, Sound and Spray also accept files, but they aren't enabled for Celeste
+    private static final String[] VALID_CATEGORIES = new String[]{"Mod", "Tool", "Wip"};
+
     private final Map<String, Mod> database = new HashMap<>();
     private Map<String, String> databaseExcludedFiles = new HashMap<>();
     private Set<String> databaseNoYamlFiles = new HashSet<>();
     private int numberOfModsDownloaded = 0;
-    private final Set<String> existingFiles = new HashSet<>();
+
+    private static final Map<String, Integer> mostRecentUpdatedDates = new HashMap<>();
+    private static int fullPageSize = 40;
+    private static int incrementalPageSize = 0;
 
     private static final XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
 
@@ -46,57 +52,37 @@ class DatabaseUpdater {
     DatabaseUpdater() throws IOException {
     }
 
-    void updateDatabaseYaml() throws IOException {
-        log.info("=== Started searching for updates");
-        EventListener.handle(EventListener::startedSearchingForUpdates);
+    void updateDatabaseYaml(boolean full) throws IOException {
+        log.info("=== Started searching for updates (full = {})", full);
+        EventListener.handle(listener -> listener.startedSearchingForUpdates(full));
         long startMillis = System.currentTimeMillis();
 
         // GameBanana cache tends not to refresh properly, so we need to alternate page sizes to dodge the cache. ^^'
-        pageSize++;
-        if (pageSize > 50) pageSize = 40;
+        incrementalPageSize++;
+        if (incrementalPageSize > 50) incrementalPageSize = 1;
+        fullPageSize++;
+        if (fullPageSize > 50) fullPageSize = 40;
 
-        loadDatabaseFromYaml();
-
-        /*
-            List of GameBanana types with whether they accept files:
-            App - NO
-            Article - NO
-            Blog - NO
-            Club - NO
-            Concept - NO
-            Contest - NO
-            Event - NO
-            Idea - NO
-            Jam - NO
-            Mod - YES
-            Model - YES
-            News - NO
-            Poll - NO
-            PositionAvailable - NO
-            Project - NO
-            Question - NO
-            Request - NO
-            Review - NO
-            Script - NO
-            Sound - YES
-            Spray - YES
-            Studio - NO
-            Thread - NO
-            Tool - YES
-            Tutorial - NO
-            Ware - NO
-            Wiki - NO
-            Wip - YES
-         */
-
-        // only sections that can have files are here
-        for (String category : Arrays.asList("Mod", "Model", "Sound", "Spray", "Tool", "Wip")) {
-            crawlModsFromCategory(category);
+        // if doing an incremental update, we are only going to load the database if an update actually happened.
+        if (full) {
+            loadDatabaseFromYaml();
         }
 
-        checkForModDeletion();
+        for (String category : VALID_CATEGORIES) {
+            if (full) {
+                crawlModsFromCategoryFully(category);
+            } else {
+                crawlModsFromCategoryIncrementally(category);
+            }
+        }
 
-        saveDatabaseToYaml();
+        // database not loaded = this was an incremental update and nothing changed, so there's nothing to save.
+        if (!database.isEmpty()) {
+            modFilesDatabaseBuilder.saveToDisk(full);
+            modSearchDatabaseBuilder.saveSearchDatabase(full);
+            checkForModDeletion();
+            saveDatabaseToYaml();
+        }
 
         long time = System.currentTimeMillis() - startMillis;
         log.info("=== Ended searching for updates. Downloaded {} mods while doing so. Total duration = {} ms.", numberOfModsDownloaded, time);
@@ -155,10 +141,6 @@ class DatabaseUpdater {
             new Yaml().dump(new ArrayList<>(databaseNoYamlFiles), writer);
         }
 
-        // also write the mod search and files databases to disk.
-        modFilesDatabaseBuilder.saveToDisk();
-        modSearchDatabaseBuilder.saveSearchDatabase();
-
         // update the file mirror
         BananaMirror.run();
         BananaMirrorImages.run();
@@ -173,7 +155,20 @@ class DatabaseUpdater {
      * @param category The category to check
      * @throws IOException If a I/O error occurs while communicating with GameBanana
      */
-    private void crawlModsFromCategory(String category) throws IOException {
+    private void crawlModsFromCategoryFully(String category) throws IOException {
+        // update the last modified date for incremental updates
+        int lastModifiedDate = runWithRetry(() -> {
+            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=1&_nPerpage=" + incrementalPageSize +
+                    "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified"))) {
+
+                return new JSONObject(IOUtils.toString(is, UTF_8)).getJSONArray("_aRecords").getJSONObject(0).getInt("_tsDateModified");
+            } catch (JSONException e) {
+                // turn JSON parse errors into IOExceptions to trigger a retry.
+                throw new IOException(e);
+            }
+        });
+        mostRecentUpdatedDates.put(category, lastModifiedDate);
+
         int page = 1;
         while (true) {
             // load a page of mods.
@@ -182,7 +177,7 @@ class DatabaseUpdater {
                 try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/" + category + "/ByGame?_aGameRowIds[]=6460&" +
                         "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
                         "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl" +
-                        "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=" + pageSize))) {
+                        "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=" + fullPageSize))) {
 
                     return new JSONArray(IOUtils.toString(is, UTF_8));
                 } catch (JSONException e) {
@@ -192,7 +187,9 @@ class DatabaseUpdater {
             });
 
             // process it.
-            crawlModInfo(category, pageContents);
+            for (Object item : pageContents) {
+                readModInfo(category, (JSONObject) item);
+            }
 
             // if we just got an empty page, this means we reached the end of the list!
             if (pageContents.isEmpty()) {
@@ -205,39 +202,102 @@ class DatabaseUpdater {
     }
 
     /**
-     * Parses a page of mods, and updates the database as needed.
+     * Checks most recent mods from a specific category (itemtype), until we reach the point we stopped at during the last update.
      *
      * @param category The category to check
      * @throws IOException If a I/O error occurs while communicating with GameBanana
      */
-    private void crawlModInfo(String category, JSONArray pageContents) throws IOException {
-        for (Object itemRaw : pageContents) {
-            JSONObject mod = (JSONObject) itemRaw;
+    private void crawlModsFromCategoryIncrementally(String category) throws IOException {
+        int lastModified = mostRecentUpdatedDates.get(category);
 
-            String name = mod.getString("_sName");
+        int page = 1;
+        while (true) {
+            // load a page of mods.
+            final int thisPage = page;
+            JSONArray pageContents = runWithRetry(() -> {
+                try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=" + thisPage +
+                        "&_nPerpage=" + incrementalPageSize + "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified"))) {
 
-            // if the mod has no file, _aFiles will be null.
-            ModInfoParser parsedModInfo = new ModInfoParser();
-            if (!mod.isNull("_aFiles")) {
-                parsedModInfo.invoke(mod.getJSONArray("_aFiles"), databaseNoYamlFiles);
-            }
-            existingFiles.addAll(parsedModInfo.allFileUrls);
+                    return new JSONObject(IOUtils.toString(is, UTF_8)).getJSONArray("_aRecords");
+                } catch (JSONException e) {
+                    // turn JSON parse errors into IOExceptions to trigger a retry.
+                    throw new IOException(e);
+                }
+            });
 
-            if (parsedModInfo.mostRecentFileUrl == null) {
-                log.trace("{} => skipping, no suitable file found", name);
-            } else {
-                log.trace("{} => URL of most recent file (uploaded at {}) is {}", name, parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
-                for (int i = 0; i < parsedModInfo.allFileUrls.size(); i++) {
-                    updateDatabase(parsedModInfo.allFileTimestamps.get(i), parsedModInfo.allFileUrls.get(i), parsedModInfo.allFileSizes.get(i),
-                            category, mod.getInt("_idRow"));
+            // process it.
+            for (Object item : pageContents) {
+                JSONObject mod = (JSONObject) item;
+
+                if (mostRecentUpdatedDates.get(category) < mod.getInt("_tsDateModified")) {
+                    // mod was updated after last refresh! get all info on it, then update it.
+                    lastModified = Math.max(lastModified, mod.getInt("_tsDateModified"));
+
+                    JSONObject modInfo = runWithRetry(() -> {
+                        try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/" + category + "/" + mod.getInt("_idRow") + "?" +
+                                "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
+                                "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl&ts=" + System.currentTimeMillis()))) {
+
+                            return new JSONObject(IOUtils.toString(is, UTF_8));
+                        } catch (JSONException e) {
+                            // turn JSON parse errors into IOExceptions to trigger a retry.
+                            throw new IOException(e);
+                        }
+                    });
+
+                    // load the database if this was not done yet!
+                    if (database.isEmpty()) {
+                        loadDatabaseFromYaml();
+                    }
+
+                    readModInfo(category, modInfo);
+                    EventListener.handle(listener -> listener.modUpdatedIncrementally(category, modInfo.getInt("_idRow"), modInfo.getString("_sName")));
+                } else {
+                    // we reached the end of new mods, so stop right here.
+                    mostRecentUpdatedDates.put(category, lastModified);
+                    return;
                 }
             }
 
-            // save the info about this mod in the mod search and files databases.
-            modFilesDatabaseBuilder.addMod(category, mod.getInt("_idRow"), name,
-                    parsedModInfo.allFileUrls, parsedModInfo.allFileSizes);
-            modSearchDatabaseBuilder.addMod(category, mod.getInt("_idRow"), mod);
+            // if we just got an empty page, this means we reached the end of the list!
+            if (pageContents.isEmpty()) {
+                break;
+            }
+
+            // otherwise, go on.
+            page++;
         }
+    }
+
+    /**
+     * Parses a mod, and updates the database as needed.
+     *
+     * @param category The category to check
+     * @throws IOException If a I/O error occurs while communicating with GameBanana
+     */
+    private void readModInfo(String category, JSONObject mod) throws IOException {
+        String name = mod.getString("_sName");
+
+        // if the mod has no file, _aFiles will be null.
+        ModInfoParser parsedModInfo = new ModInfoParser();
+        if (!mod.isNull("_aFiles")) {
+            parsedModInfo.invoke(mod.getJSONArray("_aFiles"), databaseNoYamlFiles);
+        }
+
+        if (parsedModInfo.mostRecentFileUrl == null) {
+            log.trace("{} => skipping, no suitable file found", name);
+        } else {
+            log.trace("{} => URL of most recent file (uploaded at {}) is {}", name, parsedModInfo.mostRecentFileTimestamp, parsedModInfo.mostRecentFileUrl);
+            for (int i = 0; i < parsedModInfo.allFileUrls.size(); i++) {
+                updateDatabase(parsedModInfo.allFileTimestamps.get(i), parsedModInfo.allFileUrls.get(i), parsedModInfo.allFileSizes.get(i),
+                        category, mod.getInt("_idRow"));
+            }
+        }
+
+        // save the info about this mod in the mod search and files databases.
+        modFilesDatabaseBuilder.addMod(category, mod.getInt("_idRow"), name,
+                parsedModInfo.allFileUrls, parsedModInfo.allFileSizes);
+        modSearchDatabaseBuilder.addMod(category, mod.getInt("_idRow"), mod);
     }
 
     /**
@@ -427,6 +487,10 @@ class DatabaseUpdater {
      * If so, deletes it from the database.
      */
     private void checkForModDeletion() {
+        List<String> existingFiles = modFilesDatabaseBuilder.getFileIds().stream()
+                .map(file -> "https://gamebanana.com/mmdl/" + file)
+                .collect(Collectors.toList());
+
         // === 1. Mod database
         Set<String> deletedMods = new HashSet<>();
 
