@@ -123,31 +123,35 @@ public class BananaMirror {
     }
 
     static void makeSftpAction(String directory, SftpAction action) throws IOException {
-        Session session = null;
-        try {
-            // connect
-            JSch jsch = new JSch();
-            jsch.setKnownHosts(Main.serverConfig.bananaMirrorConfig.knownHosts);
-            session = jsch.getSession(Main.serverConfig.bananaMirrorConfig.username, Main.serverConfig.bananaMirrorConfig.serverAddress);
-            session.setPassword(Main.serverConfig.bananaMirrorConfig.password);
-            session.connect();
+        DatabaseUpdater.runWithRetry(() -> {
+            Session session = null;
+            try {
+                // connect
+                JSch jsch = new JSch();
+                jsch.setKnownHosts(Main.serverConfig.bananaMirrorConfig.knownHosts);
+                session = jsch.getSession(Main.serverConfig.bananaMirrorConfig.username, Main.serverConfig.bananaMirrorConfig.serverAddress);
+                session.setPassword(Main.serverConfig.bananaMirrorConfig.password);
+                session.connect();
 
-            // do the action
-            ChannelSftp sftp = (ChannelSftp) session.openChannel("sftp");
-            sftp.connect();
-            sftp.cd(directory);
-            action.doSftpAction(sftp);
-            sftp.exit();
+                // do the action
+                ChannelSftp sftp = (ChannelSftp) session.openChannel("sftp");
+                sftp.connect();
+                sftp.cd(directory);
+                action.doSftpAction(sftp);
+                sftp.exit();
 
-            // disconnect
-            session.disconnect();
-            session = null;
-        } catch (JSchException | SftpException e) {
-            throw new IOException(e);
-        } finally {
-            if (session != null) {
+                // disconnect
                 session.disconnect();
+                session = null;
+            } catch (JSchException | SftpException e) {
+                throw new IOException(e);
+            } finally {
+                if (session != null) {
+                    session.disconnect();
+                }
             }
-        }
+
+            return null;
+        });
     }
 }
