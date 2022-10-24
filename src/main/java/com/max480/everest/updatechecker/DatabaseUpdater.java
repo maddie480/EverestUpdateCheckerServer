@@ -141,9 +141,12 @@ class DatabaseUpdater {
             new Yaml().dump(new ArrayList<>(databaseNoYamlFiles), writer);
         }
 
-        // update the file mirror
-        BananaMirror.run();
-        BananaMirrorImages.run();
+        if (Main.serverConfig.bananaMirrorConfig != null) {
+            // update the file mirror
+            BananaMirror.run();
+            BananaMirrorImages.run();
+            new BananaMirrorRichPresenceIcons().update();
+        }
 
         // update the dependency graph with new entries.
         DependencyGraphBuilder.updateDependencyGraph();
@@ -405,11 +408,15 @@ class DatabaseUpdater {
     }
 
     static String computeXXHash(String fileName) throws IOException {
+        try (InputStream is = Files.newInputStream(Paths.get(fileName))) {
+            return computeXXHash(is);
+        }
+    }
+
+    static String computeXXHash(InputStream is) throws IOException {
         StringBuilder xxHash;
 
-        try (InputStream is = Files.newInputStream(Paths.get(fileName));
-             StreamingXXHash64 hash64 = xxHashFactory.newStreamingHash64(0)) {
-
+        try (StreamingXXHash64 hash64 = xxHashFactory.newStreamingHash64(0)) {
             byte[] buf = new byte[8192];
             while (true) {
                 int read = is.read(buf);

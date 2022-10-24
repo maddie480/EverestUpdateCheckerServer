@@ -10,6 +10,7 @@ public class ServerConfig {
         public final String password;
         public final String directory;
         public final String imagesDirectory;
+        public final String richPresenceIconsDirectory;
 
         public BananaMirrorConfig(Map<String, Object> config) {
             knownHosts = config.get("KnownHosts").toString();
@@ -18,6 +19,7 @@ public class ServerConfig {
             password = config.get("Password").toString();
             directory = config.get("Directory").toString();
             imagesDirectory = config.get("ImagesDirectory").toString();
+            richPresenceIconsDirectory = config.get("RichPresenceIconsDirectory").toString();
         }
     }
 

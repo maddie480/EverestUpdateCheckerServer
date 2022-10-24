@@ -36,6 +36,10 @@ public abstract class EventListener {
 
     public abstract void deletedImageFromBananaMirror(String fileName);
 
+    public abstract void uploadedRichPresenceIconToBananaMirror(String fileName, String originatingFileId);
+
+    public abstract void deletedRichPresenceIconFromBananaMirror(String fileName, String originatingFileId);
+
     public abstract void savedNewInformationToDatabase(Mod mod);
 
     public abstract void scannedZipContents(String fileUrl, int fileCount);

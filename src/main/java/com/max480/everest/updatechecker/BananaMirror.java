@@ -21,11 +21,6 @@ public class BananaMirror {
     private static final Logger log = LoggerFactory.getLogger(BananaMirror.class);
 
     static void run() throws IOException {
-        if (Main.serverConfig.bananaMirrorConfig == null) {
-            // if the info wasn't filled out, turn off mirror updating.
-            return;
-        }
-
         // load the list of existing mods.
         Map<String, Map<String, Object>> everestUpdateYaml;
         try (InputStream stream = Files.newInputStream(Paths.get("uploads/everestupdate.yaml"))) {

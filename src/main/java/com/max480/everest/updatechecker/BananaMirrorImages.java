@@ -21,11 +21,6 @@ public class BananaMirrorImages {
     private static final Logger log = LoggerFactory.getLogger(BananaMirrorImages.class);
 
     static void run() throws IOException {
-        if (Main.serverConfig.bananaMirrorConfig == null) {
-            // if the info wasn't filled out, turn off mirror updating.
-            return;
-        }
-
         // load the list of existing mods.
         List<Map<String, Object>> modSearchDatabase;
         try (InputStream stream = Files.newInputStream(Paths.get("uploads/modsearchdatabase.yaml"))) {
