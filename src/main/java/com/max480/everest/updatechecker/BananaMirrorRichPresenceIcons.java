@@ -2,10 +2,12 @@ package com.max480.everest.updatechecker;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -20,6 +22,8 @@ public class BananaMirrorRichPresenceIcons {
 
     // all hashes that exist in here were uploaded to Banana Mirror
     private final Map<String, Set<String>> hashesToFiles;
+
+    private boolean changesHappened = false;
 
     public BananaMirrorRichPresenceIcons() throws IOException {
         Map<String, Map<String, List<String>>> map;
@@ -78,6 +82,14 @@ public class BananaMirrorRichPresenceIcons {
         for (String file : deletedFileIds) {
             processDeletedFile(file);
         }
+
+        if (changesHappened) {
+            File tempFile = new File("/tmp/file_list.json");
+            FileUtils.writeStringToFile(tempFile, new JSONArray(hashesToFiles.keySet()).toString(), StandardCharsets.UTF_8);
+            BananaMirror.makeSftpAction(Main.serverConfig.bananaMirrorConfig.richPresenceIconsDirectory,
+                    channel -> channel.put(tempFile.getAbsolutePath(), "list.json"));
+            FileUtils.forceDelete(tempFile);
+        }
     }
 
     private void processNewFile(String fileId, List<String> filesToProcess) throws IOException {
@@ -132,6 +144,7 @@ public class BananaMirrorRichPresenceIcons {
         BananaMirror.makeSftpAction(Main.serverConfig.bananaMirrorConfig.richPresenceIconsDirectory,
                 channel -> channel.put(filePath.toAbsolutePath().toString(), filePath.getFileName().toString()));
         EventListener.handle(listener -> listener.uploadedRichPresenceIconToBananaMirror(filePath.getFileName().toString(), fileId));
+        changesHappened = true;
 
         // register it in our data file
         Set<String> fileSet = new HashSet<>();
@@ -156,6 +169,7 @@ public class BananaMirrorRichPresenceIcons {
                 // the hash is now unused! delete it
                 BananaMirror.makeSftpAction(Main.serverConfig.bananaMirrorConfig.richPresenceIconsDirectory, channel -> channel.rm(hash + ".png"));
                 EventListener.handle(listener -> listener.deletedRichPresenceIconFromBananaMirror(hash + ".png", fileId));
+                changesHappened = true;
 
                 hashesToFiles.remove(hash);
                 saveData();
