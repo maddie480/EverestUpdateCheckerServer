@@ -66,8 +66,10 @@ public class BananaMirrorRichPresenceIcons {
                 }
 
                 List<String> richPresenceIcons = fileList.stream()
-                        .filter(fileName -> fileName.startsWith("Graphics/Atlases/Gui/areas/")
+                        .filter(fileName -> fileName.startsWith("Graphics/Atlases/Gui/")
                                 && fileName.endsWith(".png")
+                                && (fileName.startsWith("Graphics/Atlases/Gui/areas/") 
+                                    || fileList.contains(fileName.substring(0, fileName.length() - 4) + "_back.png"))
                                 && !fileName.endsWith("_back.png")
                                 && !fileName.endsWith("hover.png"))
                         .collect(Collectors.toList());
