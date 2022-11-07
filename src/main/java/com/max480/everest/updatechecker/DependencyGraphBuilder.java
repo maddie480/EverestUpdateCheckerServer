@@ -95,13 +95,13 @@ public class DependencyGraphBuilder {
 
                     // extract the Dependencies!
                     if (matchingYamlEntry.containsKey("Dependencies")) {
-                        for (Map<String, String> dependencyEntry : (List<Map<String, String>>) matchingYamlEntry.get("Dependencies")) {
-                            dependencies.put(dependencyEntry.get("Name"), dependencyEntry.getOrDefault("Version", "NoVersion"));
+                        for (Map<String, Object> dependencyEntry : (List<Map<String, Object>>) matchingYamlEntry.get("Dependencies")) {
+                            dependencies.put(dependencyEntry.get("Name").toString(), dependencyEntry.getOrDefault("Version", "NoVersion").toString());
                         }
                     }
                     if (matchingYamlEntry.containsKey("OptionalDependencies")) {
-                        for (Map<String, String> dependencyEntry : (List<Map<String, String>>) matchingYamlEntry.get("OptionalDependencies")) {
-                            optionalDependencies.put(dependencyEntry.get("Name"), dependencyEntry.getOrDefault("Version", "NoVersion"));
+                        for (Map<String, Object> dependencyEntry : (List<Map<String, Object>>) matchingYamlEntry.get("OptionalDependencies")) {
+                            optionalDependencies.put(dependencyEntry.get("Name").toString(), dependencyEntry.getOrDefault("Version", "NoVersion").toString());
                         }
                     }
 
