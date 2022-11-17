@@ -90,7 +90,7 @@ public class ModFilesDatabaseBuilder {
 
                 // go through it!
                 List<String> filePaths = new LinkedList<>();
-                try (ZipFile zipFile = new ZipFile(new File("mod-filescan.zip"))) {
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod-filescan.zip", fileUrl)) {
                     checkZipSignature(new File("mod-filescan.zip").toPath());
 
                     final Enumeration<? extends ZipEntry> entriesEnum = zipFile.entries();
@@ -268,7 +268,7 @@ public class ModFilesDatabaseBuilder {
                 });
 
                 // scan its contents, opening Ahorn plugin files
-                try (ZipFile zipFile = new ZipFile(new File("mod-ahornscan.zip"))) {
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod-ahornscan.zip")) {
                     checkZipSignature(new File("mod-ahornscan.zip").toPath());
 
                     for (String file : fileList) {
@@ -365,7 +365,7 @@ public class ModFilesDatabaseBuilder {
                 });
 
                 // extract the en_gb.lang file
-                try (ZipFile zipFile = new ZipFile(new File("mod-loennscan.zip"));
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod-loennscan.zip");
                      InputStream inputStream = zipFile.getInputStream(zipFile.getEntry("Loenn/lang/en_gb.lang"));
                      BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
 

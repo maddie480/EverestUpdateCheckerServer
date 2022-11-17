@@ -379,7 +379,7 @@ class DatabaseUpdater {
             // compute its xxHash checksum
             String xxHash = computeXXHash("mod.zip");
 
-            try (ZipFile zipFile = new ZipFile(new File("mod.zip"))) {
+            try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod.zip")) {
                 checkZipSignature(new File("mod.zip").toPath());
 
                 ZipEntry everestYaml = zipFile.getEntry("everest.yaml");

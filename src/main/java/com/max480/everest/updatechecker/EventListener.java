@@ -57,6 +57,8 @@ public abstract class EventListener {
 
     public abstract void modHasNoYamlFile(String gameBananaType, int gameBananaId, String fileUrl);
 
+    public abstract void zipFileIsNotUTF8(String downloadUrl, String detectedEncoding);
+
     public abstract void zipFileIsUnreadable(String gameBananaType, int gameBananaId, String fileUrl, IOException e);
 
     public abstract void zipFileIsUnreadableForFileListing(String gameBananaType, int gameBananaId, String fileUrl, Exception e);

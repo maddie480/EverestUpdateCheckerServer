@@ -73,7 +73,7 @@ public class DependencyGraphBuilder {
                 // read its everest.yaml
                 Map<String, String> dependencies = new HashMap<>();
                 Map<String, String> optionalDependencies = new HashMap<>();
-                try (ZipFile zipFile = new ZipFile(new File("mod-dependencytree.zip"))) {
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod-dependencytree.zip")) {
                     checkZipSignature(new File("mod-dependencytree.zip").toPath());
 
                     ZipEntry everestYaml = zipFile.getEntry("everest.yaml");

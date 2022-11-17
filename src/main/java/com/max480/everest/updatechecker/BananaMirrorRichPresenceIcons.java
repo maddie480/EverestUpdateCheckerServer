@@ -106,7 +106,7 @@ public class BananaMirrorRichPresenceIcons {
         Set<String> hashes = new HashSet<>();
 
         // get the files to process from it!
-        try (ZipFile zip = new ZipFile("mod.zip")) {
+        try (ZipFile zip = ZipFileWithAutoEncoding.open("mod.zip")) {
             for (String fileToProcess : filesToProcess) {
                 ZipEntry entry = zip.getEntry(fileToProcess);
 
