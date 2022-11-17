@@ -89,19 +89,13 @@ public class DependencyGraphBuilder {
                         everestYamlContents = new Yaml().load(is);
                     }
 
-                    // if the file has multiple entries, this will find the one that has the same ID as our mod.
-                    Map<String, Object> matchingYamlEntry = everestYamlContents.stream()
-                            .filter(s -> s.get("Name").equals(mod.getKey())).findFirst().orElse(null);
-
-                    // extract the Dependencies!
-                    if (matchingYamlEntry.containsKey("Dependencies")) {
-                        for (Map<String, Object> dependencyEntry : (List<Map<String, Object>>) matchingYamlEntry.get("Dependencies")) {
-                            dependencies.put(dependencyEntry.get("Name").toString(), dependencyEntry.getOrDefault("Version", "NoVersion").toString());
+                    // merge the Dependencies and OptionalDependencies of all mods defined in the everest.yaml
+                    for (Map<String, Object> yamlEntry : everestYamlContents) {
+                        if (yamlEntry.containsKey("Dependencies")) {
+                            addDependenciesFromList(dependencies, (List<Map<String, Object>>) yamlEntry.get("Dependencies"), everestYamlContents);
                         }
-                    }
-                    if (matchingYamlEntry.containsKey("OptionalDependencies")) {
-                        for (Map<String, Object> dependencyEntry : (List<Map<String, Object>>) matchingYamlEntry.get("OptionalDependencies")) {
-                            optionalDependencies.put(dependencyEntry.get("Name").toString(), dependencyEntry.getOrDefault("Version", "NoVersion").toString());
+                        if (yamlEntry.containsKey("OptionalDependencies")) {
+                            addDependenciesFromList(optionalDependencies, (List<Map<String, Object>>) yamlEntry.get("OptionalDependencies"), everestYamlContents);
                         }
                     }
 
@@ -130,5 +124,17 @@ public class DependencyGraphBuilder {
                 new File("uploads/moddependencygraph.yaml"),
                 new Yaml().dumpAs(newDependencyGraph, null, DumperOptions.FlowStyle.BLOCK),
                 StandardCharsets.UTF_8);
+    }
+
+    private static void addDependenciesFromList(Map<String, Object> addTo, List<Map<String, Object>> toAdd, List<Map<String, Object>> everestYamlContents) {
+        for (Map<String, Object> dependencyEntry : toAdd) {
+            String name = dependencyEntry.get("Name").toString();
+            String version = dependencyEntry.getOrDefault("Version", "NoVersion").toString();
+
+            // only keep the dependencies if they weren't already added, and they aren't defined in the same yaml file.
+            if (!addTo.containsKey(name) && everestYamlContents.stream().noneMatch(entry -> name.equals(entry.get("Name").toString()))) {
+                addTo.put(name, version);
+            }
+        }
     }
 }
