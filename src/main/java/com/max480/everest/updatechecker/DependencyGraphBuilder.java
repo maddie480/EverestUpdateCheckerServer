@@ -126,7 +126,7 @@ public class DependencyGraphBuilder {
                 StandardCharsets.UTF_8);
     }
 
-    private static void addDependenciesFromList(Map<String, Object> addTo, List<Map<String, Object>> toAdd, List<Map<String, Object>> everestYamlContents) {
+    private static void addDependenciesFromList(Map<String, String> addTo, List<Map<String, Object>> toAdd, List<Map<String, Object>> everestYamlContents) {
         for (Map<String, Object> dependencyEntry : toAdd) {
             String name = dependencyEntry.get("Name").toString();
             String version = dependencyEntry.getOrDefault("Version", "NoVersion").toString();
