@@ -114,7 +114,7 @@ This file only exists for zips that include a `Loenn/lang/en_gb.lang` file, sinc
 ### Where it is used
 
 - The [Custom Entity Catalog](https://max480-random-stuff.appspot.com/celeste/custom-entity-catalog) uses it to get the file names of Ahorn plugins, and be able to list out what each mod contains.
-- The [Mod Structure Verifier Discord bot](https://github.com/max4805/RandomBackendStuff/tree/main/src/mod-structure-verifier) uses it to know which assets each mod used as a dependency contains, and which entities helpers contain.
+- The [Mod Structure Verifier Discord bot](https://github.com/max4805/RandomBackendStuff/tree/main/src/main/java/com/max480/randomstuff/backend/discord/modstructureverifier) uses it to know which assets each mod used as a dependency contains, and which entities helpers contain.
 
 ### Access
 
