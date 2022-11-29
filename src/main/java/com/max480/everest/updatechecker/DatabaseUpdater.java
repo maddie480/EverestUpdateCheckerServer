@@ -4,6 +4,7 @@ import net.jpountz.xxhash.StreamingXXHash64;
 import net.jpountz.xxhash.XXHashFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.io.function.IOSupplier;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -577,10 +578,10 @@ class DatabaseUpdater {
      * @return What the task returned
      * @throws IOException If the task failed 3 times
      */
-    static <T> T runWithRetry(NetworkingOperation<T> task) throws IOException {
+    static <T> T runWithRetry(IOSupplier<T> task) throws IOException {
         for (int i = 1; i < 3; i++) {
             try {
-                return task.run();
+                return task.get();
             } catch (IOException e) {
                 log.warn("I/O exception while doing networking operation (try {}/3).", i, e);
                 EventListener.handle(listener -> listener.retriedIOException(e));
@@ -596,7 +597,7 @@ class DatabaseUpdater {
         }
 
         // 3rd try: this time, if it crashes, let it crash
-        return task.run();
+        return task.get();
     }
 
     /**
