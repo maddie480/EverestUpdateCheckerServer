@@ -246,7 +246,7 @@ Mods that have multiple entries in their everest.yaml (for example, `Monika's D-
 To prevent that from happening, you can add the ID of the mod you don't want in `everestupdateexcluded.yaml`:
 ```yaml
 Ruby'sEntities: Part of D-sides
-``` 
+```
 
 ### Libraries used
 
