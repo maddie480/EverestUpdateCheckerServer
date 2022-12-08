@@ -80,9 +80,6 @@ public class DependencyGraphBuilder {
                     if (everestYaml == null) {
                         everestYaml = zipFile.getEntry("everest.yml");
                     }
-                    if (everestYaml == null) {
-                        everestYaml = zipFile.getEntry("multimetadata.yml");
-                    }
 
                     List<Map<String, Object>> everestYamlContents;
                     try (InputStream is = zipFile.getInputStream(everestYaml)) {

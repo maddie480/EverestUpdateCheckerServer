@@ -151,7 +151,7 @@ public class ModSearchDatabaseBuilder {
                         if (modFilesDatabase.exists()) {
                             try (FileInputStream is = new FileInputStream(modFilesDatabase)) {
                                 List<String> files = new Yaml().load(is);
-                                hasYaml = files.contains("multimetadata.yml") || files.contains("everest.yml") || files.contains("everest.yaml");
+                                hasYaml = files.contains("everest.yml") || files.contains("everest.yaml");
                             } catch (IOException e) {
                                 log.error("Could not read files database at " + modFilesDatabase.getPath() + "!", e);
                             }

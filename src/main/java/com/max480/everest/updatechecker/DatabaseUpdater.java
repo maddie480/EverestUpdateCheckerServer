@@ -387,9 +387,6 @@ class DatabaseUpdater {
                 if (everestYaml == null) {
                     everestYaml = zipFile.getEntry("everest.yml");
                 }
-                if (everestYaml == null) {
-                    everestYaml = zipFile.getEntry("multimetadata.yml");
-                }
 
                 if (everestYaml == null) {
                     log.warn("=> {} has no yaml file. Adding to the no yaml files list.", fileUrl);
