@@ -2,7 +2,6 @@ package com.max480.everest.updatechecker;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +17,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         // read the config file.
         try (InputStream is = Files.newInputStream(Paths.get("update_checker_config.yaml"))) {
-            Map<String, Object> config = new Yaml().load(is);
+            Map<String, Object> config = YamlUtil.load(is);
             serverConfig = new ServerConfig(config);
         } catch (IOException e) {
             log.error("Could not load update_checker_config.yaml!", e);

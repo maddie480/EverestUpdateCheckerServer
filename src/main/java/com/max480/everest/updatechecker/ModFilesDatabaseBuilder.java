@@ -4,7 +4,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
@@ -118,18 +117,18 @@ public class ModFilesDatabaseBuilder {
                 FileUtils.forceDelete(new File("mod-filescan.zip"));
 
                 // write the result.
-                try (FileWriter writer = new FileWriter(listPath.toFile())) {
-                    new Yaml().dump(filePaths, writer);
+                try (OutputStream os = new FileOutputStream(listPath.toFile())) {
+                    YamlUtil.dump(filePaths, os);
                 }
             }
         }
 
         // write the mod name and file list in there.
-        try (FileWriter writer = new FileWriter(modFilesDatabaseDir.resolve("info.yaml").toFile())) {
+        try (OutputStream os = new FileOutputStream(modFilesDatabaseDir.resolve("info.yaml").toFile())) {
             Map<String, Object> data = new HashMap<>();
             data.put("Name", modname);
             data.put("Files", createdYamls);
-            new Yaml().dump(data, writer);
+            YamlUtil.dump(data, os);
         }
     }
 
@@ -143,12 +142,12 @@ public class ModFilesDatabaseBuilder {
         }
 
         // write the files list to disk.
-        try (FileWriter writer = new FileWriter("modfilesdatabase_temp/file_ids.yaml")) {
-            new Yaml().dump(fullFileIdList, writer);
+        try (OutputStream os = new FileOutputStream("modfilesdatabase_temp/file_ids.yaml")) {
+            YamlUtil.dump(fullFileIdList, os);
         }
 
-        try (FileWriter writer = new FileWriter("modfilesdatabase_temp/list.yaml")) {
-            new Yaml().dump(fullList, writer);
+        try (OutputStream os = new FileOutputStream("modfilesdatabase_temp/list.yaml")) {
+            YamlUtil.dump(fullList, os);
         }
 
         checkForAhornPlugins();
@@ -168,7 +167,7 @@ public class ModFilesDatabaseBuilder {
     private void fillInGapsForIncrementalUpdate() throws IOException {
         List<String> mods;
         try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/list.yaml"))) {
-            mods = new Yaml().load(is);
+            mods = YamlUtil.load(is);
         }
 
         for (String mod : mods) {
@@ -180,7 +179,7 @@ public class ModFilesDatabaseBuilder {
             // load this mod's info
             Map<String, Object> fileInfo;
             try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/" + mod + "/info.yaml"))) {
-                fileInfo = new Yaml().load(is);
+                fileInfo = YamlUtil.load(is);
             }
 
             // carry over all information from the old mod files database
@@ -215,12 +214,12 @@ public class ModFilesDatabaseBuilder {
                 }
             });
 
-            try (FileWriter writer = new FileWriter(Paths.get("modfilesdatabase_temp/ahorn_vanilla.yaml").toFile())) {
+            try (OutputStream os = new FileOutputStream(Paths.get("modfilesdatabase_temp/ahorn_vanilla.yaml").toFile())) {
                 Map<String, List<String>> ahornPlugins = new HashMap<>();
                 ahornPlugins.put("Entities", ahornEntities);
                 ahornPlugins.put("Triggers", ahornTriggers);
                 ahornPlugins.put("Effects", ahornEffects);
-                new Yaml().dump(ahornPlugins, writer);
+                YamlUtil.dump(ahornPlugins, os);
             }
         }
 
@@ -229,7 +228,7 @@ public class ModFilesDatabaseBuilder {
             Path modFolder = Paths.get("modfilesdatabase_temp/" + mod);
             Map<String, Object> versions;
             try (InputStream is = Files.newInputStream(modFolder.resolve("info.yaml"))) {
-                versions = new Yaml().load(is);
+                versions = YamlUtil.load(is);
             }
 
             for (String version : (List<String>) versions.get("Files")) {
@@ -251,7 +250,7 @@ public class ModFilesDatabaseBuilder {
         } else {
             List<String> fileList;
             try (InputStream is = Files.newInputStream(modFolder.resolve(version + ".yaml"))) {
-                fileList = new Yaml().load(is);
+                fileList = YamlUtil.load(is);
             }
 
             if (fileList.stream().anyMatch(f -> f.startsWith("Ahorn/"))) {
@@ -290,12 +289,12 @@ public class ModFilesDatabaseBuilder {
                 }
 
                 // write the result.
-                try (FileWriter writer = new FileWriter(targetPath.toFile())) {
+                try (OutputStream os = new FileOutputStream(targetPath.toFile())) {
                     Map<String, List<String>> ahornPlugins = new HashMap<>();
                     ahornPlugins.put("Entities", ahornEntities);
                     ahornPlugins.put("Triggers", ahornTriggers);
                     ahornPlugins.put("Effects", ahornEffects);
-                    new Yaml().dump(ahornPlugins, writer);
+                    YamlUtil.dump(ahornPlugins, os);
                 }
 
                 FileUtils.forceDelete(new File("mod-ahornscan.zip"));
@@ -348,7 +347,7 @@ public class ModFilesDatabaseBuilder {
         } else {
             List<String> fileList;
             try (InputStream is = Files.newInputStream(modFolder.resolve(version + ".yaml"))) {
-                fileList = new Yaml().load(is);
+                fileList = YamlUtil.load(is);
             }
 
             if (fileList.contains("Loenn/lang/en_gb.lang")) {
@@ -405,12 +404,12 @@ public class ModFilesDatabaseBuilder {
                 }
 
                 // write the result.
-                try (FileWriter writer = new FileWriter(targetPath.toFile())) {
+                try (OutputStream os = new FileOutputStream(targetPath.toFile())) {
                     Map<String, List<String>> loennPlugins = new HashMap<>();
                     loennPlugins.put("Entities", new ArrayList<>(loennEntities));
                     loennPlugins.put("Triggers", new ArrayList<>(loennTriggers));
                     loennPlugins.put("Effects", new ArrayList<>(loennEffects));
-                    new Yaml().dump(loennPlugins, writer);
+                    YamlUtil.dump(loennPlugins, os);
                 }
 
                 FileUtils.forceDelete(new File("mod-loennscan.zip"));

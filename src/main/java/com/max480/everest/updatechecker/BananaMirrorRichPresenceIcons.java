@@ -3,7 +3,6 @@ package com.max480.everest.updatechecker;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
-import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
@@ -28,7 +27,7 @@ public class BananaMirrorRichPresenceIcons {
     public BananaMirrorRichPresenceIcons() throws IOException {
         Map<String, Map<String, List<String>>> map;
         try (FileInputStream is = new FileInputStream("banana_mirror_rich_presence_icons.yaml")) {
-            map = new Yaml().load(is);
+            map = YamlUtil.load(is);
         }
 
         filesToHashes = listToSet(map.get("FilesToHashes"));
@@ -41,14 +40,14 @@ public class BananaMirrorRichPresenceIcons {
         // load mod list
         List<String> mods;
         try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/list.yaml"))) {
-            mods = new Yaml().load(is);
+            mods = YamlUtil.load(is);
         }
 
         for (String mod : mods) {
             // load file list for the mod
             List<String> files;
             try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/" + mod + "/info.yaml"))) {
-                Map<String, Object> info = new Yaml().load(is);
+                Map<String, Object> info = YamlUtil.load(is);
                 files = (List<String>) info.get("Files");
             }
 
@@ -62,7 +61,7 @@ public class BananaMirrorRichPresenceIcons {
                 // load file listing for the mod, so that we know if it has any map icons
                 List<String> fileList;
                 try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/" + mod + "/" + file + ".yaml"))) {
-                    fileList = new Yaml().load(is);
+                    fileList = YamlUtil.load(is);
                 }
 
                 List<String> richPresenceIcons = fileList.stream()
@@ -188,7 +187,7 @@ public class BananaMirrorRichPresenceIcons {
         map.put("HashesToFiles", setToList(hashesToFiles));
 
         try (FileOutputStream os = new FileOutputStream("banana_mirror_rich_presence_icons.yaml")) {
-            IOUtils.write(new Yaml().dump(map), os, "UTF-8");
+            YamlUtil.dump(map, os);
         }
     }
 

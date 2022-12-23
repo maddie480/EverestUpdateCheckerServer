@@ -5,7 +5,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
@@ -24,7 +23,7 @@ public class BananaMirror {
         // load the list of existing mods.
         Map<String, Map<String, Object>> everestUpdateYaml;
         try (InputStream stream = Files.newInputStream(Paths.get("uploads/everestupdate.yaml"))) {
-            everestUpdateYaml = new Yaml().load(stream);
+            everestUpdateYaml = YamlUtil.load(stream);
         }
 
         // load the list of files that are already in the mirror.
@@ -81,7 +80,7 @@ public class BananaMirror {
 
     private static List<String> listFiles() throws IOException {
         try (FileInputStream is = new FileInputStream("banana_mirror.yaml")) {
-            return new Yaml().load(is);
+            return YamlUtil.load(is);
         }
     }
 
@@ -92,7 +91,7 @@ public class BananaMirror {
         // add the file to the list of files that are actually on the mirror, and write it to disk.
         fileList.add(fileId);
         try (FileOutputStream os = new FileOutputStream("banana_mirror.yaml")) {
-            IOUtils.write(new Yaml().dump(fileList), os, "UTF-8");
+            YamlUtil.dump(fileList, os);
         }
 
         log.info("Uploaded {}.zip to Banana Mirror", fileId);
@@ -105,7 +104,7 @@ public class BananaMirror {
         // delete the file from the list of files that are actually on the mirror, and write it to disk.
         fileList.remove(fileId);
         try (FileOutputStream os = new FileOutputStream("banana_mirror.yaml")) {
-            IOUtils.write(new Yaml().dump(fileList), os, "UTF-8");
+            YamlUtil.dump(fileList, os);
         }
 
         log.info("Deleted {}.zip from Banana Mirror", fileId);

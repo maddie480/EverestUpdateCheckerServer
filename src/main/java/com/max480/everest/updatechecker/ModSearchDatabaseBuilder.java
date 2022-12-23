@@ -6,7 +6,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
@@ -150,7 +149,7 @@ public class ModSearchDatabaseBuilder {
                         File modFilesDatabase = new File("modfilesdatabase_temp/" + itemtype + "/" + itemid + "/" + file.getInt("_idRow") + ".yaml");
                         if (modFilesDatabase.exists()) {
                             try (FileInputStream is = new FileInputStream(modFilesDatabase)) {
-                                List<String> files = new Yaml().load(is);
+                                List<String> files = YamlUtil.load(is);
                                 hasYaml = files.contains("everest.yml") || files.contains("everest.yaml");
                             } catch (IOException e) {
                                 log.error("Could not read files database at " + modFilesDatabase.getPath() + "!", e);
@@ -219,8 +218,8 @@ public class ModSearchDatabaseBuilder {
         }
 
         // map ModSearchInfo's to Maps and save them.
-        try (FileWriter writer = new FileWriter("uploads/modsearchdatabase.yaml")) {
-            new Yaml().dump(modSearchDatabase, writer);
+        try (OutputStream os = new FileOutputStream("uploads/modsearchdatabase.yaml")) {
+            YamlUtil.dump(modSearchDatabase, os);
         }
     }
 
@@ -273,7 +272,7 @@ public class ModSearchDatabaseBuilder {
     private void fillInGapsForIncrementalUpdate(List<Map<String, Object>> database) throws IOException {
         List<Map<String, Object>> previousModInfo;
         try (InputStream is = Files.newInputStream(Paths.get("uploads/modsearchdatabase.yaml"))) {
-            previousModInfo = new Yaml().load(is);
+            previousModInfo = YamlUtil.load(is);
         }
 
         for (Map<String, Object> oldMod : previousModInfo) {

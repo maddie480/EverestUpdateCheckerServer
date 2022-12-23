@@ -4,12 +4,9 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yaml.snakeyaml.DumperOptions;
-import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -27,12 +24,12 @@ public class DependencyGraphBuilder {
     static void updateDependencyGraph() throws IOException {
         Map<String, Map<String, Object>> oldDependencyGraph;
         try (InputStream is = Files.newInputStream(Paths.get("uploads/moddependencygraph.yaml"))) {
-            oldDependencyGraph = new Yaml().load(is);
+            oldDependencyGraph = YamlUtil.load(is);
         }
 
         Map<String, Map<String, Object>> everestUpdate;
         try (InputStream is = Files.newInputStream(Paths.get("uploads/everestupdate.yaml"))) {
-            everestUpdate = new Yaml().load(is);
+            everestUpdate = YamlUtil.load(is);
         }
 
         Map<String, Map<String, Object>> newDependencyGraph = new HashMap<>();
@@ -83,7 +80,7 @@ public class DependencyGraphBuilder {
 
                     List<Map<String, Object>> everestYamlContents;
                     try (InputStream is = zipFile.getInputStream(everestYaml)) {
-                        everestYamlContents = new Yaml().load(is);
+                        everestYamlContents = YamlUtil.load(is);
                     }
 
                     // merge the Dependencies and OptionalDependencies of all mods defined in the everest.yaml
@@ -117,10 +114,9 @@ public class DependencyGraphBuilder {
         }
 
         // write it out!
-        FileUtils.writeStringToFile(
-                new File("uploads/moddependencygraph.yaml"),
-                new Yaml().dumpAs(newDependencyGraph, null, DumperOptions.FlowStyle.BLOCK),
-                StandardCharsets.UTF_8);
+        try (OutputStream os = new FileOutputStream("uploads/moddependencygraph.yaml")) {
+            YamlUtil.dump(newDependencyGraph, os);
+        }
     }
 
     private static void addDependenciesFromList(Map<String, String> addTo, List<Map<String, Object>> toAdd, List<Map<String, Object>> everestYamlContents) {

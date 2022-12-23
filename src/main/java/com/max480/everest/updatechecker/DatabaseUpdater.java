@@ -11,7 +11,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
@@ -98,7 +97,7 @@ class DatabaseUpdater {
     private void loadDatabaseFromYaml() throws IOException {
         if (new File("uploads/everestupdate.yaml").exists()) {
             try (InputStream is = Files.newInputStream(Paths.get("uploads/everestupdate.yaml"))) {
-                Map<String, Map<String, Object>> imported = new Yaml().load(is);
+                Map<String, Map<String, Object>> imported = YamlUtil.load(is);
 
                 for (Map.Entry<String, Map<String, Object>> entry : imported.entrySet()) {
                     Mod mod = new Mod(entry);
@@ -109,13 +108,13 @@ class DatabaseUpdater {
 
         if (new File("uploads/everestupdateexcluded.yaml").exists()) {
             try (InputStream is = Files.newInputStream(Paths.get("uploads/everestupdateexcluded.yaml"))) {
-                databaseExcludedFiles = new Yaml().load(is);
+                databaseExcludedFiles = YamlUtil.load(is);
             }
         }
 
         if (new File("uploads/everestupdatenoyaml.yaml").exists()) {
             try (InputStream is = Files.newInputStream(Paths.get("uploads/everestupdatenoyaml.yaml"))) {
-                List<String> noYamlFilesList = new Yaml().load(is);
+                List<String> noYamlFilesList = YamlUtil.load(is);
                 databaseNoYamlFiles = new TreeSet<>(noYamlFilesList);
             }
         }
@@ -132,14 +131,14 @@ class DatabaseUpdater {
             export.put(entry.getKey(), entry.getValue().toMap());
         }
 
-        try (FileWriter writer = new FileWriter("uploads/everestupdate.yaml")) {
-            new Yaml().dump(export, writer);
+        try (OutputStream os = new FileOutputStream("uploads/everestupdate.yaml")) {
+            YamlUtil.dump(export, os);
         }
-        try (FileWriter writer = new FileWriter("uploads/everestupdateexcluded.yaml")) {
-            new Yaml().dump(databaseExcludedFiles, writer);
+        try (OutputStream os = new FileOutputStream("uploads/everestupdateexcluded.yaml")) {
+            YamlUtil.dump(databaseExcludedFiles, os);
         }
-        try (FileWriter writer = new FileWriter("uploads/everestupdatenoyaml.yaml")) {
-            new Yaml().dump(new ArrayList<>(databaseNoYamlFiles), writer);
+        try (OutputStream os = new FileOutputStream("uploads/everestupdatenoyaml.yaml")) {
+            YamlUtil.dump(new ArrayList<>(databaseNoYamlFiles), os);
         }
 
         if (Main.serverConfig.bananaMirrorConfig != null) {
@@ -444,7 +443,7 @@ class DatabaseUpdater {
     private void parseEverestYamlFromZipFile(InputStream yamlInputStream, String xxHash, String fileUrl, int fileTimestamp,
                                              String gbType, int gbId, int fileSize) {
         try {
-            List<Map<String, Object>> info = new Yaml().load(yamlInputStream);
+            List<Map<String, Object>> info = YamlUtil.load(yamlInputStream);
 
             for (Map<String, Object> infoMod : info) {
                 String modName = infoMod.get("Name").toString();

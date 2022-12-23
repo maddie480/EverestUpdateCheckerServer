@@ -5,7 +5,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.net.URL;
@@ -24,7 +23,7 @@ public class BananaMirrorImages {
         // load the list of existing mods.
         List<Map<String, Object>> modSearchDatabase;
         try (InputStream stream = Files.newInputStream(Paths.get("uploads/modsearchdatabase.yaml"))) {
-            modSearchDatabase = new Yaml().load(stream);
+            modSearchDatabase = YamlUtil.load(stream);
         }
 
         // load the list of files that are already in the mirror.
@@ -78,7 +77,7 @@ public class BananaMirrorImages {
 
     private static List<String> listFiles() throws IOException {
         try (FileInputStream is = new FileInputStream("banana_mirror_images.yaml")) {
-            return new Yaml().load(is);
+            return YamlUtil.load(is);
         }
     }
 
@@ -90,7 +89,7 @@ public class BananaMirrorImages {
         // add the file to the list of files that are actually on the mirror, and write it to disk.
         fileList.add(fileId);
         try (FileOutputStream os = new FileOutputStream("banana_mirror_images.yaml")) {
-            IOUtils.write(new Yaml().dump(fileList), os, "UTF-8");
+            YamlUtil.dump(fileList, os);
         }
 
         log.info("Uploaded {} to Banana Mirror", fileId);
@@ -103,7 +102,7 @@ public class BananaMirrorImages {
         // delete the file from the list of files that are actually on the mirror, and write it to disk.
         fileList.remove(fileId);
         try (FileOutputStream os = new FileOutputStream("banana_mirror_images.yaml")) {
-            IOUtils.write(new Yaml().dump(fileList), os, "UTF-8");
+            YamlUtil.dump(fileList, os);
         }
 
         log.info("Deleted {} from Banana Mirror", fileId);
