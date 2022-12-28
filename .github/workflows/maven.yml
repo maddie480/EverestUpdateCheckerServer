@@ -40,10 +40,4 @@ jobs:
         grep "" matches.txt && exit 1 || echo "No trailing space found!"
 
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: target
-        path: target
+      run: mvn -B package -Prelease --file pom.xml
