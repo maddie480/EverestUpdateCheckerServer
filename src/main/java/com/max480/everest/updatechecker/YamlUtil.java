@@ -22,7 +22,12 @@ public class YamlUtil {
         LoaderOptions loaderOptions = new LoaderOptions();
         loaderOptions.setCodePointLimit(8 * 1024 * 1024);
 
-        yaml = new Yaml(new SafeConstructor(loaderOptions), new Representer(new DumperOptions()));
+        // use the block flow style rather than the default "block at the root level, flow on deeper levels" default.
+        DumperOptions dumperOptions = new DumperOptions();
+        dumperOptions.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
+
+        // use SafeConstructor to avoid callers being able to construct arbitrary Java objects
+        yaml = new Yaml(new SafeConstructor(loaderOptions), new Representer(dumperOptions), dumperOptions, loaderOptions);
     }
 
     /**
@@ -37,7 +42,7 @@ public class YamlUtil {
      */
     public static void dump(Object data, OutputStream os) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8))) {
-            IOUtils.write(yaml.dumpAs(data, null, DumperOptions.FlowStyle.BLOCK), writer);
+            yaml.dump(data, writer);
         }
     }
 }
