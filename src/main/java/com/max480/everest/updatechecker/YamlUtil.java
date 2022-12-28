@@ -14,7 +14,16 @@ import java.nio.charset.StandardCharsets;
  * A utility class to parse and dump YAML objects.
  */
 public class YamlUtil {
-    private static final Yaml yaml = new Yaml(new SafeConstructor(new LoaderOptions()), new Representer(new DumperOptions()));
+    private static final Yaml yaml;
+
+    static {
+        // mod_search_database.yaml is larger than 3 MB, which is the default code point limit in SnakeYAML.
+        // So we need to raise it a bit! We set it to 8 MB instead.
+        LoaderOptions loaderOptions = new LoaderOptions();
+        loaderOptions.setCodePointLimit(8 * 1024 * 1024);
+
+        yaml = new Yaml(new SafeConstructor(loaderOptions), new Representer(new DumperOptions()));
+    }
 
     /**
      * Loads YAML data from an input stream.
