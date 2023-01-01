@@ -1,5 +1,6 @@
 package com.max480.everest.updatechecker;
 
+import org.apache.commons.io.EndianUtils;
 import org.mozilla.universalchardet.UniversalDetector;
 
 import java.io.DataInputStream;
@@ -68,14 +69,14 @@ public class ZipFileWithAutoEncoding {
                 // jump to compressed size
                 is.skipBytes(14);
 
-                int fileSize = readInt(is);
+                int fileSize = EndianUtils.readSwappedInteger(is);
 
                 // jump over uncompressed size, to file name length
                 is.skipBytes(4);
 
                 // read file name and extra field lengths
-                byte[] fileName = new byte[readShort(is)];
-                short extraFieldLength = readShort(is);
+                byte[] fileName = new byte[EndianUtils.readSwappedShort(is)];
+                short extraFieldLength = EndianUtils.readSwappedShort(is);
 
                 // read the file name!
                 if (is.read(fileName) != fileName.length) {
@@ -87,26 +88,5 @@ public class ZipFileWithAutoEncoding {
                 is.skipBytes(extraFieldLength + fileSize);
             }
         }
-    }
-
-    // we need our own readShort() and readInt() methods because Java's ones don't have the endianness we want.
-    // in other words, we want to read the bytes backwards.
-
-    public static short readShort(DataInputStream bin) throws IOException {
-        int byte1 = bin.readUnsignedByte();
-        int byte2 = bin.readUnsignedByte();
-
-        // just swap the bytes and we'll be fine lol
-        return (short) ((byte2 << 8) + byte1);
-    }
-
-    public static int readInt(DataInputStream bin) throws IOException {
-        int byte1 = bin.readUnsignedByte();
-        int byte2 = bin.readUnsignedByte();
-        int byte3 = bin.readUnsignedByte();
-        int byte4 = bin.readUnsignedByte();
-
-        // reading numbers backwards is fun!
-        return (byte4 << 24) + (byte3 << 16) + (byte2 << 8) + byte1;
     }
 }
