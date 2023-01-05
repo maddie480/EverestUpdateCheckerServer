@@ -41,3 +41,10 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B verify -Prelease --file pom.xml
+
+    - name: Upload target folder as artifact
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: target
+        path: target
