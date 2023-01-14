@@ -21,7 +21,6 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -309,9 +308,9 @@ class DatabaseUpdater {
     private static class ModInfoParser {
         int mostRecentFileTimestamp = 0;
         String mostRecentFileUrl = null;
-        List<String> allFileUrls = new ArrayList<>();
-        List<Integer> allFileSizes = new ArrayList<>();
-        List<Integer> allFileTimestamps = new ArrayList<>();
+        final List<String> allFileUrls = new ArrayList<>();
+        final List<Integer> allFileSizes = new ArrayList<>();
+        final List<Integer> allFileTimestamps = new ArrayList<>();
 
         void invoke(JSONArray fileList, Set<String> databaseNoYamlFiles) {
             for (Object fileRaw : fileList) {
@@ -493,7 +492,7 @@ class DatabaseUpdater {
     private void checkForModDeletion() {
         List<String> existingFiles = modFilesDatabaseBuilder.getFileIds().stream()
                 .map(file -> "https://gamebanana.com/mmdl/" + file)
-                .collect(Collectors.toList());
+                .toList();
 
         // === 1. Mod database
         Set<String> deletedMods = new HashSet<>();

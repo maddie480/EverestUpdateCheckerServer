@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public abstract class EventListener {
-    private static List<EventListener> eventListeners = new ArrayList<>();
+    private static final List<EventListener> eventListeners = new ArrayList<>();
 
     public static void addEventListener(EventListener eventListener) {
         eventListeners.add(eventListener);

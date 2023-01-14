@@ -2,6 +2,7 @@ package com.max480.everest.updatechecker;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.tuple.Triple;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -221,6 +222,15 @@ public class ModFilesDatabaseBuilder {
                 ahornPlugins.put("Effects", ahornEffects);
                 YamlUtil.dump(ahornPlugins, os);
             }
+
+            runWithRetry(() -> {
+                try (InputStream is = openStreamWithTimeout(new URL("https://raw.githubusercontent.com/CelestialCartographers/Loenn/master/src/lang/en_gb.lang"));
+                     BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+
+                    extractLoennEntities(Paths.get("modfilesdatabase_temp/loenn_vanilla.yaml"), br);
+                    return null;
+                }
+            });
         }
 
         for (String mod : fullList) {
@@ -351,10 +361,6 @@ public class ModFilesDatabaseBuilder {
             }
 
             if (fileList.contains("Loenn/lang/en_gb.lang")) {
-                Set<String> loennEntities = new HashSet<>();
-                Set<String> loennTriggers = new HashSet<>();
-                Set<String> loennEffects = new HashSet<>();
-
                 // download file
                 DatabaseUpdater.runWithRetry(() -> {
                     try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-loennscan.zip")))) {
@@ -370,32 +376,12 @@ public class ModFilesDatabaseBuilder {
 
                     checkZipSignature(new File("mod-loennscan.zip").toPath());
 
-                    // read line per line, and extract the entity ID from each line starting with entities., triggers. or style.effects.
-                    Pattern regex = Pattern.compile("^(entities|triggers|style\\.effects)\\.([^.]+)\\..*$");
-
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        Matcher match = regex.matcher(line);
-                        if (match.matches()) {
-                            String entityName = match.group(2);
-                            switch (match.group(1)) {
-                                case "entities":
-                                    loennEntities.add(entityName);
-                                    break;
-                                case "triggers":
-                                    loennTriggers.add(entityName);
-                                    break;
-                                case "style.effects":
-                                    loennEffects.add(entityName);
-                                    break;
-                            }
-                        }
-                    }
+                    Triple<Set<String>, Set<String>, Set<String>> loennEntities = extractLoennEntities(targetPath, br);
 
                     log.info("Found {} Lönn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
-                            loennEntities.size(), loennTriggers.size(), loennEffects.size(), version);
+                            loennEntities.getLeft().size(), loennEntities.getMiddle().size(), loennEntities.getRight().size(), version);
                     EventListener.handle(listener -> listener.scannedLoennEntities("https://gamebanana.com/mmdl/" + version,
-                            loennEntities.size(), loennTriggers.size(), loennEffects.size()));
+                            loennEntities.getLeft().size(), loennEntities.getMiddle().size(), loennEntities.getRight().size()));
                 } catch (IOException | IllegalArgumentException e) {
                     // if a file cannot be read as a zip, no need to worry about it.
                     // we will just write an empty array.
@@ -403,17 +389,41 @@ public class ModFilesDatabaseBuilder {
                     EventListener.handle(listener -> listener.loennPluginScanError("https://gamebanana.com/mmdl/" + version, e));
                 }
 
-                // write the result.
-                try (OutputStream os = new FileOutputStream(targetPath.toFile())) {
-                    Map<String, List<String>> loennPlugins = new HashMap<>();
-                    loennPlugins.put("Entities", new ArrayList<>(loennEntities));
-                    loennPlugins.put("Triggers", new ArrayList<>(loennTriggers));
-                    loennPlugins.put("Effects", new ArrayList<>(loennEffects));
-                    YamlUtil.dump(loennPlugins, os);
-                }
-
                 FileUtils.forceDelete(new File("mod-loennscan.zip"));
             }
         }
+    }
+
+    private static Triple<Set<String>, Set<String>, Set<String>> extractLoennEntities(Path yamlTargetPath, BufferedReader inputReader) throws IOException {
+        Set<String> loennEntities = new HashSet<>();
+        Set<String> loennTriggers = new HashSet<>();
+        Set<String> loennEffects = new HashSet<>();
+
+        // read line per line, and extract the entity ID from each line starting with entities., triggers. or style.effects.
+        Pattern regex = Pattern.compile("^(entities|triggers|style\\.effects)\\.([^.]+)\\..*$");
+
+        String line;
+        while ((line = inputReader.readLine()) != null) {
+            Matcher match = regex.matcher(line);
+            if (match.matches()) {
+                String entityName = match.group(2);
+                switch (match.group(1)) {
+                    case "entities" -> loennEntities.add(entityName);
+                    case "triggers" -> loennTriggers.add(entityName);
+                    case "style.effects" -> loennEffects.add(entityName);
+                }
+            }
+        }
+
+        // write the result.
+        try (OutputStream os = new FileOutputStream(yamlTargetPath.toFile())) {
+            Map<String, List<String>> loennPlugins = new HashMap<>();
+            loennPlugins.put("Entities", new ArrayList<>(loennEntities));
+            loennPlugins.put("Triggers", new ArrayList<>(loennTriggers));
+            loennPlugins.put("Effects", new ArrayList<>(loennEffects));
+            YamlUtil.dump(loennPlugins, os);
+        }
+
+        return Triple.of(loennEntities, loennTriggers, loennEffects);
     }
 }
