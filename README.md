@@ -121,8 +121,6 @@ This file only exists for zips that include a `Loenn/lang/en_gb.lang` file, sinc
 
 You can download the `modfilesdatabase` directory as a zip at https://max480-random-stuff.appspot.com/celeste/mod_files_database.zip.
 
-Il you only need  `modfilesdatabase/file_ids.yaml`, you can get it at https://max480-random-stuff.appspot.com/celeste/file_ids.yaml.
-
 ## Banana Mirror
 
 ### What it does
@@ -165,9 +163,7 @@ It is possible to download a mod and all dependencies, including transitive ones
 
 ### Access
 
-This file is publicly accessible at [https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml](https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml).
-
-If you prefer a format more similar to everest.yaml files, you can use [https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml?format=everestyaml](https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml?format=everestyaml) instead, and the result will look like this:
+This file is publicly accessible at [https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml](https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml), in an `everest.yaml`-like format:
 
 ```yaml
 WitheredPassage:
