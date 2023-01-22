@@ -33,15 +33,19 @@ public class YamlUtil {
      * Loads YAML data from an input stream.
      */
     public static <T> T load(InputStream is) {
-        return yaml.load(is);
+        synchronized (yaml) {
+            return yaml.load(is);
+        }
     }
 
     /**
      * Dumps YAML data to an output stream.
      */
     public static void dump(Object data, OutputStream os) throws IOException {
-        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8))) {
-            yaml.dump(data, writer);
+        synchronized (yaml) {
+            try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8))) {
+                yaml.dump(data, writer);
+            }
         }
     }
 }
