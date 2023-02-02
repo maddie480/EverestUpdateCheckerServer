@@ -8,4 +8,11 @@
         <packageUrl regex="true">^pkg:maven/org\.yaml/snakeyaml@.*$</packageUrl>
         <vulnerabilityName>CVE-2022-1471</vulnerabilityName>
     </suppress>
+    <suppress>
+        <notes><![CDATA[
+            The vulnerability is about `XML.toJSONObject` which isn't used here
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.json/json@.*$</packageUrl>
+        <vulnerabilityName>CVE-2022-45688</vulnerabilityName>
+    </suppress>
 </suppressions>
