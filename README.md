@@ -29,7 +29,7 @@ SuperHotMod:
 
 ### Access
 
-This file is publicly accessible at https://max480-random-stuff.appspot.com/celeste/everest_update.yaml.
+This file is publicly accessible at https://max480.ovh/celeste/everest_update.yaml.
 
 ## Mod search database
 
@@ -76,11 +76,11 @@ A file is generated at `uploads/modsearchdatabase.yaml` with extensive info abou
 - [The GameBanana search API](https://github.com/max4805/RandomStuffWebsite#the-gamebanana-search-api) uses it to find mods.
 - [The GameBanana sorted list API (deprecated)](https://github.com/max4805/RandomStuffWebsite#gamebanana-sorted-list-api-deprecated) uses it to be able to give a list of mod IDs sorted by likes, views, or downloads.
 - The [Banana Mirror Browser](https://max480-random-stuff.herokuapp.com/banana-mirror-browser) takes all mod information it displays (name, description, stats, etc) from it.
-- The [Custom Entity Catalog](https://max480-random-stuff.appspot.com/celeste/custom-entity-catalog) uses it to get category names for each listed mod.
+- The [Custom Entity Catalog](https://max480.ovh/celeste/custom-entity-catalog) uses it to get category names for each listed mod.
 
 ### Access
 
-This file is publicly accessible at https://max480-random-stuff.appspot.com/celeste/mod_search_database.yaml.
+This file is publicly accessible at https://max480.ovh/celeste/mod_search_database.yaml.
 
 ## Mod files database
 
@@ -114,12 +114,12 @@ This file only exists for zips that include a `Loenn/lang/en_gb.lang` file, sinc
 
 ### Where it is used
 
-- The [Custom Entity Catalog](https://max480-random-stuff.appspot.com/celeste/custom-entity-catalog) uses it to get the file names of Ahorn plugins, and be able to list out what each mod contains.
+- The [Custom Entity Catalog](https://max480.ovh/celeste/custom-entity-catalog) uses it to get the file names of Ahorn plugins, and be able to list out what each mod contains.
 - The [Mod Structure Verifier Discord bot](https://github.com/max4805/RandomBackendStuff/tree/main/src/main/java/com/max480/randomstuff/backend/discord/modstructureverifier) uses it to know which assets each mod used as a dependency contains, and which entities helpers contain.
 
 ### Access
 
-You can download the `modfilesdatabase` directory as a zip at https://max480-random-stuff.appspot.com/celeste/mod_files_database.zip.
+You can download the `modfilesdatabase` directory as a zip at https://max480.ovh/celeste/mod_files_database.zip.
 
 ## Banana Mirror
 
@@ -155,7 +155,7 @@ WitheredPassage:
 
 ### Where it is used
 
-The [Custom Entity Catalog](https://max480-random-stuff.appspot.com/celeste/custom-entity-catalog) uses it to show how many mods depend on each helper.
+The [Custom Entity Catalog](https://max480.ovh/celeste/custom-entity-catalog) uses it to show how many mods depend on each helper.
 
 This can also be used whenever it is needed to know which mods depend on a particular one, for example to evaluate impacts after a helper is deleted from GameBanana, or to check which mods have dependencies on big maps.
 
@@ -163,7 +163,7 @@ It is possible to download a mod and all dependencies, including transitive ones
 
 ### Access
 
-This file is publicly accessible at [https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml](https://max480-random-stuff.appspot.com/celeste/mod_dependency_graph.yaml), in an `everest.yaml`-like format:
+This file is publicly accessible at [https://max480.ovh/celeste/mod_dependency_graph.yaml](https://max480.ovh/celeste/mod_dependency_graph.yaml), in an `everest.yaml`-like format:
 
 ```yaml
 WitheredPassage:
