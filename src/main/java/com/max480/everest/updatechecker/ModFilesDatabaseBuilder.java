@@ -312,7 +312,7 @@ public class ModFilesDatabaseBuilder {
         }
     }
 
-    private void extractAhornEntities(List<String> ahornEntities, List<String> ahornTriggers, List<String> ahornEffects,
+    public void extractAhornEntities(List<String> ahornEntities, List<String> ahornTriggers, List<String> ahornEffects,
                                       String file, InputStream inputStream) throws IOException {
 
         Pattern mapdefMatcher = Pattern.compile(".*@mapdef(?:data)? [A-Za-z]+ \"([^\"]+)\".*");
@@ -394,7 +394,7 @@ public class ModFilesDatabaseBuilder {
         }
     }
 
-    private static Triple<Set<String>, Set<String>, Set<String>> extractLoennEntities(Path yamlTargetPath, BufferedReader inputReader) throws IOException {
+    public static Triple<Set<String>, Set<String>, Set<String>> extractLoennEntities(Path yamlTargetPath, BufferedReader inputReader) throws IOException {
         Set<String> loennEntities = new HashSet<>();
         Set<String> loennTriggers = new HashSet<>();
         Set<String> loennEffects = new HashSet<>();
