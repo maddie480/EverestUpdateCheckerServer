@@ -180,10 +180,11 @@ public class ModSearchDatabaseBuilder {
             assignCategoryNamesToMods(itemtype);
         }
 
-        // ... then check that we did not miss any.
+        // ... then check that we did not miss any. If we did, just fill in the category name with "Unknown"
+        // (this means the mod is part of an unapproved/unlisted category).
         for (ModSearchInfo mod : modSearchInfo) {
             if (mod.categoryName == null) {
-                throw new IOException("Category name for " + mod.gameBananaType + " category " + mod.categoryId + " was not found!");
+                mod.categoryName = "Unknown";
             }
         }
 
