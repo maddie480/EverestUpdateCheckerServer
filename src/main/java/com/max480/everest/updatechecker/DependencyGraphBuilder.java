@@ -38,7 +38,6 @@ public class DependencyGraphBuilder {
         for (Map.Entry<String, Map<String, Object>> mod : everestUpdate.entrySet()) {
             String name = mod.getKey();
             String url = (String) mod.getValue().get(Main.serverConfig.mainServerIsMirror ? "MirrorURL" : "URL");
-            String mirrorUrl = (String) mod.getValue().get(Main.serverConfig.mainServerIsMirror ? "URL" : "MirrorURL");
 
             // try to find a matching entry (same URL and same name) in the dependency graph we have.
             Map.Entry<String, Map<String, Object>> existingDependencyGraphEntry = oldDependencyGraph.entrySet()
@@ -51,10 +50,10 @@ public class DependencyGraphBuilder {
                 // we already have that mod!
                 newDependencyGraph.put(existingDependencyGraphEntry.getKey(), existingDependencyGraphEntry.getValue());
             } else {
-                // download file from mirror
+                // download file
                 DatabaseUpdater.runWithRetry(() -> {
                     try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-dependencytree.zip")))) {
-                        IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL(mirrorUrl))), os);
+                        IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL(url))), os);
                         return null; // to fulfill this stupid method signature
                     }
                 });
@@ -64,7 +63,7 @@ public class DependencyGraphBuilder {
                 if (((int) mod.getValue().get("Size")) != actualSize) {
                     FileUtils.forceDelete(new File("mod-dependencytree.zip"));
                     throw new IOException("The announced file size (" + mod.getValue().get("Size") + ") does not match what we got (" + actualSize + ")" +
-                            " for file " + mirrorUrl);
+                            " for file " + url);
                 }
 
                 // read its everest.yaml
