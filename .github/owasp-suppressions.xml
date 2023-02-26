@@ -10,9 +10,9 @@
     </suppress>
     <suppress>
         <notes><![CDATA[
-            The vulnerability is about `XML.toJSONObject` which isn't used here
+            This CVE affects all versions of JSON-java up to and excluding 20220924... and the project depends on version 20220924
         ]]></notes>
         <packageUrl regex="true">^pkg:maven/org\.json/json@.*$</packageUrl>
-        <vulnerabilityName>CVE-2022-45688</vulnerabilityName>
+        <cve>CVE-2022-45688</cve>
     </suppress>
 </suppressions>
