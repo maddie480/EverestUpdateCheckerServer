@@ -25,11 +25,11 @@ SuperHotMod:
 ### Where it is used
 
 - [Everest](https://github.com/EverestAPI/Everest) uses this file for its "Check for Mod Updates" feature. For all mods someone has installed as a zip with an everest.yaml, Everest can check if the hash matches what is present in this file, to know if the mod is up-to-date (regardless of version number, since some modders don't update this one).
-- The [Banana Mirror Browser](https://max480-random-stuff.herokuapp.com/banana-mirror-browser) uses it to get the list of files present in the mirror.
+- The [Banana Mirror Browser](https://maddie480.ovh/celeste/banana-mirror-browser) uses it to get the list of files present in the mirror.
 
 ### Access
 
-This file is publicly accessible at https://max480.ovh/celeste/everest_update.yaml.
+This file is publicly accessible at https://maddie480.ovh/celeste/everest_update.yaml.
 
 ## Mod search database
 
@@ -73,14 +73,14 @@ A file is generated at `uploads/modsearchdatabase.yaml` with extensive info abou
 
 ### Where it is used
 
-- [The GameBanana search API](https://github.com/max4805/RandomStuffWebsite#the-gamebanana-search-api) uses it to find mods.
-- [The GameBanana sorted list API (deprecated)](https://github.com/max4805/RandomStuffWebsite#gamebanana-sorted-list-api-deprecated) uses it to be able to give a list of mod IDs sorted by likes, views, or downloads.
-- The [Banana Mirror Browser](https://max480-random-stuff.herokuapp.com/banana-mirror-browser) takes all mod information it displays (name, description, stats, etc) from it.
-- The [Custom Entity Catalog](https://max480.ovh/celeste/custom-entity-catalog) uses it to get category names for each listed mod.
+- [The GameBanana search API](https://github.com/maddie480/RandomStuffWebsite#the-gamebanana-search-api) uses it to find mods.
+- [The GameBanana sorted list API (deprecated)](https://github.com/maddie480/RandomStuffWebsite#gamebanana-sorted-list-api-deprecated) uses it to be able to give a list of mod IDs sorted by likes, views, or downloads.
+- The [Banana Mirror Browser](https://maddie480.ovh/celeste/banana-mirror-browser) takes all mod information it displays (name, description, stats, etc) from it.
+- The [Custom Entity Catalog](https://maddie480.ovh/celeste/custom-entity-catalog) uses it to get category names for each listed mod.
 
 ### Access
 
-This file is publicly accessible at https://max480.ovh/celeste/mod_search_database.yaml.
+This file is publicly accessible at https://maddie480.ovh/celeste/mod_search_database.yaml.
 
 ## Mod files database
 
@@ -114,12 +114,12 @@ This file only exists for zips that include a `Loenn/lang/en_gb.lang` file, sinc
 
 ### Where it is used
 
-- The [Custom Entity Catalog](https://max480.ovh/celeste/custom-entity-catalog) uses it to get the file names of Ahorn plugins, and be able to list out what each mod contains.
-- The [Mod Structure Verifier Discord bot](https://github.com/max4805/RandomBackendStuff/tree/main/src/main/java/com/max480/randomstuff/backend/discord/modstructureverifier) uses it to know which assets each mod used as a dependency contains, and which entities helpers contain.
+- The [Custom Entity Catalog](https://maddie480.ovh/celeste/custom-entity-catalog) uses it to get the file names of Ahorn plugins, and be able to list out what each mod contains.
+- The [Mod Structure Verifier Discord bot](https://github.com/maddie480/RandomBackendStuff/tree/main/src/main/java/com/maddie480/randomstuff/backend/discord/modstructureverifier) uses it to know which assets each mod used as a dependency contains, and which entities helpers contain.
 
 ### Access
 
-You can download the `modfilesdatabase` directory as a zip at https://max480.ovh/celeste/mod_files_database.zip.
+You can download the `modfilesdatabase` directory as a zip at https://maddie480.ovh/celeste/mod_files_database.zip.
 
 ## Banana Mirror
 
@@ -131,7 +131,7 @@ It will do the same with the **2 first screenshots** of each Celeste mod on Game
 
 ### Access
 
-Files and images are uploaded to [0x0ade's server](https://celestemodupdater.0x0a.de/). You can download all files directly from there directly, but since files are named after their GameBanana file IDs, you can use this website to navigate in it with mod names, descriptions and 1-click install buttons: https://max480-random-stuff.herokuapp.com/banana-mirror-browser
+Files and images are uploaded to [0x0ade's server](https://celestemodupdater.0x0a.de/). You can download all files directly from there directly, but since files are named after their GameBanana file IDs, you can use this website to navigate in it with mod names, descriptions and 1-click install buttons: https://maddie480.ovh/celeste/banana-mirror-browser
 
 [Everest](https://github.com/EverestAPI/Everest) and [Olympus](https://github.com/EverestAPI/Olympus) will also automatically use it as a substitute for GameBanana if it is down and you try to download or update a mod. Olympus uses the mirrored images instead of ones from GameBanana when they are in the `webp` format, since the mirror has them all converted to PNG.
 
@@ -155,7 +155,7 @@ WitheredPassage:
 
 ### Where it is used
 
-The [Custom Entity Catalog](https://max480.ovh/celeste/custom-entity-catalog) uses it to show how many mods depend on each helper.
+The [Custom Entity Catalog](https://maddie480.ovh/celeste/custom-entity-catalog) uses it to show how many mods depend on each helper.
 
 This can also be used whenever it is needed to know which mods depend on a particular one, for example to evaluate impacts after a helper is deleted from GameBanana, or to check which mods have dependencies on big maps.
 
@@ -163,7 +163,7 @@ It is possible to download a mod and all dependencies, including transitive ones
 
 ### Access
 
-This file is publicly accessible at [https://max480.ovh/celeste/mod_dependency_graph.yaml](https://max480.ovh/celeste/mod_dependency_graph.yaml), in an `everest.yaml`-like format:
+This file is publicly accessible at [https://maddie480.ovh/celeste/mod_dependency_graph.yaml](https://maddie480.ovh/celeste/mod_dependency_graph.yaml), in an `everest.yaml`-like format:
 
 ```yaml
 WitheredPassage:
@@ -186,13 +186,13 @@ WitheredPassage:
 
 ## Developing and running your own copy
 
-You shouldn't need this unless max480 vanishes from the Celeste community, but here it is anyway. 😅
+You shouldn't need this unless Maddie vanishes from the Celeste community, but here it is anyway. 😅
 
 ### Getting the project
 
-You can get the update checker server by checking [the Releases tab](https://github.com/max4805/EverestUpdateCheckerServer/releases).
+You can get the update checker server by checking [the Releases tab](https://github.com/maddie480/EverestUpdateCheckerServer/releases).
 
-If you download this to take over Everest's update server, preferably ask max480 for the latest yaml files to spare you some massive downloading from GameBanana.
+If you download this to take over Everest's update server, preferably ask Maddie for the latest yaml files to spare you some massive downloading from GameBanana.
 
 ### Building the project
 
@@ -207,7 +207,7 @@ This will build the project to `target/update-checker-0.4.6.jar`.
 ### Running the project
 
 First, follow these steps to set it up:
-* Get the JAR that was produced by Maven, or download it in [the Releases tab](https://github.com/max4805/EverestUpdateCheckerServer/releases).
+* Get the JAR that was produced by Maven, or download it in [the Releases tab](https://github.com/maddie480/EverestUpdateCheckerServer/releases).
 * Fill in the `update_checker_config.yaml` file present in this repository with Banana Mirror info, and drop it in the same directory as the JAR.
 
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
