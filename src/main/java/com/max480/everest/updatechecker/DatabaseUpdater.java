@@ -442,7 +442,7 @@ class DatabaseUpdater {
     private void parseEverestYamlFromZipFile(InputStream yamlInputStream, String xxHash, String fileUrl, int fileTimestamp,
                                              String gbType, int gbId, int fileSize) {
         try {
-            List<Map<String, Object>> info = YamlUtil.load(yamlInputStream);
+            List<Map<String, Object>> info = YamlUtil.loadNoFloats(yamlInputStream);
 
             for (Map<String, Object> infoMod : info) {
                 String modName = infoMod.get("Name").toString();

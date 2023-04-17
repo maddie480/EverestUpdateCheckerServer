@@ -79,7 +79,7 @@ public class DependencyGraphBuilder {
 
                     List<Map<String, Object>> everestYamlContents;
                     try (InputStream is = zipFile.getInputStream(everestYaml)) {
-                        everestYamlContents = YamlUtil.load(is);
+                        everestYamlContents = YamlUtil.loadNoFloats(is);
                     }
 
                     // merge the Dependencies and OptionalDependencies of all mods defined in the everest.yaml
