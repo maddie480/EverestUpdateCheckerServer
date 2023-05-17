@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -16,7 +15,6 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import static com.max480.everest.updatechecker.DatabaseUpdater.checkZipSignature;
-import static com.max480.everest.updatechecker.DatabaseUpdater.openStreamWithTimeout;
 
 public class DependencyGraphBuilder {
     private static final Logger log = LoggerFactory.getLogger(DependencyGraphBuilder.class);
@@ -51,9 +49,9 @@ public class DependencyGraphBuilder {
                 newDependencyGraph.put(existingDependencyGraphEntry.getKey(), existingDependencyGraphEntry.getValue());
             } else {
                 // download file
-                DatabaseUpdater.runWithRetry(() -> {
+                ConnectionUtils.runWithRetry(() -> {
                     try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-dependencytree.zip")))) {
-                        IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL(url))), os);
+                        IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(url)), os);
                         return null; // to fulfill this stupid method signature
                     }
                 });

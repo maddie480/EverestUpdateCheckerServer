@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -56,9 +55,9 @@ public class BananaMirrorImages {
 
     private static void downloadFile(String screenshotUrl, String screenshotId, List<String> fileList) throws IOException {
         // download the screenshot
-        DatabaseUpdater.runWithRetry(() -> {
+        ConnectionUtils.runWithRetry(() -> {
             try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("image_to_read")))) {
-                IOUtils.copy(new BufferedInputStream(DatabaseUpdater.openStreamWithTimeout(new URL(screenshotUrl))), os);
+                IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(screenshotUrl)), os);
                 return null; // to fulfill this stupid method signature
             }
         });

@@ -8,14 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import static com.max480.everest.updatechecker.DatabaseUpdater.openStreamWithTimeout;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class ModSearchDatabaseBuilder {
@@ -189,8 +187,8 @@ public class ModSearchDatabaseBuilder {
         }
 
         // get featured mods and fill in the info for mods accordingly.
-        JSONObject featured = DatabaseUpdater.runWithRetry(() -> {
-            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/Game/6460/TopSubs"))) {
+        JSONObject featured = ConnectionUtils.runWithRetry(() -> {
+            try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/Game/6460/TopSubs")) {
                 return new JSONObject(IOUtils.toString(is, UTF_8));
             } catch (JSONException e) {
                 // turn JSON parse errors into IOExceptions to trigger a retry.
@@ -226,9 +224,9 @@ public class ModSearchDatabaseBuilder {
 
     private void assignCategoryNamesToMods(String itemtype) throws IOException {
         // get the list of categories from GameBanana
-        JSONArray listOfCategories = DatabaseUpdater.runWithRetry(() -> {
-            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/" + itemtype + "Category/ByGame?_aGameRowIds[]=6460&" +
-                    "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50"))) {
+        JSONArray listOfCategories = ConnectionUtils.runWithRetry(() -> {
+            try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/" + itemtype + "Category/ByGame?_aGameRowIds[]=6460&" +
+                    "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50")) {
 
                 return new JSONArray(IOUtils.toString(is, UTF_8));
             } catch (JSONException e) {

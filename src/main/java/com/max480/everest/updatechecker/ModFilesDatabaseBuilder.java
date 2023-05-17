@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,7 +17,7 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import static com.max480.everest.updatechecker.DatabaseUpdater.*;
+import static com.max480.everest.updatechecker.DatabaseUpdater.checkZipSignature;
 
 public class ModFilesDatabaseBuilder {
     private static final Logger log = LoggerFactory.getLogger(ModFilesDatabaseBuilder.class);
@@ -73,9 +72,9 @@ public class ModFilesDatabaseBuilder {
                 log.debug("Downloading {} to get its file listing...", fileUrl);
 
                 // download file
-                DatabaseUpdater.runWithRetry(() -> {
+                ConnectionUtils.runWithRetry(() -> {
                     try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-filescan.zip")))) {
-                        IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL(fileUrl))), os);
+                        IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(fileUrl)), os);
                         return null; // to fulfill this stupid method signature
                     }
                 });
@@ -193,22 +192,22 @@ public class ModFilesDatabaseBuilder {
 
     private void checkForAhornPlugins() throws IOException {
         {
-            List<String> ahornEntities = runWithRetry(() -> {
-                try (InputStream is = openStreamWithTimeout(new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/entity.jl"))) {
+            List<String> ahornEntities = ConnectionUtils.runWithRetry(() -> {
+                try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/entity.jl")) {
                     List<String> entities = new LinkedList<>();
                     extractAhornEntities(entities, null, null, "Ahorn/entities/vanilla.jl", is);
                     return entities;
                 }
             });
-            List<String> ahornTriggers = runWithRetry(() -> {
-                try (InputStream is = openStreamWithTimeout(new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/trigger.jl"))) {
+            List<String> ahornTriggers = ConnectionUtils.runWithRetry(() -> {
+                try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/trigger.jl")) {
                     List<String> triggers = new LinkedList<>();
                     extractAhornEntities(null, triggers, null, "Ahorn/triggers/vanilla.jl", is);
                     return triggers;
                 }
             });
-            List<String> ahornEffects = runWithRetry(() -> {
-                try (InputStream is = openStreamWithTimeout(new URL("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/style.jl"))) {
+            List<String> ahornEffects = ConnectionUtils.runWithRetry(() -> {
+                try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/style.jl")) {
                     List<String> effects = new LinkedList<>();
                     extractAhornEntities(null, null, effects, "Ahorn/effects/vanilla.jl", is);
                     return effects;
@@ -223,8 +222,8 @@ public class ModFilesDatabaseBuilder {
                 YamlUtil.dump(ahornPlugins, os);
             }
 
-            runWithRetry(() -> {
-                try (InputStream is = openStreamWithTimeout(new URL("https://raw.githubusercontent.com/CelestialCartographers/Loenn/master/src/lang/en_gb.lang"));
+            ConnectionUtils.runWithRetry(() -> {
+                try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://raw.githubusercontent.com/CelestialCartographers/Loenn/master/src/lang/en_gb.lang");
                      BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
 
                     extractLoennEntities(Paths.get("modfilesdatabase_temp/loenn_vanilla.yaml"), br);
@@ -269,9 +268,9 @@ public class ModFilesDatabaseBuilder {
                 List<String> ahornEffects = new LinkedList<>();
 
                 // download file
-                DatabaseUpdater.runWithRetry(() -> {
+                ConnectionUtils.runWithRetry(() -> {
                     try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-ahornscan.zip")))) {
-                        IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL("https://gamebanana.com/mmdl/" + version))), os);
+                        IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/mmdl/" + version)), os);
                         return null; // to fulfill this stupid method signature
                     }
                 });
@@ -313,7 +312,7 @@ public class ModFilesDatabaseBuilder {
     }
 
     public void extractAhornEntities(List<String> ahornEntities, List<String> ahornTriggers, List<String> ahornEffects,
-                                      String file, InputStream inputStream) throws IOException {
+                                     String file, InputStream inputStream) throws IOException {
 
         Pattern mapdefMatcher = Pattern.compile(".*@mapdef(?:data)? [A-Za-z]+ \"([^\"]+)\".*");
         Pattern pardefMatcher = Pattern.compile(".*Entity\\(\"([^\"]+)\".*");
@@ -362,9 +361,9 @@ public class ModFilesDatabaseBuilder {
 
             if (fileList.contains("Loenn/lang/en_gb.lang")) {
                 // download file
-                DatabaseUpdater.runWithRetry(() -> {
+                ConnectionUtils.runWithRetry(() -> {
                     try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-loennscan.zip")))) {
-                        IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL("https://gamebanana.com/mmdl/" + version))), os);
+                        IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/mmdl/" + version)), os);
                         return null; // to fulfill this stupid method signature
                     }
                 });

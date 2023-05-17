@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -58,9 +57,9 @@ public class BananaMirror {
 
     private static void downloadFile(String modUrl, String fileId, List<String> modHashes, List<String> fileList) throws IOException {
         // download the mod
-        DatabaseUpdater.runWithRetry(() -> {
+        ConnectionUtils.runWithRetry(() -> {
             try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-for-cloud.zip")))) {
-                IOUtils.copy(new BufferedInputStream(DatabaseUpdater.openStreamWithTimeout(new URL(modUrl))), os);
+                IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(modUrl)), os);
                 return null; // to fulfill this stupid method signature
             }
         });
@@ -117,7 +116,7 @@ public class BananaMirror {
     }
 
     static void makeSftpAction(String directory, SftpAction action) throws IOException {
-        DatabaseUpdater.runWithRetry(() -> {
+        ConnectionUtils.runWithRetry(() -> {
             Session session = null;
             try {
                 // connect

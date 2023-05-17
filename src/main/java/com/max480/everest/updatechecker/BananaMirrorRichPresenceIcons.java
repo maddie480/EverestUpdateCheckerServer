@@ -5,7 +5,6 @@ import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -95,9 +94,9 @@ public class BananaMirrorRichPresenceIcons {
 
     private void processNewFile(String fileId, List<String> filesToProcess) throws IOException {
         // download the mod
-        DatabaseUpdater.runWithRetry(() -> {
+        ConnectionUtils.runWithRetry(() -> {
             try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod.zip")))) {
-                IOUtils.copy(new BufferedInputStream(DatabaseUpdater.openStreamWithTimeout(new URL("https://gamebanana.com/mmdl/" + fileId))), os);
+                IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/mmdl/" + fileId)), os);
                 return null; // to fulfill this stupid method signature
             }
         });

@@ -4,7 +4,6 @@ import net.jpountz.xxhash.StreamingXXHash64;
 import net.jpountz.xxhash.XXHashFactory;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.function.IOSupplier;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -13,8 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.net.URL;
-import java.net.URLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -159,9 +156,9 @@ class DatabaseUpdater {
      */
     private void crawlModsFromCategoryFully(String category) throws IOException {
         // update the last modified date for incremental updates
-        int lastModifiedDate = runWithRetry(() -> {
-            try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=1&_nPerpage=" + incrementalPageSize +
-                    "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified"))) {
+        int lastModifiedDate = ConnectionUtils.runWithRetry(() -> {
+            try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=1&_nPerpage=" + incrementalPageSize +
+                    "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified")) {
 
                 return new JSONObject(IOUtils.toString(is, UTF_8)).getJSONArray("_aRecords").getJSONObject(0).getInt("_tsDateModified");
             } catch (JSONException e) {
@@ -175,11 +172,11 @@ class DatabaseUpdater {
         while (true) {
             // load a page of mods.
             final int thisPage = page;
-            JSONArray pageContents = runWithRetry(() -> {
-                try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/" + category + "/ByGame?_aGameRowIds[]=6460&" +
+            JSONArray pageContents = ConnectionUtils.runWithRetry(() -> {
+                try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/" + category + "/ByGame?_aGameRowIds[]=6460&" +
                         "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
                         "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl" +
-                        "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=" + fullPageSize))) {
+                        "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=" + fullPageSize)) {
 
                     return new JSONArray(IOUtils.toString(is, UTF_8));
                 } catch (JSONException e) {
@@ -216,9 +213,9 @@ class DatabaseUpdater {
         while (true) {
             // load a page of mods.
             final int thisPage = page;
-            JSONArray pageContents = runWithRetry(() -> {
-                try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=" + thisPage +
-                        "&_nPerpage=" + incrementalPageSize + "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified"))) {
+            JSONArray pageContents = ConnectionUtils.runWithRetry(() -> {
+                try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=" + thisPage +
+                        "&_nPerpage=" + incrementalPageSize + "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified")) {
 
                     return new JSONObject(IOUtils.toString(is, UTF_8)).getJSONArray("_aRecords");
                 } catch (JSONException e) {
@@ -235,10 +232,10 @@ class DatabaseUpdater {
                     // mod was updated after last refresh! get all info on it, then update it.
                     lastModified = Math.max(lastModified, mod.getInt("_tsDateModified"));
 
-                    JSONObject modInfo = runWithRetry(() -> {
-                        try (InputStream is = openStreamWithTimeout(new URL("https://gamebanana.com/apiv8/" + category + "/" + mod.getInt("_idRow") + "?" +
+                    JSONObject modInfo = ConnectionUtils.runWithRetry(() -> {
+                        try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/" + category + "/" + mod.getInt("_idRow") + "?" +
                                 "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
-                                "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl&ts=" + System.currentTimeMillis()))) {
+                                "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl&ts=" + System.currentTimeMillis())) {
 
                             return new JSONObject(IOUtils.toString(is, UTF_8));
                         } catch (JSONException e) {
@@ -361,9 +358,9 @@ class DatabaseUpdater {
             // download the mod
             numberOfModsDownloaded++;
 
-            runWithRetry(() -> {
+            ConnectionUtils.runWithRetry(() -> {
                 try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod.zip")))) {
-                    IOUtils.copy(new BufferedInputStream(openStreamWithTimeout(new URL(fileUrl))), os);
+                    IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(fileUrl)), os);
                     return null; // to fulfill this stupid method signature
                 }
             });
@@ -563,51 +560,6 @@ class DatabaseUpdater {
                 EventListener.handle(listener -> listener.modWasDeletedFromNoYamlFileList(mod));
             }
         }
-    }
-
-    /**
-     * Runs a task (typically a network operation), retrying up to 3 times if it throws an IOException.
-     *
-     * @param task The task to run and retry
-     * @param <T>  The return type for the task
-     * @return What the task returned
-     * @throws IOException If the task failed 3 times
-     */
-    static <T> T runWithRetry(IOSupplier<T> task) throws IOException {
-        for (int i = 1; i < 3; i++) {
-            try {
-                return task.get();
-            } catch (IOException e) {
-                log.warn("I/O exception while doing networking operation (try {}/3).", i, e);
-                EventListener.handle(listener -> listener.retriedIOException(e));
-
-                // wait a bit before retrying
-                try {
-                    log.debug("Waiting {} seconds before next try.", i * 5);
-                    Thread.sleep(i * 5000);
-                } catch (InterruptedException e2) {
-                    log.warn("Sleep interrupted", e2);
-                }
-            }
-        }
-
-        // 3rd try: this time, if it crashes, let it crash
-        return task.get();
-    }
-
-    /**
-     * Opens a stream to the specified URL, getting sure timeouts are set
-     * (connect timeout = 10 seconds, read timeout = 30 seconds).
-     *
-     * @param url The URL to connect to
-     * @return A stream to this URL
-     * @throws IOException If an exception occured while trying to connect
-     */
-    static InputStream openStreamWithTimeout(URL url) throws IOException {
-        URLConnection con = url.openConnection();
-        con.setConnectTimeout(10000);
-        con.setReadTimeout(60000);
-        return con.getInputStream();
     }
 
     static void checkZipSignature(Path path) throws IOException {
