@@ -9,7 +9,7 @@
     <version>0.4.8</version>
 
     <properties>
-        <jdk.version>17</jdk.version>
+        <jdk.version>20</jdk.version>
     </properties>
 
     <build>
