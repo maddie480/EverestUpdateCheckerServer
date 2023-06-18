@@ -23,7 +23,7 @@ import java.util.zip.ZipFile;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-class DatabaseUpdater {
+public class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
 
     // Model, Sound and Spray also accept files, but they aren't enabled for Celeste
@@ -406,7 +406,7 @@ class DatabaseUpdater {
         }
     }
 
-    static String computeXXHash(InputStream is) throws IOException {
+    public static String computeXXHash(InputStream is) throws IOException {
         StringBuilder xxHash;
 
         try (StreamingXXHash64 hash64 = xxHashFactory.newStreamingHash64(0)) {
