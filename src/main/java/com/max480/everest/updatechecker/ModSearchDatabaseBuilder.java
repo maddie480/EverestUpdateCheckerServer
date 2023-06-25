@@ -220,6 +220,9 @@ public class ModSearchDatabaseBuilder {
         try (OutputStream os = new FileOutputStream("uploads/modsearchdatabase.yaml")) {
             YamlUtil.dump(modSearchDatabase, os);
         }
+
+        // we don't need this list anymore, free up its memory.
+        modSearchInfo.clear();
     }
 
     private void assignCategoryNamesToMods(String itemtype) throws IOException {
