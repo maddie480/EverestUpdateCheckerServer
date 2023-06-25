@@ -163,9 +163,8 @@ public class ModFilesDatabaseBuilder {
             Files.move(databasePathTemp, databasePath);
         }
 
-        // we don't need those lists anymore, free up their memory.
+        // we don't need this list anymore, free up its memory.
         fullList.clear();
-        fullFileIdList.clear();
     }
 
     private void fillInGapsForIncrementalUpdate() throws IOException {
