@@ -32,7 +32,7 @@ public final class ConnectionUtils {
             throw new IOException(e);
         }
 
-        con.setRequestProperty("User-Agent", "Everest-Update-Checker/0.4.8 (+https://github.com/maddie480/EverestUpdateCheckerServer)");
+        con.setRequestProperty("User-Agent", "Everest-Update-Checker/0.4.9 (+https://github.com/maddie480/EverestUpdateCheckerServer)");
         con.setRequestProperty("Accept-Encoding", "gzip");
 
         con.setConnectTimeout(10000);
