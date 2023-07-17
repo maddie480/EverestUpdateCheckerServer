@@ -34,10 +34,6 @@ public class DatabaseUpdater {
     private Set<String> databaseNoYamlFiles = new HashSet<>();
     private int numberOfModsDownloaded = 0;
 
-    private static final Map<String, Integer> mostRecentUpdatedDates = new HashMap<>();
-    private static int fullPageSize = 40;
-    private static int incrementalPageSize = 0;
-
     private static final XXHashFactory xxHashFactory = XXHashFactory.fastestInstance();
 
     private final Pattern gamebananaLinkRegex = Pattern.compile(".*(https://gamebanana.com/mmdl/[0-9]+).*");
@@ -45,10 +41,26 @@ public class DatabaseUpdater {
     private final ModSearchDatabaseBuilder modSearchDatabaseBuilder = new ModSearchDatabaseBuilder();
     private final ModFilesDatabaseBuilder modFilesDatabaseBuilder = new ModFilesDatabaseBuilder();
 
+    // saved state (for banana cache dodging and incremental updates)
+    private Map<String, Integer> mostRecentUpdatedDates = new HashMap<>();
+    private int fullPageSize = 40;
+    private int incrementalPageSize = 0;
+
     DatabaseUpdater() throws IOException {
     }
 
     void updateDatabaseYaml(boolean full) throws IOException {
+        Path updateCheckerStateFile = Paths.get("update_checker_state.ser");
+
+        // load state
+        if (Files.exists(updateCheckerStateFile)) {
+            try (ObjectInputStream is = new ObjectInputStream(Files.newInputStream(updateCheckerStateFile))) {
+                mostRecentUpdatedDates = (Map<String, Integer>) is.readObject();
+                fullPageSize = is.readInt();
+                incrementalPageSize = is.readInt();
+            }
+        }
+
         log.info("=== Started searching for updates (full = {})", full);
         EventListener.handle(listener -> listener.startedSearchingForUpdates(full));
         long startMillis = System.currentTimeMillis();
@@ -83,6 +95,13 @@ public class DatabaseUpdater {
         long time = System.currentTimeMillis() - startMillis;
         log.info("=== Ended searching for updates. Downloaded {} mods while doing so. Total duration = {} ms.", numberOfModsDownloaded, time);
         EventListener.handle(listener -> listener.endedSearchingForUpdates(numberOfModsDownloaded, time));
+
+        // save state
+        try (ObjectOutputStream os = new ObjectOutputStream(Files.newOutputStream(updateCheckerStateFile))) {
+            os.writeObject(mostRecentUpdatedDates);
+            os.writeInt(fullPageSize);
+            os.writeInt(incrementalPageSize);
+        }
     }
 
     /**
