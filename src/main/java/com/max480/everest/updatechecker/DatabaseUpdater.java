@@ -58,6 +58,8 @@ public class DatabaseUpdater {
                 mostRecentUpdatedDates = (Map<String, Integer>) is.readObject();
                 fullPageSize = is.readInt();
                 incrementalPageSize = is.readInt();
+            } catch(ClassNotFoundException e) {
+                throw new IOException(e);
             }
         }
 
