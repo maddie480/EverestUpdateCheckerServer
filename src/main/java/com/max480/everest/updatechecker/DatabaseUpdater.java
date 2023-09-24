@@ -196,7 +196,7 @@ public class DatabaseUpdater {
             JSONArray pageContents = ConnectionUtils.runWithRetry(() -> {
                 try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/" + category + "/ByGame?_aGameRowIds[]=6460&" +
                         "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
-                        "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl" +
+                        "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl,_bIsNsfw" +
                         "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=" + fullPageSize)) {
 
                     return new JSONArray(IOUtils.toString(is, UTF_8));
@@ -256,7 +256,7 @@ public class DatabaseUpdater {
                     JSONObject modInfo = ConnectionUtils.runWithRetry(() -> {
                         try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/" + category + "/" + mod.getInt("_idRow") + "?" +
                                 "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
-                                "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl&ts=" + System.currentTimeMillis())) {
+                                "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl,_bIsNsfw&ts=" + System.currentTimeMillis())) {
 
                             return new JSONObject(IOUtils.toString(is, UTF_8));
                         } catch (JSONException e) {

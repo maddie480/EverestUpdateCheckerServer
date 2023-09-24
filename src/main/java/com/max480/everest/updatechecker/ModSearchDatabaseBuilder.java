@@ -1,6 +1,7 @@
 package com.max480.everest.updatechecker;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -120,13 +121,38 @@ public class ModSearchDatabaseBuilder {
      * @param itemid   The GameBanana id
      * @param mod      The mod name
      */
-    void addMod(String itemtype, int itemid, JSONObject mod) {
+    void addMod(String itemtype, int itemid, JSONObject mod) throws IOException {
+        String contentWarningPrefix = "";
+        boolean redactScreenshots = false;
+
+        if (mod.getBoolean("_bIsNsfw")) {
+            // mod has content warnings! we need to check which ones.
+            try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv11/" + itemtype + "/" + itemid + "/ProfilePage")) {
+                JSONObject o = new JSONObject(IOUtils.toString(is, UTF_8));
+                redactScreenshots = !"show".equals(o.getString("_sInitialVisibility"));
+
+                List<String> contentWarnings = new ArrayList<>();
+                for (String key : o.getJSONObject("_aContentRatings").keySet()) {
+                    contentWarnings.add(o.getJSONObject("_aContentRatings").getString(key));
+                }
+
+                contentWarningPrefix = "<b>Content Warning" + (contentWarnings.size() == 1 ? "" : "s") + ": "
+                        + StringEscapeUtils.escapeHtml4(String.join(", ", contentWarnings)) + "</b><br><br>";
+            }
+        }
+
         // parse screenshots and determine their URLs.
-        List<String> screenshots = new ArrayList<>();
-        JSONArray screenshotsJson = mod.getJSONObject("_aPreviewMedia").getJSONArray("_aImages");
-        for (int i = 0; i < screenshotsJson.length(); i++) {
-            JSONObject screenshotJson = screenshotsJson.getJSONObject(i);
-            screenshots.add(screenshotJson.getString("_sBaseUrl") + "/" + screenshotJson.getString("_sFile"));
+        List<String> screenshots;
+
+        if (redactScreenshots) {
+            screenshots = Collections.singletonList("https://images.gamebanana.com/static/img/DefaultEmbeddables/nsfw.jpg");
+        } else {
+            screenshots = new ArrayList<>();
+            JSONArray screenshotsJson = mod.getJSONObject("_aPreviewMedia").getJSONArray("_aImages");
+            for (int i = 0; i < screenshotsJson.length(); i++) {
+                JSONObject screenshotJson = screenshotsJson.getJSONObject(i);
+                screenshots.add(screenshotJson.getString("_sBaseUrl") + "/" + screenshotJson.getString("_sFile"));
+            }
         }
 
         List<Map<String, Object>> filesInMod = new ArrayList<>();
@@ -159,7 +185,7 @@ public class ModSearchDatabaseBuilder {
         }
 
         ModSearchInfo newModSearchInfo = new ModSearchInfo(mod.getString("_sProfileUrl"), itemtype, itemid, mod.getString("_sName"),
-                mod.getJSONObject("_aSubmitter").getString("_sName"), mod.getString("_sDescription"), mod.getString("_sText"),
+                mod.getJSONObject("_aSubmitter").getString("_sName"), mod.getString("_sDescription"), contentWarningPrefix + mod.getString("_sText"),
                 mod.getInt("_nLikeCount"), mod.getInt("_nViewCount"), mod.getInt("_nDownloadCount"),
                 mod.getJSONObject("_aCategory").getInt("_idRow"), mod.getLong("_tsDateAdded"), mod.getLong("_tsDateModified"),
                 mod.getLong("_tsDateUpdated"), screenshots, filesInMod);
