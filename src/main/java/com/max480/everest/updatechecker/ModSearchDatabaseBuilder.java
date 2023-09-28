@@ -113,6 +113,11 @@ public class ModSearchDatabaseBuilder {
     }
 
     private final List<ModSearchInfo> modSearchInfo = new LinkedList<>();
+    private Set<String> nsfwMods = new HashSet<>();
+
+    public Set<String> getNsfwMods() {
+        return nsfwMods;
+    }
 
     /**
      * Adds this mod to the mod search info database.
@@ -146,6 +151,7 @@ public class ModSearchDatabaseBuilder {
 
         if (redactScreenshots) {
             screenshots = Collections.singletonList("https://images.gamebanana.com/static/img/DefaultEmbeddables/nsfw.jpg");
+            nsfwMods.add(itemtype + "/" + itemid);
         } else {
             screenshots = new ArrayList<>();
             JSONArray screenshotsJson = mod.getJSONObject("_aPreviewMedia").getJSONArray("_aImages");
@@ -247,6 +253,11 @@ public class ModSearchDatabaseBuilder {
             YamlUtil.dump(modSearchDatabase, os);
         }
 
+        // save the NSFW mod list, because we will need it for incremental updates
+        try (OutputStream os = new FileOutputStream("uploads/nsfw_mods.yaml")) {
+            YamlUtil.dump(new ArrayList<>(nsfwMods), os);
+        }
+
         // we don't need this list anymore, free up its memory.
         modSearchInfo.clear();
     }
@@ -311,6 +322,11 @@ public class ModSearchDatabaseBuilder {
                 // mod is not in new database => carry it over from old database
                 database.add(oldMod);
             }
+        }
+
+        // retrieve the list of mods that were previously tagged as NSFW (which we might not have retrieved this time)
+        try (InputStream is = Files.newInputStream(Paths.get("uploads/nsfw_mods.yaml"))) {
+            nsfwMods.addAll(YamlUtil.<List<String>>load(is));
         }
     }
 }

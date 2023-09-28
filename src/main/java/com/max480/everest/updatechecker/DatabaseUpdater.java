@@ -58,7 +58,7 @@ public class DatabaseUpdater {
                 mostRecentUpdatedDates = (Map<String, Integer>) is.readObject();
                 fullPageSize = is.readInt();
                 incrementalPageSize = is.readInt();
-            } catch(ClassNotFoundException e) {
+            } catch (ClassNotFoundException e) {
                 throw new IOException(e);
             }
         }
@@ -162,7 +162,7 @@ public class DatabaseUpdater {
             // update the file mirror
             BananaMirror.run();
             BananaMirrorImages.run();
-            new BananaMirrorRichPresenceIcons().update();
+            new BananaMirrorRichPresenceIcons().update(modSearchDatabaseBuilder.getNsfwMods());
         }
 
         // update the dependency graph with new entries.

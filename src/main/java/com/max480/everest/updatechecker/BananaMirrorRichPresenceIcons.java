@@ -33,7 +33,7 @@ public class BananaMirrorRichPresenceIcons {
         hashesToFiles = listToSet(map.get("HashesToFiles"));
     }
 
-    public void update() throws IOException {
+    public void update(Set<String> nsfwMods) throws IOException {
         Set<String> deletedFileIds = new HashSet<>(filesToHashes.keySet());
 
         // load mod list
@@ -43,6 +43,11 @@ public class BananaMirrorRichPresenceIcons {
         }
 
         for (String mod : mods) {
+            // do NOT upload Rich Presence icons for mods tagged as NSFW!
+            if (nsfwMods.contains(mod)) {
+                continue;
+            }
+
             // load file list for the mod
             List<String> files;
             try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/" + mod + "/info.yaml"))) {
