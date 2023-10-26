@@ -1,17 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
-    <suppress>
-        <notes><![CDATA[
-            This CVE affects all versions of JSON-java up to and excluding 20230227... and the project depends on a higher version
-        ]]></notes>
-        <packageUrl regex="true">^pkg:maven/org\.json/json@.*$</packageUrl>
-        <cve>CVE-2022-45688</cve>
-    </suppress>
-    <suppress>
-        <notes><![CDATA[
-            This CVE affects all versions of JSON-java up to and excluding 20230618... and the project depends on a higher version
-        ]]></notes>
-        <packageUrl regex="true">^pkg:maven/org\.json/json@.*$</packageUrl>
-       <cve>CVE-2023-5072</cve>
-    </suppress>
-</suppressions>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd" />
