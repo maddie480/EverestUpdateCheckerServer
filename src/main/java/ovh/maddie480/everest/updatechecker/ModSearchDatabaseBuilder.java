@@ -1,4 +1,4 @@
-package com.max480.everest.updatechecker;
+package ovh.maddie480.everest.updatechecker;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -113,7 +113,7 @@ public class ModSearchDatabaseBuilder {
     }
 
     private final List<ModSearchInfo> modSearchInfo = new LinkedList<>();
-    private Set<String> nsfwMods = new HashSet<>();
+    private final Set<String> nsfwMods = new HashSet<>();
 
     public Set<String> getNsfwMods() {
         return nsfwMods;

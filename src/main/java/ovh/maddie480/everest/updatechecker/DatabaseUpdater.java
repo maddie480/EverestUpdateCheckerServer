@@ -1,4 +1,4 @@
-package com.max480.everest.updatechecker;
+package ovh.maddie480.everest.updatechecker;
 
 import net.jpountz.xxhash.StreamingXXHash64;
 import net.jpountz.xxhash.XXHashFactory;

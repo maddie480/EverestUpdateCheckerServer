@@ -1,4 +1,4 @@
-package com.max480.everest.updatechecker;
+package ovh.maddie480.everest.updatechecker;
 
 import com.jcraft.jsch.*;
 import org.apache.commons.io.FileUtils;

@@ -1,4 +1,4 @@
-package com.max480.everest.updatechecker;
+package ovh.maddie480.everest.updatechecker;
 
 import java.io.IOException;
 import java.util.ArrayList;

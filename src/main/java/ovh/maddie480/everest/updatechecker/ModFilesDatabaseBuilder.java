@@ -1,4 +1,4 @@
-package com.max480.everest.updatechecker;
+package ovh.maddie480.everest.updatechecker;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import static com.max480.everest.updatechecker.DatabaseUpdater.checkZipSignature;
+import static ovh.maddie480.everest.updatechecker.DatabaseUpdater.checkZipSignature;
 
 public class ModFilesDatabaseBuilder {
     private static final Logger log = LoggerFactory.getLogger(ModFilesDatabaseBuilder.class);

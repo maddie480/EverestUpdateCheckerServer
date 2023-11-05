@@ -1,4 +1,4 @@
-package com.max480.everest.updatechecker;
+package ovh.maddie480.everest.updatechecker;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;

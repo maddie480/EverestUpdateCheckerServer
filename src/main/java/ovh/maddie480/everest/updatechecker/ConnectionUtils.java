@@ -1,4 +1,4 @@
-package com.max480.everest.updatechecker;
+package ovh.maddie480.everest.updatechecker;
 
 import org.apache.commons.io.function.IOSupplier;
 import org.slf4j.Logger;
