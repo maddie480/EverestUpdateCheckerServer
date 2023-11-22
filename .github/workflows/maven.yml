@@ -17,13 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up JDK 21
-      uses: actions/setup-java@v3
-      with:
-        java-version: '21'
-        distribution: 'temurin'
-        cache: maven
-
     - name: Check for tabs
       run: |
         find "(" -name "*.java" -or -name "*.xml" -or -name "*.yaml" -or -name "*.yml" -or -name "*.txt" -or -name "*.md" ")" -exec grep -Pl "\t" {} \; > matches.txt
@@ -39,7 +32,31 @@ jobs:
         find "(" -name "*.java" -or -name "*.xml" -or -name "*.yaml" -or -name "*.yml" -or -name "*.txt" -or -name "*.md" ")" -exec grep -Pl " $" {} \; > matches.txt
         grep "" matches.txt && exit 1 || echo "No trailing space found!"
 
+    - name: Clone open-vulnerability-clients fork
+      run: git clone https://github.com/maddie480/Open-Vulnerability-Project.git
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Build open-vulnerability-clients fork
+      run: |
+        cd Open-Vulnerability-Project/open-vulnerability-clients
+        ../gradlew publishToMavenLocal --info
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+
     - name: Build with Maven
+      env:
+        NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
       run: mvn -B verify -Prelease --file pom.xml
 
     - name: Upload target folder as artifact
