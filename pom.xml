@@ -42,6 +42,7 @@
                 <artifactId>dependency-check-maven</artifactId>
                 <version>9.0.0</version>
                 <configuration>
+                    <nvdApiKey>${env.NVD_API_KEY}</nvdApiKey>
                     <failBuildOnCVSS>0</failBuildOnCVSS>
                     <suppressionFile>.github/owasp-suppressions.xml</suppressionFile>
                 </configuration>

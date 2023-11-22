@@ -40,6 +40,8 @@ jobs:
         grep "" matches.txt && exit 1 || echo "No trailing space found!"
 
     - name: Build with Maven
+      env:
+        NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
       run: mvn -B verify -Prelease --file pom.xml
 
     - name: Upload target folder as artifact
