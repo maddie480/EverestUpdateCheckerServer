@@ -43,6 +43,7 @@ jobs:
       run: mvn -B verify -Prelease --file pom.xml
 
     - name: Submit Dependency Snapshot
+      if: github.ref == 'refs/heads/master'
       uses: advanced-security/maven-dependency-submission-action@v3
 
     - name: Upload target folder as artifact
