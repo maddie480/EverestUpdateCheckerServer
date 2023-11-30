@@ -33,7 +33,7 @@ jobs:
         grep "" matches.txt && exit 1 || echo "No trailing space found!"
 
     - name: Set up JDK 21
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         java-version: '21'
         distribution: 'temurin'
