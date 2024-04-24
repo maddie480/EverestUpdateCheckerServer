@@ -67,7 +67,6 @@ public class DependencyGraphBuilder {
                 // read its everest.yaml
                 Map<String, String> dependencies = new HashMap<>();
                 Map<String, String> optionalDependencies = new HashMap<>();
-                Map<String, String> aliases = new HashMap<>();
                 try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod-dependencytree.zip")) {
                     checkZipSignature(new File("mod-dependencytree.zip").toPath());
 
@@ -89,14 +88,11 @@ public class DependencyGraphBuilder {
                         if (yamlEntry.containsKey("OptionalDependencies")) {
                             addDependenciesFromList(optionalDependencies, (List<Map<String, Object>>) yamlEntry.get("OptionalDependencies"), everestYamlContents);
                         }
-                        if (yamlEntry.containsKey("Aliases")) {
-                            addDependenciesFromList(aliases, (List<Map<String, Object>>) yamlEntry.get("Aliases"), everestYamlContents);
-                        }
                     }
 
-                    log.info("Found {} dependencies, {} optional dependencies and {} aliases for for {}.",
-                            dependencies.size(), optionalDependencies.size(), aliases.size(), mod.getKey());
-                    EventListener.handle(listener -> listener.scannedModDependencies(mod.getKey(), dependencies.size(), optionalDependencies.size(), aliases.size()));
+                    log.info("Found {} dependencies and {} optional dependencies for for {}.",
+                            dependencies.size(), optionalDependencies.size(), mod.getKey());
+                    EventListener.handle(listener -> listener.scannedModDependencies(mod.getKey(), dependencies.size(), optionalDependencies.size()));
                 } catch (Exception e) {
                     // if a file cannot be read as a zip, no need to worry about it.
                     // we will just write an empty array.
@@ -109,7 +105,6 @@ public class DependencyGraphBuilder {
                 graphEntry.put("URL", url);
                 graphEntry.put("Dependencies", dependencies);
                 graphEntry.put("OptionalDependencies", optionalDependencies);
-                graphEntry.put("Aliases", aliases);
                 newDependencyGraph.put(mod.getKey(), graphEntry);
 
                 FileUtils.forceDelete(new File("mod-dependencytree.zip"));

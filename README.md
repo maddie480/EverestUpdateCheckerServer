@@ -142,7 +142,6 @@ Files and images are uploaded to [0x0ade's server](https://celestemodupdater.0x0
 This file is generated at `uploads/moddependencygraph.yaml` and lists what each mod in `everestupdate.yaml` depends on:
 ```yaml
 WitheredPassage:
-  Aliases: {}
   OptionalDependencies: {}
   Dependencies:
     FrostHelper: 1.17.8
@@ -203,7 +202,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.5.0.jar`.
+This will build the project to `target/update-checker-0.6.0.jar`.
 
 ### Running the project
 
@@ -214,7 +213,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.5.0.jar [minutes]
+java -jar update-checker-0.6.0.jar [minutes]
 ```
 
 [minutes] is the wait delay in minutes between two GameBanana checks (defaults to 30). Be aware that the program makes ~13 API calls per check, and that the GameBanana API has a cap at 250 requests/hour.
