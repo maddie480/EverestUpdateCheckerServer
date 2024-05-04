@@ -1,10 +1,10 @@
 package ovh.maddie480.everest.updatechecker;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,8 +14,6 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class ModSearchDatabaseBuilder {
     private static final Logger log = LoggerFactory.getLogger(ModSearchDatabaseBuilder.class);
@@ -133,7 +131,7 @@ public class ModSearchDatabaseBuilder {
         if (mod.getBoolean("_bIsNsfw")) {
             // mod has content warnings! we need to check which ones.
             try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv11/" + itemtype + "/" + itemid + "/ProfilePage")) {
-                JSONObject o = new JSONObject(IOUtils.toString(is, UTF_8));
+                JSONObject o = new JSONObject(new JSONTokener(is));
                 redactScreenshots = !"show".equals(o.getString("_sInitialVisibility"));
 
                 List<String> contentWarnings = new ArrayList<>();
@@ -221,7 +219,7 @@ public class ModSearchDatabaseBuilder {
         // get featured mods and fill in the info for mods accordingly.
         JSONObject featured = ConnectionUtils.runWithRetry(() -> {
             try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/Game/6460/TopSubs")) {
-                return new JSONObject(IOUtils.toString(is, UTF_8));
+                return new JSONObject(new JSONTokener(is));
             } catch (JSONException e) {
                 // turn JSON parse errors into IOExceptions to trigger a retry.
                 throw new IOException(e);
@@ -268,7 +266,7 @@ public class ModSearchDatabaseBuilder {
             try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/" + itemtype + "Category/ByGame?_aGameRowIds[]=6460&" +
                     "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50")) {
 
-                return new JSONArray(IOUtils.toString(is, UTF_8));
+                return new JSONArray(new JSONTokener(is));
             } catch (JSONException e) {
                 // turn JSON parse errors into IOExceptions to trigger a retry.
                 throw new IOException(e);

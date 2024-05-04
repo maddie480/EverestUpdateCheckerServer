@@ -8,6 +8,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,8 +21,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
@@ -181,7 +180,7 @@ public class DatabaseUpdater {
             try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=1&_nPerpage=" + incrementalPageSize +
                     "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified")) {
 
-                return new JSONObject(IOUtils.toString(is, UTF_8)).getJSONArray("_aRecords").getJSONObject(0).getInt("_tsDateModified");
+                return new JSONObject(new JSONTokener(is)).getJSONArray("_aRecords").getJSONObject(0).getInt("_tsDateModified");
             } catch (JSONException e) {
                 // turn JSON parse errors into IOExceptions to trigger a retry.
                 throw new IOException(e);
@@ -199,7 +198,7 @@ public class DatabaseUpdater {
                         "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl,_bIsNsfw" +
                         "&_sOrderBy=_idRow,ASC&_nPage=" + thisPage + "&_nPerpage=" + fullPageSize)) {
 
-                    return new JSONArray(IOUtils.toString(is, UTF_8));
+                    return new JSONArray(new JSONTokener(is));
                 } catch (JSONException e) {
                     // turn JSON parse errors into IOExceptions to trigger a retry.
                     throw new IOException(e);
@@ -238,7 +237,7 @@ public class DatabaseUpdater {
                 try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=" + thisPage +
                         "&_nPerpage=" + incrementalPageSize + "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified")) {
 
-                    return new JSONObject(IOUtils.toString(is, UTF_8)).getJSONArray("_aRecords");
+                    return new JSONObject(new JSONTokener(is)).getJSONArray("_aRecords");
                 } catch (JSONException e) {
                     // turn JSON parse errors into IOExceptions to trigger a retry.
                     throw new IOException(e);
@@ -258,7 +257,7 @@ public class DatabaseUpdater {
                                 "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
                                 "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl,_bIsNsfw&ts=" + System.currentTimeMillis())) {
 
-                            return new JSONObject(IOUtils.toString(is, UTF_8));
+                            return new JSONObject(new JSONTokener(is));
                         } catch (JSONException e) {
                             // turn JSON parse errors into IOExceptions to trigger a retry.
                             throw new IOException(e);
