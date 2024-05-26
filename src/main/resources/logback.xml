@@ -7,8 +7,7 @@
         </layout>
     </appender>
 
-    <!-- Change log level here: trace, debug, info, warn or error -->
-    <logger name="ovh.maddie480.everest.updatechecker" level="info" additivity="false">
+    <logger name="ovh.maddie480.everest.updatechecker" level="debug" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
 
