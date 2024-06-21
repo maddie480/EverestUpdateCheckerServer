@@ -256,11 +256,11 @@ public class ModFilesDatabaseBuilder {
                 List<String> ahornEffects = new LinkedList<>();
 
                 // download file
-                Path file = FileDownloader.downloadFile("https://gamebanana.com/mmdl/" + version);
+                Path zipFilePath = FileDownloader.downloadFile("https://gamebanana.com/mmdl/" + version);
 
                 // scan its contents, opening Ahorn plugin files
-                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(file.toAbsolutePath().toString())) {
-                    checkZipSignature(file);
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(zipFilePath.toAbsolutePath().toString())) {
+                    checkZipSignature(zipFilePath);
 
                     for (String file : fileList) {
                         if (file.startsWith("Ahorn/") && file.endsWith(".jl")) {

@@ -54,11 +54,13 @@ public class DatabaseUpdater {
         long startMillis = System.currentTimeMillis();
 
         boolean somethingChanged;
+        int numberOfModsDownloaded;
 
         { // run the updater!
             DatabaseUpdater updater = new DatabaseUpdater();
             updater.updateDatabaseYamlInner(full);
             somethingChanged = !updater.database.isEmpty();
+            numberOfModsDownloaded = !updater.numberOfModsDownloaded.isEmpty();
         }
 
         if (somethingChanged) {
