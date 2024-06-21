@@ -164,7 +164,7 @@ public class ModFilesDatabaseBuilder {
 
         for (String mod : mods) {
             if (fullList.contains(mod)) {
-                log.trace("File {} was updated incrementally already, skipping.");
+                log.trace("File {} was updated incrementally already, skipping.", mod);
                 continue;
             }
 
@@ -175,7 +175,7 @@ public class ModFilesDatabaseBuilder {
             }
 
             // carry over all information from the old mod files database
-            log.trace("Copying all info for mod {}...");
+            log.trace("Copying all info for mod {}...", mod);
             Files.createDirectories(Paths.get("modfilesdatabase_temp/" + mod).getParent());
             FileUtils.copyDirectory(new File("modfilesdatabase/" + mod), new File("modfilesdatabase_temp/" + mod));
             fullFileIdList.addAll((List<String>) fileInfo.get("Files"));
