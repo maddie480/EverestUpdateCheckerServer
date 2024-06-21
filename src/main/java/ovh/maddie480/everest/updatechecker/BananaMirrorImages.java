@@ -42,11 +42,11 @@ public class BananaMirrorImages {
                 String screenshotId = screenshotUrl.substring("https://images.gamebanana.com/".length(), screenshotUrl.lastIndexOf(".")).replace("/", "_") + ".png";
 
                 if (bananaMirrorList.contains(screenshotId)) {
-                    log.trace("Image {} is already mirrored and will be kept", fileId);
+                    log.trace("Image {} is already mirrored and will be kept", screenshotId);
                     toDelete.remove(screenshotId);
                 } else {
                     // file is new!
-                    log.info("Image {} is not currently mirrored! Doing that now.", fileId);
+                    log.info("Image {} is not currently mirrored! Doing that now.", screenshotId);
                     downloadFile(screenshotUrl, screenshotId, bananaMirrorList);
                 }
             }
