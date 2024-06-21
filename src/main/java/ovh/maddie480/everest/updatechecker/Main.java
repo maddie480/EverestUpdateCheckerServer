@@ -47,7 +47,7 @@ public class Main {
 
     public static void updateDatabase(boolean full) {
         try {
-            new DatabaseUpdater().updateDatabaseYaml(full);
+            DatabaseUpdater.updateDatabaseYaml(full);
         } catch (Exception e) {
             log.error("Uncaught error while updating the database.", e);
             EventListener.handle(listener -> listener.uncaughtError(e));

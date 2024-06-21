@@ -48,7 +48,39 @@ public class DatabaseUpdater {
     DatabaseUpdater() throws IOException {
     }
 
-    void updateDatabaseYaml(boolean full) throws IOException {
+    static void updateDatabaseYaml(boolean full) throws IOException {
+        log.info("=== Started searching for updates (full = {})", full);
+        EventListener.handle(listener -> listener.startedSearchingForUpdates(full));
+        long startMillis = System.currentTimeMillis();
+
+        boolean somethingChanged;
+
+        { // run the updater!
+            DatabaseUpdater updater = new DatabaseUpdater();
+            updater.updateDatabaseYamlInner(full);
+            somethingChanged = !updater.database.isEmpty();
+        }
+
+        if (somethingChanged) {
+            if (Main.serverConfig.bananaMirrorConfig != null) {
+                // update the file mirror
+                BananaMirror.run();
+                BananaMirrorImages.run();
+                new BananaMirrorRichPresenceIcons().update();
+            }
+
+            // update the dependency graph with new entries.
+            DependencyGraphBuilder.updateDependencyGraph();
+        }
+
+        FileDownloader.cleanup();
+
+        long time = System.currentTimeMillis() - startMillis;
+        log.info("=== Ended searching for updates. Downloaded {} mods while doing so. Total duration = {} ms.", numberOfModsDownloaded, time);
+        EventListener.handle(listener -> listener.endedSearchingForUpdates(numberOfModsDownloaded, time));
+    }
+
+    private void updateDatabaseYamlInner(boolean full) throws IOException {
         Path updateCheckerStateFile = Paths.get("update_checker_state.ser");
 
         // load state
@@ -61,10 +93,6 @@ public class DatabaseUpdater {
                 throw new IOException(e);
             }
         }
-
-        log.info("=== Started searching for updates (full = {})", full);
-        EventListener.handle(listener -> listener.startedSearchingForUpdates(full));
-        long startMillis = System.currentTimeMillis();
 
         // GameBanana cache tends not to refresh properly, so we need to alternate page sizes to dodge the cache. ^^'
         incrementalPageSize++;
@@ -92,10 +120,6 @@ public class DatabaseUpdater {
             checkForModDeletion();
             saveDatabaseToYaml();
         }
-
-        long time = System.currentTimeMillis() - startMillis;
-        log.info("=== Ended searching for updates. Downloaded {} mods while doing so. Total duration = {} ms.", numberOfModsDownloaded, time);
-        EventListener.handle(listener -> listener.endedSearchingForUpdates(numberOfModsDownloaded, time));
 
         // save state
         try (ObjectOutputStream os = new ObjectOutputStream(Files.newOutputStream(updateCheckerStateFile))) {
@@ -156,16 +180,6 @@ public class DatabaseUpdater {
         try (OutputStream os = new FileOutputStream("uploads/everestupdatenoyaml.yaml")) {
             YamlUtil.dump(new ArrayList<>(databaseNoYamlFiles), os);
         }
-
-        if (Main.serverConfig.bananaMirrorConfig != null) {
-            // update the file mirror
-            BananaMirror.run();
-            BananaMirrorImages.run();
-            new BananaMirrorRichPresenceIcons().update(modSearchDatabaseBuilder.getNsfwMods());
-        }
-
-        // update the dependency graph with new entries.
-        DependencyGraphBuilder.updateDependencyGraph();
     }
 
     /**
@@ -378,25 +392,14 @@ public class DatabaseUpdater {
             // download the mod
             numberOfModsDownloaded++;
 
-            ConnectionUtils.runWithRetry(() -> {
-                try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod.zip")))) {
-                    IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(fileUrl)), os);
-                    return null; // to fulfill this stupid method signature
-                }
-            });
-
-            long actualSize = new File("mod.zip").length();
-            if (expectedSize != actualSize) {
-                FileUtils.forceDelete(new File("mod.zip"));
-                throw new IOException("The announced file size (" + expectedSize + ") does not match what we got (" + actualSize + ")" +
-                        " for file " + fileUrl + " belonging to " + gbType + " " + gbId);
-            }
+            Path file = FileDownloader.downloadFile(fileUrl, expectedSize);
+            String filePath = file.toAbsolutePath().toString();
 
             // compute its xxHash checksum
-            String xxHash = computeXXHash("mod.zip");
+            String xxHash = computeXXHash(filePath);
 
-            try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod.zip")) {
-                checkZipSignature(new File("mod.zip").toPath());
+            try (ZipFile zipFile = ZipFileWithAutoEncoding.open(filePath)) {
+                checkZipSignature(file);
 
                 ZipEntry everestYaml = zipFile.getEntry("everest.yaml");
                 if (everestYaml == null) {
@@ -415,8 +418,6 @@ public class DatabaseUpdater {
                 EventListener.handle(listener -> listener.zipFileIsUnreadable(gbType, gbId, fileUrl, e));
                 databaseExcludedFiles.put(fileUrl, ExceptionUtils.getStackTrace(e));
             }
-
-            FileUtils.forceDelete(new File("mod.zip"));
         }
     }
 

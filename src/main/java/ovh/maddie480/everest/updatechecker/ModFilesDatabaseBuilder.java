@@ -72,25 +72,12 @@ public class ModFilesDatabaseBuilder {
                 log.debug("Downloading {} to get its file listing...", fileUrl);
 
                 // download file
-                ConnectionUtils.runWithRetry(() -> {
-                    try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-filescan.zip")))) {
-                        IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(fileUrl)), os);
-                        return null; // to fulfill this stupid method signature
-                    }
-                });
-
-                // check that its size makes sense
-                long actualSize = new File("mod-filescan.zip").length();
-                if (expectedSize != actualSize) {
-                    FileUtils.forceDelete(new File("mod-filescan.zip"));
-                    throw new IOException("The announced file size (" + expectedSize + ") does not match what we got (" + actualSize + ")" +
-                            " for file" + fileUrl + " belonging to " + itemtype + " " + itemid);
-                }
+                Path file = FileDownloader.downloadFile(fileUrl, expectedSize);
 
                 // go through it!
                 List<String> filePaths = new LinkedList<>();
-                try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod-filescan.zip", fileUrl)) {
-                    checkZipSignature(new File("mod-filescan.zip").toPath());
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(file.toAbsolutePath().toString(), fileUrl)) {
+                    checkZipSignature(file);
 
                     final Enumeration<? extends ZipEntry> entriesEnum = zipFile.entries();
                     while (entriesEnum.hasMoreElements()) {
@@ -113,8 +100,6 @@ public class ModFilesDatabaseBuilder {
                     log.warn("Could not analyze zip from {}", fileUrl, e);
                     EventListener.handle(listener -> listener.zipFileIsUnreadableForFileListing(itemtype, itemid, fileUrl, e));
                 }
-
-                FileUtils.forceDelete(new File("mod-filescan.zip"));
 
                 // write the result.
                 try (OutputStream os = new FileOutputStream(listPath.toFile())) {
@@ -271,16 +256,11 @@ public class ModFilesDatabaseBuilder {
                 List<String> ahornEffects = new LinkedList<>();
 
                 // download file
-                ConnectionUtils.runWithRetry(() -> {
-                    try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-ahornscan.zip")))) {
-                        IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/mmdl/" + version)), os);
-                        return null; // to fulfill this stupid method signature
-                    }
-                });
+                Path file = FileDownloader.downloadFile("https://gamebanana.com/mmdl/" + version);
 
                 // scan its contents, opening Ahorn plugin files
-                try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod-ahornscan.zip")) {
-                    checkZipSignature(new File("mod-ahornscan.zip").toPath());
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(file.toAbsolutePath().toString())) {
+                    checkZipSignature(file);
 
                     for (String file : fileList) {
                         if (file.startsWith("Ahorn/") && file.endsWith(".jl")) {
@@ -308,8 +288,6 @@ public class ModFilesDatabaseBuilder {
                     ahornPlugins.put("Effects", ahornEffects);
                     YamlUtil.dump(ahornPlugins, os);
                 }
-
-                FileUtils.forceDelete(new File("mod-ahornscan.zip"));
             }
         }
     }
@@ -364,19 +342,14 @@ public class ModFilesDatabaseBuilder {
 
             if (fileList.contains("Loenn/lang/en_gb.lang")) {
                 // download file
-                ConnectionUtils.runWithRetry(() -> {
-                    try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-loennscan.zip")))) {
-                        IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/mmdl/" + version)), os);
-                        return null; // to fulfill this stupid method signature
-                    }
-                });
+                Path file = FileDownloader.downloadFile("https://gamebanana.com/mmdl/" + version);
 
                 // extract the en_gb.lang file
-                try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod-loennscan.zip");
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(file.toAbsolutePath().toString());
                      InputStream inputStream = zipFile.getInputStream(zipFile.getEntry("Loenn/lang/en_gb.lang"));
                      BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
 
-                    checkZipSignature(new File("mod-loennscan.zip").toPath());
+                    checkZipSignature(file);
 
                     Triple<Set<String>, Set<String>, Set<String>> loennEntities = extractLoennEntities(targetPath, br);
 
@@ -390,8 +363,6 @@ public class ModFilesDatabaseBuilder {
                     log.warn("Could not analyze Lönn plugins from https://gamebanana.com/mmdl/{}", version, e);
                     EventListener.handle(listener -> listener.loennPluginScanError("https://gamebanana.com/mmdl/" + version, e));
                 }
-
-                FileUtils.forceDelete(new File("mod-loennscan.zip"));
             }
         }
     }

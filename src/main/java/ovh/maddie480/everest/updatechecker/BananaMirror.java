@@ -56,25 +56,8 @@ public class BananaMirror {
     }
 
     private static void downloadFile(String modUrl, String fileId, List<String> modHashes, List<String> fileList) throws IOException {
-        // download the mod
-        ConnectionUtils.runWithRetry(() -> {
-            try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-for-cloud.zip")))) {
-                IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(modUrl)), os);
-                return null; // to fulfill this stupid method signature
-            }
-        });
-
-        // compute its xxHash checksum
-        String xxHash = DatabaseUpdater.computeXXHash("mod-for-cloud.zip");
-
-        // check that it matches
-        if (!modHashes.contains(xxHash)) {
-            throw new IOException("xxHash checksum failure on file with id " + fileId + " @ " + modUrl + "!");
-        }
-
-        // upload to Banana Mirror
-        uploadFile(Paths.get("mod-for-cloud.zip"), fileId, fileList);
-        FileUtils.forceDelete(new File("mod-for-cloud.zip"));
+        Path file = FileDownloader.downloadFile(modUrl, modHashes);
+        uploadFile(file, fileId, fileList);
     }
 
     private static List<String> listFiles() throws IOException {

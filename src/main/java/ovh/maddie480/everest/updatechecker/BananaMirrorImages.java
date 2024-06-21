@@ -56,22 +56,22 @@ public class BananaMirrorImages {
     private static void downloadFile(String screenshotUrl, String screenshotId, List<String> fileList) throws IOException {
         // download the screenshot
         ConnectionUtils.runWithRetry(() -> {
-            try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("image_to_read")))) {
+            try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("/tmp/updater_image_to_read")))) {
                 IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(screenshotUrl)), os);
                 return null; // to fulfill this stupid method signature
             }
         });
 
         // minimize it to 220px
-        Thumbnails.of(new File("image_to_read"))
+        Thumbnails.of(new File("/tmp/updater_image_to_read"))
                 .size(220, 220)
                 .outputFormat("png")
-                .toFile("thumb.png");
+                .toFile("/tmp/updater_thumb.png");
 
         // upload to Banana Mirror
-        uploadFile(Paths.get("thumb.png"), screenshotId, fileList);
-        FileUtils.forceDelete(new File("image_to_read"));
-        FileUtils.forceDelete(new File("thumb.png"));
+        uploadFile(Paths.get("/tmp/updater_thumb.png"), screenshotId, fileList);
+        FileUtils.forceDelete(new File("/tmp/updater_image_to_read"));
+        FileUtils.forceDelete(new File("/tmp/updater_thumb.png"));
     }
 
     private static List<String> listFiles() throws IOException {

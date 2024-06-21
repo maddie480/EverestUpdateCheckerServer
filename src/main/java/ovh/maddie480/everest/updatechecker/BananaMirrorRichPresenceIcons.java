@@ -33,13 +33,18 @@ public class BananaMirrorRichPresenceIcons {
         hashesToFiles = listToSet(map.get("HashesToFiles"));
     }
 
-    public void update(Set<String> nsfwMods) throws IOException {
+    public void update() throws IOException {
         Set<String> deletedFileIds = new HashSet<>(filesToHashes.keySet());
 
         // load mod list
         List<String> mods;
         try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/list.yaml"))) {
             mods = YamlUtil.load(is);
+        }
+        
+        Set<String> nsfwMods = new HashSet<>();
+        try (InputStream is = Files.newInputStream(Paths.get("uploads/nsfw_mods.yaml"))) {
+            nsfwMods.addAll(YamlUtil.<List<String>>load(is));
         }
 
         for (String mod : mods) {
@@ -99,17 +104,12 @@ public class BananaMirrorRichPresenceIcons {
 
     private void processNewFile(String fileId, List<String> filesToProcess) throws IOException {
         // download the mod
-        ConnectionUtils.runWithRetry(() -> {
-            try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod.zip")))) {
-                IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/mmdl/" + fileId)), os);
-                return null; // to fulfill this stupid method signature
-            }
-        });
+        Path file = FileDownloader.downloadFile("https://gamebanana.com/mmdl/" + fileId);
 
         Set<String> hashes = new HashSet<>();
 
         // get the files to process from it!
-        try (ZipFile zip = ZipFileWithAutoEncoding.open("mod.zip")) {
+        try (ZipFile zip = ZipFileWithAutoEncoding.open(file.toAbsolutePath().toString())) {
             for (String fileToProcess : filesToProcess) {
                 ZipEntry entry = zip.getEntry(fileToProcess);
 
@@ -133,9 +133,6 @@ public class BananaMirrorRichPresenceIcons {
         // save all the hashes that are in the file
         filesToHashes.put(fileId, hashes);
         saveData();
-
-        // delete temp zip
-        FileUtils.forceDelete(new File("mod.zip"));
     }
 
     private void sendNewFile(String fileId, ZipFile zip, ZipEntry entry, String hash) throws IOException {

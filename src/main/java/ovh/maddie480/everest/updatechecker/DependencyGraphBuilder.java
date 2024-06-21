@@ -49,26 +49,13 @@ public class DependencyGraphBuilder {
                 newDependencyGraph.put(existingDependencyGraphEntry.getKey(), existingDependencyGraphEntry.getValue());
             } else {
                 // download file
-                ConnectionUtils.runWithRetry(() -> {
-                    try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("mod-dependencytree.zip")))) {
-                        IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(url)), os);
-                        return null; // to fulfill this stupid method signature
-                    }
-                });
-
-                // check that its size makes sense
-                long actualSize = new File("mod-dependencytree.zip").length();
-                if (((int) mod.getValue().get("Size")) != actualSize) {
-                    FileUtils.forceDelete(new File("mod-dependencytree.zip"));
-                    throw new IOException("The announced file size (" + mod.getValue().get("Size") + ") does not match what we got (" + actualSize + ")" +
-                            " for file " + url);
-                }
+                Path file = FileDownloader.downloadFile(url, (int) mod.getValue().get("Size"));
 
                 // read its everest.yaml
                 Map<String, String> dependencies = new HashMap<>();
                 Map<String, String> optionalDependencies = new HashMap<>();
-                try (ZipFile zipFile = ZipFileWithAutoEncoding.open("mod-dependencytree.zip")) {
-                    checkZipSignature(new File("mod-dependencytree.zip").toPath());
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(file.toAbsolutePath().toString())) {
+                    checkZipSignature(file);
 
                     ZipEntry everestYaml = zipFile.getEntry("everest.yaml");
                     if (everestYaml == null) {
@@ -106,8 +93,6 @@ public class DependencyGraphBuilder {
                 graphEntry.put("Dependencies", dependencies);
                 graphEntry.put("OptionalDependencies", optionalDependencies);
                 newDependencyGraph.put(mod.getKey(), graphEntry);
-
-                FileUtils.forceDelete(new File("mod-dependencytree.zip"));
             }
         }
 
