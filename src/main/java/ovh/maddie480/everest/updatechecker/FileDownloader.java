@@ -35,7 +35,7 @@ public class FileDownloader {
             log.debug("Cleaning up downloaded file {}", path);
             Files.delete(path);
         }
-        alreadyDownloadedFiles.clear
+        alreadyDownloadedFiles.clear();
     }
 
     private static Path downloadFile(String url, Integer expectedSize, Collection<String> expectedHashes) throws IOException {
@@ -58,7 +58,7 @@ public class FileDownloader {
                     long actualSize = Files.size(target);
                     if (expectedSize != actualSize) {
                         throw new IOException("The announced file size (" + expectedSize + ") does not match what we got (" + actualSize + ")" +
-                            " for file " + url;
+                            " for file " + url);
                     }
                 }
 
