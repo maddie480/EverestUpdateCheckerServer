@@ -376,7 +376,7 @@ public class ModFilesDatabaseBuilder {
                     EventListener.handle(listener -> listener.loennPluginScanError("https://gamebanana.com/mmdl/" + version, e));
                 }
             } else {
-                log.trace("File {} of mod {} doesn't have any Ahorn plugin, skipping.", version, modFolder.toAbsolutePath());
+                log.trace("File {} of mod {} doesn't have any Loenn plugin, skipping.", version, modFolder.toAbsolutePath());
             }
         }
     }
