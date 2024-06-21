@@ -41,7 +41,7 @@ public class BananaMirrorRichPresenceIcons {
         try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/list.yaml"))) {
             mods = YamlUtil.load(is);
         }
-        
+
         Set<String> nsfwMods = new HashSet<>();
         try (InputStream is = Files.newInputStream(Paths.get("uploads/nsfw_mods.yaml"))) {
             nsfwMods.addAll(YamlUtil.<List<String>>load(is));
