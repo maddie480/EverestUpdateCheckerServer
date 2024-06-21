@@ -186,7 +186,7 @@ public class ModFilesDatabaseBuilder {
     private void checkForAhornPlugins() throws IOException {
         {
             log.debug("Loading vanilla map editor plugin info...");
-            
+
             List<String> ahornEntities = ConnectionUtils.runWithRetry(() -> {
                 try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/entity.jl")) {
                     List<String> entities = new LinkedList<>();
