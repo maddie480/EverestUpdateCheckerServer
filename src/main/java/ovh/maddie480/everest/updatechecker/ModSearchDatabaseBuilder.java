@@ -292,7 +292,7 @@ public class ModSearchDatabaseBuilder {
                 categoryNames.put(category.getInt("_idRow"), category.getString("_sName"));
             } else {
                 // this is a subcategory.
-                log.trace("{} ({}) is the child of category {}", category.getInt("_idRow"), category.getString("_sName"), category.getInt("_idParentCategoryRow")));
+                log.trace("{} ({}) is the child of category {}", category.getInt("_idRow"), category.getString("_sName"), category.getInt("_idParentCategoryRow"));
                 categoryToParent.put(category.getInt("_idRow"), category.getInt("_idParentCategoryRow"));
             }
         }
