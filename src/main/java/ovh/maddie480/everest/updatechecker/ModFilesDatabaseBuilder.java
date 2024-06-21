@@ -34,7 +34,7 @@ public class ModFilesDatabaseBuilder {
 
     void addMod(String itemtype, int itemid, String modname, List<String> urls, List<Integer> expectedSizes) throws IOException {
         if (urls.isEmpty()) {
-            // nothing to do at all!
+            log.trace("{} {} doesn't have any file, skipping.", itemtype, itemid);
             return;
         }
 
@@ -53,6 +53,7 @@ public class ModFilesDatabaseBuilder {
 
             // only handle valid GameBanana links, as we use the GameBanana URL format to name our file.
             if (!fileUrl.matches("https://gamebanana.com/mmdl/[0-9]+")) {
+                log.warn("File URL {} doesn't match GameBanana naming pattern! Skipping.", fileUrl);
                 continue;
             }
 
@@ -127,6 +128,7 @@ public class ModFilesDatabaseBuilder {
         }
 
         // write the files list to disk.
+        log.debug("Writing mod files database indices to disk...");
         try (OutputStream os = new FileOutputStream("modfilesdatabase_temp/file_ids.yaml")) {
             YamlUtil.dump(fullFileIdList, os);
         }
@@ -141,6 +143,7 @@ public class ModFilesDatabaseBuilder {
         Path databasePath = Paths.get("modfilesdatabase");
         Path databasePathTemp = Paths.get("modfilesdatabase_temp");
 
+        log.debug("Committing...");
         if (Files.isDirectory(databasePath)) {
             FileUtils.deleteDirectory(databasePath.toFile());
         }
@@ -153,6 +156,7 @@ public class ModFilesDatabaseBuilder {
     }
 
     private void fillInGapsForIncrementalUpdate() throws IOException {
+        log.debug("Copying all other files for incremental update...");
         List<String> mods;
         try (InputStream is = Files.newInputStream(Paths.get("modfilesdatabase/list.yaml"))) {
             mods = YamlUtil.load(is);
@@ -160,7 +164,7 @@ public class ModFilesDatabaseBuilder {
 
         for (String mod : mods) {
             if (fullList.contains(mod)) {
-                // this mod was updated incrementally, so we don't need to get it.
+                log.trace("File {} was updated incrementally already, skipping.");
                 continue;
             }
 
@@ -171,6 +175,7 @@ public class ModFilesDatabaseBuilder {
             }
 
             // carry over all information from the old mod files database
+            log.trace("Copying all info for mod {}...");
             Files.createDirectories(Paths.get("modfilesdatabase_temp/" + mod).getParent());
             FileUtils.copyDirectory(new File("modfilesdatabase/" + mod), new File("modfilesdatabase_temp/" + mod));
             fullFileIdList.addAll((List<String>) fileInfo.get("Files"));
@@ -180,6 +185,8 @@ public class ModFilesDatabaseBuilder {
 
     private void checkForAhornPlugins() throws IOException {
         {
+            log.debug("Loading vanilla map editor plugin info...");
+            
             List<String> ahornEntities = ConnectionUtils.runWithRetry(() -> {
                 try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://raw.githubusercontent.com/CelestialCartographers/Maple/master/src/entity.jl")) {
                     List<String> entities = new LinkedList<>();
@@ -242,6 +249,7 @@ public class ModFilesDatabaseBuilder {
         if (Files.exists(oldPath)) {
             // this zip was already scanned!
             if (!Files.exists(targetPath)) {
+                log.trace("Copying Ahorn information from {}", oldPath.toAbsolutePath());
                 Files.copy(oldPath, targetPath);
             }
         } else {
@@ -264,6 +272,7 @@ public class ModFilesDatabaseBuilder {
 
                     for (String file : fileList) {
                         if (file.startsWith("Ahorn/") && file.endsWith(".jl")) {
+                            log.debug("Analyzing file {}", file);
                             InputStream inputStream = zipFile.getInputStream(zipFile.getEntry(file));
                             extractAhornEntities(ahornEntities, ahornTriggers, ahornEffects, file, inputStream);
                         }
@@ -288,6 +297,8 @@ public class ModFilesDatabaseBuilder {
                     ahornPlugins.put("Effects", ahornEffects);
                     YamlUtil.dump(ahornPlugins, os);
                 }
+            } else {
+                log.trace("File {} of mod {} doesn't have any Ahorn plugin, skipping.", version, modFolder.toAbsolutePath());
             }
         }
     }
@@ -332,6 +343,7 @@ public class ModFilesDatabaseBuilder {
         if (Files.exists(oldPath)) {
             // this zip was already scanned!
             if (!Files.exists(targetPath)) {
+                log.trace("Copying Loenn information from {}", oldPath.toAbsolutePath());
                 Files.copy(oldPath, targetPath);
             }
         } else {
@@ -363,6 +375,8 @@ public class ModFilesDatabaseBuilder {
                     log.warn("Could not analyze Lönn plugins from https://gamebanana.com/mmdl/{}", version, e);
                     EventListener.handle(listener -> listener.loennPluginScanError("https://gamebanana.com/mmdl/" + version, e));
                 }
+            } else {
+                log.trace("File {} of mod {} doesn't have any Ahorn plugin, skipping.", version, modFolder.toAbsolutePath());
             }
         }
     }

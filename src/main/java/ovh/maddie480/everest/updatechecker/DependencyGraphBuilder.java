@@ -21,6 +21,7 @@ public class DependencyGraphBuilder {
     private static final Logger log = LoggerFactory.getLogger(DependencyGraphBuilder.class);
 
     static void updateDependencyGraph() throws IOException {
+        log.debug("Loading mod databases...");
         Map<String, Map<String, Object>> oldDependencyGraph;
         try (InputStream is = Files.newInputStream(Paths.get("uploads/moddependencygraph.yaml"))) {
             oldDependencyGraph = YamlUtil.load(is);
@@ -46,7 +47,7 @@ public class DependencyGraphBuilder {
                     .orElse(null);
 
             if (existingDependencyGraphEntry != null) {
-                // we already have that mod!
+                log.trace("Mod {} was already in the dependency graph, copying its data.", name);
                 newDependencyGraph.put(existingDependencyGraphEntry.getKey(), existingDependencyGraphEntry.getValue());
             } else {
                 // download file
@@ -98,6 +99,7 @@ public class DependencyGraphBuilder {
         }
 
         // write it out!
+        log.debug("Writing graph...");
         try (OutputStream os = new FileOutputStream("uploads/moddependencygraph.yaml")) {
             YamlUtil.dump(newDependencyGraph, os);
         }

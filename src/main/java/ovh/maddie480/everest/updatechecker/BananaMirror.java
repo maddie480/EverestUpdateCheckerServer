@@ -15,11 +15,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * This service mirrors all mods that are present in everest_update.yaml.
+ */
 public class BananaMirror {
     private static final Logger log = LoggerFactory.getLogger(BananaMirror.class);
 
     static void run() throws IOException {
         // load the list of existing mods.
+        log.debug("Loading updater database...");
         Map<String, Map<String, Object>> everestUpdateYaml;
         try (InputStream stream = Files.newInputStream(Paths.get("uploads/everestupdate.yaml"))) {
             everestUpdateYaml = YamlUtil.load(stream);
@@ -36,21 +40,23 @@ public class BananaMirror {
 
             // extract the file ID: only handle valid GameBanana links, as we use the GameBanana URL format to name our file.
             if (!modUrl.matches("https://gamebanana.com/mmdl/[0-9]+")) {
+                log.warn("Not mirroring {} as it doesn't match the GameBanana URL pattern!", modUrl);
                 continue;
             }
             String fileId = modUrl.substring("https://gamebanana.com/mmdl/".length());
 
             if (bananaMirrorList.contains(fileId)) {
-                // existing file! this file should be kept.
+                log.trace("File {} is already mirrored and will be kept", fileId);
                 toDelete.remove(fileId);
             } else {
-                // file is new!
+                log.info("File {} is not currently mirrored! Doing that now.", fileId);
                 downloadFile(modUrl, fileId, modHashes, bananaMirrorList);
             }
         }
 
         // delete all files that disappeared from the database.
         for (String file : toDelete) {
+            log.info("File {} is mirrored but doesn't exist anymore! Deleting it now.", file);
             deleteFile(file, bananaMirrorList);
         }
     }

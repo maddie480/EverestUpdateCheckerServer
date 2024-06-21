@@ -3,6 +3,8 @@ package ovh.maddie480.everest.updatechecker;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -14,7 +16,12 @@ import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+/**
+ * This service mirrors the Rich Presence icons of all files on GameBanana, based on the mod file database.
+ */
 public class BananaMirrorRichPresenceIcons {
+    private static final Logger log = LoggerFactory.getLogger(BananaMirrorRichPresenceIcons.class);
+
     // all files that exist in here were completely processed
     private final Map<String, Set<String>> filesToHashes;
 
@@ -24,6 +31,7 @@ public class BananaMirrorRichPresenceIcons {
     private boolean changesHappened = false;
 
     public BananaMirrorRichPresenceIcons() throws IOException {
+        log.debug("Loading already mirrored icons...");
         Map<String, Map<String, List<String>>> map;
         try (FileInputStream is = new FileInputStream("banana_mirror_rich_presence_icons.yaml")) {
             map = YamlUtil.load(is);
@@ -50,6 +58,7 @@ public class BananaMirrorRichPresenceIcons {
         for (String mod : mods) {
             // do NOT upload Rich Presence icons for mods tagged as NSFW!
             if (nsfwMods.contains(mod)) {
+                log.trace("Skipping mod {} as it is NSFW", mod);
                 continue;
             }
 
@@ -62,7 +71,7 @@ public class BananaMirrorRichPresenceIcons {
 
             for (String file : files) {
                 if (filesToHashes.containsKey(file)) {
-                    // already done!
+                    log.trace("File {} was already checked, moving on", file);
                     deletedFileIds.remove(file);
                     continue;
                 }
@@ -82,14 +91,16 @@ public class BananaMirrorRichPresenceIcons {
                                 && !fileName.endsWith("hover.png"))
                         .collect(Collectors.toList());
 
+                log.trace("Icons detected in file {}: {}", file, richPresenceIcons);
+
                 if (!richPresenceIcons.isEmpty()) {
-                    // we need to get those map icons!
                     processNewFile(file, richPresenceIcons);
                 }
             }
         }
 
         for (String file : deletedFileIds) {
+            log.info("File {} was deleted, deleting its icons!", file);
             processDeletedFile(file);
         }
 
@@ -122,8 +133,10 @@ public class BananaMirrorRichPresenceIcons {
 
                 // check if it is new or not, send it if it is!
                 if (!hashesToFiles.containsKey(hash)) {
+                    log.info("New file icon {} with hash {}! Uploading it.", fileToProcess, hash);
                     sendNewFile(fileId, zip, entry, hash);
                 } else {
+                    log.debug("Already existing file icon {} with hash {}. Saving it.", fileToProcess, hash);
                     hashesToFiles.get(hash).add(fileId);
                     saveData();
                 }
@@ -161,14 +174,15 @@ public class BananaMirrorRichPresenceIcons {
     private void processDeletedFile(String fileId) throws IOException {
         for (String hash : filesToHashes.get(fileId)) {
             if (!hashesToFiles.containsKey(hash)) {
-                // the hash is already gone from the mirror, there probably was a crash deleting a later file
+                log.warn("Hash {} is already gone from the mirror, there probably was a crash deleting a later file!", hash);
                 continue;
             }
 
             hashesToFiles.get(hash).remove(fileId);
+            log.trace("Remaining files for hash {}: {}", hash, hashesToFiles.get(hash));
 
             if (hashesToFiles.get(hash).isEmpty()) {
-                // the hash is now unused! delete it
+                log.info("Hash {} is now unused! Deleting it.", hash);
                 BananaMirror.makeSftpAction(Main.serverConfig.bananaMirrorConfig.richPresenceIconsDirectory, channel -> channel.rm(hash + ".png"));
                 EventListener.handle(listener -> listener.deletedRichPresenceIconFromBananaMirror(hash + ".png", fileId));
                 changesHappened = true;

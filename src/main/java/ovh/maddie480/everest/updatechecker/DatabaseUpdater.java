@@ -137,6 +137,8 @@ public class DatabaseUpdater {
      * @throws IOException If the read operation fails.
      */
     private void loadDatabaseFromYaml() throws IOException {
+        log.debug("Loading databases...");
+
         if (new File("uploads/everestupdate.yaml").exists()) {
             try (InputStream is = Files.newInputStream(Paths.get("uploads/everestupdate.yaml"))) {
                 Map<String, Map<String, Object>> imported = YamlUtil.load(is);
@@ -168,6 +170,8 @@ public class DatabaseUpdater {
      * @throws IOException If the write operation fails.
      */
     private void saveDatabaseToYaml() throws IOException {
+        log.debug("Saving databases...");
+
         Map<String, Map<String, Object>> export = new HashMap<>();
         for (Map.Entry<String, Mod> entry : database.entrySet()) {
             export.put(entry.getKey(), entry.getValue().toMap());
@@ -193,6 +197,8 @@ public class DatabaseUpdater {
     private void crawlModsFromCategoryFully(String category) throws IOException {
         // update the last modified date for incremental updates
         int lastModifiedDate = ConnectionUtils.runWithRetry(() -> {
+            log.trace("Loading last modified date of category for the next incremental update...", category);
+
             try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=1&_nPerpage=" + incrementalPageSize +
                     "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified")) {
 
@@ -209,6 +215,8 @@ public class DatabaseUpdater {
             // load a page of mods.
             final int thisPage = page;
             JSONArray pageContents = ConnectionUtils.runWithRetry(() -> {
+                log.trace("Loading page {} of category {}", thisPage, category);
+
                 try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/" + category + "/ByGame?_aGameRowIds[]=6460&" +
                         "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
                         "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl,_bIsNsfw" +
@@ -250,6 +258,8 @@ public class DatabaseUpdater {
             // load a page of mods.
             final int thisPage = page;
             JSONArray pageContents = ConnectionUtils.runWithRetry(() -> {
+                log.trace("Loading page {} of category {}", thisPage, category);
+
                 try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=" + thisPage +
                         "&_nPerpage=" + incrementalPageSize + "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified")) {
 
@@ -269,6 +279,8 @@ public class DatabaseUpdater {
                     lastModified = Math.max(lastModified, mod.getInt("_tsDateModified"));
 
                     JSONObject modInfo = ConnectionUtils.runWithRetry(() -> {
+                        log.trace("Loading info on {} {}...", category, mod.getInt("_idRow"));
+
                         try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/" + category + "/" + mod.getInt("_idRow") + "?" +
                                 "_csvProperties=_idRow,_sName,_aFiles,_aSubmitter,_sDescription,_sText,_nLikeCount,_nViewCount,_nDownloadCount,_aCategory," +
                                 "_tsDateAdded,_tsDateModified,_tsDateUpdated,_aPreviewMedia,_sProfileUrl,_bIsNsfw&ts=" + System.currentTimeMillis())) {
@@ -288,7 +300,7 @@ public class DatabaseUpdater {
                     readModInfo(category, modInfo);
                     EventListener.handle(listener -> listener.modUpdatedIncrementally(category, modInfo.getInt("_idRow"), modInfo.getString("_sName")));
                 } else {
-                    // we reached the end of new mods, so stop right here.
+                    log.trace("Updated date of mod {} is earlier than last updated date {}, stopping incremental update", mod.getInt("_tsDateModified"), mostRecentUpdatedDates.get(category));
                     mostRecentUpdatedDates.put(category, lastModified);
                     return;
                 }
@@ -311,6 +323,7 @@ public class DatabaseUpdater {
      * @throws IOException If a I/O error occurs while communicating with GameBanana
      */
     private void readModInfo(String category, JSONObject mod) throws IOException {
+        log.trace("Processing {} {}", category, mod.getInt("_idRow"));
         String name = mod.getString("_sName");
 
         // if the mod has no file, _aFiles will be null.
@@ -378,6 +391,8 @@ public class DatabaseUpdater {
      */
     private void updateDatabase(int fileTimestamp, String fileUrl, int expectedSize, String gbType, int gbId)
             throws IOException {
+
+        log.trace("Checking file {}", fileUrl);
 
         if (databaseExcludedFiles.containsKey(fileUrl)) {
             log.trace("=> file was skipped because it is in the excluded list.");
@@ -510,6 +525,8 @@ public class DatabaseUpdater {
      * If so, deletes it from the database.
      */
     private void checkForModDeletion() {
+        log.trace("Checking for mod deletions");
+
         List<String> existingFiles = modFilesDatabaseBuilder.getFileIds().stream()
                 .map(file -> "https://gamebanana.com/mmdl/" + file)
                 .toList();

@@ -15,11 +15,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * This service mirrors the first 2 screenshots of all mods that are present in mod_search_database.yaml.
+ */
 public class BananaMirrorImages {
     private static final Logger log = LoggerFactory.getLogger(BananaMirrorImages.class);
 
     static void run() throws IOException {
         // load the list of existing mods.
+        log.debug("Loading mod search database...");
         List<Map<String, Object>> modSearchDatabase;
         try (InputStream stream = Files.newInputStream(Paths.get("uploads/modsearchdatabase.yaml"))) {
             modSearchDatabase = YamlUtil.load(stream);
@@ -38,10 +42,11 @@ public class BananaMirrorImages {
                 String screenshotId = screenshotUrl.substring("https://images.gamebanana.com/".length(), screenshotUrl.lastIndexOf(".")).replace("/", "_") + ".png";
 
                 if (bananaMirrorList.contains(screenshotId)) {
-                    // existing file! this file should be kept.
+                    log.trace("Image {} is already mirrored and will be kept", fileId);
                     toDelete.remove(screenshotId);
                 } else {
                     // file is new!
+                    log.info("Image {} is not currently mirrored! Doing that now.", fileId);
                     downloadFile(screenshotUrl, screenshotId, bananaMirrorList);
                 }
             }
@@ -49,6 +54,7 @@ public class BananaMirrorImages {
 
         // delete all files that disappeared from the database.
         for (String file : toDelete) {
+            log.info("Image {} is mirrored but doesn't exist anymore! Deleting it now.", file);
             deleteFile(file, bananaMirrorList);
         }
     }
@@ -61,6 +67,8 @@ public class BananaMirrorImages {
                 return null; // to fulfill this stupid method signature
             }
         });
+
+        log.debug("Thumbnailating file...");
 
         // minimize it to 220px
         Thumbnails.of(new File("/tmp/updater_image_to_read"))

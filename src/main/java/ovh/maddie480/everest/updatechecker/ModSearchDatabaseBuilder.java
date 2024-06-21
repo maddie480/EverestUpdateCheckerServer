@@ -67,6 +67,7 @@ public class ModSearchDatabaseBuilder {
         }
 
         public void setFeatured(String category, int position) {
+            log.trace("Setting {} {} as featured for category {}, at position {}", gameBananaType, gameBananaId, category, position);
             featured = new HashMap<>();
             featured.put("Category", category);
             featured.put("Position", position);
@@ -212,11 +213,13 @@ public class ModSearchDatabaseBuilder {
         // (this means the mod is part of an unapproved/unlisted category).
         for (ModSearchInfo mod : modSearchInfo) {
             if (mod.categoryName == null) {
+                log.warn("No category found for {} {}", mod.gameBananaType, mod.gameBananaId);
                 mod.categoryName = "Unknown";
             }
         }
 
         // get featured mods and fill in the info for mods accordingly.
+        log.debug("Getting list of featured mods...");
         JSONObject featured = ConnectionUtils.runWithRetry(() -> {
             try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/Game/6460/TopSubs")) {
                 return new JSONObject(new JSONTokener(is));
@@ -246,6 +249,8 @@ public class ModSearchDatabaseBuilder {
             fillInGapsForIncrementalUpdate(modSearchDatabase);
         }
 
+        log.debug("Saving mod search database");
+
         // map ModSearchInfo's to Maps and save them.
         try (OutputStream os = new FileOutputStream("uploads/modsearchdatabase.yaml")) {
             YamlUtil.dump(modSearchDatabase, os);
@@ -262,6 +267,7 @@ public class ModSearchDatabaseBuilder {
 
     private void assignCategoryNamesToMods(String itemtype) throws IOException {
         // get the list of categories from GameBanana
+        log.debug("Getting {} category names...", itemtype);
         JSONArray listOfCategories = ConnectionUtils.runWithRetry(() -> {
             try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/" + itemtype + "Category/ByGame?_aGameRowIds[]=6460&" +
                     "_csvProperties=_idRow,_idParentCategoryRow,_sName&_sOrderBy=_idRow,ASC&_nPage=1&_nPerpage=50")) {
@@ -282,9 +288,11 @@ public class ModSearchDatabaseBuilder {
 
             if (category.getInt("_idParentCategoryRow") == 0) {
                 // this is a root category!
+                log.trace("{} ({}) is a root category", category.getInt("_idRow"), category.getString("_sName"));
                 categoryNames.put(category.getInt("_idRow"), category.getString("_sName"));
             } else {
                 // this is a subcategory.
+                log.trace("{} ({}) is the child of category {}", category.getInt("_idRow"), category.getString("_sName"), category.getInt("_idParentCategoryRow")));
                 categoryToParent.put(category.getInt("_idRow"), category.getInt("_idParentCategoryRow"));
             }
         }
@@ -299,6 +307,8 @@ public class ModSearchDatabaseBuilder {
                     category = categoryToParent.get(category);
                 }
 
+                log.trace("Reassigning category {} of {} {} to {} ({})", info.categoryId, info.gameBananaType, info.gameBananaId, category, categoryNames.get(category));
+
                 // assign it.
                 info.categoryId = category;
                 info.categoryName = categoryNames.get(category);
@@ -307,6 +317,7 @@ public class ModSearchDatabaseBuilder {
     }
 
     private void fillInGapsForIncrementalUpdate(List<Map<String, Object>> database) throws IOException {
+        log.debug("Loading old mod search database...");
         List<Map<String, Object>> previousModInfo;
         try (InputStream is = Files.newInputStream(Paths.get("uploads/modsearchdatabase.yaml"))) {
             previousModInfo = YamlUtil.load(is);
@@ -318,6 +329,7 @@ public class ModSearchDatabaseBuilder {
                             && newMod.get("GameBananaId").equals(oldMod.get("GameBananaId")))) {
 
                 // mod is not in new database => carry it over from old database
+                log.trace("Carrying over {} {} from old database", oldMod.get("GameBananaType"), oldMod.get("GameBananaId"));
                 database.add(oldMod);
             }
         }
