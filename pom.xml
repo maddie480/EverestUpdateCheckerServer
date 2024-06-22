@@ -6,7 +6,7 @@
 
     <groupId>ovh.maddie480.everest.updatechecker</groupId>
     <artifactId>update-checker</artifactId>
-    <version>0.7.0</version>
+    <version>0.7.1</version>
 
     <properties>
         <jdk.version>21</jdk.version>

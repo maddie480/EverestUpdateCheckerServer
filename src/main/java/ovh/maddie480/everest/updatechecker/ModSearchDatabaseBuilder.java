@@ -1,6 +1,7 @@
 package ovh.maddie480.everest.updatechecker;
 
 import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.tuple.Pair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,6 +18,10 @@ import java.util.stream.StreamSupport;
 
 public class ModSearchDatabaseBuilder {
     private static final Logger log = LoggerFactory.getLogger(ModSearchDatabaseBuilder.class);
+
+    private static final Set<Pair<String, Integer>> CATEGORIES_ALLOWED_TO_HAVE_SUBCATEGORIES = Collections.singleton(
+            Pair.of("Mod", 6800) // Maps
+    );
 
     /**
      * This object holds the name, author, description and text of a GameBanana mod.
@@ -114,10 +119,6 @@ public class ModSearchDatabaseBuilder {
     private final List<ModSearchInfo> modSearchInfo = new LinkedList<>();
     private final Set<String> nsfwMods = new HashSet<>();
 
-    public Set<String> getNsfwMods() {
-        return nsfwMods;
-    }
-
     /**
      * Adds this mod to the mod search info database.
      *
@@ -181,7 +182,7 @@ public class ModSearchDatabaseBuilder {
                                 List<String> files = YamlUtil.load(is);
                                 hasYaml = files.contains("everest.yml") || files.contains("everest.yaml");
                             } catch (IOException e) {
-                                log.error("Could not read files database at " + modFilesDatabase.getPath() + "!", e);
+                                log.error("Could not read files database at {}!", modFilesDatabase.getPath(), e);
                             }
                         }
                         map.put("HasEverestYaml", hasYaml);
@@ -282,19 +283,47 @@ public class ModSearchDatabaseBuilder {
         // parse it in a convenient way
         Map<Integer, String> categoryNames = new HashMap<>();
         Map<Integer, Integer> categoryToParent = new HashMap<>();
+        Map<Integer, Map<Integer, String>> subcategoryNames = new HashMap<>();
 
         for (Object categoryRaw : listOfCategories) {
             JSONObject category = (JSONObject) categoryRaw;
 
-            if (category.getInt("_idParentCategoryRow") == 0) {
+            int parentCategory = category.getInt("_idParentCategoryRow");
+
+            if (parentCategory == 0) {
                 // this is a root category!
                 log.trace("{} ({}) is a root category", category.getInt("_idRow"), category.getString("_sName"));
                 categoryNames.put(category.getInt("_idRow"), category.getString("_sName"));
+            } else if (CATEGORIES_ALLOWED_TO_HAVE_SUBCATEGORIES.contains(Pair.of(itemtype, parentCategory))) {
+                // this is a subcategory, but the parent category can have subcategories.
+                log.trace("{} ({}) is a separately-listed child of {}", category.getInt("_idRow"), category.getString("_sName"), parentCategory);
+                if (!subcategoryNames.containsKey(parentCategory)) {
+                    subcategoryNames.put(parentCategory, new HashMap<>());
+                }
+                subcategoryNames.get(parentCategory).put(category.getInt("_idRow"), category.getString("_sName"));
             } else {
                 // this is a subcategory.
-                log.trace("{} ({}) is the child of category {}", category.getInt("_idRow"), category.getString("_sName"), category.getInt("_idParentCategoryRow"));
-                categoryToParent.put(category.getInt("_idRow"), category.getInt("_idParentCategoryRow"));
+                log.trace("{} ({}) is the child of category {}", category.getInt("_idRow"), category.getString("_sName"), parentCategory);
+                categoryToParent.put(category.getInt("_idRow"), parentCategory);
             }
+        }
+
+        // expand subcategory names
+        for (Map.Entry<Integer, Map<Integer, String>> subcategoryName : subcategoryNames.entrySet()) {
+            int parentCategory = subcategoryName.getKey();
+            String parentCategoryName = categoryNames.get(parentCategory);
+            for (Map.Entry<Integer, String> subcategory : subcategoryName.getValue().entrySet()) {
+                int childCategory = subcategory.getKey();
+                String childCategoryName = subcategory.getValue();
+
+                String newName = parentCategoryName + " – " + childCategoryName;
+                log.trace("Category {}/{} got renamed to {}", parentCategory, childCategory, newName);
+                categoryNames.put(childCategory, newName);
+            }
+
+            String newName = parentCategoryName + " – Uncategorized";
+            log.trace("Renaming parent category {} to {}", parentCategory, newName);
+            categoryNames.put(parentCategory, newName);
         }
 
         // associate each mod to its root category.
