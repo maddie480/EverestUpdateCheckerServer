@@ -34,6 +34,8 @@ public class ModSearchDatabaseBuilder {
         private final int downloads;
         private int categoryId;
         private String categoryName;
+        private Integer subcategoryId;
+        private String subcategoryName;
         private final long createdDate;
         private final long modifiedDate;
         private final long updatedDate;
@@ -106,6 +108,10 @@ public class ModSearchDatabaseBuilder {
             map.put("CategoryName", categoryName);
             if (featured != null) {
                 map.put("Featured", featured);
+            }
+            if (subcategoryId != null) {
+                map.put("SubcategoryId", subcategoryId);
+                map.put("SubcategoryName", subcategoryName);
             }
             return map;
         }
@@ -285,11 +291,11 @@ public class ModSearchDatabaseBuilder {
 
         for (Object categoryRaw : listOfCategories) {
             JSONObject category = (JSONObject) categoryRaw;
+            categoryNames.put(category.getInt("_idRow"), category.getString("_sName"));
 
             if (category.getInt("_idParentCategoryRow") == 0) {
                 // this is a root category!
                 log.trace("{} ({}) is a root category", category.getInt("_idRow"), category.getString("_sName"));
-                categoryNames.put(category.getInt("_idRow"), category.getString("_sName"));
             } else {
                 // this is a subcategory.
                 log.trace("{} ({}) is the child of category {}", category.getInt("_idRow"), category.getString("_sName"), category.getInt("_idParentCategoryRow"));
@@ -307,9 +313,14 @@ public class ModSearchDatabaseBuilder {
                     category = categoryToParent.get(category);
                 }
 
-                log.trace("Reassigning category {} of {} {} to {} ({})", info.categoryId, info.gameBananaType, info.gameBananaId, category, categoryNames.get(category));
-
                 // assign it.
+                if (info.categoryId != category) {
+                    log.trace("Assigning subcategory of {} {} to {} ({})", info.gameBananaType, info.gameBananaId, info.categoryId, categoryNames.get(info.categoryId));
+                    info.subcategoryId = info.categoryId;
+                    info.subcategoryName = categoryNames.get(info.categoryId);
+                }
+
+                log.trace("Reassigning category {} of {} {} to {} ({})", info.categoryId, info.gameBananaType, info.gameBananaId, category, categoryNames.get(category));
                 info.categoryId = category;
                 info.categoryName = categoryNames.get(category);
             }
