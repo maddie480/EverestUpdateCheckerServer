@@ -62,8 +62,9 @@ public class BananaMirrorImages {
     private static void downloadFile(String screenshotUrl, String screenshotId, List<String> fileList) throws IOException {
         // download the screenshot
         ConnectionUtils.runWithRetry(() -> {
+            String urlToDownload = screenshotUrl.replace("https://images.gamebanana.com/", "https://files.gamebanana.com/");
             try (OutputStream os = new BufferedOutputStream(Files.newOutputStream(Paths.get("/tmp/updater_image_to_read")))) {
-                IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(screenshotUrl)), os);
+                IOUtils.copy(new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(urlToDownload)), os);
             }
 
             log.debug("Thumbnailating file...");
