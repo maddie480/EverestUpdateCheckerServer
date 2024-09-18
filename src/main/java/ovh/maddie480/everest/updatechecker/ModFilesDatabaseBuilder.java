@@ -383,10 +383,10 @@ public class ModFilesDatabaseBuilder {
                             try (InputStream inputStream = zipFile.getInputStream(zipFile.getEntry("Loenn/lang/en_gb.lang"));
                                 BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
 
-                                Triple<Set<String>, Set<String>, Set<String>> extractedLoennEntities = extractLoennEntitiesFromLangFile(targetPath, br);
-                                loennEntities.add(extractedLoennEntities.getLeft());
-                                loennTriggers.add(extractedLoennEntities.getMiddle());
-                                loennEffects.add(extractedLoennEntities.getRight());
+                                Triple<Set<String>, Set<String>, Set<String>> extractedLoennEntities = extractLoennEntitiesFromLangFile(br);
+                                loennEntities.addAll(extractedLoennEntities.getLeft());
+                                loennTriggers.addAll(extractedLoennEntities.getMiddle());
+                                loennEffects.addAll(extractedLoennEntities.getRight());
                             }
                         }
 
@@ -449,7 +449,7 @@ public class ModFilesDatabaseBuilder {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             while ((line = br.readLine()) != null) {
-                Matcher nameMatch = mapdefMatcher.matcher(line);
+                Matcher nameMatch = nameMatcher.matcher(line);
                 if (nameMatch.matches()) {
                     String entityID = nameMatch.group(1);
 
