@@ -389,12 +389,12 @@ public class ModFilesDatabaseBuilder {
                                 loennEffects.addAll(extractedLoennEntities.getRight());
                             }
                         }
-
-                        log.info("Found {} Lönn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
-                                loennEntities.size(), loennTriggers.size(), loennEffects.size(), version);
-                        EventListener.handle(listener -> listener.scannedLoennEntities("https://gamebanana.com/mmdl/" + version,
-                                loennEntities.size(), loennTriggers.size(), loennEffects.size()));
                     }
+
+                    log.info("Found {} Lönn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
+                            loennEntities.size(), loennTriggers.size(), loennEffects.size(), version);
+                    EventListener.handle(listener -> listener.scannedLoennEntities("https://gamebanana.com/mmdl/" + version,
+                            loennEntities.size(), loennTriggers.size(), loennEffects.size()));
                 } catch (IOException | IllegalArgumentException e) {
                     // if a file cannot be read as a zip, no need to worry about it.
                     // we will just write an empty array.
