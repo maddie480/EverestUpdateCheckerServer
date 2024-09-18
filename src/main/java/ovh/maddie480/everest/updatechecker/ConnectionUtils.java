@@ -77,7 +77,7 @@ public final class ConnectionUtils {
      * @throws IOException If the task failed 3 times
      */
     public static <T> T runWithRetry(IOSupplier<T> task) throws IOException {
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 3; i++) {
             try {
                 return task.get();
             } catch (IOException e) {
