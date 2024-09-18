@@ -366,10 +366,10 @@ public class ModFilesDatabaseBuilder {
                 Set<String> loennEffects = new HashSet<>();
 
                 // download file
-                Path file = FileDownloader.downloadFile("https://gamebanana.com/mmdl/" + version);
+                Path zipFilePath = FileDownloader.downloadFile("https://gamebanana.com/mmdl/" + version);
 
                 // extract the en_gb.lang file
-                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(file.toAbsolutePath().toString())) {
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(zipFilePath.toAbsolutePath().toString())) {
                     checkZipSignature(file);
 
                     for (String file : fileList) {
