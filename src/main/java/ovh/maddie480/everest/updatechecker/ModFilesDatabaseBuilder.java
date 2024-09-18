@@ -219,9 +219,17 @@ public class ModFilesDatabaseBuilder {
 
             ConnectionUtils.runWithRetry(() -> {
                 try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://raw.githubusercontent.com/CelestialCartographers/Loenn/master/src/lang/en_gb.lang");
-                     BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+                     BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                     OutputStream os = Files.newOutputStream(Paths.get("modfilesdatabase_temp/loenn_vanilla.yaml"))) {
 
-                    extractLoennEntities(Paths.get("modfilesdatabase_temp/loenn_vanilla.yaml"), br);
+                    Triple<Set<String>, Set<String>, Set<String>> extractedLoennEntities = extractLoennEntitiesFromLangFile(br);
+
+                    Map<String, List<String>> loennPlugins = new HashMap<>();
+                    loennPlugins.put("Entities", new ArrayList<>(extractedLoennEntities.getLeft()));
+                    loennPlugins.put("Triggers", new ArrayList<>(extractedLoennEntities.getMiddle()));
+                    loennPlugins.put("Effects", new ArrayList<>(extractedLoennEntities.getRight()));
+                    YamlUtil.dump(loennPlugins, os);
+
                     return null;
                 }
             });
@@ -303,7 +311,7 @@ public class ModFilesDatabaseBuilder {
         }
     }
 
-    public void extractAhornEntities(List<String> ahornEntities, List<String> ahornTriggers, List<String> ahornEffects,
+    private void extractAhornEntities(List<String> ahornEntities, List<String> ahornTriggers, List<String> ahornEffects,
                                      String file, InputStream inputStream) throws IOException {
 
         Pattern mapdefMatcher = Pattern.compile(".*@mapdef(?:data)? [A-Za-z]+ \"([^\"]+)\".*");
@@ -352,28 +360,54 @@ public class ModFilesDatabaseBuilder {
                 fileList = YamlUtil.load(is);
             }
 
-            if (fileList.contains("Loenn/lang/en_gb.lang")) {
+            if (fileList.stream().anyMatch(f -> f.startsWith("Loenn/"))) {
+                Set<String> loennEntities = new HashSet<>();
+                Set<String> loennTriggers = new HashSet<>();
+                Set<String> loennEffects = new HashSet<>();
+
                 // download file
                 Path file = FileDownloader.downloadFile("https://gamebanana.com/mmdl/" + version);
 
                 // extract the en_gb.lang file
-                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(file.toAbsolutePath().toString());
-                     InputStream inputStream = zipFile.getInputStream(zipFile.getEntry("Loenn/lang/en_gb.lang"));
-                     BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
-
+                try (ZipFile zipFile = ZipFileWithAutoEncoding.open(file.toAbsolutePath().toString())) {
                     checkZipSignature(file);
 
-                    Triple<Set<String>, Set<String>, Set<String>> loennEntities = extractLoennEntities(targetPath, br);
+                    for (String file : fileList) {
+                        if (file.startsWith("Loenn/") && file.endsWith(".lua")) {
+                            log.debug("Analyzing file {}", file);
+                            InputStream inputStream = zipFile.getInputStream(zipFile.getEntry(file));
+                            extractLoennEntitiesFromPlugin(loennEntities, loennTriggers, loennEffects, file, inputStream);
+                        }
 
-                    log.info("Found {} Lönn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
-                            loennEntities.getLeft().size(), loennEntities.getMiddle().size(), loennEntities.getRight().size(), version);
-                    EventListener.handle(listener -> listener.scannedLoennEntities("https://gamebanana.com/mmdl/" + version,
-                            loennEntities.getLeft().size(), loennEntities.getMiddle().size(), loennEntities.getRight().size()));
+                        if (file.equals("Loenn/lang/en_gb.lang")) {
+                            try (InputStream inputStream = zipFile.getInputStream(zipFile.getEntry("Loenn/lang/en_gb.lang"));
+                                BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+
+                                Triple<Set<String>, Set<String>, Set<String>> extractedLoennEntities = extractLoennEntitiesFromLangFile(targetPath, br);
+                                loennEntities.add(extractedLoennEntities.getLeft());
+                                loennTriggers.add(extractedLoennEntities.getMiddle());
+                                loennEffects.add(extractedLoennEntities.getRight());
+                            }
+                        }
+
+                        log.info("Found {} Lönn entities, {} triggers, {} effects in https://gamebanana.com/mmdl/{}.",
+                                loennEntities.size(), loennTriggers.size(), loennEffects.size(), version);
+                        EventListener.handle(listener -> listener.scannedLoennEntities("https://gamebanana.com/mmdl/" + version,
+                                loennEntities.size(), loennTriggers.size(), loennEffects.size()));
                 } catch (IOException | IllegalArgumentException e) {
                     // if a file cannot be read as a zip, no need to worry about it.
                     // we will just write an empty array.
                     log.warn("Could not analyze Lönn plugins from https://gamebanana.com/mmdl/{}", version, e);
                     EventListener.handle(listener -> listener.loennPluginScanError("https://gamebanana.com/mmdl/" + version, e));
+                }
+
+                // write the result.
+                try (OutputStream os = Files.newOutputStream(targetPath)) {
+                    Map<String, List<String>> loennPlugins = new HashMap<>();
+                    loennPlugins.put("Entities", new ArrayList<>(loennEntities));
+                    loennPlugins.put("Triggers", new ArrayList<>(loennTriggers));
+                    loennPlugins.put("Effects", new ArrayList<>(loennEffects));
+                    YamlUtil.dump(loennPlugins, os);
                 }
             } else {
                 log.trace("File {} of mod {} doesn't have any Loenn plugin, skipping.", version, modFolder.toAbsolutePath());
@@ -381,7 +415,7 @@ public class ModFilesDatabaseBuilder {
         }
     }
 
-    public static Triple<Set<String>, Set<String>, Set<String>> extractLoennEntities(Path yamlTargetPath, BufferedReader inputReader) throws IOException {
+    public static Triple<Set<String>, Set<String>, Set<String>> extractLoennEntitiesFromLangFile(BufferedReader inputReader) throws IOException {
         Set<String> loennEntities = new HashSet<>();
         Set<String> loennTriggers = new HashSet<>();
         Set<String> loennEffects = new HashSet<>();
@@ -402,15 +436,31 @@ public class ModFilesDatabaseBuilder {
             }
         }
 
-        // write the result.
-        try (OutputStream os = new FileOutputStream(yamlTargetPath.toFile())) {
-            Map<String, List<String>> loennPlugins = new HashMap<>();
-            loennPlugins.put("Entities", new ArrayList<>(loennEntities));
-            loennPlugins.put("Triggers", new ArrayList<>(loennTriggers));
-            loennPlugins.put("Effects", new ArrayList<>(loennEffects));
-            YamlUtil.dump(loennPlugins, os);
-        }
-
         return Triple.of(loennEntities, loennTriggers, loennEffects);
+    }
+
+    private void extractLoennEntitiesFromPlugin(Set<String> loennEntities, Set<String> loennTriggers, Set<String> loennEffects,
+                                               String file, InputStream inputStream) throws IOException {
+
+        // match on: name = "[something]/[something]" :david_goodenough:
+        Pattern nameMatcher = Pattern.compile(".*name = \"([^/\" ]+\\/[^\" ]+)\".*");
+
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                Matcher nameMatch = mapdefMatcher.matcher(line);
+                if (nameMatch.matches()) {
+                    String entityID = nameMatch.group(1);
+
+                    if (file.startsWith("Loenn/effects/")) {
+                        loennEffects.add(entityID);
+                    } else if (file.startsWith("Loenn/entities/")) {
+                        loennEntities.add(entityID);
+                    } else if (file.startsWith("Loenn/triggers/")) {
+                        loennTriggers.add(entityID);
+                    }
+                }
+            }
+        }
     }
 }
