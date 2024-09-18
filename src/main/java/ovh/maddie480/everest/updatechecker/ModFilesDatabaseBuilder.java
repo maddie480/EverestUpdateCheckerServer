@@ -370,7 +370,7 @@ public class ModFilesDatabaseBuilder {
 
                 // extract the en_gb.lang file
                 try (ZipFile zipFile = ZipFileWithAutoEncoding.open(zipFilePath.toAbsolutePath().toString())) {
-                    checkZipSignature(file);
+                    checkZipSignature(zipFilePath);
 
                     for (String file : fileList) {
                         if (file.startsWith("Loenn/") && file.endsWith(".lua")) {
