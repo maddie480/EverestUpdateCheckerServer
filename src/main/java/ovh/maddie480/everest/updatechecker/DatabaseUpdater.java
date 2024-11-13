@@ -24,7 +24,7 @@ public class DatabaseUpdater {
     private static final Logger log = LoggerFactory.getLogger(DatabaseUpdater.class);
 
     // Model, Sound and Spray also accept files, but they aren't enabled for Celeste
-    private static final String[] VALID_CATEGORIES = new String[]{"Mod", "Tool", "Wip"};
+    public static final String[] VALID_CATEGORIES = new String[]{"Mod", "Tool", "Wip"};
 
     private final Map<String, Mod> database = new HashMap<>();
     private Map<String, String> databaseExcludedFiles = new HashMap<>();
