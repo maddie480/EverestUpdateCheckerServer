@@ -5,12 +5,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * Provides a way to download files in different modules without redownloading them multiple times.
@@ -40,7 +42,7 @@ public class FileDownloader {
         alreadyDownloadedFiles.clear();
     }
 
-    private static Path downloadFile(String url, Integer expectedSize, Collection<String> expectedHashes) throws IOException {
+    private static Path downloadFile(String url, Integer providedSize, Collection<String> expectedHashes) throws IOException {
         if (alreadyDownloadedFiles.containsKey(url)) {
             Path path = alreadyDownloadedFiles.get(url);
             log.debug("File {} found in cache: {}", url, path.toAbsolutePath());
@@ -50,10 +52,13 @@ public class FileDownloader {
         final Path target = Paths.get("/tmp").resolve("updater_downloaded_file_" + System.currentTimeMillis());
 
         try {
+            Integer expectedSize = getContentLength(url).orElse(providedSize);
+
             return ConnectionUtils.runWithRetry(() -> {
                 log.debug("Starting download of {} to {}", url, target.toAbsolutePath());
+
                 try (InputStream is = new BufferedInputStream(ConnectionUtils.openStreamWithTimeout(url));
-                    OutputStream os = new BufferedOutputStream(Files.newOutputStream(target))) {
+                     OutputStream os = new BufferedOutputStream(Files.newOutputStream(target))) {
 
                     IOUtils.copy(is, os);
                 }
@@ -80,6 +85,32 @@ public class FileDownloader {
         } catch (IOException e) {
             if (Files.exists(target)) Files.delete(target);
             throw e;
+        }
+    }
+
+    private static Optional<Integer> getContentLength(String url) {
+        try {
+            return Optional.of(ConnectionUtils.runWithRetry(() -> {
+                HttpURLConnection con = ConnectionUtils.openConnectionWithTimeout(url);
+                con.setRequestMethod("HEAD");
+                con.setInstanceFollowRedirects(true);
+
+                int responseCode = con.getResponseCode();
+                if (responseCode != 200) throw new IOException("Request failed with code " + responseCode);
+
+                String contentLength = con.getHeaderField("Content-Length");
+                if (contentLength == null) throw new IOException("No Content-Length header");
+                log.debug("Content-Length of {} is {}", url, contentLength);
+
+                try {
+                    return Integer.parseInt(contentLength);
+                } catch (NumberFormatException e) {
+                    throw new IOException("Could not parse Content-Length header as number", e);
+                }
+            }));
+        } catch (IOException e) {
+            log.debug("Could not get Content-Length of {}", url, e);
+            return Optional.empty();
         }
     }
 }
