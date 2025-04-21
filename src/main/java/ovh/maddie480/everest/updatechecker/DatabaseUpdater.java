@@ -14,6 +14,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -49,6 +50,8 @@ public class DatabaseUpdater {
     static void updateDatabaseYaml(boolean full) throws IOException {
         log.info("=== Started searching for updates (full = {})", full);
         EventListener.handle(listener -> listener.startedSearchingForUpdates(full));
+        Path updateCheckerStateFile = Paths.get("update_checker_state.ser");
+        Path updateCheckerStateFileTemp = Paths.get("update_checker_state_temp.ser");
         long startMillis = System.currentTimeMillis();
 
         boolean somethingChanged;
@@ -56,9 +59,13 @@ public class DatabaseUpdater {
 
         { // run the updater!
             DatabaseUpdater updater = new DatabaseUpdater();
+            updater.loadState(updateCheckerStateFile);
+
             updater.updateDatabaseYamlInner(full);
             somethingChanged = !updater.database.isEmpty();
             numberOfModsDownloaded = updater.numberOfModsDownloaded;
+
+            updater.saveState(updateCheckerStateFileTemp);
         }
 
         if (somethingChanged) {
@@ -75,15 +82,16 @@ public class DatabaseUpdater {
 
         FileDownloader.cleanup();
 
+        log.info("Committing update checker state");
+        Files.move(updateCheckerStateFileTemp, updateCheckerStateFile, StandardCopyOption.REPLACE_EXISTING);
+
         long time = System.currentTimeMillis() - startMillis;
         log.info("=== Ended searching for updates. Downloaded {} mods while doing so. Total duration = {} ms.", numberOfModsDownloaded, time);
         EventListener.handle(listener -> listener.endedSearchingForUpdates(numberOfModsDownloaded, time));
     }
 
-    private void updateDatabaseYamlInner(boolean full) throws IOException {
-        Path updateCheckerStateFile = Paths.get("update_checker_state.ser");
-
-        // load state
+    private void loadState(Path updateCheckerStateFile) throws IOException {
+        log.info("Loading update checker state");
         if (Files.exists(updateCheckerStateFile)) {
             try (ObjectInputStream is = new ObjectInputStream(Files.newInputStream(updateCheckerStateFile))) {
                 mostRecentUpdatedDates = (Map<String, Integer>) is.readObject();
@@ -93,7 +101,18 @@ public class DatabaseUpdater {
                 throw new IOException(e);
             }
         }
+    }
 
+    private void saveState(Path updateCheckerStateFile) throws IOException {
+        log.info("Saving update checker state");
+        try (ObjectOutputStream os = new ObjectOutputStream(Files.newOutputStream(updateCheckerStateFile))) {
+            os.writeObject(mostRecentUpdatedDates);
+            os.writeInt(fullPageSize);
+            os.writeInt(incrementalPageSize);
+        }
+    }
+
+    private void updateDatabaseYamlInner(boolean full) throws IOException {
         // GameBanana cache tends not to refresh properly, so we need to alternate page sizes to dodge the cache. ^^'
         incrementalPageSize++;
         if (incrementalPageSize > 50) incrementalPageSize = 1;
@@ -119,13 +138,6 @@ public class DatabaseUpdater {
             modSearchDatabaseBuilder.saveSearchDatabase(full);
             checkForModDeletion();
             saveDatabaseToYaml();
-        }
-
-        // save state
-        try (ObjectOutputStream os = new ObjectOutputStream(Files.newOutputStream(updateCheckerStateFile))) {
-            os.writeObject(mostRecentUpdatedDates);
-            os.writeInt(fullPageSize);
-            os.writeInt(incrementalPageSize);
         }
     }
 
