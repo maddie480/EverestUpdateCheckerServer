@@ -178,7 +178,7 @@ public class ModSearchDatabaseBuilder {
                         map.put("Size", file.getInt("_nFilesize"));
                         map.put("CreatedDate", file.getInt("_tsDateAdded"));
                         map.put("Downloads", file.getInt("_nDownloadCount"));
-                        map.put("Description", file.getString("_sDescription"));
+                        map.put("Description", file.has("_sDescription") ? file.getString("_sDescription") : "");
 
                         boolean hasYaml = false;
                         File modFilesDatabase = new File("modfilesdatabase_temp/" + itemtype + "/" + itemid + "/" + file.getInt("_idRow") + ".yaml");
