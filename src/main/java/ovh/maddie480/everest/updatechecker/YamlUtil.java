@@ -26,9 +26,9 @@ public class YamlUtil {
 
     static {
         // mod_search_database.yaml is larger than 3 MB, which is the default code point limit in SnakeYAML.
-        // So we need to raise it a bit! We set it to 8 MB instead.
+        // So we need to raise it a bit! We set it to 10 MB instead.
         LoaderOptions loaderOptions = new LoaderOptions();
-        loaderOptions.setCodePointLimit(8 * 1024 * 1024);
+        loaderOptions.setCodePointLimit(10 * 1024 * 1024);
 
         // use the block flow style rather than the default "block at the root level, flow on deeper levels" default.
         DumperOptions dumperOptions = new DumperOptions();
