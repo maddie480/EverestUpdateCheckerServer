@@ -12,6 +12,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -168,6 +169,7 @@ public class ModSearchDatabaseBuilder {
 
         List<Map<String, Object>> filesInMod = new ArrayList<>();
         if (!mod.isNull("_aFiles")) {
+            AtomicInteger orderIndex = new AtomicInteger(0);
             filesInMod = StreamSupport.stream(mod.getJSONArray("_aFiles").spliterator(), false)
                     .map(item -> {
                         // map a file into a hash map.
@@ -178,7 +180,22 @@ public class ModSearchDatabaseBuilder {
                         map.put("Size", file.getInt("_nFilesize"));
                         map.put("CreatedDate", file.getInt("_tsDateAdded"));
                         map.put("Downloads", file.getInt("_nDownloadCount"));
-                        map.put("Description", file.has("_sDescription") ? file.getString("_sDescription") : "");
+
+                        // archived files are displayed below other files on GameBanana,
+                        // regardless of how they're ordered on the edit page
+                        // you can't have more than 50 files on a mod iirc, so I'm probably safe with adding 1000 there
+                        boolean archived = file.has("_bIsArchived") && file.getBoolean("_bIsArchived");
+                        map.put("Order", orderIndex.incrementAndGet() + (archived ? 1000 : 0));
+
+                        // "ARCHIVED - {version} - {description}
+                        List<String> descriptionFields = Arrays.asList(
+                                archived ? "ARCHIVED" : "",
+                                file.has("_sVersion") ? file.getString("_sVersion") : "",
+                                file.has("_sDescription") ? file.getString("_sDescription") : ""
+                        );
+                        map.put("Description", descriptionFields.stream()
+                                .filter(field -> !field.isEmpty())
+                                .collect(Collectors.joining(" - ")));
 
                         boolean hasYaml = false;
                         File modFilesDatabase = new File("modfilesdatabase_temp/" + itemtype + "/" + itemid + "/" + file.getInt("_idRow") + ".yaml");
@@ -192,7 +209,10 @@ public class ModSearchDatabaseBuilder {
                         }
                         map.put("HasEverestYaml", hasYaml);
                         return map;
-                    }).collect(Collectors.toList());
+                    })
+                    .sorted(Comparator.comparing(file -> (int) file.get("Order")))
+                    .peek(file -> file.remove("Order"))
+                    .collect(Collectors.toList());
         }
 
         ModSearchInfo newModSearchInfo = new ModSearchInfo(mod.getString("_sProfileUrl"), itemtype, itemid, mod.getString("_sName"),
