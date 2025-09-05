@@ -138,18 +138,21 @@ public class ModSearchDatabaseBuilder {
 
         if (mod.getBoolean("_bIsNsfw")) {
             // mod has content warnings! we need to check which ones.
-            try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv11/" + itemtype + "/" + itemid + "/ProfilePage")) {
-                JSONObject o = new JSONObject(new JSONTokener(is));
-                redactScreenshots = !"show".equals(o.getString("_sInitialVisibility"));
-
-                List<String> contentWarnings = new ArrayList<>();
-                for (String key : o.getJSONObject("_aContentRatings").keySet()) {
-                    contentWarnings.add(o.getJSONObject("_aContentRatings").getString(key));
+            JSONObject o = ConnectionUtils.runWithRetry(() -> {
+                try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv11/" + itemtype + "/" + itemid + "/ProfilePage")) {
+                    return new JSONObject(new JSONTokener(is));
                 }
+            });
 
-                contentWarningPrefix = "<b>Content Warning" + (contentWarnings.size() == 1 ? "" : "s") + ": "
-                        + StringEscapeUtils.escapeHtml4(String.join(", ", contentWarnings)) + "</b><br><br>";
+            redactScreenshots = !"show".equals(o.getString("_sInitialVisibility"));
+
+            List<String> contentWarnings = new ArrayList<>();
+            for (String key : o.getJSONObject("_aContentRatings").keySet()) {
+                contentWarnings.add(o.getJSONObject("_aContentRatings").getString(key));
             }
+
+            contentWarningPrefix = "<b>Content Warning" + (contentWarnings.size() == 1 ? "" : "s") + ": "
+                    + StringEscapeUtils.escapeHtml4(String.join(", ", contentWarnings)) + "</b><br><br>";
         }
 
         // parse screenshots and determine their URLs.

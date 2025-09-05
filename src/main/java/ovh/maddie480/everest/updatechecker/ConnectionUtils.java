@@ -1,6 +1,7 @@
 package ovh.maddie480.everest.updatechecker;
 
 import org.apache.commons.io.function.IOSupplier;
+import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -80,7 +81,7 @@ public final class ConnectionUtils {
         for (int i = 1; i < 3; i++) {
             try {
                 return task.get();
-            } catch (IOException e) {
+            } catch (IOException | JSONException e) { // GameBanana sometimes sends empty 200 responses
                 logger.warn("I/O exception while doing networking operation (try {}/3).", i, e);
 
                 // wait a bit before retrying
