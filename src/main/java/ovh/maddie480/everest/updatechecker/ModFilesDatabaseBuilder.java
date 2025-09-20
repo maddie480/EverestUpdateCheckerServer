@@ -443,7 +443,7 @@ public class ModFilesDatabaseBuilder {
                                                String file, InputStream inputStream) throws IOException {
 
         // match on: name = "[something]/[something]" :david_goodenough:
-        Pattern nameMatcher = Pattern.compile(".*name = \"([^/\" ]+\\/[^\" ]+)\".*");
+        Pattern nameMatcher = Pattern.compile(".*name = [^\"]*\"([^/\" ]+/[^\" ]+)\".*");
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;

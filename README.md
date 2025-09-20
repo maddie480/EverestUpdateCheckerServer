@@ -202,7 +202,7 @@ Get Maven, then run the following command at the project root:
 mvn clean package
 ```
 
-This will build the project to `target/update-checker-0.8.6.jar`.
+This will build the project to `target/update-checker-0.8.7.jar`.
 
 ### Running the project
 
@@ -213,7 +213,7 @@ First, follow these steps to set it up:
 Then, to run the project, browse to where the JAR is in a terminal / command prompt, then run
 
 ```
-java -jar update-checker-0.8.6.jar [minutes]
+java -jar update-checker-0.8.7.jar [minutes]
 ```
 
 [minutes] is the wait delay in minutes between two GameBanana checks (defaults to 30). Be aware that the program makes ~13 API calls per check, and that the GameBanana API has a cap at 250 requests/hour.
