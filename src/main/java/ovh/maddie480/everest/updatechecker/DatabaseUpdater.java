@@ -207,7 +207,7 @@ public class DatabaseUpdater {
     private void crawlModsFromCategoryFully(String category) throws IOException {
         // update the last modified date for incremental updates
         int lastModifiedDate = ConnectionUtils.runWithRetry(() -> {
-            log.trace("Loading last modified date of category for the next incremental update...", category);
+            log.trace("Loading last modified date of category {} for the next incremental update...", category);
 
             try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv10/" + category + "/Index?_nPage=1&_nPerpage=" + incrementalPageSize +
                     "&_aFilters[Generic_Game]=6460&_sSort=Generic_LatestModified")) {
@@ -515,11 +515,11 @@ public class DatabaseUpdater {
                     databaseExcludedFiles.put(fileUrl, "File " + database.get(modName).getUrl() + " is already in the database and belongs to another mod");
 
                 } else if (databaseExcludedFiles.containsKey(modName)) {
-                    log.warn("=> Mod was skipped because it is in the exclude list: " + mod);
+                    log.warn("=> Mod was skipped because it is in the exclude list: {}", mod);
                     EventListener.handle(listener -> listener.modIsExcludedByName(mod));
                 } else {
                     database.put(modName, mod);
-                    log.info("=> Saved new information to database: " + mod);
+                    log.info("=> Saved new information to database: {}", mod);
                     EventListener.handle(listener -> listener.savedNewInformationToDatabase(mod));
                 }
             }

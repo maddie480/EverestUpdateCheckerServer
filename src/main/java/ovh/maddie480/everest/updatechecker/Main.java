@@ -14,7 +14,7 @@ public class Main {
 
     public static ServerConfig serverConfig;
 
-    public static void main(String[] args) throws InterruptedException {
+    static void main(String[] args) throws InterruptedException {
         // read the config file.
         try (InputStream is = Files.newInputStream(Paths.get("update_checker_config.yaml"))) {
             Map<String, Object> config = YamlUtil.load(is);

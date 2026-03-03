@@ -207,7 +207,7 @@ public class ModSearchDatabaseBuilder {
                                 List<String> files = YamlUtil.load(is);
                                 hasYaml = files.contains("everest.yml") || files.contains("everest.yaml");
                             } catch (IOException e) {
-                                log.error("Could not read files database at " + modFilesDatabase.getPath() + "!", e);
+                                log.error("Could not read files database at {}!", modFilesDatabase.getPath(), e);
                             }
                         }
                         map.put("HasEverestYaml", hasYaml);
