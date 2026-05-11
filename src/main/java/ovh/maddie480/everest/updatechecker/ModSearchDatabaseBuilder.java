@@ -257,6 +257,7 @@ public class ModSearchDatabaseBuilder {
                 throw new IOException(e);
             }
         });
+        int position = 0;
         for (Object mod : featured) {
             JSONObject modObject = (JSONObject) mod;
             String itemtype = modObject.getString("_sModelName");
