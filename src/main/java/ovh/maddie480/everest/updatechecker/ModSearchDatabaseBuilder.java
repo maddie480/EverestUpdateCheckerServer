@@ -250,7 +250,7 @@ public class ModSearchDatabaseBuilder {
         // get featured mods and fill in the info for mods accordingly.
         log.debug("Getting list of featured mods...");
         JSONObject featured = ConnectionUtils.runWithRetry(() -> {
-            try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv8/Game/6460/TopSubs")) {
+            try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv11/Game/6460/TopSubs")) {
                 return new JSONObject(new JSONTokener(is));
             } catch (JSONException e) {
                 // turn JSON parse errors into IOExceptions to trigger a retry.
