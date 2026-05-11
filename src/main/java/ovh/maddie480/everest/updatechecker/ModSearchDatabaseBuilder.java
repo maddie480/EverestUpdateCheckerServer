@@ -249,27 +249,25 @@ public class ModSearchDatabaseBuilder {
 
         // get featured mods and fill in the info for mods accordingly.
         log.debug("Getting list of featured mods...");
-        JSONObject featured = ConnectionUtils.runWithRetry(() -> {
+        JSONArray featured = ConnectionUtils.runWithRetry(() -> {
             try (InputStream is = ConnectionUtils.openStreamWithTimeout("https://gamebanana.com/apiv11/Game/6460/TopSubs")) {
-                return new JSONObject(new JSONTokener(is));
+                return new JSONArray(new JSONTokener(is));
             } catch (JSONException e) {
                 // turn JSON parse errors into IOExceptions to trigger a retry.
                 throw new IOException(e);
             }
         });
-        for (String category : featured.keySet()) {
-            int position = 0;
-            for (Object mod : featured.getJSONArray(category)) {
-                JSONObject modObject = (JSONObject) mod;
-                String itemtype = modObject.getString("_sModelName");
-                int itemid = modObject.getInt("_idRow");
+        for (Object mod : featured) {
+            JSONObject modObject = (JSONObject) mod;
+            String itemtype = modObject.getString("_sModelName");
+            int itemid = modObject.getInt("_idRow");
+            String category = modObject.getString("_sPeriod");
 
-                int thisPosition = position;
-                modSearchInfo.stream()
-                        .filter(i -> i.gameBananaType.equals(itemtype) && i.gameBananaId == itemid)
-                        .forEach(i -> i.setFeatured(category, thisPosition));
-                position++;
-            }
+            int thisPosition = position;
+            modSearchInfo.stream()
+                    .filter(i -> i.gameBananaType.equals(itemtype) && i.gameBananaId == itemid)
+                    .forEach(i -> i.setFeatured(category, thisPosition));
+            position++;
         }
 
         List<Map<String, Object>> modSearchDatabase = modSearchInfo.stream().map(ModSearchInfo::toMap).collect(Collectors.toList());
