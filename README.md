@@ -1,5 +1,9 @@
 # Everest Update Checker Server
 
+**ARCHIVED**: the new updater is [over there on the backend repository](https://github.com/maddie480/RandomBackendStuff/tree/main/src/main/java/ovh/maddie480/randomstuff/backend/celeste/moddatabase).
+
+-----
+
 This server periodically goes through the mods posted in [the Celeste category on GameBanana](https://gamebanana.com/games/6460), and saves a few files that may be used by various services that need to know more information about mods.
 
 I'm currently running this server, some of its features are made available through APIs and others are used internally.
